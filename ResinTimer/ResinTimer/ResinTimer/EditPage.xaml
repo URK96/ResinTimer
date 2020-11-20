@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ResinTimer.EditPage">
+
+    <AbsoluteLayout>
+        <!--<Label AbsoluteLayout.LayoutFlags="PositionProportional"
+               AbsoluteLayout.LayoutBounds="0.5, 0.05" 
+               Text="Now resin count" FontSize="Title"/>
+        <StackLayout AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0.5, 0.1, 0.8, 0.05"
+                     Orientation="Vertical">
+            <Entry x:Name="NowResinCountEntry" WidthRequest="50" MaxLength="3" Keyboard="Numeric" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+            --><!--<Slider Minimum="0" Maximum="160" MaximumTrackColor="#3F51B5" MinimumTrackColor="#3F51B5" HorizontalOptions="Fill" />--><!--
+        </StackLayout>-->
+
+        <Label AbsoluteLayout.LayoutFlags="PositionProportional"
+               AbsoluteLayout.LayoutBounds="0.5, 0.05" 
+               Text="Remain total time" FontSize="Title"/>
+
+        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional"
+                     AbsoluteLayout.LayoutBounds="0.5, 0.12"
+                     Orientation="Horizontal">
+            <Entry x:Name="NowTotalTimeHour" WidthRequest="50" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center"/>
+            <Label Text="Hour" VerticalTextAlignment="Center" />
+            <Entry x:Name="NowTotalTimeMinute" WidthRequest="50" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center"/>
+            <Label Text="Min" VerticalTextAlignment="Center" />
+            <Entry x:Name="NowTotalTimeSecond" WidthRequest="50" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center"/>
+            <Label Text="Sec" VerticalTextAlignment="Center" />
+        </StackLayout>
+
+        <Button AbsoluteLayout.LayoutFlags="PositionProportional"
+                AbsoluteLayout.LayoutBounds="0.5, 0.8" 
+                Text="Ok" Clicked="OkButtonClicked"/>
+    </AbsoluteLayout>
+
+</ContentPage>

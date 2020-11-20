@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             x:Class="ResinTimer.MainPage"
+             Title="Resin Timer">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="0" Clicked="EditToolbarItemClicked" />
+        <ToolbarItem Text="Info" IconImageSource="info.png" Order="Primary" Priority="1" />
+    </ContentPage.ToolbarItems>
+
+    <RelativeLayout>
+        <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                     Orientation="Vertical">
+            
+            <Label x:Name="RemainTimeLabel"
+                   Text="완전히 충전되기까지" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" />
+
+            <FlexLayout Direction="Row" AlignItems="Center" AlignContent="Center" JustifyContent="Center" Margin="0, 20, 0, 0">
+                <Label x:Name="TotalTimeHour" Text="" Margin="10, 0, 10, 0" FontAttributes="Bold" FontSize="40"/>
+                <!--<Ellipse x:Name="TimeEllipse" Fill="#0682F6" WidthRequest="10" HeightRequest="10" />-->
+                <Label x:Name="TimeSeperator" Text=":" Margin="0, 0, 0, 0" FontAttributes="Bold" FontSize="40"/>
+                <Label x:Name="TotalTimeMinute" Text="" Margin="10, 0, 10, 0" FontAttributes="Bold" FontSize="40"/>
+            </FlexLayout>
+
+        </StackLayout>
+
+        <gauge:SfCircularGauge Margin="50, 0, 50, 0">
+
+            <gauge:SfCircularGauge.Annotations>
+                <gauge:GaugeAnnotation ViewMargin="0, -20">
+                    <gauge:GaugeAnnotation.View>
+                        <Image Source="resin.png" WidthRequest="50" HeightRequest="50" />
+                    </gauge:GaugeAnnotation.View>
+                </gauge:GaugeAnnotation>
+            </gauge:SfCircularGauge.Annotations>
+
+            <gauge:SfCircularGauge.Headers>
+                <gauge:Header x:Name="ResinCount" Text="" Position="0.5, 0.6" TextSize="30" ForegroundColor="#0682F6"/>
+                <gauge:Header x:Name="OneCountTimer" Text="" Position="0.5, 0.75" TextSize="15" ForegroundColor="#0682F6"/>
+            </gauge:SfCircularGauge.Headers>
+
+            <gauge:SfCircularGauge.Scales>
+                <gauge:Scale StartValue="0" EndValue="160" Interval="20"
+                             RimColor="#9a9ca6">
+
+                    <gauge:Scale.MajorTickSettings>
+                        <gauge:TickSettings Color="#3F51B5" />
+                    </gauge:Scale.MajorTickSettings>
+
+                    <gauge:Scale.Pointers>
+                        <gauge:RangePointer x:Name="RangeValue" Value="0" Color="#303F9F" />
+                        <gauge:MarkerPointer x:Name="PointerValue" Value="0" Color="#303F9F" />
+                    </gauge:Scale.Pointers>
+
+                    <gauge:Scale.Ranges>
+                        <gauge:Range x:Name="ResinRemainTimeRange" StartValue="0" EndValue="0" />
+                    </gauge:Scale.Ranges>
+
+                </gauge:Scale>
+            </gauge:SfCircularGauge.Scales>
+            
+        </gauge:SfCircularGauge>
+    </RelativeLayout>
+
+</ContentPage>

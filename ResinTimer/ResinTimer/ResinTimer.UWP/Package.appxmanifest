@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="98d5aef0-b26c-4fbd-be98-15af9ae7361f"
-    Publisher="CN=02c39cb9-2501-4170-be08-08e4405b2552"
+    Name="51675URK96.52713F0631765"
+    Publisher="CN=558FBEBE-C1DE-4502-AFA1-2ACF1A20C1EE"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="b5a9960d-e578-4b88-b667-e0a4e5a09e0c" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>ResinTimer.UWP</DisplayName>
-    <PublisherDisplayName>02c39cb9-2501-4170-be08-08e4405b2552</PublisherDisplayName>
+    <DisplayName>ResinTimer</DisplayName>
+    <PublisherDisplayName>URK96</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -32,7 +32,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="ResinTimer.UWP.App">
       <uap:VisualElements
-        DisplayName="ResinTimer.UWP"
+        DisplayName="Resin Timer"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="ResinTimer.UWP"

@@ -12,7 +12,7 @@
 - 1개당 남은 회복 시간
 - 간단한 설정
 
-<img alt="1.png" src="https://github.com/URK96/GAButtonMapper/blob/master/Image/1.png" style="max-width: 40%">
+<img alt="1.png" src="https://github.com/URK96/ResinTimer/blob/main/Image/1.png" style="max-width: 40%">
 
 # 버그 제보 (Report bug)
 

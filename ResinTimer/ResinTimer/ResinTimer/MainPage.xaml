@@ -2,32 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             xmlns:resources="clr-namespace:ResinTimer.Resources"
              x:Class="ResinTimer.MainPage"
-             Title="Resin Timer">
+             Title="{x:Static resources:AppResources.MainPage_Title}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="0" Clicked="EditToolbarItemClicked" />
-        <ToolbarItem Text="Info" IconImageSource="info.png" Order="Primary" Priority="1" />
+        <ToolbarItem Text="Info" IconImageSource="info.png" Order="Primary" Priority="1" Clicked="InfoToolbarItemClicked" />
     </ContentPage.ToolbarItems>
 
-    <RelativeLayout>
-        <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional"
+                     AbsoluteLayout.LayoutBounds="0.5, 0.1"
                      Orientation="Vertical">
             
             <Label x:Name="RemainTimeLabel"
-                   Text="완전히 충전되기까지" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" />
+                   Text="{x:Static resources:AppResources.MainPage_RemainTimeLabel}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" />
 
             <FlexLayout Direction="Row" AlignItems="Center" AlignContent="Center" JustifyContent="Center" Margin="0, 20, 0, 0">
                 <Label x:Name="TotalTimeHour" Text="" Margin="10, 0, 10, 0" FontAttributes="Bold" FontSize="40"/>
-                <!--<Ellipse x:Name="TimeEllipse" Fill="#0682F6" WidthRequest="10" HeightRequest="10" />-->
                 <Label x:Name="TimeSeperator" Text=":" Margin="0, 0, 0, 0" FontAttributes="Bold" FontSize="40"/>
                 <Label x:Name="TotalTimeMinute" Text="" Margin="10, 0, 10, 0" FontAttributes="Bold" FontSize="40"/>
             </FlexLayout>
 
         </StackLayout>
-
-        <gauge:SfCircularGauge Margin="50, 0, 50, 0">
+   
+        <gauge:SfCircularGauge AbsoluteLayout.LayoutFlags="All"
+                               AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.8, 0.38">
 
             <gauge:SfCircularGauge.Annotations>
                 <gauge:GaugeAnnotation ViewMargin="0, -20">
@@ -63,6 +64,6 @@
             </gauge:SfCircularGauge.Scales>
             
         </gauge:SfCircularGauge>
-    </RelativeLayout>
+    </AbsoluteLayout>
 
 </ContentPage>

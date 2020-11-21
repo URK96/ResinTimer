@@ -49,7 +49,7 @@ namespace ResinTimer
             }
             catch (Exception ex)
             {
-                DependencyService.Get<IToast>().Show(ex.ToString());
+                // DependencyService.Get<IToast>().Show(ex.ToString());
             }
         }
 
@@ -67,14 +67,18 @@ namespace ResinTimer
         {
             try
             {
-                var editPage = new EditPage();
-
-                Navigation.PushAsync(editPage, true);
+                Navigation.PushAsync(new EditPage(), true);
             }
-            catch (Exception ex)
+            catch { }
+        }
+        
+        private void InfoToolbarItemClicked(object sender, EventArgs e)
+        {
+            try
             {
-
+                Navigation.PushAsync(new InfoPage(), true);
             }
+            catch { }
         }
 
         private void CalcTimeResin()

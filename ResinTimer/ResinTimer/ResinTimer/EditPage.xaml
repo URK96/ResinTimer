@@ -1,8 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ResinTimer.EditPage">
+             xmlns:resources="clr-namespace:ResinTimer.Resources"
+             x:Class="ResinTimer.EditPage"
+             Title="{x:Static resources:AppResources.EditPage_Title}">
 
+    <ContentPage.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="30" />
+            <Setter Property="BorderColor" Value="#0682F6" />
+            <Setter Property="BorderWidth" Value="3" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="CharacterSpacing" Value="10" />
+            <Setter Property="FontSize" Value="Large" />
+        </Style>
+    </ContentPage.Resources>
+    
     <AbsoluteLayout>
         <!--<Label AbsoluteLayout.LayoutFlags="PositionProportional"
                AbsoluteLayout.LayoutBounds="0.5, 0.05" 
@@ -16,22 +29,27 @@
 
         <Label AbsoluteLayout.LayoutFlags="PositionProportional"
                AbsoluteLayout.LayoutBounds="0.5, 0.05" 
-               Text="Remain total time" FontSize="Title"/>
+               Text="{x:Static resources:AppResources.EditPage_TotalRemainTimeLabel}" FontSize="Title" FontAttributes="Bold" />
 
         <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional"
                      AbsoluteLayout.LayoutBounds="0.5, 0.12"
                      Orientation="Horizontal">
-            <Entry x:Name="NowTotalTimeHour" WidthRequest="50" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center"/>
-            <Label Text="Hour" VerticalTextAlignment="Center" />
-            <Entry x:Name="NowTotalTimeMinute" WidthRequest="50" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center"/>
-            <Label Text="Min" VerticalTextAlignment="Center" />
-            <Entry x:Name="NowTotalTimeSecond" WidthRequest="50" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center"/>
-            <Label Text="Sec" VerticalTextAlignment="Center" />
+            <Entry x:Name="NowTotalTimeHour" WidthRequest="50" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center"
+                   Text="0" />
+            <Label Text="{x:Static resources:AppResources.EditPage_Hour}" VerticalTextAlignment="Center" />
+            <Entry x:Name="NowTotalTimeMinute" WidthRequest="50" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center" 
+                   Text="0" />
+            <Label Text="{x:Static resources:AppResources.EditPage_Minute}" VerticalTextAlignment="Center" />
+            <Entry x:Name="NowTotalTimeSecond" WidthRequest="50" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center" 
+                   Text="0" />
+            <Label Text="{x:Static resources:AppResources.EditPage_Second}" VerticalTextAlignment="Center" />
         </StackLayout>
 
-        <Button AbsoluteLayout.LayoutFlags="PositionProportional"
-                AbsoluteLayout.LayoutBounds="0.5, 0.8" 
-                Text="Ok" Clicked="OkButtonClicked"/>
+        <Button AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0.5, 0.6, 0.6, 0.07" 
+                Style="{StaticResource ButtonStyle}"
+                Text="{x:Static resources:AppResources.EditPage_ApplyButtonText}" 
+                Clicked="ApplyButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased"/>
     </AbsoluteLayout>
 
 </ContentPage>

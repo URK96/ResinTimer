@@ -18,13 +18,37 @@ namespace ResinTimer
             InitializeComponent();
         }
 
-        private void OkButtonClicked(object sender, EventArgs e)
+        private void ApplyButtonClicked(object sender, EventArgs e)
         {
             SetValue();
             CalcRemainTimeResin();
             SaveValue();
 
-            OnBackButtonPressed();
+            Navigation.PopAsync();
+        }
+
+        private async void ButtonPressed(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+
+            try
+            {
+                button.BackgroundColor = Color.FromHex("#500682F6");
+                await button.ScaleTo(0.95, 100, Easing.SinInOut);
+            }
+            catch { }
+        }
+
+        private async void ButtonReleased(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+
+            try
+            {
+                button.BackgroundColor = Color.Transparent;
+                await button.ScaleTo(1.0, 100, Easing.SinInOut);
+            }
+            catch { }
         }
 
         private void SetValue()
@@ -42,16 +66,9 @@ namespace ResinTimer
         {
             var now = DateTime.Now;
             int totalSec = ResinEnvironment.totalCountTime.TotalSec;
-            int remainResinCount = totalSec / ResinTime.ONE_RESTORE_INTERVAL;
 
             ResinEnvironment.oneCountTime.SetTime(totalSec % ResinTime.ONE_RESTORE_INTERVAL);
             ResinEnvironment.endTime = now.AddHours(ResinEnvironment.totalCountTime.Hour).AddMinutes(ResinEnvironment.totalCountTime.Min).AddSeconds(ResinEnvironment.totalCountTime.Sec);
-            //ResinEnvironment.resin = ResinEnvironment.MAX_RESIN - remainResinCount - 1;
-
-            //if (ResinEnvironment.resin < 0)
-            //{
-            //    ResinEnvironment.resin = 0;
-            //}
         }
 
         private void SaveValue()

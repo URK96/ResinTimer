@@ -21,7 +21,11 @@ namespace ResinTimer
             if (Preferences.ContainsKey(SettingConstants.END_TIME))
             {
                 string endTimeP = Preferences.Get(SettingConstants.END_TIME, "");
-                endTime = string.IsNullOrWhiteSpace(endTimeP) ? DateTime.Now : DateTime.Parse(endTimeP);
+
+                if (!DateTime.TryParse(endTimeP, out endTime))
+                {
+                    endTime = DateTime.Now;
+                }
             }
             else
             {

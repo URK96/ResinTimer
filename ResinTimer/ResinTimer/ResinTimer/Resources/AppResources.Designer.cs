@@ -187,6 +187,71 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Syncfusion.Licensing
+        ///Syncfusion.Xamarin.SfGauge
+        ///Xamarin.Essentials과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string LibraryList {
+            get {
+                return ResourceManager.GetString("LibraryList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   The MIT License (MIT)
+        ///
+        ///Copyright (c) Microsoft Corporation
+        ///
+        ///All rights reserved.
+        ///
+        ///Permission is hereby granted, free of charge, to any person obtaining a copy
+        ///of this software and associated documentation files (the &quot;Software&quot;), to deal
+        ///in the Software without restriction, including without limitation the rights
+        ///to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        ///copies of the Software, and to permit persons to whom the Software is
+        ///furnished to do so, subject to the followin[나머지 문자열은 잘림]&quot;;과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string License_MIT_Microsoft {
+            get {
+                return ResourceManager.GetString("License_MIT_Microsoft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ESSENTIAL STUDIO SOFTWARE LICENSE AGREEMENT
+        ///This Software License Agreement (the “Agreement”) is a legal agreement between you (“You”, “Your”, or
+        ///“Customer”) and Syncfusion, Inc., a Delaware corporation with its principal place of business located at 2501 Aerial
+        ///Center Parkway, Suite 200, Morrisville, NC 27560 (“Syncfusion”).
+        ///This license is for Essential Studio Enterprise Edition, Essential Studio WPF Edition, Essential Studio PDF Edition,
+        ///Essential Studio Xamarin Edition, and Essential Studio Win For[나머지 문자열은 잘림]&quot;;과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string License_Syncfusion {
+            get {
+                return ResourceManager.GetString("License_Syncfusion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Open Source License과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string LicensePage_Title {
+            get {
+                return ResourceManager.GetString("LicensePage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ESSENTIAL STUDIO SOFTWARE LICENSE AGREEMENT
+        ///ESSENTIAL STUDIO SOFTWARE LICENSE AGREEMENT
+        ///MIT License - Microsoft Corporation과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string LicenseTypeList {
+            get {
+                return ResourceManager.GetString("LicenseTypeList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Until Full Restore과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         internal static string MainPage_RemainTimeLabel {

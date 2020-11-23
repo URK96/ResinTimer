@@ -34,14 +34,14 @@
         <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional"
                      AbsoluteLayout.LayoutBounds="0.5, 0.12"
                      Orientation="Horizontal">
-            <Entry x:Name="NowTotalTimeHour" WidthRequest="50" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center"
-                   Text="0" />
+            <Entry x:Name="NowTotalTimeHour" WidthRequest="65" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center"
+                   Text="" />
             <Label Text="{x:Static resources:AppResources.EditPage_Hour}" VerticalTextAlignment="Center" />
-            <Entry x:Name="NowTotalTimeMinute" WidthRequest="50" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center" 
-                   Text="0" />
+            <Entry x:Name="NowTotalTimeMinute" WidthRequest="65" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center" 
+                   Text="" />
             <Label Text="{x:Static resources:AppResources.EditPage_Minute}" VerticalTextAlignment="Center" />
-            <Entry x:Name="NowTotalTimeSecond" WidthRequest="50" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center" 
-                   Text="0" />
+            <Entry x:Name="NowTotalTimeSecond" WidthRequest="65" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center" 
+                   Text="" />
             <Label Text="{x:Static resources:AppResources.EditPage_Second}" VerticalTextAlignment="Center" />
         </StackLayout>
 

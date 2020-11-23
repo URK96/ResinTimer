@@ -34,9 +34,13 @@ namespace ResinTimer
             catch { }
         }
 
-        private void OpenSourceLicenseButtonClicked(object sender, EventArgs e)
+        private async void OpenSourceLicenseButtonClicked(object sender, EventArgs e)
         {
-
+            try
+            {
+                await Navigation.PushAsync(new LicensePage(), true);
+            }
+            catch { }
         }
 
         private async void ButtonPressed(object sender, EventArgs e)

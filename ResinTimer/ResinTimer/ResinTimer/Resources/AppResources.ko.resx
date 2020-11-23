@@ -159,6 +159,9 @@
   <data name="InfoPage_Title" xml:space="preserve">
     <value>앱 정보</value>
   </data>
+  <data name="LicensePage_Title" xml:space="preserve">
+    <value>오픈소스 라이선스</value>
+  </data>
   <data name="MainPage_RemainTimeLabel" xml:space="preserve">
     <value>완전히 회복 될 때까지</value>
   </data>

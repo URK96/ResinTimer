@@ -159,6 +159,22 @@
   <data name="InfoPage_Title" xml:space="preserve">
     <value>App Info</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LibraryList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>LibraryList.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;ks_c_5601-1987</value>
+  </data>
+  <data name="LicensePage_Title" xml:space="preserve">
+    <value>Open Source License</value>
+  </data>
+  <data name="LicenseTypeList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>LicenseTypeList.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;ks_c_5601-1987</value>
+  </data>
+  <data name="License_MIT_Microsoft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>License_MIT_Microsoft.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;ks_c_5601-1987</value>
+  </data>
+  <data name="License_Syncfusion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>License_Syncfusion.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;ks_c_5601-1987</value>
+  </data>
   <data name="MainPage_RemainTimeLabel" xml:space="preserve">
     <value>Until Full Restore</value>
   </data>

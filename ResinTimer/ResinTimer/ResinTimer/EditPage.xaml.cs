@@ -4,24 +4,86 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin.Essentials;
+
+using ResinTimer.Resources;
 
 namespace ResinTimer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EditPage : ContentPage
+    public partial class EditPage : TabbedPage
     {
         public EditPage()
         {
             InitializeComponent();
         }
 
+        private void SetTimeValue()
+        {
+            int.TryParse(NowTotalTimeHour.Text, out int hour);
+            int.TryParse(NowTotalTimeMinute.Text, out int min);
+            int.TryParse(NowTotalTimeSecond.Text, out int sec);
+
+            ResinEnvironment.totalCountTime.SetTime(hour, min, sec);
+        }
+
+        private void SetResinValue()
+        {
+            int.TryParse(NowResinCount.Text, out ResinEnvironment.resin);
+        }
+
+        private void CalcRemainTime()
+        {
+            var now = DateTime.Now;
+
+            switch (ResinEnvironment.applyType)
+            {
+                case ResinEnvironment.ApplyType.Time:
+                    int totalSec = ResinEnvironment.totalCountTime.TotalSec;
+
+                    ResinEnvironment.oneCountTime.SetTime(totalSec % ResinTime.ONE_RESTORE_INTERVAL);
+                    break;
+                case ResinEnvironment.ApplyType.Resin:
+                    ResinEnvironment.oneCountTime.SetTime(ResinTime.ONE_RESTORE_INTERVAL);
+                    ResinEnvironment.totalCountTime.SetTime(ResinTime.ONE_RESTORE_INTERVAL * (ResinEnvironment.MAX_RESIN - ResinEnvironment.resin));
+                    break;
+            }
+
+            ResinEnvironment.endTime = now.AddHours(ResinEnvironment.totalCountTime.Hour).AddMinutes(ResinEnvironment.totalCountTime.Min).AddSeconds(ResinEnvironment.totalCountTime.Sec);
+        }
+
+        private void SaveValue()
+        {
+            Preferences.Set(SettingConstants.RESIN_COUNT, ResinEnvironment.resin);
+            Preferences.Set(SettingConstants.END_TIME, ResinEnvironment.endTime.ToString());
+        }
+
         private void ApplyButtonClicked(object sender, EventArgs e)
         {
-            SetValue();
-            CalcRemainTimeResin();
+            if (CurrentPage.Title == AppResources.EditPage_TabTime_Title)
+            {
+                ResinEnvironment.applyType = ResinEnvironment.ApplyType.Time;
+            }
+            else if (CurrentPage.Title == AppResources.EditPage_TabResin_Title)
+            {
+                ResinEnvironment.applyType = ResinEnvironment.ApplyType.Resin;
+            }
+
+            switch (ResinEnvironment.applyType)
+            {
+                case ResinEnvironment.ApplyType.Time:
+                    SetTimeValue();
+                    break;
+                case ResinEnvironment.ApplyType.Resin:
+                    SetResinValue();
+                    break;
+                default:
+                    break;
+            }
+
+            CalcRemainTime();
             SaveValue();
 
             Navigation.PopAsync();
@@ -49,32 +111,6 @@ namespace ResinTimer
                 await button.ScaleTo(1.0, 100, Easing.SinInOut);
             }
             catch { }
-        }
-
-        private void SetValue()
-        {
-            int hour, min, sec;
-
-            int.TryParse(NowTotalTimeHour.Text, out hour);
-            int.TryParse(NowTotalTimeMinute.Text, out min);
-            int.TryParse(NowTotalTimeSecond.Text, out sec);
-
-            ResinEnvironment.totalCountTime.SetTime(hour, min, sec);
-        }
-
-        private void CalcRemainTimeResin()
-        {
-            var now = DateTime.Now;
-            int totalSec = ResinEnvironment.totalCountTime.TotalSec;
-
-            ResinEnvironment.oneCountTime.SetTime(totalSec % ResinTime.ONE_RESTORE_INTERVAL);
-            ResinEnvironment.endTime = now.AddHours(ResinEnvironment.totalCountTime.Hour).AddMinutes(ResinEnvironment.totalCountTime.Min).AddSeconds(ResinEnvironment.totalCountTime.Sec);
-        }
-
-        private void SaveValue()
-        {
-            Preferences.Set(SettingConstants.RESIN_COUNT, ResinEnvironment.resin);
-            Preferences.Set(SettingConstants.END_TIME, ResinEnvironment.endTime.ToString());
         }
     }
 }

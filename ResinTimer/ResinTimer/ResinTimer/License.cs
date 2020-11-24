@@ -2,6 +2,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Text;
 
 namespace ResinTimer
@@ -13,19 +15,27 @@ namespace ResinTimer
 
         public string GetLicenseContent()
         {
-            string content;
+            const string ROOTCLASS = "ResinTimer";
+            string path = string.Empty;
+            string content = string.Empty;
+
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LicenseViewer)).Assembly;
 
             switch (LicenseType)
             {
                 case "Syncfusion License":
-                    content = AppResources.License_Syncfusion;
+                    path = $"{ROOTCLASS}.License_Syncfusion.txt";
                     break;
                 case "MIT License - Microsoft Corporation":
-                    content = AppResources.License_MIT_Microsoft;
+                    path = $"{ROOTCLASS}.License_MIT_Microsoft.txt";
                     break;
                 default:
-                    content = string.Empty;
-                    break;
+                    return string.Empty;
+            }
+
+            using (var reader = new StreamReader(assembly.GetManifestResourceStream(path)))
+            {
+                content = reader.ReadToEnd();
             }
 
             return content;

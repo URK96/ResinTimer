@@ -1,3 +1,0 @@
-Syncfusion.Licensing
-Syncfusion.Xamarin.SfGauge
-Xamarin.Essentials

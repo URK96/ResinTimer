@@ -22,7 +22,7 @@ namespace ResinTimer.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AppResources {
+    public class AppResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace ResinTimer.Resources {
         ///   이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ResinTimer.Resources.AppResources", typeof(AppResources).Assembly);
@@ -51,7 +51,7 @@ namespace ResinTimer.Resources {
         ///   재정의합니다.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   If you report bug via github, you need github account. If you don&apos;t want to create github account, cancel this dialog and use E-Mail for bug reporting. Do you want to continue this process?과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string BugReport_Dialog_Message {
+        public static string BugReport_Dialog_Message {
             get {
                 return ResourceManager.GetString("BugReport_Dialog_Message", resourceCulture);
             }
@@ -72,16 +72,25 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Caution과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string BugReport_Dialog_Title {
+        public static string BugReport_Dialog_Title {
             get {
                 return ResourceManager.GetString("BugReport_Dialog_Title", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Input only resin can cause time inaccuracy x~x과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Caution_ResinInput {
+            get {
+                return ResourceManager.GetString("Caution_ResinInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   No과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string Dialog_No {
+        public static string Dialog_No {
             get {
                 return ResourceManager.GetString("Dialog_No", resourceCulture);
             }
@@ -90,7 +99,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Yes과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string Dialog_Yes {
+        public static string Dialog_Yes {
             get {
                 return ResourceManager.GetString("Dialog_Yes", resourceCulture);
             }
@@ -99,7 +108,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Apply과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string EditPage_ApplyButtonText {
+        public static string EditPage_ApplyButtonText {
             get {
                 return ResourceManager.GetString("EditPage_ApplyButtonText", resourceCulture);
             }
@@ -108,7 +117,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Hour과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string EditPage_Hour {
+        public static string EditPage_Hour {
             get {
                 return ResourceManager.GetString("EditPage_Hour", resourceCulture);
             }
@@ -117,25 +126,52 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Min과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string EditPage_Minute {
+        public static string EditPage_Minute {
             get {
                 return ResourceManager.GetString("EditPage_Minute", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Now resin count과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditPage_NowResinLabel {
+            get {
+                return ResourceManager.GetString("EditPage_NowResinLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sec과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string EditPage_Second {
+        public static string EditPage_Second {
             get {
                 return ResourceManager.GetString("EditPage_Second", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Resin과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditPage_TabResin_Title {
+            get {
+                return ResourceManager.GetString("EditPage_TabResin_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Time과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditPage_TabTime_Title {
+            get {
+                return ResourceManager.GetString("EditPage_TabTime_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Edit Info과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string EditPage_Title {
+        public static string EditPage_Title {
             get {
                 return ResourceManager.GetString("EditPage_Title", resourceCulture);
             }
@@ -144,7 +180,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Remain Total Restore Time과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string EditPage_TotalRemainTimeLabel {
+        public static string EditPage_TotalRemainTimeLabel {
             get {
                 return ResourceManager.GetString("EditPage_TotalRemainTimeLabel", resourceCulture);
             }
@@ -153,7 +189,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Resin Timer과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string InfoPage_AppName {
+        public static string InfoPage_AppName {
             get {
                 return ResourceManager.GetString("InfoPage_AppName", resourceCulture);
             }
@@ -162,7 +198,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Developer Info과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string InfoPage_DeveloperInfoLabel {
+        public static string InfoPage_DeveloperInfoLabel {
             get {
                 return ResourceManager.GetString("InfoPage_DeveloperInfoLabel", resourceCulture);
             }
@@ -171,7 +207,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   OpenSource License과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string InfoPage_OpenSourceLicenseButtonText {
+        public static string InfoPage_OpenSourceLicenseButtonText {
             get {
                 return ResourceManager.GetString("InfoPage_OpenSourceLicenseButtonText", resourceCulture);
             }
@@ -180,7 +216,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   App Info과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string InfoPage_Title {
+        public static string InfoPage_Title {
             get {
                 return ResourceManager.GetString("InfoPage_Title", resourceCulture);
             }
@@ -191,70 +227,45 @@ namespace ResinTimer.Resources {
         ///Syncfusion.Xamarin.SfGauge
         ///Xamarin.Essentials과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string LibraryList {
+        public static string LibraryList {
             get {
                 return ResourceManager.GetString("LibraryList", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   The MIT License (MIT)
-        ///
-        ///Copyright (c) Microsoft Corporation
-        ///
-        ///All rights reserved.
-        ///
-        ///Permission is hereby granted, free of charge, to any person obtaining a copy
-        ///of this software and associated documentation files (the &quot;Software&quot;), to deal
-        ///in the Software without restriction, including without limitation the rights
-        ///to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-        ///copies of the Software, and to permit persons to whom the Software is
-        ///furnished to do so, subject to the followin[나머지 문자열은 잘림]&quot;;과(와) 유사한 지역화된 문자열을 찾습니다.
-        /// </summary>
-        internal static string License_MIT_Microsoft {
-            get {
-                return ResourceManager.GetString("License_MIT_Microsoft", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   ESSENTIAL STUDIO SOFTWARE LICENSE AGREEMENT
-        ///This Software License Agreement (the “Agreement”) is a legal agreement between you (“You”, “Your”, or
-        ///“Customer”) and Syncfusion, Inc., a Delaware corporation with its principal place of business located at 2501 Aerial
-        ///Center Parkway, Suite 200, Morrisville, NC 27560 (“Syncfusion”).
-        ///This license is for Essential Studio Enterprise Edition, Essential Studio WPF Edition, Essential Studio PDF Edition,
-        ///Essential Studio Xamarin Edition, and Essential Studio Win For[나머지 문자열은 잘림]&quot;;과(와) 유사한 지역화된 문자열을 찾습니다.
-        /// </summary>
-        internal static string License_Syncfusion {
-            get {
-                return ResourceManager.GetString("License_Syncfusion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Open Source License과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string LicensePage_Title {
+        public static string LicensePage_Title {
             get {
                 return ResourceManager.GetString("LicensePage_Title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   ESSENTIAL STUDIO SOFTWARE LICENSE AGREEMENT
-        ///ESSENTIAL STUDIO SOFTWARE LICENSE AGREEMENT
+        ///   Syncfusion License
+        ///Syncfusion License
         ///MIT License - Microsoft Corporation과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string LicenseTypeList {
+        public static string LicenseTypeList {
             get {
                 return ResourceManager.GetString("LicenseTypeList", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Press during 0.1s to apply calc과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MainPage_QuickCalcButton_Toast {
+            get {
+                return ResourceManager.GetString("MainPage_QuickCalcButton_Toast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Until Full Restore과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string MainPage_RemainTimeLabel {
+        public static string MainPage_RemainTimeLabel {
             get {
                 return ResourceManager.GetString("MainPage_RemainTimeLabel", resourceCulture);
             }
@@ -263,9 +274,36 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Resin Timer과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        internal static string MainPage_Title {
+        public static string MainPage_Title {
             get {
                 return ResourceManager.GetString("MainPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Enable Quick Calc Vibration과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_Main_Cell_QuickCalcVibrate_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_Main_Cell_QuickCalcVibrate_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Main과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_Main_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_Main_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Setting과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Title", resourceCulture);
             }
         }
     }

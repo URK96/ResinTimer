@@ -123,6 +123,9 @@
   <data name="BugReport_Dialog_Title" xml:space="preserve">
     <value>주의사항</value>
   </data>
+  <data name="Caution_ResinInput" xml:space="preserve">
+    <value>레진만 입력하면 인게임과 차이가 날 수 있습니다 x~x</value>
+  </data>
   <data name="Dialog_No" xml:space="preserve">
     <value>아니오</value>
   </data>
@@ -138,8 +141,17 @@
   <data name="EditPage_Minute" xml:space="preserve">
     <value>분</value>
   </data>
+  <data name="EditPage_NowResinLabel" xml:space="preserve">
+    <value>현재 레진 개수</value>
+  </data>
   <data name="EditPage_Second" xml:space="preserve">
     <value>초</value>
+  </data>
+  <data name="EditPage_TabResin_Title" xml:space="preserve">
+    <value>레진</value>
+  </data>
+  <data name="EditPage_TabTime_Title" xml:space="preserve">
+    <value>시간</value>
   </data>
   <data name="EditPage_Title" xml:space="preserve">
     <value>정보 수정</value>
@@ -159,13 +171,35 @@
   <data name="InfoPage_Title" xml:space="preserve">
     <value>앱 정보</value>
   </data>
+  <data name="LibraryList" xml:space="preserve">
+    <value>Syncfusion.Licensing
+Syncfusion.Xamarin.SfGauge
+Xamarin.Essentials</value>
+  </data>
   <data name="LicensePage_Title" xml:space="preserve">
     <value>오픈소스 라이선스</value>
+  </data>
+  <data name="LicenseTypeList" xml:space="preserve">
+    <value>Syncfusion License
+Syncfusion License
+MIT License - Microsoft Corporation</value>
+  </data>
+  <data name="MainPage_QuickCalcButton_Toast" xml:space="preserve">
+    <value>적용을 위해 0.1초 동안 눌러주세요</value>
   </data>
   <data name="MainPage_RemainTimeLabel" xml:space="preserve">
     <value>완전히 회복 될 때까지</value>
   </data>
   <data name="MainPage_Title" xml:space="preserve">
     <value>레진 알리미</value>
+  </data>
+  <data name="SettingPage_Section_Main_Cell_QuickCalcVibrate_Title" xml:space="preserve">
+    <value>빠른 계산 진동 활성화</value>
+  </data>
+  <data name="SettingPage_Section_Main_Title" xml:space="preserve">
+    <value>메인</value>
+  </data>
+  <data name="SettingPage_Title" xml:space="preserve">
+    <value>알리미 설정</value>
   </data>
 </root>

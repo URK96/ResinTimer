@@ -8,6 +8,10 @@ namespace ResinTimer
 {
     public static class ResinEnvironment
     {
+        public enum ApplyType { Time = 0, Resin }
+
+        public static ApplyType applyType = ApplyType.Time;
+
         public const int MAX_RESIN = 160;
 
         public static DateTime endTime;

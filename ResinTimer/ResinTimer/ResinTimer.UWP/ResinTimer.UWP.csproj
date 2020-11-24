@@ -169,6 +169,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="setting.png" />
     <Content Include="xamarin_logo.png" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>

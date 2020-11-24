@@ -22,9 +22,7 @@ namespace ResinTimer
         /// <param name="sec"></param>
         public ResinTime(int hour, int min, int sec)
         {
-            Hour = hour;
-            Min = min;
-            Sec = sec;
+            SetTime(hour, min, sec);
         }
 
         public ResinTime(int sec)
@@ -59,9 +57,27 @@ namespace ResinTimer
 
         public void SetTime(int hour, int min, int sec)
         {
+            if (sec > 60)
+            {
+                min += sec / 60;
+                Sec = sec % 60;
+            }
+            else
+            {
+                Sec = sec;
+            }
+
+            if (min > 60)
+            {
+                hour += min / 60;
+                Min = min % 60;
+            }
+            else
+            {
+                Min = min;
+            }
+
             Hour = hour;
-            Min = min;
-            Sec = sec;
         }
 
         public static (ResinTime, ResinTime) CalcResinTime(DateTime endTime)

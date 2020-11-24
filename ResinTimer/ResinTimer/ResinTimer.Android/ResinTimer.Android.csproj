@@ -144,12 +144,12 @@
     <AndroidResource Include="Resources\drawable\bugreport.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\License_Syncfusion.txt" />
+    <AndroidResource Include="Resources\drawable\setting.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

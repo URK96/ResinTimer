@@ -9649,16 +9649,19 @@ namespace ResinTimer.Droid
 			public const int resintimer_icon_small = 2131165350;
 			
 			// aapt resource value: 0x7F0700A7
-			public const int splash_screen = 2131165351;
+			public const int setting = 2131165351;
 			
 			// aapt resource value: 0x7F0700A8
-			public const int tooltip_frame_dark = 2131165352;
+			public const int splash_screen = 2131165352;
 			
 			// aapt resource value: 0x7F0700A9
-			public const int tooltip_frame_light = 2131165353;
+			public const int tooltip_frame_dark = 2131165353;
 			
 			// aapt resource value: 0x7F0700AA
-			public const int xamarin_logo = 2131165354;
+			public const int tooltip_frame_light = 2131165354;
+			
+			// aapt resource value: 0x7F0700AB
+			public const int xamarin_logo = 2131165355;
 			
 			static Drawable()
 			{

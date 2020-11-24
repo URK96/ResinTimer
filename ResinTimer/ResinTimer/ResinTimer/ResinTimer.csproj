@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -12,10 +12,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\License_MIT_Microsoft.txt" />
+    <None Remove="Resources\License_Syncfusion.txt" />
     <None Remove="Resources\resin.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="License_MIT_Microsoft.txt" />
+    <EmbeddedResource Include="License_Syncfusion.txt" />
     <EmbeddedResource Include="Resources\resin.png" />
   </ItemGroup>
 
@@ -56,8 +60,11 @@
       <Generator></Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SettingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -57,5 +57,16 @@ namespace ResinTimer
         {
             resin = 160 - (Convert.ToInt32((endTime - DateTime.Now).TotalSeconds) / ResinTime.ONE_RESTORE_INTERVAL) - 1;
         }
+
+        public static void SaveValue()
+        {
+            try
+            {
+                Preferences.Set(SettingConstants.RESIN_COUNT, ResinEnvironment.resin);
+                Preferences.Set(SettingConstants.END_TIME, ResinEnvironment.endTime.ToString());
+            }
+            catch { }
+        }
+
     }
 }

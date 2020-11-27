@@ -254,6 +254,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Scheduled date/time of full recovery과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MainPage_EndDateTimeTitle {
+            get {
+                return ResourceManager.GetString("MainPage_EndDateTimeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Press during 0.1s to apply calc과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string MainPage_QuickCalcButton_Toast {
@@ -263,7 +272,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Until Full Restore과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Until full recovery과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string MainPage_RemainTimeLabel {
             get {

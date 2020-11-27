@@ -184,11 +184,14 @@ Xamarin.Essentials</value>
 Syncfusion License
 MIT License - Microsoft Corporation</value>
   </data>
+  <data name="MainPage_EndDateTimeTitle" xml:space="preserve">
+    <value>Scheduled date/time of full recovery</value>
+  </data>
   <data name="MainPage_QuickCalcButton_Toast" xml:space="preserve">
     <value>Press during 0.1s to apply calc</value>
   </data>
   <data name="MainPage_RemainTimeLabel" xml:space="preserve">
-    <value>Until Full Restore</value>
+    <value>Until full recovery</value>
   </data>
   <data name="MainPage_Title" xml:space="preserve">
     <value>Resin Timer</value>

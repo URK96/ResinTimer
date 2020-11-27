@@ -54,12 +54,6 @@ namespace ResinTimer
             ResinEnvironment.endTime = now.AddHours(ResinEnvironment.totalCountTime.Hour).AddMinutes(ResinEnvironment.totalCountTime.Min).AddSeconds(ResinEnvironment.totalCountTime.Sec);
         }
 
-        private void SaveValue()
-        {
-            Preferences.Set(SettingConstants.RESIN_COUNT, ResinEnvironment.resin);
-            Preferences.Set(SettingConstants.END_TIME, ResinEnvironment.endTime.ToString());
-        }
-
         private void ApplyButtonClicked(object sender, EventArgs e)
         {
             if (CurrentPage.Title == AppResources.EditPage_TabTime_Title)
@@ -84,7 +78,7 @@ namespace ResinTimer
             }
 
             CalcRemainTime();
-            SaveValue();
+            ResinEnvironment.SaveValue();
 
             Navigation.PopAsync();
         }

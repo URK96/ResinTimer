@@ -2,7 +2,6 @@
 
 using System;
 using System.Threading;
-using System.Timers;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -87,8 +86,7 @@ namespace ResinTimer
         {
             base.OnDisappearing();
 
-            Preferences.Set(SettingConstants.END_TIME, ResinEnvironment.endTime.ToString());
-            Preferences.Set(SettingConstants.RESIN_COUNT, ResinEnvironment.resin);
+            ResinEnvironment.SaveValue();
 
             mutex.WaitOne();
         }
@@ -163,6 +161,8 @@ namespace ResinTimer
                 TotalTimeHour.Text = $"{ResinEnvironment.totalCountTime.Hour:D2}";
                 TotalTimeMinute.Text = $"{ResinEnvironment.totalCountTime.Min:D2}";
 
+                EndDateTimeLabel.Text = $"{ResinEnvironment.endTime}";
+
                 ResinCount.Text = ResinEnvironment.resin.ToString();
                 OneCountTimer.Text = ResinEnvironment.oneCountTime.TimeMinSec;
 
@@ -182,6 +182,10 @@ namespace ResinTimer
             mutex.WaitOne();
 
             ResinEnvironment.endTime = ResinEnvironment.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * quickCalcValue);
+
+            ResinEnvironment.CalcResin();
+
+            ResinEnvironment.SaveValue();
 
             mutex.ReleaseMutex();
         }

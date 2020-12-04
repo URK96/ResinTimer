@@ -4,6 +4,7 @@
   <string name="NotiChannelName">Noti Channel</string>
   <string name="NotiChannelDescription">Notificate various custom value</string>
   <string name="NotiTitle">Recovery Resin Notification</string>
-  <string name="NotiText">have been recovered</string>
+  <string name="NotiText"> have been recovered</string>
   <string name="BootAlarmRegisterSuccess">Resin alarm register success</string>
+  <string name="BootAlarmRegisterFail">Resin alarm register fail</string>
 </resources>

@@ -43,7 +43,7 @@ namespace ResinTimer
             if (!Preferences.ContainsKey(SettingConstants.NOTI_LIST))
             {
                 var list = new List<Noti>();
-                list.Add(new Noti(160, 0));
+                list.Add(new Noti(ResinEnvironment.MAX_RESIN));
 
                 Preferences.Set(SettingConstants.NOTI_LIST, JsonConvert.SerializeObject(list));
             }

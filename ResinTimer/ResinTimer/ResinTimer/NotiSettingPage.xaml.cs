@@ -81,12 +81,17 @@ namespace ResinTimer
             var summary = $"{AppResources.NotiSettingPage_AddDialog_Summary} (1 ~ {ResinEnvironment.MAX_RESIN})";
             var result = await DisplayPromptAsync(title, summary, AppResources.Dialog_Ok, AppResources.Dialog_Cancel, null, -1, Keyboard.Numeric, string.Empty);
 
+            if (result == null)
+            {
+                return;
+            }
+
             if (int.TryParse(result, out int count))
             {
                 if ((count >= 1) &&
                     (count <= 160))
                 {
-                    notiManager.EditList(new Noti(count, count), NotiManager.EditType.Add);
+                    notiManager.EditList(new Noti(count), NotiManager.EditType.Add);
                     RefreshCollectionView();
                 }
                 else

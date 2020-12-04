@@ -45,7 +45,8 @@ namespace ResinTimer.Droid
             }
             catch (Exception ex)
             {
-
+                // Toast.MakeText(context, ex.ToString(), ToastLength.Long).Show(); 
+                Toast.MakeText(context, context.Resources.GetString(Resource.String.BootAlarmRegisterFail), ToastLength.Short).Show();
             }
         }
     }

@@ -14,7 +14,7 @@
                 <Setter Property="BorderWidth" Value="3" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="CharacterSpacing" Value="5" />
-                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontSize" Value="Default" />
             </Style>
         </ContentPage.Resources>
 
@@ -38,7 +38,7 @@
             </StackLayout>
 
             <Button AbsoluteLayout.LayoutFlags="All"
-                    AbsoluteLayout.LayoutBounds="0.5, 0.6, 0.6, 0.07" 
+                    AbsoluteLayout.LayoutBounds="0.5, 0.6, 0.6, 0.10" 
                     Style="{StaticResource ButtonStyle}"
                     Text="{x:Static resources:AppResources.EditPage_ApplyButtonText}" 
                     Clicked="ApplyButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased"/>
@@ -53,7 +53,7 @@
                 <Setter Property="BorderWidth" Value="3" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="CharacterSpacing" Value="10" />
-                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontSize" Value="Default" />
             </Style>
         </ContentPage.Resources>
 
@@ -69,7 +69,7 @@
                    AbsoluteLayout.LayoutBounds="0.5, 0.3"
                    Text="{x:Static resources:AppResources.Caution_ResinInput}" TextColor="OrangeRed" />
             <Button AbsoluteLayout.LayoutFlags="All"
-                    AbsoluteLayout.LayoutBounds="0.5, 0.6, 0.6, 0.07" 
+                    AbsoluteLayout.LayoutBounds="0.5, 0.6, 0.6, 0.10" 
                     Style="{StaticResource ButtonStyle}"
                     Text="{x:Static resources:AppResources.EditPage_ApplyButtonText}" 
                     Clicked="ApplyButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased"/>

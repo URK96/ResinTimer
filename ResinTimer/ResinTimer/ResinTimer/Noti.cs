@@ -15,13 +15,20 @@ namespace ResinTimer
 
         public string GetExpectedNotiTimeString => $"{AppResources.NotiSettingPage_List_ExpectedNotiTime}{NotiTime}";
 
-        public Noti(int resin, int id = 0)
+        public Noti(int resin)
         {
-            Resin = resin;
+            NotiId = Resin = resin;
             Interval = (ResinEnvironment.MAX_RESIN - Resin) * ResinTime.ONE_RESTORE_INTERVAL;
 
-            NotiTime = ResinEnvironment.endTime.AddSeconds(-Interval);
-            NotiId = id;
+            try
+            {
+                NotiTime = ResinEnvironment.endTime.AddSeconds(-Interval);
+            }
+            catch
+            {
+                ResinEnvironment.LoadValues();
+                NotiTime = ResinEnvironment.endTime.AddSeconds(-Interval);
+            }
         }
 
         public void UpdateTime()

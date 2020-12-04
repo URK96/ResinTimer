@@ -120,6 +120,8 @@
     <Content Include="edit.png" />
     <Content Include="info.png" />
     <None Include="Package.StoreAssociation.xml" />
+    <Content Include="notisetting.png" />
+    <Content Include="plus.png" />
     <Content Include="resin.png" />
     <Content Include="resintimer_icon.png" />
     <Content Include="resintimer_icon_medium.png" />

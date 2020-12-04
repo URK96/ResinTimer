@@ -88,11 +88,38 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Delete과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cancel과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Dialog_Cancel {
+            get {
+                return ResourceManager.GetString("Dialog_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   No과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Dialog_No {
             get {
                 return ResourceManager.GetString("Dialog_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ok과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Dialog_Ok {
+            get {
+                return ResourceManager.GetString("Dialog_Ok", resourceCulture);
             }
         }
         
@@ -286,6 +313,114 @@ namespace ResinTimer.Resources {
         public static string MainPage_Title {
             get {
                 return ResourceManager.GetString("MainPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Enter the number of resins you would like to be notified of.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiSettingPage_AddDialog_Summary {
+            get {
+                return ResourceManager.GetString("NotiSettingPage_AddDialog_Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Add Noti Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiSettingPage_AddDialog_Title {
+            get {
+                return ResourceManager.GetString("NotiSettingPage_AddDialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   The item already exists and will not be added.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiSettingPage_AlreadyExistToast_Message {
+            get {
+                return ResourceManager.GetString("NotiSettingPage_AlreadyExistToast_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   At least one item must exist.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiSettingPage_CannotRemoveToast_Message {
+            get {
+                return ResourceManager.GetString("NotiSettingPage_CannotRemoveToast_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Expected noti time : 과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiSettingPage_List_ExpectedNotiTime {
+            get {
+                return ResourceManager.GetString("NotiSettingPage_List_ExpectedNotiTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Please enter only the number과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiSettingPage_NotIntegerDialog_Summary {
+            get {
+                return ResourceManager.GetString("NotiSettingPage_NotIntegerDialog_Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Format mismatch과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiSettingPage_NotIntegerDialog_Title {
+            get {
+                return ResourceManager.GetString("NotiSettingPage_NotIntegerDialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Please enter a number in scope과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiSettingPage_OutOfRangeDialog_Summary {
+            get {
+                return ResourceManager.GetString("NotiSettingPage_OutOfRangeDialog_Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin count out of range과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiSettingPage_OutOfRangeDialog_Title {
+            get {
+                return ResourceManager.GetString("NotiSettingPage_OutOfRangeDialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Noti Setting과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiSettingPage_Title {
+            get {
+                return ResourceManager.GetString("NotiSettingPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Enable Notification과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_Cell_Notification_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_Cell_Notification_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   App과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_Title", resourceCulture);
             }
         }
         

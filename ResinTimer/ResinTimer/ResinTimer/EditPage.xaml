@@ -13,7 +13,7 @@
                 <Setter Property="BorderColor" Value="#0682F6" />
                 <Setter Property="BorderWidth" Value="3" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="CharacterSpacing" Value="10" />
+                <Setter Property="CharacterSpacing" Value="5" />
                 <Setter Property="FontSize" Value="Large" />
             </Style>
         </ContentPage.Resources>

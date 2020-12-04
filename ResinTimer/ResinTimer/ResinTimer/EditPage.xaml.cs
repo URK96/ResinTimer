@@ -80,6 +80,12 @@ namespace ResinTimer
             CalcRemainTime();
             ResinEnvironment.SaveValue();
 
+            if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+            {
+                var notiManager = new NotiManager();
+                notiManager.UpdateNotisTime();
+            }
+
             Navigation.PopAsync();
         }
 

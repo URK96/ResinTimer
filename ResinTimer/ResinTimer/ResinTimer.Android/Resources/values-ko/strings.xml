@@ -1,4 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
   <string name="AppName">레진 알리미</string>
+  <string name="NotiChannelName">알림 채널</string>
+  <string name="NotiChannelDescription">사용자 설정에 따른 알림을 제공합니다.</string>
+  <string name="NotiTitle">레진 충전 알림</string>
+  <string name="NotiText">개가 회복되었습니다</string>
+  <string name="BootAlarmRegisterSuccess">레진 알람 등록 성공</string>
 </resources>

@@ -48,14 +48,11 @@ namespace ResinTimer
                 resin = 0;
                 Preferences.Set(SettingConstants.RESIN_COUNT, resin);
             }
-
-            //ResinEnvironment.endTime = DateTime.Now.AddSeconds(10).AddMinutes(8);
-            //Resin = 40;
         }
 
         public static void CalcResin()
         {
-            resin = 160 - (Convert.ToInt32((endTime - DateTime.Now).TotalSeconds) / ResinTime.ONE_RESTORE_INTERVAL) - 1;
+            resin = MAX_RESIN - (Convert.ToInt32((endTime - DateTime.Now).TotalSeconds) / ResinTime.ONE_RESTORE_INTERVAL) - 1;
         }
 
         public static void SaveValue()
@@ -67,6 +64,5 @@ namespace ResinTimer
             }
             catch { }
         }
-
     }
 }

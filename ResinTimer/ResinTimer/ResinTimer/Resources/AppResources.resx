@@ -126,8 +126,17 @@
   <data name="Caution_ResinInput" xml:space="preserve">
     <value>Input only resin can cause time inaccuracy x~x</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Dialog_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="Dialog_No" xml:space="preserve">
     <value>No</value>
+  </data>
+  <data name="Dialog_Ok" xml:space="preserve">
+    <value>Ok</value>
   </data>
   <data name="Dialog_Yes" xml:space="preserve">
     <value>Yes</value>
@@ -195,6 +204,42 @@ MIT License - Microsoft Corporation</value>
   </data>
   <data name="MainPage_Title" xml:space="preserve">
     <value>Resin Timer</value>
+  </data>
+  <data name="NotiSettingPage_AddDialog_Summary" xml:space="preserve">
+    <value>Enter the number of resins you would like to be notified of.</value>
+  </data>
+  <data name="NotiSettingPage_AddDialog_Title" xml:space="preserve">
+    <value>Add Noti Item</value>
+  </data>
+  <data name="NotiSettingPage_AlreadyExistToast_Message" xml:space="preserve">
+    <value>The item already exists and will not be added.</value>
+  </data>
+  <data name="NotiSettingPage_CannotRemoveToast_Message" xml:space="preserve">
+    <value>At least one item must exist.</value>
+  </data>
+  <data name="NotiSettingPage_List_ExpectedNotiTime" xml:space="preserve">
+    <value>Expected noti time : </value>
+  </data>
+  <data name="NotiSettingPage_NotIntegerDialog_Summary" xml:space="preserve">
+    <value>Please enter only the number</value>
+  </data>
+  <data name="NotiSettingPage_NotIntegerDialog_Title" xml:space="preserve">
+    <value>Format mismatch</value>
+  </data>
+  <data name="NotiSettingPage_OutOfRangeDialog_Summary" xml:space="preserve">
+    <value>Please enter a number in scope</value>
+  </data>
+  <data name="NotiSettingPage_OutOfRangeDialog_Title" xml:space="preserve">
+    <value>Resin count out of range</value>
+  </data>
+  <data name="NotiSettingPage_Title" xml:space="preserve">
+    <value>Noti Setting</value>
+  </data>
+  <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
+    <value>Enable Notification</value>
+  </data>
+  <data name="SettingPage_Section_App_Title" xml:space="preserve">
+    <value>App</value>
   </data>
   <data name="SettingPage_Section_Main_Cell_QuickCalcVibrate_Title" xml:space="preserve">
     <value>Enable Quick Calc Vibration</value>

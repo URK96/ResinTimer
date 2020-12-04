@@ -22,6 +22,10 @@ namespace ResinTimer
 
         private void LoadSettingValue()
         {
+            // App Section
+            Notification.On = Preferences.Get(SettingConstants.NOTI_ENABLED, false);
+
+            // Main Section
             QuickCalcVibration.IsEnabled = Device.RuntimePlatform != Device.UWP;
             QuickCalcVibration.On = Preferences.Get(SettingConstants.QUICKCALC_VIBRATION, true);
         }
@@ -29,6 +33,21 @@ namespace ResinTimer
         private void QuickCalcVibration_OnChanged(object sender, ToggledEventArgs e)
         {
             Preferences.Set(SettingConstants.QUICKCALC_VIBRATION, e.Value);
+        }
+
+        private void Notification_OnChanged(object sender, ToggledEventArgs e)
+        {
+            Preferences.Set(SettingConstants.NOTI_ENABLED, e.Value);
+
+            if (e.Value)
+            {
+                var notiManager = new NotiManager();
+                notiManager.UpdateNotisTime();
+            }
+            else
+            {
+                DependencyService.Get<IScheduledNoti>().CancelAll();
+            }
         }
     }
 }

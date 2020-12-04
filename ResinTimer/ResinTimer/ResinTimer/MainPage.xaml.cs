@@ -66,6 +66,19 @@ namespace ResinTimer
             calcThread.Start();
         }
 
+        private void SetToolbar()
+        {
+            if (Device.RuntimePlatform == Device.UWP)
+            {
+                NotiToolbarItem.IsEnabled = false;
+                ToolbarItems.Remove(NotiToolbarItem);
+            }
+            else
+            {
+                NotiToolbarItem.IsEnabled = Preferences.Get(SettingConstants.NOTI_ENABLED, false);
+            }
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -80,6 +93,8 @@ namespace ResinTimer
             {
                 // DependencyService.Get<IToast>().Show(ex.ToString());
             }
+
+            SetToolbar();
         }
 
         protected override void OnDisappearing()
@@ -91,29 +106,29 @@ namespace ResinTimer
             mutex.WaitOne();
         }
 
-        private void EditToolbarItemClicked(object sender, EventArgs e)
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             try
             {
-                Navigation.PushAsync(new EditPage(), true);
-            }
-            catch { }
-        }
-        
-        private void InfoToolbarItemClicked(object sender, EventArgs e)
-        {
-            try
-            {
-                Navigation.PushAsync(new InfoPage(), true);
-            }
-            catch { }
-        }
+                var item = sender as ToolbarItem;
 
-        private void SettingToolbarItemClicked(object sender, EventArgs e)
-        {
-            try
-            {
-                Navigation.PushAsync(new SettingPage(), true);
+                switch (item.Text)
+                {
+                    case "Edit":
+                        await Navigation.PushAsync(new EditPage(), true);
+                        break;
+                    case "Noti Setting":
+                        await Navigation.PushAsync(new NotiSettingPage(), true);
+                        break;
+                    case "Info":
+                        await Navigation.PushAsync(new InfoPage(), true);
+                        break;
+                    case "Setting":
+                        await Navigation.PushAsync(new SettingPage(), true);
+                        break;
+                    default:
+                        break;
+                }
             }
             catch { }
         }
@@ -181,11 +196,21 @@ namespace ResinTimer
         {
             mutex.WaitOne();
 
+            if (ResinEnvironment.endTime < DateTime.Now)
+            {
+                ResinEnvironment.endTime = DateTime.Now;
+            }
+
             ResinEnvironment.endTime = ResinEnvironment.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * quickCalcValue);
 
             ResinEnvironment.CalcResin();
-
             ResinEnvironment.SaveValue();
+
+            if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+            {
+                var notiManager = new NotiManager();
+                notiManager.UpdateNotisTime();
+            }
 
             mutex.ReleaseMutex();
         }

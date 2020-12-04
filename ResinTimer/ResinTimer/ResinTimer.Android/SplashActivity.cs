@@ -13,7 +13,26 @@ namespace ResinTimer.Droid
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            CreateNotiChannel();
             _ = RunMainActivity();
+        }
+
+        private void CreateNotiChannel()
+        {
+            if (Build.VERSION.SdkInt < BuildVersionCodes.O)
+            {
+                return;
+            }
+
+            var channelName = Resources.GetString(Resource.String.NotiChannelName);
+            var channelDesc = Resources.GetString(Resource.String.NotiChannelDescription);
+            var channel = new NotificationChannel(AndroidAppEnvironment.CHANNEL_ID, channelName, NotificationImportance.Default)
+            {
+                Description = channelDesc
+            };
+
+            var notiManager = GetSystemService(NotificationService) as NotificationManager;
+            notiManager.CreateNotificationChannel(channel);
         }
 
         private async Task RunMainActivity()

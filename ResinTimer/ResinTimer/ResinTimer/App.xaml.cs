@@ -2,10 +2,12 @@
 
 using System;
 using System.Globalization;
+using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using Newtonsoft.Json;
 
 namespace ResinTimer
 {
@@ -33,6 +35,17 @@ namespace ResinTimer
             if (!Preferences.ContainsKey(SettingConstants.QUICKCALC_VIBRATION))
             {
                 Preferences.Set(SettingConstants.QUICKCALC_VIBRATION, true);
+            }
+            if (!Preferences.ContainsKey(SettingConstants.NOTI_ENABLED))
+            {
+                Preferences.Set(SettingConstants.NOTI_ENABLED, false);
+            }
+            if (!Preferences.ContainsKey(SettingConstants.NOTI_LIST))
+            {
+                var list = new List<Noti>();
+                list.Add(new Noti(160, 0));
+
+                Preferences.Set(SettingConstants.NOTI_LIST, JsonConvert.SerializeObject(list));
             }
         }
 

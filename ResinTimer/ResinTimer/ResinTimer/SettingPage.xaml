@@ -7,6 +7,11 @@
 
     <TableView Intent="Settings">
         <TableRoot>
+            <TableSection Title="{x:Static resources:AppResources.SettingPage_Section_App_Title}">
+                <SwitchCell x:Name="Notification" OnColor="#0682F6"
+                            Text="{x:Static resources:AppResources.SettingPage_Section_App_Cell_Notification_Title}"
+                            OnChanged="Notification_OnChanged" />
+            </TableSection>
             <TableSection Title="{x:Static resources:AppResources.SettingPage_Section_Main_Title}">
                 <SwitchCell x:Name="QuickCalcVibration" OnColor="#0682F6"
                             Text="{x:Static resources:AppResources.SettingPage_Section_Main_Cell_QuickCalcVibrate_Title}"

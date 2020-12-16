@@ -12,8 +12,7 @@
 
     <CollectionView x:Name="ListCollectionView" ItemsSource="{Binding Notis}"
                     ItemsLayout="VerticalList"
-                    SelectionMode="Single"
-                    SelectionChanged="ListCollectionView_SelectionChanged">
+                    SelectionMode="Single">
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <SwipeView>

@@ -2,6 +2,7 @@
 
 using ResinTimer.Resources;
 
+using System;
 using System.Collections.Generic;
 
 using Xamarin.Essentials;
@@ -17,9 +18,30 @@ namespace ResinTimer
 
         public NotiManager()
         {
-            Notis = new List<Noti>();
+            try
+            {
+                Notis = new List<Noti>();
 
-            Notis.AddRange(JsonConvert.DeserializeObject<List<Noti>>(Preferences.Get(SettingConstants.NOTI_LIST, string.Empty)));
+                var list = Preferences.Get(SettingConstants.NOTI_LIST, string.Empty);
+
+                if (string.IsNullOrWhiteSpace(list))
+                {
+                    Notis.Add(new Noti(ResinEnvironment.MAX_RESIN));
+                    SaveNotis();
+                    UpdateScheduledNoti();
+                }
+                else
+                {
+                    Notis.AddRange(JsonConvert.DeserializeObject<List<Noti>>(list));
+                }
+            }
+            catch (Exception)
+            {
+                if (Device.RuntimePlatform == Device.Android)
+                {
+                    DependencyService.Get<IToast>().Show("Fail to initialize noti manager");
+                }
+            }
         }
 
         public void RenewalIds()

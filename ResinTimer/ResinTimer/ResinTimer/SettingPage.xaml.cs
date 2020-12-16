@@ -23,6 +23,7 @@ namespace ResinTimer
         private void LoadSettingValue()
         {
             // App Section
+            Notification.IsEnabled = Device.RuntimePlatform != Device.UWP;
             Notification.On = Preferences.Get(SettingConstants.NOTI_ENABLED, false);
 
             // Main Section

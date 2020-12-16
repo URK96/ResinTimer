@@ -7,4 +7,5 @@
   <string name="NotiText">개가 회복되었습니다</string>
   <string name="BootAlarmRegisterSuccess">레진 알람 등록 성공</string>
   <string name="BootAlarmRegisterFail">레진 알람 등록 실패</string>
+  <string name="NotiQuickActionRunGenshinApp">원신 실행</string>
 </resources>

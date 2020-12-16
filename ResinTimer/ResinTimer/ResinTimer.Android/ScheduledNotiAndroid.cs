@@ -41,7 +41,7 @@ namespace ResinTimer.Droid
                     notifier.Notify(new Notification
                     {
                         Title = title,
-                        Text = $"{item.Resin}{text}",
+                        Text = $"{item.Resin} {text}",
                         Id = item.NotiId,
                         NotifyTime = item.NotiTime
                     });

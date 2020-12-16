@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Content.PM;
 
 using AndroidX.Core.App;
 
@@ -31,6 +32,11 @@ namespace ResinTimer.Droid
             //var stackBuilder = AndroidX.Core.App.TaskStackBuilder.Create(context);
             //stackBuilder.AddParentStack(new SplashActivity());
             //stackBuilder.AddNextIntent(intent);
+            var runIntent = new Intent(context, typeof(NotiActionReceiver));
+            runIntent.SetAction("RUN_GENSHIN");
+            runIntent.PutExtra("NotiId", notification.Id);
+
+            var pRunIntent = PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent);
 
             var builder = new NotificationCompat.Builder(Application.Context, AndroidAppEnvironment.CHANNEL_ID)
                 .SetAutoCancel(true)
@@ -38,7 +44,8 @@ namespace ResinTimer.Droid
                 .SetContentIntent(PendingIntent.GetActivity(context, 0, new Intent(context, typeof(SplashActivity)), PendingIntentFlags.UpdateCurrent))
                 .SetContentTitle(notification.Title)
                 .SetContentText(notification.Text)
-                .SetSmallIcon(Application.Context.ApplicationInfo.Icon);
+                .SetSmallIcon(Application.Context.ApplicationInfo.Icon)
+                .AddAction(0, context.Resources.GetString(Resource.String.NotiQuickActionRunGenshinApp), pRunIntent);
 
             var nativeNotification = builder.Build();
 
@@ -53,6 +60,24 @@ namespace ResinTimer.Droid
             var notification = xmlSerializer.Deserialize(stringReader) as Notification;
 
             return notification;
+        }
+
+        [BroadcastReceiver]
+        [IntentFilter(new string[] { "RUN_GENSHIN" })]
+        public class NotiActionReceiver : BroadcastReceiver
+        {
+            public override void OnReceive(Context context, Intent intent)
+            {
+                switch (intent.Action)
+                {
+                    case "RUN_GENSHIN":
+                        var rIntent = context.PackageManager.GetLaunchIntentForPackage("com.miHoYo.GenshinImpact");
+                        context.StartActivity(rIntent);
+
+                        (context.GetSystemService(Context.NotificationService) as NotificationManager).Cancel(intent.GetIntExtra("NotiId", -1));
+                        break;
+                }
+            }
         }
     }
 }

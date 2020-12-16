@@ -40,39 +40,14 @@ namespace ResinTimer
             notiManager = new NotiManager();
 
             BindingContext = this;
+
+            RefreshCollectionView();
         }
 
         private void RefreshCollectionView()
         {
             ListCollectionView.ItemsSource = null;
             ListCollectionView.ItemsSource = Notis;
-        }
-
-        private async void ListCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            try
-            {
-                //if (e.CurrentSelection.Count <= 0)
-                //{
-                //    return;
-                //}
-
-                //var item = e.CurrentSelection.FirstOrDefault() as Noti;
-
-                //ListCollectionView.SelectedItem = null;
-
-                //var title = AppResources.NotiSettingPage_AddDialog_Title;
-                //var summary = $"{AppResources.NotiSettingPage_AddDialog_Summary} (1 ~ {ResinEnvironment.MAX_RESIN})";
-                //var result = await DisplayPromptAsync(title, summary, AppResources.Dialog_Ok, AppResources.Dialog_Cancel, null, -1, Keyboard.Numeric, item.Resin.ToString());
-
-                //notiManager.EditList(item, NotiManager.EditType.Edit);
-            }
-            catch { }
-        }
-
-        private void SwipeItem_Invoked(object sender, EventArgs e)
-        {
-            
         }
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)

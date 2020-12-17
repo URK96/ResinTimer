@@ -64,7 +64,7 @@
 
             <gauge:SfCircularGauge.Scales>
                 <gauge:Scale StartValue="0" EndValue="160" Interval="20"
-                             RimColor="#9a9ca6">
+                             RimColor="#9a9ca6" LabelColor="#9a9ca6">
 
                     <gauge:Scale.MajorTickSettings>
                         <gauge:TickSettings Color="#3F51B5" />

@@ -6,6 +6,18 @@
              x:Name="page"
              Title="{x:Static resources:AppResources.NotiSettingPage_Title}">
 
+    <ContentPage.Resources>
+        <Color x:Key="LightPrimaryColor">WhiteSmoke</Color>
+        <Color x:Key="LightSecondaryColor">Black</Color>
+        <Color x:Key="DarkPrimaryColor">Gray</Color>
+        <Color x:Key="DarkSecondaryColor">White</Color>
+
+        <Style x:Key="FrameStyle" TargetType="Frame">
+            <Setter Property="BackgroundColor"
+                    Value="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}" />
+        </Style>
+    </ContentPage.Resources>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add Noti" IconImageSource="plus.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
@@ -15,7 +27,8 @@
                     SelectionMode="Single">
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <SwipeView>
+                <ContentView>
+                <SwipeView Margin="20, 20, 20, 0">
                     <SwipeView.LeftItems>
                         <SwipeItems Mode="Execute">
                             <SwipeItem Text="{x:Static resources:AppResources.Delete}" IconImageSource="delete.png" BackgroundColor="OrangeRed"
@@ -29,7 +42,8 @@
                         </SwipeItems>
                     </SwipeView.RightItems>
 
-                    <Frame CornerRadius="20" HasShadow="False">
+                    <Frame CornerRadius="10" HasShadow="True"
+                           Style="{StaticResource FrameStyle}">
                         <Frame.BorderColor>#0682F6</Frame.BorderColor>
 
                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -38,7 +52,7 @@
                         </StackLayout>
                     </Frame>
                 </SwipeView>
-                
+                </ContentView>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

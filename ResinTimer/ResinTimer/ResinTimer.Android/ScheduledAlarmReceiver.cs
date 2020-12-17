@@ -32,11 +32,8 @@ namespace ResinTimer.Droid
             //var stackBuilder = AndroidX.Core.App.TaskStackBuilder.Create(context);
             //stackBuilder.AddParentStack(new SplashActivity());
             //stackBuilder.AddNextIntent(intent);
-            var runIntent = new Intent(context, typeof(NotiActionReceiver));
-            runIntent.SetAction("RUN_GENSHIN");
-            runIntent.PutExtra("NotiId", notification.Id);
 
-            var pRunIntent = PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent);
+
 
             var builder = new NotificationCompat.Builder(Application.Context, AndroidAppEnvironment.CHANNEL_ID)
                 .SetAutoCancel(true)
@@ -44,8 +41,18 @@ namespace ResinTimer.Droid
                 .SetContentIntent(PendingIntent.GetActivity(context, 0, new Intent(context, typeof(SplashActivity)), PendingIntentFlags.UpdateCurrent))
                 .SetContentTitle(notification.Title)
                 .SetContentText(notification.Text)
-                .SetSmallIcon(Application.Context.ApplicationInfo.Icon)
-                .AddAction(0, context.Resources.GetString(Resource.String.NotiQuickActionRunGenshinApp), pRunIntent);
+                .SetSmallIcon(Application.Context.ApplicationInfo.Icon);
+                
+            if (context.PackageManager.GetLaunchIntentForPackage("com.miHoYo.GenshinImpact") != null)
+            {
+                var runIntent = new Intent(context, typeof(NotiActionReceiver));
+                runIntent.SetAction("RUN_GENSHIN");
+                runIntent.PutExtra("NotiId", notification.Id);
+
+                var pRunIntent = PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent);
+
+                builder.AddAction(0, context.Resources.GetString(Resource.String.NotiQuickActionRunGenshinApp), pRunIntent);
+            }
 
             var nativeNotification = builder.Build();
 

@@ -20,6 +20,7 @@
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add Noti" IconImageSource="plus.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="NotiRemoveToolbarItem" Text="Remove Noti" IconImageSource="minus.png" Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="ListCollectionView" ItemsSource="{Binding Notis}"
@@ -27,8 +28,8 @@
                     SelectionMode="Single">
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <ContentView>
-                <SwipeView Margin="20, 20, 20, 0">
+                <ContentView >
+                <SwipeView Margin="20, 20, 20, 20">
                     <SwipeView.LeftItems>
                         <SwipeItems Mode="Execute">
                             <SwipeItem Text="{x:Static resources:AppResources.Delete}" IconImageSource="delete.png" BackgroundColor="OrangeRed"

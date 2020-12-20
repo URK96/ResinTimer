@@ -61,6 +61,42 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Resin alarm register fail과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string BootAlarmRegisterFail {
+            get {
+                return ResourceManager.GetString("BootAlarmRegisterFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin alarm register success과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string BootAlarmRegisterSuccess {
+            get {
+                return ResourceManager.GetString("BootAlarmRegisterSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   If you want to register resin notification automatically, you must enable startup property. Open Windows Task Manager and select &apos;Startup&apos;. Then, enable &apos;ResinTimer Bootstrap&apos; item.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Bootstrap_ChangeEnableFail_Message {
+            get {
+                return ResourceManager.GetString("Bootstrap_ChangeEnableFail_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   StartUp Enable Process Fail과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Bootstrap_ChangeEnableFail_Title {
+            get {
+                return ResourceManager.GetString("Bootstrap_ChangeEnableFail_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   If you report bug via github, you need github account. If you don&apos;t want to create github account, cancel this dialog and use E-Mail for bug reporting. Do you want to continue this process?과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string BugReport_Dialog_Message {
@@ -380,6 +416,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   No selected item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiSettingPage_NotSelectedToast_Message {
+            get {
+                return ResourceManager.GetString("NotiSettingPage_NotSelectedToast_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Please enter a number in scope과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string NotiSettingPage_OutOfRangeDialog_Summary {
@@ -403,6 +448,24 @@ namespace ResinTimer.Resources {
         public static string NotiSettingPage_Title {
             get {
                 return ResourceManager.GetString("NotiSettingPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   have been recovered과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiText {
+            get {
+                return ResourceManager.GetString("NotiText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recovery Resin Notification과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NotiTitle {
+            get {
+                return ResourceManager.GetString("NotiTitle", resourceCulture);
             }
         }
         

@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BootAlarmRegisterFail" xml:space="preserve">
+    <value>레진 알람 등록 실패</value>
+  </data>
+  <data name="BootAlarmRegisterSuccess" xml:space="preserve">
+    <value>레진 알람 등록 성공</value>
+  </data>
+  <data name="Bootstrap_ChangeEnableFail_Message" xml:space="preserve">
+    <value>부팅 시 알림을 자동 등록하려면 자동 시작이 설정되어야 합니다. 작업관리자를 열고 '시작프로그램' 탭을 선택한 후 ResinTimer Bootstrap 항목을 활성화 해주세요.</value>
+  </data>
+  <data name="Bootstrap_ChangeEnableFail_Title" xml:space="preserve">
+    <value>자동 시작 설정 실패</value>
+  </data>
   <data name="BugReport_Dialog_Message" xml:space="preserve">
     <value>이 과정을 진행하려면 Github 계정이 필요합니다. 만약 계정이 없고 생성하기 귀찮으시면 E-Mail을 통해 버그 제보를 할 수 있습니다. 그래도 계속하시겠습니까?</value>
   </data>
@@ -226,6 +238,9 @@ MIT License - Microsoft Corporation</value>
   <data name="NotiSettingPage_NotIntegerDialog_Title" xml:space="preserve">
     <value>입력 오류</value>
   </data>
+  <data name="NotiSettingPage_NotSelectedToast_Message" xml:space="preserve">
+    <value>선택된 항목 없음</value>
+  </data>
   <data name="NotiSettingPage_OutOfRangeDialog_Summary" xml:space="preserve">
     <value>범위에 맞는 레진 개수를 입력해주세요</value>
   </data>
@@ -234,6 +249,12 @@ MIT License - Microsoft Corporation</value>
   </data>
   <data name="NotiSettingPage_Title" xml:space="preserve">
     <value>알림 설정</value>
+  </data>
+  <data name="NotiText" xml:space="preserve">
+    <value>개가 회복되었습니다</value>
+  </data>
+  <data name="NotiTitle" xml:space="preserve">
+    <value>레진 충전 알림</value>
   </data>
   <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
     <value>알림 활성화</value>

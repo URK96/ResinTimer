@@ -30,7 +30,7 @@ namespace ResinTimer
 
             SetDefaultPreferences();
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzU1Mjk3QDMxMzgyZTMzMmUzMGloVERVWXNDOTdjSUF2UU91TWk4b3R1TUQ5YUI0bXhEcVRGYXJDQjRhYWM9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY5MzQ5QDMxMzgyZTM0MmUzMGx5ajVXODdXRldsSjMvRFNnbkVxS2c2ZTJkdEhxNW4yQVlLSCtsbWt1WG89");
 
             MainPage = new NavigationPage(new MainPage());
         }
@@ -47,8 +47,10 @@ namespace ResinTimer
             }
             if (!Preferences.ContainsKey(SettingConstants.NOTI_LIST))
             {
-                var list = new List<Noti>();
-                list.Add(new Noti(ResinEnvironment.MAX_RESIN));
+                var list = new List<Noti>
+                {
+                    new Noti(ResinEnvironment.MAX_RESIN)
+                };
 
                 Preferences.Set(SettingConstants.NOTI_LIST, JsonConvert.SerializeObject(list));
             }

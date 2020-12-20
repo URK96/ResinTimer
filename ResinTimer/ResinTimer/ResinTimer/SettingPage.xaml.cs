@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using System.IO;
 
 namespace ResinTimer
 {
@@ -23,7 +24,6 @@ namespace ResinTimer
         private void LoadSettingValue()
         {
             // App Section
-            Notification.IsEnabled = Device.RuntimePlatform != Device.UWP;
             Notification.On = Preferences.Get(SettingConstants.NOTI_ENABLED, false);
 
             // Main Section
@@ -36,18 +36,37 @@ namespace ResinTimer
             Preferences.Set(SettingConstants.QUICKCALC_VIBRATION, e.Value);
         }
 
-        private void Notification_OnChanged(object sender, ToggledEventArgs e)
+        private async void Notification_OnChanged(object sender, ToggledEventArgs e)
         {
+            var bootService = DependencyService.Get<IBootService>();
+
             Preferences.Set(SettingConstants.NOTI_ENABLED, e.Value);
 
             if (e.Value)
             {
+                if (Device.RuntimePlatform == Device.UWP)
+                {
+                    if (!await bootService.Register())
+                    {
+                        string title = ResinTimer.Resources.AppResources.Bootstrap_ChangeEnableFail_Title;
+                        string message = ResinTimer.Resources.AppResources.Bootstrap_ChangeEnableFail_Message;
+                        string ok = ResinTimer.Resources.AppResources.Dialog_Ok;
+
+                        await DisplayAlert(title, message, ok);
+                    }
+                }
+
                 var notiManager = new NotiManager();
                 notiManager.UpdateNotisTime();
             }
             else
             {
                 DependencyService.Get<IScheduledNoti>().CancelAll();
+
+                if (Device.RuntimePlatform == Device.UWP)
+                {
+                    await bootService.Unregister();
+                }
             }
         }
     }

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 using Xamarin.Essentials;
 
-[assembly: Xamarin.Forms.Dependency(typeof(ToastAndroid))]
+[assembly: Xamarin.Forms.Dependency(typeof(ScheduledNotiAndroid))]
 
 namespace ResinTimer.Droid
 {
@@ -29,8 +29,8 @@ namespace ResinTimer.Droid
         public void ScheduleAllNoti()
         {
             var list = JsonConvert.DeserializeObject<List<Noti>>(Preferences.Get(SettingConstants.NOTI_LIST, string.Empty));
-            var title = Application.Context.Resources.GetString(Resource.String.NotiTitle);
-            var text = Application.Context.Resources.GetString(Resource.String.NotiText);
+            var title = Resources.AppResources.NotiTitle; //Application.Context.Resources.GetString(Resource.String.NotiTitle);
+            var text = Resources.AppResources.NotiText; //Application.Context.Resources.GetString(Resource.String.NotiText);
             var notifier = new NotifierAndroid();
             var now = DateTime.Now;
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,6 +10,8 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -15,6 +19,11 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+
+using Xamarin.Essentials;
+
+using ResinTimer.Resources;
+using Windows.ApplicationModel.Background;
 
 namespace ResinTimer.UWP
 {
@@ -40,6 +49,80 @@ namespace ResinTimer.UWP
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            if ((e.Kind == ActivationKind.StartupTask) &&
+                Preferences.ContainsKey(SettingConstants.NOTI_LIST) &&
+                Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+            {
+                NotiBootstrap();
+            }
+            else
+            {
+                InitializeApp(e);
+            }
+        }
+
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            base.OnActivated(args);
+
+            if (args.Kind == ActivationKind.StartupTask &&
+                Preferences.ContainsKey(SettingConstants.NOTI_LIST) &&
+                Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+            {
+                NotiBootstrap();
+            }
+            else
+            {
+                InitializeApp(args);
+            }
+        }
+
+        private async void NotiBootstrap()
+        {
+            var builder = new ToastContentBuilder();
+
+            try
+            {
+                var infos = await AppDiagnosticInfo.RequestInfoForAppAsync();
+                var resourceInfos = infos[0].GetResourceGroups();
+                await resourceInfos[0].StartSuspendAsync();
+
+                if (UWPAppEnvironment.toastNotifier == null)
+                {
+                    UWPAppEnvironment.toastNotifier = ToastNotificationManager.CreateToastNotifier();
+                }
+
+                var notiUWP = new ScheduledNotiUWP();
+
+                notiUWP.CancelAll();
+                notiUWP.ScheduleAllNoti();
+
+                builder.AddToastActivationInfo("BootNotiRegister", ToastActivationType.Foreground);
+                builder.AddText(AppResources.BootAlarmRegisterSuccess);
+            }
+            catch (Exception ex)
+            {
+                builder.AddText(AppResources.BootAlarmRegisterFail);
+            }
+            finally
+            {
+                if (builder != null)
+                {
+                    UWPAppEnvironment.toastNotifier.AddToSchedule(new ScheduledToastNotification(builder.GetToastContent().GetXml(), DateTime.Now.AddSeconds(3)));
+                }
+
+                Exit();
+            }
+        }
+
+        protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
+        {
+            base.OnBackgroundActivated(args);
+
+        }
+
+        private void InitializeApp(IActivatedEventArgs e)
+        {
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -62,6 +145,8 @@ namespace ResinTimer.UWP
 
                 assembliesToInclude.Add(typeof(Syncfusion.SfGauge.XForms.UWP.SfGaugeRenderer).GetTypeInfo().Assembly);
 
+                Xamarin.Forms.Forms.SetFlags("SwipeView_Experimental");
+
                 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
@@ -78,10 +163,19 @@ namespace ResinTimer.UWP
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+
+                if (e is LaunchActivatedEventArgs args)
+                {
+                    rootFrame.Navigate(typeof(MainPage), (e as LaunchActivatedEventArgs).Arguments);
+                }
+                else
+                {
+                    rootFrame.Navigate(typeof(MainPage), e);
+                }
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
         }
 
         /// <summary>

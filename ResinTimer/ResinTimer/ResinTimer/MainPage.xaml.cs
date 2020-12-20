@@ -68,15 +68,7 @@ namespace ResinTimer
 
         private void SetToolbar()
         {
-            if (Device.RuntimePlatform == Device.UWP)
-            {
-                NotiToolbarItem.IsEnabled = false;
-                ToolbarItems.Remove(NotiToolbarItem);
-            }
-            else
-            {
-                NotiToolbarItem.IsEnabled = Preferences.Get(SettingConstants.NOTI_ENABLED, false);
-            }
+            NotiToolbarItem.IsEnabled = Preferences.Get(SettingConstants.NOTI_ENABLED, false);
         }
 
         protected override void OnAppearing()
@@ -130,7 +122,10 @@ namespace ResinTimer
                         break;
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private void CalcTimeResin()

@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BootAlarmRegisterFail" xml:space="preserve">
+    <value>Resin alarm register fail</value>
+  </data>
+  <data name="BootAlarmRegisterSuccess" xml:space="preserve">
+    <value>Resin alarm register success</value>
+  </data>
+  <data name="Bootstrap_ChangeEnableFail_Message" xml:space="preserve">
+    <value>If you want to register resin notification automatically, you must enable startup property. Open Windows Task Manager and select 'Startup'. Then, enable 'ResinTimer Bootstrap' item.</value>
+  </data>
+  <data name="Bootstrap_ChangeEnableFail_Title" xml:space="preserve">
+    <value>StartUp Enable Process Fail</value>
+  </data>
   <data name="BugReport_Dialog_Message" xml:space="preserve">
     <value>If you report bug via github, you need github account. If you don't want to create github account, cancel this dialog and use E-Mail for bug reporting. Do you want to continue this process?</value>
   </data>
@@ -226,6 +238,9 @@ MIT License - Microsoft Corporation</value>
   <data name="NotiSettingPage_NotIntegerDialog_Title" xml:space="preserve">
     <value>Format mismatch</value>
   </data>
+  <data name="NotiSettingPage_NotSelectedToast_Message" xml:space="preserve">
+    <value>No selected item</value>
+  </data>
   <data name="NotiSettingPage_OutOfRangeDialog_Summary" xml:space="preserve">
     <value>Please enter a number in scope</value>
   </data>
@@ -234,6 +249,12 @@ MIT License - Microsoft Corporation</value>
   </data>
   <data name="NotiSettingPage_Title" xml:space="preserve">
     <value>Noti Setting</value>
+  </data>
+  <data name="NotiText" xml:space="preserve">
+    <value>have been recovered</value>
+  </data>
+  <data name="NotiTitle" xml:space="preserve">
+    <value>Recovery Resin Notification</value>
   </data>
   <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
     <value>Enable Notification</value>

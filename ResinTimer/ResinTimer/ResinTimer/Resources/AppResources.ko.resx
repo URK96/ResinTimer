@@ -256,6 +256,12 @@ MIT License - Microsoft Corporation</value>
   <data name="NotiTitle" xml:space="preserve">
     <value>레진 충전 알림</value>
   </data>
+  <data name="ResinWidget_Name" xml:space="preserve">
+    <value>레진 위젯</value>
+  </data>
+  <data name="ResinWidget_UpdateComplete" xml:space="preserve">
+    <value>레진 위젯 갱신 완료</value>
+  </data>
   <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
     <value>알림 활성화</value>
   </data>

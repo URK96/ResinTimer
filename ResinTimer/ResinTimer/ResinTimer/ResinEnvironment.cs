@@ -52,15 +52,24 @@ namespace ResinTimer
 
         public static void CalcResin()
         {
-            resin = MAX_RESIN - (Convert.ToInt32((endTime - DateTime.Now).TotalSeconds) / ResinTime.ONE_RESTORE_INTERVAL) - 1;
+            var now = DateTime.Now;
+
+            if (endTime <= now)
+            {
+                resin = MAX_RESIN;
+            }
+            else
+            {
+                resin = MAX_RESIN - (Convert.ToInt32((endTime - now).TotalSeconds) / ResinTime.ONE_RESTORE_INTERVAL) - 1;
+            }
         }
 
         public static void SaveValue()
         {
             try
             {
-                Preferences.Set(SettingConstants.RESIN_COUNT, ResinEnvironment.resin);
-                Preferences.Set(SettingConstants.END_TIME, ResinEnvironment.endTime.ToString());
+                Preferences.Set(SettingConstants.RESIN_COUNT, resin);
+                Preferences.Set(SettingConstants.END_TIME, endTime.ToString());
             }
             catch { }
         }

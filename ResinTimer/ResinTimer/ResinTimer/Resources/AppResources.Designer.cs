@@ -470,6 +470,24 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Resin Widget과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ResinWidget_Name {
+            get {
+                return ResourceManager.GetString("ResinWidget_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Update Resin Widget Complete과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ResinWidget_UpdateComplete {
+            get {
+                return ResourceManager.GetString("ResinWidget_UpdateComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Enable Notification과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string SettingPage_Section_App_Cell_Notification_Title {

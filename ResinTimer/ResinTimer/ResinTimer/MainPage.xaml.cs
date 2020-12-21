@@ -191,12 +191,16 @@ namespace ResinTimer
         {
             mutex.WaitOne();
 
-            if (ResinEnvironment.endTime < DateTime.Now)
+            var now = DateTime.Now;
+
+            if (ResinEnvironment.endTime < now)
             {
-                ResinEnvironment.endTime = DateTime.Now;
+                ResinEnvironment.endTime = now;
             }
 
-            ResinEnvironment.endTime = ResinEnvironment.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * quickCalcValue);
+            ResinEnvironment.endTime = ((ResinEnvironment.resin - quickCalcValue) < 0) ?
+                now.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * ResinEnvironment.MAX_RESIN):
+                ResinEnvironment.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * quickCalcValue);
 
             ResinEnvironment.CalcResin();
             ResinEnvironment.SaveValue();

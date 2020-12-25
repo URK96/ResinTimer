@@ -15,7 +15,7 @@
 
     <ContentPage.Resources>
         <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="CornerRadius" Value="30" />
+            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=10}" />
             <Setter Property="BorderColor" Value="#0682F6" />
             <Setter Property="BorderWidth" Value="2" />
             <Setter Property="BackgroundColor" Value="Transparent" />
@@ -83,8 +83,9 @@
             </gauge:SfCircularGauge.Scales>
         </gauge:SfCircularGauge>
 
-        <Grid AbsoluteLayout.LayoutFlags="PositionProportional"
-              AbsoluteLayout.LayoutBounds="0.5, 0.95">
+        <Grid AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutBounds="0.5, 0.95, 0.9, 0.2"
+              BackgroundColor="Aqua">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />

@@ -381,7 +381,6 @@ namespace ResinTimer.Droid
 			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_symbolPointerValue = global::ResinTimer.Droid.Resource.Styleable.SfLinearGauge_symbolPointerValue;
 			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_symbolPosition = global::ResinTimer.Droid.Resource.Styleable.SfLinearGauge_symbolPosition;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::ResinTimer.Droid.Resource.Attribute.alpha;
-			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::ResinTimer.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::ResinTimer.Droid.Resource.Attribute.font;
 			global::Xamarin.Essentials.Resource.Attribute.fontProviderAuthority = global::ResinTimer.Droid.Resource.Attribute.fontProviderAuthority;
 			global::Xamarin.Essentials.Resource.Attribute.fontProviderCerts = global::ResinTimer.Droid.Resource.Attribute.fontProviderCerts;
@@ -392,23 +391,15 @@ namespace ResinTimer.Droid
 			global::Xamarin.Essentials.Resource.Attribute.fontStyle = global::ResinTimer.Droid.Resource.Attribute.fontStyle;
 			global::Xamarin.Essentials.Resource.Attribute.fontVariationSettings = global::ResinTimer.Droid.Resource.Attribute.fontVariationSettings;
 			global::Xamarin.Essentials.Resource.Attribute.fontWeight = global::ResinTimer.Droid.Resource.Attribute.fontWeight;
-			global::Xamarin.Essentials.Resource.Attribute.keylines = global::ResinTimer.Droid.Resource.Attribute.keylines;
-			global::Xamarin.Essentials.Resource.Attribute.layout_anchor = global::ResinTimer.Droid.Resource.Attribute.layout_anchor;
-			global::Xamarin.Essentials.Resource.Attribute.layout_anchorGravity = global::ResinTimer.Droid.Resource.Attribute.layout_anchorGravity;
-			global::Xamarin.Essentials.Resource.Attribute.layout_behavior = global::ResinTimer.Droid.Resource.Attribute.layout_behavior;
-			global::Xamarin.Essentials.Resource.Attribute.layout_dodgeInsetEdges = global::ResinTimer.Droid.Resource.Attribute.layout_dodgeInsetEdges;
-			global::Xamarin.Essentials.Resource.Attribute.layout_insetEdge = global::ResinTimer.Droid.Resource.Attribute.layout_insetEdge;
-			global::Xamarin.Essentials.Resource.Attribute.layout_keyline = global::ResinTimer.Droid.Resource.Attribute.layout_keyline;
-			global::Xamarin.Essentials.Resource.Attribute.statusBarBackground = global::ResinTimer.Droid.Resource.Attribute.statusBarBackground;
 			global::Xamarin.Essentials.Resource.Attribute.ttcIndex = global::ResinTimer.Droid.Resource.Attribute.ttcIndex;
+			global::Xamarin.Essentials.Resource.Color.androidx_core_ripple_material_light = global::ResinTimer.Droid.Resource.Color.androidx_core_ripple_material_light;
+			global::Xamarin.Essentials.Resource.Color.androidx_core_secondary_text_default_material_light = global::ResinTimer.Droid.Resource.Color.androidx_core_secondary_text_default_material_light;
 			global::Xamarin.Essentials.Resource.Color.browser_actions_bg_grey = global::ResinTimer.Droid.Resource.Color.browser_actions_bg_grey;
 			global::Xamarin.Essentials.Resource.Color.browser_actions_divider_color = global::ResinTimer.Droid.Resource.Color.browser_actions_divider_color;
 			global::Xamarin.Essentials.Resource.Color.browser_actions_text_color = global::ResinTimer.Droid.Resource.Color.browser_actions_text_color;
 			global::Xamarin.Essentials.Resource.Color.browser_actions_title_color = global::ResinTimer.Droid.Resource.Color.browser_actions_title_color;
 			global::Xamarin.Essentials.Resource.Color.notification_action_color_filter = global::ResinTimer.Droid.Resource.Color.notification_action_color_filter;
 			global::Xamarin.Essentials.Resource.Color.notification_icon_bg_color = global::ResinTimer.Droid.Resource.Color.notification_icon_bg_color;
-			global::Xamarin.Essentials.Resource.Color.ripple_material_light = global::ResinTimer.Droid.Resource.Color.ripple_material_light;
-			global::Xamarin.Essentials.Resource.Color.secondary_text_default_material_light = global::ResinTimer.Droid.Resource.Color.secondary_text_default_material_light;
 			global::Xamarin.Essentials.Resource.Dimension.browser_actions_context_menu_max_width = global::ResinTimer.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
 			global::Xamarin.Essentials.Resource.Dimension.browser_actions_context_menu_min_padding = global::ResinTimer.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
 			global::Xamarin.Essentials.Resource.Dimension.compat_button_inset_horizontal_material = global::ResinTimer.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
@@ -483,43 +474,28 @@ namespace ResinTimer.Droid
 			global::Xamarin.Essentials.Resource.Id.action_divider = global::ResinTimer.Droid.Resource.Id.action_divider;
 			global::Xamarin.Essentials.Resource.Id.action_image = global::ResinTimer.Droid.Resource.Id.action_image;
 			global::Xamarin.Essentials.Resource.Id.action_text = global::ResinTimer.Droid.Resource.Id.action_text;
-			global::Xamarin.Essentials.Resource.Id.all = global::ResinTimer.Droid.Resource.Id.all;
 			global::Xamarin.Essentials.Resource.Id.async = global::ResinTimer.Droid.Resource.Id.async;
 			global::Xamarin.Essentials.Resource.Id.blocking = global::ResinTimer.Droid.Resource.Id.blocking;
-			global::Xamarin.Essentials.Resource.Id.bottom = global::ResinTimer.Droid.Resource.Id.bottom;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_header_text = global::ResinTimer.Droid.Resource.Id.browser_actions_header_text;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_items = global::ResinTimer.Droid.Resource.Id.browser_actions_menu_items;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_icon = global::ResinTimer.Droid.Resource.Id.browser_actions_menu_item_icon;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_text = global::ResinTimer.Droid.Resource.Id.browser_actions_menu_item_text;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_view = global::ResinTimer.Droid.Resource.Id.browser_actions_menu_view;
-			global::Xamarin.Essentials.Resource.Id.center = global::ResinTimer.Droid.Resource.Id.center;
-			global::Xamarin.Essentials.Resource.Id.center_horizontal = global::ResinTimer.Droid.Resource.Id.center_horizontal;
-			global::Xamarin.Essentials.Resource.Id.center_vertical = global::ResinTimer.Droid.Resource.Id.center_vertical;
 			global::Xamarin.Essentials.Resource.Id.chronometer = global::ResinTimer.Droid.Resource.Id.chronometer;
-			global::Xamarin.Essentials.Resource.Id.clip_horizontal = global::ResinTimer.Droid.Resource.Id.clip_horizontal;
-			global::Xamarin.Essentials.Resource.Id.clip_vertical = global::ResinTimer.Droid.Resource.Id.clip_vertical;
 			global::Xamarin.Essentials.Resource.Id.dialog_button = global::ResinTimer.Droid.Resource.Id.dialog_button;
-			global::Xamarin.Essentials.Resource.Id.end = global::ResinTimer.Droid.Resource.Id.end;
-			global::Xamarin.Essentials.Resource.Id.fill = global::ResinTimer.Droid.Resource.Id.fill;
-			global::Xamarin.Essentials.Resource.Id.fill_horizontal = global::ResinTimer.Droid.Resource.Id.fill_horizontal;
-			global::Xamarin.Essentials.Resource.Id.fill_vertical = global::ResinTimer.Droid.Resource.Id.fill_vertical;
 			global::Xamarin.Essentials.Resource.Id.forever = global::ResinTimer.Droid.Resource.Id.forever;
 			global::Xamarin.Essentials.Resource.Id.icon = global::ResinTimer.Droid.Resource.Id.icon;
 			global::Xamarin.Essentials.Resource.Id.icon_group = global::ResinTimer.Droid.Resource.Id.icon_group;
 			global::Xamarin.Essentials.Resource.Id.info = global::ResinTimer.Droid.Resource.Id.info;
 			global::Xamarin.Essentials.Resource.Id.italic = global::ResinTimer.Droid.Resource.Id.italic;
-			global::Xamarin.Essentials.Resource.Id.left = global::ResinTimer.Droid.Resource.Id.left;
 			global::Xamarin.Essentials.Resource.Id.line1 = global::ResinTimer.Droid.Resource.Id.line1;
 			global::Xamarin.Essentials.Resource.Id.line3 = global::ResinTimer.Droid.Resource.Id.line3;
-			global::Xamarin.Essentials.Resource.Id.none = global::ResinTimer.Droid.Resource.Id.none;
 			global::Xamarin.Essentials.Resource.Id.normal = global::ResinTimer.Droid.Resource.Id.normal;
 			global::Xamarin.Essentials.Resource.Id.notification_background = global::ResinTimer.Droid.Resource.Id.notification_background;
 			global::Xamarin.Essentials.Resource.Id.notification_main_column = global::ResinTimer.Droid.Resource.Id.notification_main_column;
 			global::Xamarin.Essentials.Resource.Id.notification_main_column_container = global::ResinTimer.Droid.Resource.Id.notification_main_column_container;
-			global::Xamarin.Essentials.Resource.Id.right = global::ResinTimer.Droid.Resource.Id.right;
 			global::Xamarin.Essentials.Resource.Id.right_icon = global::ResinTimer.Droid.Resource.Id.right_icon;
 			global::Xamarin.Essentials.Resource.Id.right_side = global::ResinTimer.Droid.Resource.Id.right_side;
-			global::Xamarin.Essentials.Resource.Id.start = global::ResinTimer.Droid.Resource.Id.start;
 			global::Xamarin.Essentials.Resource.Id.tag_accessibility_actions = global::ResinTimer.Droid.Resource.Id.tag_accessibility_actions;
 			global::Xamarin.Essentials.Resource.Id.tag_accessibility_clickable_spans = global::ResinTimer.Droid.Resource.Id.tag_accessibility_clickable_spans;
 			global::Xamarin.Essentials.Resource.Id.tag_accessibility_heading = global::ResinTimer.Droid.Resource.Id.tag_accessibility_heading;
@@ -532,7 +508,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Essentials.Resource.Id.text2 = global::ResinTimer.Droid.Resource.Id.text2;
 			global::Xamarin.Essentials.Resource.Id.time = global::ResinTimer.Droid.Resource.Id.time;
 			global::Xamarin.Essentials.Resource.Id.title = global::ResinTimer.Droid.Resource.Id.title;
-			global::Xamarin.Essentials.Resource.Id.top = global::ResinTimer.Droid.Resource.Id.top;
 			global::Xamarin.Essentials.Resource.Integer.status_bar_notification_info_maxnum = global::ResinTimer.Droid.Resource.Integer.status_bar_notification_info_maxnum;
 			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_page = global::ResinTimer.Droid.Resource.Layout.browser_actions_context_menu_page;
 			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_row = global::ResinTimer.Droid.Resource.Layout.browser_actions_context_menu_row;
@@ -543,6 +518,10 @@ namespace ResinTimer.Droid
 			global::Xamarin.Essentials.Resource.Layout.notification_template_icon_group = global::ResinTimer.Droid.Resource.Layout.notification_template_icon_group;
 			global::Xamarin.Essentials.Resource.Layout.notification_template_part_chronometer = global::ResinTimer.Droid.Resource.Layout.notification_template_part_chronometer;
 			global::Xamarin.Essentials.Resource.Layout.notification_template_part_time = global::ResinTimer.Droid.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Essentials.Resource.String.copy_toast_msg = global::ResinTimer.Droid.Resource.String.copy_toast_msg;
+			global::Xamarin.Essentials.Resource.String.fallback_menu_item_copy_link = global::ResinTimer.Droid.Resource.String.fallback_menu_item_copy_link;
+			global::Xamarin.Essentials.Resource.String.fallback_menu_item_open_in_browser = global::ResinTimer.Droid.Resource.String.fallback_menu_item_open_in_browser;
+			global::Xamarin.Essentials.Resource.String.fallback_menu_item_share_link = global::ResinTimer.Droid.Resource.String.fallback_menu_item_share_link;
 			global::Xamarin.Essentials.Resource.String.status_bar_notification_info_overflow = global::ResinTimer.Droid.Resource.String.status_bar_notification_info_overflow;
 			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification = global::ResinTimer.Droid.Resource.Style.TextAppearance_Compat_Notification;
 			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Info = global::ResinTimer.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
@@ -551,22 +530,10 @@ namespace ResinTimer.Droid
 			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Title = global::ResinTimer.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
 			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionContainer = global::ResinTimer.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
 			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionText = global::ResinTimer.Droid.Resource.Style.Widget_Compat_NotificationActionText;
-			global::Xamarin.Essentials.Resource.Style.Widget_Support_CoordinatorLayout = global::ResinTimer.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_alpha = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_alpha;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_alpha = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_color = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_android_color;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout = global::ResinTimer.Droid.Resource.Styleable.CoordinatorLayout;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_keylines = global::ResinTimer.Droid.Resource.Styleable.CoordinatorLayout_keylines;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout = global::ResinTimer.Droid.Resource.Styleable.CoordinatorLayout_Layout;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::ResinTimer.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::ResinTimer.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::ResinTimer.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::ResinTimer.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::ResinTimer.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::ResinTimer.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::ResinTimer.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::ResinTimer.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamily = global::ResinTimer.Droid.Resource.Styleable.FontFamily;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont = global::ResinTimer.Droid.Resource.Styleable.FontFamilyFont;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_font = global::ResinTimer.Droid.Resource.Styleable.FontFamilyFont_android_font;
@@ -601,6 +568,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startY = global::ResinTimer.Droid.Resource.Styleable.GradientColor_android_startY;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_tileMode = global::ResinTimer.Droid.Resource.Styleable.GradientColor_android_tileMode;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_type = global::ResinTimer.Droid.Resource.Styleable.GradientColor_android_type;
+			global::Xamarin.Essentials.Resource.Xml.image_share_filepaths = global::ResinTimer.Droid.Resource.Xml.image_share_filepaths;
 			global::Xamarin.Essentials.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::ResinTimer.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::ResinTimer.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::ResinTimer.Droid.Resource.Animation.abc_fade_out;
@@ -11062,19 +11030,31 @@ namespace ResinTimer.Droid
 			public const int character_counter_pattern = 2131558440;
 			
 			// aapt resource value: 0x7F0D0029
-			public const int fab_transformation_scrim_behavior = 2131558441;
+			public const int copy_toast_msg = 2131558441;
 			
 			// aapt resource value: 0x7F0D002A
-			public const int fab_transformation_sheet_behavior = 2131558442;
+			public const int fab_transformation_scrim_behavior = 2131558442;
+			
+			// aapt resource value: 0x7F0D002B
+			public const int fab_transformation_sheet_behavior = 2131558443;
+			
+			// aapt resource value: 0x7F0D002C
+			public const int fallback_menu_item_copy_link = 2131558444;
+			
+			// aapt resource value: 0x7F0D002D
+			public const int fallback_menu_item_open_in_browser = 2131558445;
+			
+			// aapt resource value: 0x7F0D002E
+			public const int fallback_menu_item_share_link = 2131558446;
 			
 			// aapt resource value: 0x7F0D0004
 			public const int Hello = 2131558404;
 			
-			// aapt resource value: 0x7F0D002B
-			public const int hide_bottom_view_on_scroll_behavior = 2131558443;
+			// aapt resource value: 0x7F0D002F
+			public const int hide_bottom_view_on_scroll_behavior = 2131558447;
 			
-			// aapt resource value: 0x7F0D002C
-			public const int mtrl_chip_close_icon_content_description = 2131558444;
+			// aapt resource value: 0x7F0D0030
+			public const int mtrl_chip_close_icon_content_description = 2131558448;
 			
 			// aapt resource value: 0x7F0D0005
 			public const int NotiChannelDescription = 2131558405;
@@ -11091,29 +11071,29 @@ namespace ResinTimer.Droid
 			// aapt resource value: 0x7F0D0009
 			public const int NotiTitle = 2131558409;
 			
-			// aapt resource value: 0x7F0D002D
-			public const int overflow_tab_title = 2131558445;
-			
-			// aapt resource value: 0x7F0D002E
-			public const int password_toggle_content_description = 2131558446;
-			
-			// aapt resource value: 0x7F0D002F
-			public const int path_password_eye = 2131558447;
-			
-			// aapt resource value: 0x7F0D0030
-			public const int path_password_eye_mask_strike_through = 2131558448;
-			
 			// aapt resource value: 0x7F0D0031
-			public const int path_password_eye_mask_visible = 2131558449;
+			public const int overflow_tab_title = 2131558449;
 			
 			// aapt resource value: 0x7F0D0032
-			public const int path_password_strike_through = 2131558450;
+			public const int password_toggle_content_description = 2131558450;
 			
 			// aapt resource value: 0x7F0D0033
-			public const int search_menu_title = 2131558451;
+			public const int path_password_eye = 2131558451;
 			
 			// aapt resource value: 0x7F0D0034
-			public const int status_bar_notification_info_overflow = 2131558452;
+			public const int path_password_eye_mask_strike_through = 2131558452;
+			
+			// aapt resource value: 0x7F0D0035
+			public const int path_password_eye_mask_visible = 2131558453;
+			
+			// aapt resource value: 0x7F0D0036
+			public const int path_password_strike_through = 2131558454;
+			
+			// aapt resource value: 0x7F0D0037
+			public const int search_menu_title = 2131558455;
+			
+			// aapt resource value: 0x7F0D0038
+			public const int status_bar_notification_info_overflow = 2131558456;
 			
 			static String()
 			{
@@ -16265,7 +16245,10 @@ namespace ResinTimer.Droid
 			public const int appwidgetprovider = 2131755008;
 			
 			// aapt resource value: 0x7F100001
-			public const int xamarin_essentials_fileprovider_file_paths = 2131755009;
+			public const int image_share_filepaths = 2131755009;
+			
+			// aapt resource value: 0x7F100002
+			public const int xamarin_essentials_fileprovider_file_paths = 2131755010;
 			
 			static Xml()
 			{

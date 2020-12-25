@@ -22,9 +22,9 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>ResinTimer</string>
+	<string>Resin Timer</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.ResinTimer</string>
+	<string>com.urk96.ResinTimer</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>

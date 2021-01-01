@@ -169,6 +169,51 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Select Time과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditExpedition_SelectTime {
+            get {
+                return ResourceManager.GetString("EditExpedition_SelectTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Select Type과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditExpedition_SelectType {
+            get {
+                return ResourceManager.GetString("EditExpedition_SelectType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   25% time reduction과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditExpedition_TimeEffectOption {
+            get {
+                return ResourceManager.GetString("EditExpedition_TimeEffectOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Edit Expedition과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditExpedition_Title_Edit {
+            get {
+                return ResourceManager.GetString("EditExpedition_Title_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   New Expedition과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditExpedition_Title_New {
+            get {
+                return ResourceManager.GetString("EditExpedition_Title_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Apply과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string EditPage_ApplyButtonText {
@@ -246,6 +291,60 @@ namespace ResinTimer.Resources {
         public static string EditPage_TotalRemainTimeLabel {
             get {
                 return ResourceManager.GetString("EditPage_TotalRemainTimeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Complete과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Expedition_Complete {
+            get {
+                return ResourceManager.GetString("Expedition_Complete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Chunk과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Expedition_Type_Chunk {
+            get {
+                return ResourceManager.GetString("Expedition_Type_Chunk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ingredient과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Expedition_Type_Ingredient {
+            get {
+                return ResourceManager.GetString("Expedition_Type_Ingredient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Mora과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Expedition_Type_Mora {
+            get {
+                return ResourceManager.GetString("Expedition_Type_Mora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Expedition과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ExpeditionMain_Title {
+            get {
+                return ResourceManager.GetString("ExpeditionMain_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Remain과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ExpeditionTimerPage_Remain {
+            get {
+                return ResourceManager.GetString("ExpeditionTimerPage_Remain", resourceCulture);
             }
         }
         
@@ -353,6 +452,60 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   App Info과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_AppInfo {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_AppInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Expedition과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_Expedition {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_Expedition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_Resin {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_Resin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Settings과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_Settings {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   expedition is complete과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_Expedition_Message {
+            get {
+                return ResourceManager.GetString("Noti_Expedition_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Expedition Complete과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_Expedition_Title {
+            get {
+                return ResourceManager.GetString("Noti_Expedition_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Enter the number of resins you would like to be notified of.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string NotiSettingPage_AddDialog_Summary {
@@ -389,7 +542,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Expected noti time : 과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Expected noti time과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string NotiSettingPage_List_ExpectedNotiTime {
             get {

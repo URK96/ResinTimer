@@ -13,9 +13,9 @@ using ResinTimer.Resources;
 namespace ResinTimer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EditPage : TabbedPage
+    public partial class EditResinPage : TabbedPage
     {
-        public EditPage()
+        public EditResinPage()
         {
             InitializeComponent();
         }
@@ -82,7 +82,7 @@ namespace ResinTimer
 
             if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
             {
-                var notiManager = new NotiManager();
+                var notiManager = new ResinNotiManager();
                 notiManager.UpdateNotisTime();
             }
 

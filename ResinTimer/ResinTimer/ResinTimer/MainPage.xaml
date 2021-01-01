@@ -1,135 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
-             xmlns:resources="clr-namespace:ResinTimer.Resources"
-             x:Class="ResinTimer.MainPage"
-             Title="{x:Static resources:AppResources.MainPage_Title}">
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:ResinTimer"
+                  xmlns:resources="clr-namespace:ResinTimer.Resources"
+                  x:Class="ResinTimer.MainPage"
+                  MasterBehavior="Popover">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem x:Name="NotiToolbarItem" Text="Noti Setting" IconImageSource="notisetting.png" Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem Text="Info" IconImageSource="info.png" Order="Primary" Priority="2" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem Text="Setting" IconImageSource="setting.png" Order="Primary" Priority="3" Clicked="ToolbarItem_Clicked" />
-    </ContentPage.ToolbarItems>
+    <MasterDetailPage.Master>
+        <ContentPage Padding="0,40,0,0" IconImageSource="resintimer_icon.png" Title="Resin Timer">
+            <StackLayout>
+                <ListView x:Name="MainListView"
+                          ItemSelected="MainListView_ItemSelected">
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type local:MainMasterItem}">
+                            <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}" Icon="resin.png" Target="{x:Type local:ResinTimerPage}"/>
+                            <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Expedition}" Icon="compass.png" Target="{x:Type local:ExpeditionTimerPage}"/>
+                            <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_AppInfo}" Target="{x:Type local:InfoPage}" />
+                            <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Settings}" Target="{x:Type local:SettingPage}" />
+                        </x:Array>
+                    </ListView.ItemsSource>
 
-    <ContentPage.Resources>
-        <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=10}" />
-            <Setter Property="BorderColor" Value="#0682F6" />
-            <Setter Property="BorderWidth" Value="2" />
-            <Setter Property="BackgroundColor" Value="Transparent" />
-            <Setter Property="CharacterSpacing" Value="3" />
-            <Setter Property="FontSize" Value="Default" />
-        </Style>
-    </ContentPage.Resources>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="5,10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
 
-    <AbsoluteLayout>
-        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional"
-                     AbsoluteLayout.LayoutBounds="0.5, 0.07"
-                     Orientation="Vertical">
-            
-            <Label x:Name="RemainTimeLabel"
-                   Text="{x:Static resources:AppResources.MainPage_RemainTimeLabel}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" />
+                                    <Image Source="{Binding Icon}" />
+                                    <Label Grid.Column="1" 
+                                           Text="{Binding Title}" HorizontalTextAlignment="Center" FontSize="Subtitle" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
 
-            <FlexLayout Direction="Row" AlignItems="Center" AlignContent="Center" JustifyContent="Center" Margin="0, 0, 0, 0">
-                <Label x:Name="TotalTimeHour" Text="" Margin="10, 0, 10, 0" FontAttributes="Bold" FontSize="40"/>
-                <Label x:Name="TimeSeperator" Text=":" Margin="0, 0, 0, 0" FontAttributes="Bold" FontSize="40"/>
-                <Label x:Name="TotalTimeMinute" Text="" Margin="10, 0, 10, 0" FontAttributes="Bold" FontSize="40"/>
-            </FlexLayout>
-
-            <Label Text="{x:Static resources:AppResources.MainPage_EndDateTimeTitle}" HorizontalTextAlignment="Center" />
-            <Label x:Name="EndDateTimeLabel"
-                   HorizontalTextAlignment="Center"/>
-
-            <Label x:Name="CautionResinOnlyLabel" Margin="0, 10, 0, 0" IsVisible="true"
-                   Text="{x:Static resources:AppResources.Caution_ResinInput}" HorizontalTextAlignment="Center" TextColor="OrangeRed" />
-
-        </StackLayout>
-
-        <gauge:SfCircularGauge AbsoluteLayout.LayoutFlags="All"
-                               AbsoluteLayout.LayoutBounds="0.5, 0.6, 0.8, 0.35">
-            <gauge:SfCircularGauge.Annotations>
-                <gauge:GaugeAnnotation ViewMargin="0, -20">
-                    <gauge:GaugeAnnotation.View>
-                        <Image Source="resin.png" WidthRequest="50" HeightRequest="50" />
-                    </gauge:GaugeAnnotation.View>
-                </gauge:GaugeAnnotation>
-            </gauge:SfCircularGauge.Annotations>
-
-            <gauge:SfCircularGauge.Headers>
-                <gauge:Header x:Name="ResinCount" Text="" Position="0.5, 0.6" TextSize="30" ForegroundColor="#0682F6"/>
-                <gauge:Header x:Name="OneCountTimer" Text="" Position="0.5, 0.75" TextSize="15" ForegroundColor="#0682F6"/>
-            </gauge:SfCircularGauge.Headers>
-
-            <gauge:SfCircularGauge.Scales>
-                <gauge:Scale StartValue="0" EndValue="160" Interval="20"
-                             RimColor="#9a9ca6" LabelColor="#9a9ca6">
-
-                    <gauge:Scale.MajorTickSettings>
-                        <gauge:TickSettings Color="#3F51B5" />
-                    </gauge:Scale.MajorTickSettings>
-
-                    <gauge:Scale.Pointers>
-                        <gauge:RangePointer x:Name="RangeValue" Value="0" Color="#303F9F" />
-                        <gauge:MarkerPointer x:Name="PointerValue" Value="0" Color="#303F9F" MarkerShape="Triangle" />
-                    </gauge:Scale.Pointers>
-
-                    <gauge:Scale.Ranges>
-                        <gauge:Range x:Name="ResinRemainTimeRange" StartValue="0" EndValue="0" />
-                    </gauge:Scale.Ranges>
-
-                </gauge:Scale>
-            </gauge:SfCircularGauge.Scales>
-        </gauge:SfCircularGauge>
-
-        <Grid AbsoluteLayout.LayoutFlags="All"
-              AbsoluteLayout.LayoutBounds="0.5, 0.95, 0.9, 0.2"
-              BackgroundColor="Aqua">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <Button Grid.Row="0" Grid.Column="0"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="+10" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="0" Grid.Column="1"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="+20" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="0" Grid.Column="2"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="+40" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="0" Grid.Column="3"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="+60" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="1" Grid.Column="0"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="-10" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="1" Grid.Column="1"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="-20" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="1" Grid.Column="2"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="-40" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="1" Grid.Column="3"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="-60" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-        </Grid>
-    </AbsoluteLayout>
-
-</ContentPage>
+</MasterDetailPage>

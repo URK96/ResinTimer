@@ -33,8 +33,6 @@ namespace ResinTimer.Droid
             //stackBuilder.AddParentStack(new SplashActivity());
             //stackBuilder.AddNextIntent(intent);
 
-
-
             var builder = new NotificationCompat.Builder(Application.Context, AndroidAppEnvironment.CHANNEL_ID)
                 .SetAutoCancel(true)
                 .SetVisibility((int)NotificationVisibility.Public)

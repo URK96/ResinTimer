@@ -5,6 +5,8 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+using UserNotifications;
+
 namespace ResinTimer.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -25,6 +27,8 @@ namespace ResinTimer.iOS
             global::Xamarin.Forms.Forms.Init();
             Syncfusion.SfGauge.XForms.iOS.SfGaugeRenderer.Init();
             LoadApplication(new App());
+
+            UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert, (approved, err) => { });
 
             return base.FinishedLaunching(app, options);
         }

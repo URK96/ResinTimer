@@ -32,10 +32,7 @@ namespace ResinTimer
 
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY5MzQ5QDMxMzgyZTM0MmUzMGx5ajVXODdXRldsSjMvRFNnbkVxS2c2ZTJkdEhxNW4yQVlLSCtsbWt1WG89");
 
-            MainPage = new NavigationPage(new MainPage())
-            {
-                BarBackgroundColor = Color.FromHex("#3F51B5")
-            };
+            MainPage = new MainPage();
         }
 
         private void SetDefaultPreferences()
@@ -50,9 +47,9 @@ namespace ResinTimer
             }
             if (!Preferences.ContainsKey(SettingConstants.NOTI_LIST))
             {
-                var list = new List<Noti>
+                var list = new List<ResinNoti>
                 {
-                    new Noti(ResinEnvironment.MAX_RESIN)
+                    new ResinNoti(ResinEnvironment.MAX_RESIN)
                 };
 
                 Preferences.Set(SettingConstants.NOTI_LIST, JsonConvert.SerializeObject(list));

@@ -74,4 +74,9 @@ namespace ResinTimer
             catch { }
         }
     }
+
+    public static class ExpeditionEnvironment
+    {
+        public enum ExpeditionType { Chunk, Ingredient, Mora }
+    }
 }

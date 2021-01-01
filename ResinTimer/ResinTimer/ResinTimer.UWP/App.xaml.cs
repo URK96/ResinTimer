@@ -24,6 +24,7 @@ using Xamarin.Essentials;
 
 using ResinTimer.Resources;
 using Windows.ApplicationModel.Background;
+using System.Threading.Tasks;
 
 namespace ResinTimer.UWP
 {
@@ -100,7 +101,7 @@ namespace ResinTimer.UWP
                 builder.AddToastActivationInfo("BootNotiRegister", ToastActivationType.Foreground);
                 builder.AddText(AppResources.BootAlarmRegisterSuccess);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 builder.AddText(AppResources.BootAlarmRegisterFail);
             }
@@ -110,6 +111,8 @@ namespace ResinTimer.UWP
                 {
                     UWPAppEnvironment.toastNotifier.AddToSchedule(new ScheduledToastNotification(builder.GetToastContent().GetXml(), DateTime.Now.AddSeconds(3)));
                 }
+
+                await Task.Delay(3000);
 
                 Exit();
             }

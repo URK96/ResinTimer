@@ -20,6 +20,11 @@ namespace ResinTimer
             InitializeComponent();
 
             VersionLabel.Text = $"v{AppInfo.VersionString} {(AppEnvironment.isDebug ? "Debug" : "Release")}";
+
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                DependencyService.Get<IScheduledNoti>().TestNoti();
+            }
         }
 
         private async void BugReportToolbarItemClicked(object sender, EventArgs e)

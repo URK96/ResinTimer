@@ -153,6 +153,21 @@
   <data name="Dialog_Yes" xml:space="preserve">
     <value>예</value>
   </data>
+  <data name="EditExpedition_SelectTime" xml:space="preserve">
+    <value>시간 선택</value>
+  </data>
+  <data name="EditExpedition_SelectType" xml:space="preserve">
+    <value>타입 선택</value>
+  </data>
+  <data name="EditExpedition_TimeEffectOption" xml:space="preserve">
+    <value>25% 시간 감소</value>
+  </data>
+  <data name="EditExpedition_Title_Edit" xml:space="preserve">
+    <value>탐사 항목 수정</value>
+  </data>
+  <data name="EditExpedition_Title_New" xml:space="preserve">
+    <value>탐사 항목 추가</value>
+  </data>
   <data name="EditPage_ApplyButtonText" xml:space="preserve">
     <value>적용</value>
   </data>
@@ -179,6 +194,24 @@
   </data>
   <data name="EditPage_TotalRemainTimeLabel" xml:space="preserve">
     <value>남은 총 회복 시간</value>
+  </data>
+  <data name="ExpeditionMain_Title" xml:space="preserve">
+    <value>탐사 알리미</value>
+  </data>
+  <data name="ExpeditionTimerPage_Remain" xml:space="preserve">
+    <value>남음</value>
+  </data>
+  <data name="Expedition_Complete" xml:space="preserve">
+    <value>탐사 완료</value>
+  </data>
+  <data name="Expedition_Type_Chunk" xml:space="preserve">
+    <value>광물</value>
+  </data>
+  <data name="Expedition_Type_Ingredient" xml:space="preserve">
+    <value>재료</value>
+  </data>
+  <data name="Expedition_Type_Mora" xml:space="preserve">
+    <value>모라</value>
   </data>
   <data name="InfoPage_AppName" xml:space="preserve">
     <value>레진 알리미</value>
@@ -217,6 +250,18 @@ MIT License - Microsoft Corporation</value>
   <data name="MainPage_Title" xml:space="preserve">
     <value>레진 알리미</value>
   </data>
+  <data name="MasterDetail_MasterList_AppInfo" xml:space="preserve">
+    <value>앱 정보</value>
+  </data>
+  <data name="MasterDetail_MasterList_Expedition" xml:space="preserve">
+    <value>탐사</value>
+  </data>
+  <data name="MasterDetail_MasterList_Resin" xml:space="preserve">
+    <value>레진</value>
+  </data>
+  <data name="MasterDetail_MasterList_Settings" xml:space="preserve">
+    <value>설정</value>
+  </data>
   <data name="NotiSettingPage_AddDialog_Summary" xml:space="preserve">
     <value>알림을 받고 싶은 레진 개수를 입력하세요</value>
   </data>
@@ -230,7 +275,7 @@ MIT License - Microsoft Corporation</value>
     <value>최소 1개의 항목은 존재해야 합니다.</value>
   </data>
   <data name="NotiSettingPage_List_ExpectedNotiTime" xml:space="preserve">
-    <value>예상 알림 시간 : </value>
+    <value>예상 알림 시간</value>
   </data>
   <data name="NotiSettingPage_NotIntegerDialog_Summary" xml:space="preserve">
     <value>숫자만 입력해주세요</value>
@@ -255,6 +300,12 @@ MIT License - Microsoft Corporation</value>
   </data>
   <data name="NotiTitle" xml:space="preserve">
     <value>레진 충전 알림</value>
+  </data>
+  <data name="Noti_Expedition_Message" xml:space="preserve">
+    <value>탐사가 완료되었습니다.</value>
+  </data>
+  <data name="Noti_Expedition_Title" xml:space="preserve">
+    <value>탐사 완료</value>
   </data>
   <data name="ResinWidget_Name" xml:space="preserve">
     <value>레진 위젯</value>

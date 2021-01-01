@@ -13,42 +13,118 @@ namespace ResinTimer
     public class NotiManager
     {
         public enum EditType { Add, Remove, Edit }
+        public enum NotiType { Resin, Expedition }
+
+        public NotiType notiType = NotiType.Resin;
 
         public List<Noti> Notis { get; set; }
 
+        private IScheduledNoti ScheduledService => DependencyService.Get<IScheduledNoti>();
+
         public NotiManager()
         {
+            Notis = new List<Noti>();
+        }
+
+        internal int SortNotis(Noti x, Noti y)
+        {
+            return x.NotiId.CompareTo(y.NotiId);
+        }
+
+        public List<T> GetNotiList<T>() where T : Noti
+        {
+            string value = string.Empty;
+            List<T> result;
+
             try
             {
-                Notis = new List<Noti>();
-
-                var list = Preferences.Get(SettingConstants.NOTI_LIST, string.Empty);
-
-                if (string.IsNullOrWhiteSpace(list))
+                if (typeof(T) == typeof(ResinNoti))
                 {
-                    Notis.Add(new Noti(ResinEnvironment.MAX_RESIN));
-                    SaveNotis();
-                    UpdateScheduledNoti();
+                    value = Preferences.Get(SettingConstants.NOTI_LIST, string.Empty);
                 }
-                else
+                else if (typeof(T) == typeof(ExpeditionNoti))
                 {
-                    Notis.AddRange(JsonConvert.DeserializeObject<List<Noti>>(list));
+                    value = Preferences.Get(SettingConstants.EXPEDITION_NOTI_LIST, string.Empty);
+                }
+
+                result = JsonConvert.DeserializeObject<List<T>>(value);
+
+                if (result == null)
+                {
+                    result = new List<T>();
                 }
             }
             catch (Exception)
             {
-                if (Device.RuntimePlatform == Device.Android)
+                result = new List<T>();
+
+                return result;
+            }
+
+            return result;
+        }
+
+        public void UpdateScheduledNoti<T>() where T : Noti
+        {
+            ScheduledService.Cancel<T>();
+            RenewalIds();
+            SaveNotis();
+            ScheduledService.Schedule<T>();
+        }
+
+        public void SaveNotis()
+        {
+            var key = notiType switch
+            {
+                NotiType.Expedition => SettingConstants.EXPEDITION_NOTI_LIST,
+                _ => SettingConstants.NOTI_LIST
+            };
+
+            Preferences.Set(key, JsonConvert.SerializeObject(Notis));
+        }
+
+        public virtual void RenewalIds() { }
+    }
+
+    public class ResinNotiManager : NotiManager
+    {
+        public ResinNotiManager() : base()
+        {
+            try
+            {
+                notiType = NotiType.Resin;
+
+                //var list = Preferences.Get(SettingConstants.NOTI_LIST, string.Empty);
+
+                //if (string.IsNullOrWhiteSpace(list))
+                //{
+                //    Notis.Add(new ResinNoti(ResinEnvironment.MAX_RESIN));
+                //    SaveNotis();
+                //}
+                //else
+                //{
+                //    Notis.AddRange(JsonConvert.DeserializeObject<List<ResinNoti>>(list));
+                //}
+
+                Notis.AddRange(GetNotiList<ResinNoti>());
+
+                if (Notis.Count < 1)
                 {
-                    DependencyService.Get<IToast>().Show("Fail to initialize noti manager");
+                    Notis.Add(new ResinNoti(ResinEnvironment.MAX_RESIN));
+                    SaveNotis();
                 }
+            }
+            catch (Exception)
+            {
+                DependencyService.Get<IToast>().Show("Fail to initialize noti manager");
             }
         }
 
-        public void RenewalIds()
+        public override void RenewalIds()
         {
             for (int i = 0; i < Notis.Count; ++i)
             {
-                Notis[i].NotiId = Notis[i].Resin;
+                Notis[i].NotiId = (Notis[i] as ResinNoti).Resin;
             }
         }
 
@@ -56,24 +132,19 @@ namespace ResinTimer
         {
             for (int i = 0; i < Notis.Count; ++i)
             {
-                Notis[i].UpdateTime();
+                (Notis[i] as ResinNoti).UpdateTime();
             }
 
             SaveNotis();
-            UpdateScheduledNoti();
+            UpdateScheduledNoti<ResinNoti>();
         }
 
-        public void SaveNotis()
-        {
-            Preferences.Set(SettingConstants.NOTI_LIST, JsonConvert.SerializeObject(Notis));
-        }
-
-        public void EditList(Noti item, EditType type)
+        public void EditList(ResinNoti item, EditType type)
         {
             switch (type)
             {
                 case EditType.Add:
-                    if (Notis.FindAll(x => x.Resin.Equals(item.Resin)).Count == 0)
+                    if (Notis.FindAll(x => (x as ResinNoti).Resin.Equals(item.Resin)).Count == 0)
                     {
                         Notis.Add(item);
                         Notis.Sort(SortNotis);
@@ -84,31 +155,87 @@ namespace ResinTimer
                     }
                     break;
                 case EditType.Remove:
-                    Notis.Remove(Notis.Find(x => x.Resin.Equals(item.Resin)));
+                    Notis.Remove(Notis.Find(x => (x as ResinNoti).Resin.Equals(item.Resin)));
                     break;
                 case EditType.Edit:
-                    Notis[Notis.FindIndex(x => x.Resin.Equals(item.Resin))].Resin = item.Resin;
+                    (Notis[Notis.FindIndex(x => (x as ResinNoti).Resin.Equals(item.Resin))] as ResinNoti).Resin = item.Resin;
                     break;
                 default:
                     break;
             }
 
             SaveNotis();
-            UpdateScheduledNoti();
+            UpdateScheduledNoti<ResinNoti>();
+        }
+    }
+
+    public class ExpeditionNotiManager : NotiManager
+    {
+        const int ID_PREINDEX = 1000;
+
+        public ExpeditionNotiManager() : base()
+        {
+            try
+            {
+                notiType = NotiType.Expedition;
+
+                //var list = Preferences.Get(SettingConstants.EXPEDITION_NOTI_LIST, string.Empty);
+
+                //if (!string.IsNullOrWhiteSpace(list))
+                //{
+                //    Notis.AddRange(JsonConvert.DeserializeObject<List<ExpeditionNoti>>(list));
+                //}
+
+                Notis.AddRange(GetNotiList<ExpeditionNoti>());
+            }
+            catch (Exception)
+            {
+                DependencyService.Get<IToast>().Show("Fail to initialize expedition noti manager");
+            }
         }
 
-        public void UpdateScheduledNoti()
+        public void UpdateNotisTime()
         {
-            var service = DependencyService.Get<IScheduledNoti>();
+            for (int i = 0; i < Notis.Count; ++i)
+            {
+                //Notis[i].UpdateTime();
+            }
 
-            service.CancelAll();
-            RenewalIds();
-            service.ScheduleAllNoti();
+            UpdateScheduledNoti<ExpeditionNoti>();
         }
 
-        private int SortNotis(Noti x, Noti y)
+        public override void RenewalIds()
         {
-            return x.NotiId.CompareTo(y.NotiId);
+            for (int i = 0; i < Notis.Count; ++i)
+            {
+                Notis[i].NotiId = ID_PREINDEX + i;
+            }
+        }
+
+        public void EditList(Noti item, EditType type)
+        {
+            switch (type)
+            {
+                case EditType.Add:
+                    item.NotiId = ID_PREINDEX + Notis.Count;
+
+                    Notis.Add(item);
+                    Notis.Sort(SortNotis);
+                    break;
+                case EditType.Remove:
+                    Notis.Remove(Notis.Find(x => x.NotiId.Equals(item.NotiId)));
+                    break;
+                case EditType.Edit:
+                    var index = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
+
+                    Notis[index] = item;
+                    Notis[index].UpdateTime();
+                    break;
+                default:
+                    break;
+            }
+            
+            UpdateScheduledNoti<ExpeditionNoti>();
         }
     }
 }

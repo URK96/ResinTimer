@@ -19,9 +19,11 @@ namespace ResinTimer.UWP
                 .AddText(notification.Text)
                 .GetToastContent();
 
-            var toast = new ScheduledToastNotification(builder.GetXml(), notification.NotifyTime);
-            toast.Tag = $"Resin{notification.Id}";
-            toast.Group = $"ResinNoti";
+            var toast = new ScheduledToastNotification(builder.GetXml(), notification.NotifyTime)
+            {
+                Tag = notification.Id.ToString(),
+                Group = $"ResinNoti"
+            };
 
             UWPNotifier.AddToSchedule(toast);
         }
@@ -32,7 +34,10 @@ namespace ResinTimer.UWP
 
             var toastItem = scheduledList.FirstOrDefault(x => x.Tag.Equals(tag));
 
-            UWPNotifier.RemoveFromSchedule(toastItem);
+            if (toastItem != null)
+            {
+                UWPNotifier.RemoveFromSchedule(toastItem);
+            }
         }
 
         public void CancelAll()

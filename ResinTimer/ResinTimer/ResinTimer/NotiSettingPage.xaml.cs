@@ -20,13 +20,13 @@ namespace ResinTimer
         public List<Noti> Notis => notiManager.Notis;
         public ICommand RemoveCommand => new Command<int>((int resin) => { RemoveItem(resin); });
 
-        private NotiManager notiManager;
+        private ResinNotiManager notiManager;
 
         public NotiSettingPage()
         {
             InitializeComponent();
 
-            notiManager = new NotiManager();
+            notiManager = new ResinNotiManager();
 
             SetToolbar();
 
@@ -60,7 +60,7 @@ namespace ResinTimer
                 case 1:  // Remove Item (Only UWP)
                     if (ListCollectionView.SelectedItem != null)
                     {
-                        RemoveItem((ListCollectionView.SelectedItem as Noti).Resin);
+                        RemoveItem((ListCollectionView.SelectedItem as ResinNoti).Resin);
                     }
                     else
                     {
@@ -88,7 +88,7 @@ namespace ResinTimer
                 if ((count >= 1) &&
                     (count <= 160))
                 {
-                    notiManager.EditList(new Noti(count), NotiManager.EditType.Add);
+                    notiManager.EditList(new ResinNoti(count), NotiManager.EditType.Add);
                     RefreshCollectionView();
                 }
                 else
@@ -112,7 +112,7 @@ namespace ResinTimer
         {
             if (Notis.Count > 1)
             {
-                notiManager.EditList(new Noti(resin), NotiManager.EditType.Remove);
+                notiManager.EditList(new ResinNoti(resin), NotiManager.EditType.Remove);
                 RefreshCollectionView();
             }
             else

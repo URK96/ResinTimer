@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ResinTimer.UWP;
 
-using Newtonsoft.Json;
-
-using ResinTimer.UWP;
-using ResinTimer;
-
-using Xamarin.Essentials;
+using System;
 
 [assembly: Xamarin.Forms.Dependency(typeof(ScheduledNotiUWP))]
 
@@ -17,6 +8,13 @@ namespace ResinTimer.UWP
 {
     public class ScheduledNotiUWP : IScheduledNoti
     {
+        NotiManager manager;
+
+        public ScheduledNotiUWP()
+        {
+            manager = new NotiManager();
+        }
+
         public void CancelAll()
         {
             var notifier = new NotifierUWP();
@@ -24,27 +22,45 @@ namespace ResinTimer.UWP
             notifier.CancelAll();
         }
 
+        public void Cancel<T>() where T : Noti
+        {
+            var notifier = new NotifierUWP();
+
+            foreach (var item in manager.GetNotiList<T>())
+            {
+                notifier.Cancel(item.NotiId.ToString());
+            }
+        }
+
         public void ScheduleAllNoti()
         {
-            var list = JsonConvert.DeserializeObject<List<Noti>>(Preferences.Get(SettingConstants.NOTI_LIST, string.Empty));
-            var title = Resources.AppResources.NotiTitle;
-            var text = Resources.AppResources.NotiText;
+            Schedule<ResinNoti>();
+            Schedule<ExpeditionNoti>();
+        }
+
+        public void Schedule<T>() where T : Noti
+        {
             var notifier = new NotifierUWP();
             var now = DateTime.Now;
 
-            foreach (var item in list)
+            foreach (var item in manager.GetNotiList<T>())
             {
                 if (item.NotiTime > now)
                 {
                     notifier.Notify(new Notification
                     {
-                        Title = title,
-                        Text = $"{item.Resin} {text}",
+                        Title = item.GetNotiTitle(),
+                        Text = item.GetNotiText(),
                         Id = item.NotiId,
                         NotifyTime = item.NotiTime
                     });
                 }
             }
+        }
+
+        public void TestNoti()
+        {
+            
         }
     }
 }

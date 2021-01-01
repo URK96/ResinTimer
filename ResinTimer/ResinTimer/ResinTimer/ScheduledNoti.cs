@@ -7,6 +7,9 @@ namespace ResinTimer
     public interface IScheduledNoti
     {
         void CancelAll();
+        void Cancel<T>() where T :Noti;
         void ScheduleAllNoti();
+        void Schedule<T>() where T : Noti;
+        void TestNoti();
     }
 }

@@ -23,16 +23,9 @@ namespace ResinTimer.Droid
         /// <param name="notification">The notification.</param>
         public void Notify(Notification notification)
         {
-            //var intent = CreateIntent(notification.Id);
-
-            //var serializedNotification = SerializeNotification(notification);
-            //intent.PutExtra(ScheduledAlarmReceiver.LocalNotificationKey, serializedNotification);
-
-            //var pendingIntent = PendingIntent.GetBroadcast(Application.Context, 0, intent, PendingIntentFlags.UpdateCurrent);
             var triggerTime = NotifyTimeInMilliseconds(notification.NotifyTime);
 
             AlarmManager.Set(AlarmType.ElapsedRealtime, SystemClock.ElapsedRealtime() + triggerTime, CreatePendingIntent(notification.Id, notification));
-            //AlarmManager.SetExact(AlarmType.RtcWakeup, triggerTime, CreatePendingIntent(notification.Id, notification));
         }
 
         /// <summary>
@@ -41,9 +34,6 @@ namespace ResinTimer.Droid
         /// <param name="notificationId">The notification identifier.</param>
         public void Cancel(int notificationId)
         {
-            //var intent = CreateIntent(notificationId);
-            //var pendingIntent = PendingIntent.GetBroadcast(Application.Context, 0, intent, PendingIntentFlags.UpdateCurrent);
-
             AlarmManager.Cancel(CreatePendingIntent(notificationId));
             NotiManager.Cancel(notificationId);
         }
@@ -72,10 +62,6 @@ namespace ResinTimer.Droid
 
         private long NotifyTimeInMilliseconds(DateTime notifyTime)
         {
-            //var utcTime = TimeZoneInfo.ConvertTimeToUtc(notifyTime);
-            //var epochDifference = (new DateTime(1970, 1, 1) - DateTime.MinValue).TotalSeconds;
-
-            //var utcAlarmTimeInMillis = utcTime.AddSeconds(-epochDifference).Ticks / 10000;
             var utcAlarmTimeInMillis = (notifyTime.ToUniversalTime() - DateTime.UtcNow).TotalMilliseconds;
 
             return (long)utcAlarmTimeInMillis;

@@ -153,6 +153,21 @@
   <data name="Dialog_Yes" xml:space="preserve">
     <value>Yes</value>
   </data>
+  <data name="EditExpedition_SelectTime" xml:space="preserve">
+    <value>Select Time</value>
+  </data>
+  <data name="EditExpedition_SelectType" xml:space="preserve">
+    <value>Select Type</value>
+  </data>
+  <data name="EditExpedition_TimeEffectOption" xml:space="preserve">
+    <value>25% time reduction</value>
+  </data>
+  <data name="EditExpedition_Title_Edit" xml:space="preserve">
+    <value>Edit Expedition</value>
+  </data>
+  <data name="EditExpedition_Title_New" xml:space="preserve">
+    <value>New Expedition</value>
+  </data>
   <data name="EditPage_ApplyButtonText" xml:space="preserve">
     <value>Apply</value>
   </data>
@@ -179,6 +194,24 @@
   </data>
   <data name="EditPage_TotalRemainTimeLabel" xml:space="preserve">
     <value>Remain Total Restore Time</value>
+  </data>
+  <data name="ExpeditionMain_Title" xml:space="preserve">
+    <value>Expedition</value>
+  </data>
+  <data name="ExpeditionTimerPage_Remain" xml:space="preserve">
+    <value>Remain</value>
+  </data>
+  <data name="Expedition_Complete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="Expedition_Type_Chunk" xml:space="preserve">
+    <value>Chunk</value>
+  </data>
+  <data name="Expedition_Type_Ingredient" xml:space="preserve">
+    <value>Ingredient</value>
+  </data>
+  <data name="Expedition_Type_Mora" xml:space="preserve">
+    <value>Mora</value>
   </data>
   <data name="InfoPage_AppName" xml:space="preserve">
     <value>Resin Timer</value>
@@ -217,6 +250,18 @@ MIT License - Microsoft Corporation</value>
   <data name="MainPage_Title" xml:space="preserve">
     <value>Resin Timer</value>
   </data>
+  <data name="MasterDetail_MasterList_AppInfo" xml:space="preserve">
+    <value>App Info</value>
+  </data>
+  <data name="MasterDetail_MasterList_Expedition" xml:space="preserve">
+    <value>Expedition</value>
+  </data>
+  <data name="MasterDetail_MasterList_Resin" xml:space="preserve">
+    <value>Resin</value>
+  </data>
+  <data name="MasterDetail_MasterList_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="NotiSettingPage_AddDialog_Summary" xml:space="preserve">
     <value>Enter the number of resins you would like to be notified of.</value>
   </data>
@@ -230,7 +275,7 @@ MIT License - Microsoft Corporation</value>
     <value>At least one item must exist.</value>
   </data>
   <data name="NotiSettingPage_List_ExpectedNotiTime" xml:space="preserve">
-    <value>Expected noti time : </value>
+    <value>Expected noti time</value>
   </data>
   <data name="NotiSettingPage_NotIntegerDialog_Summary" xml:space="preserve">
     <value>Please enter only the number</value>
@@ -255,6 +300,12 @@ MIT License - Microsoft Corporation</value>
   </data>
   <data name="NotiTitle" xml:space="preserve">
     <value>Recovery Resin Notification</value>
+  </data>
+  <data name="Noti_Expedition_Message" xml:space="preserve">
+    <value>expedition is complete</value>
+  </data>
+  <data name="Noti_Expedition_Title" xml:space="preserve">
+    <value>Expedition Complete</value>
   </data>
   <data name="ResinWidget_Name" xml:space="preserve">
     <value>Resin Widget</value>

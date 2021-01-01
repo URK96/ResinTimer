@@ -56,8 +56,11 @@ namespace ResinTimer
                     }
                 }
 
-                var notiManager = new NotiManager();
-                notiManager.UpdateNotisTime();
+                var resinNotiManager = new ResinNotiManager();
+                resinNotiManager.UpdateNotisTime();
+
+                var expNotiManager = new ExpeditionNotiManager();
+                expNotiManager.UpdateScheduledNoti<ExpeditionNoti>();
             }
             else
             {

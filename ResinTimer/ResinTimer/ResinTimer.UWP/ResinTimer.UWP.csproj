@@ -130,10 +130,14 @@
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
     <Content Include="bugreport.png" />
+    <Content Include="chunk.png" />
+    <Content Include="compass.png" />
     <Content Include="edit.png" />
     <Content Include="info.png" />
     <None Include="Package.StoreAssociation.xml" />
+    <Content Include="ingredient.png" />
     <Content Include="minus.png" />
+    <Content Include="mora.png" />
     <Content Include="notisetting.png" />
     <Content Include="plus.png" />
     <Content Include="resin.png" />

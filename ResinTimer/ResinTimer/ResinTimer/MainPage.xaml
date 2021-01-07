@@ -15,6 +15,7 @@
                         <x:Array Type="{x:Type local:MainMasterItem}">
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}" Icon="resin.png" Target="{x:Type local:ResinTimerPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Expedition}" Icon="compass.png" Target="{x:Type local:ExpeditionTimerPage}"/>
+                            <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Chunk}" Icon="chunk.png" Target="{x:Type local:GatheringItemTimerPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_AppInfo}" Target="{x:Type local:InfoPage}" />
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Settings}" Target="{x:Type local:SettingPage}" />
                         </x:Array>

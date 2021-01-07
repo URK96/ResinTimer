@@ -22,7 +22,7 @@ namespace ResinTimer
 
         private Thread calcThread;
 
-        private Timer quickCalcTimer;
+        private Timer buttonPressTimer;
 
         private int quickCalcValue;
         private bool isRunQuickCalc = false;
@@ -52,11 +52,11 @@ namespace ResinTimer
 
             if (!(Device.RuntimePlatform == Device.UWP))
             {
-                quickCalcTimer = new Timer(500)
+                buttonPressTimer = new Timer(500)
                 {
                     AutoReset = false
                 };
-                quickCalcTimer.Elapsed += delegate
+                buttonPressTimer.Elapsed += delegate
                 {
                     isRunQuickCalc = true;
 
@@ -238,7 +238,7 @@ namespace ResinTimer
                 }
                 else
                 {
-                    quickCalcTimer.Start();
+                    buttonPressTimer.Start();
                 }
             }
             catch { }
@@ -255,7 +255,7 @@ namespace ResinTimer
 
                 if (!(Device.RuntimePlatform == Device.UWP))
                 {
-                    quickCalcTimer.Stop();
+                    buttonPressTimer.Stop();
 
                     if (!isRunQuickCalc)
                     {

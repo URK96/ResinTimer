@@ -425,7 +425,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Press during 0.1s to apply calc과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Press during 0.5s to apply calc과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string MainPage_QuickCalcButton_Toast {
             get {
@@ -457,6 +457,24 @@ namespace ResinTimer.Resources {
         public static string MasterDetail_MasterList_AppInfo {
             get {
                 return ResourceManager.GetString("MasterDetail_MasterList_AppInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Artifact과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_Artifact {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_Artifact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Chunk과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_Chunk {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_Chunk", resourceCulture);
             }
         }
         

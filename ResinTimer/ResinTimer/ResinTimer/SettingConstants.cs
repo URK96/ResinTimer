@@ -10,6 +10,8 @@ namespace ResinTimer
 
         public const string NOTI_LIST = "Noti_List";
         public const string EXPEDITION_NOTI_LIST = "Expedition_Noti_List";
+        public const string CHUNK_NOTI_LIST = "Chunk_Noti_List";
+        public const string ARTIFACT_NOTI_LIST = "Artifact_Noti_List";
 
         public const string QUICKCALC_VIBRATION = "QuickCalc_Vibration";
         public const string NOTI_ENABLED = "Noti_Enabled";

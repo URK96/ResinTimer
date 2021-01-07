@@ -13,13 +13,11 @@ namespace ResinTimer
     public class NotiManager
     {
         public enum EditType { Add, Remove, Edit }
-        public enum NotiType { Resin, Expedition }
+        public enum NotiType { Resin, Expedition, GatheringItem }
 
         public NotiType notiType = NotiType.Resin;
 
         public List<Noti> Notis { get; set; }
-
-        private IScheduledNoti ScheduledService => DependencyService.Get<IScheduledNoti>();
 
         public NotiManager()
         {
@@ -64,12 +62,16 @@ namespace ResinTimer
             return result;
         }
 
+        public IScheduledNoti GetScheduledService() => DependencyService.Get<IScheduledNoti>();
+
         public void UpdateScheduledNoti<T>() where T : Noti
         {
-            ScheduledService.Cancel<T>();
+            var scheduledService = GetScheduledService();
+
+            scheduledService.Cancel<T>();
             RenewalIds();
             SaveNotis();
-            ScheduledService.Schedule<T>();
+            scheduledService.Schedule<T>();
         }
 
         public void SaveNotis()

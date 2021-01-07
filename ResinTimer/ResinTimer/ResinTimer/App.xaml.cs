@@ -1,18 +1,17 @@
-﻿using ResinTimer.Resources;
+﻿using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
-using System;
-using System.Globalization;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Xamarin.Essentials;
 using Newtonsoft.Json;
 
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Crashes;
+using ResinTimer.Resources;
+
+using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
+
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace ResinTimer
 {

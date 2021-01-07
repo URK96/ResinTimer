@@ -242,7 +242,7 @@ MIT License - Microsoft Corporation</value>
     <value>Scheduled date/time of full recovery</value>
   </data>
   <data name="MainPage_QuickCalcButton_Toast" xml:space="preserve">
-    <value>Press during 0.1s to apply calc</value>
+    <value>Press during 0.5s to apply calc</value>
   </data>
   <data name="MainPage_RemainTimeLabel" xml:space="preserve">
     <value>Until full recovery</value>
@@ -252,6 +252,12 @@ MIT License - Microsoft Corporation</value>
   </data>
   <data name="MasterDetail_MasterList_AppInfo" xml:space="preserve">
     <value>App Info</value>
+  </data>
+  <data name="MasterDetail_MasterList_Artifact" xml:space="preserve">
+    <value>Artifact</value>
+  </data>
+  <data name="MasterDetail_MasterList_Chunk" xml:space="preserve">
+    <value>Chunk</value>
   </data>
   <data name="MasterDetail_MasterList_Expedition" xml:space="preserve">
     <value>Expedition</value>

@@ -55,7 +55,7 @@ namespace ResinTimer
         public TimeSpan StandardTime { get; set; }
         public ExpEnv.ExpeditionType ExpeditionType { get; set; }
 
-        public string GetRemainTimeString => $"{((NotiTime >= DateTime.Now) ? (NotiTime - DateTime.Now).ToString("hh\\:mm") : AppResources.Expedition_Complete)} {AppResources.ExpeditionTimerPage_Remain}";
+        public string GetRemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{NotiTime - DateTime.Now:hh\\:mm} {AppResources.ExpeditionTimerPage_Remain}" : AppResources.Expedition_Complete)}";
         public string GetTypeString => ExpeditionType switch
         {
             ExpEnv.ExpeditionType.Ingredient => AppResources.Expedition_Type_Ingredient,

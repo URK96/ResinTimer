@@ -2,10 +2,7 @@
 using Android.Content;
 using Android.Widget;
 
-using Newtonsoft.Json;
-
 using System;
-using System.Collections.Generic;
 
 using Xamarin.Essentials;
 
@@ -17,13 +14,13 @@ namespace ResinTimer.Droid
     {
         public override void OnReceive(Context context, Intent intent)
         {
-            if (!Preferences.Get(SettingConstants.NOTI_ENABLED, false))
-            {
-                return;
-            }
-
             try
             {
+                if (!Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+                {
+                    return;
+                }
+
                 var scheduledNoti = new ScheduledNotiAndroid();
                 scheduledNoti.ScheduleAllNoti();
 

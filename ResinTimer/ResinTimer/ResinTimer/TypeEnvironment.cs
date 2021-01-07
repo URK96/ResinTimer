@@ -79,4 +79,9 @@ namespace ResinTimer
     {
         public enum ExpeditionType { Chunk, Ingredient, Mora }
     }
+
+    public static class GatheringItemEnvironment
+    {
+        public enum GItemType { Chunk, Artifact, Specialty }
+    }
 }

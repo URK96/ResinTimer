@@ -242,7 +242,7 @@ MIT License - Microsoft Corporation</value>
     <value>완전 회복 예정 시각</value>
   </data>
   <data name="MainPage_QuickCalcButton_Toast" xml:space="preserve">
-    <value>적용을 위해 0.1초 동안 눌러주세요</value>
+    <value>적용을 위해 0.5초 동안 눌러주세요</value>
   </data>
   <data name="MainPage_RemainTimeLabel" xml:space="preserve">
     <value>완전히 회복 될 때까지</value>
@@ -252,6 +252,12 @@ MIT License - Microsoft Corporation</value>
   </data>
   <data name="MasterDetail_MasterList_AppInfo" xml:space="preserve">
     <value>앱 정보</value>
+  </data>
+  <data name="MasterDetail_MasterList_Artifact" xml:space="preserve">
+    <value>성유물</value>
+  </data>
+  <data name="MasterDetail_MasterList_Chunk" xml:space="preserve">
+    <value>광물</value>
   </data>
   <data name="MasterDetail_MasterList_Expedition" xml:space="preserve">
     <value>탐사</value>

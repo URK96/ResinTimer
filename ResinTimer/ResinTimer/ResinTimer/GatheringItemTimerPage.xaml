@@ -3,9 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
              x:Name="page"
-             x:Class="ResinTimer.ExpeditionTimerPage"
-             Title="{x:Static resources:AppResources.ExpeditionMain_Title}">
-
+             x:Class="ResinTimer.GatheringItemTimerPage">
+    
     <ContentPage.Resources>
         <Color x:Key="LightPrimaryColor">WhiteSmoke</Color>
         <Color x:Key="LightSecondaryColor">Black</Color>
@@ -52,5 +51,5 @@
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
-
+    
 </ContentPage>

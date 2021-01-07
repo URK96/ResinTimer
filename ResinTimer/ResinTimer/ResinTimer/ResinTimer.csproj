@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <LangVersion>8.0</LangVersion>
-    <Version>1.4.0</Version>
+    <Version>1.5.0</Version>
     <UserSecretsId>203b32d9-bd5b-4c42-8919-f7dba54960be</UserSecretsId>
   </PropertyGroup>
 
@@ -31,8 +31,8 @@
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.0.0" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Syncfusion.Licensing" Version="18.4.0.31" />
-    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="18.4.0.31" />
+    <PackageReference Include="Syncfusion.Licensing" Version="18.4.0.33" />
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="18.4.0.33" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1821" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
   </ItemGroup>
@@ -64,6 +64,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ExpeditionTimerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="GatheringItemTimerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="InfoPage.xaml">

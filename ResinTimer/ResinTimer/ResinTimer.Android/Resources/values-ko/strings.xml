@@ -8,4 +8,10 @@
   <string name="BootAlarmRegisterSuccess">레진 알람 등록 성공</string>
   <string name="BootAlarmRegisterFail">레진 알람 등록 실패</string>
   <string name="NotiQuickActionRunGenshinApp">원신 실행</string>
+  <string name="WidgetConfigure_BackgroundColor_Title">배경색</string>
+  <string name="WidgetConfigure_BackgroundColor_White">흰색</string>
+  <string name="WidgetConfigure_BackgroundColor_Black">검은색</string>
+  <string name="WidgetConfigure_Opacity_Title">투명도</string>
+  <string name="WidgetConfigure_Toolbar_Apply">적용</string>
+  <string name="WidgetConfigure_Toolbar_Cancel">취소</string>
 </resources>

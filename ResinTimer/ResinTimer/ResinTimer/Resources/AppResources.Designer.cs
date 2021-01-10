@@ -61,7 +61,17 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Resin alarm register fail과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Resin Timer과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AppName {
+            get {
+                return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin alarm register fail
+        ///Please re-enable alarm in app setting to register notification alarm과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string BootAlarmRegisterFail {
             get {
@@ -349,6 +359,51 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Artifact과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItem_Type_Artifact {
+            get {
+                return ResourceManager.GetString("GatheringItem_Type_Artifact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Chunk과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItem_Type_Chunk {
+            get {
+                return ResourceManager.GetString("GatheringItem_Type_Chunk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Specialty과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItem_Type_Specialty {
+            get {
+                return ResourceManager.GetString("GatheringItem_Type_Specialty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Restored과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItemTimer_ResetComplete {
+            get {
+                return ResourceManager.GetString("GatheringItemTimer_ResetComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Remain과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItemTimerPage_Remain {
+            get {
+                return ResourceManager.GetString("GatheringItemTimerPage_Remain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Resin Timer과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string InfoPage_AppName {
@@ -461,29 +516,20 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Artifact과(와) 유사한 지역화된 문자열을 찾습니다.
-        /// </summary>
-        public static string MasterDetail_MasterList_Artifact {
-            get {
-                return ResourceManager.GetString("MasterDetail_MasterList_Artifact", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Chunk과(와) 유사한 지역화된 문자열을 찾습니다.
-        /// </summary>
-        public static string MasterDetail_MasterList_Chunk {
-            get {
-                return ResourceManager.GetString("MasterDetail_MasterList_Chunk", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Expedition과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string MasterDetail_MasterList_Expedition {
             get {
                 return ResourceManager.GetString("MasterDetail_MasterList_Expedition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Gathering Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_GatheringItem {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_GatheringItem", resourceCulture);
             }
         }
         
@@ -520,6 +566,42 @@ namespace ResinTimer.Resources {
         public static string Noti_Expedition_Title {
             get {
                 return ResourceManager.GetString("Noti_Expedition_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   are restored now과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_GatheringItem_Message {
+            get {
+                return ResourceManager.GetString("Noti_GatheringItem_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Restore Gathering Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_GatheringItem_Title {
+            get {
+                return ResourceManager.GetString("Noti_GatheringItem_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Timer Reset과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_QuickAction_ResetTimer {
+            get {
+                return ResourceManager.GetString("Noti_QuickAction_ResetTimer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Run Genshin과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_QuickAction_RunGenshinApp {
+            get {
+                return ResourceManager.GetString("Noti_QuickAction_RunGenshinApp", resourceCulture);
             }
         }
         
@@ -700,6 +782,15 @@ namespace ResinTimer.Resources {
         public static string SettingPage_Title {
             get {
                 return ResourceManager.GetString("SettingPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Configure Widget과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string WidgetConfigure_Title {
+            get {
+                return ResourceManager.GetString("WidgetConfigure_Title", resourceCulture);
             }
         }
     }

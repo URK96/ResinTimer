@@ -47,18 +47,26 @@ namespace ResinTimer.UWP
             {
                 if (item.NotiTime > now)
                 {
-                    notifier.Notify(new Notification
+                    var notification = new Notification
                     {
                         Title = item.GetNotiTitle(),
                         Text = item.GetNotiText(),
                         Id = item.NotiId,
                         NotifyTime = item.NotiTime
-                    });
+                    };
+                    notification.SetType<T>();
+
+                    notifier.Notify(notification);
                 }
             }
         }
 
-        public void TestNoti()
+        public void ScheduleCustomNoti(string title, string message, int id, DateTime notiTime)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TestNoti(string message = "")
         {
             
         }

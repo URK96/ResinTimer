@@ -49,7 +49,7 @@
 
                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                             <Label Text="{Binding Resin}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                            <Label Text="{Binding GetExpectedNotiTimeString}" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                            <Label Text="{Binding ExpectedNotiTimeString}" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
                         </StackLayout>
                     </Frame>
                 </SwipeView>

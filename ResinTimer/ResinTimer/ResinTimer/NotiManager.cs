@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
+using GIEnv = ResinTimer.GatheringItemEnvironment;
+
 namespace ResinTimer
 {
     public class NotiManager
@@ -32,7 +34,7 @@ namespace ResinTimer
         public List<T> GetNotiList<T>() where T : Noti
         {
             string value = string.Empty;
-            List<T> result;
+            var result = new List<T>();
 
             try
             {
@@ -44,19 +46,28 @@ namespace ResinTimer
                 {
                     value = Preferences.Get(SettingConstants.EXPEDITION_NOTI_LIST, string.Empty);
                 }
-
-                result = JsonConvert.DeserializeObject<List<T>>(value);
-
-                if (result == null)
+                else if (typeof(T) == typeof(GatheringItemNoti))
                 {
-                    result = new List<T>();
+                    value = Preferences.Get(SettingConstants.GATHERINGITEM_NOTI_LIST, string.Empty);
                 }
+
+                var deserialized = JsonConvert.DeserializeObject<List<T>>(value);
+
+                if (deserialized != null)
+                {
+                    result.AddRange(deserialized);
+                }
+
+                //if (result == null)
+                //{
+                //    result = new List<T>();
+                //}
             }
             catch (Exception)
             {
-                result = new List<T>();
+                //result = new List<T>();
 
-                return result;
+                //return result;
             }
 
             return result;
@@ -66,6 +77,11 @@ namespace ResinTimer
 
         public void UpdateScheduledNoti<T>() where T : Noti
         {
+            if (!Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+            {
+                return;
+            }
+
             var scheduledService = GetScheduledService();
 
             scheduledService.Cancel<T>();
@@ -79,6 +95,7 @@ namespace ResinTimer
             var key = notiType switch
             {
                 NotiType.Expedition => SettingConstants.EXPEDITION_NOTI_LIST,
+                NotiType.GatheringItem => SettingConstants.GATHERINGITEM_NOTI_LIST,
                 _ => SettingConstants.NOTI_LIST
             };
 
@@ -198,11 +215,7 @@ namespace ResinTimer
 
         public void UpdateNotisTime()
         {
-            for (int i = 0; i < Notis.Count; ++i)
-            {
-                //Notis[i].UpdateTime();
-            }
-
+            SaveNotis();
             UpdateScheduledNoti<ExpeditionNoti>();
         }
 
@@ -239,5 +252,92 @@ namespace ResinTimer
             
             UpdateScheduledNoti<ExpeditionNoti>();
         }
+    }
+
+    public class GatheringItemNotiManager : NotiManager
+    {
+        const int ID_PREINDEX = 1500;
+
+        public GatheringItemNotiManager() : base()
+        {
+            try
+            {
+                notiType = NotiType.GatheringItem;
+
+                var list = GetNotiList<GatheringItemNoti>();
+
+                if (list.Count < GIEnv.TypeCount)
+                {
+                    Notis.AddRange(InitializeSetList());
+                    SaveNotis();
+                }
+                else
+                {
+                    Notis.AddRange(list);
+                }
+            }
+            catch (Exception)
+            {
+                DependencyService.Get<IToast>().Show("Fail to initialize GI noti manager");
+            }
+        }
+
+        public static List<GatheringItemNoti> InitializeSetList()
+        {
+            var list = new List<GatheringItemNoti>();
+
+            try
+            {
+                list.Add(new GatheringItemNoti(GIEnv.GItemType.Chunk));
+                list.Add(new GatheringItemNoti(GIEnv.GItemType.Artifact));
+                list.Add(new GatheringItemNoti(GIEnv.GItemType.Specialty));
+            }
+            catch (Exception)
+            {
+                DependencyService.Get<IToast>().Show("Fail to initialize GI list");
+            }
+
+            return list;
+        }
+
+        public void UpdateNotisTime()
+        {
+            SaveNotis();
+            UpdateScheduledNoti<GatheringItemNoti>();
+        }
+
+        public override void RenewalIds()
+        {
+            for (int i = 0; i < Notis.Count; ++i)
+            {
+                Notis[i].NotiId = ID_PREINDEX + i;
+            }
+        }
+
+        //public void EditList(Noti item, EditType type)
+        //{
+        //    switch (type)
+        //    {
+        //        case EditType.Add:
+        //            item.NotiId = ID_PREINDEX + Notis.Count;
+
+        //            Notis.Add(item);
+        //            Notis.Sort(SortNotis);
+        //            break;
+        //        case EditType.Remove:
+        //            Notis.Remove(Notis.Find(x => x.NotiId.Equals(item.NotiId)));
+        //            break;
+        //        case EditType.Edit:
+        //            var index = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
+
+        //            Notis[index] = item;
+        //            Notis[index].UpdateTime();
+        //            break;
+        //        default:
+        //            break;
+        //    }
+
+        //    UpdateScheduledNoti<ExpeditionNoti>();
+        //}
     }
 }

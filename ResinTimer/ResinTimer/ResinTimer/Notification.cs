@@ -37,5 +37,23 @@ namespace ResinTimer
         /// The notify time of notification.
         /// </value>
         public DateTime NotifyTime { get; set; }
+
+        public NotiManager.NotiType NotiType { get; set; }
+
+        public void SetType<T>() where T : Noti
+        {
+            if (typeof(T) == typeof(ResinNoti))
+            {
+                NotiType = NotiManager.NotiType.Resin;
+            }
+            else if (typeof(T) == typeof(ExpeditionNoti))
+            {
+                NotiType = NotiManager.NotiType.Expedition;
+            }
+            else if (typeof(T) == typeof(GatheringItemNoti))
+            {
+                NotiType = NotiManager.NotiType.GatheringItem;
+            }
+        }
     }
 }

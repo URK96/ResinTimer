@@ -1,13 +1,7 @@
-﻿using Android.App;
-
-using Newtonsoft.Json;
-
+﻿
 using ResinTimer.Droid;
 
 using System;
-using System.Collections.Generic;
-
-using Xamarin.Essentials;
 
 [assembly: Xamarin.Forms.Dependency(typeof(ScheduledNotiAndroid))]
 
@@ -26,6 +20,7 @@ namespace ResinTimer.Droid
         {
             Cancel<ResinNoti>();
             Cancel<ExpeditionNoti>();
+            Cancel<GatheringItemNoti>();
         }
 
         public void Cancel<T>() where T : Noti
@@ -42,6 +37,7 @@ namespace ResinTimer.Droid
         {
             Schedule<ResinNoti>();
             Schedule<ExpeditionNoti>();
+            Schedule<GatheringItemNoti>();
         }
 
         public void Schedule<T>() where T : Noti
@@ -53,20 +49,44 @@ namespace ResinTimer.Droid
             {
                 if (item.NotiTime > now)
                 {
-                    notifier.Notify(new Notification
+                    var notification = new Notification
                     {
                         Title = item.GetNotiTitle(),
                         Text = item.GetNotiText(),
                         Id = item.NotiId,
                         NotifyTime = item.NotiTime
-                    });
+                    };
+                    notification.SetType<T>();
+
+                    notifier.Notify(notification);
                 }
             }
         }
 
-        public void TestNoti()
+        public void ScheduleCustomNoti(string title, string message, int id, DateTime notiTime)
         {
+            var notifier = new NotifierAndroid();
 
+            notifier.Notify(new Notification
+            {
+                Title = title,
+                Text = message,
+                Id = id,
+                NotifyTime = notiTime
+            });
+        }
+
+        public void TestNoti(string message = "")
+        {
+            var notifier = new NotifierAndroid();
+
+            notifier.Notify(new Notification
+            {
+                Title = "Test Noti",
+                Text = message,
+                Id = 990,
+                NotifyTime = DateTime.Now.AddSeconds(5)
+            });
         }
     }
 }

@@ -8,4 +8,10 @@
   <string name="BootAlarmRegisterSuccess">Resin alarm register success</string>
   <string name="BootAlarmRegisterFail">Resin alarm register fail</string>
   <string name="NotiQuickActionRunGenshinApp">Run Genshin</string>
+  <string name="WidgetConfigure_BackgroundColor_Title">Background Color</string>
+  <string name="WidgetConfigure_BackgroundColor_White">White</string>
+  <string name="WidgetConfigure_BackgroundColor_Black">Black</string>
+  <string name="WidgetConfigure_Opacity_Title">Opacity</string>
+  <string name="WidgetConfigure_Toolbar_Apply">Apply</string>
+  <string name="WidgetConfigure_Toolbar_Cancel">Cancel</string>
 </resources>

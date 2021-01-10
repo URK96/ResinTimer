@@ -4,6 +4,8 @@ using Android.Content.PM;
 
 using AndroidX.Core.App;
 
+using ResinTimer.Resources;
+
 using System.IO;
 using System.Xml.Serialization;
 
@@ -14,7 +16,7 @@ namespace ResinTimer.Droid
     {
         public const string LocalNotificationKey = "LocalNotification";
 
-        public NotificationManager NotiManager => Application.Context.GetSystemService(Context.NotificationService) as NotificationManager;
+        public NotificationManager NotificationManager => Application.Context.GetSystemService(Context.NotificationService) as NotificationManager;
 
         public override void OnReceive(Context context, Intent intent)
         {
@@ -23,7 +25,7 @@ namespace ResinTimer.Droid
 
             var nativeNotification = CreateNativeNotification(context, notification);
 
-            NotiManager.Notify(notification.Id, nativeNotification);
+            NotificationManager.Notify(notification.Id, nativeNotification);
         }
 
         private Android.App.Notification CreateNativeNotification(Context context, Notification notification)
@@ -49,7 +51,20 @@ namespace ResinTimer.Droid
 
                 var pRunIntent = PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent);
 
-                builder.AddAction(0, context.Resources.GetString(Resource.String.NotiQuickActionRunGenshinApp), pRunIntent);
+                builder.AddAction(0, AppResources.Noti_QuickAction_RunGenshinApp, pRunIntent);
+            }
+
+            if ((notification.NotiType == NotiManager.NotiType.Expedition) ||
+                (notification.NotiType == NotiManager.NotiType.GatheringItem))
+            {
+                var resetIntent = new Intent(context, typeof(NotiActionReceiver));
+                resetIntent.SetAction("RESET_TIMER");
+                resetIntent.PutExtra("NotiId", notification.Id);
+                resetIntent.PutExtra("NotiType", (int)notification.NotiType);
+
+                var pResetIntent = PendingIntent.GetBroadcast(context, 0, resetIntent, PendingIntentFlags.UpdateCurrent);
+
+                builder.AddAction(0, AppResources.Noti_QuickAction_ResetTimer, pResetIntent);
             }
 
             var nativeNotification = builder.Build();
@@ -68,7 +83,7 @@ namespace ResinTimer.Droid
         }
 
         [BroadcastReceiver]
-        [IntentFilter(new string[] { "RUN_GENSHIN" })]
+        [IntentFilter(new string[] { "RUN_GENSHIN", "RESET_TIMER" })]
         public class NotiActionReceiver : BroadcastReceiver
         {
             public override void OnReceive(Context context, Intent intent)
@@ -80,6 +95,45 @@ namespace ResinTimer.Droid
                         context.StartActivity(rIntent);
 
                         (context.GetSystemService(Context.NotificationService) as NotificationManager).Cancel(intent.GetIntExtra("NotiId", -1));
+                        break;
+                    case "RESET_TIMER":
+                        ResetTimer(intent);
+                        break;
+                }
+            }
+
+            private void ResetTimer(Intent intent)
+            {
+                var id = intent.GetIntExtra("NotiId", -1);
+                var type = (NotiManager.NotiType)intent.GetIntExtra("NotiType", 0);
+                NotiManager notiManager = type switch
+                {
+                    NotiManager.NotiType.Expedition => new ExpeditionNotiManager(),
+                    NotiManager.NotiType.GatheringItem => new GatheringItemNotiManager(),
+                    _ => null
+                };
+
+                if ((notiManager == null) ||
+                    (id == -1))
+                {
+                    return;
+                }
+
+                var noti = notiManager.Notis.Find(x => x.NotiId.Equals(id));
+
+                noti.UpdateTime();
+
+                notiManager.SaveNotis();
+                
+                switch (type)
+                {
+                    case NotiManager.NotiType.Expedition:
+                        notiManager.UpdateScheduledNoti<ExpeditionNoti>();
+                        break;
+                    case NotiManager.NotiType.GatheringItem:
+                        notiManager.UpdateScheduledNoti<GatheringItemNoti>();
+                        break;
+                    default:
                         break;
                 }
             }

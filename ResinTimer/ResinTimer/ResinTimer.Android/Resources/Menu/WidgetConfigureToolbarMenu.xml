@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:local="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/WidgetConfigureClose"
+    android:icon="@drawable/close"
+    android:title="@string/Common_Sort"
+    local:showAsAction="ifRoom"/>
+  <item
+    android:id="@+id/WidgetConfigureApply"
+    android:icon="@drawable/apply"
+    android:title="@string/Common_UpdateImageCache"
+    local:showAsAction="ifRoom"/>
+</menu>

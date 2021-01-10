@@ -64,15 +64,10 @@ namespace ResinTimer
         {
             switch ((sender as ToolbarItem).Priority)
             {
-                case 0:  // Add Item
-                    if (notiManager.Notis.Count >= 5)
-                    {
-                        DependencyService.Get<IToast>().Show("Expedition limit exceed");
-                    }
-                    else
-                    {
-                        await Navigation.PushAsync(new EditExpeditionItemPage(notiManager, NotiManager.EditType.Add));
-                    }
+                case 0:  // Reset Item
+                    (ListCollectionView.SelectedItem as ExpeditionNoti).UpdateTime();
+                    notiManager.UpdateNotisTime();
+                    RefreshCollectionView();
                     break;
                 case 1: // Edit Item
                     if (ListCollectionView.SelectedItem != null)
@@ -84,7 +79,17 @@ namespace ResinTimer
                         DependencyService.Get<IToast>().Show(AppResources.NotiSettingPage_NotSelectedToast_Message);
                     }
                     break;
-                case 2:  // Remove Item
+                case 2:  // Add Item
+                    if (notiManager.Notis.Count >= 5)
+                    {
+                        DependencyService.Get<IToast>().Show("Expedition limit exceed");
+                    }
+                    else
+                    {
+                        await Navigation.PushAsync(new EditExpeditionItemPage(notiManager, NotiManager.EditType.Add));
+                    }
+                    break;
+                case 3:  // Remove Item
                     if (ListCollectionView.SelectedItem != null)
                     {
                         RemoveItem(ListCollectionView.SelectedItem as Noti);

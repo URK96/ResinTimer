@@ -18,15 +18,12 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add Expedition" IconImageSource="plus.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem Text="Remove Expedition" IconImageSource="minus.png" Order="Primary" Priority="2" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Text="Reset" IconImageSource="refresh.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="ListCollectionView" ItemsSource="{Binding Notis}"
                     ItemsLayout="VerticalList"
-                    SelectionMode="Single"
-                    SelectionChanged="ListCollectionView_SelectionChanged">
+                    SelectionMode="Single">
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <ContentView>
@@ -36,12 +33,12 @@
                             <Frame.BorderColor>#0682F6</Frame.BorderColor>
 
                             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                <Image WidthRequest="50" HeightRequest="50" Source="{Binding GetTypeImageName}" />
+                                <Image WidthRequest="50" HeightRequest="50" Source="{Binding TypeImageName}" />
 
                                 <StackLayout Orientation="Vertical" Margin="20, 0, 0, 0">
-                                    <Label Text="{Binding GetRemainTimeString}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                    <Label Text="{Binding RemainTimeString}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
                                     <Label Margin="0, 5, 0, 0" 
-                                           Text="{Binding GetExpectedNotiTimeString}" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                           Text="{Binding ExpectedNotiTimeString}" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
                                 </StackLayout>
 
                             </StackLayout>

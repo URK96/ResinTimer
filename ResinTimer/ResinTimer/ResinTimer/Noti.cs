@@ -3,6 +3,7 @@
 using System;
 
 using ExpEnv = ResinTimer.ExpeditionEnvironment;
+using GIEnv = ResinTimer.GatheringItemEnvironment;
 
 namespace ResinTimer
 {
@@ -11,7 +12,7 @@ namespace ResinTimer
         public DateTime NotiTime { get; set; }
         public int NotiId { get; set; }
 
-        public string GetExpectedNotiTimeString => $"{AppResources.NotiSettingPage_List_ExpectedNotiTime}\n{NotiTime}";
+        public string ExpectedNotiTimeString => $"{AppResources.NotiSettingPage_List_ExpectedNotiTime}\n{NotiTime}";
 
         public abstract void UpdateTime();
         public abstract string GetNotiTitle();
@@ -55,15 +56,15 @@ namespace ResinTimer
         public TimeSpan StandardTime { get; set; }
         public ExpEnv.ExpeditionType ExpeditionType { get; set; }
 
-        public string GetRemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{NotiTime - DateTime.Now:hh\\:mm} {AppResources.ExpeditionTimerPage_Remain}" : AppResources.Expedition_Complete)}";
-        public string GetTypeString => ExpeditionType switch
+        public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{NotiTime - DateTime.Now:hh\\:mm} {AppResources.ExpeditionTimerPage_Remain}" : AppResources.Expedition_Complete)}";
+        public string TypeString => ExpeditionType switch
         {
             ExpEnv.ExpeditionType.Ingredient => AppResources.Expedition_Type_Ingredient,
             ExpEnv.ExpeditionType.Mora => AppResources.Expedition_Type_Mora,
             _ => AppResources.Expedition_Type_Chunk
         };
 
-        public string GetTypeImageName => ExpeditionType switch
+        public string TypeImageName => ExpeditionType switch
         {
             ExpEnv.ExpeditionType.Ingredient => "ingredient.png",
             ExpEnv.ExpeditionType.Mora => "mora.png",
@@ -91,6 +92,53 @@ namespace ResinTimer
         }
 
         public override string GetNotiTitle() => AppResources.Noti_Expedition_Title;
-        public override string GetNotiText() => $"'{GetTypeString} {ExpeditionTime.Hours}H' {AppResources.Noti_Expedition_Message}";
+        public override string GetNotiText() => $"'{TypeString} {ExpeditionTime.Hours}H' {AppResources.Noti_Expedition_Message}";
+    }
+
+    public class GatheringItemNoti : Noti
+    {
+        public TimeSpan ResetTime { get; set; }
+        public GIEnv.GItemType ItemType { get; set; }
+
+        public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{GetRemainTimeHM()} {AppResources.GatheringItemTimerPage_Remain}" : AppResources.GatheringItemTimer_ResetComplete)}";
+        public string TypeString => ItemType switch
+        {
+            GIEnv.GItemType.Artifact => AppResources.GatheringItem_Type_Artifact,
+            GIEnv.GItemType.Specialty => AppResources.GatheringItem_Type_Specialty,
+            _ => AppResources.GatheringItem_Type_Chunk
+        };
+
+        public string TypeImageName => ItemType switch
+        {
+            GIEnv.GItemType.Artifact => "artifact.png",
+            GIEnv.GItemType.Specialty => "silk_flower.png",
+            _ => "chunk.png"
+        };
+
+        public GatheringItemNoti(GIEnv.GItemType type = GIEnv.GItemType.Chunk)
+        {
+            ItemType = type;
+            ResetTime = TimeSpan.FromHours(GIEnv.ResetTimeList[(int)type]);
+
+            NotiTime = DateTime.Now;
+        }
+
+        public override void UpdateTime()
+        {
+            NotiTime = DateTime.Now.AddSeconds(ResetTime.TotalSeconds);
+        }
+
+        private string GetRemainTimeHM()
+        {
+            var ts = NotiTime - DateTime.Now;
+
+            int hour = ts.Hours + (ts.Days * 24);
+            int min = ts.Minutes;
+
+            return $"{hour:D2}:{min:D2}";
+        }
+
+        public override string GetNotiTitle() => AppResources.Noti_GatheringItem_Title;
+        public override string GetNotiText() => $"{TypeString} {AppResources.Noti_GatheringItem_Message}";
     }
 }

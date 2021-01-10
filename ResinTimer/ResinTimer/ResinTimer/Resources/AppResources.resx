@@ -117,8 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AppName" xml:space="preserve">
+    <value>Resin Timer</value>
+  </data>
   <data name="BootAlarmRegisterFail" xml:space="preserve">
-    <value>Resin alarm register fail</value>
+    <value>Resin alarm register fail
+Please re-enable alarm in app setting to register notification alarm</value>
   </data>
   <data name="BootAlarmRegisterSuccess" xml:space="preserve">
     <value>Resin alarm register success</value>
@@ -213,6 +217,21 @@
   <data name="Expedition_Type_Mora" xml:space="preserve">
     <value>Mora</value>
   </data>
+  <data name="GatheringItemTimerPage_Remain" xml:space="preserve">
+    <value>Remain</value>
+  </data>
+  <data name="GatheringItemTimer_ResetComplete" xml:space="preserve">
+    <value>Restored</value>
+  </data>
+  <data name="GatheringItem_Type_Artifact" xml:space="preserve">
+    <value>Artifact</value>
+  </data>
+  <data name="GatheringItem_Type_Chunk" xml:space="preserve">
+    <value>Chunk</value>
+  </data>
+  <data name="GatheringItem_Type_Specialty" xml:space="preserve">
+    <value>Specialty</value>
+  </data>
   <data name="InfoPage_AppName" xml:space="preserve">
     <value>Resin Timer</value>
   </data>
@@ -253,14 +272,11 @@ MIT License - Microsoft Corporation</value>
   <data name="MasterDetail_MasterList_AppInfo" xml:space="preserve">
     <value>App Info</value>
   </data>
-  <data name="MasterDetail_MasterList_Artifact" xml:space="preserve">
-    <value>Artifact</value>
-  </data>
-  <data name="MasterDetail_MasterList_Chunk" xml:space="preserve">
-    <value>Chunk</value>
-  </data>
   <data name="MasterDetail_MasterList_Expedition" xml:space="preserve">
     <value>Expedition</value>
+  </data>
+  <data name="MasterDetail_MasterList_GatheringItem" xml:space="preserve">
+    <value>Gathering Item</value>
   </data>
   <data name="MasterDetail_MasterList_Resin" xml:space="preserve">
     <value>Resin</value>
@@ -313,6 +329,18 @@ MIT License - Microsoft Corporation</value>
   <data name="Noti_Expedition_Title" xml:space="preserve">
     <value>Expedition Complete</value>
   </data>
+  <data name="Noti_GatheringItem_Message" xml:space="preserve">
+    <value>are restored now</value>
+  </data>
+  <data name="Noti_GatheringItem_Title" xml:space="preserve">
+    <value>Restore Gathering Item</value>
+  </data>
+  <data name="Noti_QuickAction_ResetTimer" xml:space="preserve">
+    <value>Timer Reset</value>
+  </data>
+  <data name="Noti_QuickAction_RunGenshinApp" xml:space="preserve">
+    <value>Run Genshin</value>
+  </data>
   <data name="ResinWidget_Name" xml:space="preserve">
     <value>Resin Widget</value>
   </data>
@@ -333,5 +361,8 @@ MIT License - Microsoft Corporation</value>
   </data>
   <data name="SettingPage_Title" xml:space="preserve">
     <value>Setting</value>
+  </data>
+  <data name="WidgetConfigure_Title" xml:space="preserve">
+    <value>Configure Widget</value>
   </data>
 </root>

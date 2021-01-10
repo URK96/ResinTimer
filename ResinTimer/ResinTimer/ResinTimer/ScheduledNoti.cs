@@ -10,6 +10,7 @@ namespace ResinTimer
         void Cancel<T>() where T :Noti;
         void ScheduleAllNoti();
         void Schedule<T>() where T : Noti;
-        void TestNoti();
+        void ScheduleCustomNoti(string title, string message, int id, DateTime notiTime);
+        void TestNoti(string message = "");
     }
 }

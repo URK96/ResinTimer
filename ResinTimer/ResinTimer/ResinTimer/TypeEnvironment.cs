@@ -77,11 +77,13 @@ namespace ResinTimer
 
     public static class ExpeditionEnvironment
     {
-        public enum ExpeditionType { Chunk, Ingredient, Mora }
+        public enum ExpeditionType { Chunk = 0, Ingredient, Mora }
     }
 
     public static class GatheringItemEnvironment
     {
-        public enum GItemType { Chunk, Artifact, Specialty }
+        public const int TypeCount = 3;
+        public enum GItemType { Chunk = 0, Artifact, Specialty }
+        public static double[] ResetTimeList = { 72, 0.05, 48 };
     }
 }

@@ -61,6 +61,9 @@ namespace ResinTimer
 
                 var expNotiManager = new ExpeditionNotiManager();
                 expNotiManager.UpdateScheduledNoti<ExpeditionNoti>();
+
+                var giNotiManager = new GatheringItemNotiManager();
+                giNotiManager.UpdateScheduledNoti<GatheringItemNoti>();
             }
             else
             {

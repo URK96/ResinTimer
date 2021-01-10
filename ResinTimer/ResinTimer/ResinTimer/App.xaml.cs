@@ -57,12 +57,16 @@ namespace ResinTimer
 
         protected override void OnStart()
         {
+#if DEBUG
+
+#else
             var sb = new StringBuilder();
             sb.Append("android=4c940536-5e25-4e22-a445-1f5ae7cc254d;");
             sb.Append("uwp=4a09233c-0d70-4ae8-9987-1beed7439a61;");
             sb.Append("ios=8e875b1a-243a-4293-9d81-7b19c4fe59f5");
 
             AppCenter.Start(sb.ToString(), typeof(Analytics), typeof(Crashes));
+#endif
         }
 
         protected override void OnSleep()

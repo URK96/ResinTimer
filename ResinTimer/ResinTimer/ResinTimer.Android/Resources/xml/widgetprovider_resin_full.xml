@@ -5,6 +5,5 @@
     android:updatePeriodMillis="480000"
     android:initialLayout="@layout/ResinWidget"
     android:resizeMode="horizontal|vertical"
-    android:widgetCategory="home_screen"
-    android:configure="com.urk.resintimer.WidgetConfigActivity">
+    android:widgetCategory="home_screen">
 </appwidget-provider>

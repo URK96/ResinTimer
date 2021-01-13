@@ -23,7 +23,7 @@
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>C6F9757DBFB9EA2383D4FA51101E6990AA6A21CE</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>8401C099FF8E9BC1F8D586E9CFC2D659302E85E4</PackageCertificateThumbprint>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

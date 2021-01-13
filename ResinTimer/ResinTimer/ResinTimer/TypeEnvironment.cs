@@ -84,6 +84,6 @@ namespace ResinTimer
     {
         public const int TypeCount = 3;
         public enum GItemType { Chunk = 0, Artifact, Specialty }
-        public static double[] ResetTimeList = { 72, 0.05, 48 };
+        public static double[] ResetTimeList = { 72, 24, 48 };
     }
 }

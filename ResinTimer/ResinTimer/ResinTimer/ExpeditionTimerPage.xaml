@@ -19,10 +19,10 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Reset" IconImageSource="refresh.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="ResetToolbarItem" Text="Reset" IconImageSource="refresh.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="EditToolbarItem" Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked" />
         <ToolbarItem Text="Add Expedition" IconImageSource="plus.png" Order="Primary" Priority="2" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem Text="Remove Expedition" IconImageSource="minus.png" Order="Primary" Priority="3" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="RemoveToolbarItem" Text="Remove Expedition" IconImageSource="minus.png" Order="Primary" Priority="3" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="ListCollectionView" ItemsSource="{Binding Notis}"

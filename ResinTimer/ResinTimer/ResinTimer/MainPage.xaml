@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   xmlns:local="clr-namespace:ResinTimer"
                   xmlns:resources="clr-namespace:ResinTimer.Resources"
                   x:Class="ResinTimer.MainPage"
-                  MasterBehavior="Popover">
+                  FlyoutLayoutBehavior="Popover">
 
-    <MasterDetailPage.Master>
+    <FlyoutPage.Flyout>
         <ContentPage Padding="0,40,0,0" IconImageSource="resintimer_icon.png" Title="Resin Timer">
             <StackLayout>
                 <ListView x:Name="MainListView"
@@ -40,6 +40,6 @@
                 </ListView>
             </StackLayout>
         </ContentPage>
-    </MasterDetailPage.Master>
+    </FlyoutPage.Flyout>
 
-</MasterDetailPage>
+</FlyoutPage>

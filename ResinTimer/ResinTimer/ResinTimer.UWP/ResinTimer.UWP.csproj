@@ -23,10 +23,11 @@
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>8401C099FF8E9BC1F8D586E9CFC2D659302E85E4</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>C6F9757DBFB9EA2383D4FA51101E6990AA6A21CE</PackageCertificateThumbprint>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PackageCertificateKeyFile />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -124,6 +125,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="artifact.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
@@ -140,6 +142,7 @@
     <Content Include="mora.png" />
     <Content Include="notisetting.png" />
     <Content Include="plus.png" />
+    <Content Include="refresh.png" />
     <Content Include="resin.png" />
     <Content Include="resintimer_icon.png" />
     <Content Include="resintimer_icon_medium.png" />
@@ -190,8 +193,10 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="setting.png" />
+    <Content Include="silk_flower.png" />
     <Content Include="xamarin_logo.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <None Include="ResinTimer.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

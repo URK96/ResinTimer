@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace ResinTimer
 {
-    public partial class MainPage : MasterDetailPage
+    public partial class MainPage : FlyoutPage
     {
         public MainPage()
         {

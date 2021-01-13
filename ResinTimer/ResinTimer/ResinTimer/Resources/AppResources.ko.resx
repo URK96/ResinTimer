@@ -217,6 +217,9 @@
   <data name="Expedition_Type_Mora" xml:space="preserve">
     <value>모라</value>
   </data>
+  <data name="GatheringItemMain_Title" xml:space="preserve">
+    <value>채집물 알리미</value>
+  </data>
   <data name="GatheringItemTimerPage_Remain" xml:space="preserve">
     <value>남음</value>
   </data>

@@ -217,6 +217,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Expedition_Type_Mora" xml:space="preserve">
     <value>Mora</value>
   </data>
+  <data name="GatheringItemMain_Title" xml:space="preserve">
+    <value>Item</value>
+  </data>
   <data name="GatheringItemTimerPage_Remain" xml:space="preserve">
     <value>Remain</value>
   </data>

@@ -5,11 +5,11 @@
   <item
     android:id="@+id/WidgetConfigureClose"
     android:icon="@drawable/close"
-    android:title="@string/Common_Sort"
+    android:title="@string/WidgetConfigure_Toolbar_Cancel"
     local:showAsAction="ifRoom"/>
   <item
     android:id="@+id/WidgetConfigureApply"
     android:icon="@drawable/apply"
-    android:title="@string/Common_UpdateImageCache"
+    android:title="@string/WidgetConfigure_Toolbar_Apply"
     local:showAsAction="ifRoom"/>
 </menu>

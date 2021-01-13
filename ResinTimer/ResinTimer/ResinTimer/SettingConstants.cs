@@ -14,5 +14,8 @@ namespace ResinTimer
 
         public const string QUICKCALC_VIBRATION = "QuickCalc_Vibration";
         public const string NOTI_ENABLED = "Noti_Enabled";
+
+        // Android Specific
+        public const string WIDGET_BACKGROUND = "Widget_Background";
     }
 }

@@ -386,6 +386,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItemMain_Title {
+            get {
+                return ResourceManager.GetString("GatheringItemMain_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Restored과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string GatheringItemTimer_ResetComplete {

@@ -35,6 +35,8 @@ namespace ResinTimer
             try
             {
                 updateTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
+
+                ResetSelection();
             }
             catch (Exception ex)
             {
@@ -57,18 +59,29 @@ namespace ResinTimer
             ListCollectionView.ItemsSource = Notis;
         }
 
+        private void ResetSelection()
+        {
+            ListCollectionView.SelectedItem = null;
+            ListCollectionView.SelectedItems = null;
+        }
+
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             switch ((sender as ToolbarItem).Priority)
             {
                 case 0:  // Reset Item
-                    (ListCollectionView.SelectedItem as GatheringItemNoti).UpdateTime();
-                    notiManager.UpdateNotisTime();
-                    RefreshCollectionView();
+                    if (ListCollectionView.SelectedItem != null)
+                    {
+                        (ListCollectionView.SelectedItem as GatheringItemNoti).UpdateTime();
+                        notiManager.UpdateNotisTime();
+                        RefreshCollectionView();
+                    }
                     break;
                 default:
                     break;
             }
+
+            ResetSelection();
         }
 
         private void RefreshTime(object statusInfo)
@@ -78,6 +91,13 @@ namespace ResinTimer
                 MainThread.BeginInvokeOnMainThread(RefreshCollectionView);
             }
             catch (Exception) { }
+        }
+
+        private void ListCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            bool isVisible = e.CurrentSelection.Count >= 1;
+
+            ResetToolbarItem.IsEnabled = isVisible;
         }
     }
 }

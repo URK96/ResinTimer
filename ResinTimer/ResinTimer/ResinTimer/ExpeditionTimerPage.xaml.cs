@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Windows.Input;
 
@@ -40,6 +39,8 @@ namespace ResinTimer
             try
             {
                 updateTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
+
+                ResetSelection();
             }
             catch (Exception ex)
             {
@@ -60,14 +61,23 @@ namespace ResinTimer
             ListCollectionView.ItemsSource = Notis;
         }
 
+        private void ResetSelection()
+        {
+            ListCollectionView.SelectedItem = null;
+            ListCollectionView.SelectedItems = null;
+        }
+
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             switch ((sender as ToolbarItem).Priority)
             {
                 case 0:  // Reset Item
-                    (ListCollectionView.SelectedItem as ExpeditionNoti).UpdateTime();
-                    notiManager.UpdateNotisTime();
-                    RefreshCollectionView();
+                    if (ListCollectionView.SelectedItem != null)
+                    {
+                        (ListCollectionView.SelectedItem as ExpeditionNoti).UpdateTime();
+                        notiManager.UpdateNotisTime();
+                        RefreshCollectionView();
+                    }
                     break;
                 case 1: // Edit Item
                     if (ListCollectionView.SelectedItem != null)
@@ -102,11 +112,14 @@ namespace ResinTimer
                 default:
                     break;
             }
+
+            ResetSelection();
         }
 
         private void RemoveItem(Noti noti)
         {
             notiManager.EditList(noti, NotiManager.EditType.Remove);
+
             RefreshCollectionView();
         }
 
@@ -119,18 +132,13 @@ namespace ResinTimer
             catch (Exception) { }
         }
 
-        private async void ListCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ListCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //if (e.CurrentSelection.Count < 1)
-            //{
-            //    return;
-            //}
+            bool isVisible = e.CurrentSelection.Count >= 1;
 
-            //var item = e.CurrentSelection.FirstOrDefault() as ExpeditionNoti;
-
-            //await Navigation.PushAsync(new EditExpeditionItemPage(notiManager, NotiManager.EditType.Edit, item));
-
-            //(sender as CollectionView).SelectedItem = null;
+            ResetToolbarItem.IsEnabled = isVisible;
+            EditToolbarItem.IsEnabled = isVisible;
+            RemoveToolbarItem.IsEnabled = isVisible;
         }
     }
 }

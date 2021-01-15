@@ -41,7 +41,7 @@ namespace ResinTimer
                 { 0, 0.5, new Animation(v => TimeSeperator.Opacity = v, 1, 0) },
                 { 0.5, 1, new Animation(v => TimeSeperator.Opacity = v, 0, 1) }
             };
-            animation.Commit(this, "TimeSeperatorAnimation", 16, 2000, Easing.BounceIn, repeat: () => true);
+            //animation.Commit(this, "TimeSeperatorAnimation", 16, 2000, Easing.BounceIn, repeat: () => true);
 
             ResinEnvironment.oneCountTime = new ResinTime(0);
             ResinEnvironment.totalCountTime = new ResinTime(0);

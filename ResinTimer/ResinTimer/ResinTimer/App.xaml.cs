@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 
 using ResinTimer.Resources;
 
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -36,6 +37,14 @@ namespace ResinTimer
 
         private void SetDefaultPreferences()
         {
+            if (!Preferences.ContainsKey(SettingConstants.LAST_INPUT_TIME))
+            {
+                Preferences.Set(SettingConstants.LAST_INPUT_TIME, DateTime.Now.ToString());
+            }
+            if (!Preferences.ContainsKey(SettingConstants.RESIN_INPUT_TYPE))
+            {
+                Preferences.Set(SettingConstants.RESIN_INPUT_TYPE, (int)ResinEnvironment.ApplyType.Time);
+            }
             if (!Preferences.ContainsKey(SettingConstants.QUICKCALC_VIBRATION))
             {
                 Preferences.Set(SettingConstants.QUICKCALC_VIBRATION, true);

@@ -480,11 +480,20 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Scheduled date/time of full recovery과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Scheduled D/T of full recovery과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string MainPage_EndDateTimeTitle {
             get {
                 return ResourceManager.GetString("MainPage_EndDateTimeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Last Input D/T과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MainPage_LastInputDateTimeTitle {
+            get {
+                return ResourceManager.GetString("MainPage_LastInputDateTimeTitle", resourceCulture);
             }
         }
         

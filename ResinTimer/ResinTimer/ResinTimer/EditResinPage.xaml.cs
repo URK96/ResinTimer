@@ -77,6 +77,8 @@ namespace ResinTimer
                     break;
             }
 
+            ResinEnvironment.lastInputTime = DateTime.Now.ToString();
+
             CalcRemainTime();
             ResinEnvironment.SaveValue();
 

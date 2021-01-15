@@ -25,7 +25,9 @@ namespace ResinTimer
         private Timer buttonPressTimer;
 
         private int quickCalcValue;
+        private int quickOTCalcValue;
         private bool isRunQuickCalc = false;
+        private bool isQuickOTCalc = false;
 
         public ResinTimerPage()
         {
@@ -36,11 +38,11 @@ namespace ResinTimer
                 Title = string.Empty;
             }
 
-            var animation = new Animation
-            {
-                { 0, 0.5, new Animation(v => TimeSeperator.Opacity = v, 1, 0) },
-                { 0.5, 1, new Animation(v => TimeSeperator.Opacity = v, 0, 1) }
-            };
+            //var animation = new Animation
+            //{
+            //    { 0, 0.5, new Animation(v => TimeSeperator.Opacity = v, 1, 0) },
+            //    { 0.5, 1, new Animation(v => TimeSeperator.Opacity = v, 0, 1) }
+            //};
             //animation.Commit(this, "TimeSeperatorAnimation", 16, 2000, Easing.BounceIn, repeat: () => true);
 
             ResinEnvironment.oneCountTime = new ResinTime(0);
@@ -75,7 +77,6 @@ namespace ResinTimer
                 Priority = ThreadPriority.Normal
             };
             calcThread.Start();
-
         }
 
         private void SetToolbar()
@@ -177,6 +178,7 @@ namespace ResinTimer
                 TotalTimeHour.Text = $"{ResinEnvironment.totalCountTime.Hour:D2}";
                 TotalTimeMinute.Text = $"{ResinEnvironment.totalCountTime.Min:D2}";
 
+                LastInputDateTimeLabel.Text = ResinEnvironment.lastInputTime;
                 EndDateTimeLabel.Text = $"{ResinEnvironment.endTime}";
 
                 ResinCount.Text = ResinEnvironment.resin.ToString();
@@ -204,9 +206,20 @@ namespace ResinTimer
                 ResinEnvironment.endTime = now;
             }
 
-            ResinEnvironment.endTime = ((ResinEnvironment.resin - quickCalcValue) < 0) ?
-                now.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * ResinEnvironment.MAX_RESIN) :
-                ResinEnvironment.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * quickCalcValue);
+            if (isQuickOTCalc)
+            {
+                ResinEnvironment.endTime = ResinEnvironment.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * (ResinEnvironment.resin / quickOTCalcValue) * quickOTCalcValue);
+
+                isQuickOTCalc = false;
+            }
+            else
+            {
+                ResinEnvironment.endTime = ((ResinEnvironment.resin - quickCalcValue) < 0) ?
+                    now.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * ResinEnvironment.MAX_RESIN) :
+                    ResinEnvironment.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * quickCalcValue);
+            }
+
+            ResinEnvironment.lastInputTime = now.ToString();
 
             ResinEnvironment.CalcResin();
             ResinEnvironment.SaveValue();
@@ -229,7 +242,17 @@ namespace ResinTimer
                 button.BackgroundColor = Color.FromHex("#500682F6");
                 await button.ScaleTo(0.95, 100, Easing.SinInOut);
 
-                quickCalcValue = -int.Parse(button.Text);
+                if (!int.TryParse(button.Text, out quickCalcValue))
+                {
+                    quickOTCalcValue = int.Parse(button.Text.Substring(2));
+
+                    isQuickOTCalc = true;
+                }
+                else
+                {
+                    quickCalcValue = -quickCalcValue;
+                }
+                
                 isRunQuickCalc = false;
 
                 if (Device.RuntimePlatform == Device.UWP)

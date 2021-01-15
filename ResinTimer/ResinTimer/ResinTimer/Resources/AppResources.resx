@@ -261,7 +261,10 @@ Syncfusion License
 MIT License - Microsoft Corporation</value>
   </data>
   <data name="MainPage_EndDateTimeTitle" xml:space="preserve">
-    <value>Scheduled date/time of full recovery</value>
+    <value>Scheduled D/T of full recovery</value>
+  </data>
+  <data name="MainPage_LastInputDateTimeTitle" xml:space="preserve">
+    <value>Last Input D/T</value>
   </data>
   <data name="MainPage_QuickCalcButton_Toast" xml:space="preserve">
     <value>Press during 0.5s to apply calc</value>

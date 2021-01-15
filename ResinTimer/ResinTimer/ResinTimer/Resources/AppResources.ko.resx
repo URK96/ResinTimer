@@ -263,6 +263,9 @@ MIT License - Microsoft Corporation</value>
   <data name="MainPage_EndDateTimeTitle" xml:space="preserve">
     <value>완전 회복 예정 시각</value>
   </data>
+  <data name="MainPage_LastInputDateTimeTitle" xml:space="preserve">
+    <value>최종 입력 시간</value>
+  </data>
   <data name="MainPage_QuickCalcButton_Toast" xml:space="preserve">
     <value>적용을 위해 0.5초 동안 눌러주세요</value>
   </data>

@@ -15,6 +15,7 @@ namespace ResinTimer
         public const int MAX_RESIN = 160;
 
         public static DateTime endTime;
+        public static string lastInputTime;
         public static ResinTime totalCountTime;
         public static ResinTime oneCountTime;
 
@@ -38,6 +39,9 @@ namespace ResinTimer
                 Preferences.Set(SettingConstants.END_TIME, now.ToString());
                 endTime = now;
             }
+
+            lastInputTime = Preferences.Get(SettingConstants.LAST_INPUT_TIME, DateTime.Now.ToString());
+            applyType = (ApplyType)Preferences.Get(SettingConstants.RESIN_INPUT_TYPE, (int)ApplyType.Time);
 
             if (Preferences.ContainsKey(SettingConstants.RESIN_COUNT))
             {
@@ -70,6 +74,8 @@ namespace ResinTimer
             {
                 Preferences.Set(SettingConstants.RESIN_COUNT, resin);
                 Preferences.Set(SettingConstants.END_TIME, endTime.ToString());
+                Preferences.Set(SettingConstants.LAST_INPUT_TIME, lastInputTime);
+                Preferences.Set(SettingConstants.RESIN_INPUT_TYPE, (int)applyType);
             }
             catch { }
         }

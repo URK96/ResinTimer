@@ -22,6 +22,8 @@ namespace ResinTimer.Droid
 
             base.OnCreate(savedInstanceState);
 
+            Rg.Plugins.Popup.Popup.Init(this);
+
             Xamarin.Forms.Forms.SetFlags(new string[] { "Shapes_Experimental", "SwipeView_Experimental" });
 
             Xamarin.Forms.DependencyService.Register<ResinTimer.IScheduledNoti, ResinTimer.Droid.ScheduledNotiAndroid>();
@@ -36,6 +38,11 @@ namespace ResinTimer.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public override void OnBackPressed()
+        {
+            Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
         }
     }
 }

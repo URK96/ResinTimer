@@ -82,6 +82,9 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
     </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>2.0.0.10</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Activity">
       <Version>1.1.0.5</Version>
     </PackageReference>

@@ -356,6 +356,9 @@ MIT License - Microsoft Corporation</value>
   <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
     <value>알림 활성화</value>
   </data>
+  <data name="SettingPage_Section_App_Start_DetailScreen_Title" xml:space="preserve">
+    <value>시작 화면 설정</value>
+  </data>
   <data name="SettingPage_Section_App_Title" xml:space="preserve">
     <value>앱</value>
   </data>

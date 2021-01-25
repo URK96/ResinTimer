@@ -11,6 +11,14 @@
                 <SwitchCell x:Name="Notification" OnColor="#0682F6"
                             Text="{x:Static resources:AppResources.SettingPage_Section_App_Cell_Notification_Title}"
                             OnChanged="Notification_OnChanged" />
+                <ViewCell x:Name="StartDetailScreen" 
+                          Tapped="StartDetailScreen_Tapped">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Label Text="Start Screen" />
+                        <Label x:Name="StartDetailScreenNow"
+                               HorizontalOptions="End"/>
+                    </StackLayout>
+                </ViewCell>
             </TableSection>
             <TableSection Title="{x:Static resources:AppResources.SettingPage_Section_Main_Title}">
                 <SwitchCell x:Name="QuickCalcVibration" OnColor="#0682F6"

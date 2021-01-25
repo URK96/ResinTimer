@@ -768,6 +768,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Start Screen과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_Start_DetailScreen_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_Start_DetailScreen_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   App과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string SettingPage_Section_App_Title {

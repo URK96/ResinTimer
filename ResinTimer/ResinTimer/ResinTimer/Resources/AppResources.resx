@@ -356,6 +356,9 @@ MIT License - Microsoft Corporation</value>
   <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
     <value>Enable Notification</value>
   </data>
+  <data name="SettingPage_Section_App_Start_DetailScreen_Title" xml:space="preserve">
+    <value>Start Screen</value>
+  </data>
   <data name="SettingPage_Section_App_Title" xml:space="preserve">
     <value>App</value>
   </data>

@@ -144,9 +144,13 @@ namespace ResinTimer.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                var assembliesToInclude = new List<Assembly>();
+                Rg.Plugins.Popup.Popup.Init();
 
-                assembliesToInclude.Add(typeof(Syncfusion.SfGauge.XForms.UWP.SfGaugeRenderer).GetTypeInfo().Assembly);
+                var assembliesToInclude = new List<Assembly>
+                {
+                    typeof(Syncfusion.SfGauge.XForms.UWP.SfGaugeRenderer).GetTypeInfo().Assembly
+                };
+                assembliesToInclude.AddRange(Rg.Plugins.Popup.Popup.GetExtraAssemblies());
 
                 Xamarin.Forms.Forms.SetFlags("SwipeView_Experimental");
 

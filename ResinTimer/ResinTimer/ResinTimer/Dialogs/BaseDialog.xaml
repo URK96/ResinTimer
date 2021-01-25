@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    x:Class="ResinTimer.Dialogs.BaseDialog"
+    CloseWhenBackgroundIsClicked="True">
+    
+    <!--You can set an animation in the xaml file or in the csharp code behind-->
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation PositionIn="Center" PositionOut="Center"
+                                   ScaleIn="1.2" ScaleOut="0.8"
+                                   DurationIn="400" DurationOut="300"
+                                   EasingIn="SinOut" EasingOut="SinIn"
+                                   HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    
+    <!--You can use any elements here which are extended from Xamarin.Forms.View-->
+    <pages:PopupPage.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=20}" />
+            <Setter Property="BorderColor" Value="#0682F6" />
+            <Setter Property="BorderWidth" Value="2" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="CharacterSpacing" Value="3" />
+            <Setter Property="FontSize" Value="Default" />
+        </Style>
+
+        <Color x:Key="LightPrimaryColor">WhiteSmoke</Color>
+        <Color x:Key="LightSecondaryColor">Black</Color>
+        <Color x:Key="DarkPrimaryColor">Gray</Color>
+        <Color x:Key="DarkSecondaryColor">White</Color>
+
+        <Style x:Key="FrameStyle" TargetType="Frame">
+            <Setter Property="BackgroundColor"
+                    Value="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}" />
+        </Style>
+    </pages:PopupPage.Resources>
+
+    <AbsoluteLayout>
+        <Frame CornerRadius="10" Style="{StaticResource FrameStyle}"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.8, 0.5"
+               BackgroundColor="White">
+            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                <Label x:Name="DialogTitle" 
+                       FontSize="Title" HorizontalTextAlignment="Center" />
+
+                <StackLayout x:Name="DialogContainer" />
+                <Grid Padding="0, 20, 0, 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0"
+                            Text="Cancel" Style="{StaticResource ButtonStyle}"
+                            Pressed="ButtonPressed" Released="ButtonReleased" />
+                    <Button Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0"
+                            Text="Apply" Style="{StaticResource ButtonStyle}" 
+                            Pressed="ButtonPressed" Released="ButtonReleased" />
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </AbsoluteLayout>
+</pages:PopupPage>

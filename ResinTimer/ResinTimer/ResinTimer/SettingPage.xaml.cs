@@ -8,12 +8,23 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using System.IO;
+using ResinTimer.Resources;
+using ResinTimer.Dialogs;
+
+using Rg.Plugins.Popup.Services;
 
 namespace ResinTimer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingPage : ContentPage
     {
+        string[] StartScreenList => new string[]
+        {
+            AppResources.MasterDetail_MasterList_Resin,
+            AppResources.MasterDetail_MasterList_Expedition,
+            AppResources.MasterDetail_MasterList_GatheringItem
+        };
+
         public SettingPage()
         {
             InitializeComponent();
@@ -25,10 +36,21 @@ namespace ResinTimer
         {
             // App Section
             Notification.On = Preferences.Get(SettingConstants.NOTI_ENABLED, false);
+            StartDetailScreenNow.Text = GetStartScreenString(Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0));
 
             // Main Section
             QuickCalcVibration.IsEnabled = Device.RuntimePlatform != Device.UWP;
             QuickCalcVibration.On = Preferences.Get(SettingConstants.QUICKCALC_VIBRATION, true);
+        }
+
+        private string GetStartScreenString(int value)
+        {
+            return value switch
+            {
+                1 => AppResources.MasterDetail_MasterList_Expedition,
+                2 => AppResources.MasterDetail_MasterList_GatheringItem,
+                _ => AppResources.MasterDetail_MasterList_Resin
+            };
         }
 
         private void QuickCalcVibration_OnChanged(object sender, ToggledEventArgs e)
@@ -48,9 +70,9 @@ namespace ResinTimer
                 {
                     if (!await bootService.Register())
                     {
-                        string title = ResinTimer.Resources.AppResources.Bootstrap_ChangeEnableFail_Title;
-                        string message = ResinTimer.Resources.AppResources.Bootstrap_ChangeEnableFail_Message;
-                        string ok = ResinTimer.Resources.AppResources.Dialog_Ok;
+                        string title = AppResources.Bootstrap_ChangeEnableFail_Title;
+                        string message = AppResources.Bootstrap_ChangeEnableFail_Message;
+                        string ok = AppResources.Dialog_Ok;
 
                         await DisplayAlert(title, message, ok);
                     }
@@ -74,6 +96,11 @@ namespace ResinTimer
                     await bootService.Unregister();
                 }
             }
+        }
+
+        private async void StartDetailScreen_Tapped(object sender, EventArgs e)
+        {
+            await PopupNavigation.Instance.PushAsync(new BaseDialog("Select Screen", new RadioPreferenceView(StartScreenList, SettingConstants.APP_START_DETAILSCREEN)));
         }
     }
 }

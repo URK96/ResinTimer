@@ -31,9 +31,9 @@
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.1.0" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Syncfusion.Licensing" Version="18.4.0.33" />
-    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="18.4.0.33" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
+    <PackageReference Include="Syncfusion.Licensing" Version="18.4.0.35" />
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="18.4.0.35" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1905" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
   </ItemGroup>
 

@@ -1,10 +1,9 @@
-﻿using Rg.Plugins.Popup.Services;
+﻿using ResinTimer.Resources;
+
+using Rg.Plugins.Popup.Services;
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -15,6 +14,7 @@ namespace ResinTimer.Dialogs
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RadioPreferenceView : ContentView
     {
+        int selectedIndex;
         string settingKey;
         List<string> radioList;
 
@@ -36,6 +36,8 @@ namespace ResinTimer.Dialogs
 
         private void InitList(string[] list, int initSelected)
         {
+            selectedIndex = initSelected;
+
             for (int i = 0; i < list.Length; ++i)
             {
                 var rd = new RadioButton
@@ -49,16 +51,48 @@ namespace ResinTimer.Dialogs
             }
         }
 
-        private async void Rd_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        private void Rd_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
             if (e.Value)
             {
-                int index = radioList.FindIndex(x => x.Equals((sender as RadioButton).Content));
-
-                Preferences.Set(settingKey, index);
-
-                await PopupNavigation.Instance.PopAsync();
+                selectedIndex = radioList.FindIndex(x => x.Equals((sender as RadioButton).Content));
             }
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            string btText = (sender as Button).Text;
+
+            if (btText.Equals(AppResources.Dialog_Ok))
+            {
+                Preferences.Set(settingKey, selectedIndex);
+            }
+
+            await PopupNavigation.Instance.PopAsync();
+        }
+
+        private async void ButtonPressed(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+
+            try
+            {
+                button.BackgroundColor = Color.FromHex("#500682F6");
+                await button.ScaleTo(0.95, 100, Easing.SinInOut);
+            }
+            catch { }
+        }
+
+        private async void ButtonReleased(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+
+            try
+            {
+                button.BackgroundColor = Color.Transparent;
+                await button.ScaleTo(1.0, 100, Easing.SinInOut);
+            }
+            catch { }
         }
     }
 }

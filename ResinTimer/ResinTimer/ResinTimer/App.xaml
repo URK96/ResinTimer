@@ -3,6 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ResinTimer.App">
     <Application.Resources>
+        <Color x:Key="LightPrimaryColor">WhiteSmoke</Color>
+        <Color x:Key="LightSecondaryColor">Black</Color>
+        <Color x:Key="DarkPrimaryColor">Gray</Color>
+        <Color x:Key="DarkSecondaryColor">White</Color>
 
+        <Style x:Key="DialogButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=20}" />
+            <Setter Property="BorderColor" Value="#0682F6" />
+            <Setter Property="BorderWidth" Value="2" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="CharacterSpacing" Value="3" />
+            <Setter Property="FontSize" Value="Default" />
+        </Style>
     </Application.Resources>
 </Application>

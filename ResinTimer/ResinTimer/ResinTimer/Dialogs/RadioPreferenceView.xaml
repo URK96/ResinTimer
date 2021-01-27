@@ -1,11 +1,31 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            x:Class="ResinTimer.Dialogs.RadioPreferenceView"
-            Margin="0, 10, 0, 0">
-    <ScrollView>
-        <StackLayout x:Name="RadioListContainer"
-                     Orientation="Vertical"
-                     RadioButtonGroup.GroupName="RadioSelect" />
-    </ScrollView>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:ResinTimer.Resources"
+             x:Class="ResinTimer.Dialogs.RadioPreferenceView"
+             Margin="0, 10, 0, 0">
+    <StackLayout Orientation="Vertical">
+        <ScrollView>
+            <StackLayout x:Name="RadioListContainer"
+                         Orientation="Vertical"
+                         RadioButtonGroup.GroupName="RadioSelect" />
+        </ScrollView>
+
+        <Grid Padding="0, 20, 0, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0"
+                            Text="{x:Static resources:AppResources.Dialog_Cancel}" Style="{StaticResource DialogButtonStyle}"
+                            Pressed="ButtonPressed" Released="ButtonReleased" Clicked="Button_Clicked" />
+            <Button Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0"
+                            Text="{x:Static resources:AppResources.Dialog_Ok}" Style="{StaticResource DialogButtonStyle}" 
+                            Pressed="ButtonPressed" Released="ButtonReleased" Clicked="Button_Clicked"/>
+        </Grid>
+    </StackLayout>
 </ContentView>

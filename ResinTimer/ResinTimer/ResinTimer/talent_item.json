@@ -1,0 +1,77 @@
+{
+  "Mondstadt": {
+    "Freedom": {
+      "DayOfWeek": [ 1, 4 ],
+      "Character": [
+        "Amber",
+        "Barbara",
+        "Diona",
+        "Klee",
+        "Sucrose",
+        "Tartaglia",
+        "Anemo Traveler",
+        "Geo Traveler"
+      ]
+    },
+
+    "Resistance": {
+      "DayOfWeek": [ 2, 5 ],
+      "Character": [
+        "Bennett",
+        "Diluc",
+        "Jean",
+        "Mona",
+        "Noelle",
+        "Razor",
+        "Anemo Traveler",
+        "Geo Traveler"
+      ]
+    },
+
+    "Ballad": {
+      "DayOfWeek": [ 3, 6 ],
+      "Character": [
+        "Albedo",
+        "Fischl",
+        "Kaeya",
+        "Lisa",
+        "Venti",
+        "Anemo Traveler",
+        "Geo Traveler"
+      ]
+    }
+  },
+
+  "Liyue": {
+    "Prosperity": {
+      "DayOfWeek": [ 1, 4 ],
+      "Character": [
+        "Keqing",
+        "Ningguang",
+        "Qiqi",
+        "Geo Traveler"
+      ]
+    },
+
+    "Diligence": {
+      "DayOfWeek": [ 2, 5 ],
+      "Character": [
+        "Chongyun",
+        "Ganyu",
+        "Xiangling",
+        "Geo Traveler"
+      ]
+    },
+
+    "Gold": {
+      "DayOfWeek": [ 3, 6 ],
+      "Character": [
+        "Beidou",
+        "Xingqiu",
+        "Xinyan",
+        "Zhongli",
+        "Geo Traveler"
+      ]
+    }
+  }
+}

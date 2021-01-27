@@ -26,6 +26,7 @@ namespace ResinTimer
 
 #if DEBUG
             AppEnvironment.isDebug = true;
+            AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB();
 #endif
 
             SetDefaultPreferences();

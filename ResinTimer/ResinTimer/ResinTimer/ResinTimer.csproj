@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <LangVersion>8.0</LangVersion>
-    <Version>1.5.0</Version>
+    <Version>1.6.0</Version>
     <UserSecretsId>203b32d9-bd5b-4c42-8919-f7dba54960be</UserSecretsId>
   </PropertyGroup>
 
@@ -39,11 +39,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="GenshinDB-Core">
+      <HintPath>GenshinDB-Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="EditResinPage.xaml.cs">
       <DependentUpon>EditResinPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="ExpeditionTimerPage.xaml.cs">
       <DependentUpon>ExpeditionTimerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="TalentTimerPage.xaml.cs">
+      <DependentUpon>TalentTimerPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Resources\AppResources - 복사.Designer.cs">
       <DependentUpon>AppResources.Designer.cs</DependentUpon>

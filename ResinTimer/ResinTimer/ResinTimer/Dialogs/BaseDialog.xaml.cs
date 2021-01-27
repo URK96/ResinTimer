@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ResinTimer.Resources;
+
+using Rg.Plugins.Popup.Pages;
+
+using System;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using Rg.Plugins.Popup.Pages;
 
 namespace ResinTimer.Dialogs
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BaseDialog : PopupPage
     {
+        public event EventHandler OnClose;
+
         public BaseDialog(string title, View contentView)
         {
             InitializeComponent();
@@ -22,28 +22,11 @@ namespace ResinTimer.Dialogs
             DialogContainer.Children.Add(contentView);
         }
 
-        private async void ButtonPressed(object sender, EventArgs e)
+        protected override void OnDisappearing()
         {
-            var button = sender as Button;
+            base.OnDisappearing();
 
-            try
-            {
-                button.BackgroundColor = Color.FromHex("#500682F6");
-                await button.ScaleTo(0.95, 100, Easing.SinInOut);
-            }
-            catch { }
-        }
-
-        private async void ButtonReleased(object sender, EventArgs e)
-        {
-            var button = sender as Button;
-
-            try
-            {
-                button.BackgroundColor = Color.Transparent;
-                await button.ScaleTo(1.0, 100, Easing.SinInOut);
-            }
-            catch { }
+            OnClose?.Invoke(this, new EventArgs());
         }
     }
 }

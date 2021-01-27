@@ -1,6 +1,8 @@
 ﻿using System;
 
 using Xamarin.Forms;
+using Xamarin.Essentials;
+using System.Text;
 
 namespace ResinTimer
 {
@@ -10,10 +12,31 @@ namespace ResinTimer
         {
             InitializeComponent();
 
-            Detail = new NavigationPage(new ResinTimerPage())
+            Detail = new NavigationPage(GetStartPage());
+        }
+
+        private Page GetStartPage()
+        {
+            Page startPage;
+            //var bgColor = (Device.RuntimePlatform != Device.UWP) ? Color.FromHex("#3F51B5") : Color.Default;
+
+            try
             {
-                BarBackgroundColor = (Device.RuntimePlatform != Device.UWP) ? Color.FromHex("#3F51B5") : Color.Default
-            };
+                startPage = Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0) switch
+                {
+                    1 => new ExpeditionTimerPage(),
+                    2 => new GatheringItemTimerPage(),
+                    _ => new ResinTimerPage()
+                };
+            }
+            catch
+            {
+                startPage = new ResinTimerPage();
+            }
+
+            //startPage.BackgroundColor = bgColor;
+
+            return startPage;
         }
 
         private void MainListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

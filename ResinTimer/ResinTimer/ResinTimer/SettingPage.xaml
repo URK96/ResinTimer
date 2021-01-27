@@ -13,10 +13,11 @@
                             OnChanged="Notification_OnChanged" />
                 <ViewCell x:Name="StartDetailScreen" 
                           Tapped="StartDetailScreen_Tapped">
-                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                        <Label Text="Start Screen" />
+                    <StackLayout Orientation="Horizontal" Padding="15, 0, 20, 0">
+                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_Start_DetailScreen_Title}" VerticalTextAlignment="Center"/>
                         <Label x:Name="StartDetailScreenNow"
-                               HorizontalOptions="End"/>
+                               HorizontalOptions="EndAndExpand"
+                               VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </ViewCell>
             </TableSection>

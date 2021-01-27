@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             xmlns:resources="clr-namespace:ResinTimer.Resources"
+             x:Class="ResinTimer.TalentTimerPage"
+             Title="{x:Static resources:AppResources.MainPage_Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Location" IconImageSource="location.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=20}" />
+            <Setter Property="BorderColor" Value="#0682F6" />
+            <Setter Property="BorderWidth" Value="2" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="CharacterSpacing" Value="3" />
+            <Setter Property="FontSize" Value="Default" />
+        </Style>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional"
+                     AbsoluteLayout.LayoutBounds="0.5, 0.05"
+                     Orientation="Vertical">
+            <Label x:Name="NowLocationLabel" Margin="0, 0, 0, 10" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" />
+
+            <Label Text="Today Talent Book is" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large" />
+            <Label x:Name="TodayBookLabel"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" />
+         
+        </StackLayout>
+
+        <Image x:Name="TodayBookImage"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0.5, 0.2, 0.2, 0.35" />
+
+    </AbsoluteLayout>
+
+
+</ContentPage>

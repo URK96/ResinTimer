@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Xamarin.Essentials;
-using System.IO;
+﻿using ResinTimer.Dialogs;
 using ResinTimer.Resources;
-using ResinTimer.Dialogs;
 
 using Rg.Plugins.Popup.Services;
+
+using System;
+
+using Xamarin.Essentials;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace ResinTimer
 {
@@ -100,7 +96,12 @@ namespace ResinTimer
 
         private async void StartDetailScreen_Tapped(object sender, EventArgs e)
         {
-            await PopupNavigation.Instance.PushAsync(new BaseDialog("Select Screen", new RadioPreferenceView(StartScreenList, SettingConstants.APP_START_DETAILSCREEN)));
+            var dialog = new BaseDialog(AppResources.SettingPage_Section_App_Start_DetailScreen_Dialog_Title,
+                new RadioPreferenceView(StartScreenList, SettingConstants.APP_START_DETAILSCREEN));
+
+            dialog.OnClose += delegate { StartDetailScreenNow.Text = GetStartScreenString(Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0)); };
+
+            await PopupNavigation.Instance.PushAsync(dialog);
         }
     }
 }

@@ -92,4 +92,9 @@ namespace ResinTimer
         public enum GItemType { Chunk = 0, Artifact, Specialty }
         public static double[] ResetTimeList = { 72, 24, 48 };
     }
+
+    public static class TalentEnvironment
+    {
+        public enum MondstadtItem {  }
+    }
 }

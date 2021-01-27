@@ -570,6 +570,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Talent Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_Talent {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_Talent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   expedition is complete과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Noti_Expedition_Message {
@@ -768,6 +777,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Select Start Screen과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_Start_DetailScreen_Dialog_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_Start_DetailScreen_Dialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Start Screen과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string SettingPage_Section_App_Start_DetailScreen_Title {
@@ -809,6 +827,24 @@ namespace ResinTimer.Resources {
         public static string SettingPage_Title {
             get {
                 return ResourceManager.GetString("SettingPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Now Location과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentTimerPage_NowLocation_PreLabel {
+            get {
+                return ResourceManager.GetString("TalentTimerPage_NowLocation_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Talent Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentTimerPage_Title {
+            get {
+                return ResourceManager.GetString("TalentTimerPage_Title", resourceCulture);
             }
         }
         

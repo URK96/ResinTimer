@@ -16,6 +16,8 @@ namespace ResinTimer
         public const string END_TIME = "End_Time";
         public const string RESIN_INPUT_TYPE = "Resin_Input_Type";
 
+        public const string ITEM_TALENT_LOCATION = "Item_Talent_Location";
+
         public const string NOTI_LIST = "Noti_List";
         public const string EXPEDITION_NOTI_LIST = "Expedition_Noti_List";
         public const string GATHERINGITEM_NOTI_LIST = "GatheringItem_Noti_List";

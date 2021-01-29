@@ -831,11 +831,74 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Apply Characters과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentCharacterPage_Title {
+            get {
+                return ResourceManager.GetString("TalentCharacterPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Now Talent Book is과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentTimerPage_NowBook_PreLabel {
+            get {
+                return ResourceManager.GetString("TalentTimerPage_NowBook_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Now Location과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string TalentTimerPage_NowLocation_PreLabel {
             get {
                 return ResourceManager.GetString("TalentTimerPage_NowLocation_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Now Server과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentTimerPage_NowServer_PreLabel {
+            get {
+                return ResourceManager.GetString("TalentTimerPage_NowServer_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Now Region UTC과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentTimerPage_NowUTC_PreLabel {
+            get {
+                return ResourceManager.GetString("TalentTimerPage_NowUTC_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Select Location과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentTimerPage_SelectLocationDialog_Title {
+            get {
+                return ResourceManager.GetString("TalentTimerPage_SelectLocationDialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Select Server과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentTimerPage_SelectServerDialog_Title {
+            get {
+                return ResourceManager.GetString("TalentTimerPage_SelectServerDialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Apply Characters과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentTimerPage_TalentCharacterButton_Text {
+            get {
+                return ResourceManager.GetString("TalentTimerPage_TalentCharacterButton_Text", resourceCulture);
             }
         }
         

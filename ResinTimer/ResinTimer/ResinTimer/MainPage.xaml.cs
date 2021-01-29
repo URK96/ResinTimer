@@ -26,6 +26,7 @@ namespace ResinTimer
                 {
                     1 => new ExpeditionTimerPage(),
                     2 => new GatheringItemTimerPage(),
+                    3 => new TalentTimerPage(),
                     _ => new ResinTimerPage()
                 };
             }

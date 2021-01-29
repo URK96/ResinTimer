@@ -377,8 +377,29 @@ MIT License - Microsoft Corporation</value>
   <data name="SettingPage_Title" xml:space="preserve">
     <value>Setting</value>
   </data>
+  <data name="TalentCharacterPage_Title" xml:space="preserve">
+    <value>Apply Characters</value>
+  </data>
+  <data name="TalentTimerPage_NowBook_PreLabel" xml:space="preserve">
+    <value>Now Talent Book is</value>
+  </data>
   <data name="TalentTimerPage_NowLocation_PreLabel" xml:space="preserve">
     <value>Now Location</value>
+  </data>
+  <data name="TalentTimerPage_NowServer_PreLabel" xml:space="preserve">
+    <value>Now Server</value>
+  </data>
+  <data name="TalentTimerPage_NowUTC_PreLabel" xml:space="preserve">
+    <value>Now Region UTC</value>
+  </data>
+  <data name="TalentTimerPage_SelectLocationDialog_Title" xml:space="preserve">
+    <value>Select Location</value>
+  </data>
+  <data name="TalentTimerPage_SelectServerDialog_Title" xml:space="preserve">
+    <value>Select Server</value>
+  </data>
+  <data name="TalentTimerPage_TalentCharacterButton_Text" xml:space="preserve">
+    <value>Apply Characters</value>
   </data>
   <data name="TalentTimerPage_Title" xml:space="preserve">
     <value>Talent Item</value>

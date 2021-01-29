@@ -13,15 +13,20 @@ using Xamarin.Forms.Xaml;
 
 using Locations = GenshinDB_Core.GenshinDB.Locations;
 using TalentItem = GenshinDB_Core.TalentItem;
+using TalentEnv = ResinTimer.TalentEnvironment;
 
 namespace ResinTimer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TalentTimerPage : ContentPage
     {
+        private TalentEnv.Servers nowServer;
         private Locations nowLocation;
         private List<string> locations;
         private TalentItem nowItem;
+        private TimeZoneInfo nowTZInfo;
+
+        private void LoadNowTZInfo() => nowTZInfo = TimeZoneInfo.Local;
 
         public TalentTimerPage()
         {
@@ -33,12 +38,6 @@ namespace ResinTimer
             }
 
             locations = new List<string>();
-
-            nowLocation = (Locations)Preferences.Get(SettingConstants.ITEM_TALENT_LOCATION, 0);
-
-            LoadLocationList();
-
-            CheckNowTalentBook();
         }
 
         private void SetToolbar()
@@ -48,13 +47,28 @@ namespace ResinTimer
 
         private void LoadLocationList()
         {
-            locations.Clear();
-            locations.AddRange(AppEnvironment.genshinDB.GetAllLocations());
+            //locations.Clear();
+            //locations.AddRange(AppEnvironment.genshinDB.GetAllLocations());
+            locations = AppEnvironment.genshinDB.GetAllLocations();
+        }
+
+        private void LoadSettings()
+        {
+            nowServer = (TalentEnv.Servers)Preferences.Get(SettingConstants.ITEM_TALENT_SERVER, 0);
+            nowLocation = (Locations)Preferences.Get(SettingConstants.ITEM_TALENT_LOCATION, 0);
         }
 
         private void CheckNowTalentBook()
         {
-            DayOfWeek dowValue = DateTime.Now.DayOfWeek;
+            int interval = nowTZInfo.BaseUtcOffset.Hours - TalentEnv.serverUTCs[(int)nowServer];
+            int realRenewalHour = TalentEnv.RENEWAL_HOUR + interval;
+            var now = DateTime.Now;
+
+            DayOfWeek dowValue = (now.Hour - realRenewalHour) switch
+            {
+                int result when result < 0 => now.AddDays(-1).DayOfWeek,
+                _ => now.DayOfWeek
+            };
 
             nowItem = (from item in AppEnvironment.genshinDB.talentItems
                       where item.Location.Equals(nowLocation) && item.AvailableDayOfWeeks.Contains(dowValue)
@@ -67,7 +81,10 @@ namespace ResinTimer
 
             try
             {
+                LoadSettings();
+                LoadNowTZInfo();
                 LoadLocationList();
+                CheckNowTalentBook();
                 RefreshInfo();
             }
             catch (Exception ex)
@@ -92,8 +109,8 @@ namespace ResinTimer
                 switch (item.Text)
                 {
                     case "Location":
-                        var dialog = new BaseDialog("Select Location", new RadioPreferenceView(locations.ToArray(), SettingConstants.ITEM_TALENT_LOCATION));
-                        dialog.OnClose += delegate
+                        var locationDialog = new BaseDialog(AppResources.TalentTimerPage_SelectLocationDialog_Title, new RadioPreferenceView(locations.ToArray(), SettingConstants.ITEM_TALENT_LOCATION));
+                        locationDialog.OnClose += delegate
                         {
                             nowLocation = (Locations)Preferences.Get(SettingConstants.ITEM_TALENT_LOCATION, 0);
 
@@ -101,7 +118,19 @@ namespace ResinTimer
                             RefreshInfo();
                         };
 
-                        await PopupNavigation.Instance.PushAsync(dialog);
+                        await PopupNavigation.Instance.PushAsync(locationDialog);
+                        break;
+                    case "Server":
+                        var serverDialog = new BaseDialog(AppResources.TalentTimerPage_SelectServerDialog_Title, new RadioPreferenceView(TalentEnv.serverList, SettingConstants.ITEM_TALENT_SERVER));
+                        serverDialog.OnClose += delegate
+                        {
+                            nowServer = (TalentEnv.Servers)Preferences.Get(SettingConstants.ITEM_TALENT_SERVER, 0);
+
+                            CheckNowTalentBook();
+                            RefreshInfo();
+                        };
+
+                        await PopupNavigation.Instance.PushAsync(serverDialog);
                         break;
                     default:
                         break;
@@ -117,15 +146,19 @@ namespace ResinTimer
         {
             try
             {
+                NowServerLabel.Text = $"{AppResources.TalentTimerPage_NowServer_PreLabel} : {TalentEnv.serverList[(int)nowServer]} ({GetUTCString(TalentEnv.serverUTCs[(int)nowServer])})";
+                NowRegionUTCLabel.Text = $"{AppResources.TalentTimerPage_NowUTC_PreLabel} : {nowTZInfo.DisplayName} ({GetUTCString(nowTZInfo.BaseUtcOffset.Hours)})";
                 NowLocationLabel.Text = $"{AppResources.TalentTimerPage_NowLocation_PreLabel} : {locations[(int)nowLocation]}";
-                TodayBookLabel.Text = nowItem.ItemName;
-                TodayBookImage.Source = ImageSource.FromFile(GetTalentBookImageName());
+                NowBookLabel.Text = AppEnvironment.genshinDB.FindLangDic(nowItem.ItemName);
+                NowBookImage.Source = ImageSource.FromFile(GetTalentBookImageName());
             }
             catch (Exception ex)
             {
 
             }
         }
+
+        private string GetUTCString(int offset) => $"UTC{((offset >= 0) ? "+" : "")}{offset}";
 
         private string GetTalentBookImageName()
         {
@@ -139,6 +172,35 @@ namespace ResinTimer
                 "Gold" => "talent_gold.png",
                 _ => ""
             };
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TalentCharacterPage(nowItem.ItemName), true);
+        }
+
+        private async void ButtonPressed(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+
+            try
+            {
+                button.BackgroundColor = Color.FromHex("#500682F6");
+                await button.ScaleTo(0.95, 100, Easing.SinInOut);
+            }
+            catch { }
+        }
+
+        private async void ButtonReleased(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+
+            try
+            {
+                button.BackgroundColor = Color.Transparent;
+                await button.ScaleTo(1.0, 100, Easing.SinInOut);
+            }
+            catch { }
         }
     }
 }

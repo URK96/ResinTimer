@@ -4,10 +4,11 @@
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
              x:Class="ResinTimer.TalentTimerPage"
-             Title="{x:Static resources:AppResources.MainPage_Title}">
+             Title="{x:Static resources:AppResources.TalentTimerPage_Title}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Location" IconImageSource="location.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Text="Server" IconImageSource="server.png" Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
@@ -23,21 +24,28 @@
 
     <AbsoluteLayout>
         <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional"
-                     AbsoluteLayout.LayoutBounds="0.5, 0.05"
+                     AbsoluteLayout.LayoutBounds="0.5, 0.02"
                      Orientation="Vertical">
-            <Label x:Name="NowLocationLabel" Margin="0, 0, 0, 10" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" />
+            <Label x:Name="NowServerLabel" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Subtitle" />
+            <Label x:Name="NowRegionUTCLabel" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Subtitle" />
+            <Label x:Name="NowLocationLabel" Margin="0, 0, 0, 20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Subtitle" />
 
-            <Label Text="Today Talent Book is" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Large" />
-            <Label x:Name="TodayBookLabel"
+            <Label Text="{x:Static resources:AppResources.TalentTimerPage_NowBook_PreLabel}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Title" />
+            <Label x:Name="NowBookLabel"
                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" />
-         
+
         </StackLayout>
 
-        <Image x:Name="TodayBookImage"
+        <Image x:Name="NowBookImage"
                AbsoluteLayout.LayoutFlags="All"
-               AbsoluteLayout.LayoutBounds="0.5, 0.2, 0.2, 0.35" />
+               AbsoluteLayout.LayoutBounds="0.5, 0.4, 0.3, 0.3" />
+
+        <Button AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.6, 0.10" 
+                Style="{StaticResource ButtonStyle}"
+                Text="{x:Static resources:AppResources.TalentTimerPage_TalentCharacterButton_Text}" 
+                Clicked="Button_Clicked" Pressed="ButtonPressed" Released="ButtonReleased"/>
 
     </AbsoluteLayout>
-
 
 </ContentPage>

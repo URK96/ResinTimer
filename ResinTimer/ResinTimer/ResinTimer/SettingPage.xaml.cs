@@ -18,7 +18,8 @@ namespace ResinTimer
         {
             AppResources.MasterDetail_MasterList_Resin,
             AppResources.MasterDetail_MasterList_Expedition,
-            AppResources.MasterDetail_MasterList_GatheringItem
+            AppResources.MasterDetail_MasterList_GatheringItem,
+            AppResources.MasterDetail_MasterList_Talent
         };
 
         public SettingPage()
@@ -45,6 +46,7 @@ namespace ResinTimer
             {
                 1 => AppResources.MasterDetail_MasterList_Expedition,
                 2 => AppResources.MasterDetail_MasterList_GatheringItem,
+                3 => AppResources.MasterDetail_MasterList_Talent,
                 _ => AppResources.MasterDetail_MasterList_Resin
             };
         }

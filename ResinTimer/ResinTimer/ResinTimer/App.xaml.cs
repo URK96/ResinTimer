@@ -26,6 +26,8 @@ namespace ResinTimer
 
 #if DEBUG
             AppEnvironment.isDebug = true;
+
+            //var resources = GenshinDB_Core.GenshinDB.GetResources();
             AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB();
 #endif
 

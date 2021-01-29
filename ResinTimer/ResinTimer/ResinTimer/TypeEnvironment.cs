@@ -89,12 +89,20 @@ namespace ResinTimer
     public static class GatheringItemEnvironment
     {
         public const int TypeCount = 3;
+
         public enum GItemType { Chunk = 0, Artifact, Specialty }
+
         public static double[] ResetTimeList = { 72, 24, 48 };
     }
 
     public static class TalentEnvironment
     {
-        public enum MondstadtItem {  }
+        public const int RENEWAL_HOUR = 4;
+
+        public enum Servers { America, Asia, Europe, TWHKMO }
+
+        public static int[] serverUTCs = { -5, 8, 1, 8 };
+
+        public static string[] serverList = new string[] { "America", "Asia", "Europe", "TW, HK, MO" };
     }
 }

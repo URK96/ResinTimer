@@ -7,7 +7,7 @@
                   FlyoutLayoutBehavior="Popover">
 
     <FlyoutPage.Flyout>
-        <ContentPage Padding="0,40,0,0" IconImageSource="resintimer_icon.png" Title="Resin Timer">
+        <ContentPage Padding="0,40,0,0" IconImageSource="menu.png" Title="Resin Timer">
             <StackLayout>
                 <ListView x:Name="MainListView"
                           ItemSelected="MainListView_ItemSelected">

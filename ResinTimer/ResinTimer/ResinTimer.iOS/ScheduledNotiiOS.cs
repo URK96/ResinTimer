@@ -112,5 +112,15 @@ namespace ResinTimer.iOS
         {
             throw new NotImplementedException();
         }
+
+        public void ScheduleCustomNoti(string title, string message, int id, DateTime notiTime)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TestNoti(string message = "")
+        {
+            throw new NotImplementedException();
+        }
     }
 }

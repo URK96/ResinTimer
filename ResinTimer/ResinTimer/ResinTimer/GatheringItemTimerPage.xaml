@@ -29,8 +29,8 @@
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <ContentView>
-                    <SwipeView Margin="20, 20, 20, 20">
-                        <Frame CornerRadius="10" HasShadow="True"
+                    <SwipeView>
+                        <Frame CornerRadius="10" HasShadow="True"  Margin="20, 20, 20, 20"
                                Style="{StaticResource FrameStyle}">
                             <Frame.BorderColor>#0682F6</Frame.BorderColor>
 

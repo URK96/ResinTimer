@@ -55,7 +55,7 @@ namespace ResinTimer
 
         private void RefreshCollectionView()
         {
-            ListCollectionView.ItemsSource = null;
+            ListCollectionView.ItemsSource = Array.Empty<Noti>();
             ListCollectionView.ItemsSource = Notis;
         }
 

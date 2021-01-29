@@ -23,7 +23,7 @@ namespace ResinTimer
 
             if (Device.RuntimePlatform == Device.iOS)
             {
-                DependencyService.Get<IScheduledNoti>().TestNoti();
+                //DependencyService.Get<IScheduledNoti>().TestNoti();
             }
         }
 

@@ -250,7 +250,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="LibraryList" xml:space="preserve">
     <value>Syncfusion.Licensing
 Syncfusion.Xamarin.SfGauge
-Xamarin.Essentials</value>
+Xamarin.Essentials
+Newton.Json
+Rg.Plugins.Popup</value>
   </data>
   <data name="LicensePage_Title" xml:space="preserve">
     <value>Open Source License</value>
@@ -258,7 +260,9 @@ Xamarin.Essentials</value>
   <data name="LicenseTypeList" xml:space="preserve">
     <value>Syncfusion License
 Syncfusion License
-MIT License - Microsoft Corporation</value>
+MIT License - Microsoft Corporation
+MIT License - James Newton-King
+MIT License</value>
   </data>
   <data name="MainPage_EndDateTimeTitle" xml:space="preserve">
     <value>Scheduled D/T of full recovery</value>

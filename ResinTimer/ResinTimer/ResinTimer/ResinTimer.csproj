@@ -15,12 +15,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="License_MIT.txt" />
+    <None Remove="License_MIT_JamesNewtonKing.txt" />
     <None Remove="Resources\License_MIT_Microsoft.txt" />
     <None Remove="Resources\License_Syncfusion.txt" />
     <None Remove="Resources\resin.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="License_MIT.txt" />
+    <EmbeddedResource Include="License_MIT_JamesNewtonKing.txt" />
     <EmbeddedResource Include="License_MIT_Microsoft.txt" />
     <EmbeddedResource Include="License_Syncfusion.txt" />
     <EmbeddedResource Include="Resources\resin.png" />

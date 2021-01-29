@@ -451,7 +451,9 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Syncfusion.Licensing
         ///Syncfusion.Xamarin.SfGauge
-        ///Xamarin.Essentials과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///Xamarin.Essentials
+        ///Newton.Json
+        ///Rg.Plugins.Popup과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string LibraryList {
             get {
@@ -471,7 +473,9 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Syncfusion License
         ///Syncfusion License
-        ///MIT License - Microsoft Corporation과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///MIT License - Microsoft Corporation
+        ///MIT License - James Newton-King
+        ///MIT License과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string LicenseTypeList {
             get {

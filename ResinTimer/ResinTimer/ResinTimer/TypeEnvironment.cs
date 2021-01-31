@@ -88,11 +88,11 @@ namespace ResinTimer
 
     public static class GatheringItemEnvironment
     {
-        public const int TypeCount = 3;
+        public const int TypeCount = 4;
 
-        public enum GItemType { Chunk = 0, Artifact, Specialty }
+        public enum GItemType { Chunk = 0, Artifact, Specialty, Artifact12H }
 
-        public static double[] ResetTimeList = { 72, 24, 48 };
+        public static double[] ResetTimeList = { 72, 24, 48, 12 };
     }
 
     public static class TalentEnvironment

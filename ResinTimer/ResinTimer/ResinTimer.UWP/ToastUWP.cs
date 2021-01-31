@@ -24,12 +24,13 @@ namespace ResinTimer.UWP
                 Text = message,
                 Foreground = new SolidColorBrush(Windows.UI.Colors.White),
                 HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center
+                VerticalAlignment = VerticalAlignment.Center,
+                TextWrapping = TextWrapping.Wrap
             };
 
             var style = new Style { TargetType = typeof(FlyoutPresenter) };
             style.Setters.Add(new Setter(Control.BackgroundProperty, Windows.UI.Color.FromArgb(200, 6, 130, 246)));
-            style.Setters.Add(new Setter(FrameworkElement.MaxHeightProperty, 1));
+            style.Setters.Add(new Setter(FrameworkElement.MaxHeightProperty, 10));
 
             var flyout = new Flyout
             {

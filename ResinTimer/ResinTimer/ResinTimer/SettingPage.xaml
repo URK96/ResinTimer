@@ -13,8 +13,8 @@
                             OnChanged="Notification_OnChanged" />
                 <ViewCell x:Name="StartDetailScreen" 
                           Tapped="StartDetailScreen_Tapped">
-                    <StackLayout Orientation="Horizontal" Padding="15, 0, 20, 0">
-                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_Start_DetailScreen_Title}" VerticalTextAlignment="Center"/>
+                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
+                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_Start_DetailScreen_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
                         <Label x:Name="StartDetailScreenNow"
                                HorizontalOptions="EndAndExpand"
                                VerticalTextAlignment="Center"/>

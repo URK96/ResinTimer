@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AppAction_App_Timer_Expedition" xml:space="preserve">
+    <value>Expedition</value>
+  </data>
+  <data name="AppAction_App_Timer_GatheringItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="AppAction_App_Timer_Resin" xml:space="preserve">
+    <value>Resin</value>
+  </data>
+  <data name="AppAction_App_Timer_Talent" xml:space="preserve">
+    <value>Talent</value>
+  </data>
   <data name="AppName" xml:space="preserve">
     <value>Resin Timer</value>
   </data>
@@ -228,6 +240,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   </data>
   <data name="GatheringItem_Type_Artifact" xml:space="preserve">
     <value>Artifact</value>
+  </data>
+  <data name="GatheringItem_Type_Artifact12H" xml:space="preserve">
+    <value>Artifact 12H</value>
   </data>
   <data name="GatheringItem_Type_Chunk" xml:space="preserve">
     <value>Chunk</value>
@@ -386,6 +401,9 @@ MIT License</value>
   </data>
   <data name="TalentTimerPage_NowBook_PreLabel" xml:space="preserve">
     <value>Now Talent Book is</value>
+  </data>
+  <data name="TalentTimerPage_NowBook_PreLabel_All" xml:space="preserve">
+    <value>All books available for acquisition</value>
   </data>
   <data name="TalentTimerPage_NowLocation_PreLabel" xml:space="preserve">
     <value>Now Location</value>

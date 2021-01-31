@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,18 +11,41 @@ namespace ResinTimer
     {
         public List<Character> Characters { get; set; }
 
-        public TalentCharacterPage(string itemName)
+        private string[] items;
+
+        public TalentCharacterPage(string[] itemNames)
         {
             InitializeComponent();
 
             Characters = new List<Character>();
+            items = itemNames;
 
-            foreach (var character in from c in AppEnvironment.genshinDB.characters where (c.TalentItem.Contains(itemName) || c.TalentItem.Contains("All")) select c)
+            foreach (var character in from c in AppEnvironment.genshinDB.characters
+                                      where CheckCharacter(c.TalentItem)
+                                      select c)
             {
                 Characters.Add(new Character(character));
             }
 
             BindingContext = this;
+        }
+
+        private bool CheckCharacter(List<string> talentItems)
+        {
+            if (talentItems.Contains("All"))
+            {
+                return true;
+            }
+            
+            foreach (var item in items)
+            {
+                if (talentItems.Contains(item))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 

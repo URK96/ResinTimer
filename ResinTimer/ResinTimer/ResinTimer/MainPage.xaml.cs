@@ -15,6 +15,17 @@ namespace ResinTimer
             Detail = new NavigationPage(GetStartPage());
         }
 
+        public MainPage(string startPageId)
+        {
+            Detail = new NavigationPage(startPageId switch
+            {
+                "app_timer_expedition" => new ExpeditionTimerPage(),
+                "app_timer_gatheringitem" => new GatheringItemTimerPage(),
+                "app_timer_talent" => new TalentTimerPage(),
+                _ => new ResinTimerPage()
+            });
+        }
+
         private Page GetStartPage()
         {
             Page startPage;

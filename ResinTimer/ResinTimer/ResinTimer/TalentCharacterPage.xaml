@@ -15,7 +15,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Orientation="Vertical" Margin="0, 10, 0, 10">
-                        <Label Text="{Binding LocationName}" HorizontalTextAlignment="Center" FontSize="Large" />
+                        <Label Text="{Binding LocationName}" HorizontalTextAlignment="Center" FontSize="{OnPlatform Android=Large, UWP=Medium, iOS=Large}" />
                         <Image Source="{Binding IconString}" />
                         <Image WidthRequest="25" Source="{Binding ElementIconString}" />
                     </StackLayout>

@@ -61,6 +61,42 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Expedition과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AppAction_App_Timer_Expedition {
+            get {
+                return ResourceManager.GetString("AppAction_App_Timer_Expedition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AppAction_App_Timer_GatheringItem {
+            get {
+                return ResourceManager.GetString("AppAction_App_Timer_GatheringItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AppAction_App_Timer_Resin {
+            get {
+                return ResourceManager.GetString("AppAction_App_Timer_Resin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Talent과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AppAction_App_Timer_Talent {
+            get {
+                return ResourceManager.GetString("AppAction_App_Timer_Talent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Resin Timer과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string AppName {
@@ -364,6 +400,15 @@ namespace ResinTimer.Resources {
         public static string GatheringItem_Type_Artifact {
             get {
                 return ResourceManager.GetString("GatheringItem_Type_Artifact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Artifact 12H과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItem_Type_Artifact12H {
+            get {
+                return ResourceManager.GetString("GatheringItem_Type_Artifact12H", resourceCulture);
             }
         }
         
@@ -849,6 +894,15 @@ namespace ResinTimer.Resources {
         public static string TalentTimerPage_NowBook_PreLabel {
             get {
                 return ResourceManager.GetString("TalentTimerPage_NowBook_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   All books available for acquisition과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentTimerPage_NowBook_PreLabel_All {
+            get {
+                return ResourceManager.GetString("TalentTimerPage_NowBook_PreLabel_All", resourceCulture);
             }
         }
         

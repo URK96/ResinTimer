@@ -30,7 +30,7 @@
             <Label x:Name="NowRegionUTCLabel" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Subtitle" />
             <Label x:Name="NowLocationLabel" Margin="0, 0, 0, 20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Subtitle" />
 
-            <Label Text="{x:Static resources:AppResources.TalentTimerPage_NowBook_PreLabel}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Title" />
+            <Label x:Name="NowBookPreLabel" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Title" />
             <Label x:Name="NowBookLabel"
                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" />
 

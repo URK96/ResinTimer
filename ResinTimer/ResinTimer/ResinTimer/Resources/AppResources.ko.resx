@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AppAction_App_Timer_Expedition" xml:space="preserve">
+    <value>탐사</value>
+  </data>
+  <data name="AppAction_App_Timer_GatheringItem" xml:space="preserve">
+    <value>채집물</value>
+  </data>
+  <data name="AppAction_App_Timer_Resin" xml:space="preserve">
+    <value>레진</value>
+  </data>
+  <data name="AppAction_App_Timer_Talent" xml:space="preserve">
+    <value>특성책</value>
+  </data>
   <data name="AppName" xml:space="preserve">
     <value>레진 알리미</value>
   </data>
@@ -229,6 +241,9 @@
   <data name="GatheringItem_Type_Artifact" xml:space="preserve">
     <value>성유물</value>
   </data>
+  <data name="GatheringItem_Type_Artifact12H" xml:space="preserve">
+    <value>성유물 12H</value>
+  </data>
   <data name="GatheringItem_Type_Chunk" xml:space="preserve">
     <value>광물</value>
   </data>
@@ -247,8 +262,22 @@
   <data name="InfoPage_Title" xml:space="preserve">
     <value>앱 정보</value>
   </data>
+  <data name="LibraryList" xml:space="preserve">
+    <value>Syncfusion.Licensing
+Syncfusion.Xamarin.SfGauge
+Xamarin.Essentials
+Newton.Json
+Rg.Plugins.Popup</value>
+  </data>
   <data name="LicensePage_Title" xml:space="preserve">
     <value>오픈소스 라이선스</value>
+  </data>
+  <data name="LicenseTypeList" xml:space="preserve">
+    <value>Syncfusion License
+Syncfusion License
+MIT License - Microsoft Corporation
+MIT License - James Newton-King
+MIT License</value>
   </data>
   <data name="MainPage_EndDateTimeTitle" xml:space="preserve">
     <value>완전 회복 예정 시각</value>
@@ -372,6 +401,9 @@
   </data>
   <data name="TalentTimerPage_NowBook_PreLabel" xml:space="preserve">
     <value>현재 특성 책</value>
+  </data>
+  <data name="TalentTimerPage_NowBook_PreLabel_All" xml:space="preserve">
+    <value>모든 책 회득 가능</value>
   </data>
   <data name="TalentTimerPage_NowLocation_PreLabel" xml:space="preserve">
     <value>현재 지역</value>

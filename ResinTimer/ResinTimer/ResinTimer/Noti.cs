@@ -105,13 +105,15 @@ namespace ResinTimer
         {
             GIEnv.GItemType.Artifact => AppResources.GatheringItem_Type_Artifact,
             GIEnv.GItemType.Specialty => AppResources.GatheringItem_Type_Specialty,
+            GIEnv.GItemType.Artifact12H => AppResources.GatheringItem_Type_Artifact12H,
             _ => AppResources.GatheringItem_Type_Chunk
         };
 
         public string TypeImageName => ItemType switch
         {
-            GIEnv.GItemType.Artifact => "artifact.png",
+            GIEnv.GItemType.Artifact => "artifact24H.png",
             GIEnv.GItemType.Specialty => "silk_flower.png",
+            GIEnv.GItemType.Artifact12H => "artifact12H.png",
             _ => "chunk.png"
         };
 

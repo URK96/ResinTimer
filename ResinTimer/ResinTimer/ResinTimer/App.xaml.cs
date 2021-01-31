@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -24,12 +25,13 @@ namespace ResinTimer
 
             AppResources.Culture = CultureInfo.InstalledUICulture;
 
+            _ = CreateAppAction();
+            AppActions.OnAppAction += AppActions_OnAppAction;
+
 #if DEBUG
             AppEnvironment.isDebug = true;
-
-            //var resources = GenshinDB_Core.GenshinDB.GetResources();
-            AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB();
 #endif
+            AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB();
 
             SetDefaultPreferences();
 
@@ -65,6 +67,38 @@ namespace ResinTimer
 
                 Preferences.Set(SettingConstants.NOTI_LIST, JsonConvert.SerializeObject(list));
             }
+        }
+
+        private async Task CreateAppAction()
+        {
+            try
+            {
+                await AppActions.SetAsync(
+                    new AppAction("app_timer_resin", AppResources.AppAction_App_Timer_Resin, icon: "resin.png"),
+                    new AppAction("app_timer_expedition", AppResources.AppAction_App_Timer_Expedition, icon: "compass.png"),
+                    new AppAction("app_timer_gatheringitem", AppResources.AppAction_App_Timer_GatheringItem, icon: "silk_flower.png"),
+                    new AppAction("app_timer_talent", AppResources.AppAction_App_Timer_Talent, icon: "talent_freedom.png"));
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void AppActions_OnAppAction(object sender, AppActionEventArgs e)
+        {
+            if ((Current != this) && (Current is App app))
+            {
+                AppActions.OnAppAction -= app.AppActions_OnAppAction;
+
+                return;
+            }
+
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                await Current.MainPage.Navigation.PopToRootAsync();
+                await Current.MainPage.Navigation.PushAsync(new MainPage(e.AppAction.Id));
+            });
         }
 
         protected override void OnStart()

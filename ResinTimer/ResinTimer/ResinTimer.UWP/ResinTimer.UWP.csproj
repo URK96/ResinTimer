@@ -126,6 +126,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="artifact.png" />
+    <Content Include="artifact12H.png" />
+    <Content Include="artifact24H.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
@@ -164,9 +166,17 @@
     <Content Include="chunk.png" />
     <Content Include="compass.png" />
     <Content Include="edit.png" />
+    <Content Include="Element_Anemo.png" />
+    <Content Include="Element_Cryo.png" />
+    <Content Include="Element_Dendro.png" />
+    <Content Include="Element_Electro.png" />
+    <Content Include="Element_Geo.png" />
+    <Content Include="Element_Hydro.png" />
+    <Content Include="Element_Pyro.png" />
     <Content Include="info.png" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="ingredient.png" />
+    <Content Include="location.png" />
     <Content Include="minus.png" />
     <Content Include="mora.png" />
     <Content Include="notisetting.png" />
@@ -224,6 +234,8 @@
     <Content Include="server.png" />
     <Content Include="setting.png" />
     <Content Include="silk_flower.png" />
+    <Content Include="talent_all_Liyue.png" />
+    <Content Include="talent_all_Mondstadt.png" />
     <Content Include="talent_ballad.png" />
     <Content Include="talent_diligence.png" />
     <Content Include="talent_freedom.png" />

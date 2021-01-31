@@ -4,6 +4,7 @@ using ResinTimer.Resources;
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -266,15 +267,14 @@ namespace ResinTimer
 
                 var list = GetNotiList<GatheringItemNoti>();
 
+                Notis.AddRange(list);
+
                 if (list.Count < GIEnv.TypeCount)
                 {
-                    Notis.AddRange(InitializeSetList());
-                    SaveNotis();
+                    Notis.AddRange(CheckItemList(list));
                 }
-                else
-                {
-                    Notis.AddRange(list);
-                }
+
+                SaveNotis();
             }
             catch (Exception)
             {
@@ -282,15 +282,30 @@ namespace ResinTimer
             }
         }
 
-        public static List<GatheringItemNoti> InitializeSetList()
+        private List<GatheringItemNoti> CheckItemList(List<GatheringItemNoti> existList)
         {
             var list = new List<GatheringItemNoti>();
+            var checkList = Enumerable.Repeat(false, existList.Count).ToArray();
 
             try
             {
                 list.Add(new GatheringItemNoti(GIEnv.GItemType.Chunk));
                 list.Add(new GatheringItemNoti(GIEnv.GItemType.Artifact));
                 list.Add(new GatheringItemNoti(GIEnv.GItemType.Specialty));
+                list.Add(new GatheringItemNoti(GIEnv.GItemType.Artifact12H));
+
+                foreach (var noti in existList)
+                {
+                    checkList[(int)noti.ItemType] = true;
+                }
+
+                for (int i = 0; i < checkList.Length; ++i)
+                {
+                    if (!checkList[i])
+                    {
+                        list.Add(new GatheringItemNoti((GIEnv.GItemType)i));
+                    }
+                }
             }
             catch (Exception)
             {

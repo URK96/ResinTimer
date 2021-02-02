@@ -1,5 +1,4 @@
-﻿using ResinTimer.Resources;
-
+﻿
 using Rg.Plugins.Popup.Pages;
 
 using System;

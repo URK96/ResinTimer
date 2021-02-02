@@ -12,8 +12,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Locations = GenshinDB_Core.GenshinDB.Locations;
-using TalentItem = GenshinDB_Core.TalentItem;
 using TalentEnv = ResinTimer.TalentEnvironment;
+using TalentItem = GenshinDB_Core.TalentItem;
 
 namespace ResinTimer
 {

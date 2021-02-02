@@ -1,7 +1,4 @@
-﻿using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
-
+﻿
 using Newtonsoft.Json;
 
 using ResinTimer.Resources;
@@ -9,7 +6,6 @@ using ResinTimer.Resources;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Essentials;
@@ -94,10 +90,11 @@ namespace ResinTimer
                 return;
             }
 
-            MainThread.BeginInvokeOnMainThread(async () =>
+            MainThread.BeginInvokeOnMainThread(() =>
             {
-                await Current.MainPage.Navigation.PopToRootAsync();
-                await Current.MainPage.Navigation.PushAsync(new MainPage(e.AppAction.Id));
+                MainPage = new MainPage(e.AppAction.Id);
+                //await Current.MainPage.Navigation.PopToRootAsync();
+                //await Current.MainPage.Navigation.PushAsync(new MainPage(e.AppAction.Id));
             });
         }
 

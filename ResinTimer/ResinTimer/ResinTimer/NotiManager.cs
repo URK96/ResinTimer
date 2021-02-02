@@ -58,18 +58,8 @@ namespace ResinTimer
                 {
                     result.AddRange(deserialized);
                 }
-
-                //if (result == null)
-                //{
-                //    result = new List<T>();
-                //}
             }
-            catch (Exception)
-            {
-                //result = new List<T>();
-
-                //return result;
-            }
+            catch (Exception) { }
 
             return result;
         }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ResinTimer
+﻿namespace ResinTimer
 {
     public static class SettingConstants
     {

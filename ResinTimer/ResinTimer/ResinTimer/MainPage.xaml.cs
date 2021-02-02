@@ -1,8 +1,7 @@
 ﻿using System;
 
-using Xamarin.Forms;
 using Xamarin.Essentials;
-using System.Text;
+using Xamarin.Forms;
 
 namespace ResinTimer
 {
@@ -17,6 +16,8 @@ namespace ResinTimer
 
         public MainPage(string startPageId)
         {
+            InitializeComponent();
+
             Detail = new NavigationPage(startPageId switch
             {
                 "app_timer_expedition" => new ExpeditionTimerPage(),

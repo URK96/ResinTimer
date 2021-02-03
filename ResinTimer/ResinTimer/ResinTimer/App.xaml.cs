@@ -1,4 +1,8 @@
 ﻿
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+
 using Newtonsoft.Json;
 
 using ResinTimer.Resources;
@@ -6,6 +10,7 @@ using ResinTimer.Resources;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Essentials;

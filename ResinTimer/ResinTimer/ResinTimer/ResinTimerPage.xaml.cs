@@ -83,12 +83,7 @@ namespace ResinTimer
             {
                 mutex.ReleaseMutex();
             }
-            catch (Exception ex)
-            {
-#if DEBUG
-                DependencyService.Get<IToast>().Show(ex.ToString());
-#endif
-            }
+            catch (Exception ex) { }
 
             SetToolbar();
         }

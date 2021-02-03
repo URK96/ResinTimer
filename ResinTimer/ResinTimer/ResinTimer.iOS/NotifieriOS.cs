@@ -18,14 +18,10 @@ namespace ResinTimer.iOS
             var noti = new UNMutableNotificationContent
             {
                 Title = notification.Title,
-
+                Subtitle = notification.Title,
+                Body = notification.Text,
+                Badge = 1
             };
-
-            //var toast = new ScheduledToastNotification(builder.GetXml(), notification.NotifyTime);
-            //toast.Tag = $"Resin{notification.Id}";
-            //toast.Group = $"ResinNoti";
-
-            //UWPNotifier.AddToSchedule(toast);
         }
 
         public void Cancel(string tag)

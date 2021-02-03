@@ -33,5 +33,7 @@
 	<string>ResinTimer</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcons.appiconset</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.6.0</string>
 </dict>
 </plist>

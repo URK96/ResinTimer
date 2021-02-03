@@ -81,19 +81,20 @@ namespace ResinTimer.iOS
                 Badge = 1
             };
 
-            var now = DateTime.Now.AddSeconds(5);
+            //var now = DateTime.Now.AddSeconds(5);
 
-            var dateComponent = new NSDateComponents()
-            {
-                Month = now.Month,
-                Day = now.Day,
-                Year = now.Year,
-                Hour = now.Hour,
-                Minute = now.Minute,
-                Second = now.Second
-            };
+            //var dateComponent = new NSDateComponents()
+            //{
+            //    Month = now.Month,
+            //    Day = now.Day,
+            //    Year = now.Year,
+            //    Hour = now.Hour,
+            //    Minute = now.Minute,
+            //    Second = now.Second
+            //};
 
-            var trigger = UNCalendarNotificationTrigger.CreateTrigger(dateComponent, false);
+            //var trigger = UNCalendarNotificationTrigger.CreateTrigger(dateComponent, false);
+            var trigger = UNTimeIntervalNotificationTrigger.CreateTrigger(5, false);
 
             var requestID = "testNoti";
             var request = UNNotificationRequest.FromIdentifier(requestID, content, trigger);

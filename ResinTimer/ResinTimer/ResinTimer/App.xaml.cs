@@ -75,10 +75,10 @@ namespace ResinTimer
             try
             {
                 await AppActions.SetAsync(
-                    new AppAction("app_timer_resin", AppResources.AppAction_App_Timer_Resin, icon: "resin.png"),
-                    new AppAction("app_timer_expedition", AppResources.AppAction_App_Timer_Expedition, icon: "compass.png"),
-                    new AppAction("app_timer_gatheringitem", AppResources.AppAction_App_Timer_GatheringItem, icon: "silk_flower.png"),
-                    new AppAction("app_timer_talent", AppResources.AppAction_App_Timer_Talent, icon: "talent_freedom.png"));
+                    new AppAction("app_timer_resin", AppResources.AppAction_App_Timer_Resin, icon: "resin"),
+                    new AppAction("app_timer_expedition", AppResources.AppAction_App_Timer_Expedition, icon: "compass"),
+                    new AppAction("app_timer_gatheringitem", AppResources.AppAction_App_Timer_GatheringItem, icon: "silk_flower"),
+                    new AppAction("app_timer_talent", AppResources.AppAction_App_Timer_Talent, icon: "talent_freedom"));
             }
             catch (Exception ex)
             {

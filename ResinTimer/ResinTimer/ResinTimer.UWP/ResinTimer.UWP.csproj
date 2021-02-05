@@ -163,8 +163,8 @@
     <Content Include="Character_Xingqiu_Thumb.png" />
     <Content Include="Character_Xinyan_Thumb.png" />
     <Content Include="Character_Zhongli_Thumb.png" />
-    <Content Include="chunk.png" />
     <Content Include="compass.png" />
+    <Content Include="crystal_chunk.png" />
     <Content Include="edit.png" />
     <Content Include="Element_Anemo.png" />
     <Content Include="Element_Cryo.png" />
@@ -176,7 +176,9 @@
     <Content Include="info.png" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="ingredient.png" />
+    <Content Include="iron_chunk.png" />
     <Content Include="location.png" />
+    <Content Include="magical_crystal_chunk.png" />
     <Content Include="minus.png" />
     <Content Include="mora.png" />
     <Content Include="notisetting.png" />
@@ -242,6 +244,7 @@
     <Content Include="talent_gold.png" />
     <Content Include="talent_prosperity.png" />
     <Content Include="talent_resistance.png" />
+    <Content Include="white_iron_chunk.png" />
     <Content Include="xamarin_logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <None Include="ResinTimer.UWP_TemporaryKey.pfx" />

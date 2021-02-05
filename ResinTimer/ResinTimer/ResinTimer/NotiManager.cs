@@ -257,11 +257,15 @@ namespace ResinTimer
 
                 var list = GetNotiList<GatheringItemNoti>();
 
-                Notis.AddRange(list);
+                //Notis.AddRange(list);
 
                 if (list.Count < GIEnv.TypeCount)
                 {
                     Notis.AddRange(CheckItemList(list));
+                }
+                else
+                {
+                    Notis.AddRange(list);
                 }
 
                 SaveNotis();
@@ -279,7 +283,7 @@ namespace ResinTimer
 
             try
             {
-                list.Add(new GatheringItemNoti(GIEnv.GItemType.Chunk));
+                list.Add(new GatheringItemNoti(GIEnv.GItemType.MagicCrystalChunk));
                 list.Add(new GatheringItemNoti(GIEnv.GItemType.Artifact));
                 list.Add(new GatheringItemNoti(GIEnv.GItemType.Specialty));
                 list.Add(new GatheringItemNoti(GIEnv.GItemType.Artifact12H));
@@ -319,30 +323,30 @@ namespace ResinTimer
             }
         }
 
-        //public void EditList(Noti item, EditType type)
-        //{
-        //    switch (type)
-        //    {
-        //        case EditType.Add:
-        //            item.NotiId = ID_PREINDEX + Notis.Count;
+        public void EditList(Noti item, EditType type)
+        {
+            switch (type)
+            {
+                case EditType.Add:
+                    item.NotiId = ID_PREINDEX + Notis.Count;
 
-        //            Notis.Add(item);
-        //            Notis.Sort(SortNotis);
-        //            break;
-        //        case EditType.Remove:
-        //            Notis.Remove(Notis.Find(x => x.NotiId.Equals(item.NotiId)));
-        //            break;
-        //        case EditType.Edit:
-        //            var index = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
+                    Notis.Add(item);
+                    Notis.Sort(SortNotis);
+                    break;
+                case EditType.Remove:
+                    Notis.Remove(Notis.Find(x => x.NotiId.Equals(item.NotiId)));
+                    break;
+                case EditType.Edit:
+                    var index = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
 
-        //            Notis[index] = item;
-        //            Notis[index].UpdateTime();
-        //            break;
-        //        default:
-        //            break;
-        //    }
+                    Notis[index] = item;
+                    Notis[index].UpdateTime();
+                    break;
+                default:
+                    break;
+            }
 
-        //    UpdateScheduledNoti<ExpeditionNoti>();
-        //}
+            UpdateScheduledNoti<ExpeditionNoti>();
+        }
     }
 }

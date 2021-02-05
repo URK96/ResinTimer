@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <LangVersion>8.0</LangVersion>
-    <Version>1.6.0</Version>
+    <Version>1.6.1</Version>
     <UserSecretsId>203b32d9-bd5b-4c42-8919-f7dba54960be</UserSecretsId>
   </PropertyGroup>
 
@@ -78,6 +78,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="EditExpeditionItemPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="EditGatheringItemPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="EditResinPage.xaml">

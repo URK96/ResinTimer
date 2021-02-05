@@ -30,10 +30,10 @@ namespace ResinTimer
 
             Title = (editType == NotiManager.EditType.Add) ? AppResources.EditExpedition_Title_New : AppResources.EditExpedition_Title_Edit;
 
-            ListPicker();
+            InitPicker();
         }
 
-        private void ListPicker()
+        private void InitPicker()
         {
             ExpeditionTypePicker.ItemsSource = new List<string>
             {

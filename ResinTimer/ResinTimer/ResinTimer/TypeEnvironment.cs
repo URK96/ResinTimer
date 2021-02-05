@@ -88,9 +88,9 @@ namespace ResinTimer
     {
         public const int TypeCount = 4;
 
-        public enum GItemType { Chunk = 0, Artifact, Specialty, Artifact12H }
+        public enum GItemType { MagicCrystalChunk = 0, Artifact, Specialty, Artifact12H, CrystalChunk, WhiteIronChunk, IronChunk }
 
-        public static double[] ResetTimeList = { 72, 24, 48, 12 };
+        public static double[] ResetTimeList = { 72, 24, 48, 12, 72, 48, 24 };
     }
 
     public static class TalentEnvironment

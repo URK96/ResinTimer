@@ -20,6 +20,9 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="ResetToolbarItem" Text="Reset" IconImageSource="refresh.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="EditToolbarItem" Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Text="Add Item" IconImageSource="plus.png" Order="Primary" Priority="2" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="RemoveToolbarItem" Text="Remove Item" IconImageSource="minus.png" Order="Primary" Priority="3" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="ListCollectionView" ItemsSource="{Binding Notis}"
@@ -33,16 +36,19 @@
                         <Frame CornerRadius="10" HasShadow="True"  Margin="20, 20, 20, 20"
                                Style="{StaticResource FrameStyle}">
                             <Frame.BorderColor>#0682F6</Frame.BorderColor>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                    <Image WidthRequest="50" HeightRequest="50" Source="{Binding TypeImageName}" />
 
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                <Image WidthRequest="50" HeightRequest="50" Source="{Binding TypeImageName}" />
-
-                                <StackLayout Orientation="Vertical" Margin="20, 0, 0, 0">
-                                    <Label Text="{Binding RemainTimeString}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                                    <Label Margin="0, 5, 0, 0" 
-                                           Text="{Binding ExpectedNotiTimeString}" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                    <StackLayout Orientation="Vertical" Margin="20, 0, 0, 0">
+                                        <Label Text="{Binding RemainTimeString}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                        <Label Margin="0, 5, 0, 0" 
+                                               Text="{Binding ExpectedNotiTimeString}" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                    </StackLayout>
                                 </StackLayout>
 
+                                <Label Margin="0, 10, 0, 0" IsVisible="{Binding ItemNoteVisible}"
+                                       Text="{Binding ItemNote}" FontSize="Subtitle" FontAttributes="Bold" HorizontalTextAlignment="Center" />
                             </StackLayout>
                         </Frame>
                     </SwipeView>

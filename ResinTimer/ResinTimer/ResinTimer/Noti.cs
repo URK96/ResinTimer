@@ -68,7 +68,7 @@ namespace ResinTimer
         {
             ExpEnv.ExpeditionType.Ingredient => "ingredient.png",
             ExpEnv.ExpeditionType.Mora => "mora.png",
-            _ => "chunk.png"
+            _ => "magical_crystal_chunk.png"
         };
 
         public ExpeditionNoti(TimeSpan interval, ExpEnv.ExpeditionType type = ExpEnv.ExpeditionType.Chunk, bool applyTimeEffect = false)
@@ -99,6 +99,7 @@ namespace ResinTimer
     {
         public TimeSpan ResetTime { get; set; }
         public GIEnv.GItemType ItemType { get; set; }
+        public string ItemNote { get; set; } = string.Empty;
 
         public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{GetRemainTimeHM()} {AppResources.GatheringItemTimerPage_Remain}" : AppResources.GatheringItemTimer_ResetComplete)}";
         public string TypeString => ItemType switch
@@ -106,23 +107,34 @@ namespace ResinTimer
             GIEnv.GItemType.Artifact => AppResources.GatheringItem_Type_Artifact,
             GIEnv.GItemType.Specialty => AppResources.GatheringItem_Type_Specialty,
             GIEnv.GItemType.Artifact12H => AppResources.GatheringItem_Type_Artifact12H,
-            _ => AppResources.GatheringItem_Type_Chunk
+            GIEnv.GItemType.CrystalChunk => AppResources.GatheringItem_Type_CrystalChunk,
+            GIEnv.GItemType.WhiteIronChunk => AppResources.GatheringItem_Type_WhiteIronChunk,
+            GIEnv.GItemType.IronChunk => AppResources.GatheringItem_Type_IronChunk,
+            _ => AppResources.GatheringItem_Type_MagicalCrystalChunk
         };
-
         public string TypeImageName => ItemType switch
         {
             GIEnv.GItemType.Artifact => "artifact24H.png",
             GIEnv.GItemType.Specialty => "silk_flower.png",
             GIEnv.GItemType.Artifact12H => "artifact12H.png",
-            _ => "chunk.png"
+            GIEnv.GItemType.CrystalChunk => "crystal_chunk.png",
+            GIEnv.GItemType.WhiteIronChunk => "white_iron_chunk.png",
+            GIEnv.GItemType.IronChunk => "iron_chunk.png",
+            _ => "magical_crystal_chunk.png"
         };
+        public bool ItemNoteVisible => !string.IsNullOrWhiteSpace(ItemNote);
 
-        public GatheringItemNoti(GIEnv.GItemType type = GIEnv.GItemType.Chunk)
+        public GatheringItemNoti(GIEnv.GItemType type = GIEnv.GItemType.MagicCrystalChunk)
+        {
+            EditItemType(type);
+
+            NotiTime = DateTime.Now;
+        }
+
+        public void EditItemType(GIEnv.GItemType type)
         {
             ItemType = type;
             ResetTime = TimeSpan.FromHours(GIEnv.ResetTimeList[(int)type]);
-
-            NotiTime = DateTime.Now;
         }
 
         public override void UpdateTime()

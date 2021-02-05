@@ -184,6 +184,21 @@
   <data name="EditExpedition_Title_New" xml:space="preserve">
     <value>탐사 항목 추가</value>
   </data>
+  <data name="EditGatheringItem_Note" xml:space="preserve">
+    <value>항목 부가 정보</value>
+  </data>
+  <data name="EditGatheringItem_Note_Placeholder" xml:space="preserve">
+    <value>(선택 사항)</value>
+  </data>
+  <data name="EditGatheringItem_SelectType" xml:space="preserve">
+    <value>타입 선택</value>
+  </data>
+  <data name="EditGatheringItem_Title_Edit" xml:space="preserve">
+    <value>아이템 수정</value>
+  </data>
+  <data name="EditGatheringItem_Title_New" xml:space="preserve">
+    <value>아이템 추가</value>
+  </data>
   <data name="EditPage_ApplyButtonText" xml:space="preserve">
     <value>적용</value>
   </data>
@@ -238,6 +253,9 @@
   <data name="GatheringItemTimer_ResetComplete" xml:space="preserve">
     <value>리셋 완료</value>
   </data>
+  <data name="GatheringItem_ItemNote_None" xml:space="preserve">
+    <value>(설명 없음)</value>
+  </data>
   <data name="GatheringItem_Type_Artifact" xml:space="preserve">
     <value>성유물</value>
   </data>
@@ -247,8 +265,20 @@
   <data name="GatheringItem_Type_Chunk" xml:space="preserve">
     <value>광물</value>
   </data>
+  <data name="GatheringItem_Type_CrystalChunk" xml:space="preserve">
+    <value>수정석</value>
+  </data>
+  <data name="GatheringItem_Type_IronChunk" xml:space="preserve">
+    <value>철광석</value>
+  </data>
+  <data name="GatheringItem_Type_MagicalCrystalChunk" xml:space="preserve">
+    <value>마법 수정석</value>
+  </data>
   <data name="GatheringItem_Type_Specialty" xml:space="preserve">
     <value>특산물</value>
+  </data>
+  <data name="GatheringItem_Type_WhiteIronChunk" xml:space="preserve">
+    <value>백철석</value>
   </data>
   <data name="InfoPage_AppName" xml:space="preserve">
     <value>레진 알리미</value>

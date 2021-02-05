@@ -4,7 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
     xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
-    xmlns:resources="clr-namespace:ResinTimer.Resources"
     x:Class="ResinTimer.Dialogs.BaseDialog"
     CloseWhenBackgroundIsClicked="True">
     
@@ -43,7 +42,7 @@
         <Frame CornerRadius="10" Style="{StaticResource FrameStyle}"
                AbsoluteLayout.LayoutFlags="All"
                AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.8, 0.5"
-               BackgroundColor="White">
+               BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">
             <StackLayout Orientation="Vertical" VerticalOptions="Center">
                 <Label x:Name="DialogTitle" 
                        FontSize="Title" HorizontalTextAlignment="Center" />

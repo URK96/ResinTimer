@@ -184,6 +184,21 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="EditExpedition_Title_New" xml:space="preserve">
     <value>New Expedition</value>
   </data>
+  <data name="EditGatheringItem_Note" xml:space="preserve">
+    <value>Item Note</value>
+  </data>
+  <data name="EditGatheringItem_Note_Placeholder" xml:space="preserve">
+    <value>(Optional)</value>
+  </data>
+  <data name="EditGatheringItem_SelectType" xml:space="preserve">
+    <value>Select Type</value>
+  </data>
+  <data name="EditGatheringItem_Title_Edit" xml:space="preserve">
+    <value>Edit Item</value>
+  </data>
+  <data name="EditGatheringItem_Title_New" xml:space="preserve">
+    <value>New Item</value>
+  </data>
   <data name="EditPage_ApplyButtonText" xml:space="preserve">
     <value>Apply</value>
   </data>
@@ -238,6 +253,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="GatheringItemTimer_ResetComplete" xml:space="preserve">
     <value>Restored</value>
   </data>
+  <data name="GatheringItem_ItemNote_None" xml:space="preserve">
+    <value>(None)</value>
+  </data>
   <data name="GatheringItem_Type_Artifact" xml:space="preserve">
     <value>Artifact</value>
   </data>
@@ -247,8 +265,20 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="GatheringItem_Type_Chunk" xml:space="preserve">
     <value>Chunk</value>
   </data>
+  <data name="GatheringItem_Type_CrystalChunk" xml:space="preserve">
+    <value>Crystal Chunk</value>
+  </data>
+  <data name="GatheringItem_Type_IronChunk" xml:space="preserve">
+    <value>Iron Chunk</value>
+  </data>
+  <data name="GatheringItem_Type_MagicalCrystalChunk" xml:space="preserve">
+    <value>Magical Crystal Chunk</value>
+  </data>
   <data name="GatheringItem_Type_Specialty" xml:space="preserve">
     <value>Specialty</value>
+  </data>
+  <data name="GatheringItem_Type_WhiteIronChunk" xml:space="preserve">
+    <value>White Iron Chunk</value>
   </data>
   <data name="InfoPage_AppName" xml:space="preserve">
     <value>Resin Timer</value>

@@ -260,6 +260,51 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Item Note과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditGatheringItem_Note {
+            get {
+                return ResourceManager.GetString("EditGatheringItem_Note", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   (Optional)과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditGatheringItem_Note_Placeholder {
+            get {
+                return ResourceManager.GetString("EditGatheringItem_Note_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Select Type과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditGatheringItem_SelectType {
+            get {
+                return ResourceManager.GetString("EditGatheringItem_SelectType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Edit Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditGatheringItem_Title_Edit {
+            get {
+                return ResourceManager.GetString("EditGatheringItem_Title_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   New Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditGatheringItem_Title_New {
+            get {
+                return ResourceManager.GetString("EditGatheringItem_Title_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Apply과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string EditPage_ApplyButtonText {
@@ -395,6 +440,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   (None)과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItem_ItemNote_None {
+            get {
+                return ResourceManager.GetString("GatheringItem_ItemNote_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Artifact과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string GatheringItem_Type_Artifact {
@@ -422,11 +476,47 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Crystal Chunk과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItem_Type_CrystalChunk {
+            get {
+                return ResourceManager.GetString("GatheringItem_Type_CrystalChunk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Iron Chunk과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItem_Type_IronChunk {
+            get {
+                return ResourceManager.GetString("GatheringItem_Type_IronChunk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Magical Crystal Chunk과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItem_Type_MagicalCrystalChunk {
+            get {
+                return ResourceManager.GetString("GatheringItem_Type_MagicalCrystalChunk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Specialty과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string GatheringItem_Type_Specialty {
             get {
                 return ResourceManager.GetString("GatheringItem_Type_Specialty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   White Iron Chunk과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItem_Type_WhiteIronChunk {
+            get {
+                return ResourceManager.GetString("GatheringItem_Type_WhiteIronChunk", resourceCulture);
             }
         }
         

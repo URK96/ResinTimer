@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ResinTimer.Resources;
+
+using System;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -65,7 +67,7 @@ namespace ResinTimer
             ListCollectionView.SelectedItems = null;
         }
 
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             switch ((sender as ToolbarItem).Priority)
             {
@@ -77,11 +79,48 @@ namespace ResinTimer
                         RefreshCollectionView();
                     }
                     break;
+                case 1: // Edit Item
+                    if (ListCollectionView.SelectedItem != null)
+                    {
+                        await Navigation.PushAsync(new EditGatheringItemPage(notiManager, NotiManager.EditType.Edit, ListCollectionView.SelectedItem as GatheringItemNoti));
+                    }
+                    else
+                    {
+                        DependencyService.Get<IToast>().Show(AppResources.NotiSettingPage_NotSelectedToast_Message);
+                    }
+                    break;
+                case 2:  // Add Item
+                    if (notiManager.Notis.Count >= 100)
+                    {
+                        DependencyService.Get<IToast>().Show("Gathering Item limit exceed");
+                    }
+                    else
+                    {
+                        await Navigation.PushAsync(new EditGatheringItemPage(notiManager, NotiManager.EditType.Add));
+                    }
+                    break;
+                case 3:  // Remove Item
+                    if (ListCollectionView.SelectedItem != null)
+                    {
+                        RemoveItem(ListCollectionView.SelectedItem as Noti);
+                    }
+                    else
+                    {
+                        DependencyService.Get<IToast>().Show(AppResources.NotiSettingPage_NotSelectedToast_Message);
+                    }
+                    break;
                 default:
                     break;
             }
 
             ResetSelection();
+        }
+
+        private void RemoveItem(Noti noti)
+        {
+            notiManager.EditList(noti, NotiManager.EditType.Remove);
+
+            RefreshCollectionView();
         }
 
         private void RefreshTime(object statusInfo)
@@ -98,6 +137,8 @@ namespace ResinTimer
             bool isVisible = e.CurrentSelection.Count >= 1;
 
             ResetToolbarItem.IsEnabled = isVisible;
+            EditToolbarItem.IsEnabled = isVisible;
+            RemoveToolbarItem.IsEnabled = isVisible;
         }
     }
 }

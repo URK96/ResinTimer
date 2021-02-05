@@ -189,13 +189,6 @@ namespace ResinTimer
             {
                 notiType = NotiType.Expedition;
 
-                //var list = Preferences.Get(SettingConstants.EXPEDITION_NOTI_LIST, string.Empty);
-
-                //if (!string.IsNullOrWhiteSpace(list))
-                //{
-                //    Notis.AddRange(JsonConvert.DeserializeObject<List<ExpeditionNoti>>(list));
-                //}
-
                 Notis.AddRange(GetNotiList<ExpeditionNoti>());
             }
             catch (Exception)
@@ -255,18 +248,7 @@ namespace ResinTimer
             {
                 notiType = NotiType.GatheringItem;
 
-                var list = GetNotiList<GatheringItemNoti>();
-
-                //Notis.AddRange(list);
-
-                if (list.Count < GIEnv.TypeCount)
-                {
-                    Notis.AddRange(CheckItemList(list));
-                }
-                else
-                {
-                    Notis.AddRange(list);
-                }
+                Notis.AddRange(GetNotiList<GatheringItemNoti>());
 
                 SaveNotis();
             }
@@ -274,39 +256,6 @@ namespace ResinTimer
             {
                 DependencyService.Get<IToast>().Show("Fail to initialize GI noti manager");
             }
-        }
-
-        private List<GatheringItemNoti> CheckItemList(List<GatheringItemNoti> existList)
-        {
-            var list = new List<GatheringItemNoti>();
-            var checkList = Enumerable.Repeat(false, existList.Count).ToArray();
-
-            try
-            {
-                list.Add(new GatheringItemNoti(GIEnv.GItemType.MagicCrystalChunk));
-                list.Add(new GatheringItemNoti(GIEnv.GItemType.Artifact));
-                list.Add(new GatheringItemNoti(GIEnv.GItemType.Specialty));
-                list.Add(new GatheringItemNoti(GIEnv.GItemType.Artifact12H));
-
-                foreach (var noti in existList)
-                {
-                    checkList[(int)noti.ItemType] = true;
-                }
-
-                for (int i = 0; i < checkList.Length; ++i)
-                {
-                    if (!checkList[i])
-                    {
-                        list.Add(new GatheringItemNoti((GIEnv.GItemType)i));
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                DependencyService.Get<IToast>().Show("Fail to initialize GI list");
-            }
-
-            return list;
         }
 
         public void UpdateNotisTime()

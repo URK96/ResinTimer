@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AppCenter;
+﻿using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 
@@ -80,10 +79,7 @@ namespace ResinTimer
                     new AppAction("app_timer_gatheringitem", AppResources.AppAction_App_Timer_GatheringItem, icon: "silk_flower"),
                     new AppAction("app_timer_talent", AppResources.AppAction_App_Timer_Talent, icon: "talent_freedom"));
             }
-            catch (Exception ex)
-            {
-
-            }
+            catch (Exception) { }
         }
 
         private void AppActions_OnAppAction(object sender, AppActionEventArgs e)

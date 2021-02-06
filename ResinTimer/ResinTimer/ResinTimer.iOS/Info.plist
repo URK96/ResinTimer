@@ -24,7 +24,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Resin Timer</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.urk96.ResinTimer</string>
+	<string>com.urk.resintimer</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>

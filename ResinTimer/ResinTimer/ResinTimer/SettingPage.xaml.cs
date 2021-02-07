@@ -58,6 +58,22 @@ namespace ResinTimer
 
         private async void Notification_OnChanged(object sender, ToggledEventArgs e)
         {
+            //if (Device.RuntimePlatform == Device.iOS)
+            //{
+            //    var scheduledService = DependencyService.Get<IScheduledNoti>();
+
+            //    if (e.Value)
+            //    {
+            //        scheduledService.TestNoti();
+            //    }
+            //    else
+            //    {
+            //        scheduledService.CancelAll();
+            //    }
+
+            //    return;
+            //}
+
             var bootService = DependencyService.Get<IBootService>();
 
             Preferences.Set(SettingConstants.NOTI_ENABLED, e.Value);

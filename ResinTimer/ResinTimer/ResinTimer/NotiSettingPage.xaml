@@ -4,7 +4,8 @@
              xmlns:resources="clr-namespace:ResinTimer.Resources"
              x:Class="ResinTimer.NotiSettingPage"
              x:Name="page"
-             Title="{x:Static resources:AppResources.NotiSettingPage_Title}">
+             Title="{x:Static resources:AppResources.NotiSettingPage_Title}"
+             Style="{StaticResource PageStyle}">
 
     <ContentPage.Resources>
         <Color x:Key="LightPrimaryColor">WhiteSmoke</Color>

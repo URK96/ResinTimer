@@ -1060,6 +1060,42 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Add과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Toolbar_Add {
+            get {
+                return ResourceManager.GetString("Toolbar_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Edit과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Toolbar_Edit {
+            get {
+                return ResourceManager.GetString("Toolbar_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Remove과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Toolbar_Remove {
+            get {
+                return ResourceManager.GetString("Toolbar_Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Reset과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Toolbar_Reset {
+            get {
+                return ResourceManager.GetString("Toolbar_Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Configure Widget과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string WidgetConfigure_Title {

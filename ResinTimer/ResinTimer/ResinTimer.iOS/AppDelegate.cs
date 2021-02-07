@@ -30,11 +30,12 @@ namespace ResinTimer.iOS
             Syncfusion.SfGauge.XForms.iOS.SfGaugeRenderer.Init();
             LoadApplication(new App());
 
-            UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge, (approved, err) => { });
+            UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert | UNAuthorizationOptions.Sound, (approved, err) => { });
+            UNUserNotificationCenter.Current.Delegate = new UserNotificationCenterDelegate();
 
-            return true;
+            //return true;
 
-            //return base.FinishedLaunching(app, options);
+            return base.FinishedLaunching(app, options);
         }
 
         public override void PerformActionForShortcutItem(UIApplication application, UIApplicationShortcutItem shortcutItem, UIOperationHandler completionHandler)

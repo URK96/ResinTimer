@@ -456,6 +456,18 @@ MIT License</value>
   <data name="TalentTimerPage_Title" xml:space="preserve">
     <value>특성책 알리미</value>
   </data>
+  <data name="Toolbar_Add" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="Toolbar_Edit" xml:space="preserve">
+    <value>수정</value>
+  </data>
+  <data name="Toolbar_Remove" xml:space="preserve">
+    <value>제거</value>
+  </data>
+  <data name="Toolber_Reset" xml:space="preserve">
+    <value>초기화</value>
+  </data>
   <data name="WidgetConfigure_Title" xml:space="preserve">
     <value>위젯 설정</value>
   </data>

@@ -29,11 +29,6 @@ namespace ResinTimer
         {
             InitializeComponent();
 
-            if (Device.RuntimePlatform == Device.iOS)
-            {
-                //Title = string.Empty;
-            }
-
             ResinEnvironment.oneCountTime = new ResinTime(0);
             ResinEnvironment.totalCountTime = new ResinTime(0);
 

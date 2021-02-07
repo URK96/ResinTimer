@@ -13,34 +13,58 @@ namespace ResinTimer.iOS
 {
     public class NotifieriOS
     {
-        public void Notify(Notification notification)
+        public async void Notify(Notification notification, string id = "")
         {
+            var settings = await UNUserNotificationCenter.Current.GetNotificationSettingsAsync();
+
+            if (settings.AlertSetting != UNNotificationSetting.Enabled)
+            {
+                var toast = new ToastiOS();
+                toast.Show("Check Noti Permission");
+            }
+
             var noti = new UNMutableNotificationContent
             {
                 Title = notification.Title,
-                Subtitle = notification.Title,
+                Subtitle = string.Empty,
                 Body = notification.Text,
-                Badge = 1
+                Badge = 0
             };
+
+            var dt = notification.NotifyTime;
+
+            var dateComponent = new NSDateComponents
+            {
+                Calendar = NSCalendar.CurrentCalendar,
+                Year = dt.Year,
+                Month = dt.Month,
+                Day = dt.Day,
+                Hour = dt.Hour,
+                Minute = dt.Minute,
+                Second = dt.Second
+            };
+
+            var trigger = UNCalendarNotificationTrigger.CreateTrigger(dateComponent, false);
+            var request = UNNotificationRequest.FromIdentifier(string.IsNullOrWhiteSpace(id) ? notification.Id.ToString() : id, noti, trigger);
+
+            UNUserNotificationCenter.Current.AddNotificationRequest(request, (err) =>
+            {
+                if (err != null)
+                {
+                    var toast = new ToastiOS();
+                    toast.Show("Ooops, error");
+                }
+            });
         }
 
-        public void Cancel(string tag)
+        public void Cancel(string[] cancelList)
         {
-            //var scheduledList = GetScheduledList();
-
-            //var toastItem = scheduledList.FirstOrDefault(x => x.Tag.Equals(tag));
-
-            //UWPNotifier.RemoveFromSchedule(toastItem);
+            UNUserNotificationCenter.Current.RemovePendingNotificationRequests(cancelList);
         }
 
         public void CancelAll()
         {
-            //foreach (var item in GetScheduledList())
-            //{
-            //    UWPNotifier.RemoveFromSchedule(item);
-            //}
+            UNUserNotificationCenter.Current.RemoveAllPendingNotificationRequests();
         }
-
-        //public IReadOnlyList<ScheduledToastNotification> GetScheduledList() => UWPNotifier.GetScheduledToastNotifications();
     }
 }

@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
              x:Class="ResinTimer.TalentCharacterPage"
-             Title="{x:Static resources:AppResources.TalentCharacterPage_Title}">
+             Title="{x:Static resources:AppResources.TalentCharacterPage_Title}"
+             Style="{StaticResource PageStyle}">
 
     <StackLayout Orientation="Vertical" Padding="0, 20, 0, 0">
 

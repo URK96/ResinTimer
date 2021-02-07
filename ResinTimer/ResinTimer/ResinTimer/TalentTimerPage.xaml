@@ -4,7 +4,8 @@
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
              x:Class="ResinTimer.TalentTimerPage"
-             Title="{x:Static resources:AppResources.TalentTimerPage_Title}">
+             Title="{x:Static resources:AppResources.TalentTimerPage_Title}"
+             Style="{StaticResource PageStyle}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Location" IconImageSource="location.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />

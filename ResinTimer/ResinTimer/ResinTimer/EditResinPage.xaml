@@ -6,7 +6,8 @@
             Title="{x:Static resources:AppResources.EditPage_Title}">
 
     <!--Pages can be added as references or inline-->
-    <ContentPage Title="{x:Static resources:AppResources.EditPage_TabTime_Title}">
+    <ContentPage Style="{StaticResource PageStyle}"
+                 Title="{x:Static resources:AppResources.EditPage_TabTime_Title}">
         <ContentPage.Resources>
             <Style x:Key="ButtonStyle" TargetType="Button">
                 <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=20}" />
@@ -45,7 +46,8 @@
         </AbsoluteLayout>
     </ContentPage>
 
-    <ContentPage Title="{x:Static resources:AppResources.EditPage_TabResin_Title}">
+    <ContentPage Style="{StaticResource PageStyle}"
+                 Title="{x:Static resources:AppResources.EditPage_TabResin_Title}">
         <ContentPage.Resources>
             <Style x:Key="ButtonStyle" TargetType="Button">
                 <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=20}" />

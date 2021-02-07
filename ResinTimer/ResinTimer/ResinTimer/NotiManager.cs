@@ -233,7 +233,8 @@ namespace ResinTimer
                 default:
                     break;
             }
-            
+
+            SaveNotis();
             UpdateScheduledNoti<ExpeditionNoti>();
         }
     }
@@ -295,6 +296,7 @@ namespace ResinTimer
                     break;
             }
 
+            SaveNotis();
             UpdateScheduledNoti<ExpeditionNoti>();
         }
     }

@@ -16,5 +16,9 @@
             <Setter Property="CharacterSpacing" Value="3" />
             <Setter Property="FontSize" Value="Default" />
         </Style>
+
+        <Style x:Key="PageStyle" TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="{OnPlatform Default=Default, iOS={AppThemeBinding Light=White, Dark=Black}}" />
+        </Style>
     </Application.Resources>
 </Application>

@@ -57,26 +57,33 @@ namespace ResinTimer
             }
         }
 
-        private void ApplyButtonClicked(object sender, EventArgs e)
+        private async void ApplyButtonClicked(object sender, EventArgs e)
         {
-            var type = (GIEnv.GItemType)GatheringItemTypePicker.SelectedIndex;
-            var note = GatheringItemNoteEntry.Text;
-            var manager = notiManager as GatheringItemNotiManager;
-
-            if (editType == NotiManager.EditType.Add)
+            try
             {
-                Noti = new GatheringItemNoti(type);
+                var type = (GIEnv.GItemType)GatheringItemTypePicker.SelectedIndex;
+                var note = GatheringItemNoteEntry.Text;
+                var manager = notiManager as GatheringItemNotiManager;
+
+                if (editType == NotiManager.EditType.Add)
+                {
+                    Noti = new GatheringItemNoti(type);
+                }
+                else if (editType == NotiManager.EditType.Edit)
+                {
+                    Noti.EditItemType(type);
+                }
+
+                Noti.ItemNote = note;
+
+                manager.EditList(Noti, editType);
+
+                await Navigation.PopAsync();
             }
-            else if (editType == NotiManager.EditType.Edit)
+            catch (Exception ex)
             {
-                Noti.EditItemType(type);
+
             }
-
-            Noti.ItemNote = note;
-
-            manager.EditList(Noti, editType);
-
-            Navigation.PopAsync();
         }
 
         private async void ButtonPressed(object sender, EventArgs e)

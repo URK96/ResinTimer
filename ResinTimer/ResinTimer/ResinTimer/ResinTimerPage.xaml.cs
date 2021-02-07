@@ -8,17 +8,15 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Timer = System.Timers.Timer;
+using TTimer = System.Threading.Timer;
 
 namespace ResinTimer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ResinTimerPage : ContentPage
     {
-        private Mutex mutex;
-
-        private Thread calcThread;
-
         private Timer buttonPressTimer;
+        private TTimer calcTimer;
 
         private int quickCalcValue;
         private int quickOTCalcValue;
@@ -33,8 +31,6 @@ namespace ResinTimer
             ResinEnvironment.totalCountTime = new ResinTime(0);
 
             ResinEnvironment.LoadValues();
-
-            mutex = new Mutex(false);
 
             if (!(Device.RuntimePlatform == Device.UWP))
             {
@@ -55,12 +51,7 @@ namespace ResinTimer
                 };
             }
 
-            calcThread = new Thread(new ThreadStart(CalcTimeResin))
-            {
-                IsBackground = true,
-                Priority = ThreadPriority.Normal
-            };
-            calcThread.Start();
+            calcTimer = new TTimer(CalcTimeResin, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
         }
 
         private void SetToolbar()
@@ -74,11 +65,7 @@ namespace ResinTimer
 
             CautionResinOnlyLabel.IsVisible = ResinEnvironment.applyType == ResinEnvironment.ApplyType.Resin;
 
-            try
-            {
-                mutex.ReleaseMutex();
-            }
-            catch (Exception ex) { }
+            calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
 
             SetToolbar();
         }
@@ -89,67 +76,46 @@ namespace ResinTimer
 
             ResinEnvironment.SaveValue();
 
-            mutex.WaitOne();
+            calcTimer.Change(Timeout.Infinite, Timeout.Infinite);
         }
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                var item = sender as ToolbarItem;
+            var item = sender as ToolbarItem;
 
-                switch (item.Text)
-                {
-                    case "Edit":
-                        await Navigation.PushAsync(new EditResinPage(), true);
-                        break;
-                    case "Noti Setting":
-                        await Navigation.PushAsync(new NotiSettingPage(), true);
-                        break;
-                    default:
-                        break;
-                }
-            }
-            catch (Exception ex)
+            switch (item.Text)
             {
-
+                case "Edit":
+                    await Navigation.PushAsync(new EditResinPage(), true);
+                    break;
+                case "Noti Setting":
+                    await Navigation.PushAsync(new NotiSettingPage(), true);
+                    break;
+                default:
+                    break;
             }
         }
 
-        private void CalcTimeResin()
+        private void CalcTimeResin(object statusInfo)
         {
-            while (true)
+            try
             {
-                try
+                if (ResinEnvironment.endTime.CompareTo(DateTime.Now) >= 0)
                 {
-                    mutex.WaitOne();
+                    (ResinEnvironment.totalCountTime, ResinEnvironment.oneCountTime) = ResinTime.CalcResinTime(ResinEnvironment.endTime);
 
-                    if (ResinEnvironment.endTime.CompareTo(DateTime.Now) >= 0)
-                    {
-                        (ResinEnvironment.totalCountTime, ResinEnvironment.oneCountTime) = ResinTime.CalcResinTime(ResinEnvironment.endTime);
-
-                        ResinEnvironment.CalcResin();
-                    }
-                    else
-                    {
-                        ResinEnvironment.totalCountTime.SetTime(0);
-                        ResinEnvironment.oneCountTime.SetTime(0);
-                        ResinEnvironment.resin = ResinEnvironment.MAX_RESIN;
-                    }
-
-                    MainThread.BeginInvokeOnMainThread(RefreshInfo);
+                    ResinEnvironment.CalcResin();
                 }
-                catch (Exception ex)
+                else
                 {
-
+                    ResinEnvironment.totalCountTime.SetTime(0);
+                    ResinEnvironment.oneCountTime.SetTime(0);
+                    ResinEnvironment.resin = ResinEnvironment.MAX_RESIN;
                 }
-                finally
-                {
-                    mutex.ReleaseMutex();
 
-                    Thread.Sleep(500);
-                }
+                MainThread.BeginInvokeOnMainThread(RefreshInfo);
             }
+            catch { }
         }
 
         private void RefreshInfo()
@@ -170,16 +136,11 @@ namespace ResinTimer
 
                 ResinRemainTimeRange.EndValue = 160 - ResinEnvironment.oneCountTime.TotalSec * ((double)ResinEnvironment.MAX_RESIN / ResinTime.ONE_RESTORE_INTERVAL);
             }
-            catch (Exception ex)
-            {
-
-            }
+            catch (Exception) { }
         }
 
         private void QuickCalc()
         {
-            mutex.WaitOne();
-
             var now = DateTime.Now;
 
             if (ResinEnvironment.endTime < now)
@@ -210,8 +171,6 @@ namespace ResinTimer
                 var notiManager = new ResinNotiManager();
                 notiManager.UpdateNotisTime();
             }
-
-            mutex.ReleaseMutex();
         }
 
         private async void ButtonPressed(object sender, EventArgs e)

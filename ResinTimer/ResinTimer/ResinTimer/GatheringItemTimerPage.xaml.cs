@@ -39,6 +39,7 @@ namespace ResinTimer
                 updateTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
 
                 ResetSelection();
+                RefreshCollectionView();
             }
             catch (Exception ex)
             {
@@ -76,6 +77,7 @@ namespace ResinTimer
                     {
                         (ListCollectionView.SelectedItem as GatheringItemNoti).UpdateTime();
                         notiManager.UpdateNotisTime();
+                        RefreshCollectionView();
                     }
                     break;
                 case 1: // Edit Item
@@ -113,7 +115,6 @@ namespace ResinTimer
             }
 
             ResetSelection();
-            RefreshCollectionView();
         }
 
         private void RemoveItem(Noti noti)

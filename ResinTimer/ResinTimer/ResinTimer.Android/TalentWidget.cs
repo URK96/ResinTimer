@@ -40,10 +40,12 @@ namespace ResinTimer.Droid
                 case ACTION_PREVIOUS:
                     var rv = new RemoteViews(context.PackageName, Resource.Layout.TalentWidget);
                     rv.ShowPrevious(Resource.Id.TalentWidgetIconFlipper);
+                    AppWidgetManager.GetInstance(context).UpdateAppWidget(intent.GetIntExtra(AppWidgetManager.ExtraAppwidgetId, 0), rv);
                     break;
                 case ACTION_NEXT:
                     var rv2 = new RemoteViews(context.PackageName, Resource.Layout.TalentWidget);
                     rv2.ShowNext(Resource.Id.TalentWidgetIconFlipper);
+                    AppWidgetManager.GetInstance(context).UpdateAppWidget(intent.GetIntExtra(AppWidgetManager.ExtraAppwidgetId, 0), rv2);
                     break;
             }
 
@@ -79,14 +81,13 @@ namespace ResinTimer.Droid
 
                 remoteViews.SetImageViewResource(Resource.Id.TalentWidgetIconMondstadt, Resource.Drawable.talent_freedom);
                 remoteViews.SetImageViewResource(Resource.Id.TalentWidgetIconLiyue, Resource.Drawable.talent_gold);
-
-                CreateClickIntent(context, appWidgetIds, remoteViews);
+                CreateClickIntent(context, appWidgetIds, id, remoteViews);
 
                 manager.UpdateAppWidget(id, remoteViews);
             }
         }
 
-        private void CreateClickIntent(Context context, int[] ids, RemoteViews remoteViews)
+        private void CreateClickIntent(Context context, int[] ids, int id, RemoteViews remoteViews)
         {
             var intent = new Intent(context, typeof(TalentWidget));
             intent.SetAction(AppWidgetManager.ActionAppwidgetUpdate);
@@ -99,9 +100,11 @@ namespace ResinTimer.Droid
 
             var prevIntent = new Intent(context, typeof(TalentWidget));
             prevIntent.SetAction(ACTION_PREVIOUS);
+            prevIntent.PutExtra(AppWidgetManager.ExtraAppwidgetId, id);
 
             var nextIntent = new Intent(context, typeof(TalentWidget));
             nextIntent.SetAction(ACTION_NEXT);
+            nextIntent.PutExtra(AppWidgetManager.ExtraAppwidgetId, id);
 
             remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent));
             remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetIconFlipper, PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent));

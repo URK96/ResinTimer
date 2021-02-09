@@ -16,11 +16,6 @@ namespace ResinTimer
             InitializeComponent();
 
             VersionLabel.Text = $"v{AppInfo.VersionString} {(AppEnvironment.isDebug ? "Debug" : "Release")}";
-
-            if (Device.RuntimePlatform == Device.iOS)
-            {
-                //DependencyService.Get<IScheduledNoti>().TestNoti();
-            }
         }
 
         private async void BugReportToolbarItemClicked(object sender, EventArgs e)
@@ -42,6 +37,16 @@ namespace ResinTimer
                 await Navigation.PushAsync(new LicensePage(), true);
             }
             catch { }
+        }
+
+        private async void GithubButtonClicked(object sender, EventArgs e)
+        {
+            await Launcher.TryOpenAsync("https://github.com/URK96/ResinTimer");
+        }
+
+        private async void DevHomeButtonClicked(object sender, EventArgs e)
+        {
+            await Launcher.TryOpenAsync("https://urkhome.azurewebsites.net/");
         }
 
         private async void ButtonPressed(object sender, EventArgs e)

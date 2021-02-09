@@ -125,8 +125,8 @@ namespace ResinTimer
                 TotalTimeHour.Text = $"{ResinEnvironment.totalCountTime.Hour:D2}";
                 TotalTimeMinute.Text = $"{ResinEnvironment.totalCountTime.Min:D2}";
 
-                LastInputDateTimeLabel.Text = ResinEnvironment.lastInputTime;
-                EndDateTimeLabel.Text = $"{ResinEnvironment.endTime}";
+                LastInputDateTimeLabel.Text = AppEnvironment.GetTimeString(DateTime.Parse(ResinEnvironment.lastInputTime));
+                EndDateTimeLabel.Text = AppEnvironment.GetTimeString(ResinEnvironment.endTime);
 
                 ResinCount.Text = ResinEnvironment.resin.ToString();
                 OneCountTimer.Text = ResinEnvironment.oneCountTime.TimeMinSec;
@@ -136,7 +136,7 @@ namespace ResinTimer
 
                 ResinRemainTimeRange.EndValue = 160 - ResinEnvironment.oneCountTime.TotalSec * ((double)ResinEnvironment.MAX_RESIN / ResinTime.ONE_RESTORE_INTERVAL);
             }
-            catch (Exception) { }
+            catch (Exception ex) { }
         }
 
         private void QuickCalc()

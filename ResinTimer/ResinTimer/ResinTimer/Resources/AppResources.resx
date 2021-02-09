@@ -286,6 +286,12 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="InfoPage_DeveloperInfoLabel" xml:space="preserve">
     <value>Developer Info</value>
   </data>
+  <data name="InfoPage_DevHomeButtonText" xml:space="preserve">
+    <value>Dev Home</value>
+  </data>
+  <data name="InfoPage_GithubButtonText" xml:space="preserve">
+    <value>Github</value>
+  </data>
   <data name="InfoPage_OpenSourceLicenseButtonText" xml:space="preserve">
     <value>OpenSource License</value>
   </data>
@@ -405,6 +411,15 @@ MIT License</value>
   <data name="ResinWidget_UpdateComplete" xml:space="preserve">
     <value>Update Resin Widget Complete</value>
   </data>
+  <data name="SettingPage_Section_App_AppLang_Dialog_Default" xml:space="preserve">
+    <value>System Default</value>
+  </data>
+  <data name="SettingPage_Section_App_AppLang_Dialog_Title" xml:space="preserve">
+    <value>Select App Lang</value>
+  </data>
+  <data name="SettingPage_Section_App_AppLang_Title" xml:space="preserve">
+    <value>App Language</value>
+  </data>
   <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
     <value>Enable Notification</value>
   </data>
@@ -417,11 +432,23 @@ MIT License</value>
   <data name="SettingPage_Section_App_Title" xml:space="preserve">
     <value>App</value>
   </data>
+  <data name="SettingPage_Section_App_Use24HTimeFormat_Title" xml:space="preserve">
+    <value>Use 24H Time Format</value>
+  </data>
   <data name="SettingPage_Section_Main_Cell_QuickCalcVibrate_Title" xml:space="preserve">
     <value>Enable Quick Calc Vibration</value>
   </data>
   <data name="SettingPage_Section_Main_Title" xml:space="preserve">
     <value>Main</value>
+  </data>
+  <data name="SettingPage_Section_ResinTimer_Title" xml:space="preserve">
+    <value>Resin Timer</value>
+  </data>
+  <data name="SettingPage_Section_Widget_RootTouch_Title" xml:space="preserve">
+    <value>Run App When Touch</value>
+  </data>
+  <data name="SettingPage_Section_Widget_Title" xml:space="preserve">
+    <value>Widget</value>
   </data>
   <data name="SettingPage_Title" xml:space="preserve">
     <value>Setting</value>

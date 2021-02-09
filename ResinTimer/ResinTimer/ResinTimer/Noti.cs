@@ -12,7 +12,7 @@ namespace ResinTimer
         public DateTime NotiTime { get; set; }
         public int NotiId { get; set; }
 
-        public string ExpectedNotiTimeString => $"{AppResources.NotiSettingPage_List_ExpectedNotiTime}\n{NotiTime}";
+        public string ExpectedNotiTimeString => $"{AppResources.NotiSettingPage_List_ExpectedNotiTime}\n{AppEnvironment.GetTimeString(NotiTime)}";
 
         public abstract void UpdateTime();
         public abstract string GetNotiTitle();

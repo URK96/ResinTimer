@@ -286,6 +286,12 @@
   <data name="InfoPage_DeveloperInfoLabel" xml:space="preserve">
     <value>개발자 정보</value>
   </data>
+  <data name="InfoPage_DevHomeButtonText" xml:space="preserve">
+    <value>Dev Home</value>
+  </data>
+  <data name="InfoPage_GithubButtonText" xml:space="preserve">
+    <value>Github</value>
+  </data>
   <data name="InfoPage_OpenSourceLicenseButtonText" xml:space="preserve">
     <value>오픈소스 라이선스</value>
   </data>
@@ -405,6 +411,15 @@ MIT License</value>
   <data name="ResinWidget_UpdateComplete" xml:space="preserve">
     <value>레진 위젯 갱신 완료</value>
   </data>
+  <data name="SettingPage_Section_App_AppLang_Dialog_Default" xml:space="preserve">
+    <value>시스템 기본값</value>
+  </data>
+  <data name="SettingPage_Section_App_AppLang_Dialog_Title" xml:space="preserve">
+    <value>앱 언어 선택</value>
+  </data>
+  <data name="SettingPage_Section_App_AppLang_Title" xml:space="preserve">
+    <value>앱 언어</value>
+  </data>
   <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
     <value>알림 활성화</value>
   </data>
@@ -417,11 +432,23 @@ MIT License</value>
   <data name="SettingPage_Section_App_Title" xml:space="preserve">
     <value>앱</value>
   </data>
+  <data name="SettingPage_Section_App_Use24HTimeFormat_Title" xml:space="preserve">
+    <value>24H 시간 형식 사용</value>
+  </data>
   <data name="SettingPage_Section_Main_Cell_QuickCalcVibrate_Title" xml:space="preserve">
     <value>빠른 계산 진동 활성화</value>
   </data>
   <data name="SettingPage_Section_Main_Title" xml:space="preserve">
     <value>메인</value>
+  </data>
+  <data name="SettingPage_Section_ResinTimer_Title" xml:space="preserve">
+    <value>레진 알리미</value>
+  </data>
+  <data name="SettingPage_Section_Widget_RootTouch_Title" xml:space="preserve">
+    <value>터치 시 앱 실행</value>
+  </data>
+  <data name="SettingPage_Section_Widget_Title" xml:space="preserve">
+    <value>위젯</value>
   </data>
   <data name="SettingPage_Title" xml:space="preserve">
     <value>알리미 설정</value>

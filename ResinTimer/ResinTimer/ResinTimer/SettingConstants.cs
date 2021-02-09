@@ -20,11 +20,18 @@
         public const string NOTI_LIST = "Noti_List";
         public const string EXPEDITION_NOTI_LIST = "Expedition_Noti_List";
         public const string GATHERINGITEM_NOTI_LIST = "GatheringItem_Noti_List";
-
-        public const string QUICKCALC_VIBRATION = "QuickCalc_Vibration";
+        
+        // Setting - App
         public const string NOTI_ENABLED = "Noti_Enabled";
-
         public const string APP_START_DETAILSCREEN = "App_Start_DetailScreen";
+        public const string APP_USE_24H_TIMEFORMAT = "App_Use_24H_TimeFormat";
+        public const string APP_LANG = "App_Lang";
+
+        // Setting - Widget Global Setting
+        public const string WIDGET_GLOBAL_ROOTTOUCH = "Widget_Global_RootTouch";
+
+        // Setting - Main
+        public const string QUICKCALC_VIBRATION = "QuickCalc_Vibration";
 
         // Android Specific
         public const string WIDGET_BACKGROUND = "Widget_Background";

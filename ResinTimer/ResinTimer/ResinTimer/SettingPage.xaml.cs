@@ -21,6 +21,12 @@ namespace ResinTimer
             AppResources.MasterDetail_MasterList_GatheringItem,
             AppResources.MasterDetail_MasterList_Talent
         };
+        string[] AppLangList => new string[]
+        {
+            AppResources.SettingPage_Section_App_AppLang_Dialog_Default,
+            "English",
+            "한국어"
+        };
 
         public SettingPage()
         {
@@ -34,6 +40,12 @@ namespace ResinTimer
             // App Section
             Notification.On = Preferences.Get(SettingConstants.NOTI_ENABLED, false);
             StartDetailScreenNow.Text = GetStartScreenString(Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0));
+            Use24HTimeFormat.On = Preferences.Get(SettingConstants.APP_USE_24H_TIMEFORMAT, false);
+            AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnvironment.AppLang.System)];
+
+            // Widget Section
+            RootTouch.IsEnabled = Device.RuntimePlatform != Device.UWP;
+            RootTouch.On = Preferences.Get(SettingConstants.WIDGET_GLOBAL_ROOTTOUCH, false);
 
             // Main Section
             QuickCalcVibration.IsEnabled = Device.RuntimePlatform != Device.UWP;
@@ -58,22 +70,6 @@ namespace ResinTimer
 
         private async void Notification_OnChanged(object sender, ToggledEventArgs e)
         {
-            //if (Device.RuntimePlatform == Device.iOS)
-            //{
-            //    var scheduledService = DependencyService.Get<IScheduledNoti>();
-
-            //    if (e.Value)
-            //    {
-            //        scheduledService.TestNoti();
-            //    }
-            //    else
-            //    {
-            //        scheduledService.CancelAll();
-            //    }
-
-            //    return;
-            //}
-
             var bootService = DependencyService.Get<IBootService>();
 
             Preferences.Set(SettingConstants.NOTI_ENABLED, e.Value);
@@ -112,6 +108,11 @@ namespace ResinTimer
             }
         }
 
+        private void Use24HTimeFormat_OnChanged(object sender, ToggledEventArgs e)
+        {
+            Preferences.Set(SettingConstants.APP_USE_24H_TIMEFORMAT, e.Value);
+        }
+
         private async void StartDetailScreen_Tapped(object sender, EventArgs e)
         {
             var dialog = new BaseDialog(AppResources.SettingPage_Section_App_Start_DetailScreen_Dialog_Title,
@@ -120,6 +121,26 @@ namespace ResinTimer
             dialog.OnClose += delegate { StartDetailScreenNow.Text = GetStartScreenString(Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0)); };
 
             await PopupNavigation.Instance.PushAsync(dialog);
+        }
+
+        private async void AppLang_Tapped(object sender, EventArgs e)
+        {
+            var dialog = new BaseDialog(AppResources.SettingPage_Section_App_AppLang_Dialog_Title,
+                new RadioPreferenceView(AppLangList, SettingConstants.APP_LANG));
+
+            dialog.OnClose += delegate { AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnvironment.AppLang.System)]; };
+
+            await PopupNavigation.Instance.PushAsync(dialog);
+        }
+
+        private void RootTouch_OnChanged(object sender, ToggledEventArgs e)
+        {
+            Preferences.Set(SettingConstants.WIDGET_GLOBAL_ROOTTOUCH, e.Value);
+
+            if (Device.RuntimePlatform == Device.Android)
+            {
+
+            }
         }
     }
 }

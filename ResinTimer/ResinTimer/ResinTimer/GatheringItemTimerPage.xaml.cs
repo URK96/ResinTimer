@@ -53,7 +53,7 @@ namespace ResinTimer
 
             updateTimer.Change(Timeout.Infinite, Timeout.Infinite);
 
-            //notiManager.SaveNotis();
+            notiManager.SaveNotis();
         }
 
         private void RefreshCollectionView()

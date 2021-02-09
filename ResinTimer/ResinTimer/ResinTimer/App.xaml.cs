@@ -22,16 +22,13 @@ namespace ResinTimer
         public App()
         {
             InitializeComponent();
-
-            AppResources.Culture = CultureInfo.InstalledUICulture;
-
+            InitAppLang();
             _ = CreateAppAction();
-            AppActions.OnAppAction += AppActions_OnAppAction;
 
 #if DEBUG
             AppEnvironment.isDebug = true;
 #endif
-            AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB();
+            AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
 
             SetDefaultPreferences();
 
@@ -69,6 +66,18 @@ namespace ResinTimer
             }
         }
 
+        private void InitAppLang()
+        {
+            int settingValue = Preferences.Get(SettingConstants.APP_LANG, (int)AppEnvironment.AppLang.System);
+
+            AppResources.Culture = CultureInfo.CurrentCulture = settingValue switch
+            {
+                (int)AppEnvironment.AppLang.English => CultureInfo.GetCultureInfo("en-US"),
+                (int)AppEnvironment.AppLang.Korean => CultureInfo.GetCultureInfo("ko-KR"),
+                _ => CultureInfo.InstalledUICulture
+            };
+        }
+
         private async Task CreateAppAction()
         {
             try
@@ -78,6 +87,8 @@ namespace ResinTimer
                     new AppAction("app_timer_expedition", AppResources.AppAction_App_Timer_Expedition, icon: "compass"),
                     new AppAction("app_timer_gatheringitem", AppResources.AppAction_App_Timer_GatheringItem, icon: "silk_flower"),
                     new AppAction("app_timer_talent", AppResources.AppAction_App_Timer_Talent, icon: "talent_freedom"));
+
+                AppActions.OnAppAction += AppActions_OnAppAction;
             }
             catch (Exception) { }
         }

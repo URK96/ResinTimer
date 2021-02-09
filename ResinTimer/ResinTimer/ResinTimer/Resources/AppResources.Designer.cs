@@ -566,6 +566,24 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Dev Home과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string InfoPage_DevHomeButtonText {
+            get {
+                return ResourceManager.GetString("InfoPage_DevHomeButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Github과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string InfoPage_GithubButtonText {
+            get {
+                return ResourceManager.GetString("InfoPage_GithubButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   OpenSource License과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string InfoPage_OpenSourceLicenseButtonText {
@@ -907,6 +925,33 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   System Default과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_AppLang_Dialog_Default {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_AppLang_Dialog_Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Select App Lang과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_AppLang_Dialog_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_AppLang_Dialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   App Language과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_AppLang_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_AppLang_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Enable Notification과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string SettingPage_Section_App_Cell_Notification_Title {
@@ -943,6 +988,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Use 24H Time Format과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_Use24HTimeFormat_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_Use24HTimeFormat_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Enable Quick Calc Vibration과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string SettingPage_Section_Main_Cell_QuickCalcVibrate_Title {
@@ -957,6 +1011,33 @@ namespace ResinTimer.Resources {
         public static string SettingPage_Section_Main_Title {
             get {
                 return ResourceManager.GetString("SettingPage_Section_Main_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin Timer과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_ResinTimer_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_ResinTimer_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Run App When Touch과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_Widget_RootTouch_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_Widget_RootTouch_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Widget과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_Widget_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_Widget_Title", resourceCulture);
             }
         }
         

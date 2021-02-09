@@ -39,8 +39,12 @@ namespace ResinTimer
 
         private void RefreshCollectionView()
         {
-            ListCollectionView.ItemsSource = null;
+            ListCollectionView.ItemsSource = Array.Empty<Noti>();
             ListCollectionView.ItemsSource = Notis;
+        }
+
+        private void ResetSelection()
+        {
             ListCollectionView.SelectedItems = null;
             ListCollectionView.SelectedItem = null;
         }
@@ -85,6 +89,7 @@ namespace ResinTimer
                 {
                     notiManager.EditList(new ResinNoti(count), NotiManager.EditType.Add);
                     RefreshCollectionView();
+                    ResetSelection();
                 }
                 else
                 {
@@ -109,6 +114,7 @@ namespace ResinTimer
             {
                 notiManager.EditList(new ResinNoti(resin), NotiManager.EditType.Remove);
                 RefreshCollectionView();
+                ResetSelection();
             }
             else
             {

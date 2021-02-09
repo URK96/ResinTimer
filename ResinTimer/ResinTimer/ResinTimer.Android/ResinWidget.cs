@@ -10,23 +10,36 @@ using AndroidX.Core.Content.Resources;
 
 using Xamarin.Essentials;
 
+using static ResinTimer.Droid.AndroidAppEnvironment;
+
 namespace ResinTimer.Droid
 {
     [BroadcastReceiver(Label = "Resin Widget")]
-    [IntentFilter(new string[] { AppWidgetManager.ActionAppwidgetUpdate })]
+    [IntentFilter(new string[] { AppWidgetManager.ActionAppwidgetUpdate, Intent.ActionMain })]
     [MetaData("android.appwidget.provider", Resource = "@xml/widgetprovider_resin_full")]
     public class ResinWidget : AppWidgetProvider
     {
-        const string KEY_CLICKUPDATE = "Key_ClickUpdate";
-        const string VALUE_CLICKUPDATE = "Value_ClickUpdate";
-
         bool isClick = false;
 
         public override void OnReceive(Context context, Intent intent)
         {
-            var value = intent.GetStringExtra(KEY_CLICKUPDATE);
+            switch (intent.Action)
+            {
+                case AppWidgetManager.ActionAppwidgetUpdate:
+                    var updateValue = intent.GetStringExtra(KEY_CLICKUPDATE);
+                    isClick = updateValue?.Equals(VALUE_CLICKUPDATE) ?? false;
+                    break;
+                case Intent.ActionMain:
+                    var runValue = intent.GetStringExtra(KEY_RUNAPP);
 
-            isClick = value?.Equals(VALUE_CLICKUPDATE) ?? false;
+                    if (runValue?.Equals(VALUE_RUNAPP) ?? false)
+                    {
+                        var runIntent = new Intent(context, typeof(SplashActivity));
+                        runIntent.SetFlags(ActivityFlags.NewTask);
+                        context.StartActivity(runIntent);
+                    }
+                    break;
+            }
 
             base.OnReceive(context, intent);
         }
@@ -61,20 +74,25 @@ namespace ResinTimer.Droid
                 remoteViews.SetTextViewText(Resource.Id.ResinWidgetCount, ResinEnvironment.resin.ToString());
                 remoteViews.SetTextViewText(Resource.Id.ResinWidgetEndTime, ResinEnvironment.endTime.ToString());
 
-                remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetRootLayout, CreateClickIntent(context, appWidgetIds));
+                CreateClickIntent(context, appWidgetIds, remoteViews);
 
                 manager.UpdateAppWidget(id, remoteViews);
             }
         }
 
-        private PendingIntent CreateClickIntent(Context context, int[] ids)
+        private void CreateClickIntent(Context context, int[] ids, RemoteViews remoteViews)
         {
             var intent = new Intent(context, typeof(ResinWidget));
             intent.SetAction(AppWidgetManager.ActionAppwidgetUpdate);
             intent.PutExtra(AppWidgetManager.ExtraAppwidgetIds, ids);
             intent.PutExtra(KEY_CLICKUPDATE, VALUE_CLICKUPDATE);
 
-            return PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent);
+            var runIntent = new Intent(context, typeof(ResinWidget));
+            runIntent.SetAction(Intent.ActionMain);
+            runIntent.PutExtra(KEY_RUNAPP, VALUE_RUNAPP);
+
+            remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetIcon, PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent));
         }
 
         private GradientDrawable CreateBG(Context context, int id)
@@ -115,9 +133,6 @@ namespace ResinTimer.Droid
     [MetaData("android.appwidget.provider", Resource = "@xml/widgetprovider_resin_simple")]
     public class ResinWidgetSimple : AppWidgetProvider
     {
-        const string KEY_CLICKUPDATE = "Key_ClickUpdate";
-        const string VALUE_CLICKUPDATE = "Value_ClickUpdate";
-
         bool isClick = false;
 
         public override void OnReceive(Context context, Intent intent)
@@ -160,20 +175,25 @@ namespace ResinTimer.Droid
 
                 remoteViews.SetTextViewText(Resource.Id.ResinWidgetSimpleCount, ResinEnvironment.resin.ToString());
 
-                remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetSimpleRootLayout, CreateClickIntent(context, appWidgetIds));
+                CreateClickIntent(context, appWidgetIds, remoteViews);
 
                 manager.UpdateAppWidget(id, remoteViews);
             }
         }
 
-        private PendingIntent CreateClickIntent(Context context, int[] ids)
+        private void CreateClickIntent(Context context, int[] ids, RemoteViews remoteViews)
         {
             var intent = new Intent(context, typeof(ResinWidgetSimple));
             intent.SetAction(AppWidgetManager.ActionAppwidgetUpdate);
             intent.PutExtra(AppWidgetManager.ExtraAppwidgetIds, ids);
             intent.PutExtra(KEY_CLICKUPDATE, VALUE_CLICKUPDATE);
 
-            return PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent);
+            var runIntent = new Intent(context, typeof(ResinWidget));
+            runIntent.SetAction(Intent.ActionMain);
+            runIntent.PutExtra(KEY_RUNAPP, VALUE_RUNAPP);
+
+            remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetSimpleRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetSimpleIcon, PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent));
         }
 
         public override void OnEnabled(Context context)

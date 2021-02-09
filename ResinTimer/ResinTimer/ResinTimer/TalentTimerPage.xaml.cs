@@ -32,23 +32,11 @@ namespace ResinTimer
         {
             InitializeComponent();
 
-            if (Device.RuntimePlatform == Device.iOS)
-            {
-                Title = string.Empty;
-            }
-
             locations = new List<string>();
-        }
-
-        private void SetToolbar()
-        {
-
         }
 
         private void LoadLocationList()
         {
-            //locations.Clear();
-            //locations.AddRange(AppEnvironment.genshinDB.GetAllLocations());
             locations = AppEnvironment.genshinDB.GetAllLocations();
         }
 
@@ -91,8 +79,6 @@ namespace ResinTimer
             {
 
             }
-
-            SetToolbar();
         }
 
         protected override void OnDisappearing()

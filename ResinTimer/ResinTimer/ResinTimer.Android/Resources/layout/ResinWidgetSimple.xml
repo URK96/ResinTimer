@@ -16,7 +16,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
-            android:src="@drawable/resintimer_icon_small"/>
+            android:src="@drawable/resintimer_icon_small"
+            android:id="@+id/ResinWidgetSimpleIcon"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

@@ -21,8 +21,25 @@
                                VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </ViewCell>
+                <SwitchCell x:Name="Use24HTimeFormat" OnColor="#0682F6"
+                            Text="{x:Static resources:AppResources.SettingPage_Section_App_Use24HTimeFormat_Title}"
+                            OnChanged="Use24HTimeFormat_OnChanged" />
+                <ViewCell x:Name="AppLang" 
+                          Tapped="AppLang_Tapped">
+                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
+                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_Start_DetailScreen_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
+                        <Label x:Name="AppLangNow"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </ViewCell>
             </TableSection>
-            <TableSection Title="{x:Static resources:AppResources.SettingPage_Section_Main_Title}">
+            <TableSection Title="{x:Static resources:AppResources.SettingPage_Section_Widget_Title}">
+                <SwitchCell x:Name="RootTouch" OnColor="#0682F6"
+                            Text="{x:Static resources:AppResources.SettingPage_Section_Widget_RootTouch_Title}"
+                            OnChanged="RootTouch_OnChanged" />
+            </TableSection>
+            <TableSection Title="{x:Static resources:AppResources.SettingPage_Section_ResinTimer_Title}">
                 <SwitchCell x:Name="QuickCalcVibration" OnColor="#0682F6"
                             Text="{x:Static resources:AppResources.SettingPage_Section_Main_Cell_QuickCalcVibrate_Title}"
                             OnChanged="QuickCalcVibration_OnChanged" />

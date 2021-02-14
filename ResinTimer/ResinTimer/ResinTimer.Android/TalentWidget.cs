@@ -56,9 +56,6 @@ namespace ResinTimer.Droid
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
-            ResinEnvironment.LoadValues();
-            ResinEnvironment.CalcResin();
-
             UpdateLayout(context, appWidgetManager, appWidgetIds);
 
             if (isClick)
@@ -81,6 +78,7 @@ namespace ResinTimer.Droid
 
                 remoteViews.SetImageViewResource(Resource.Id.TalentWidgetIconMondstadt, Resource.Drawable.talent_freedom);
                 remoteViews.SetImageViewResource(Resource.Id.TalentWidgetIconLiyue, Resource.Drawable.talent_gold);
+
                 CreateClickIntent(context, appWidgetIds, id, remoteViews);
 
                 manager.UpdateAppWidget(id, remoteViews);

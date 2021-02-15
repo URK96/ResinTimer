@@ -4,6 +4,7 @@ using System;
 
 using ExpEnv = ResinTimer.ExpeditionEnvironment;
 using GIEnv = ResinTimer.GatheringItemEnvironment;
+using GEnv = ResinTimer.GadgetEnvironment;
 
 namespace ResinTimer
 {
@@ -17,6 +18,16 @@ namespace ResinTimer
         public abstract void UpdateTime();
         public abstract string GetNotiTitle();
         public abstract string GetNotiText();
+
+        public string GetRemainTimeHM()
+        {
+            var ts = NotiTime - DateTime.Now;
+
+            int hour = ts.Hours + (ts.Days * 24);
+            int min = ts.Minutes;
+
+            return $"{hour:D2}:{min:D2}";
+        }
     }
 
     public class ResinNoti : Noti
@@ -142,17 +153,48 @@ namespace ResinTimer
             NotiTime = DateTime.Now.AddSeconds(ResetTime.TotalSeconds);
         }
 
-        private string GetRemainTimeHM()
-        {
-            var ts = NotiTime - DateTime.Now;
-
-            int hour = ts.Hours + (ts.Days * 24);
-            int min = ts.Minutes;
-
-            return $"{hour:D2}:{min:D2}";
-        }
-
         public override string GetNotiTitle() => AppResources.Noti_GatheringItem_Title;
         public override string GetNotiText() => $"{TypeString} {AppResources.Noti_GatheringItem_Message}";
+    }
+
+    public class GadgetNoti : Noti
+    {
+        public TimeSpan ResetTime { get; set; }
+        public GEnv.GadgetType ItemType { get; set; }
+        public string ItemNote { get; set; } = string.Empty;
+
+        public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{GetRemainTimeHM()} {AppResources.GatheringItemTimerPage_Remain}" : AppResources.GatheringItemTimer_ResetComplete)}";
+        public string TypeString => ItemType switch
+        {
+            GEnv.GadgetType.ParametricTransformer => AppResources.Gadget_Type_ParametricTransformer,
+            _ => AppResources.Gadget_Type_ParametricTransformer
+        };
+        public string TypeImageName => ItemType switch
+        {
+            GEnv.GadgetType.ParametricTransformer => "parametric_transformer.png",
+            _ => "parametric_transformer.png"
+        };
+        public bool ItemNoteVisible => !string.IsNullOrWhiteSpace(ItemNote);
+
+        public GadgetNoti(GEnv.GadgetType type = GEnv.GadgetType.ParametricTransformer)
+        {
+            EditItemType(type);
+
+            NotiTime = DateTime.Now;
+        }
+
+        public void EditItemType(GEnv.GadgetType type)
+        {
+            ItemType = type;
+            ResetTime = TimeSpan.FromHours(GEnv.ResetTimeList[(int)type]);
+        }
+
+        public override void UpdateTime()
+        {
+            NotiTime = DateTime.Now.AddSeconds(ResetTime.TotalSeconds);
+        }
+
+        public override string GetNotiTitle() => AppResources.Noti_Gadget_Title;
+        public override string GetNotiText() => $"{TypeString} {AppResources.Noti_Gadget_Message}";
     }
 }

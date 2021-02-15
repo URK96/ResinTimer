@@ -133,6 +133,9 @@ namespace ResinTimer.Droid
                     case NotiManager.NotiType.GatheringItem:
                         notiManager.UpdateScheduledNoti<GatheringItemNoti>();
                         break;
+                    case NotiManager.NotiType.Gadget:
+                        notiManager.UpdateScheduledNoti<GadgetNoti>();
+                        break;
                     default:
                         break;
                 }

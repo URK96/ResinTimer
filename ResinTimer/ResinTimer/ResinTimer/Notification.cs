@@ -52,6 +52,10 @@ namespace ResinTimer
             {
                 NotiType = NotiManager.NotiType.GatheringItem;
             }
+            else if (typeof(T) == typeof(GadgetNoti))
+            {
+                NotiType = NotiManager.NotiType.Gadget;
+            }
         }
     }
 }

@@ -10,6 +10,10 @@ using Xamarin.Forms;
 using Newtonsoft.Json;
 using AndroidX.Core.App;
 
+using static ResinTimer.Droid.AndroidAppEnvironment;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace ResinTimer.Droid
 {
     [Activity(Theme = "@style/ResinTimer", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
@@ -31,7 +35,16 @@ namespace ResinTimer.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+
+            var app = new App();
+
+            app.SetMainPage(Intent.GetStringExtra(KEY_TALENTITEM_CLICK) switch
+            {
+                VALUE_TALENTITEM_CLICK => new NavigationPage(new TalentCharacterPage(Intent.GetStringArrayListExtra(KEY_TALENTITEM_LIST)?.Cast<string>().ToArray())),
+                _ => null
+            });
+
+            LoadApplication(app);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

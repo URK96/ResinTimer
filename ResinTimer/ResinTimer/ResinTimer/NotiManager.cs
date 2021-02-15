@@ -16,7 +16,7 @@ namespace ResinTimer
     public class NotiManager
     {
         public enum EditType { Add, Remove, Edit }
-        public enum NotiType { Resin, Expedition, GatheringItem }
+        public enum NotiType { Resin, Expedition, GatheringItem, Gadget }
 
         public NotiType notiType = NotiType.Resin;
 
@@ -50,6 +50,10 @@ namespace ResinTimer
                 else if (typeof(T) == typeof(GatheringItemNoti))
                 {
                     value = Preferences.Get(SettingConstants.GATHERINGITEM_NOTI_LIST, string.Empty);
+                }
+                else if (typeof(T) == typeof(GadgetNoti))
+                {
+                    value = Preferences.Get(SettingConstants.GADGET_NOTI_LIST, string.Empty);
                 }
 
                 var deserialized = JsonConvert.DeserializeObject<List<T>>(value);
@@ -85,9 +89,11 @@ namespace ResinTimer
         {
             var key = notiType switch
             {
+                NotiType.Resin => SettingConstants.NOTI_LIST,
                 NotiType.Expedition => SettingConstants.EXPEDITION_NOTI_LIST,
                 NotiType.GatheringItem => SettingConstants.GATHERINGITEM_NOTI_LIST,
-                _ => SettingConstants.NOTI_LIST
+                NotiType.Gadget => SettingConstants.GADGET_NOTI_LIST,
+                _ => string.Empty
             };
 
             Preferences.Set(key, JsonConvert.SerializeObject(Notis));
@@ -297,7 +303,69 @@ namespace ResinTimer
             }
 
             SaveNotis();
-            UpdateScheduledNoti<ExpeditionNoti>();
+            UpdateScheduledNoti<GatheringItemNoti>();
+        }
+    }
+
+    public class GadgetNotiManager : NotiManager
+    {
+        const int ID_PREINDEX = 2500;
+
+        public GadgetNotiManager() : base()
+        {
+            try
+            {
+                notiType = NotiType.Gadget;
+
+                Notis.AddRange(GetNotiList<GadgetNoti>());
+
+                SaveNotis();
+            }
+            catch (Exception)
+            {
+                DependencyService.Get<IToast>().Show("Fail to initialize Gadget noti manager");
+            }
+        }
+
+        public void UpdateNotisTime()
+        {
+            SaveNotis();
+            UpdateScheduledNoti<GadgetNoti>();
+        }
+
+        public override void RenewalIds()
+        {
+            for (int i = 0; i < Notis.Count; ++i)
+            {
+                Notis[i].NotiId = ID_PREINDEX + i;
+            }
+        }
+
+        public void EditList(Noti item, EditType type)
+        {
+            switch (type)
+            {
+                case EditType.Add:
+                    item.NotiId = ID_PREINDEX + Notis.Count;
+
+                    Notis.Add(item);
+                    Notis.Sort(SortNotis);
+                    break;
+                case EditType.Remove:
+                    Notis.Remove(Notis.Find(x => x.NotiId.Equals(item.NotiId)));
+                    break;
+                case EditType.Edit:
+                    var index = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
+
+                    Notis[index] = item;
+                    Notis[index].UpdateTime();
+                    break;
+                default:
+                    break;
+            }
+
+            SaveNotis();
+            UpdateScheduledNoti<GadgetNoti>();
         }
     }
 }

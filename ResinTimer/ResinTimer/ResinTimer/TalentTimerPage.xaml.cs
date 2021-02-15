@@ -13,55 +13,18 @@ using Xamarin.Forms.Xaml;
 
 using Locations = GenshinDB_Core.GenshinDB.Locations;
 using TalentEnv = ResinTimer.TalentEnvironment;
-using TalentItem = GenshinDB_Core.TalentItem;
 
 namespace ResinTimer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TalentTimerPage : ContentPage
     {
-        private TalentEnv.Servers nowServer;
-        private Locations nowLocation;
-        private List<string> locations;
-        private TalentItem nowItem;
-        private TimeZoneInfo nowTZInfo;
-
-        private void LoadNowTZInfo() => nowTZInfo = TimeZoneInfo.Local;
-
         public TalentTimerPage()
         {
             InitializeComponent();
-
-            locations = new List<string>();
         }
 
-        private void LoadLocationList()
-        {
-            locations = AppEnvironment.genshinDB.GetAllLocations();
-        }
-
-        private void LoadSettings()
-        {
-            nowServer = (TalentEnv.Servers)Preferences.Get(SettingConstants.ITEM_TALENT_SERVER, 0);
-            nowLocation = (Locations)Preferences.Get(SettingConstants.ITEM_TALENT_LOCATION, 0);
-        }
-
-        private void CheckNowTalentBook()
-        {
-            int interval = nowTZInfo.BaseUtcOffset.Hours - TalentEnv.serverUTCs[(int)nowServer];
-            int realRenewalHour = TalentEnv.RENEWAL_HOUR + interval;
-            var now = DateTime.Now;
-
-            DayOfWeek dowValue = (now.Hour - realRenewalHour) switch
-            {
-                int result when result < 0 => now.AddDays(-1).DayOfWeek,
-                _ => now.DayOfWeek
-            };
-
-            nowItem = (from item in AppEnvironment.genshinDB.talentItems
-                        where item.Location.Equals(nowLocation) && item.AvailableDayOfWeeks.Contains(dowValue)
-                        select item).First();
-        }
+        
 
         protected override void OnAppearing()
         {
@@ -69,16 +32,13 @@ namespace ResinTimer
 
             try
             {
-                LoadSettings();
-                LoadNowTZInfo();
-                LoadLocationList();
-                CheckNowTalentBook();
+                TalentEnv.LoadSettings();
+                TalentEnv.LoadNowTZInfo();
+                TalentEnv.LoadLocationList();
+                TalentEnv.CheckNowTalentBook();
                 RefreshInfo();
             }
-            catch (Exception ex)
-            {
-
-            }
+            catch { }
         }
 
         protected override void OnDisappearing()
@@ -93,12 +53,12 @@ namespace ResinTimer
             switch (item.Text)
             {
                 case "Location":
-                    var locationDialog = new BaseDialog(AppResources.TalentTimerPage_SelectLocationDialog_Title, new RadioPreferenceView(locations.ToArray(), SettingConstants.ITEM_TALENT_LOCATION));
+                    var locationDialog = new BaseDialog(AppResources.TalentTimerPage_SelectLocationDialog_Title, new RadioPreferenceView(TalentEnv.locations.ToArray(), SettingConstants.ITEM_TALENT_LOCATION));
                     locationDialog.OnClose += delegate
                     {
-                        nowLocation = (Locations)Preferences.Get(SettingConstants.ITEM_TALENT_LOCATION, 0);
+                        TalentEnv.Location = (Locations)Preferences.Get(SettingConstants.ITEM_TALENT_LOCATION, 0);
 
-                        CheckNowTalentBook();
+                        TalentEnv.CheckNowTalentBook();
                         RefreshInfo();
                     };
 
@@ -108,9 +68,9 @@ namespace ResinTimer
                     var serverDialog = new BaseDialog(AppResources.TalentTimerPage_SelectServerDialog_Title, new RadioPreferenceView(TalentEnv.serverList, SettingConstants.ITEM_TALENT_SERVER));
                     serverDialog.OnClose += delegate
                     {
-                        nowServer = (TalentEnv.Servers)Preferences.Get(SettingConstants.ITEM_TALENT_SERVER, 0);
+                        TalentEnv.Server = (TalentEnv.Servers)Preferences.Get(SettingConstants.ITEM_TALENT_SERVER, 0);
 
-                        CheckNowTalentBook();
+                        TalentEnv.CheckNowTalentBook();
                         RefreshInfo();
                     };
 
@@ -125,49 +85,31 @@ namespace ResinTimer
         {
             try
             {
-                NowServerLabel.Text = $"{AppResources.TalentTimerPage_NowServer_PreLabel} : {TalentEnv.serverList[(int)nowServer]} ({GetUTCString(TalentEnv.serverUTCs[(int)nowServer])})";
-                NowRegionUTCLabel.Text = $"{AppResources.TalentTimerPage_NowUTC_PreLabel} : {nowTZInfo.DisplayName} ({GetUTCString(nowTZInfo.BaseUtcOffset.Hours)})";
-                NowLocationLabel.Text = $"{AppResources.TalentTimerPage_NowLocation_PreLabel} : {locations[(int)nowLocation]}";
-                NowBookPreLabel.Text = nowItem.ItemName.Equals("All") ? AppResources.TalentTimerPage_NowBook_PreLabel_All : AppResources.TalentTimerPage_NowBook_PreLabel;
-                NowBookLabel.Text = nowItem.ItemName.Equals("All") ? "" : AppEnvironment.genshinDB.FindLangDic(nowItem.ItemName);
-                NowBookImage.Source = ImageSource.FromFile(GetTalentBookImageName());
+                NowServerLabel.Text = $"{AppResources.TalentTimerPage_NowServer_PreLabel} : {TalentEnv.serverList[(int)TalentEnv.Server]} ({GetUTCString(TalentEnv.serverUTCs[(int)TalentEnv.Server])})";
+                NowRegionUTCLabel.Text = $"{AppResources.TalentTimerPage_NowUTC_PreLabel} : {TalentEnv.TZInfo.DisplayName} ({GetUTCString(TalentEnv.TZInfo.BaseUtcOffset.Hours)})";
+                NowLocationLabel.Text = $"{AppResources.TalentTimerPage_NowLocation_PreLabel} : {TalentEnv.locations[(int)TalentEnv.Location]}";
+                NowBookPreLabel.Text = TalentEnv.Item.ItemName.Equals("All") ? AppResources.TalentTimerPage_NowBook_PreLabel_All : AppResources.TalentTimerPage_NowBook_PreLabel;
+                NowBookLabel.Text = TalentEnv.Item.ItemName.Equals("All") ? "" : AppEnvironment.genshinDB.FindLangDic(TalentEnv.Item.ItemName);
+                NowBookImage.Source = ImageSource.FromFile(TalentEnv.GetTalentBookImageName());
             }
-            catch
-            {
-
-            }
+            catch { }
         }
 
         private string GetUTCString(int offset) => $"UTC{((offset >= 0) ? "+" : "")}{offset}";
-
-        private string GetTalentBookImageName()
-        {
-            return nowItem.ItemName switch
-            {
-                "Freedom" => "talent_freedom.png",
-                "Resistance" => "talent_resistance.png",
-                "Ballad" => "talent_ballad.png",
-                "Prosperity" => "talent_prosperity.png",
-                "Diligence" => "talent_diligence.png",
-                "Gold" => "talent_gold.png",
-                "All" => $"talent_all_{nowLocation:F}.png",
-                _ => ""
-            };
-        }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
             var items = new List<string>();
 
-            if (nowItem.ItemName.Equals("All"))
+            if (TalentEnv.Item.ItemName.Equals("All"))
             {
                 items.AddRange(from item in AppEnvironment.genshinDB.talentItems
-                               where item.Location.Equals(nowLocation)
+                               where item.Location.Equals(TalentEnv.Location)
                                select item.ItemName);
             }
             else
             {
-                items.Add(nowItem.ItemName);
+                items.Add(TalentEnv.Item.ItemName);
             }    
 
             await Navigation.PushAsync(new TalentCharacterPage(items.ToArray()), true);

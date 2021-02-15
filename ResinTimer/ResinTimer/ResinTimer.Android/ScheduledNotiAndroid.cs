@@ -21,6 +21,7 @@ namespace ResinTimer.Droid
             Cancel<ResinNoti>();
             Cancel<ExpeditionNoti>();
             Cancel<GatheringItemNoti>();
+            Cancel<GadgetNoti>();
         }
 
         public void Cancel<T>() where T : Noti
@@ -38,6 +39,7 @@ namespace ResinTimer.Droid
             Schedule<ResinNoti>();
             Schedule<ExpeditionNoti>();
             Schedule<GatheringItemNoti>();
+            Schedule<GadgetNoti>();
         }
 
         public void Schedule<T>() where T : Noti

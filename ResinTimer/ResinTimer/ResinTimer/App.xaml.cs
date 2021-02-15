@@ -19,7 +19,7 @@ namespace ResinTimer
 {
     public partial class App : Application
     {
-        public App()
+        public App(Page startPage = null)
         {
             InitializeComponent();
             InitAppLang();
@@ -34,7 +34,12 @@ namespace ResinTimer
 
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY5MzQ5QDMxMzgyZTM0MmUzMGx5ajVXODdXRldsSjMvRFNnbkVxS2c2ZTJkdEhxNW4yQVlLSCtsbWt1WG89");
 
-            MainPage = new MainPage();
+            SetMainPage(null);
+        }
+
+        public void SetMainPage(Page page = null)
+        {
+            MainPage = page ?? new MainPage();
         }
 
         private void SetDefaultPreferences()

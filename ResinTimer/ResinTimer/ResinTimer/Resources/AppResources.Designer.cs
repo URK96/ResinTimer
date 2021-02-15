@@ -440,6 +440,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Parametric Transformer과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Gadget_Type_ParametricTransformer {
+            get {
+                return ResourceManager.GetString("Gadget_Type_ParametricTransformer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   (None)과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string GatheringItem_ItemNote_None {
@@ -750,6 +759,24 @@ namespace ResinTimer.Resources {
         public static string Noti_Expedition_Title {
             get {
                 return ResourceManager.GetString("Noti_Expedition_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   is usable과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_Gadget_Message {
+            get {
+                return ResourceManager.GetString("Noti_Gadget_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Gadget Noti과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_Gadget_Title {
+            get {
+                return ResourceManager.GetString("Noti_Gadget_Title", resourceCulture);
             }
         }
         
@@ -1137,6 +1164,15 @@ namespace ResinTimer.Resources {
         public static string TalentTimerPage_Title {
             get {
                 return ResourceManager.GetString("TalentTimerPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Toady Talent Book과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentWidget_Title {
+            get {
+                return ResourceManager.GetString("TalentWidget_Title", resourceCulture);
             }
         }
         

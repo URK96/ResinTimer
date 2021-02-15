@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:text="Today Book"
-        android:id="@+id/TalentWidgetLocation"/>
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/TalentWidgetTitle"/>
     <ViewFlipper
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,18 +34,25 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/left_black_small"
+            android:padding="5dp"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/button_outline"
+            android:src="@drawable/left_icon"
             android:id="@+id/TalentWidgetPreviousButton"/>
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/right_black_small"
+            android:padding="5dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/button_outline"
+            android:src="@drawable/right_icon"
             android:id="@+id/TalentWidgetNextButton"/>
     </LinearLayout>
 </LinearLayout>

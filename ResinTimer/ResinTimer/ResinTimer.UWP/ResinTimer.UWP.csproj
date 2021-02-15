@@ -182,6 +182,7 @@
     <Content Include="minus.png" />
     <Content Include="mora.png" />
     <Content Include="notisetting.png" />
+    <Content Include="parametric_transformer.png" />
     <Content Include="plus.png" />
     <Content Include="refresh.png" />
     <Content Include="resin.png" />

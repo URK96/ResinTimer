@@ -244,6 +244,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Expedition_Type_Mora" xml:space="preserve">
     <value>Mora</value>
   </data>
+  <data name="Gadget_Type_ParametricTransformer" xml:space="preserve">
+    <value>Parametric Transformer</value>
+  </data>
   <data name="GatheringItemMain_Title" xml:space="preserve">
     <value>Item</value>
   </data>
@@ -393,6 +396,12 @@ MIT License</value>
   <data name="Noti_Expedition_Title" xml:space="preserve">
     <value>Expedition Complete</value>
   </data>
+  <data name="Noti_Gadget_Message" xml:space="preserve">
+    <value>is usable</value>
+  </data>
+  <data name="Noti_Gadget_Title" xml:space="preserve">
+    <value>Gadget Noti</value>
+  </data>
   <data name="Noti_GatheringItem_Message" xml:space="preserve">
     <value>are restored now</value>
   </data>
@@ -482,6 +491,9 @@ MIT License</value>
   </data>
   <data name="TalentTimerPage_Title" xml:space="preserve">
     <value>Talent Item</value>
+  </data>
+  <data name="TalentWidget_Title" xml:space="preserve">
+    <value>Toady Talent Book</value>
   </data>
   <data name="Toolbar_Add" xml:space="preserve">
     <value>Add</value>

@@ -3,14 +3,22 @@ using Android.Appwidget;
 using Android.Content;
 using Android.Widget;
 
+using ResinTimer.Resources;
+
+using System.Collections.Generic;
+using System.Linq;
+
 using Xamarin.Essentials;
 
+using static GenshinDB_Core.GenshinDB;
 using static ResinTimer.Droid.AndroidAppEnvironment;
+
+using TalentEnv = ResinTimer.TalentEnvironment;
 
 namespace ResinTimer.Droid
 {
     [BroadcastReceiver(Label = "Talent Widget")]
-    [IntentFilter(new string[] { AppWidgetManager.ActionAppwidgetUpdate, Intent.ActionMain, TalentWidget.ACTION_NEXT, TalentWidget.ACTION_PREVIOUS })]
+    [IntentFilter(new string[] { AppWidgetManager.ActionAppwidgetUpdate, Intent.ActionMain, ACTION_NEXT, ACTION_PREVIOUS })]
     [MetaData("android.appwidget.provider", Resource = "@xml/widgetprovider_talent_full")]
     public class TalentWidget : AppWidgetProvider
     {
@@ -18,6 +26,12 @@ namespace ResinTimer.Droid
         public const string ACTION_PREVIOUS = "com.urk.resintimer.viewflipper.PREVIOUS";
 
         bool isClick = false;
+
+        private int[] locationImageViewIds =
+        {
+            Resource.Id.TalentWidgetIconMondstadt,
+            Resource.Id.TalentWidgetIconLiyue
+        };
 
         public override void OnReceive(Context context, Intent intent)
         {
@@ -32,8 +46,10 @@ namespace ResinTimer.Droid
 
                     if (runValue?.Equals(VALUE_RUNAPP) ?? false)
                     {
-                        var runIntent = new Intent(context, typeof(SplashActivity));
+                        var runIntent = new Intent(context, typeof(MainActivity));
                         runIntent.SetFlags(ActivityFlags.NewTask);
+                        runIntent.PutExtra(KEY_TALENTITEM_CLICK, VALUE_TALENTITEM_CLICK);
+                        runIntent.PutStringArrayListExtra(KEY_TALENTITEM_LIST, intent.GetStringArrayListExtra(KEY_TALENTITEM_LIST));
                         context.StartActivity(runIntent);
                     }
                     break;
@@ -56,6 +72,9 @@ namespace ResinTimer.Droid
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
+            TalentEnv.LoadSettings();
+            TalentEnv.LoadNowTZInfo();
+
             UpdateLayout(context, appWidgetManager, appWidgetIds);
 
             if (isClick)
@@ -76,8 +95,19 @@ namespace ResinTimer.Droid
                     _ => new RemoteViews(context.PackageName, Resource.Layout.TalentWidget)
                 };
 
-                remoteViews.SetImageViewResource(Resource.Id.TalentWidgetIconMondstadt, Resource.Drawable.talent_freedom);
-                remoteViews.SetImageViewResource(Resource.Id.TalentWidgetIconLiyue, Resource.Drawable.talent_gold);
+                remoteViews.SetTextViewText(Resource.Id.TalentWidgetTitle, AppResources.TalentWidget_Title);
+
+                for (int i = 0; i < locationImageViewIds.Length; ++i)
+                {
+                    var location = (Locations)i;
+                    string itemName = TalentEnv.CheckNowTalentBook(location).ItemName;
+
+                    remoteViews.SetImageViewResource(locationImageViewIds[i], GetTalentBookImageId(itemName, location));
+                    CreateTalentIconClickIntent(context, remoteViews, locationImageViewIds[i], itemName, location);
+                }
+
+                //remoteViews.SetImageViewResource(Resource.Id.TalentWidgetIconMondstadt, GetTalentBookImageId(TalentEnv.CheckNowTalentBook(Locations.Mondstadt).ItemName, Locations.Mondstadt));
+                //remoteViews.SetImageViewResource(Resource.Id.TalentWidgetIconLiyue, GetTalentBookImageId(TalentEnv.CheckNowTalentBook(Locations.Liyue).ItemName, Locations.Liyue));
 
                 CreateClickIntent(context, appWidgetIds, id, remoteViews);
 
@@ -92,10 +122,6 @@ namespace ResinTimer.Droid
             intent.PutExtra(AppWidgetManager.ExtraAppwidgetIds, ids);
             intent.PutExtra(KEY_CLICKUPDATE, VALUE_CLICKUPDATE);
 
-            var runIntent = new Intent(context, typeof(TalentWidget));
-            runIntent.SetAction(Intent.ActionMain);
-            runIntent.PutExtra(KEY_RUNAPP, VALUE_RUNAPP);
-
             var prevIntent = new Intent(context, typeof(TalentWidget));
             prevIntent.SetAction(ACTION_PREVIOUS);
             prevIntent.PutExtra(AppWidgetManager.ExtraAppwidgetId, id);
@@ -105,9 +131,62 @@ namespace ResinTimer.Droid
             nextIntent.PutExtra(AppWidgetManager.ExtraAppwidgetId, id);
 
             remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent));
-            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetIconFlipper, PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent));
-            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetPreviousButton, PendingIntent.GetBroadcast(context, 0, prevIntent, PendingIntentFlags.UpdateCurrent));
-            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetNextButton, PendingIntent.GetBroadcast(context, 0, nextIntent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetPreviousButton, PendingIntent.GetBroadcast(context, 1, prevIntent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetNextButton, PendingIntent.GetBroadcast(context, 2, nextIntent, PendingIntentFlags.UpdateCurrent));
+        }
+
+        private void CreateTalentIconClickIntent(Context context, RemoteViews remoteViews, int id, string itemName, Locations location)
+        {
+            var runIntent = new Intent(context, typeof(TalentWidget));
+            runIntent.SetAction(Intent.ActionMain);
+            runIntent.PutExtra(KEY_RUNAPP, VALUE_RUNAPP);
+            runIntent.PutStringArrayListExtra(KEY_TALENTITEM_LIST, CreateTalentList(itemName, location));
+
+            remoteViews.SetOnClickPendingIntent(id, PendingIntent.GetBroadcast(context, id, runIntent, PendingIntentFlags.UpdateCurrent));
+        }
+
+        private int GetTalentBookImageId(string itemName, Locations location)
+        {
+            if (itemName.Equals("All"))
+            {
+                return location switch
+                {
+                    Locations.Mondstadt => Resource.Drawable.talent_all_Mondstadt,
+                    Locations.Liyue => Resource.Drawable.talent_all_Liyue,
+                    _ => 0
+                };
+            }
+            else
+            {
+                return itemName switch
+                {
+                    "Freedom" => Resource.Drawable.talent_freedom,
+                    "Resistance" => Resource.Drawable.talent_resistance,
+                    "Ballad" => Resource.Drawable.talent_ballad,
+                    "Prosperity" => Resource.Drawable.talent_prosperity,
+                    "Diligence" => Resource.Drawable.talent_diligence,
+                    "Gold" => Resource.Drawable.talent_gold,
+                    _ => 0
+                };
+            }
+        }
+
+        private List<string> CreateTalentList(string itemName, Locations location)
+        {
+            var items = new List<string>();
+
+            if (itemName.Equals("All"))
+            {
+                items.AddRange(from item in AppEnvironment.genshinDB.talentItems
+                               where item.Location.Equals(location)
+                               select item.ItemName);
+            }
+            else
+            {
+                items.Add(itemName);
+            }
+
+            return items;
         }
 
         public override void OnEnabled(Context context)

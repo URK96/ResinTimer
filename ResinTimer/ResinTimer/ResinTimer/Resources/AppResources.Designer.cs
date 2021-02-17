@@ -70,6 +70,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Gadget과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AppAction_App_Timer_Gadget {
+            get {
+                return ResourceManager.GetString("AppAction_App_Timer_Gadget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Item과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string AppAction_App_Timer_GatheringItem {
@@ -262,45 +271,45 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Item Note과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        public static string EditGatheringItem_Note {
+        public static string EditItemPage_Note {
             get {
-                return ResourceManager.GetString("EditGatheringItem_Note", resourceCulture);
+                return ResourceManager.GetString("EditItemPage_Note", resourceCulture);
             }
         }
         
         /// <summary>
         ///   (Optional)과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        public static string EditGatheringItem_Note_Placeholder {
+        public static string EditItemPage_Note_Placeholder {
             get {
-                return ResourceManager.GetString("EditGatheringItem_Note_Placeholder", resourceCulture);
+                return ResourceManager.GetString("EditItemPage_Note_Placeholder", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Select Type과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        public static string EditGatheringItem_SelectType {
+        public static string EditItemPage_SelectType {
             get {
-                return ResourceManager.GetString("EditGatheringItem_SelectType", resourceCulture);
+                return ResourceManager.GetString("EditItemPage_SelectType", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Edit Item과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        public static string EditGatheringItem_Title_Edit {
+        public static string EditItemPage_Title_Edit {
             get {
-                return ResourceManager.GetString("EditGatheringItem_Title_Edit", resourceCulture);
+                return ResourceManager.GetString("EditItemPage_Title_Edit", resourceCulture);
             }
         }
         
         /// <summary>
         ///   New Item과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
-        public static string EditGatheringItem_Title_New {
+        public static string EditItemPage_Title_New {
             get {
-                return ResourceManager.GetString("EditGatheringItem_Title_New", resourceCulture);
+                return ResourceManager.GetString("EditItemPage_Title_New", resourceCulture);
             }
         }
         
@@ -449,6 +458,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Gadget과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GadgetTimerPage_Title {
+            get {
+                return ResourceManager.GetString("GadgetTimerPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   (None)과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string GatheringItem_ItemNote_None {
@@ -553,6 +571,87 @@ namespace ResinTimer.Resources {
         public static string GatheringItemTimerPage_Remain {
             get {
                 return ResourceManager.GetString("GatheringItemTimerPage_Remain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Expedition Timer과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Expedition {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Expedition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Gadget Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Gadget {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Gadget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Gathering Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_GatheringItem {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_GatheringItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin Timer과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Resin {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Resin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Talent Book과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_TalentBook {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_TalentBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin Widget과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Widget_Resin {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Widget_Resin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   TBook Widget과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Widget_TalentBook {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Widget_TalentBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   How To Use과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUsePage_Title {
+            get {
+                return ResourceManager.GetString("HowToUsePage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Manual과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUseViewerPage_PreTitle {
+            get {
+                return ResourceManager.GetString("HowToUseViewerPage_PreTitle", resourceCulture);
             }
         }
         
@@ -709,11 +808,29 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Gadget과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_Gadget {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_Gadget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Gathering Item과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string MasterDetail_MasterList_GatheringItem {
             get {
                 return ResourceManager.GetString("MasterDetail_MasterList_GatheringItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   How To Use과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_HowToUse {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_HowToUse", resourceCulture);
             }
         }
         
@@ -1168,7 +1285,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Toady Talent Book과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Toady T-Book과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string TalentWidget_Title {
             get {

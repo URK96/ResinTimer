@@ -27,7 +27,7 @@ namespace ResinTimer
 
             InitializeComponent();
 
-            Title = (editType == NotiManager.EditType.Add) ? AppResources.EditGatheringItem_Title_New : AppResources.EditGatheringItem_Title_Edit;
+            Title = (editType == NotiManager.EditType.Add) ? AppResources.EditItemPage_Title_New : AppResources.EditItemPage_Title_Edit;
 
             InitPicker();
         }
@@ -80,10 +80,7 @@ namespace ResinTimer
 
                 await Navigation.PopAsync();
             }
-            catch (Exception ex)
-            {
-
-            }
+            catch { }
         }
 
         private async void ButtonPressed(object sender, EventArgs e)

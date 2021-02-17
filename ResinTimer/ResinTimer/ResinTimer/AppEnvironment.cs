@@ -14,6 +14,16 @@ namespace ResinTimer
     public static class AppEnvironment
     {
         public enum AppLang { System = 0, English, Korean }
+        public enum ManualCategory
+        {
+            TimerResin = 0,
+            TimerExpedition,
+            TimerGatheringItem,
+            TimerGadget,
+            TimerTalentBook,
+            WidgetResin,
+            WidgetTalentBook
+        }
 
         public static bool isDebug = false;
         public static bool isRunningNotiThread = false;

@@ -106,9 +106,6 @@ namespace ResinTimer.Droid
                     CreateTalentIconClickIntent(context, remoteViews, locationImageViewIds[i], itemName, location);
                 }
 
-                //remoteViews.SetImageViewResource(Resource.Id.TalentWidgetIconMondstadt, GetTalentBookImageId(TalentEnv.CheckNowTalentBook(Locations.Mondstadt).ItemName, Locations.Mondstadt));
-                //remoteViews.SetImageViewResource(Resource.Id.TalentWidgetIconLiyue, GetTalentBookImageId(TalentEnv.CheckNowTalentBook(Locations.Liyue).ItemName, Locations.Liyue));
-
                 CreateClickIntent(context, appWidgetIds, id, remoteViews);
 
                 manager.UpdateAppWidget(id, remoteViews);

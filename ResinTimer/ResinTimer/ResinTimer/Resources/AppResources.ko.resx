@@ -120,6 +120,9 @@
   <data name="AppAction_App_Timer_Expedition" xml:space="preserve">
     <value>탐사</value>
   </data>
+  <data name="AppAction_App_Timer_Gadget" xml:space="preserve">
+    <value>도구</value>
+  </data>
   <data name="AppAction_App_Timer_GatheringItem" xml:space="preserve">
     <value>채집물</value>
   </data>
@@ -184,19 +187,19 @@
   <data name="EditExpedition_Title_New" xml:space="preserve">
     <value>탐사 항목 추가</value>
   </data>
-  <data name="EditGatheringItem_Note" xml:space="preserve">
+  <data name="EditItemPage_Note" xml:space="preserve">
     <value>항목 부가 정보</value>
   </data>
-  <data name="EditGatheringItem_Note_Placeholder" xml:space="preserve">
+  <data name="EditItemPage_Note_Placeholder" xml:space="preserve">
     <value>(선택 사항)</value>
   </data>
-  <data name="EditGatheringItem_SelectType" xml:space="preserve">
+  <data name="EditItemPage_SelectType" xml:space="preserve">
     <value>타입 선택</value>
   </data>
-  <data name="EditGatheringItem_Title_Edit" xml:space="preserve">
+  <data name="EditItemPage_Title_Edit" xml:space="preserve">
     <value>아이템 수정</value>
   </data>
-  <data name="EditGatheringItem_Title_New" xml:space="preserve">
+  <data name="EditItemPage_Title_New" xml:space="preserve">
     <value>아이템 추가</value>
   </data>
   <data name="EditPage_ApplyButtonText" xml:space="preserve">
@@ -244,6 +247,9 @@
   <data name="Expedition_Type_Mora" xml:space="preserve">
     <value>모라</value>
   </data>
+  <data name="GadgetTimerPage_Title" xml:space="preserve">
+    <value>도구 알리미</value>
+  </data>
   <data name="Gadget_Type_ParametricTransformer" xml:space="preserve">
     <value>매개 변수 변환기</value>
   </data>
@@ -282,6 +288,33 @@
   </data>
   <data name="GatheringItem_Type_WhiteIronChunk" xml:space="preserve">
     <value>백철석</value>
+  </data>
+  <data name="HowToUsePage_Title" xml:space="preserve">
+    <value>사용 설명서</value>
+  </data>
+  <data name="HowToUseViewerPage_PreTitle" xml:space="preserve">
+    <value>도움말</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Expedition" xml:space="preserve">
+    <value>탐사 알리미</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Gadget" xml:space="preserve">
+    <value>도구 알리미</value>
+  </data>
+  <data name="HowToUse_Category_Timer_GatheringItem" xml:space="preserve">
+    <value>채집물 알리미</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Resin" xml:space="preserve">
+    <value>레진 알리미</value>
+  </data>
+  <data name="HowToUse_Category_Timer_TalentBook" xml:space="preserve">
+    <value>특성책 알리미</value>
+  </data>
+  <data name="HowToUse_Category_Widget_Resin" xml:space="preserve">
+    <value>레진 위젯</value>
+  </data>
+  <data name="HowToUse_Category_Widget_TalentBook" xml:space="preserve">
+    <value>특성책 위젯</value>
   </data>
   <data name="InfoPage_AppName" xml:space="preserve">
     <value>레진 알리미</value>
@@ -339,8 +372,14 @@ MIT License</value>
   <data name="MasterDetail_MasterList_Expedition" xml:space="preserve">
     <value>탐사</value>
   </data>
+  <data name="MasterDetail_MasterList_Gadget" xml:space="preserve">
+    <value>도구</value>
+  </data>
   <data name="MasterDetail_MasterList_GatheringItem" xml:space="preserve">
     <value>채집물</value>
+  </data>
+  <data name="MasterDetail_MasterList_HowToUse" xml:space="preserve">
+    <value>사용 설명서</value>
   </data>
   <data name="MasterDetail_MasterList_Resin" xml:space="preserve">
     <value>레진</value>

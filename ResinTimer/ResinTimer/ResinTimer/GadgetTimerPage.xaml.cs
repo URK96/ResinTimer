@@ -85,7 +85,7 @@ namespace ResinTimer
                 case 1: // Edit Item
                     if (ListCollectionView.SelectedItem != null)
                     {
-                        await Navigation.PushAsync(new EditGatheringItemPage(notiManager, NotiManager.EditType.Edit, ListCollectionView.SelectedItem as GatheringItemNoti));
+                        await Navigation.PushAsync(new EditGadgetItemPage(notiManager, NotiManager.EditType.Edit, ListCollectionView.SelectedItem as GadgetNoti));
                     }
                     else
                     {
@@ -99,7 +99,7 @@ namespace ResinTimer
                     }
                     else
                     {
-                        await Navigation.PushAsync(new EditGatheringItemPage(notiManager, NotiManager.EditType.Add));
+                        await Navigation.PushAsync(new EditGadgetItemPage(notiManager, NotiManager.EditType.Add));
                     }
                     break;
                 case 3:  // Remove Item
@@ -144,5 +144,4 @@ namespace ResinTimer
             RemoveToolbarItem.IsEnabled = isVisible;
         }
     }
-
 }

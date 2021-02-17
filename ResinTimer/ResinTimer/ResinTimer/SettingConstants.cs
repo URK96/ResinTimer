@@ -28,9 +28,6 @@
         public const string APP_USE_24H_TIMEFORMAT = "App_Use_24H_TimeFormat";
         public const string APP_LANG = "App_Lang";
 
-        // Setting - Widget Global Setting
-        public const string WIDGET_GLOBAL_ROOTTOUCH = "Widget_Global_RootTouch";
-
         // Setting - Main
         public const string QUICKCALC_VIBRATION = "QuickCalc_Vibration";
 

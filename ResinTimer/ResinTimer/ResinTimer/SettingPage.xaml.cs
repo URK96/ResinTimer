@@ -19,6 +19,7 @@ namespace ResinTimer
             AppResources.MasterDetail_MasterList_Resin,
             AppResources.MasterDetail_MasterList_Expedition,
             AppResources.MasterDetail_MasterList_GatheringItem,
+            AppResources.MasterDetail_MasterList_Gadget,
             AppResources.MasterDetail_MasterList_Talent
         };
         string[] AppLangList => new string[]
@@ -43,10 +44,6 @@ namespace ResinTimer
             Use24HTimeFormat.On = Preferences.Get(SettingConstants.APP_USE_24H_TIMEFORMAT, false);
             AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnvironment.AppLang.System)];
 
-            // Widget Section
-            RootTouch.IsEnabled = Device.RuntimePlatform != Device.UWP;
-            RootTouch.On = Preferences.Get(SettingConstants.WIDGET_GLOBAL_ROOTTOUCH, false);
-
             // Main Section
             QuickCalcVibration.IsEnabled = Device.RuntimePlatform != Device.UWP;
             QuickCalcVibration.On = Preferences.Get(SettingConstants.QUICKCALC_VIBRATION, true);
@@ -58,7 +55,8 @@ namespace ResinTimer
             {
                 1 => AppResources.MasterDetail_MasterList_Expedition,
                 2 => AppResources.MasterDetail_MasterList_GatheringItem,
-                3 => AppResources.MasterDetail_MasterList_Talent,
+                3 => AppResources.MasterDetail_MasterList_Gadget,
+                4 => AppResources.MasterDetail_MasterList_Talent,
                 _ => AppResources.MasterDetail_MasterList_Resin
             };
         }
@@ -131,16 +129,6 @@ namespace ResinTimer
             dialog.OnClose += delegate { AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnvironment.AppLang.System)]; };
 
             await PopupNavigation.Instance.PushAsync(dialog);
-        }
-
-        private void RootTouch_OnChanged(object sender, ToggledEventArgs e)
-        {
-            Preferences.Set(SettingConstants.WIDGET_GLOBAL_ROOTTOUCH, e.Value);
-
-            if (Device.RuntimePlatform == Device.Android)
-            {
-
-            }
         }
     }
 }

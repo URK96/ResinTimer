@@ -120,6 +120,9 @@
   <data name="AppAction_App_Timer_Expedition" xml:space="preserve">
     <value>Expedition</value>
   </data>
+  <data name="AppAction_App_Timer_Gadget" xml:space="preserve">
+    <value>Gadget</value>
+  </data>
   <data name="AppAction_App_Timer_GatheringItem" xml:space="preserve">
     <value>Item</value>
   </data>
@@ -184,19 +187,19 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="EditExpedition_Title_New" xml:space="preserve">
     <value>New Expedition</value>
   </data>
-  <data name="EditGatheringItem_Note" xml:space="preserve">
+  <data name="EditItemPage_Note" xml:space="preserve">
     <value>Item Note</value>
   </data>
-  <data name="EditGatheringItem_Note_Placeholder" xml:space="preserve">
+  <data name="EditItemPage_Note_Placeholder" xml:space="preserve">
     <value>(Optional)</value>
   </data>
-  <data name="EditGatheringItem_SelectType" xml:space="preserve">
+  <data name="EditItemPage_SelectType" xml:space="preserve">
     <value>Select Type</value>
   </data>
-  <data name="EditGatheringItem_Title_Edit" xml:space="preserve">
+  <data name="EditItemPage_Title_Edit" xml:space="preserve">
     <value>Edit Item</value>
   </data>
-  <data name="EditGatheringItem_Title_New" xml:space="preserve">
+  <data name="EditItemPage_Title_New" xml:space="preserve">
     <value>New Item</value>
   </data>
   <data name="EditPage_ApplyButtonText" xml:space="preserve">
@@ -244,6 +247,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Expedition_Type_Mora" xml:space="preserve">
     <value>Mora</value>
   </data>
+  <data name="GadgetTimerPage_Title" xml:space="preserve">
+    <value>Gadget</value>
+  </data>
   <data name="Gadget_Type_ParametricTransformer" xml:space="preserve">
     <value>Parametric Transformer</value>
   </data>
@@ -282,6 +288,33 @@ Please re-enable alarm in app setting to register notification alarm</value>
   </data>
   <data name="GatheringItem_Type_WhiteIronChunk" xml:space="preserve">
     <value>White Iron Chunk</value>
+  </data>
+  <data name="HowToUsePage_Title" xml:space="preserve">
+    <value>How To Use</value>
+  </data>
+  <data name="HowToUseViewerPage_PreTitle" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Expedition" xml:space="preserve">
+    <value>Expedition Timer</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Gadget" xml:space="preserve">
+    <value>Gadget Item</value>
+  </data>
+  <data name="HowToUse_Category_Timer_GatheringItem" xml:space="preserve">
+    <value>Gathering Item</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Resin" xml:space="preserve">
+    <value>Resin Timer</value>
+  </data>
+  <data name="HowToUse_Category_Timer_TalentBook" xml:space="preserve">
+    <value>Talent Book</value>
+  </data>
+  <data name="HowToUse_Category_Widget_Resin" xml:space="preserve">
+    <value>Resin Widget</value>
+  </data>
+  <data name="HowToUse_Category_Widget_TalentBook" xml:space="preserve">
+    <value>TBook Widget</value>
   </data>
   <data name="InfoPage_AppName" xml:space="preserve">
     <value>Resin Timer</value>
@@ -339,8 +372,14 @@ MIT License</value>
   <data name="MasterDetail_MasterList_Expedition" xml:space="preserve">
     <value>Expedition</value>
   </data>
+  <data name="MasterDetail_MasterList_Gadget" xml:space="preserve">
+    <value>Gadget</value>
+  </data>
   <data name="MasterDetail_MasterList_GatheringItem" xml:space="preserve">
     <value>Gathering Item</value>
+  </data>
+  <data name="MasterDetail_MasterList_HowToUse" xml:space="preserve">
+    <value>How To Use</value>
   </data>
   <data name="MasterDetail_MasterList_Resin" xml:space="preserve">
     <value>Resin</value>
@@ -493,7 +532,7 @@ MIT License</value>
     <value>Talent Item</value>
   </data>
   <data name="TalentWidget_Title" xml:space="preserve">
-    <value>Toady Talent Book</value>
+    <value>Toady T-Book</value>
   </data>
   <data name="Toolbar_Add" xml:space="preserve">
     <value>Add</value>

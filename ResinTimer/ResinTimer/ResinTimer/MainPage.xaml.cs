@@ -22,6 +22,7 @@ namespace ResinTimer
             {
                 "app_timer_expedition" => new ExpeditionTimerPage(),
                 "app_timer_gatheringitem" => new GatheringItemTimerPage(),
+                "app_timer_gadget" => new GadgetTimerPage(),
                 "app_timer_talent" => new TalentTimerPage(),
                 _ => new ResinTimerPage()
             });
@@ -38,7 +39,8 @@ namespace ResinTimer
                 {
                     1 => new ExpeditionTimerPage(),
                     2 => new GatheringItemTimerPage(),
-                    3 => new TalentTimerPage(),
+                    3 => new GadgetTimerPage(),
+                    4 => new TalentTimerPage(),
                     _ => new ResinTimerPage()
                 };
             }

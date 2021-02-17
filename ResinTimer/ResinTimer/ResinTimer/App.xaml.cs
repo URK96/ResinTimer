@@ -91,11 +91,12 @@ namespace ResinTimer
                     new AppAction("app_timer_resin", AppResources.AppAction_App_Timer_Resin, icon: "resin"),
                     new AppAction("app_timer_expedition", AppResources.AppAction_App_Timer_Expedition, icon: "compass"),
                     new AppAction("app_timer_gatheringitem", AppResources.AppAction_App_Timer_GatheringItem, icon: "silk_flower"),
+                    new AppAction("app_timer_gadget", AppResources.AppAction_App_Timer_Gadget, icon: "parametric_transformer"),
                     new AppAction("app_timer_talent", AppResources.AppAction_App_Timer_Talent, icon: "talent_freedom"));
 
                 AppActions.OnAppAction += AppActions_OnAppAction;
             }
-            catch (Exception) { }
+            catch { }
         }
 
         private void AppActions_OnAppAction(object sender, AppActionEventArgs e)
@@ -107,12 +108,7 @@ namespace ResinTimer
                 return;
             }
 
-            MainThread.BeginInvokeOnMainThread(() =>
-            {
-                MainPage = new MainPage(e.AppAction.Id);
-                //await Current.MainPage.Navigation.PopToRootAsync();
-                //await Current.MainPage.Navigation.PushAsync(new MainPage(e.AppAction.Id));
-            });
+            MainThread.BeginInvokeOnMainThread(() => { MainPage = new MainPage(e.AppAction.Id); });
         }
 
         protected override void OnStart()

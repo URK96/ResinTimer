@@ -27,7 +27,7 @@
                 <ViewCell x:Name="AppLang" 
                           Tapped="AppLang_Tapped">
                     <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
-                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_Start_DetailScreen_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
+                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_AppLang_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
                         <Label x:Name="AppLangNow"
                                HorizontalOptions="EndAndExpand"
                                VerticalTextAlignment="Center"/>

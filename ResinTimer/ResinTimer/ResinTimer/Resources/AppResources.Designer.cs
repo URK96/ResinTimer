@@ -584,11 +584,53 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Expedition Timer show each expedition&apos;s remain time &amp; expected end time. You can Add / Modify / Remove / Reset expedition item with top toolbar.
+        ///Expedition Timer allow up to 5 items.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Expedition_1 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Expedition_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   This page allow edit expedition item for adding or editing. 
+        ///Select expedition type &amp; time and time buff optioin.
+        ///For finish editing, click apply button.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Expedition_2 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Expedition_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Gadget Item과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Timer_Gadget {
             get {
                 return ResourceManager.GetString("HowToUse_Category_Timer_Gadget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Gadget Timer show each gadget&apos;s time remaining until reuse &amp; expected reusable time. You can Add / Modify / Remove / Reset gadget item with top toolbar.
+        ///Gadget Timer allow up to 500 items.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Gadget_1 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Gadget_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   This page allow edit gadget item for adding or editing. 
+        ///Select gadget type and enter a note. Note is optional.
+        ///For finish editing, click apply button.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Gadget_2 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Gadget_2", resourceCulture);
             }
         }
         
@@ -602,11 +644,50 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Gathering Item Timer show each collectable item&apos;s recovery time remaining &amp; expected recovery time. You can Add / Modify / Remove / Reset gathering item with top toolbar.
+        ///Gathering Item Timer allow up to 500 items.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_GatheringItem_1 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_GatheringItem_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   This page allow edit gathering item for adding or editing. 
+        ///Select gathering item type and enter a note. Note is optional.
+        ///For finish editing, click apply button.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_GatheringItem_2 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_GatheringItem_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Resin Timer과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Timer_Resin {
             get {
                 return ResourceManager.GetString("HowToUse_Category_Timer_Resin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin Timer screen show current resin &amp; fully restore expected time and etc. Also, you can perform quick calculation with bottom buttons.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Resin_1 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Resin_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin Timer also customize notification. You can set the resin count to receive notifications.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Resin_2 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Resin_2", resourceCulture);
             }
         }
         
@@ -620,6 +701,17 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Talent Book Timer show talent book item which you can get now. This timer reference game server and device timezone.
+        ///You can select location &amp; game server with top toolbar. Also, you can see characters who use talent book with bottom button.
+        ///This timer does not currently support notifications.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_TalentBook_1 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_TalentBook_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Resin Widget과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Widget_Resin {
@@ -629,11 +721,42 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Resin Widget show now resin &amp; expected fully restore time.
+        ///You can run app by touching resin icon. Also, you can refresh resin status by touching layout except resin icon.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Widget_Resin_1 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Widget_Resin_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin Widget support simple layout widget. Simple Widget only show now resin.
+        ///You can run app by touching resin icon. Also, you can refresh resin status by touching layout except resin icon.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Widget_Resin_2 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Widget_Resin_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   TBook Widget과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Widget_TalentBook {
             get {
                 return ResourceManager.GetString("HowToUse_Category_Widget_TalentBook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Talent Book Widget show talent book which you can acquire on each location.
+        ///Bottom buttons can change location. Also, you can see characters who use talent book by touching talent book image.
+        ///You can refresh talent book status by touching layout except buttons and talent book image.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Widget_TalentBook_1 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Widget_TalentBook_1", resourceCulture);
             }
         }
         

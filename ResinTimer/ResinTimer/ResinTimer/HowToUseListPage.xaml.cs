@@ -18,13 +18,13 @@ namespace ResinTimer
     {
         public List<HowToUseCategory> Categories => new List<HowToUseCategory>
         {
-            new HowToUseCategory(AppResources.HowToUse_Category_Timer_Resin),
-            new HowToUseCategory(AppResources.HowToUse_Category_Timer_Expedition),
-            new HowToUseCategory(AppResources.HowToUse_Category_Timer_GatheringItem),
-            new HowToUseCategory(AppResources.HowToUse_Category_Timer_Gadget),
-            new HowToUseCategory(AppResources.HowToUse_Category_Timer_TalentBook),
-            new HowToUseCategory(AppResources.HowToUse_Category_Widget_Resin),
-            new HowToUseCategory(AppResources.HowToUse_Category_Widget_TalentBook)
+            new HowToUseCategory(ManualCategory.TimerResin),
+            new HowToUseCategory(ManualCategory.TimerExpedition),
+            new HowToUseCategory(ManualCategory.TimerGatheringItem),
+            new HowToUseCategory(ManualCategory.TimerGadget),
+            new HowToUseCategory(ManualCategory.TimerTalentBook),
+            new HowToUseCategory(ManualCategory.WidgetResin),
+            new HowToUseCategory(ManualCategory.WidgetTalentBook)
         };
 
         public HowToUseListPage()
@@ -43,12 +43,12 @@ namespace ResinTimer
 
             var cv = sender as CollectionView;
 
-            var category = e.CurrentSelection.FirstOrDefault() as string;
+            var category = e.CurrentSelection.FirstOrDefault() as HowToUseCategory;
 
             cv.SelectedItems = null;
             cv.SelectedItem = null;
 
-            await Navigation.PushAsync(new HowToUseViewerPage(category), true);
+            await Navigation.PushAsync(new HowToUseViewerPage(category.MCategory), true);
         }
     }
 
@@ -66,6 +66,11 @@ namespace ResinTimer
                 ManualCategory.TimerResin => AppResources.HowToUse_Category_Timer_Resin,
                 ManualCategory.TimerExpedition => AppResources.HowToUse_Category_Timer_Expedition,
                 ManualCategory.TimerGatheringItem => AppResources.HowToUse_Category_Timer_GatheringItem,
+                ManualCategory.TimerGadget => AppResources.HowToUse_Category_Timer_Gadget,
+                ManualCategory.TimerTalentBook => AppResources.HowToUse_Category_Timer_TalentBook,
+                ManualCategory.WidgetResin => AppResources.HowToUse_Category_Widget_Resin,
+                ManualCategory.WidgetTalentBook => AppResources.HowToUse_Category_Widget_TalentBook,
+                _ => string.Empty
             };
         }
     }

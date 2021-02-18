@@ -298,23 +298,74 @@
   <data name="HowToUse_Category_Timer_Expedition" xml:space="preserve">
     <value>탐사 알리미</value>
   </data>
+  <data name="HowToUse_Category_Timer_Expedition_1" xml:space="preserve">
+    <value>탐사 알리미는 각 탐사 항목의 잔여 시간 &amp; 예상 종료 시각을 표시합니다. 상단 툴바 항목을 통해 항목을 추가 / 제거 / 수정 / 초기화를 수행할 수 있습니다.
+탐사 알리미는 최대 5개의 항목까지 추가 가능합니다.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Expedition_2" xml:space="preserve">
+    <value>해당 화면에서는 선택한 탐사 항목의 내용을 수정하여 해당 항목을 추가 및 수정할 수 있습니다.
+탐사 타입 &amp; 수행 시간과 시간 버프 효과를 선택합니다.
+내용 수정이 끝나면 적용 버튼을 눌러주세요.</value>
+  </data>
   <data name="HowToUse_Category_Timer_Gadget" xml:space="preserve">
     <value>도구 알리미</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Gadget_1" xml:space="preserve">
+    <value>도구 알리미는 각 도구 항목의 재사용까지의 잔여 시간 &amp; 예상 재사용 가능 시각을 표시합니다. 상단 툴바 항목을 통해 항목을 추가 / 제거 / 수정 / 초기화를 수행할 수 있습니다.
+도구 알리미는 최대 500개의 항목까지 추가 가능합니다.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Gadget_2" xml:space="preserve">
+    <value>해당 화면에서는 선택한 도구 항목의 내용을 수정하여 해당 항목을 추가 및 수정할 수 있습니다.
+도구 타입과 부가적으로 해당 항목에 대한 메모를 작성합니다.
+내용 수정이 끝나면 적용 버튼을 눌러주세요.</value>
   </data>
   <data name="HowToUse_Category_Timer_GatheringItem" xml:space="preserve">
     <value>채집물 알리미</value>
   </data>
+  <data name="HowToUse_Category_Timer_GatheringItem_1" xml:space="preserve">
+    <value>채집물 알리미는 각 채집물 항목의 회복까지의 잔여 시간 &amp; 예상 회복 시각을 표시합니다. 상단 툴바 항목을 통해 항목을 추가 / 제거 / 수정 / 초기화를 수행할 수 있습니다.
+채집물 알리미는 최대 500개의 항목까지 추가 가능합니다.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_GatheringItem_2" xml:space="preserve">
+    <value>해당 화면에서는 선택한 채집물 항목의 내용을 수정하여 해당 항목을 추가 및 수정할 수 있습니다.
+채집물 타입과 부가적으로 해당 항목에 대한 메모를 작성합니다.
+내용 수정이 끝나면 적용 버튼을 눌러주세요.</value>
+  </data>
   <data name="HowToUse_Category_Timer_Resin" xml:space="preserve">
     <value>레진 알리미</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Resin_1" xml:space="preserve">
+    <value>레진 알리미 화면은 현재 레진의 개수 &amp; 완전 충전 예상 시각 등을 표시합니다. 또한, 하단의 버튼들을 통해 빠르게 레진을 조절할 수 있습니다.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Resin_2" xml:space="preserve">
+    <value>레진 알리미는 사용자 지정 알림을 지원합니다. 알림을 받기를 원하는 레진 개수를 추가하면 해당 개수가 회복되는 시간에 알림을 보냅니다.</value>
   </data>
   <data name="HowToUse_Category_Timer_TalentBook" xml:space="preserve">
     <value>특성책 알리미</value>
   </data>
+  <data name="HowToUse_Category_Timer_TalentBook_1" xml:space="preserve">
+    <value>특성책 알리미는 게임 서버와 기기의 시간대를 기준으로 하여 현재 얻을 수 있는 특성책을 보여줍니다.
+상단 툴바 항목을 통해 지역과 게임 서버를 선택할 수 있습니다. 또한 하단 버튼을 통해 해당 특성책을 사용하는 캐릭터를 참고할 수 있습니다.
+해당 알리미는 현재 알림이 지원되지 않습니다.</value>
+  </data>
   <data name="HowToUse_Category_Widget_Resin" xml:space="preserve">
     <value>레진 위젯</value>
   </data>
+  <data name="HowToUse_Category_Widget_Resin_1" xml:space="preserve">
+    <value>레진 위젯은 현재 레진과 완전 회복 예상 시각을 표시합니다.
+레진 아이콘을 터치하면 앱이 실행되며, 그 외의 부분을 터치하면 레진 상태를 갱신합니다.</value>
+  </data>
+  <data name="HowToUse_Category_Widget_Resin_2" xml:space="preserve">
+    <value>레진 위젯은 현재 레진만 표시하는 심플한 형태의 레이아웃도 지원합니다.
+레진 아이콘을 터치하면 앱이 실행되며, 그 외의 부분을 터치하면 레진 상태를 갱신합니다.</value>
+  </data>
   <data name="HowToUse_Category_Widget_TalentBook" xml:space="preserve">
     <value>특성책 위젯</value>
+  </data>
+  <data name="HowToUse_Category_Widget_TalentBook_1" xml:space="preserve">
+    <value>특성책 위젯은 현재 얻을 수 있는 특성책을 지역별로 표시합니다.
+하단 버튼을 통해 지역을 변경할 수 있습니다. 또한, 특성책 이미지를 터치하면 해당 특성책을 사용하는 캐릭터를 참고할 수 있습니다.
+그 외의 부분을 터치하면 특성책 상태를 갱신합니다.</value>
   </data>
   <data name="InfoPage_AppName" xml:space="preserve">
     <value>레진 알리미</value>

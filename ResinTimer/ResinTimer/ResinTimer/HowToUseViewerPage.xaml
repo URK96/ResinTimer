@@ -4,7 +4,26 @@
              xmlns:resources="clr-namespace:ResinTimer.Resources"
              x:Class="ResinTimer.HowToUseViewerPage"
              Style="{StaticResource PageStyle}">
-    
-    
-    
+
+    <StackLayout>
+        <CarouselView ItemsSource="{Binding ManualContent}"
+                      IndicatorView="IndicatorView"
+                      Loop="False">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Frame VerticalOptions="Center" BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                            <Image WidthRequest="230" Source="{Binding Image}" />
+                            <Label Margin="0, 20, 0, 0" 
+                                   Text="{Binding ExplainText}" HorizontalTextAlignment="Center" FontSize="Large"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <IndicatorView x:Name="IndicatorView" Margin="0, 0, 0, 20"
+                       HideSingle="False"
+                       IndicatorColor="LightGray" SelectedIndicatorColor="#0682F6" />
+    </StackLayout>
 </ContentPage>

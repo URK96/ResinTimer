@@ -404,28 +404,40 @@
     <ImageAsset Include="Assets.xcassets\artifact12H.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerExpedition_1.png.imageset\Manual_TimerExpedition_1.png">
+    <ImageAsset Include="Assets.xcassets\Manual_TimerExpedition_1.png.imageset\20210220_165316000_iOS.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerExpedition_2.png.imageset\Manual_TimerExpedition_2.png">
+    <ImageAsset Include="Assets.xcassets\Manual_TimerExpedition_2.png.imageset\20210220_165319000_iOS.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerGadget_1.png.imageset\Manual_TimerGadget_1.png">
+    <ImageAsset Include="Assets.xcassets\Manual_TimerGadget_1.png.imageset\20210220_165340000_iOS.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerGadget_2.png.imageset\Manual_TimerGadget_2.png">
+    <ImageAsset Include="Assets.xcassets\Manual_TimerGadget_2.png.imageset\20210220_165348000_iOS.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerGatheringItem_1.png.imageset\Manual_TimerGatheringItem_1.png">
+    <ImageAsset Include="Assets.xcassets\Manual_TimerGatheringItem_1.png.imageset\20210220_165325000_iOS.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerGatheringItem_2.png.imageset\Manual_TimerGatheringItem_2.png">
+    <ImageAsset Include="Assets.xcassets\Manual_TimerGatheringItem_2.png.imageset\20210220_165328000_iOS.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_1.png.imageset\20210220_165215000_iOS.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerResin_1.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_2.png.imageset\20210220_165215000_iOS2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerResin_2.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_3.png.imageset\20210220_165310000_iOS.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerTalentBook_1.png.imageset\20210220_165352000_iOS.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_WidgetResin_1.png.imageset\Contents.json">
@@ -459,18 +471,6 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerTalentBook_1.png.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_1.png.imageset\Manual_TimerResin_1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_2.png.imageset\Manual_TimerResin_2.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_3.png.imageset\Manual_TimerResin_3.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerTalentBook_1.png.imageset\Manual_TimerTalentBook_1.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_WidgetResin_1.png.imageset\Manual_WidgetResin_1.png">
@@ -733,7 +733,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

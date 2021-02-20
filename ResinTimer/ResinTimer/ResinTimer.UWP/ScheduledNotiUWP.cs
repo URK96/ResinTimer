@@ -36,6 +36,8 @@ namespace ResinTimer.UWP
         {
             Schedule<ResinNoti>();
             Schedule<ExpeditionNoti>();
+            Schedule<GatheringItemNoti>();
+            Schedule<GadgetNoti>();
         }
 
         public void Schedule<T>() where T : Noti

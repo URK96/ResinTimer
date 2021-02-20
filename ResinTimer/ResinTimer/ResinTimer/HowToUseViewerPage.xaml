@@ -13,9 +13,10 @@
                 <DataTemplate>
                     <Frame VerticalOptions="Center" BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">
                         <StackLayout Orientation="Vertical" VerticalOptions="Center">
-                            <Image WidthRequest="230" Source="{Binding Image}" />
-                            <Label Margin="0, 20, 0, 0" 
-                                   Text="{Binding ExplainText}" HorizontalTextAlignment="Center" FontSize="Large"/>
+                            <Image WidthRequest="200" Source="{Binding Image}" />
+                            <ScrollView Margin="0, 20, 0, 0" >
+                                <Label Text="{Binding ExplainText}" HorizontalTextAlignment="Center" FontSize="{OnPlatform Default=Large, UWP=Medium}"/>
+                            </ScrollView>
                         </StackLayout>
                     </Frame>
                 </DataTemplate>

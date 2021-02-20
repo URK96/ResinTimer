@@ -7,6 +7,8 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using static ResinTimer.AppEnvironment;
+
 namespace ResinTimer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -35,18 +37,6 @@ namespace ResinTimer
                 NotiRemoveToolbarItem.IsEnabled = false;
                 ToolbarItems.Remove(NotiRemoveToolbarItem);
             }
-        }
-
-        private void RefreshCollectionView()
-        {
-            ListCollectionView.ItemsSource = Array.Empty<Noti>();
-            ListCollectionView.ItemsSource = Notis;
-        }
-
-        private void ResetSelection()
-        {
-            ListCollectionView.SelectedItems = null;
-            ListCollectionView.SelectedItem = null;
         }
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
@@ -88,8 +78,7 @@ namespace ResinTimer
                     (count <= 160))
                 {
                     notiManager.EditList(new ResinNoti(count), NotiManager.EditType.Add);
-                    RefreshCollectionView();
-                    ResetSelection();
+                    RefreshCollectionView(ListCollectionView, Notis);
                 }
                 else
                 {
@@ -113,8 +102,7 @@ namespace ResinTimer
             if (Notis.Count > 1)
             {
                 notiManager.EditList(new ResinNoti(resin), NotiManager.EditType.Remove);
-                RefreshCollectionView();
-                ResetSelection();
+                RefreshCollectionView(ListCollectionView, Notis);
             }
             else
             {

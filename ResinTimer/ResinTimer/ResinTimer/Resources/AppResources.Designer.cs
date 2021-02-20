@@ -683,11 +683,22 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Resin Timer also customize notification. You can set the resin count to receive notifications.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Resin Timer contains bottom buttons to calculate resin.
+        ///Press buttons which you want to calculation.
+        ///&lt;10, &lt;20 Buttons perform calculation less than 10 and less than 20 respectively.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Timer_Resin_2 {
             get {
                 return ResourceManager.GetString("HowToUse_Category_Timer_Resin_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin Timer also customize notification. You can set the resin count to receive notifications.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Resin_3 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Resin_3", resourceCulture);
             }
         }
         

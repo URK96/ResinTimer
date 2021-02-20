@@ -1,10 +1,10 @@
-﻿
-using GenshinDB_Core;
+﻿using GenshinDB_Core;
 
 using ResinTimer.Resources;
 
 using System;
-using System.Globalization;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -53,6 +53,21 @@ namespace ResinTimer
                 "ko-KR" => $"{date} {(setting24H ? string.Empty : $"{dt:tt} ")}{time}",
                 _ => $"{date} {time}{(setting24H ? string.Empty : $" {dt:tt}")}"
             };
+        }
+
+        public static async void RefreshCollectionView<T>(CollectionView cv, List<T> list)
+        {
+            ResetCollectionViewSelection(cv);
+
+            cv.ItemsSource = Array.Empty<T>();
+            await Task.Delay(10);
+            cv.ItemsSource = list;
+        }
+
+        public static void ResetCollectionViewSelection(CollectionView cv)
+        {
+            cv.SelectedItems = null;
+            cv.SelectedItem = null;
         }
     }
 }

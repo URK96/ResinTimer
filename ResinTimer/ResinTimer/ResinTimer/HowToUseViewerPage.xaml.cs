@@ -37,7 +37,8 @@ namespace ResinTimer
             {
                 case ManualCategory.TimerResin:
                     ManualContent.Add(new HowToUseContent("Manual_TimerResin_1.png", AppResources.HowToUse_Category_Timer_Resin_1));
-                    //ManualContent.Add(new HowToUseContent("Manual_TimerResin_2.png", AppResources.HowToUse_Category_Timer_Resin_2));
+                    ManualContent.Add(new HowToUseContent("Manual_TimerResin_2.png", AppResources.HowToUse_Category_Timer_Resin_2));
+                    ManualContent.Add(new HowToUseContent("Manual_TimerResin_3.png", AppResources.HowToUse_Category_Timer_Resin_3));
                     break;
                 case ManualCategory.TimerExpedition:
                     ManualContent.Add(new HowToUseContent("Manual_TimerExpedition_1.png", AppResources.HowToUse_Category_Timer_Expedition_1));

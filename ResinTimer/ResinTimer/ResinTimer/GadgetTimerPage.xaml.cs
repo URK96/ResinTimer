@@ -11,6 +11,8 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using static ResinTimer.AppEnvironment;
+
 namespace ResinTimer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -40,8 +42,7 @@ namespace ResinTimer
             {
                 updateTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
 
-                ResetSelection();
-                RefreshCollectionView();
+                RefreshCollectionView(ListCollectionView, Notis);
             }
             catch (Exception ex)
             {
@@ -58,18 +59,6 @@ namespace ResinTimer
             notiManager.SaveNotis();
         }
 
-        private void RefreshCollectionView()
-        {
-            ListCollectionView.ItemsSource = Array.Empty<Noti>();
-            ListCollectionView.ItemsSource = Notis;
-        }
-
-        private void ResetSelection()
-        {
-            ListCollectionView.SelectedItem = null;
-            ListCollectionView.SelectedItems = null;
-        }
-
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             switch ((sender as ToolbarItem).Priority)
@@ -79,7 +68,7 @@ namespace ResinTimer
                     {
                         (ListCollectionView.SelectedItem as GadgetNoti).UpdateTime();
                         notiManager.UpdateNotisTime();
-                        RefreshCollectionView();
+                        RefreshCollectionView(ListCollectionView, Notis);
                     }
                     break;
                 case 1: // Edit Item
@@ -115,22 +104,20 @@ namespace ResinTimer
                 default:
                     break;
             }
-
-            ResetSelection();
         }
 
         private void RemoveItem(Noti noti)
         {
             notiManager.EditList(noti, NotiManager.EditType.Remove);
 
-            RefreshCollectionView();
+            RefreshCollectionView(ListCollectionView, Notis);
         }
 
         private void RefreshTime(object statusInfo)
         {
             try
             {
-                MainThread.BeginInvokeOnMainThread(RefreshCollectionView);
+                MainThread.BeginInvokeOnMainThread(() => { RefreshCollectionView(ListCollectionView, Notis); });
             }
             catch (Exception) { }
         }

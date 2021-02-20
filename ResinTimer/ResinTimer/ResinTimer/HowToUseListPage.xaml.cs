@@ -16,22 +16,33 @@ namespace ResinTimer
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HowToUseListPage : ContentPage
     {
-        public List<HowToUseCategory> Categories => new List<HowToUseCategory>
-        {
-            new HowToUseCategory(ManualCategory.TimerResin),
-            new HowToUseCategory(ManualCategory.TimerExpedition),
-            new HowToUseCategory(ManualCategory.TimerGatheringItem),
-            new HowToUseCategory(ManualCategory.TimerGadget),
-            new HowToUseCategory(ManualCategory.TimerTalentBook),
-            new HowToUseCategory(ManualCategory.WidgetResin),
-            new HowToUseCategory(ManualCategory.WidgetTalentBook)
-        };
+        public List<HowToUseCategory> Categories => CreateCategoryList();
 
         public HowToUseListPage()
         {
             InitializeComponent();
 
             BindingContext = this;
+        }
+
+        private List<HowToUseCategory> CreateCategoryList()
+        {
+            var list = new List<HowToUseCategory>
+            {
+                new HowToUseCategory(ManualCategory.TimerResin),
+                new HowToUseCategory(ManualCategory.TimerExpedition),
+                new HowToUseCategory(ManualCategory.TimerGatheringItem),
+                new HowToUseCategory(ManualCategory.TimerGadget),
+                new HowToUseCategory(ManualCategory.TimerTalentBook),
+            };
+
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                list.Add(new HowToUseCategory(ManualCategory.WidgetResin));
+                list.Add(new HowToUseCategory(ManualCategory.WidgetTalentBook));
+            }
+
+            return list;
         }
 
         private async void ListCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)

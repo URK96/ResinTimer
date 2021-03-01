@@ -1419,7 +1419,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Toady T-Book과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Today T-Book과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string TalentWidget_Title {
             get {

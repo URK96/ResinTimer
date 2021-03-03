@@ -1,4 +1,7 @@
-﻿using ResinTimer.Resources;
+﻿using ResinTimer.Dialogs;
+using ResinTimer.Resources;
+
+using Rg.Plugins.Popup.Services;
 
 using System;
 using System.Threading;
@@ -229,5 +232,11 @@ namespace ResinTimer
             catch { }
         }
 
+        private async void ResinIcon_Tapped(object sender, EventArgs e)
+        {
+            var dialog = new BaseDialog(AppResources.ResinSimpleEditDialog_Title, new ResinSimpleEditView());
+
+            await PopupNavigation.Instance.PushAsync(dialog);
+        }
     }
 }

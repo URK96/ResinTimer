@@ -71,7 +71,12 @@
             <gauge:SfCircularGauge.Annotations>
                 <gauge:GaugeAnnotation ViewMargin="0, -20">
                     <gauge:GaugeAnnotation.View>
-                        <Image Source="resin.png" WidthRequest="50" HeightRequest="50" />
+                        <Image x:Name="ResinIcon" Source="resin.png" WidthRequest="50" HeightRequest="50">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" 
+                                                      Tapped="ResinIcon_Tapped"/>
+                            </Image.GestureRecognizers>
+                        </Image>
                     </gauge:GaugeAnnotation.View>
                 </gauge:GaugeAnnotation>
             </gauge:SfCircularGauge.Annotations>

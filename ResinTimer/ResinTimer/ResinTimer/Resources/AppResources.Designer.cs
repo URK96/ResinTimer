@@ -846,6 +846,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Syncfusion.Licensing
         ///Syncfusion.Xamarin.SfGauge
+        ///Syncfusion.Xamarin.SfNumericUpDown
         ///Xamarin.Essentials
         ///Newton.Json
         ///Rg.Plugins.Popup과(와) 유사한 지역화된 문자열을 찾습니다.
@@ -867,6 +868,7 @@ namespace ResinTimer.Resources {
         
         /// <summary>
         ///   Syncfusion License
+        ///Syncfusion License
         ///Syncfusion License
         ///MIT License - Microsoft Corporation
         ///MIT License - James Newton-King
@@ -897,7 +899,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Press during 0.5s to apply calc과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Hold button during 0.5s to apply calc과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string MainPage_QuickCalcButton_Toast {
             get {
@@ -1181,6 +1183,15 @@ namespace ResinTimer.Resources {
         public static string NotiTitle {
             get {
                 return ResourceManager.GetString("NotiTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Simple Edit Resin과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ResinSimpleEditDialog_Title {
+            get {
+                return ResourceManager.GetString("ResinSimpleEditDialog_Title", resourceCulture);
             }
         }
         

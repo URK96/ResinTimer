@@ -27,6 +27,8 @@ namespace ResinTimer
                 Characters.Add(new Character(character));
             }
 
+            Characters.Sort((x, y) => x.CharacterInfo.Name.CompareTo(y.CharacterInfo.Name));
+
             BindingContext = this;
         }
 

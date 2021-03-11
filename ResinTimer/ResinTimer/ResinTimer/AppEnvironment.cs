@@ -4,6 +4,7 @@ using ResinTimer.Resources;
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading.Tasks;
 
 using Xamarin.Essentials;
@@ -44,15 +45,25 @@ namespace ResinTimer
 
         public static string GetTimeString(DateTime dt)
         {
+            var langValue = (AppLang)Preferences.Get(SettingConstants.APP_LANG, (int)AppLang.System);
             bool setting24H = Preferences.Get(SettingConstants.APP_USE_24H_TIMEFORMAT, false);
             string date = $"{dt:d}";
             string time = dt.ToString($"{(setting24H ? "H" : "h")}:mm:ss");
 
-            return AppResources.Culture.Name switch
+            string timeString;
+
+            switch (langValue)
             {
-                "ko-KR" => $"{date} {(setting24H ? string.Empty : $"{dt:tt} ")}{time}",
-                _ => $"{date} {time}{(setting24H ? string.Empty : $" {dt:tt}")}"
-            };
+                case AppLang.Korean:
+                case AppLang.System when CultureInfo.InstalledUICulture.Name.Equals("ko-KR"):
+                    timeString = $"{date} {(setting24H ? string.Empty : $"{dt:tt} ")}{time}";
+                    break;
+                default:
+                    timeString = $"{date} {time}{(setting24H ? string.Empty : $" {dt:tt}")}";
+                    break;
+            }
+
+            return timeString;
         }
 
         public static async void RefreshCollectionView<T>(CollectionView cv, List<T> list)

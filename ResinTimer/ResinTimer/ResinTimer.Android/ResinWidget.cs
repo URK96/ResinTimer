@@ -3,7 +3,6 @@ using Android.Appwidget;
 using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
-using Android.Views;
 using Android.Widget;
 
 using AndroidX.Core.Content.Resources;
@@ -72,7 +71,7 @@ namespace ResinTimer.Droid
                 };
 
                 remoteViews.SetTextViewText(Resource.Id.ResinWidgetCount, ResinEnvironment.resin.ToString());
-                remoteViews.SetTextViewText(Resource.Id.ResinWidgetEndTime, ResinEnvironment.endTime.ToString());
+                remoteViews.SetTextViewText(Resource.Id.ResinWidgetEndTime, AppEnvironment.GetTimeString(ResinEnvironment.endTime));
 
                 CreateClickIntent(context, appWidgetIds, remoteViews);
 

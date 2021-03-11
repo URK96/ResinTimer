@@ -14,7 +14,7 @@
 
     <ContentPage.Resources>
         <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=20}" />
+            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, iOS=30, UWP=20}" />
             <Setter Property="BorderColor" Value="#0682F6" />
             <Setter Property="BorderWidth" Value="2" />
             <Setter Property="BackgroundColor" Value="Transparent" />

@@ -74,6 +74,11 @@ namespace ResinTimer.Droid
 
             TalentEnv.LoadSettings();
             TalentEnv.LoadNowTZInfo();
+            
+            if (AppEnvironment.genshinDB == null)
+            {
+                AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
+            }
 
             UpdateLayout(context, appWidgetManager, appWidgetIds);
 

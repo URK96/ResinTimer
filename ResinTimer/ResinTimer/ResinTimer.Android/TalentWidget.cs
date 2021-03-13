@@ -84,7 +84,7 @@ namespace ResinTimer.Droid
 
             if (isClick)
             {
-                Toast.MakeText(context, "Talent Widget Updated", ToastLength.Short).Show();
+                Toast.MakeText(context, AppResources.TalentWidget_UpdateComplete, ToastLength.Short).Show();
 
                 isClick = false;
             }

@@ -14,7 +14,7 @@
 
     <ContentPage.Resources>
         <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, iOS=30, UWP=20}" />
+            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, iOS=20, UWP=20}" />
             <Setter Property="BorderColor" Value="#0682F6" />
             <Setter Property="BorderWidth" Value="2" />
             <Setter Property="BackgroundColor" Value="Transparent" />
@@ -71,12 +71,14 @@
             <gauge:SfCircularGauge.Annotations>
                 <gauge:GaugeAnnotation ViewMargin="0, -20">
                     <gauge:GaugeAnnotation.View>
-                        <Image x:Name="ResinIcon" Source="resin.png" WidthRequest="50" HeightRequest="50">
+                        <!--<Image x:Name="ResinIcon" Source="resin.png" WidthRequest="50" HeightRequest="50">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer NumberOfTapsRequired="1" 
                                                       Tapped="ResinIcon_Tapped"/>
                             </Image.GestureRecognizers>
-                        </Image>
+                        </Image>-->
+                        <ImageButton x:Name="ResinIcon" Source="resin.png" WidthRequest="50" HeightRequest="50"
+                                     Clicked="ResinIcon_Clicked"/>
                     </gauge:GaugeAnnotation.View>
                 </gauge:GaugeAnnotation>
             </gauge:SfCircularGauge.Annotations>
@@ -121,6 +123,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
+            <Button Grid.Row="0" Grid.Column="0"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="Q.E."
+                    Pressed="ButtonPressed" Released="ButtonReleased" Clicked="ResinIcon_Clicked"/>
             <Button Grid.Row="0" Grid.Column="1"
                     Style="{StaticResource ButtonStyle}"
                     Text="&lt; 10"

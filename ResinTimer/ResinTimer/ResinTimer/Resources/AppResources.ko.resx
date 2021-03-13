@@ -595,6 +595,9 @@ MIT License</value>
   <data name="TalentWidget_Title" xml:space="preserve">
     <value>오늘의 특성책</value>
   </data>
+  <data name="TalentWidget_UpdateComplete" xml:space="preserve">
+    <value>특성책 위젯 갱신 완료</value>
+  </data>
   <data name="Toolbar_Add" xml:space="preserve">
     <value>추가</value>
   </data>

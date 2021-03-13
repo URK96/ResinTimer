@@ -238,5 +238,12 @@ namespace ResinTimer
 
             await PopupNavigation.Instance.PushAsync(dialog);
         }
+
+        private async void ResinIcon_Clicked(object sender, EventArgs e)
+        {
+            var dialog = new BaseDialog(AppResources.ResinSimpleEditDialog_Title, new ResinSimpleEditView());
+
+            await PopupNavigation.Instance.PushAsync(dialog);
+        }
     }
 }

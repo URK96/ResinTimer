@@ -61,6 +61,14 @@ namespace ResinTimer
 
             await Navigation.PushAsync(new HowToUseViewerPage(category.MCategory), true);
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            ListCollectionView.SelectedItems = null;
+            ListCollectionView.SelectedItem = null;
+        }
     }
 
     public class HowToUseCategory

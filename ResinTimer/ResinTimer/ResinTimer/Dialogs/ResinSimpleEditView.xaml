@@ -7,7 +7,7 @@
     <StackLayout Orientation="Vertical">
         <numeric:SfNumericUpDown x:Name="ResinUpDown" Margin="0, 10, 0, 0" HorizontalOptions="CenterAndExpand"
                                  MaximumDecimalDigits="0" TextAlignment="Center"
-                                 SelectAllOnFocus="True" SpinValidation="Tapped"/>
+                                 SelectAllOnFocus="True" SpinValidation="Default"/>
 
         <Grid Padding="0, 20, 0, 0">
             <Grid.RowDefinitions>

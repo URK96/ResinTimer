@@ -48,7 +48,7 @@ namespace ResinTimer
             var langValue = (AppLang)Preferences.Get(SettingConstants.APP_LANG, (int)AppLang.System);
             bool setting24H = Preferences.Get(SettingConstants.APP_USE_24H_TIMEFORMAT, false);
             string date = $"{dt:d}";
-            string time = dt.ToString($"{(setting24H ? "H" : "h")}:mm:ss");
+            string time = dt.ToString($"{(setting24H ? "HH" : "hh")}:mm:ss");
 
             string timeString;
 

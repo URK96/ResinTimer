@@ -343,6 +343,10 @@ Press buttons which you want to calculation.
 &lt;10, &lt;20 Buttons perform calculation less than 10 and less than 20 respectively.</value>
   </data>
   <data name="HowToUse_Category_Timer_Resin_3" xml:space="preserve">
+    <value>Q.E. button allows user to adjust the number of resins without touching the time.
+It is very useful if there is a large difference in the number of resin in the in-game or if the result is not calculated quickly.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Resin_4" xml:space="preserve">
     <value>Resin Timer also customize notification. You can set the resin count to receive notifications.</value>
   </data>
   <data name="HowToUse_Category_Timer_TalentBook" xml:space="preserve">

@@ -410,6 +410,15 @@
     <ImageAsset Include="Assets.xcassets\Character_HuTao_Thumb.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_2.png.imageset\2021-03-14_02-48-27후.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_3.png.imageset\20210220_165215000_iOS2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_3.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerExpedition_1.png.imageset\20210220_165316000_iOS.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -428,19 +437,16 @@
     <ImageAsset Include="Assets.xcassets\Manual_TimerGatheringItem_2.png.imageset\20210220_165328000_iOS.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_1.png.imageset\20210220_165215000_iOS.png">
+    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_1.png.imageset\2021-03-14_02-48-27-오후.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerResin_1.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_2.png.imageset\20210220_165215000_iOS2.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerResin_2.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_3.png.imageset\20210220_165310000_iOS.png">
+    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_4.png.imageset\20210220_165310000_iOS.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerTalentBook_1.png.imageset\20210220_165352000_iOS.png">
@@ -455,7 +461,7 @@
     <ImageAsset Include="Assets.xcassets\Manual_WidgetTalentBook_1.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_3.png.imageset\Contents.json">
+    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_4.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerExpedition_1.png.imageset\Contents.json">
@@ -739,7 +745,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

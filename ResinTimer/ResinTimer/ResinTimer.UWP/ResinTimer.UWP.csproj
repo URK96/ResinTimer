@@ -23,7 +23,7 @@
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>8401C099FF8E9BC1F8D586E9CFC2D659302E85E4</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>AA5FEB6EA01822698B4FA05421A43AE1A558DDB5</PackageCertificateThumbprint>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -189,6 +189,7 @@
     <Content Include="Manual_TimerResin_1.png" />
     <Content Include="Manual_TimerResin_2.png" />
     <Content Include="Manual_TimerResin_3.png" />
+    <Content Include="Manual_TimerResin_4.png" />
     <Content Include="Manual_TimerTalentBook_1.png" />
     <Content Include="Manual_WidgetResin_1.png" />
     <Content Include="Manual_WidgetResin_2.png" />

@@ -694,11 +694,21 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Resin Timer also customize notification. You can set the resin count to receive notifications.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Q.E. button allows user to adjust the number of resins without touching the time.
+        ///It is very useful if there is a large difference in the number of resin in the in-game or if the result is not calculated quickly.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Timer_Resin_3 {
             get {
                 return ResourceManager.GetString("HowToUse_Category_Timer_Resin_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Resin Timer also customize notification. You can set the resin count to receive notifications.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Resin_4 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Resin_4", resourceCulture);
             }
         }
         

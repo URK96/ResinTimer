@@ -343,6 +343,10 @@
 &lt;10, &lt;20 버튼의 경우 각각 10 미만, 20 미만으로 바로 만들어주는 버튼이므로 상황에 맞게 사용하시면 됩니다.</value>
   </data>
   <data name="HowToUse_Category_Timer_Resin_3" xml:space="preserve">
+    <value>Q.E. 버튼은 사용자가 시간을 건드리지 않고 레진 개수만 조정할 수 있는 버튼입니다.
+인게임의 레진 갯수와 차이가 많이 발생했거나 빠른 계산으로 결과가 나오지 않는 경우 매우 유용합니다.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Resin_4" xml:space="preserve">
     <value>레진 알리미는 사용자 지정 알림을 지원합니다. 알림을 받기를 원하는 레진 개수를 추가하면 해당 개수가 회복되는 시간에 알림을 보냅니다.</value>
   </data>
   <data name="HowToUse_Category_Timer_TalentBook" xml:space="preserve">

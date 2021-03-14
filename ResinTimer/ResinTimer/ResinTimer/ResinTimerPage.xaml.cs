@@ -232,6 +232,30 @@ namespace ResinTimer
             catch { }
         }
 
+        private async void QEButtonPressed(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+
+            try
+            {
+                button.BackgroundColor = Color.FromHex("#500682F6");
+                await button.ScaleTo(0.95, 100, Easing.SinInOut);
+            }
+            catch { }
+        }
+
+        private async void QEButtonReleased(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+
+            try
+            {
+                button.BackgroundColor = Color.Transparent;
+                await button.ScaleTo(1.0, 100, Easing.SinInOut);
+            }
+            catch { }
+        }
+
         private async void ResinIcon_Clicked(object sender, EventArgs e)
         {
             var dialog = new BaseDialog(AppResources.ResinSimpleEditDialog_Title, new ResinSimpleEditView());

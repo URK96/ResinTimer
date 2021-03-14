@@ -119,7 +119,7 @@
             <Button Grid.Row="0" Grid.Column="0"
                     Style="{StaticResource ButtonStyle}"
                     Text="Q.E."
-                    Pressed="ButtonPressed" Released="ButtonReleased" Clicked="ResinIcon_Clicked"/>
+                    Pressed="QEButtonPressed" Released="QEButtonReleased" Clicked="ResinIcon_Clicked"/>
             <Button Grid.Row="0" Grid.Column="1"
                     Style="{StaticResource ButtonStyle}"
                     Text="&lt; 10"

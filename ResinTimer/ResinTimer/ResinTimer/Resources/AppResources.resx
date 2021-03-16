@@ -395,7 +395,8 @@ You can refresh talent book status by touching layout except buttons and talent 
     <value>App Info</value>
   </data>
   <data name="LibraryList" xml:space="preserve">
-    <value>Syncfusion.Licensing
+    <value>Toast.iOS
+Syncfusion.Licensing
 Syncfusion.Xamarin.SfGauge
 Syncfusion.Xamarin.SfNumericUpDown
 Xamarin.Essentials
@@ -406,7 +407,8 @@ Rg.Plugins.Popup</value>
     <value>Open Source License</value>
   </data>
   <data name="LicenseTypeList" xml:space="preserve">
-    <value>Syncfusion License
+    <value>MIT License - Andrius Kirilovas
+Syncfusion License
 Syncfusion License
 Syncfusion License
 MIT License - Microsoft Corporation

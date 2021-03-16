@@ -37,6 +37,11 @@ namespace ResinTimer
                     LicenseType = types[i].Trim()
                 });
             }
+
+            if (Device.RuntimePlatform != Device.iOS)
+            {
+                Licenses.Remove(Licenses.Find(x => x.LibraryName.Contains("iOS")));
+            }
         }
 
         private async void ListCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)

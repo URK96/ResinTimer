@@ -854,7 +854,8 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Syncfusion.Licensing
+        ///   Toast.iOS
+        ///Syncfusion.Licensing
         ///Syncfusion.Xamarin.SfGauge
         ///Syncfusion.Xamarin.SfNumericUpDown
         ///Xamarin.Essentials
@@ -877,7 +878,8 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Syncfusion License
+        ///   MIT License - Andrius Kirilovas
+        ///Syncfusion License
         ///Syncfusion License
         ///Syncfusion License
         ///MIT License - Microsoft Corporation

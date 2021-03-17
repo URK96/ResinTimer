@@ -16,30 +16,25 @@
         </Style>
     </ContentPage.Resources>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Apply" Text="Apply" IconImageSource="apply.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
     <AbsoluteLayout>
         <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional"
-                     AbsoluteLayout.LayoutBounds="0.5, 0.05"
+                     AbsoluteLayout.LayoutBounds="0.5, 0.5"
                      Orientation="Vertical">
             <Label Text="{x:Static resources:AppResources.EditExpedition_SelectType}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" />
             <Picker x:Name="ExpeditionTypePicker" HorizontalTextAlignment="Center" />
-        
+
             <Label Margin="0, 30, 0, 0" 
                    Text="{x:Static resources:AppResources.EditExpedition_SelectTime}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" />
             <Picker x:Name="ExpeditionTimePicker" HorizontalTextAlignment="Center" />
 
-            <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
+            <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0" HorizontalOptions="Center">
                 <CheckBox x:Name="ExpeditionEffectCheckBox" IsChecked="False" />
                 <Label Text="{x:Static resources:AppResources.EditExpedition_TimeEffectOption}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
             </StackLayout>
-            
         </StackLayout>
-
-        <Button AbsoluteLayout.LayoutFlags="All"
-                AbsoluteLayout.LayoutBounds="0.5, 0.6, 0.6, 0.10"
-                Style="{StaticResource ButtonStyle}"
-                Text="{x:Static resources:AppResources.EditPage_ApplyButtonText}"
-                Clicked="ApplyButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased"/>
     </AbsoluteLayout>
-
-
 </ContentPage>

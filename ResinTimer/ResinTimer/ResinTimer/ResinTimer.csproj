@@ -16,12 +16,14 @@
 
   <ItemGroup>
     <None Remove="License_MIT.txt" />
+    <None Remove="License_MIT_AndriusKirilovas.txt" />
     <None Remove="License_MIT_JamesNewtonKing.txt" />
     <None Remove="Resources\License_MIT_Microsoft.txt" />
     <None Remove="Resources\License_Syncfusion.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="License_MIT_AndriusKirilovas.txt" />
     <EmbeddedResource Include="License_MIT.txt" />
     <EmbeddedResource Include="License_MIT_JamesNewtonKing.txt" />
     <EmbeddedResource Include="License_MIT_Microsoft.txt" />
@@ -77,6 +79,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Dialogs\ResinSimpleEditView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Dialogs\TimeEditView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="EditExpeditionItemPage.xaml">

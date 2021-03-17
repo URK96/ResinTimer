@@ -610,6 +610,9 @@ MIT License</value>
   <data name="Toolbar_Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="Toolbar_EditTime" xml:space="preserve">
+    <value>Edit Time</value>
+  </data>
   <data name="Toolbar_Remove" xml:space="preserve">
     <value>Remove</value>
   </data>

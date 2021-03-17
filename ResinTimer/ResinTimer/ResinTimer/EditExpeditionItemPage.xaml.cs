@@ -16,7 +16,6 @@ namespace ResinTimer
         ExpeditionNoti Noti { get; set; }
 
         NotiManager.EditType editType;
-
         NotiManager notiManager;
 
         public EditExpeditionItemPage(NotiManager notiManager, NotiManager.EditType type, ExpeditionNoti noti = null)
@@ -30,10 +29,10 @@ namespace ResinTimer
 
             Title = (editType == NotiManager.EditType.Add) ? AppResources.EditExpedition_Title_New : AppResources.EditExpedition_Title_Edit;
 
-            InitPicker();
+            InitValues();
         }
 
-        private void InitPicker()
+        private void InitValues()
         {
             ExpeditionTypePicker.ItemsSource = new List<string>
             {
@@ -68,7 +67,7 @@ namespace ResinTimer
             }
         }
 
-        private void ApplyButtonClicked(object sender, EventArgs e)
+        private async void ApplySetting()
         {
             var type = (ExpEnv.ExpeditionType)ExpeditionTypePicker.SelectedIndex;
             var time = TimeSpan.FromHours(ExpeditionTimePicker.SelectedIndex switch
@@ -93,31 +92,17 @@ namespace ResinTimer
 
             manager.EditList(Noti, editType);
 
-            Navigation.PopAsync();
+            await Navigation.PopAsync();
         }
 
-        private async void ButtonPressed(object sender, EventArgs e)
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            var button = sender as Button;
-
-            try
+            switch ((sender as ToolbarItem).Priority)
             {
-                button.BackgroundColor = Color.FromHex("#500682F6");
-                await button.ScaleTo(0.95, 100, Easing.SinInOut);
+                case 0:  // Apply
+                    ApplySetting();
+                    break;
             }
-            catch { }
-        }
-
-        private async void ButtonReleased(object sender, EventArgs e)
-        {
-            var button = sender as Button;
-
-            try
-            {
-                button.BackgroundColor = Color.Transparent;
-                await button.ScaleTo(1.0, 100, Easing.SinInOut);
-            }
-            catch { }
         }
     }
 }

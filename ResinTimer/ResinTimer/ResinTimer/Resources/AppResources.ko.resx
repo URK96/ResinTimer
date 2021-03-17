@@ -610,6 +610,9 @@ MIT License</value>
   <data name="Toolbar_Edit" xml:space="preserve">
     <value>수정</value>
   </data>
+  <data name="Toolbar_EditTime" xml:space="preserve">
+    <value>시간 수정</value>
+  </data>
   <data name="Toolbar_Remove" xml:space="preserve">
     <value>제거</value>
   </data>

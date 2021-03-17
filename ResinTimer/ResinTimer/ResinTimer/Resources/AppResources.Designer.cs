@@ -1478,6 +1478,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Edit Time과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Toolbar_EditTime {
+            get {
+                return ResourceManager.GetString("Toolbar_EditTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Remove과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Toolbar_Remove {

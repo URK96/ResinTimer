@@ -30,6 +30,9 @@ namespace ResinTimer
                 case "MIT License":
                     path = $"{ROOTCLASS}.License_MIT.txt";
                     break;
+                case "MIT License - Andrius Kirilovas":
+                    path = $"{ROOTCLASS}.License_MIT_AndriusKirilovas.txt";
+                    break;
                 default:
                     return string.Empty;
             }

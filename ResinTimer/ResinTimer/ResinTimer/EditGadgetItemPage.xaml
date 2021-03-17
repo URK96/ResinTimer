@@ -15,24 +15,22 @@
         </Style>
     </ContentPage.Resources>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Apply" Text="Apply" IconImageSource="apply.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
     <AbsoluteLayout>
         <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional"
-                     AbsoluteLayout.LayoutBounds="0.5, 0.05"
+                     AbsoluteLayout.LayoutBounds="0.5, 0.5"
                      Orientation="Vertical">
             <Label Text="{x:Static resources:AppResources.EditItemPage_SelectType}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" />
             <Picker x:Name="GadgetItemTypePicker" HorizontalTextAlignment="Center" />
 
             <Label Margin="0, 30, 0, 0" 
                    Text="{x:Static resources:AppResources.EditItemPage_Note}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-            <Entry x:Name="GadgetItemNoteEntry" 
+            <Entry x:Name="GadgetItemNoteEntry"
                    Placeholder="{x:Static resources:AppResources.EditItemPage_Note_Placeholder}" />
         </StackLayout>
-
-        <Button AbsoluteLayout.LayoutFlags="All"
-                AbsoluteLayout.LayoutBounds="0.5, 0.6, 0.6, 0.10"
-                Style="{StaticResource ButtonStyle}"
-                Text="{x:Static resources:AppResources.EditPage_ApplyButtonText}"
-                Clicked="ApplyButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased"/>
     </AbsoluteLayout>
     
 </ContentPage>

@@ -15,7 +15,7 @@ namespace ResinTimer
 {
     public class NotiManager
     {
-        public enum EditType { Add, Remove, Edit }
+        public enum EditType { Add, Remove, Edit, EditOnlyTime }
         public enum NotiType { Resin, Expedition, GatheringItem, Gadget }
 
         public NotiType notiType = NotiType.Resin;
@@ -100,6 +100,7 @@ namespace ResinTimer
         }
 
         public virtual void RenewalIds() { }
+        public virtual void EditList(Noti item, EditType editType) { }
     }
 
     public class ResinNotiManager : NotiManager
@@ -155,12 +156,14 @@ namespace ResinTimer
             UpdateScheduledNoti<ResinNoti>();
         }
 
-        public void EditList(ResinNoti item, EditType type)
+        public override void EditList(Noti item, EditType type)
         {
+            var noti = item as ResinNoti;
+
             switch (type)
             {
                 case EditType.Add:
-                    if (Notis.FindAll(x => (x as ResinNoti).Resin.Equals(item.Resin)).Count == 0)
+                    if (Notis.FindAll(x => (x as ResinNoti).Resin.Equals(noti.Resin)).Count == 0)
                     {
                         Notis.Add(item);
                         Notis.Sort(SortNotis);
@@ -171,10 +174,10 @@ namespace ResinTimer
                     }
                     break;
                 case EditType.Remove:
-                    Notis.Remove(Notis.Find(x => (x as ResinNoti).Resin.Equals(item.Resin)));
+                    Notis.Remove(Notis.Find(x => (x as ResinNoti).Resin.Equals(noti.Resin)));
                     break;
                 case EditType.Edit:
-                    (Notis[Notis.FindIndex(x => (x as ResinNoti).Resin.Equals(item.Resin))] as ResinNoti).Resin = item.Resin;
+                    (Notis[Notis.FindIndex(x => (x as ResinNoti).Resin.Equals(noti.Resin))] as ResinNoti).Resin = noti.Resin;
                     break;
                 default:
                     break;
@@ -217,7 +220,7 @@ namespace ResinTimer
             }
         }
 
-        public void EditList(Noti item, EditType type)
+        public override void EditList(Noti item, EditType type)
         {
             switch (type)
             {
@@ -235,6 +238,11 @@ namespace ResinTimer
 
                     Notis[index] = item;
                     Notis[index].UpdateTime();
+                    break;
+                case EditType.EditOnlyTime:
+                    var index2 = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
+
+                    Notis[index2] = item;
                     break;
                 default:
                     break;
@@ -279,7 +287,7 @@ namespace ResinTimer
             }
         }
 
-        public void EditList(Noti item, EditType type)
+        public override void EditList(Noti item, EditType type)
         {
             switch (type)
             {
@@ -341,7 +349,7 @@ namespace ResinTimer
             }
         }
 
-        public void EditList(Noti item, EditType type)
+        public override void EditList(Noti item, EditType type)
         {
             switch (type)
             {

@@ -1,4 +1,7 @@
-﻿using ResinTimer.Resources;
+﻿using ResinTimer.Dialogs;
+using ResinTimer.Resources;
+
+using Rg.Plugins.Popup.Services;
 
 using System;
 using System.Collections.Generic;
@@ -44,10 +47,7 @@ namespace ResinTimer
 
                 RefreshCollectionView(ListCollectionView, Notis);
             }
-            catch (Exception ex)
-            {
-                // DependencyService.Get<IToast>().Show(ex.ToString());
-            }
+            catch { }
         }
 
         protected override void OnDisappearing()
@@ -99,6 +99,21 @@ namespace ResinTimer
                         DependencyService.Get<IToast>().Show(AppResources.NotiSettingPage_NotSelectedToast_Message);
                     }
                     break;
+                case 4:  // Edit Time Item
+                    if (ListCollectionView.SelectedItem != null)
+                    {
+                        var dialog = new BaseDialog("Edit Time",
+                            new TimeEditView(ListCollectionView.SelectedItem as Noti, notiManager));
+
+                        dialog.OnClose += delegate { RefreshCollectionView(ListCollectionView, Notis); };
+
+                        await PopupNavigation.Instance.PushAsync(dialog);
+                    }
+                    else
+                    {
+                        DependencyService.Get<IToast>().Show(AppResources.NotiSettingPage_NotSelectedToast_Message);
+                    }
+                    break;
                 default:
                     break;
             }
@@ -127,6 +142,7 @@ namespace ResinTimer
             ResetToolbarItem.IsEnabled = isVisible;
             EditToolbarItem.IsEnabled = isVisible;
             RemoveToolbarItem.IsEnabled = isVisible;
+            EditTimeToolbarItem.IsEnabled = isVisible;
         }
     }
 }

@@ -196,9 +196,7 @@ namespace ResinTimer
                 _ => now.DayOfWeek
             };
 
-            var items = genshinDB.weaponAscensionItems;
-
-            Item = (from item in items
+            Item = (from item in genshinDB.weaponAscensionItems
                     where item.Location.Equals(Location) && item.AvailableDayOfWeeks.Contains(dowValue)
                     select item).First();
         }
@@ -224,12 +222,12 @@ namespace ResinTimer
         {
             return Item.ItemName switch
             {
-                "Decarabian" => "wa_decarabian.png",
-                "Boreal Wolf" => "wa_boreal_wolf.png",
-                "The Dandelion Gladiator" => "wa_dandelion_gladiator.png",
-                "Guyun" => "wa_guyun.png",
-                "Mist Veiled" => "wa_mist_veiled.png",
-                "Aerosiderite" => "wa_aerosiderite.png",
+                "Decarabian" => "wa_decarabian_4.png",
+                "Boreal Wolf" => "wa_boreal_wolf_4.png",
+                "The Dandelion Gladiator" => "wa_dandelion_gladiator_4.png",
+                "Guyun" => "wa_guyun_4.png",
+                "Mist Veiled" => "wa_mist_veiled_4.png",
+                "Aerosiderite" => "wa_aerosiderite_4.png",
                 "All" => $"wa_all_{Location:F}.png",
                 _ => ""
             };

@@ -1208,6 +1208,33 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Now Location과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NowLocation_PreLabel {
+            get {
+                return ResourceManager.GetString("NowLocation_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Now Server과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NowServer_PreLabel {
+            get {
+                return ResourceManager.GetString("NowServer_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Now Region UTC과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string NowUTC_PreLabel {
+            get {
+                return ResourceManager.GetString("NowUTC_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Simple Edit Resin과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string ResinSimpleEditDialog_Title {
@@ -1388,7 +1415,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Now Talent Book is과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Now Talent Book과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string TalentTimerPage_NowBook_PreLabel {
             get {
@@ -1397,7 +1424,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   All books available for acquisition과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   All books available과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string TalentTimerPage_NowBook_PreLabel_All {
             get {
@@ -1438,15 +1465,6 @@ namespace ResinTimer.Resources {
         public static string TalentTimerPage_SelectLocationDialog_Title {
             get {
                 return ResourceManager.GetString("TalentTimerPage_SelectLocationDialog_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Select Server과(와) 유사한 지역화된 문자열을 찾습니다.
-        /// </summary>
-        public static string TalentTimerPage_SelectServerDialog_Title {
-            get {
-                return ResourceManager.GetString("TalentTimerPage_SelectServerDialog_Title", resourceCulture);
             }
         }
         
@@ -1528,6 +1546,24 @@ namespace ResinTimer.Resources {
         public static string Toolbar_Reset {
             get {
                 return ResourceManager.GetString("Toolbar_Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Now W.A. Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string WeaponAscensionTimerPage_NowWA_PreLabel {
+            get {
+                return ResourceManager.GetString("WeaponAscensionTimerPage_NowWA_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   All W.A. Items available과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string WeaponAscensionTimerPage_NowWA_PreLabel_All {
+            get {
+                return ResourceManager.GetString("WeaponAscensionTimerPage_NowWA_PreLabel_All", resourceCulture);
             }
         }
         

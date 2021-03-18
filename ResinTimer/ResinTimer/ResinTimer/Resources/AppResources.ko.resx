@@ -520,6 +520,15 @@ MIT License</value>
   <data name="Noti_QuickAction_RunGenshinApp" xml:space="preserve">
     <value>원신 실행</value>
   </data>
+  <data name="NowLocation_PreLabel" xml:space="preserve">
+    <value>현재 지역</value>
+  </data>
+  <data name="NowServer_PreLabel" xml:space="preserve">
+    <value>현재 서버</value>
+  </data>
+  <data name="NowUTC_PreLabel" xml:space="preserve">
+    <value>현재 시간대</value>
+  </data>
   <data name="ResinSimpleEditDialog_Title" xml:space="preserve">
     <value>레진 간편 수정</value>
   </data>
@@ -581,7 +590,7 @@ MIT License</value>
     <value>적용 캐릭터</value>
   </data>
   <data name="TalentTimerPage_NowBook_PreLabel" xml:space="preserve">
-    <value>현재 특성 책</value>
+    <value>현재 특성책</value>
   </data>
   <data name="TalentTimerPage_NowBook_PreLabel_All" xml:space="preserve">
     <value>모든 책 회득 가능</value>
@@ -627,6 +636,12 @@ MIT License</value>
   </data>
   <data name="Toolber_Reset" xml:space="preserve">
     <value>초기화</value>
+  </data>
+  <data name="WeaponAscensionTimerPage_NowWA_PreLabel" xml:space="preserve">
+    <value>현재 무기 돌파 재료</value>
+  </data>
+  <data name="WeaponAscensionTimerPage_NowWA_PreLabel_All" xml:space="preserve">
+    <value>모든 재료 획득 가능</value>
   </data>
   <data name="WeaponAscensionTimerPage_Title" xml:space="preserve">
     <value>무기 돌파</value>

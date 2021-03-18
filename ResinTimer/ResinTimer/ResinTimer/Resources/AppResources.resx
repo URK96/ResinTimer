@@ -520,6 +520,15 @@ MIT License</value>
   <data name="Noti_QuickAction_RunGenshinApp" xml:space="preserve">
     <value>Run Genshin</value>
   </data>
+  <data name="NowLocation_PreLabel" xml:space="preserve">
+    <value>Now Location</value>
+  </data>
+  <data name="NowServer_PreLabel" xml:space="preserve">
+    <value>Now Server</value>
+  </data>
+  <data name="NowUTC_PreLabel" xml:space="preserve">
+    <value>Now Region UTC</value>
+  </data>
   <data name="ResinSimpleEditDialog_Title" xml:space="preserve">
     <value>Simple Edit Resin</value>
   </data>
@@ -581,10 +590,10 @@ MIT License</value>
     <value>Apply Characters</value>
   </data>
   <data name="TalentTimerPage_NowBook_PreLabel" xml:space="preserve">
-    <value>Now Talent Book is</value>
+    <value>Now Talent Book</value>
   </data>
   <data name="TalentTimerPage_NowBook_PreLabel_All" xml:space="preserve">
-    <value>All books available for acquisition</value>
+    <value>All books available</value>
   </data>
   <data name="TalentTimerPage_NowLocation_PreLabel" xml:space="preserve">
     <value>Now Location</value>
@@ -597,9 +606,6 @@ MIT License</value>
   </data>
   <data name="TalentTimerPage_SelectLocationDialog_Title" xml:space="preserve">
     <value>Select Location</value>
-  </data>
-  <data name="TalentTimerPage_SelectServerDialog_Title" xml:space="preserve">
-    <value>Select Server</value>
   </data>
   <data name="TalentTimerPage_TalentCharacterButton_Text" xml:space="preserve">
     <value>Apply Characters</value>
@@ -627,6 +633,12 @@ MIT License</value>
   </data>
   <data name="Toolbar_Reset" xml:space="preserve">
     <value>Reset</value>
+  </data>
+  <data name="WeaponAscensionTimerPage_NowWA_PreLabel" xml:space="preserve">
+    <value>Now W.A. Item</value>
+  </data>
+  <data name="WeaponAscensionTimerPage_NowWA_PreLabel_All" xml:space="preserve">
+    <value>All W.A. Items available</value>
   </data>
   <data name="WeaponAscensionTimerPage_Title" xml:space="preserve">
     <value>Weapon Asc.</value>

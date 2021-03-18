@@ -52,7 +52,8 @@ namespace ResinTimer
             switch (item.Priority)
             {
                 case 0:  // Location
-                    var locationDialog = new BaseDialog(AppResources.TalentTimerPage_SelectLocationDialog_Title, new RadioPreferenceView(AppEnv.locations.ToArray(), SettingConstants.ITEM_TALENT_LOCATION));
+                    var locationDialog = new BaseDialog(AppResources.TalentTimerPage_SelectLocationDialog_Title, 
+                        new RadioPreferenceView(AppEnv.locations.ToArray(), SettingConstants.ITEM_TALENT_LOCATION));
                     locationDialog.OnClose += delegate
                     {
                         TalentEnv.Location = (Locations)Preferences.Get(SettingConstants.ITEM_TALENT_LOCATION, 0);

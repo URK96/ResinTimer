@@ -16353,10 +16353,34 @@ namespace ResinTimer.Droid
 			public const int UpButton = 2131165665;
 			
 			// aapt resource value: 0x7F0701E2
-			public const int white_iron_chunk = 2131165666;
+			public const int wa_aerosiderite_4 = 2131165666;
 			
 			// aapt resource value: 0x7F0701E3
-			public const int xamarin_logo = 2131165667;
+			public const int wa_all_Liyue = 2131165667;
+			
+			// aapt resource value: 0x7F0701E4
+			public const int wa_all_Mondstadt = 2131165668;
+			
+			// aapt resource value: 0x7F0701E5
+			public const int wa_boreal_wolf_4 = 2131165669;
+			
+			// aapt resource value: 0x7F0701E6
+			public const int wa_dandelion_gladiator_4 = 2131165670;
+			
+			// aapt resource value: 0x7F0701E7
+			public const int wa_decarabian_4 = 2131165671;
+			
+			// aapt resource value: 0x7F0701E8
+			public const int wa_guyun_4 = 2131165672;
+			
+			// aapt resource value: 0x7F0701E9
+			public const int wa_mist_veiled_4 = 2131165673;
+			
+			// aapt resource value: 0x7F0701EA
+			public const int white_iron_chunk = 2131165674;
+			
+			// aapt resource value: 0x7F0701EB
+			public const int xamarin_logo = 2131165675;
 			
 			static Drawable()
 			{

@@ -454,6 +454,9 @@ MIT License</value>
   <data name="MasterDetail_MasterList_Talent" xml:space="preserve">
     <value>Talent Item</value>
   </data>
+  <data name="MasterDetail_MasterList_WeaponAscension" xml:space="preserve">
+    <value>Weapon Asc.</value>
+  </data>
   <data name="NotiSettingPage_AddDialog_Summary" xml:space="preserve">
     <value>Enter the number of resins you would like to be notified of.</value>
   </data>
@@ -538,6 +541,12 @@ MIT License</value>
   <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
     <value>Enable Notification</value>
   </data>
+  <data name="SettingPage_Section_App_InGameServer_Dialog_Title" xml:space="preserve">
+    <value>Select Server</value>
+  </data>
+  <data name="SettingPage_Section_App_InGameServer_Title" xml:space="preserve">
+    <value>Game Server</value>
+  </data>
   <data name="SettingPage_Section_App_Start_DetailScreen_Dialog_Title" xml:space="preserve">
     <value>Select Start Screen</value>
   </data>
@@ -618,6 +627,9 @@ MIT License</value>
   </data>
   <data name="Toolbar_Reset" xml:space="preserve">
     <value>Reset</value>
+  </data>
+  <data name="WeaponAscensionTimerPage_Title" xml:space="preserve">
+    <value>Weapon Asc.</value>
   </data>
   <data name="WidgetConfigure_Title" xml:space="preserve">
     <value>Configure Widget</value>

@@ -29,6 +29,7 @@ namespace ResinTimer
             AppEnvironment.isDebug = true;
 #endif
             AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
+            AppEnvironment.LoadLocationList();
 
             SetDefaultPreferences();
 

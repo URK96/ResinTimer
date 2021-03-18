@@ -9,6 +9,8 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using AppEnv = ResinTimer.AppEnvironment;
+
 namespace ResinTimer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -42,7 +44,8 @@ namespace ResinTimer
             Notification.On = Preferences.Get(SettingConstants.NOTI_ENABLED, false);
             StartDetailScreenNow.Text = GetStartScreenString(Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0));
             Use24HTimeFormat.On = Preferences.Get(SettingConstants.APP_USE_24H_TIMEFORMAT, false);
-            AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnvironment.AppLang.System)];
+            AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnv.AppLang.System)];
+            AppInGameServerNow.Text = AppEnv.serverList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)];
 
             // Main Section
             QuickCalcVibration.IsEnabled = Device.RuntimePlatform != Device.UWP;
@@ -127,6 +130,16 @@ namespace ResinTimer
                 new RadioPreferenceView(AppLangList, SettingConstants.APP_LANG));
 
             dialog.OnClose += delegate { AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnvironment.AppLang.System)]; };
+
+            await PopupNavigation.Instance.PushAsync(dialog);
+        }
+
+        private async void AppInGameServer_Tapped(object sender, EventArgs e)
+        {
+            var dialog = new BaseDialog(AppResources.SettingPage_Section_App_InGameServer_Dialog_Title,
+                new RadioPreferenceView(AppEnv.serverList, SettingConstants.APP_INGAMESERVER));
+
+            dialog.OnClose += delegate { AppInGameServerNow.Text = AppEnv.serverList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)]; };
 
             await PopupNavigation.Instance.PushAsync(dialog);
         }

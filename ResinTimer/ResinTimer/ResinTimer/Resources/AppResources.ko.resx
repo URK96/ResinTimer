@@ -454,6 +454,9 @@ MIT License</value>
   <data name="MasterDetail_MasterList_Talent" xml:space="preserve">
     <value>특성책</value>
   </data>
+  <data name="MasterDetail_MasterList_WeaponAscension" xml:space="preserve">
+    <value>무기 돌파</value>
+  </data>
   <data name="NotiSettingPage_AddDialog_Summary" xml:space="preserve">
     <value>알림을 받고 싶은 레진 개수를 입력하세요</value>
   </data>
@@ -538,6 +541,12 @@ MIT License</value>
   <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
     <value>알림 활성화</value>
   </data>
+  <data name="SettingPage_Section_App_InGameServer_Dialog_Title" xml:space="preserve">
+    <value>서버 선택</value>
+  </data>
+  <data name="SettingPage_Section_App_InGameServer_Title" xml:space="preserve">
+    <value>게임 서버</value>
+  </data>
   <data name="SettingPage_Section_App_Start_DetailScreen_Dialog_Title" xml:space="preserve">
     <value>시작 화면 선택</value>
   </data>
@@ -618,6 +627,9 @@ MIT License</value>
   </data>
   <data name="Toolber_Reset" xml:space="preserve">
     <value>초기화</value>
+  </data>
+  <data name="WeaponAscensionTimerPage_Title" xml:space="preserve">
+    <value>무기 돌파</value>
   </data>
   <data name="WidgetConfigure_Title" xml:space="preserve">
     <value>위젯 설정</value>

@@ -1010,6 +1010,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Weapon Asc.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_WeaponAscension {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_WeaponAscension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   expedition is complete과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Noti_Expedition_Message {
@@ -1262,6 +1271,24 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Select Server과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_InGameServer_Dialog_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_InGameServer_Dialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Game Server과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_InGameServer_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_InGameServer_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Select Start Screen과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string SettingPage_Section_App_Start_DetailScreen_Dialog_Title {
@@ -1501,6 +1528,15 @@ namespace ResinTimer.Resources {
         public static string Toolbar_Reset {
             get {
                 return ResourceManager.GetString("Toolbar_Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Weapon Asc.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string WeaponAscensionTimerPage_Title {
+            get {
+                return ResourceManager.GetString("WeaponAscensionTimerPage_Title", resourceCulture);
             }
         }
         

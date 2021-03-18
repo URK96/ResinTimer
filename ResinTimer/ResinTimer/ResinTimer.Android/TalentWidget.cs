@@ -14,6 +14,7 @@ using static GenshinDB_Core.GenshinDB;
 using static ResinTimer.Droid.AndroidAppEnvironment;
 
 using TalentEnv = ResinTimer.TalentEnvironment;
+using AppEnv = ResinTimer.AppEnvironment;
 
 namespace ResinTimer.Droid
 {
@@ -27,7 +28,7 @@ namespace ResinTimer.Droid
 
         bool isClick = false;
 
-        private int[] locationImageViewIds =
+        private readonly int[] locationImageViewIds =
         {
             Resource.Id.TalentWidgetIconMondstadt,
             Resource.Id.TalentWidgetIconLiyue
@@ -73,11 +74,11 @@ namespace ResinTimer.Droid
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
             TalentEnv.LoadSettings();
-            TalentEnv.LoadNowTZInfo();
+            AppEnv.LoadNowTZInfo();
             
-            if (AppEnvironment.genshinDB == null)
+            if (AppEnv.genshinDB == null)
             {
-                AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
+                AppEnv.genshinDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
             }
 
             UpdateLayout(context, appWidgetManager, appWidgetIds);
@@ -179,7 +180,7 @@ namespace ResinTimer.Droid
 
             if (itemName.Equals("All"))
             {
-                items.AddRange(from item in AppEnvironment.genshinDB.talentItems
+                items.AddRange(from item in AppEnv.genshinDB.talentItems
                                where item.Location.Equals(location)
                                select item.ItemName);
             }

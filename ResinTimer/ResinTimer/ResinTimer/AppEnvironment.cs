@@ -15,6 +15,7 @@ namespace ResinTimer
     public static class AppEnvironment
     {
         public enum AppLang { System = 0, English, Korean }
+        public enum Servers { America, Asia, Europe, TWHKMO }
         public enum ManualCategory
         {
             TimerResin = 0,
@@ -30,6 +31,19 @@ namespace ResinTimer
         public static bool isRunningNotiThread = false;
 
         public static GenshinDB genshinDB;
+
+        public static Servers Server { get; set; }
+        public static TimeZoneInfo TZInfo { get; set; }
+
+        public static int[] serverUTCs = { -5, 8, 1, 8 };
+        public static string[] serverList = new string[] { "America", "Asia", "Europe", "TW, HK, MO" };
+
+        public static List<string> locations;
+
+        public static void LoadNowTZInfo() => TZInfo = TimeZoneInfo.Local;
+
+        public static void LoadLocationList() => locations = genshinDB.GetAllLocations();
+        public static string GetUTCString(int offset) => $"UTC{((offset >= 0) ? "+" : "")}{offset}";
 
         public static Color GetBackgroundColor()
         {

@@ -1,4 +1,5 @@
 ﻿using GenshinDB_Core;
+using GenshinDB_Core.Types;
 
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 
 using static GenshinDB_Core.GenshinDB;
+using static ResinTimer.AppEnvironment;
 
 namespace ResinTimer
 {
@@ -109,25 +111,14 @@ namespace ResinTimer
     {
         public const int RENEWAL_HOUR = 4;
 
-        public enum Servers { America, Asia, Europe, TWHKMO }
-
-        public static Servers Server { get; set; }
         public static Locations Location { get; set; }
         public static TalentItem Item { get; set; }
-        public static TimeZoneInfo TZInfo { get; set; }
-
-        public static int[] serverUTCs = { -5, 8, 1, 8 };
-        public static string[] serverList = new string[] { "America", "Asia", "Europe", "TW, HK, MO" };
-        public static List<string> locations;
 
         public static void LoadSettings()
         {
-            Server = (Servers)Preferences.Get(SettingConstants.ITEM_TALENT_SERVER, 0);
+            Server = (Servers)Preferences.Get(SettingConstants.APP_INGAMESERVER, 0);
             Location = (Locations)Preferences.Get(SettingConstants.ITEM_TALENT_LOCATION, 0);
-        }
-
-        public static void LoadLocationList() => locations = AppEnvironment.genshinDB.GetAllLocations();
-        public static void LoadNowTZInfo() => TZInfo = TimeZoneInfo.Local;
+        }        
 
         public static void CheckNowTalentBook()
         {
@@ -141,7 +132,7 @@ namespace ResinTimer
                 _ => now.DayOfWeek
             };
 
-            Item = (from item in AppEnvironment.genshinDB.talentItems
+            Item = (from item in genshinDB.talentItems
                        where item.Location.Equals(Location) && item.AvailableDayOfWeeks.Contains(dowValue)
                        select item).First();
         }
@@ -158,7 +149,7 @@ namespace ResinTimer
                 _ => now.DayOfWeek
             };
 
-            return (from item in AppEnvironment.genshinDB.talentItems
+            return (from item in genshinDB.talentItems
                     where item.Location.Equals(location) && item.AvailableDayOfWeeks.Contains(dowValue)
                     select item).First();
         }
@@ -174,6 +165,72 @@ namespace ResinTimer
                 "Diligence" => "talent_diligence.png",
                 "Gold" => "talent_gold.png",
                 "All" => $"talent_all_{Location:F}.png",
+                _ => ""
+            };
+        }
+    }
+
+    public static class WeaponAscensionEnvironment
+    {
+        public const int RENEWAL_HOUR = 4;
+
+        public static Locations Location { get; set; }
+        public static WeaponAscensionItem Item { get; set; }
+
+        public static void LoadSettings()
+        {
+            Server = (Servers)Preferences.Get(SettingConstants.APP_INGAMESERVER, 0);
+            Location = (Locations)Preferences.Get(SettingConstants.ITEM_WEAPONASCENSION_LOCATION, 0);
+        }
+
+
+        public static void CheckNowWAItem()
+        {
+            int interval = TZInfo.BaseUtcOffset.Hours - serverUTCs[(int)Server];
+            int realRenewalHour = RENEWAL_HOUR + interval;
+            var now = DateTime.Now;
+
+            var dowValue = (now.Hour - realRenewalHour) switch
+            {
+                int result when result < 0 => now.AddDays(-1).DayOfWeek,
+                _ => now.DayOfWeek
+            };
+
+            var items = genshinDB.weaponAscensionItems;
+
+            Item = (from item in items
+                    where item.Location.Equals(Location) && item.AvailableDayOfWeeks.Contains(dowValue)
+                    select item).First();
+        }
+
+        public static WeaponAscensionItem CheckNowWAItem(Locations location)
+        {
+            int interval = TZInfo.BaseUtcOffset.Hours - serverUTCs[(int)Server];
+            int realRenewalHour = RENEWAL_HOUR + interval;
+            var now = DateTime.Now;
+
+            var dowValue = (now.Hour - realRenewalHour) switch
+            {
+                int result when result < 0 => now.AddDays(-1).DayOfWeek,
+                _ => now.DayOfWeek
+            };
+
+            return (from item in genshinDB.weaponAscensionItems
+                    where item.Location.Equals(location) && item.AvailableDayOfWeeks.Contains(dowValue)
+                    select item).First();
+        }
+
+        public static string GetWPItemImageName()
+        {
+            return Item.ItemName switch
+            {
+                "Decarabian" => "wa_decarabian.png",
+                "Boreal Wolf" => "wa_boreal_wolf.png",
+                "The Dandelion Gladiator" => "wa_dandelion_gladiator.png",
+                "Guyun" => "wa_guyun.png",
+                "Mist Veiled" => "wa_mist_veiled.png",
+                "Aerosiderite" => "wa_aerosiderite.png",
+                "All" => $"wa_all_{Location:F}.png",
                 _ => ""
             };
         }

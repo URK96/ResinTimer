@@ -13,6 +13,7 @@ using Xamarin.Forms.Xaml;
 
 using Locations = GenshinDB_Core.GenshinDB.Locations;
 using TalentEnv = ResinTimer.TalentEnvironment;
+using AppEnv = ResinTimer.AppEnvironment;
 
 namespace ResinTimer
 {
@@ -31,8 +32,8 @@ namespace ResinTimer
             try
             {
                 TalentEnv.LoadSettings();
-                TalentEnv.LoadNowTZInfo();
-                TalentEnv.LoadLocationList();
+                AppEnv.LoadNowTZInfo();
+                //AppEnv.LoadLocationList();
                 TalentEnv.CheckNowTalentBook();
                 RefreshInfo();
             }
@@ -48,10 +49,10 @@ namespace ResinTimer
         {
             var item = sender as ToolbarItem;
 
-            switch (item.Text)
+            switch (item.Priority)
             {
-                case "Location":
-                    var locationDialog = new BaseDialog(AppResources.TalentTimerPage_SelectLocationDialog_Title, new RadioPreferenceView(TalentEnv.locations.ToArray(), SettingConstants.ITEM_TALENT_LOCATION));
+                case 0:  // Location
+                    var locationDialog = new BaseDialog(AppResources.TalentTimerPage_SelectLocationDialog_Title, new RadioPreferenceView(AppEnv.locations.ToArray(), SettingConstants.ITEM_TALENT_LOCATION));
                     locationDialog.OnClose += delegate
                     {
                         TalentEnv.Location = (Locations)Preferences.Get(SettingConstants.ITEM_TALENT_LOCATION, 0);
@@ -62,18 +63,6 @@ namespace ResinTimer
 
                     await PopupNavigation.Instance.PushAsync(locationDialog);
                     break;
-                case "Server":
-                    var serverDialog = new BaseDialog(AppResources.TalentTimerPage_SelectServerDialog_Title, new RadioPreferenceView(TalentEnv.serverList, SettingConstants.ITEM_TALENT_SERVER));
-                    serverDialog.OnClose += delegate
-                    {
-                        TalentEnv.Server = (TalentEnv.Servers)Preferences.Get(SettingConstants.ITEM_TALENT_SERVER, 0);
-
-                        TalentEnv.CheckNowTalentBook();
-                        RefreshInfo();
-                    };
-
-                    await PopupNavigation.Instance.PushAsync(serverDialog);
-                    break;
                 default:
                     break;
             }
@@ -83,17 +72,15 @@ namespace ResinTimer
         {
             try
             {
-                NowServerLabel.Text = $"{AppResources.TalentTimerPage_NowServer_PreLabel} : {TalentEnv.serverList[(int)TalentEnv.Server]} ({GetUTCString(TalentEnv.serverUTCs[(int)TalentEnv.Server])})";
-                NowRegionUTCLabel.Text = $"{AppResources.TalentTimerPage_NowUTC_PreLabel} : {TalentEnv.TZInfo.DisplayName} ({GetUTCString(TalentEnv.TZInfo.BaseUtcOffset.Hours)})";
-                NowLocationLabel.Text = $"{AppResources.TalentTimerPage_NowLocation_PreLabel} : {TalentEnv.locations[(int)TalentEnv.Location]}";
+                NowServerLabel.Text = $"{AppResources.TalentTimerPage_NowServer_PreLabel} : {AppEnv.serverList[(int)AppEnv.Server]} ({AppEnv.GetUTCString(AppEnv.serverUTCs[(int)AppEnv.Server])})";
+                NowRegionUTCLabel.Text = $"{AppResources.TalentTimerPage_NowUTC_PreLabel} : {AppEnv.TZInfo.DisplayName} ({AppEnv.GetUTCString(AppEnv.TZInfo.BaseUtcOffset.Hours)})";
+                NowLocationLabel.Text = $"{AppResources.TalentTimerPage_NowLocation_PreLabel} : {AppEnv.locations[(int)TalentEnv.Location]}";
                 NowBookPreLabel.Text = TalentEnv.Item.ItemName.Equals("All") ? AppResources.TalentTimerPage_NowBook_PreLabel_All : AppResources.TalentTimerPage_NowBook_PreLabel;
-                NowBookLabel.Text = TalentEnv.Item.ItemName.Equals("All") ? "" : AppEnvironment.genshinDB.FindLangDic(TalentEnv.Item.ItemName);
+                NowBookLabel.Text = TalentEnv.Item.ItemName.Equals("All") ? "" : AppEnv.genshinDB.FindLangDic(TalentEnv.Item.ItemName);
                 NowBookImage.Source = ImageSource.FromFile(TalentEnv.GetTalentBookImageName());
             }
             catch { }
         }
-
-        private string GetUTCString(int offset) => $"UTC{((offset >= 0) ? "+" : "")}{offset}";
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
@@ -101,7 +88,7 @@ namespace ResinTimer
 
             if (TalentEnv.Item.ItemName.Equals("All"))
             {
-                items.AddRange(from item in AppEnvironment.genshinDB.talentItems
+                items.AddRange(from item in AppEnv.genshinDB.talentItems
                                where item.Location.Equals(TalentEnv.Location)
                                select item.ItemName);
             }

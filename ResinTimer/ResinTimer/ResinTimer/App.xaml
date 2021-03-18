@@ -7,6 +7,7 @@
         <Color x:Key="LightSecondaryColor">Black</Color>
         <Color x:Key="DarkPrimaryColor">Gray</Color>
         <Color x:Key="DarkSecondaryColor">White</Color>
+        <Color x:Key="AndroidDarkThemeBackgroundColor">#303030</Color>
 
         <Style x:Key="DialogButtonStyle" TargetType="Button">
             <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=20, iOS=20}" />
@@ -15,6 +16,10 @@
             <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="CharacterSpacing" Value="3" />
             <Setter Property="FontSize" Value="Default" />
+        </Style>
+
+        <Style x:Key="CarouselFrameStyle" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark={OnPlatform Default=Dark, Android={StaticResource AndroidDarkThemeBackgroundColor}}}" />
         </Style>
 
         <Style x:Key="PageStyle" TargetType="ContentPage">

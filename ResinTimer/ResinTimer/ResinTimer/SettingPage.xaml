@@ -33,6 +33,15 @@
                                VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </ViewCell>
+                <ViewCell x:Name="AppInGameServer" 
+                          Tapped="AppInGameServer_Tapped">
+                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
+                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_InGameServer_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
+                        <Label x:Name="AppInGameServerNow"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </ViewCell>
             </TableSection>
 
             <TableSection Title="{x:Static resources:AppResources.SettingPage_Section_ResinTimer_Title}">

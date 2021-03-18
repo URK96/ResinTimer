@@ -11,7 +11,7 @@
                       Loop="False">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
-                    <Frame VerticalOptions="Center" BackgroundColor="{AppThemeBinding Light=White, Dark=Black}">
+                    <Frame VerticalOptions="Center" Style="{StaticResource CarouselFrameStyle}">
                         <StackLayout Orientation="Vertical" VerticalOptions="Center">
                             <Image WidthRequest="200" Source="{Binding Image}" />
                             <ScrollView Margin="0, 20, 0, 0" >

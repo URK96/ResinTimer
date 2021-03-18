@@ -53,12 +53,12 @@ namespace ResinTimer
 
     public class Character
     {
-        public GenshinDB_Core.Character CharacterInfo { get; private set; }
+        public GenshinDB_Core.Types.Character CharacterInfo { get; private set; }
         public string LocationName { get; private set; }
         public string IconString => $"Character_{CharacterInfo.Name}_Thumb.png";
         public string ElementIconString => $"Element_{CharacterInfo.ElementType:F}.png";
 
-        public Character(GenshinDB_Core.Character character)
+        public Character(GenshinDB_Core.Types.Character character)
         {
             CharacterInfo = character;
             LocationName = AppEnvironment.genshinDB.FindLangDic(character.Name);

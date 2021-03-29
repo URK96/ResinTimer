@@ -7,23 +7,23 @@
     android:padding="15px"
     android:gravity="center_horizontal"
     android:background="@drawable/rounded_background"
-    android:id="@+id/TalentWidgetRootLayout">
+    android:id="@+id/WAWidgetRootLayout">
     <ViewFlipper
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inAnimation="@android:anim/slide_in_left"
         android:outAnimation="@android:anim/slide_out_right"
-        android:id="@+id/TalentWidgetIconFlipper">
+        android:id="@+id/WAWidgetIconFlipper">
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:id="@+id/TalentWidgetIconMondstadt"/>
+            android:id="@+id/WAWidgetIconMondstadt"/>
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:id="@+id/TalentWidgetIconLiyue"/>
+            android:id="@+id/WAWidgetIconLiyue"/>
     </ViewFlipper>
     <LinearLayout
         android:orientation="horizontal"
@@ -38,7 +38,7 @@
             android:layout_marginRight="2dp"
             android:background="@drawable/button_outline"
             android:src="@drawable/left_icon"
-            android:id="@+id/TalentWidgetPreviousButton"/>
+            android:id="@+id/WAWidgetPreviousButton"/>
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -47,6 +47,6 @@
             android:layout_marginLeft="2dp"
             android:background="@drawable/button_outline"
             android:src="@drawable/right_icon"
-            android:id="@+id/TalentWidgetNextButton"/>
+            android:id="@+id/WAWidgetNextButton"/>
     </LinearLayout>
 </LinearLayout>

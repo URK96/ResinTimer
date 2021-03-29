@@ -115,6 +115,7 @@
     <Compile Include="ScheduledAlarmReceiver.cs" />
     <Compile Include="ScheduledNotiAndroid.cs" />
     <Compile Include="SplashActivity.cs" />
+    <Compile Include="WAWidget.cs" />
     <Compile Include="TalentWidget.cs" />
     <Compile Include="ToastAndroid.cs" />
     <Compile Include="WidgetConfigActivity.cs" />
@@ -511,10 +512,22 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\wa_all_Mondstadt.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\widgetprovider_wa_full.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\WAWidget.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

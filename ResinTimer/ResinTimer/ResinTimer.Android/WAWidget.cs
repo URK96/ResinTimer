@@ -13,15 +13,15 @@ using Xamarin.Essentials;
 using static GenshinDB_Core.GenshinDB;
 using static ResinTimer.Droid.AndroidAppEnvironment;
 
-using TalentEnv = ResinTimer.TalentEnvironment;
+using WAEnv = ResinTimer.WeaponAscensionEnvironment;
 using AppEnv = ResinTimer.AppEnvironment;
 
 namespace ResinTimer.Droid
 {
-    [BroadcastReceiver(Label = "Talent Widget")]
+    [BroadcastReceiver(Label = "Weapon Ascension Widget")]
     [IntentFilter(new string[] { AppWidgetManager.ActionAppwidgetUpdate, Intent.ActionMain, ACTION_NEXT, ACTION_PREVIOUS })]
-    [MetaData("android.appwidget.provider", Resource = "@xml/widgetprovider_talent_full")]
-    public class TalentWidget : AppWidgetProvider
+    [MetaData("android.appwidget.provider", Resource = "@xml/widgetprovider_wa_full")]
+    public class WAWidget : AppWidgetProvider
     {
         public const string ACTION_NEXT = "com.urk.resintimer.viewflipper.NEXT";
         public const string ACTION_PREVIOUS = "com.urk.resintimer.viewflipper.PREVIOUS";
@@ -30,8 +30,8 @@ namespace ResinTimer.Droid
 
         private readonly int[] locationImageViewIds =
         {
-            Resource.Id.TalentWidgetIconMondstadt,
-            Resource.Id.TalentWidgetIconLiyue
+            Resource.Id.WAWidgetIconMondstadt,
+            Resource.Id.WAWidgetIconLiyue
         };
 
         public override void OnReceive(Context context, Intent intent)
@@ -49,19 +49,19 @@ namespace ResinTimer.Droid
                     {
                         var runIntent = new Intent(context, typeof(MainActivity));
                         runIntent.SetFlags(ActivityFlags.NewTask);
-                        runIntent.PutExtra(KEY_TALENTITEM_CLICK, VALUE_TALENTITEM_CLICK);
-                        runIntent.PutStringArrayListExtra(KEY_TALENTITEM_LIST, intent.GetStringArrayListExtra(KEY_TALENTITEM_LIST));
+                        runIntent.PutExtra(KEY_WAITEM_CLICK, VALUE_WAITEM_CLICK);
+                        runIntent.PutStringArrayListExtra(KEY_WAITEM_LIST, intent.GetStringArrayListExtra(KEY_WAITEM_LIST));
                         context.StartActivity(runIntent);
                     }
                     break;
                 case ACTION_PREVIOUS:
-                    var rv = new RemoteViews(context.PackageName, Resource.Layout.TalentWidget);
-                    rv.ShowPrevious(Resource.Id.TalentWidgetIconFlipper);
+                    var rv = new RemoteViews(context.PackageName, Resource.Layout.WAWidget);
+                    rv.ShowPrevious(Resource.Id.WAWidgetIconFlipper);
                     AppWidgetManager.GetInstance(context).UpdateAppWidget(intent.GetIntExtra(AppWidgetManager.ExtraAppwidgetId, 0), rv);
                     break;
                 case ACTION_NEXT:
-                    var rv2 = new RemoteViews(context.PackageName, Resource.Layout.TalentWidget);
-                    rv2.ShowNext(Resource.Id.TalentWidgetIconFlipper);
+                    var rv2 = new RemoteViews(context.PackageName, Resource.Layout.WAWidget);
+                    rv2.ShowNext(Resource.Id.WAWidgetIconFlipper);
                     AppWidgetManager.GetInstance(context).UpdateAppWidget(intent.GetIntExtra(AppWidgetManager.ExtraAppwidgetId, 0), rv2);
                     break;
             }
@@ -73,7 +73,7 @@ namespace ResinTimer.Droid
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
-            TalentEnv.LoadSettings();
+            WAEnv.LoadSettings();
             AppEnv.LoadNowTZInfo();
             
             if (AppEnv.genshinDB == null)
@@ -85,7 +85,7 @@ namespace ResinTimer.Droid
 
             if (isClick)
             {
-                Toast.MakeText(context, AppResources.TalentWidget_UpdateComplete, ToastLength.Short).Show();
+                Toast.MakeText(context, AppResources.WAWidget_UpdateComplete, ToastLength.Short).Show();
 
                 isClick = false;
             }
@@ -97,17 +97,17 @@ namespace ResinTimer.Droid
             {
                 var remoteViews = (Preferences.Get($"{SettingConstants.WIDGET_BACKGROUND}_{id}", "White")) switch
                 {
-                    "Black" => new RemoteViews(context.PackageName, Resource.Layout.TalentWidget),
-                    _ => new RemoteViews(context.PackageName, Resource.Layout.TalentWidget)
+                    "Black" => new RemoteViews(context.PackageName, Resource.Layout.WAWidget),
+                    _ => new RemoteViews(context.PackageName, Resource.Layout.WAWidget)
                 };
 
                 for (int i = 0; i < locationImageViewIds.Length; ++i)
                 {
                     var location = (Locations)i;
-                    string itemName = TalentEnv.CheckNowTalentBook(location).ItemName;
+                    string itemName = WAEnv.CheckNowWAItem(location).ItemName;
 
-                    remoteViews.SetImageViewResource(locationImageViewIds[i], GetTalentBookImageId(itemName, location));
-                    CreateTalentIconClickIntent(context, remoteViews, locationImageViewIds[i], itemName, location);
+                    remoteViews.SetImageViewResource(locationImageViewIds[i], GetWABookImageId(itemName, location));
+                    CreateWAIconClickIntent(context, remoteViews, locationImageViewIds[i], itemName, location);
                 }
 
                 CreateClickIntent(context, appWidgetIds, id, remoteViews);
@@ -118,42 +118,42 @@ namespace ResinTimer.Droid
 
         private void CreateClickIntent(Context context, int[] ids, int id, RemoteViews remoteViews)
         {
-            var intent = new Intent(context, typeof(TalentWidget));
+            var intent = new Intent(context, typeof(WAWidget));
             intent.SetAction(AppWidgetManager.ActionAppwidgetUpdate);
             intent.PutExtra(AppWidgetManager.ExtraAppwidgetIds, ids);
             intent.PutExtra(KEY_CLICKUPDATE, VALUE_CLICKUPDATE);
 
-            var prevIntent = new Intent(context, typeof(TalentWidget));
+            var prevIntent = new Intent(context, typeof(WAWidget));
             prevIntent.SetAction(ACTION_PREVIOUS);
             prevIntent.PutExtra(AppWidgetManager.ExtraAppwidgetId, id);
 
-            var nextIntent = new Intent(context, typeof(TalentWidget));
+            var nextIntent = new Intent(context, typeof(WAWidget));
             nextIntent.SetAction(ACTION_NEXT);
             nextIntent.PutExtra(AppWidgetManager.ExtraAppwidgetId, id);
 
-            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent));
-            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetPreviousButton, PendingIntent.GetBroadcast(context, 1, prevIntent, PendingIntentFlags.UpdateCurrent));
-            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetNextButton, PendingIntent.GetBroadcast(context, 2, nextIntent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.WAWidgetRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.WAWidgetPreviousButton, PendingIntent.GetBroadcast(context, 1, prevIntent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.WAWidgetNextButton, PendingIntent.GetBroadcast(context, 2, nextIntent, PendingIntentFlags.UpdateCurrent));
         }
 
-        private void CreateTalentIconClickIntent(Context context, RemoteViews remoteViews, int id, string itemName, Locations location)
+        private void CreateWAIconClickIntent(Context context, RemoteViews remoteViews, int id, string itemName, Locations location)
         {
-            var runIntent = new Intent(context, typeof(TalentWidget));
+            var runIntent = new Intent(context, typeof(WAWidget));
             runIntent.SetAction(Intent.ActionMain);
             runIntent.PutExtra(KEY_RUNAPP, VALUE_RUNAPP);
-            runIntent.PutStringArrayListExtra(KEY_TALENTITEM_LIST, CreateTalentList(itemName, location));
+            runIntent.PutStringArrayListExtra(KEY_WAITEM_LIST, CreateWAList(itemName, location));
 
             remoteViews.SetOnClickPendingIntent(id, PendingIntent.GetBroadcast(context, id, runIntent, PendingIntentFlags.UpdateCurrent));
         }
 
-        private int GetTalentBookImageId(string itemName, Locations location)
+        private int GetWABookImageId(string itemName, Locations location)
         {
             if (itemName.Equals("All"))
             {
                 return location switch
                 {
-                    Locations.Mondstadt => Resource.Drawable.talent_all_Mondstadt,
-                    Locations.Liyue => Resource.Drawable.talent_all_Liyue,
+                    Locations.Mondstadt => Resource.Drawable.wa_all_Mondstadt,
+                    Locations.Liyue => Resource.Drawable.wa_all_Liyue,
                     _ => 0
                 };
             }
@@ -161,24 +161,24 @@ namespace ResinTimer.Droid
             {
                 return itemName switch
                 {
-                    "Freedom" => Resource.Drawable.talent_freedom,
-                    "Resistance" => Resource.Drawable.talent_resistance,
-                    "Ballad" => Resource.Drawable.talent_ballad,
-                    "Prosperity" => Resource.Drawable.talent_prosperity,
-                    "Diligence" => Resource.Drawable.talent_diligence,
-                    "Gold" => Resource.Drawable.talent_gold,
+                    "Decarabian" => Resource.Drawable.wa_decarabian_4,
+                    "Boreal Wolf" => Resource.Drawable.wa_boreal_wolf_4,
+                    "The Dandelion Gladiator" => Resource.Drawable.wa_dandelion_gladiator_4,
+                    "Guyun" => Resource.Drawable.wa_guyun_4,
+                    "Mist Veiled" => Resource.Drawable.wa_mist_veiled_4,
+                    "Aerosiderite" => Resource.Drawable.wa_aerosiderite_4,
                     _ => 0
                 };
             }
         }
 
-        private List<string> CreateTalentList(string itemName, Locations location)
+        private List<string> CreateWAList(string itemName, Locations location)
         {
             var items = new List<string>();
 
             if (itemName.Equals("All"))
             {
-                items.AddRange(from item in AppEnv.genshinDB.talentItems
+                items.AddRange(from item in AppEnv.genshinDB.weaponAscensionItems
                                where item.Location.Equals(location)
                                select item.ItemName);
             }

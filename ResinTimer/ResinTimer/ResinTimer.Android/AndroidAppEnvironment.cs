@@ -26,5 +26,10 @@ namespace ResinTimer.Droid
         public const string KEY_TALENTITEM_CLICK = "Key_TalentItem_Click";
         public const string VALUE_TALENTITEM_CLICK = "Value_TalentItem_Click";
         public const string KEY_TALENTITEM_LIST = "Key_TalentItem_List";
+
+        // WA Widget Constant
+        public const string KEY_WAITEM_CLICK = "Key_WAItem_Click";
+        public const string VALUE_WAITEM_CLICK = "Value_WAItem_Click";
+        public const string KEY_WAITEM_LIST = "Key_WAItem_List";
     }
 }

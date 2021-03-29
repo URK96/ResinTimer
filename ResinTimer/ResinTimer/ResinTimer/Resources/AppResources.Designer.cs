@@ -1550,6 +1550,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   WA Widget Updated과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string WAWidget_UpdateComplete {
+            get {
+                return ResourceManager.GetString("WAWidget_UpdateComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Now W.A. Item과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string WeaponAscensionTimerPage_NowWA_PreLabel {

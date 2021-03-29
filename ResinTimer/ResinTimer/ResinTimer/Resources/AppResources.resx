@@ -634,6 +634,9 @@ MIT License</value>
   <data name="Toolbar_Reset" xml:space="preserve">
     <value>Reset</value>
   </data>
+  <data name="WAWidget_UpdateComplete" xml:space="preserve">
+    <value>WA Widget Updated</value>
+  </data>
   <data name="WeaponAscensionTimerPage_NowWA_PreLabel" xml:space="preserve">
     <value>Now W.A. Item</value>
   </data>

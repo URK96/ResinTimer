@@ -60,6 +60,7 @@ namespace ResinTimer
                 2 => AppResources.MasterDetail_MasterList_GatheringItem,
                 3 => AppResources.MasterDetail_MasterList_Gadget,
                 4 => AppResources.MasterDetail_MasterList_Talent,
+                5 => AppResources.MasterDetail_MasterList_WeaponAscension,
                 _ => AppResources.MasterDetail_MasterList_Resin
             };
         }

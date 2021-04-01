@@ -30,6 +30,8 @@ namespace ResinTimer
 
         public static void LoadValues()
         {
+            InitAppLang();
+
             if (Preferences.ContainsKey(SettingConstants.END_TIME))
             {
                 string endTimeP = Preferences.Get(SettingConstants.END_TIME, "");
@@ -102,9 +104,9 @@ namespace ResinTimer
 
     public static class GadgetEnvironment
     {
-        public enum GadgetType { ParametricTransformer = 0 }
+        public enum GadgetType { ParametricTransformer = 0, PortableWaypoint }
 
-        public static double[] ResetTimeList = { 168 };
+        public static double[] ResetTimeList = { 166, 168 };
     }
 
     public static class TalentEnvironment

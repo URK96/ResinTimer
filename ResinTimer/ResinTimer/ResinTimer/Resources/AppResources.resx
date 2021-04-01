@@ -253,6 +253,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Gadget_Type_ParametricTransformer" xml:space="preserve">
     <value>Parametric Transformer</value>
   </data>
+  <data name="Gadget_Type_PortableWaypoint" xml:space="preserve">
+    <value>Portable Waypoint</value>
+  </data>
   <data name="GatheringItemMain_Title" xml:space="preserve">
     <value>Item</value>
   </data>
@@ -633,6 +636,9 @@ MIT License</value>
   </data>
   <data name="Toolbar_Reset" xml:space="preserve">
     <value>Reset</value>
+  </data>
+  <data name="WAWidget_Title" xml:space="preserve">
+    <value>Today Weapon</value>
   </data>
   <data name="WAWidget_UpdateComplete" xml:space="preserve">
     <value>WA Widget Updated</value>

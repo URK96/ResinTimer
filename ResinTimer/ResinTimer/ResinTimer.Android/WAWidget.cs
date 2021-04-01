@@ -101,6 +101,8 @@ namespace ResinTimer.Droid
                     _ => new RemoteViews(context.PackageName, Resource.Layout.WAWidget)
                 };
 
+                remoteViews.SetTextViewText(Resource.Id.WAWidgetTitle, AppResources.WAWidget_Title);
+
                 for (int i = 0; i < locationImageViewIds.Length; ++i)
                 {
                     var location = (Locations)i;

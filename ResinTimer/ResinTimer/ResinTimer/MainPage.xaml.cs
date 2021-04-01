@@ -41,6 +41,7 @@ namespace ResinTimer
                     2 => new GatheringItemTimerPage(),
                     3 => new GadgetTimerPage(),
                     4 => new TalentTimerPage(),
+                    5 => new WeaponAscensionTimerPage(),
                     _ => new ResinTimerPage()
                 };
             }

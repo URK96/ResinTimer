@@ -34,6 +34,13 @@ namespace ResinTimer.Droid
             }
         }
 
+        public static void Cancel(Noti noti)
+        {
+            var notifier = new NotifierAndroid();
+
+            notifier.Cancel(noti.NotiId);
+        }
+
         public void ScheduleAllNoti()
         {
             Schedule<ResinNoti>();
@@ -62,6 +69,26 @@ namespace ResinTimer.Droid
 
                     notifier.Notify(notification);
                 }
+            }
+        }
+
+        public static void Schedule<T>(Noti noti) where T : Noti
+        {
+            var notifier = new NotifierAndroid();
+            var now = DateTime.Now;
+
+            if (noti.NotiTime > now)
+            {
+                var notification = new Notification
+                {
+                    Title = noti.GetNotiTitle(),
+                    Text = noti.GetNotiText(),
+                    Id = noti.NotiId,
+                    NotifyTime = noti.NotiTime
+                };
+                notification.SetType<T>();
+
+                notifier.Notify(notification);
             }
         }
 

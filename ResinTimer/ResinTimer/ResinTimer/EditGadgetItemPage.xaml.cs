@@ -36,7 +36,8 @@ namespace ResinTimer
         {
             GadgetItemTypePicker.ItemsSource = new List<string>
             {
-                AppResources.Gadget_Type_ParametricTransformer
+                AppResources.Gadget_Type_ParametricTransformer,
+                AppResources.Gadget_Type_PortableWaypoint
             };
 
             if (editType == NotiManager.EditType.Edit)

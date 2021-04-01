@@ -9,8 +9,6 @@ using System.Linq;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-using GIEnv = ResinTimer.GatheringItemEnvironment;
-
 namespace ResinTimer
 {
     public class NotiManager

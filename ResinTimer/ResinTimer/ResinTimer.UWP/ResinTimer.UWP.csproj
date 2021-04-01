@@ -199,6 +199,7 @@
     <Content Include="notisetting.png" />
     <Content Include="parametric_transformer.png" />
     <Content Include="plus.png" />
+    <Content Include="portable_waypoint.png" />
     <Content Include="refresh.png" />
     <Content Include="resin.png" />
     <Content Include="resintimer_icon.png" />

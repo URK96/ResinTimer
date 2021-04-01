@@ -8,6 +8,14 @@
     android:gravity="center_horizontal"
     android:background="@drawable/rounded_background"
     android:id="@+id/TalentWidgetRootLayout">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold"
+        android:id="@+id/TalentWidgetTitle"/>
     <ViewFlipper
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

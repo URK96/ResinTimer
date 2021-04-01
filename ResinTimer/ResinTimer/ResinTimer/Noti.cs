@@ -172,6 +172,7 @@ namespace ResinTimer
         public string TypeImageName => ItemType switch
         {
             GEnv.GadgetType.ParametricTransformer => "parametric_transformer.png",
+            GEnv.GadgetType.PortableWaypoint => "portable_waypoint.png",
             _ => "parametric_transformer.png"
         };
         public bool ItemNoteVisible => !string.IsNullOrWhiteSpace(ItemNote);

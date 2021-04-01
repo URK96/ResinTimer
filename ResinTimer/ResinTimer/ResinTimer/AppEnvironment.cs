@@ -57,6 +57,19 @@ namespace ResinTimer
             }
         }
 
+        public static void InitAppLang()
+        {
+            int settingValue = Preferences.Get(SettingConstants.APP_LANG, (int)AppLang.System);
+
+            AppResources.Culture = CultureInfo.CurrentCulture = settingValue switch
+            {
+                (int)AppLang.English => CultureInfo.GetCultureInfo("en-US"),
+                (int)AppLang.Korean => CultureInfo.GetCultureInfo("ko-KR"),
+                _ when CultureInfo.CurrentUICulture.Name.Equals("ko-KR") => CultureInfo.GetCultureInfo("ko-KR"),
+                _ => CultureInfo.GetCultureInfo("en-US")
+            };
+        }
+
         public static string GetTimeString(DateTime dt)
         {
             var langValue = (AppLang)Preferences.Get(SettingConstants.APP_LANG, (int)AppLang.System);

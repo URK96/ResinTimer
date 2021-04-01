@@ -458,6 +458,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Portable Waypoint과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Gadget_Type_PortableWaypoint {
+            get {
+                return ResourceManager.GetString("Gadget_Type_PortableWaypoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Gadget과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string GadgetTimerPage_Title {
@@ -1546,6 +1555,15 @@ namespace ResinTimer.Resources {
         public static string Toolbar_Reset {
             get {
                 return ResourceManager.GetString("Toolbar_Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Today Weapon과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string WAWidget_Title {
+            get {
+                return ResourceManager.GetString("WAWidget_Title", resourceCulture);
             }
         }
         

@@ -253,6 +253,9 @@
   <data name="Gadget_Type_ParametricTransformer" xml:space="preserve">
     <value>매개 변수 변환기</value>
   </data>
+  <data name="Gadget_Type_PortableWaypoint" xml:space="preserve">
+    <value>포켓 워프 포인트</value>
+  </data>
   <data name="GatheringItemMain_Title" xml:space="preserve">
     <value>채집물 알리미</value>
   </data>
@@ -636,6 +639,9 @@ MIT License</value>
   </data>
   <data name="Toolber_Reset" xml:space="preserve">
     <value>초기화</value>
+  </data>
+  <data name="WAWidget_Title" xml:space="preserve">
+    <value>오늘의 무기재료</value>
   </data>
   <data name="WAWidget_UpdateComplete" xml:space="preserve">
     <value>무기 재료 위젯 갱신 완료</value>

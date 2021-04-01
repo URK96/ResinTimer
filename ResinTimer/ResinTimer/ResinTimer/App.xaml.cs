@@ -22,7 +22,7 @@ namespace ResinTimer
         public App(Page startPage = null)
         {
             InitializeComponent();
-            InitAppLang();
+            AppEnvironment.InitAppLang();
             _ = CreateAppAction();
 
 #if DEBUG
@@ -70,18 +70,6 @@ namespace ResinTimer
 
                 Preferences.Set(SettingConstants.NOTI_LIST, JsonConvert.SerializeObject(list));
             }
-        }
-
-        private void InitAppLang()
-        {
-            int settingValue = Preferences.Get(SettingConstants.APP_LANG, (int)AppEnvironment.AppLang.System);
-
-            AppResources.Culture = CultureInfo.CurrentCulture = settingValue switch
-            {
-                (int)AppEnvironment.AppLang.English => CultureInfo.GetCultureInfo("en-US"),
-                (int)AppEnvironment.AppLang.Korean => CultureInfo.GetCultureInfo("ko-KR"),
-                _ => CultureInfo.InstalledUICulture
-            };
         }
 
         private async Task CreateAppAction()

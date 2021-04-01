@@ -31,9 +31,9 @@ namespace ResinTimer.Dialogs
         {
             GetMaxHour();
 
-            var ts = noti.NotiTime - DateTime.Now;
+            var ts = (noti.NotiTime > DateTime.Now) ? (noti.NotiTime - DateTime.Now) : TimeSpan.FromSeconds(0);
 
-            TimeHour.Text = ts.Hours.ToString();
+            TimeHour.Text = ts.TotalHours.ToString();
             TimeMinute.Text = ts.Minutes.ToString();
         }
 
@@ -43,21 +43,33 @@ namespace ResinTimer.Dialogs
 
             if (noti is ExpeditionNoti expeditionNoti)
             {
-                hour = expeditionNoti.ExpeditionTime.Hours;
+                hour = (int)expeditionNoti.ExpeditionTime.TotalHours;
             }
             else if (noti is GatheringItemNoti giNoti)
             {
-                hour = giNoti.ResetTime.Hours;
+                hour = (int)giNoti.ResetTime.TotalHours;
             }
             else if (noti is GadgetNoti gadgetNoti)
             {
-                hour = gadgetNoti.ResetTime.Hours;
+                hour = (int)gadgetNoti.ResetTime.TotalHours;
             }
 
             return hour;
         }
 
-        private int GetInputTimeToMinute() => int.Parse(TimeHour.Text) * 60 + int.Parse(TimeMinute.Text);
+        private int GetInputTimeToMinute()
+        {
+            if (!int.TryParse(TimeHour.Text, out int h))
+            {
+                h = 0;
+            }
+            if (!int.TryParse(TimeMinute.Text, out int m))
+            {
+                m = 0;
+            }
+
+            return h * 60 + m;
+        }
 
         private void TimeEntry_Completed(object sender, EventArgs e)
         {

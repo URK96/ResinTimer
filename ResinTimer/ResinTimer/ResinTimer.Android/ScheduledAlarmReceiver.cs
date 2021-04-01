@@ -55,7 +55,8 @@ namespace ResinTimer.Droid
             }
 
             if ((notification.NotiType == NotiManager.NotiType.Expedition) ||
-                (notification.NotiType == NotiManager.NotiType.GatheringItem))
+                (notification.NotiType == NotiManager.NotiType.GatheringItem) ||
+                (notification.NotiType == NotiManager.NotiType.Gadget))
             {
                 var resetIntent = new Intent(context, typeof(NotiActionReceiver));
                 resetIntent.SetAction("RESET_TIMER");
@@ -121,6 +122,7 @@ namespace ResinTimer.Droid
 
                 var noti = notiManager.Notis.Find(x => x.NotiId.Equals(id));
 
+                ScheduledNotiAndroid.Cancel(noti);
                 noti.UpdateTime();
 
                 notiManager.SaveNotis();
@@ -128,17 +130,22 @@ namespace ResinTimer.Droid
                 switch (type)
                 {
                     case NotiManager.NotiType.Expedition:
-                        notiManager.UpdateScheduledNoti<ExpeditionNoti>();
+                        //notiManager.UpdateScheduledNoti<ExpeditionNoti>();
+                        ScheduledNotiAndroid.Schedule<ExpeditionNoti>(noti);
                         break;
                     case NotiManager.NotiType.GatheringItem:
-                        notiManager.UpdateScheduledNoti<GatheringItemNoti>();
+                        //notiManager.UpdateScheduledNoti<GatheringItemNoti>();
+                        ScheduledNotiAndroid.Schedule<GatheringItemNoti>(noti);
                         break;
                     case NotiManager.NotiType.Gadget:
-                        notiManager.UpdateScheduledNoti<GadgetNoti>();
+                        //notiManager.UpdateScheduledNoti<GadgetNoti>();
+                        ScheduledNotiAndroid.Schedule<GadgetNoti>(noti);
                         break;
                     default:
                         break;
                 }
+
+
             }
         }
     }

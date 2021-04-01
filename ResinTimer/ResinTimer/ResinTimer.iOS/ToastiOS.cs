@@ -36,13 +36,17 @@ namespace ResinTimer.iOS
 
         public void Show(string message)
         {
-            Toast.MakeToast(message)
-                .SetAppearance(new ToastAppearance
-                {
-                    Color = (Xamarin.Forms.Application.Current.RequestedTheme == OSAppTheme.Dark) ? UIColor.Black : UIColor.White
-                })
-                .SetShowShadow(true)
-                .Show();
+            try
+            {
+                Toast.MakeToast(message)
+                    .SetAppearance(new ToastAppearance
+                    {
+                        Color = (Xamarin.Forms.Application.Current.RequestedTheme == OSAppTheme.Dark) ? UIColor.Black : UIColor.White
+                    })
+                    .SetShowShadow(true)
+                    .Show();
+            }
+            catch { }
         }
     }
 }

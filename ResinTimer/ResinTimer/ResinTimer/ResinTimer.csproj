@@ -72,6 +72,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="ChecklistPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Dialogs\BaseDialog.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

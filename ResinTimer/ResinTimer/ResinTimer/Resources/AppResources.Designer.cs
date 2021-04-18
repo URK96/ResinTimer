@@ -179,6 +179,51 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Custom과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Checklist_Type_Custom {
+            get {
+                return ResourceManager.GetString("Checklist_Type_Custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Daily과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Checklist_Type_Daily {
+            get {
+                return ResourceManager.GetString("Checklist_Type_Daily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Monthly과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Checklist_Type_Monthly {
+            get {
+                return ResourceManager.GetString("Checklist_Type_Monthly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Once과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Checklist_Type_Once {
+            get {
+                return ResourceManager.GetString("Checklist_Type_Once", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Weekly과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Checklist_Type_Weekly {
+            get {
+                return ResourceManager.GetString("Checklist_Type_Weekly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Delete과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Delete {
@@ -732,12 +777,32 @@ namespace ResinTimer.Resources {
         
         /// <summary>
         ///   Talent Book Timer show talent book item which you can get now. This timer reference game server and device timezone.
-        ///You can select location &amp; game server with top toolbar. Also, you can see characters who use talent book with bottom button.
+        ///You can select location with top toolbar. Also, you can see characters who use talent book with bottom button.
         ///This timer does not currently support notifications.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Timer_TalentBook_1 {
             get {
                 return ResourceManager.GetString("HowToUse_Category_Timer_TalentBook_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Weapon Asc.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_WeaponAscension {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_WeaponAscension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Weapon Ascension Timer show weapon ascension item which you can get now. This timer reference game server and device timezone.
+        ///You can select location with top toolbar. 
+        ///This timer does not currently support notifications.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_WeaponAscension_1 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_WeaponAscension_1", resourceCulture);
             }
         }
         

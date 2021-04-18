@@ -19,7 +19,7 @@
         </Style>
 
         <Style x:Key="CarouselFrameStyle" TargetType="Frame">
-            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark={OnPlatform Default=Dark, Android={StaticResource AndroidDarkThemeBackgroundColor}}}" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark={OnPlatform Default=Black, Android={StaticResource AndroidDarkThemeBackgroundColor}}}" />
         </Style>
 
         <Style x:Key="PageStyle" TargetType="ContentPage">

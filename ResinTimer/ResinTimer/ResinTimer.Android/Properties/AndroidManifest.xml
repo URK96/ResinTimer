@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.7.1" package="com.urk.resintimer" android:installLocation="auto" android:versionCode="15">
-	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.8.0" package="com.urk.resintimer" android:installLocation="auto" android:versionCode="16">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
 	<application android:theme="@style/MainTheme" android:label="@string/AppName" android:icon="@drawable/resintimer_icon"></application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.VIBRATE" />

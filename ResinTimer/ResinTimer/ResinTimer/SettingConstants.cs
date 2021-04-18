@@ -23,6 +23,7 @@
         public const string EXPEDITION_NOTI_LIST = "Expedition_Noti_List";
         public const string GATHERINGITEM_NOTI_LIST = "GatheringItem_Noti_List";
         public const string GADGET_NOTI_LIST = "Gadget_Noti_List";
+        public const string CHECKLIST_LIST = "Checklist_List";
         
         // Setting - App
         public const string NOTI_ENABLED = "Noti_Enabled";

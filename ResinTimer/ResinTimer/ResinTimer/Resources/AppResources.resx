@@ -157,6 +157,21 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Caution_ResinInput" xml:space="preserve">
     <value>Input only resin can cause time inaccuracy x~x</value>
   </data>
+  <data name="Checklist_Type_Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="Checklist_Type_Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="Checklist_Type_Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="Checklist_Type_Once" xml:space="preserve">
+    <value>Once</value>
+  </data>
+  <data name="Checklist_Type_Weekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
@@ -357,7 +372,15 @@ It is very useful if there is a large difference in the number of resin in the i
   </data>
   <data name="HowToUse_Category_Timer_TalentBook_1" xml:space="preserve">
     <value>Talent Book Timer show talent book item which you can get now. This timer reference game server and device timezone.
-You can select location &amp; game server with top toolbar. Also, you can see characters who use talent book with bottom button.
+You can select location with top toolbar. Also, you can see characters who use talent book with bottom button.
+This timer does not currently support notifications.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_WeaponAscension" xml:space="preserve">
+    <value>Weapon Asc.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_WeaponAscension_1" xml:space="preserve">
+    <value>Weapon Ascension Timer show weapon ascension item which you can get now. This timer reference game server and device timezone.
+You can select location with top toolbar. 
 This timer does not currently support notifications.</value>
   </data>
   <data name="HowToUse_Category_Widget_Resin" xml:space="preserve">

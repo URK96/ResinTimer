@@ -23,6 +23,7 @@ namespace ResinTimer
             TimerGatheringItem,
             TimerGadget,
             TimerTalentBook,
+            TimerWeaponAscension,
             WidgetResin,
             WidgetTalentBook
         }

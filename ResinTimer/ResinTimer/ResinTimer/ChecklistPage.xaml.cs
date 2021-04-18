@@ -1,7 +1,4 @@
-﻿using ResinTimer.Dialogs;
-using ResinTimer.Resources;
-
-using Rg.Plugins.Popup.Services;
+﻿using ResinTimer.Resources;
 
 using System;
 using System.Collections.Generic;
@@ -16,22 +13,22 @@ using static ResinTimer.AppEnvironment;
 namespace ResinTimer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GadgetTimerPage : ContentPage
+    public partial class ChecklistPage : ContentPage
     {
         public List<Noti> Notis => notiManager.Notis;
 
         private Timer updateTimer;
-        private GadgetNotiManager notiManager;
+        private ChecklistNotiManager notiManager;
 
-        public GadgetTimerPage()
+        public ChecklistPage()
         {
-            notiManager = new GadgetNotiManager();
+            notiManager = new ChecklistNotiManager();
 
             InitializeComponent();
 
             BindingContext = this;
 
-            updateTimer = new Timer(RefreshTime, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
+            updateTimer = new Timer(RefreshTime, new AutoResetEvent(false), TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1));
         }
 
         protected override void OnAppearing()
@@ -60,15 +57,7 @@ namespace ResinTimer
         {
             switch ((sender as ToolbarItem).Priority)
             {
-                case 0:  // Reset Item
-                    if (ListCollectionView.SelectedItem != null)
-                    {
-                        (ListCollectionView.SelectedItem as GadgetNoti).UpdateTime();
-                        notiManager.UpdateNotisTime();
-                        RefreshCollectionView(ListCollectionView, Notis);
-                    }
-                    break;
-                case 1: // Edit Item
+                case 0: // Edit Item
                     if (ListCollectionView.SelectedItem != null)
                     {
                         await Navigation.PushAsync(new EditGadgetItemPage(notiManager, NotiManager.EditType.Edit, ListCollectionView.SelectedItem as GadgetNoti));
@@ -78,35 +67,20 @@ namespace ResinTimer
                         DependencyService.Get<IToast>().Show(AppResources.NotiSettingPage_NotSelectedToast_Message);
                     }
                     break;
-                case 2:  // Add Item
+                case 1:  // Add Item
                     if (notiManager.Notis.Count >= 100)
                     {
-                        DependencyService.Get<IToast>().Show("Gadget Item limit exceed");
+                        DependencyService.Get<IToast>().Show("Checklist Item limit exceed");
                     }
                     else
                     {
                         await Navigation.PushAsync(new EditGadgetItemPage(notiManager, NotiManager.EditType.Add));
                     }
                     break;
-                case 3:  // Remove Item
+                case 2:  // Remove Item
                     if (ListCollectionView.SelectedItem != null)
                     {
                         RemoveItem(ListCollectionView.SelectedItem as Noti);
-                    }
-                    else
-                    {
-                        DependencyService.Get<IToast>().Show(AppResources.NotiSettingPage_NotSelectedToast_Message);
-                    }
-                    break;
-                case 4:  // Edit Time Item
-                    if (ListCollectionView.SelectedItem != null)
-                    {
-                        var dialog = new BaseDialog("Edit Time",
-                            new TimeEditView(ListCollectionView.SelectedItem as Noti, notiManager));
-
-                        dialog.OnClose += delegate { RefreshCollectionView(ListCollectionView, Notis); };
-
-                        await PopupNavigation.Instance.PushAsync(dialog);
                     }
                     else
                     {
@@ -138,10 +112,8 @@ namespace ResinTimer
         {
             bool isVisible = e.CurrentSelection.Count >= 1;
 
-            ResetToolbarItem.IsEnabled = isVisible;
             EditToolbarItem.IsEnabled = isVisible;
             RemoveToolbarItem.IsEnabled = isVisible;
-            EditTimeToolbarItem.IsEnabled = isVisible;
         }
     }
 }

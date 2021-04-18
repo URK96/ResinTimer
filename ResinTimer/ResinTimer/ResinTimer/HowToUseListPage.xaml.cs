@@ -34,6 +34,7 @@ namespace ResinTimer
                 new HowToUseCategory(ManualCategory.TimerGatheringItem),
                 new HowToUseCategory(ManualCategory.TimerGadget),
                 new HowToUseCategory(ManualCategory.TimerTalentBook),
+                new HowToUseCategory(ManualCategory.TimerWeaponAscension)
             };
 
             if (Device.RuntimePlatform == Device.Android)
@@ -87,6 +88,7 @@ namespace ResinTimer
                 ManualCategory.TimerGatheringItem => AppResources.HowToUse_Category_Timer_GatheringItem,
                 ManualCategory.TimerGadget => AppResources.HowToUse_Category_Timer_Gadget,
                 ManualCategory.TimerTalentBook => AppResources.HowToUse_Category_Timer_TalentBook,
+                ManualCategory.TimerWeaponAscension => AppResources.HowToUse_Category_Timer_WeaponAscension,
                 ManualCategory.WidgetResin => AppResources.HowToUse_Category_Widget_Resin,
                 ManualCategory.WidgetTalentBook => AppResources.HowToUse_Category_Widget_TalentBook,
                 _ => string.Empty

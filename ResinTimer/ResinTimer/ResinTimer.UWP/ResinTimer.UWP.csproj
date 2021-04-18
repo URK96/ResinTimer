@@ -191,6 +191,7 @@
     <Content Include="Manual_TimerResin_3.png" />
     <Content Include="Manual_TimerResin_4.png" />
     <Content Include="Manual_TimerTalentBook_1.png" />
+    <Content Include="Manual_TimerWeaponAscension_1.png" />
     <Content Include="Manual_WidgetResin_1.png" />
     <Content Include="Manual_WidgetResin_2.png" />
     <Content Include="Manual_WidgetTalentBook_1.png" />
@@ -261,6 +262,14 @@
     <Content Include="talent_gold.png" />
     <Content Include="talent_prosperity.png" />
     <Content Include="talent_resistance.png" />
+    <Content Include="wa_aerosiderite_4.png" />
+    <Content Include="wa_all_Liyue.png" />
+    <Content Include="wa_all_Mondstadt.png" />
+    <Content Include="wa_boreal_wolf_4.png" />
+    <Content Include="wa_dandelion_gladiator_4.png" />
+    <Content Include="wa_decarabian_4.png" />
+    <Content Include="wa_guyun_4.png" />
+    <Content Include="wa_mist_veiled_4.png" />
     <Content Include="white_iron_chunk.png" />
     <Content Include="xamarin_logo.png" />
     <Content Include="Properties\Default.rd.xml" />

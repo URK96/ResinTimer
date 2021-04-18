@@ -56,6 +56,9 @@ namespace ResinTimer
                 case ManualCategory.TimerTalentBook:
                     ManualContent.Add(new HowToUseContent("Manual_TimerTalentBook_1.png", AppResources.HowToUse_Category_Timer_TalentBook_1));
                     break;
+                case ManualCategory.TimerWeaponAscension:
+                    ManualContent.Add(new HowToUseContent("Manual_TimerWeaponAscension_1.png", AppResources.HowToUse_Category_Timer_WeaponAscension_1));
+                    break;
                 case ManualCategory.WidgetResin:
                     ManualContent.Add(new HowToUseContent("Manual_WidgetResin_1.png", AppResources.HowToUse_Category_Widget_Resin_1));
                     ManualContent.Add(new HowToUseContent("Manual_WidgetResin_2.png", AppResources.HowToUse_Category_Widget_Resin_2));
@@ -75,6 +78,7 @@ namespace ResinTimer
                 ManualCategory.TimerGatheringItem => AppResources.HowToUse_Category_Timer_GatheringItem,
                 ManualCategory.TimerGadget => AppResources.HowToUse_Category_Timer_Gadget,
                 ManualCategory.TimerTalentBook => AppResources.HowToUse_Category_Timer_TalentBook,
+                ManualCategory.TimerWeaponAscension => AppResources.HowToUse_Category_Timer_WeaponAscension,
                 ManualCategory.WidgetResin => AppResources.HowToUse_Category_Widget_Resin,
                 ManualCategory.WidgetTalentBook => AppResources.HowToUse_Category_Widget_TalentBook,
                 _ => string.Empty

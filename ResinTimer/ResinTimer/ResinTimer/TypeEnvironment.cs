@@ -235,4 +235,9 @@ namespace ResinTimer
             };
         }
     }
+
+    public static class ChecklistEnvironment
+    {
+        public enum ResetType { Once = 0, Custom, Daily, Weekly, Monthly }
+    }
 }

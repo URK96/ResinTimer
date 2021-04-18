@@ -807,12 +807,6 @@
       <Project>{E4B20526-895C-4FA9-94B3-E79BC1F95F1F}</Project>
       <Name>ResinTimer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ResinTimer.iOS.Widget\ResinTimer.iOS.Widget.csproj">
-      <IsAppExtension>true</IsAppExtension>
-      <Project>{31D2371B-7CC9-403D-BD2C-D7B6CF511D4C}</Project>
-      <Name>ResinTimer.iOS.Widget</Name>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>

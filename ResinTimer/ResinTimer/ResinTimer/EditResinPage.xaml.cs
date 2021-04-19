@@ -6,6 +6,8 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using AppEnv = ResinTimer.AppEnvironment;
+
 namespace ResinTimer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -73,7 +75,7 @@ namespace ResinTimer
                     break;
             }
 
-            ResinEnvironment.lastInputTime = DateTime.Now.ToString();
+            ResinEnvironment.lastInputTime = DateTime.Now.ToString(AppEnv.dtCulture);
 
             CalcRemainTime();
             ResinEnvironment.SaveValue();

@@ -28,6 +28,8 @@ namespace ResinTimer
             WidgetTalentBook
         }
 
+
+        public static CultureInfo dtCulture = new CultureInfo("en-US");
         public static bool isDebug = false;
         public static bool isRunningNotiThread = false;
 

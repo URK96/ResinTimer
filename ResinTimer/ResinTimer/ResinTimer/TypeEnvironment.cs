@@ -1,6 +1,8 @@
 ﻿using GenshinDB_Core;
 using GenshinDB_Core.Types;
 
+using ResinTimer.Resources;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,7 +38,7 @@ namespace ResinTimer
             {
                 string endTimeP = Preferences.Get(SettingConstants.END_TIME, "");
 
-                if (!DateTime.TryParse(endTimeP, out endTime))
+                if (!DateTime.TryParse(endTimeP, dtCulture, System.Globalization.DateTimeStyles.None, out endTime))
                 {
                     endTime = DateTime.Now;
                 }
@@ -45,11 +47,11 @@ namespace ResinTimer
             {
                 var now = DateTime.Now;
 
-                Preferences.Set(SettingConstants.END_TIME, now.ToString());
+                Preferences.Set(SettingConstants.END_TIME, now.ToString(dtCulture));
                 endTime = now;
             }
 
-            lastInputTime = Preferences.Get(SettingConstants.LAST_INPUT_TIME, DateTime.Now.ToString());
+            lastInputTime = Preferences.Get(SettingConstants.LAST_INPUT_TIME, DateTime.Now.ToString(dtCulture));
             applyType = (ApplyType)Preferences.Get(SettingConstants.RESIN_INPUT_TYPE, (int)ApplyType.Time);
 
             if (Preferences.ContainsKey(SettingConstants.RESIN_COUNT))
@@ -82,7 +84,7 @@ namespace ResinTimer
             try
             {
                 Preferences.Set(SettingConstants.RESIN_COUNT, resin);
-                Preferences.Set(SettingConstants.END_TIME, endTime.ToString());
+                Preferences.Set(SettingConstants.END_TIME, endTime.ToString(dtCulture));
                 Preferences.Set(SettingConstants.LAST_INPUT_TIME, lastInputTime);
                 Preferences.Set(SettingConstants.RESIN_INPUT_TYPE, (int)applyType);
             }

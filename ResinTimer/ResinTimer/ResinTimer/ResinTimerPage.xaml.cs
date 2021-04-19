@@ -12,6 +12,7 @@ using Xamarin.Forms.Xaml;
 
 using Timer = System.Timers.Timer;
 using TTimer = System.Threading.Timer;
+using AppEnv = ResinTimer.AppEnvironment;
 
 namespace ResinTimer
 {
@@ -118,7 +119,12 @@ namespace ResinTimer
 
                 MainThread.BeginInvokeOnMainThread(RefreshInfo);
             }
-            catch { }
+            catch (Exception ex) 
+            {
+#if DEBUG
+                DependencyService.Get<IToast>().Show(ex.ToString());
+#endif
+            }
         }
 
         private void RefreshInfo()
@@ -128,8 +134,8 @@ namespace ResinTimer
                 TotalTimeHour.Text = $"{ResinEnvironment.totalCountTime.Hour:D2}";
                 TotalTimeMinute.Text = $"{ResinEnvironment.totalCountTime.Min:D2}";
 
-                LastInputDateTimeLabel.Text = AppEnvironment.GetTimeString(DateTime.Parse(ResinEnvironment.lastInputTime));
-                EndDateTimeLabel.Text = AppEnvironment.GetTimeString(ResinEnvironment.endTime);
+                LastInputDateTimeLabel.Text = AppEnv.GetTimeString(DateTime.Parse(ResinEnvironment.lastInputTime, AppEnv.dtCulture));
+                EndDateTimeLabel.Text = AppEnv.GetTimeString(ResinEnvironment.endTime);
 
                 ResinCount.Text = ResinEnvironment.resin.ToString();
                 OneCountTimer.Text = ResinEnvironment.oneCountTime.TimeMinSec;
@@ -139,12 +145,19 @@ namespace ResinTimer
 
                 ResinRemainTimeRange.EndValue = 160 - ResinEnvironment.oneCountTime.TotalSec * ((double)ResinEnvironment.MAX_RESIN / ResinTime.ONE_RESTORE_INTERVAL);
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+#if DEBUG
+                //DependencyService.Get<IToast>().Show(ex.ToString());
+#endif
+            }
         }
 
         private void QuickCalc()
         {
             var now = DateTime.Now;
+
+            ResinEnvironment.lastInputTime = now.ToString(AppEnv.dtCulture);
 
             if (ResinEnvironment.endTime < now)
             {
@@ -163,8 +176,6 @@ namespace ResinTimer
                     now.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * ResinEnvironment.MAX_RESIN) :
                     ResinEnvironment.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * quickCalcValue);
             }
-
-            ResinEnvironment.lastInputTime = now.ToString();
 
             ResinEnvironment.CalcResin();
             ResinEnvironment.SaveValue();

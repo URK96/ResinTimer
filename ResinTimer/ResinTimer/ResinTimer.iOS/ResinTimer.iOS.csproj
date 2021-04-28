@@ -151,6 +151,9 @@
     <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-87.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\apply.png.imageset\apply1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\artifact.png.imageset\artifact.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -185,6 +188,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Diona_Thumb.png.imageset\Character_Diona_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Eula_Thumb.png.imageset\Character_Eula_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Fischl_Thumb.png.imageset\Character_Fischl_Thumb.png">
@@ -251,6 +257,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Xinyan_Thumb.png.imageset\Character_Xinyan_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Yanfei_Thumb.png.imageset\Character_Yanfei_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Zhongli_Thumb.png.imageset\Character_Zhongli_Thumb.png">
@@ -416,6 +425,15 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Rosaria_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\apply.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Eula_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Yanfei_Thumb.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerWeaponAscension_1.png.imageset\2021-04-18_12-32-38-오전.png">
@@ -816,7 +834,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

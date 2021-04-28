@@ -125,6 +125,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="apply.png" />
     <Content Include="artifact.png" />
     <Content Include="artifact12H.png" />
     <Content Include="artifact24H.png" />
@@ -142,6 +143,7 @@
     <Content Include="Character_Chongyun_Thumb.png" />
     <Content Include="Character_Diluc_Thumb.png" />
     <Content Include="Character_Diona_Thumb.png" />
+    <Content Include="Character_Eula_Thumb.png" />
     <Content Include="Character_Fischl_Thumb.png" />
     <Content Include="Character_Ganyu_Thumb.png" />
     <Content Include="Character_HuTao_Thumb.png" />
@@ -164,6 +166,7 @@
     <Content Include="Character_Xiao_Thumb.png" />
     <Content Include="Character_Xingqiu_Thumb.png" />
     <Content Include="Character_Xinyan_Thumb.png" />
+    <Content Include="Character_Yanfei_Thumb.png" />
     <Content Include="Character_Zhongli_Thumb.png" />
     <Content Include="compass.png" />
     <Content Include="crystal_chunk.png" />

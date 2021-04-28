@@ -267,7 +267,7 @@ namespace ResinTimer
             catch { }
         }
 
-        private async void ResinIcon_Clicked(object sender, EventArgs e)
+        private async void QEButton_Clicked(object sender, EventArgs e)
         {
             var dialog = new BaseDialog(AppResources.ResinSimpleEditDialog_Title, new ResinSimpleEditView());
 

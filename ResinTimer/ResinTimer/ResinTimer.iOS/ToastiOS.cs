@@ -41,7 +41,8 @@ namespace ResinTimer.iOS
                 Toast.MakeToast(message)
                     .SetAppearance(new ToastAppearance
                     {
-                        Color = (Xamarin.Forms.Application.Current.RequestedTheme == OSAppTheme.Dark) ? UIColor.Black : UIColor.White
+                        Color = (Xamarin.Forms.Application.Current.RequestedTheme == OSAppTheme.Dark) ? UIColor.Black : UIColor.White,
+                        MessageColor = (Xamarin.Forms.Application.Current.RequestedTheme == OSAppTheme.Dark) ? UIColor.White : UIColor.Black
                     })
                     .SetShowShadow(true)
                     .Show();

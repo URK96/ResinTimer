@@ -7,10 +7,12 @@
 
 # 기능
 
-- 한 눈에 보기 쉬운 잔여 레진 표시
-- 총 남은 회복 시간
-- 1개당 남은 회복 시간
-- 간단한 설정
+- 레진 타이머
+- 탐사 타이머
+- 채집물 타이머
+- 도구 타이머
+- 특성책 타이머
+- 무기 돌파 재료 타이머
 
 <img alt="1.png" src="https://github.com/URK96/ResinTimer/blob/main/Image/1.png" style="max-width: 40%">
 

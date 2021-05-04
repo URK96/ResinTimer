@@ -120,6 +120,9 @@
   <data name="AppAction_App_Timer_Expedition" xml:space="preserve">
     <value>Expedition</value>
   </data>
+  <data name="AppAction_App_Timer_Furnishing" xml:space="preserve">
+    <value>Furnishing</value>
+  </data>
   <data name="AppAction_App_Timer_Gadget" xml:space="preserve">
     <value>Gadget</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="AppAction_App_Timer_Talent" xml:space="preserve">
     <value>Talent</value>
+  </data>
+  <data name="AppAction_App_Timer_WA" xml:space="preserve">
+    <value>Weapon Asc.</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>Resin Timer</value>
@@ -261,6 +267,18 @@ Please re-enable alarm in app setting to register notification alarm</value>
   </data>
   <data name="Expedition_Type_Mora" xml:space="preserve">
     <value>Mora</value>
+  </data>
+  <data name="FurnishingTimerPage_Title" xml:space="preserve">
+    <value>Furnishing</value>
+  </data>
+  <data name="Furnishing_Rarity_2" xml:space="preserve">
+    <value>★★ Furnish</value>
+  </data>
+  <data name="Furnishing_Rarity_3" xml:space="preserve">
+    <value>★★★ Furnish</value>
+  </data>
+  <data name="Furnishing_Rarity_4" xml:space="preserve">
+    <value>★★★★ Furnish</value>
   </data>
   <data name="GadgetTimerPage_Title" xml:space="preserve">
     <value>Gadget</value>
@@ -441,6 +459,12 @@ MIT License - Microsoft Corporation
 MIT License - James Newton-King
 MIT License</value>
   </data>
+  <data name="ListTimer_EditTime" xml:space="preserve">
+    <value>Edit Time</value>
+  </data>
+  <data name="ListTimer_LimitExceed" xml:space="preserve">
+    <value>Timer count is maximum</value>
+  </data>
   <data name="MainPage_EndDateTimeTitle" xml:space="preserve">
     <value>Scheduled D/T of full recovery</value>
   </data>
@@ -461,6 +485,9 @@ MIT License</value>
   </data>
   <data name="MasterDetail_MasterList_Expedition" xml:space="preserve">
     <value>Expedition</value>
+  </data>
+  <data name="MasterDetail_MasterList_Furnishing" xml:space="preserve">
+    <value>Furnishing</value>
   </data>
   <data name="MasterDetail_MasterList_Gadget" xml:space="preserve">
     <value>Gadget</value>
@@ -527,6 +554,12 @@ MIT License</value>
   </data>
   <data name="Noti_Expedition_Title" xml:space="preserve">
     <value>Expedition Complete</value>
+  </data>
+  <data name="Noti_Furnishing_Message" xml:space="preserve">
+    <value>complete</value>
+  </data>
+  <data name="Noti_Furnishing_Title" xml:space="preserve">
+    <value>Furnishing Complete</value>
   </data>
   <data name="Noti_Gadget_Message" xml:space="preserve">
     <value>is usable</value>

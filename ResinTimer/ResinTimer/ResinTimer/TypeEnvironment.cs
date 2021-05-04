@@ -101,14 +101,20 @@ namespace ResinTimer
     {
         public enum GItemType { MagicCrystalChunk = 0, Artifact, Specialty, Artifact12H, CrystalChunk, WhiteIronChunk, IronChunk }
 
-        public static double[] ResetTimeList = { 72, 24, 48, 12, 72, 48, 24 };
+        public static double[] resetTimeList = { 72, 24, 48, 12, 72, 48, 24 };
     }
 
     public static class GadgetEnvironment
     {
         public enum GadgetType { ParametricTransformer = 0, PortableWaypoint }
 
-        public static double[] ResetTimeList = { 166, 168 };
+        public static double[] resetTimeList = { 166, 168 };
+    }
+
+    public static class FurnishingEnvironment
+    {
+        public enum FurnishType { Rarity2, Rarity3, Rarity4 }
+        public static double[] resetTimeList = { 12, 14, 16 }; // Rarity : 2 3 4
     }
 
     public static class TalentEnvironment

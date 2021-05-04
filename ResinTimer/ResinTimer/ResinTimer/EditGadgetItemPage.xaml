@@ -29,7 +29,8 @@
             <Label Margin="0, 30, 0, 0" 
                    Text="{x:Static resources:AppResources.EditItemPage_Note}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" />
             <Entry x:Name="GadgetItemNoteEntry"
-                   Placeholder="{x:Static resources:AppResources.EditItemPage_Note_Placeholder}" />
+                   Placeholder="{x:Static resources:AppResources.EditItemPage_Note_Placeholder}"
+                   ClearButtonVisibility="WhileEditing" />
         </StackLayout>
     </AbsoluteLayout>
     

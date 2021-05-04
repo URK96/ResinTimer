@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
-             x:Class="ResinTimer.ResinTimerPage"
+             x:Class="ResinTimer.TimerPages.ResinTimerPage"
              Title="{x:Static resources:AppResources.MainPage_Title}"
              Style="{StaticResource PageStyle}">
 

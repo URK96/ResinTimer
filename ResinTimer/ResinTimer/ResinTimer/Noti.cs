@@ -5,6 +5,7 @@ using System;
 using ExpEnv = ResinTimer.ExpeditionEnvironment;
 using GIEnv = ResinTimer.GatheringItemEnvironment;
 using GEnv = ResinTimer.GadgetEnvironment;
+using FEnv = ResinTimer.FurnishingEnvironment;
 using CLEnv = ResinTimer.ChecklistEnvironment;
 
 namespace ResinTimer
@@ -67,6 +68,7 @@ namespace ResinTimer
         public TimeSpan ExpeditionTime { get; set; }
         public TimeSpan StandardTime { get; set; }
         public ExpEnv.ExpeditionType ExpeditionType { get; set; }
+        public string ItemNote { get; set; } = string.Empty;
 
         public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{NotiTime - DateTime.Now:hh\\:mm} {AppResources.ExpeditionTimerPage_Remain}" : AppResources.Expedition_Complete)}";
         public string TypeString => ExpeditionType switch
@@ -75,13 +77,13 @@ namespace ResinTimer
             ExpEnv.ExpeditionType.Mora => AppResources.Expedition_Type_Mora,
             _ => AppResources.Expedition_Type_Chunk
         };
-
         public string TypeImageName => ExpeditionType switch
         {
             ExpEnv.ExpeditionType.Ingredient => "ingredient.png",
             ExpEnv.ExpeditionType.Mora => "mora.png",
             _ => "magical_crystal_chunk.png"
         };
+        public bool ItemNoteVisible => !string.IsNullOrWhiteSpace(ItemNote);
 
         public ExpeditionNoti(TimeSpan interval, ExpEnv.ExpeditionType type = ExpEnv.ExpeditionType.Chunk, bool applyTimeEffect = false)
         {
@@ -146,7 +148,7 @@ namespace ResinTimer
         public void EditItemType(GIEnv.GItemType type)
         {
             ItemType = type;
-            ResetTime = TimeSpan.FromHours(GIEnv.ResetTimeList[(int)type]);
+            ResetTime = TimeSpan.FromHours(GIEnv.resetTimeList[(int)type]);
         }
 
         public override void UpdateTime()
@@ -168,6 +170,7 @@ namespace ResinTimer
         public string TypeString => ItemType switch
         {
             GEnv.GadgetType.ParametricTransformer => AppResources.Gadget_Type_ParametricTransformer,
+            GEnv.GadgetType.PortableWaypoint => AppResources.Gadget_Type_PortableWaypoint,
             _ => AppResources.Gadget_Type_ParametricTransformer
         };
         public string TypeImageName => ItemType switch
@@ -188,7 +191,7 @@ namespace ResinTimer
         public void EditItemType(GEnv.GadgetType type)
         {
             ItemType = type;
-            ResetTime = TimeSpan.FromHours(GEnv.ResetTimeList[(int)type]);
+            ResetTime = TimeSpan.FromHours(GEnv.resetTimeList[(int)type]);
         }
 
         public override void UpdateTime()
@@ -198,6 +201,49 @@ namespace ResinTimer
 
         public override string GetNotiTitle() => AppResources.Noti_Gadget_Title;
         public override string GetNotiText() => $"{TypeString} {AppResources.Noti_Gadget_Message}";
+    }
+
+    public class FurnishingNoti : Noti
+    {
+        public TimeSpan ResetTime { get; set; }
+        public FEnv.FurnishType ItemType { get; set; }
+        public string ItemNote { get; set; } = string.Empty;
+
+        public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{GetRemainTimeHM()} {AppResources.GatheringItemTimerPage_Remain}" : AppResources.GatheringItemTimer_ResetComplete)}";
+        public string TypeString => ItemType switch
+        {
+            FEnv.FurnishType.Rarity3 => AppResources.Furnishing_Rarity_3,
+            FEnv.FurnishType.Rarity4 => AppResources.Furnishing_Rarity_4,
+            _ => AppResources.Furnishing_Rarity_2
+        };
+        public string TypeImageName => ItemType switch
+        {
+            FEnv.FurnishType.Rarity3 => "furnishing_rarity_3.png",
+            FEnv.FurnishType.Rarity4 => "furnishing_rarity_4.png",
+            _ => "furnishing_rarity_2.png"
+        };
+        public bool ItemNoteVisible => !string.IsNullOrWhiteSpace(ItemNote);
+
+        public FurnishingNoti(FEnv.FurnishType type = FEnv.FurnishType.Rarity2)
+        {
+            EditItemType(type);
+
+            NotiTime = DateTime.Now;
+        }
+
+        public void EditItemType(FEnv.FurnishType type)
+        {
+            ItemType = type;
+            ResetTime = TimeSpan.FromHours(FEnv.resetTimeList[(int)type]);
+        }
+
+        public override void UpdateTime()
+        {
+            NotiTime = DateTime.Now.AddSeconds(ResetTime.TotalSeconds);
+        }
+
+        public override string GetNotiTitle() => AppResources.Noti_Furnishing_Title;
+        public override string GetNotiText() => $"{TypeString} {AppResources.Noti_Furnishing_Message}";
     }
 
     public class ChecklistNoti : Noti
@@ -229,7 +275,7 @@ namespace ResinTimer
         public void EditItemType(CLEnv.ResetType type)
         {
             ItemType = type;
-            ResetTime = TimeSpan.FromHours(GEnv.ResetTimeList[(int)type]);
+            ResetTime = TimeSpan.FromHours(GEnv.resetTimeList[(int)type]);
         }
 
         public override void UpdateTime()

@@ -14,7 +14,7 @@ using Timer = System.Timers.Timer;
 using TTimer = System.Threading.Timer;
 using AppEnv = ResinTimer.AppEnvironment;
 
-namespace ResinTimer
+namespace ResinTimer.TimerPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ResinTimerPage : ContentPage

@@ -33,7 +33,7 @@ namespace ResinTimer.Dialogs
 
             var ts = (noti.NotiTime > DateTime.Now) ? (noti.NotiTime - DateTime.Now) : TimeSpan.FromSeconds(0);
 
-            TimeHour.Text = ts.TotalHours.ToString();
+            TimeHour.Text = ((int)ts.TotalHours).ToString();
             TimeMinute.Text = ts.Minutes.ToString();
         }
 

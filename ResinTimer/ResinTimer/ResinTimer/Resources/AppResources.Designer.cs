@@ -70,6 +70,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Furnishing과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AppAction_App_Timer_Furnishing {
+            get {
+                return ResourceManager.GetString("AppAction_App_Timer_Furnishing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Gadget과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string AppAction_App_Timer_Gadget {
@@ -102,6 +111,15 @@ namespace ResinTimer.Resources {
         public static string AppAction_App_Timer_Talent {
             get {
                 return ResourceManager.GetString("AppAction_App_Timer_Talent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Weapon Asc.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AppAction_App_Timer_WA {
+            get {
+                return ResourceManager.GetString("AppAction_App_Timer_WA", resourceCulture);
             }
         }
         
@@ -490,6 +508,42 @@ namespace ResinTimer.Resources {
         public static string ExpeditionTimerPage_Remain {
             get {
                 return ResourceManager.GetString("ExpeditionTimerPage_Remain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ★★ Furnish과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Furnishing_Rarity_2 {
+            get {
+                return ResourceManager.GetString("Furnishing_Rarity_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ★★★ Furnish과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Furnishing_Rarity_3 {
+            get {
+                return ResourceManager.GetString("Furnishing_Rarity_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ★★★★ Furnish과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Furnishing_Rarity_4 {
+            get {
+                return ResourceManager.GetString("Furnishing_Rarity_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Furnishing과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string FurnishingTimerPage_Title {
+            get {
+                return ResourceManager.GetString("FurnishingTimerPage_Title", resourceCulture);
             }
         }
         
@@ -967,6 +1021,24 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Edit Time과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ListTimer_EditTime {
+            get {
+                return ResourceManager.GetString("ListTimer_EditTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Timer count is maximum과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ListTimer_LimitExceed {
+            get {
+                return ResourceManager.GetString("ListTimer_LimitExceed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Scheduled D/T of full recovery과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string MainPage_EndDateTimeTitle {
@@ -1026,6 +1098,15 @@ namespace ResinTimer.Resources {
         public static string MasterDetail_MasterList_Expedition {
             get {
                 return ResourceManager.GetString("MasterDetail_MasterList_Expedition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Furnishing과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_Furnishing {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_Furnishing", resourceCulture);
             }
         }
         
@@ -1107,6 +1188,24 @@ namespace ResinTimer.Resources {
         public static string Noti_Expedition_Title {
             get {
                 return ResourceManager.GetString("Noti_Expedition_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   complete과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_Furnishing_Message {
+            get {
+                return ResourceManager.GetString("Noti_Furnishing_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Furnishing Complete과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_Furnishing_Title {
+            get {
+                return ResourceManager.GetString("Noti_Furnishing_Title", resourceCulture);
             }
         }
         

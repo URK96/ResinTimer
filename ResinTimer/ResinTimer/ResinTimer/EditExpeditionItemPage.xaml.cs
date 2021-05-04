@@ -59,17 +59,20 @@ namespace ResinTimer
                     _ => 0
                 };
                 ExpeditionEffectCheckBox.IsChecked = Noti.StandardTime != Noti.ExpeditionTime;
+                ExpeditionItemNoteEntry.Text = Noti.ItemNote;
             }
             else
             {
                 ExpeditionTypePicker.SelectedIndex = 0;
                 ExpeditionTimePicker.SelectedIndex = 0;
+                ExpeditionItemNoteEntry.Text = string.Empty;
             }
         }
 
         private async void ApplySetting()
         {
             var type = (ExpEnv.ExpeditionType)ExpeditionTypePicker.SelectedIndex;
+            var note = ExpeditionItemNoteEntry.Text;
             var time = TimeSpan.FromHours(ExpeditionTimePicker.SelectedIndex switch
             {
                 1 => 8,
@@ -89,6 +92,8 @@ namespace ResinTimer
                 Noti.EditTime(time, applyTimeEffect);
                 Noti.ExpeditionType = type;
             }
+
+            Noti.ItemNote = note;
 
             manager.EditList(Noti, editType);
 

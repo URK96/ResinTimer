@@ -22,7 +22,9 @@ namespace ResinTimer
             AppResources.MasterDetail_MasterList_Expedition,
             AppResources.MasterDetail_MasterList_GatheringItem,
             AppResources.MasterDetail_MasterList_Gadget,
-            AppResources.MasterDetail_MasterList_Talent
+            AppResources.MasterDetail_MasterList_Furnishing,
+            AppResources.MasterDetail_MasterList_Talent,
+            AppResources.MasterDetail_MasterList_WeaponAscension
         };
         string[] AppLangList => new string[]
         {
@@ -59,8 +61,9 @@ namespace ResinTimer
                 1 => AppResources.MasterDetail_MasterList_Expedition,
                 2 => AppResources.MasterDetail_MasterList_GatheringItem,
                 3 => AppResources.MasterDetail_MasterList_Gadget,
-                4 => AppResources.MasterDetail_MasterList_Talent,
-                5 => AppResources.MasterDetail_MasterList_WeaponAscension,
+                4 => AppResources.MasterDetail_MasterList_Furnishing,
+                5 => AppResources.MasterDetail_MasterList_Talent,
+                6 => AppResources.MasterDetail_MasterList_WeaponAscension,
                 _ => AppResources.MasterDetail_MasterList_Resin
             };
         }

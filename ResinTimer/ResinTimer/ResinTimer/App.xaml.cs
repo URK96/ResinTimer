@@ -33,7 +33,7 @@ namespace ResinTimer
 
             SetDefaultPreferences();
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzY5MzQ5QDMxMzgyZTM0MmUzMGx5ajVXODdXRldsSjMvRFNnbkVxS2c2ZTJkdEhxNW4yQVlLSCtsbWt1WG89");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDQwMzYwQDMxMzkyZTMxMmUzMGpZWFV5TW1ldU1rd0cxWGxMcFAwLzhiWmNuanhoZHZpbkZNcDZPSmI5Y0U9");
 
             SetMainPage(null);
         }
@@ -81,7 +81,9 @@ namespace ResinTimer
                     new AppAction("app_timer_expedition", AppResources.AppAction_App_Timer_Expedition, icon: "compass"),
                     new AppAction("app_timer_gatheringitem", AppResources.AppAction_App_Timer_GatheringItem, icon: "silk_flower"),
                     new AppAction("app_timer_gadget", AppResources.AppAction_App_Timer_Gadget, icon: "parametric_transformer"),
-                    new AppAction("app_timer_talent", AppResources.AppAction_App_Timer_Talent, icon: "talent_freedom"));
+                    new AppAction("app_timer_furnishing", AppResources.AppAction_App_Timer_Furnishing, icon: "furnishing_icon"),
+                    new AppAction("app_timer_talent", AppResources.AppAction_App_Timer_Talent, icon: "talent_freedom"),
+                    new AppAction("app_timer_wa", AppResources.AppAction_App_Timer_WA, icon: "wa_aerosiderite_4"));
 
                 AppActions.OnAppAction += AppActions_OnAppAction;
             }

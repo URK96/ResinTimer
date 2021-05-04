@@ -120,6 +120,9 @@
   <data name="AppAction_App_Timer_Expedition" xml:space="preserve">
     <value>탐사</value>
   </data>
+  <data name="AppAction_App_Timer_Furnishing" xml:space="preserve">
+    <value>가구 제작</value>
+  </data>
   <data name="AppAction_App_Timer_Gadget" xml:space="preserve">
     <value>도구</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="AppAction_App_Timer_Talent" xml:space="preserve">
     <value>특성책</value>
+  </data>
+  <data name="AppAction_App_Timer_WA" xml:space="preserve">
+    <value>무기 돌파 재료</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>레진 알리미</value>
@@ -261,6 +267,18 @@
   </data>
   <data name="Expedition_Type_Mora" xml:space="preserve">
     <value>모라</value>
+  </data>
+  <data name="FurnishingTimerPage_Title" xml:space="preserve">
+    <value>가구 제작</value>
+  </data>
+  <data name="Furnishing_Rarity_2" xml:space="preserve">
+    <value>★★ 가구</value>
+  </data>
+  <data name="Furnishing_Rarity_3" xml:space="preserve">
+    <value>★★★ 가구</value>
+  </data>
+  <data name="Furnishing_Rarity_4" xml:space="preserve">
+    <value>★★★★ 가구</value>
   </data>
   <data name="GadgetTimerPage_Title" xml:space="preserve">
     <value>도구 알리미</value>
@@ -441,6 +459,12 @@ MIT License - Microsoft Corporation
 MIT License - James Newton-King
 MIT License</value>
   </data>
+  <data name="ListTimer_EditTime" xml:space="preserve">
+    <value>시간 수정</value>
+  </data>
+  <data name="ListTimer_LimitExceed" xml:space="preserve">
+    <value>타이머 개수가 최대치입니다.</value>
+  </data>
   <data name="MainPage_EndDateTimeTitle" xml:space="preserve">
     <value>완전 회복 예정 시각</value>
   </data>
@@ -461,6 +485,9 @@ MIT License</value>
   </data>
   <data name="MasterDetail_MasterList_Expedition" xml:space="preserve">
     <value>탐사</value>
+  </data>
+  <data name="MasterDetail_MasterList_Furnishing" xml:space="preserve">
+    <value>가구 제작</value>
   </data>
   <data name="MasterDetail_MasterList_Gadget" xml:space="preserve">
     <value>도구</value>
@@ -527,6 +554,12 @@ MIT License</value>
   </data>
   <data name="Noti_Expedition_Title" xml:space="preserve">
     <value>탐사 완료</value>
+  </data>
+  <data name="Noti_Furnishing_Message" xml:space="preserve">
+    <value>제작 완료되었습니다.</value>
+  </data>
+  <data name="Noti_Furnishing_Title" xml:space="preserve">
+    <value>가구 제작 완료</value>
   </data>
   <data name="Noti_Gadget_Message" xml:space="preserve">
     <value>을(를) 사용할 수 있습니다.</value>

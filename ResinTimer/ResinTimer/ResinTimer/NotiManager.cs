@@ -14,7 +14,7 @@ namespace ResinTimer
     public class NotiManager
     {
         public enum EditType { Add, Remove, Edit, EditOnlyTime }
-        public enum NotiType { Resin, Expedition, GatheringItem, Gadget, Checklist }
+        public enum NotiType { Resin, Expedition, GatheringItem, Gadget, Furnishing, Checklist }
 
         public NotiType notiType = NotiType.Resin;
 
@@ -52,6 +52,10 @@ namespace ResinTimer
                 else if (typeof(T) == typeof(GadgetNoti))
                 {
                     value = Preferences.Get(SettingConstants.GADGET_NOTI_LIST, string.Empty);
+                }
+                else if (typeof(T) == typeof(FurnishingNoti))
+                {
+                    value = Preferences.Get(SettingConstants.FURNISHING_NOTI_LIST, string.Empty);
                 }
                 else if (typeof(T) == typeof(ChecklistNoti))
                 {
@@ -95,6 +99,7 @@ namespace ResinTimer
                 NotiType.Expedition => SettingConstants.EXPEDITION_NOTI_LIST,
                 NotiType.GatheringItem => SettingConstants.GATHERINGITEM_NOTI_LIST,
                 NotiType.Gadget => SettingConstants.GADGET_NOTI_LIST,
+                NotiType.Furnishing => SettingConstants.FURNISHING_NOTI_LIST,
                 _ => string.Empty
             };
 
@@ -112,18 +117,6 @@ namespace ResinTimer
             try
             {
                 notiType = NotiType.Resin;
-
-                //var list = Preferences.Get(SettingConstants.NOTI_LIST, string.Empty);
-
-                //if (string.IsNullOrWhiteSpace(list))
-                //{
-                //    Notis.Add(new ResinNoti(ResinEnvironment.MAX_RESIN));
-                //    SaveNotis();
-                //}
-                //else
-                //{
-                //    Notis.AddRange(JsonConvert.DeserializeObject<List<ResinNoti>>(list));
-                //}
 
                 Notis.AddRange(GetNotiList<ResinNoti>());
 
@@ -376,6 +369,68 @@ namespace ResinTimer
 
             SaveNotis();
             UpdateScheduledNoti<GadgetNoti>();
+        }
+    }
+
+    public class FurnishingNotiManager : NotiManager
+    {
+        const int ID_PREINDEX = 2900;
+
+        public FurnishingNotiManager() : base()
+        {
+            try
+            {
+                notiType = NotiType.Furnishing;
+
+                Notis.AddRange(GetNotiList<FurnishingNoti>());
+
+                SaveNotis();
+            }
+            catch (Exception)
+            {
+                DependencyService.Get<IToast>().Show("Fail to initialize Furnishing noti manager");
+            }
+        }
+
+        public void UpdateNotisTime()
+        {
+            SaveNotis();
+            UpdateScheduledNoti<FurnishingNoti>();
+        }
+
+        public override void RenewalIds()
+        {
+            for (int i = 0; i < Notis.Count; ++i)
+            {
+                Notis[i].NotiId = ID_PREINDEX + i;
+            }
+        }
+
+        public override void EditList(Noti item, EditType type)
+        {
+            switch (type)
+            {
+                case EditType.Add:
+                    item.NotiId = ID_PREINDEX + Notis.Count;
+
+                    Notis.Add(item);
+                    Notis.Sort(SortNotis);
+                    break;
+                case EditType.Remove:
+                    Notis.Remove(Notis.Find(x => x.NotiId.Equals(item.NotiId)));
+                    break;
+                case EditType.Edit:
+                    var index = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
+
+                    Notis[index] = item;
+                    Notis[index].UpdateTime();
+                    break;
+                default:
+                    break;
+            }
+
+            SaveNotis();
+            UpdateScheduledNoti<FurnishingNoti>();
         }
     }
 

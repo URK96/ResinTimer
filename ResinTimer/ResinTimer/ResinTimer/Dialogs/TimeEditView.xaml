@@ -7,7 +7,7 @@
     <StackLayout Orientation="Vertical">
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
             <Entry x:Name="TimeHour" 
-                   WidthRequest="65" MaxLength="2" Keyboard="Numeric" HorizontalTextAlignment="Center"
+                   WidthRequest="65" MaxLength="3" Keyboard="Numeric" HorizontalTextAlignment="Center"
                    Completed="TimeEntry_Completed"/>
             <Label Text=":" FontAttributes="Bold" VerticalTextAlignment="Center"/>
             <Entry x:Name="TimeMinute" 
@@ -17,7 +17,7 @@
         
         <Grid Padding="0, 20, 0, 0">
             <Grid.RowDefinitions>
-                <RowDefinition />
+                <RowDefinition Height="50" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

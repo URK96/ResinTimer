@@ -582,10 +582,10 @@ MIT License</value>
     <value>선택된 항목 없음</value>
   </data>
   <data name="NotiSettingPage_OutOfRangeDialog_Summary" xml:space="preserve">
-    <value>범위에 맞는 레진 개수를 입력해주세요</value>
+    <value>범위에 맞는 값을 입력해주세요</value>
   </data>
   <data name="NotiSettingPage_OutOfRangeDialog_Title" xml:space="preserve">
-    <value>범위 오류</value>
+    <value>입력 범위 오류</value>
   </data>
   <data name="NotiSettingPage_Title" xml:space="preserve">
     <value>알림 설정</value>
@@ -640,6 +640,12 @@ MIT License</value>
   </data>
   <data name="NowUTC_PreLabel" xml:space="preserve">
     <value>현재 시간대</value>
+  </data>
+  <data name="RealmCurrencyNotiSettingPage_AddDialog_Summary" xml:space="preserve">
+    <value>알림을 받고 싶은 선계 화폐 비율을 입력 해주세요</value>
+  </data>
+  <data name="RealmCurrencyNotiSettingPage_AddDialog_Title" xml:space="preserve">
+    <value>알림 항목 추가</value>
   </data>
   <data name="RealmCurrencyTimerPage_Caution" xml:space="preserve">
     <value>입력과 서버의 차이로 인해 시간 차이가 발생할 수 있습니다.</value>

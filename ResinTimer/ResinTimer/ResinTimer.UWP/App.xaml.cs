@@ -152,6 +152,7 @@ namespace ResinTimer.UWP
                 var assembliesToInclude = new List<Assembly>
                 {
                     typeof(Syncfusion.SfGauge.XForms.UWP.SfGaugeRenderer).GetTypeInfo().Assembly,
+                    typeof(Syncfusion.SfNumericUpDown.XForms.UWP.SfNumericUpDownRenderer).GetTypeInfo().Assembly,
                     typeof(Syncfusion.SfNumericUpDown.XForms.UWP.SfNumericUpDownRenderer).GetTypeInfo().Assembly
                 };
                 assembliesToInclude.AddRange(Rg.Plugins.Popup.Popup.GetExtraAssemblies());

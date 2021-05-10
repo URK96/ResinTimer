@@ -6,9 +6,13 @@
              x:Class="ResinTimer.Dialogs.ValueSimpleEditView">
 
     <StackLayout Orientation="Vertical">
-        <numeric:SfNumericUpDown x:Name="ValueUpDown" Margin="0, 10, 0, 0" HorizontalOptions="CenterAndExpand"
+        <!--<numeric:SfNumericUpDown x:Name="ValueUpDown" Margin="0, 10, 0, 0" HorizontalOptions="CenterAndExpand"
                                  MaximumDecimalDigits="0" TextAlignment="Center"
-                                 SelectAllOnFocus="True" SpinValidation="Default"/>
+                                 SelectAllOnFocus="True" SpinValidation="Default"/>-->
+       
+        <Entry x:Name="ValueUpDown" Margin="0, 10, 0, 0" HorizontalOptions="CenterAndExpand"
+               HorizontalTextAlignment="Center" Keyboard="Numeric"
+               TextChanged="ValueUpDown_TextChanged" />
 
         <Grid Padding="0, 20, 0, 0">
             <Grid.RowDefinitions>

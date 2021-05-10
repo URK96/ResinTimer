@@ -18,7 +18,11 @@ namespace ResinTimer.Dialogs
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ValueSimpleEditView : ContentView
     {
-        public SfNumericUpDown SfUpDown => ValueUpDown;
+        //public SfNumericUpDown SfUpDown => ValueUpDown;
+        public Entry SfUpDown => ValueUpDown;
+
+        int minValue = 0;
+        int maxValue = 0;
 
         internal virtual void ApplyValue() { }
 
@@ -26,9 +30,16 @@ namespace ResinTimer.Dialogs
         {
             InitializeComponent();
 
-            ValueUpDown.Maximum = max;
-            ValueUpDown.Minimum = min;
-            ValueUpDown.Value = initValue;
+            // SfNumericUpDown is crashing on UWP
+            // Restore this code when this issue solve
+
+            //ValueUpDown.Maximum = max;
+            //ValueUpDown.Minimum = min;
+            //ValueUpDown.Value = initValue;
+
+            minValue = min;
+            maxValue = max;
+            ValueUpDown.Text = initValue.ToString();
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -65,6 +76,27 @@ namespace ResinTimer.Dialogs
                 await button.ScaleTo(1.0, 100, Easing.SinInOut);
             }
             catch { }
+        }
+
+        private void ValueUpDown_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var entry = sender as Entry;
+
+            if (!int.TryParse(e.NewTextValue, out int input))
+            {
+                entry.Text = e.OldTextValue;
+            }
+            else
+            {
+                if (input < minValue)
+                {
+                    entry.Text = minValue.ToString();
+                }
+                else if (input > maxValue)
+                {
+                    entry.Text = maxValue.ToString();
+                }
+            }
         }
     }
 }

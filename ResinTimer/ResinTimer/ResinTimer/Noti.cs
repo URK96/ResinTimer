@@ -74,6 +74,7 @@ namespace ResinTimer
         public RealmCurrencyNoti(int percentage)
         {
             Percentage = percentage;
+            NotiId = RealmCurrencyNotiManager.ID_PREINDEX + Percentage;
 
             try
             {

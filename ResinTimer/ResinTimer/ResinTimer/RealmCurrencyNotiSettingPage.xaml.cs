@@ -66,8 +66,8 @@ namespace ResinTimer
 
         private async void ShowAddItemDialog()
         {
-            var title = AppResources.NotiSettingPage_AddDialog_Title;
-            var summary = $"{AppResources.NotiSettingPage_AddDialog_Summary} (1 ~ {ResinEnvironment.MAX_RESIN})";
+            var title = AppResources.RealmCurrencyNotiSettingPage_AddDialog_Title;
+            var summary = $"{AppResources.RealmCurrencyNotiSettingPage_AddDialog_Summary} (1 ~ 100)";
             var result = await DisplayPromptAsync(title, summary, AppResources.Dialog_Ok, AppResources.Dialog_Cancel, null, -1, Keyboard.Numeric, string.Empty);
 
             if (result == null)

@@ -29,8 +29,6 @@
     <MtouchDebug>true</MtouchDebug>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
-    <CodesignKey>Apple Distribution: Jin Hyeok Choi (6Y79X3343W)</CodesignKey>
-    <CodesignProvision>ResinTimer</CodesignProvision>
     <MtouchFastDev>false</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
@@ -467,6 +465,54 @@
     <ImageAsset Include="Assets.xcassets\fractured_fruit_data.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerRealmCurrency_1.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerRealmCurrency_2.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerRealmCurrency_3.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerFurnishing_1.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerFurnishing_2.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerExpedition_2.png.imageset\Manual_TimerExpedition_21.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerFurnishing_1.png.imageset\Manual_TimerFurnishing_1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerFurnishing_2.png.imageset\Manual_TimerFurnishing_2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerGadget_2.png.imageset\Manual_TimerGadget_21.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerGatheringItem_2.png.imageset\Manual_TimerGatheringItem_21.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerRealmCurrency_1.png.imageset\Manual_TimerRealmCurrency_1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerRealmCurrency_2.png.imageset\Manual_TimerRealmCurrency_2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerRealmCurrency_3.png.imageset\Manual_TimerRealmCurrency_3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_1.png.imageset\Manual_TimerResin_12.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_2.png.imageset\Manual_TimerResin_21.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_3.png.imageset\Manual_TimerResin_3.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\realm_currency.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -506,34 +552,16 @@
     <ImageAsset Include="Assets.xcassets\portable_waypoint.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_2.png.imageset\2021-03-14_02-48-27후.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_3.png.imageset\20210220_165215000_iOS2.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerResin_3.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerExpedition_1.png.imageset\20210220_165316000_iOS.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerExpedition_2.png.imageset\20210220_165319000_iOS.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerGadget_1.png.imageset\20210220_165340000_iOS.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerGadget_2.png.imageset\20210220_165348000_iOS.png">
-      <Visible>false</Visible>
-    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerGatheringItem_1.png.imageset\20210220_165325000_iOS.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerGatheringItem_2.png.imageset\20210220_165328000_iOS.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Manual_TimerResin_1.png.imageset\2021-03-14_02-48-27-오후.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerResin_1.png.imageset\Contents.json">

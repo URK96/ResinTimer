@@ -29,7 +29,7 @@
                      Orientation="Vertical">
 
             <Label x:Name="CautionResinOnlyLabel" Margin="0, 0, 0, 0"
-                   Text="{x:Static resources:AppResources.RealmCurrencyTimerPage_Caution}" HorizontalTextAlignment="Center" TextColor="OrangeRed" />
+                   Text="{x:Static resources:AppResources.RealmCurrencyTimerPage_Caution}" HorizontalTextAlignment="Center" TextColor="OrangeRed" FontSize="Small" />
 
             <Label x:Name="RemainTimeLabel"
                    Text="{x:Static resources:AppResources.RealmCurrency_RemainTimeLabel}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" />

@@ -54,13 +54,13 @@ namespace ResinTimer
                     ManualContent.Add(new HowToUseContent("Manual_TimerGatheringItem_1.png", AppResources.HowToUse_Category_Timer_GatheringItem_1));
                     ManualContent.Add(new HowToUseContent("Manual_TimerGatheringItem_2.png", AppResources.HowToUse_Category_Timer_GatheringItem_2));
                     break;
-                case ManualCategory.TimerFurnishing:
-                    ManualContent.Add(new HowToUseContent("Manual_TimerFurnishing_1.png", AppResources.HowToUse_Category_Timer_Furnishing_1));
-                    ManualContent.Add(new HowToUseContent("Manual_TimerFurnishing_2.png", AppResources.HowToUse_Category_Timer_Furnishing_2));
-                    break;
                 case ManualCategory.TimerGadget:
                     ManualContent.Add(new HowToUseContent("Manual_TimerGadget_1.png", AppResources.HowToUse_Category_Timer_Gadget_1));
                     ManualContent.Add(new HowToUseContent("Manual_TimerGadget_2.png", AppResources.HowToUse_Category_Timer_Gadget_2));
+                    break;
+                case ManualCategory.TimerFurnishing:
+                    ManualContent.Add(new HowToUseContent("Manual_TimerFurnishing_1.png", AppResources.HowToUse_Category_Timer_Furnishing_1));
+                    ManualContent.Add(new HowToUseContent("Manual_TimerFurnishing_2.png", AppResources.HowToUse_Category_Timer_Furnishing_2));
                     break;
                 case ManualCategory.TimerTalentBook:
                     ManualContent.Add(new HowToUseContent("Manual_TimerTalentBook_1.png", AppResources.HowToUse_Category_Timer_TalentBook_1));

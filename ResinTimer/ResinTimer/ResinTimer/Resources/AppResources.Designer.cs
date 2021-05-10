@@ -1495,7 +1495,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Resin count out of range과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Input value out of range과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string NotiSettingPage_OutOfRangeDialog_Title {
             get {
@@ -1680,6 +1680,24 @@ namespace ResinTimer.Resources {
         public static string RealmCurrency_TrustRank {
             get {
                 return ResourceManager.GetString("RealmCurrency_TrustRank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Enter the number of currency ratio you would like to be notified of.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string RealmCurrencyNotiSettingPage_AddDialog_Summary {
+            get {
+                return ResourceManager.GetString("RealmCurrencyNotiSettingPage_AddDialog_Summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Add Noti Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string RealmCurrencyNotiSettingPage_AddDialog_Title {
+            get {
+                return ResourceManager.GetString("RealmCurrencyNotiSettingPage_AddDialog_Title", resourceCulture);
             }
         }
         

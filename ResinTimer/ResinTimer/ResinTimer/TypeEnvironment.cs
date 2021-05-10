@@ -234,7 +234,7 @@ namespace ResinTimer
     public static class FurnishingEnvironment
     {
         public enum FurnishType { Rarity2, Rarity3, Rarity4 }
-        public static double[] resetTimeList = { 0.1, 14, 16 }; // Rarity : 2 3 4
+        public static double[] resetTimeList = { 12, 14, 16 }; // Rarity : 2 3 4
     }
 
     public static class TalentEnvironment

@@ -586,7 +586,7 @@ MIT License</value>
     <value>Please enter a number in scope</value>
   </data>
   <data name="NotiSettingPage_OutOfRangeDialog_Title" xml:space="preserve">
-    <value>Resin count out of range</value>
+    <value>Input value out of range</value>
   </data>
   <data name="NotiSettingPage_Title" xml:space="preserve">
     <value>Noti Setting</value>
@@ -641,6 +641,12 @@ MIT License</value>
   </data>
   <data name="NowUTC_PreLabel" xml:space="preserve">
     <value>Now Region UTC</value>
+  </data>
+  <data name="RealmCurrencyNotiSettingPage_AddDialog_Summary" xml:space="preserve">
+    <value>Enter the number of currency ratio you would like to be notified of.</value>
+  </data>
+  <data name="RealmCurrencyNotiSettingPage_AddDialog_Title" xml:space="preserve">
+    <value>Add Noti Item</value>
   </data>
   <data name="RealmCurrencyTimerPage_Caution" xml:space="preserve">
     <value>Can occur difference between input and server time</value>

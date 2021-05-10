@@ -23,8 +23,10 @@ namespace ResinTimer.Dialogs
         {
             base.ApplyValue();
 
+            var inputValue = int.Parse(SfUpDown.Text);
+
             RCEnv.lastInputTime = DateTime.Now.ToString(AppEnv.dtCulture);
-            RCEnv.currency = Convert.ToInt32((double)SfUpDown.Value);
+            RCEnv.currency = inputValue; //Convert.ToInt32((double)SfUpDown.Value);
             RCEnv.addCount = 0;
 
             RCEnv.CalcRemainTime();

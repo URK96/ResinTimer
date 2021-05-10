@@ -190,7 +190,7 @@ namespace ResinTimer
 
     public class RealmCurrencyNotiManager : NotiManager
     {
-        const int ID_PREINDEX = 500;
+        internal const int ID_PREINDEX = 500;
 
         public RealmCurrencyNotiManager() : base()
         {

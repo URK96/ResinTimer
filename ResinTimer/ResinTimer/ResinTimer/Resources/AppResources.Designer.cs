@@ -887,7 +887,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   Resin Timer contains bottom buttons to calculate resin.
         ///Press buttons which you want to calculation.
-        ///&lt;10, &lt;20 Buttons perform calculation less than 10 and less than 20 respectively.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///&lt;10, &lt;20, &lt;40 Buttons perform calculation less than 10, 20, 40 respectively.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Timer_Resin_2 {
             get {

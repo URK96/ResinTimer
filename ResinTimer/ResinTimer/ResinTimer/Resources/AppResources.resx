@@ -410,7 +410,7 @@ However, the exact time is not shown in In-game, so there may be a difference.</
   <data name="HowToUse_Category_Timer_Resin_2" xml:space="preserve">
     <value>Resin Timer contains bottom buttons to calculate resin.
 Press buttons which you want to calculation.
-&lt;10, &lt;20 Buttons perform calculation less than 10 and less than 20 respectively.</value>
+&lt;10, &lt;20, &lt;40 Buttons perform calculation less than 10, 20, 40 respectively.</value>
   </data>
   <data name="HowToUse_Category_Timer_Resin_3" xml:space="preserve">
     <value>Q.E. button allows user to adjust the number of resins without touching the time.

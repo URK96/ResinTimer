@@ -30,6 +30,8 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>false</MtouchFastDev>
+    <CodesignKey>Apple Distribution: Jin Hyeok Choi (6Y79X3343W)</CodesignKey>
+    <CodesignProvision>ResinTimer</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>

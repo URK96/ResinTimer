@@ -178,6 +178,7 @@
     <Content Include="Element_Geo.png" />
     <Content Include="Element_Hydro.png" />
     <Content Include="Element_Pyro.png" />
+    <Content Include="fractured_fruit_data.png" />
     <Content Include="furnishing_icon.png" />
     <Content Include="furnishing_rarity_2.png" />
     <Content Include="furnishing_rarity_3.png" />

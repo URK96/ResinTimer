@@ -93,14 +93,16 @@ namespace ResinTimer
                     }
                 }
 
-                var resinNotiManager = new ResinNotiManager();
-                resinNotiManager.UpdateNotisTime();
+                //var resinNotiManager = new ResinNotiManager();
+                //resinNotiManager.UpdateNotisTime();
 
-                var expNotiManager = new ExpeditionNotiManager();
-                expNotiManager.UpdateScheduledNoti<ExpeditionNoti>();
+                //var expNotiManager = new ExpeditionNotiManager();
+                //expNotiManager.UpdateScheduledNoti<ExpeditionNoti>();
 
-                var giNotiManager = new GatheringItemNotiManager();
-                giNotiManager.UpdateScheduledNoti<GatheringItemNoti>();
+                //var giNotiManager = new GatheringItemNotiManager();
+                //giNotiManager.UpdateScheduledNoti<GatheringItemNoti>();
+
+                DependencyService.Get<IScheduledNoti>().ScheduleAllNoti();
             }
             else
             {

@@ -178,6 +178,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Checklist_Type_Weekly" xml:space="preserve">
     <value>Weekly</value>
   </data>
+  <data name="CurrencySimpleEditDialog_Title" xml:space="preserve">
+    <value>Simple Edit Currency</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
@@ -250,6 +253,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="EditPage_TotalRemainTimeLabel" xml:space="preserve">
     <value>Remain Total Restore Time</value>
   </data>
+  <data name="EditRealmCurrencySetting_Title" xml:space="preserve">
+    <value>Realm Setting</value>
+  </data>
   <data name="ExpeditionMain_Title" xml:space="preserve">
     <value>Expedition</value>
   </data>
@@ -267,6 +273,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   </data>
   <data name="Expedition_Type_Mora" xml:space="preserve">
     <value>Mora</value>
+  </data>
+  <data name="FurnishingItemTimer_Complete" xml:space="preserve">
+    <value>Finished</value>
   </data>
   <data name="FurnishingTimerPage_Title" xml:space="preserve">
     <value>Furnishing</value>
@@ -341,10 +350,22 @@ Expedition Timer allow up to 5 items.</value>
   <data name="HowToUse_Category_Timer_Expedition_2" xml:space="preserve">
     <value>This page allow edit expedition item for adding or editing. 
 Select expedition type &amp; time and time buff optioin.
-For finish editing, click apply button.</value>
+For finish editing, click top-right apply button.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Furnishing" xml:space="preserve">
+    <value>Furnishing Timer</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Furnishing_1" xml:space="preserve">
+    <value>Furnishing Timer show each furnishing complete time remaining &amp; expected complete time. You can Add / Modify / Remove / Reset furnishing item with top toolbar.
+Furnishing Timer allow up to 5 items.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_Furnishing_2" xml:space="preserve">
+    <value>This page allow edit furnishing item for adding or editing. 
+Select furnishing item rank and enter a note. Note is optional.
+For finish editing, click top-right apply button.</value>
   </data>
   <data name="HowToUse_Category_Timer_Gadget" xml:space="preserve">
-    <value>Gadget Item</value>
+    <value>Gadget Timer</value>
   </data>
   <data name="HowToUse_Category_Timer_Gadget_1" xml:space="preserve">
     <value>Gadget Timer show each gadget's time remaining until reuse &amp; expected reusable time. You can Add / Modify / Remove / Reset gadget item with top toolbar.
@@ -353,10 +374,10 @@ Gadget Timer allow up to 500 items.</value>
   <data name="HowToUse_Category_Timer_Gadget_2" xml:space="preserve">
     <value>This page allow edit gadget item for adding or editing. 
 Select gadget type and enter a note. Note is optional.
-For finish editing, click apply button.</value>
+For finish editing, click top-right apply button.</value>
   </data>
   <data name="HowToUse_Category_Timer_GatheringItem" xml:space="preserve">
-    <value>Gathering Item</value>
+    <value>Gathering Item Timer</value>
   </data>
   <data name="HowToUse_Category_Timer_GatheringItem_1" xml:space="preserve">
     <value>Gathering Item Timer show each collectable item's recovery time remaining &amp; expected recovery time. You can Add / Modify / Remove / Reset gathering item with top toolbar.
@@ -365,7 +386,20 @@ Gathering Item Timer allow up to 500 items.</value>
   <data name="HowToUse_Category_Timer_GatheringItem_2" xml:space="preserve">
     <value>This page allow edit gathering item for adding or editing. 
 Select gathering item type and enter a note. Note is optional.
-For finish editing, click apply button.</value>
+For finish editing, click top-right apply button.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_RealmCurrency" xml:space="preserve">
+    <value>Realm Currency Timer</value>
+  </data>
+  <data name="HowToUse_Category_Timer_RealmCurrency_1" xml:space="preserve">
+    <value>Realm Currency Timer screen show current RC count &amp; fully restore expected time and etc. Also, you can perform quick edit with bottom buttons.
+However, the exact time is not shown in In-game, so there may be a difference.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_RealmCurrency_2" xml:space="preserve">
+    <value>Realm Currency Timer can be set recovery rate and maximum size by setting Realm Rank and Trust Rank. You can adjust it according to your Realm environment.</value>
+  </data>
+  <data name="HowToUse_Category_Timer_RealmCurrency_3" xml:space="preserve">
+    <value>Realm Currency Timer also customize notification. You can set the RC ratio to receive notifications.</value>
   </data>
   <data name="HowToUse_Category_Timer_Resin" xml:space="preserve">
     <value>Resin Timer</value>
@@ -419,6 +453,14 @@ You can run app by touching resin icon. Also, you can refresh resin status by to
     <value>Talent Book Widget show talent book which you can acquire on each location.
 Bottom buttons can change location. Also, you can see characters who use talent book by touching talent book image.
 You can refresh talent book status by touching layout except buttons and talent book image.</value>
+  </data>
+  <data name="HowToUse_Category_Widget_WeaponAscension" xml:space="preserve">
+    <value>WA Widget</value>
+  </data>
+  <data name="HowToUse_Category_Widget_WeaponAscension_1" xml:space="preserve">
+    <value>Weapon Ascension Widget show weapon ascension material which you can acquire on each location.
+Bottom buttons can change location.
+You can refresh weapon ascension material status by touching layout except buttons and material image.</value>
   </data>
   <data name="InfoPage_AppName" xml:space="preserve">
     <value>Resin Timer</value>
@@ -483,6 +525,9 @@ MIT License</value>
   <data name="MasterDetail_MasterList_AppInfo" xml:space="preserve">
     <value>App Info</value>
   </data>
+  <data name="MasterDetail_MasterList_Event_DailyCheckIn" xml:space="preserve">
+    <value>Daily Check-In (Event)</value>
+  </data>
   <data name="MasterDetail_MasterList_Expedition" xml:space="preserve">
     <value>Expedition</value>
   </data>
@@ -497,6 +542,9 @@ MIT License</value>
   </data>
   <data name="MasterDetail_MasterList_HowToUse" xml:space="preserve">
     <value>How To Use</value>
+  </data>
+  <data name="MasterDetail_MasterList_RealmCurrency" xml:space="preserve">
+    <value>Realm Currency</value>
   </data>
   <data name="MasterDetail_MasterList_Resin" xml:space="preserve">
     <value>Resin</value>
@@ -579,6 +627,12 @@ MIT License</value>
   <data name="Noti_QuickAction_RunGenshinApp" xml:space="preserve">
     <value>Run Genshin</value>
   </data>
+  <data name="Noti_RealmCurrency_Message" xml:space="preserve">
+    <value>charge is complete.</value>
+  </data>
+  <data name="Noti_RealmCurrency_Title" xml:space="preserve">
+    <value>Realm Currency Noti</value>
+  </data>
   <data name="NowLocation_PreLabel" xml:space="preserve">
     <value>Now Location</value>
   </data>
@@ -587,6 +641,51 @@ MIT License</value>
   </data>
   <data name="NowUTC_PreLabel" xml:space="preserve">
     <value>Now Region UTC</value>
+  </data>
+  <data name="RealmCurrencyTimerPage_Caution" xml:space="preserve">
+    <value>Can occur difference between input and server time</value>
+  </data>
+  <data name="RealmCurrency_NowCurrency" xml:space="preserve">
+    <value>Now Currency</value>
+  </data>
+  <data name="RealmCurrency_RealmRank" xml:space="preserve">
+    <value>Realm Rank</value>
+  </data>
+  <data name="RealmCurrency_RemainTimeLabel" xml:space="preserve">
+    <value>Until the coins are full</value>
+  </data>
+  <data name="RealmCurrency_TrustRank" xml:space="preserve">
+    <value>Trust Rank</value>
+  </data>
+  <data name="Realm_Rank_1" xml:space="preserve">
+    <value>Bare-Bones</value>
+  </data>
+  <data name="Realm_Rank_10" xml:space="preserve">
+    <value>Fit for a King</value>
+  </data>
+  <data name="Realm_Rank_2" xml:space="preserve">
+    <value>Humble Abode</value>
+  </data>
+  <data name="Realm_Rank_3" xml:space="preserve">
+    <value>Cozy</value>
+  </data>
+  <data name="Realm_Rank_4" xml:space="preserve">
+    <value>Queen-Size</value>
+  </data>
+  <data name="Realm_Rank_5" xml:space="preserve">
+    <value>Elegant</value>
+  </data>
+  <data name="Realm_Rank_6" xml:space="preserve">
+    <value>Exquisite</value>
+  </data>
+  <data name="Realm_Rank_7" xml:space="preserve">
+    <value>Extraordinary</value>
+  </data>
+  <data name="Realm_Rank_8" xml:space="preserve">
+    <value>Stately</value>
+  </data>
+  <data name="Realm_Rank_9" xml:space="preserve">
+    <value>Luxury</value>
   </data>
   <data name="ResinSimpleEditDialog_Title" xml:space="preserve">
     <value>Simple Edit Resin</value>

@@ -2,6 +2,7 @@
 
 using System;
 
+using RCEnv = ResinTimer.RealmCurrencyEnvironment;
 using ExpEnv = ResinTimer.ExpeditionEnvironment;
 using GIEnv = ResinTimer.GatheringItemEnvironment;
 using GEnv = ResinTimer.GadgetEnvironment;
@@ -61,6 +62,51 @@ namespace ResinTimer
         public override string GetNotiTitle() => AppResources.NotiTitle;
 
         public override string GetNotiText() => $"{Resin} {AppResources.NotiText}";
+    }
+
+    public class RealmCurrencyNoti : Noti
+    {
+        public int Percentage { get; set; }
+        public int Interval { get; set; }
+        public int TargetCurrency => RCEnv.MaxRC * Percentage / 100;
+        public string NotiValueString => $"{Percentage} % ({TargetCurrency})";
+
+        public RealmCurrencyNoti(int percentage)
+        {
+            Percentage = percentage;
+
+            try
+            {
+                UpdateTime();
+            }
+            catch (Exception)
+            {
+                RCEnv.LoadValues();
+                UpdateTime();
+            }
+        }
+
+        private void CalcInterval()
+        {
+            int remains = RCEnv.MaxRC - TargetCurrency;
+
+            Interval = remains / RCEnv.RCRate;
+        }
+
+        public override void UpdateTime()
+        {
+            CalcInterval();
+
+#if TEST
+            NotiTime = RCEnv.endTime.AddMinutes(-Interval);
+#else
+            NotiTime = RCEnv.endTime.AddHours(-Interval);
+#endif
+        }
+
+        public override string GetNotiTitle() => AppResources.Noti_RealmCurrency_Message;
+
+        public override string GetNotiText() => $"{Percentage}% {AppResources.Noti_RealmCurrency_Message}";
     }
 
     public class ExpeditionNoti : Noti
@@ -166,7 +212,7 @@ namespace ResinTimer
         public GEnv.GadgetType ItemType { get; set; }
         public string ItemNote { get; set; } = string.Empty;
 
-        public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{GetRemainTimeHM()} {AppResources.GatheringItemTimerPage_Remain}" : AppResources.GatheringItemTimer_ResetComplete)}";
+        public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{GetRemainTimeHM()} {AppResources.GatheringItemTimerPage_Remain}" : AppResources.FurnishingItemTimer_Complete)}";
         public string TypeString => ItemType switch
         {
             GEnv.GadgetType.ParametricTransformer => AppResources.Gadget_Type_ParametricTransformer,

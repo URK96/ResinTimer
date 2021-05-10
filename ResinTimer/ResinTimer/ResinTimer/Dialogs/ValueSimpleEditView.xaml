@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
-             x:Class="ResinTimer.Dialogs.ResinSimpleEditView">
+             x:Class="ResinTimer.Dialogs.ValueSimpleEditView">
+
     <StackLayout Orientation="Vertical">
-        <numeric:SfNumericUpDown x:Name="ResinUpDown" Margin="0, 10, 0, 0" HorizontalOptions="CenterAndExpand"
+        <numeric:SfNumericUpDown x:Name="ValueUpDown" Margin="0, 10, 0, 0" HorizontalOptions="CenterAndExpand"
                                  MaximumDecimalDigits="0" TextAlignment="Center"
                                  SelectAllOnFocus="True" SpinValidation="Default"/>
 
@@ -26,4 +27,5 @@
                             Pressed="ButtonPressed" Released="ButtonReleased" Clicked="Button_Clicked"/>
         </Grid>
     </StackLayout>
+
 </ContentView>

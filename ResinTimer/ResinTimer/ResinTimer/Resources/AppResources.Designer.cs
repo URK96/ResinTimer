@@ -242,6 +242,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Simple Edit Currency과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string CurrencySimpleEditDialog_Title {
+            get {
+                return ResourceManager.GetString("CurrencySimpleEditDialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Delete과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Delete {
@@ -458,6 +467,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Realm Setting과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string EditRealmCurrencySetting_Title {
+            get {
+                return ResourceManager.GetString("EditRealmCurrencySetting_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Complete과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Expedition_Complete {
@@ -535,6 +553,15 @@ namespace ResinTimer.Resources {
         public static string Furnishing_Rarity_4 {
             get {
                 return ResourceManager.GetString("Furnishing_Rarity_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Finished과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string FurnishingItemTimer_Complete {
+            get {
+                return ResourceManager.GetString("FurnishingItemTimer_Complete", resourceCulture);
             }
         }
         
@@ -704,7 +731,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   This page allow edit expedition item for adding or editing. 
         ///Select expedition type &amp; time and time buff optioin.
-        ///For finish editing, click apply button.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///For finish editing, click top-right apply button.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Timer_Expedition_2 {
             get {
@@ -713,7 +740,37 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Gadget Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Furnishing Timer과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Furnishing {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Furnishing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Furnishing Timer show each furnishing complete time remaining &amp; expected complete time. You can Add / Modify / Remove / Reset furnishing item with top toolbar.
+        ///Furnishing Timer allow up to 5 items.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Furnishing_1 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Furnishing_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   This page allow edit furnishing item for adding or editing. 
+        ///Select furnishing item rank and enter a note. Note is optional.
+        ///For finish editing, click top-right apply button.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_Furnishing_2 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_Furnishing_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Gadget Timer과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Timer_Gadget {
             get {
@@ -734,7 +791,7 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   This page allow edit gadget item for adding or editing. 
         ///Select gadget type and enter a note. Note is optional.
-        ///For finish editing, click apply button.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///For finish editing, click top-right apply button.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Timer_Gadget_2 {
             get {
@@ -743,7 +800,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Gathering Item과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Gathering Item Timer과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Timer_GatheringItem {
             get {
@@ -764,11 +821,48 @@ namespace ResinTimer.Resources {
         /// <summary>
         ///   This page allow edit gathering item for adding or editing. 
         ///Select gathering item type and enter a note. Note is optional.
-        ///For finish editing, click apply button.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///For finish editing, click top-right apply button.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string HowToUse_Category_Timer_GatheringItem_2 {
             get {
                 return ResourceManager.GetString("HowToUse_Category_Timer_GatheringItem_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Realm Currency Timer과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_RealmCurrency {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_RealmCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Realm Currency Timer screen show current RC count &amp; fully restore expected time and etc. Also, you can perform quick edit with bottom buttons.
+        ///However, the exact time is not shown in In-game, so there may be a difference.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_RealmCurrency_1 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_RealmCurrency_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Realm Currency Timer can be set recovery rate and maximum size by setting Realm Rank and Trust Rank. You can adjust it according to your Realm environment.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_RealmCurrency_2 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_RealmCurrency_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Realm Currency Timer also customize notification. You can set the RC ratio to receive notifications.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Timer_RealmCurrency_3 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Timer_RealmCurrency_3", resourceCulture);
             }
         }
         
@@ -906,6 +1000,26 @@ namespace ResinTimer.Resources {
         public static string HowToUse_Category_Widget_TalentBook_1 {
             get {
                 return ResourceManager.GetString("HowToUse_Category_Widget_TalentBook_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   WA Widget과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Widget_WeaponAscension {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Widget_WeaponAscension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Weapon Ascension Widget show weapon ascension material which you can acquire on each location.
+        ///Bottom buttons can change location.
+        ///You can refresh weapon ascension material status by touching layout except buttons and material image.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HowToUse_Category_Widget_WeaponAscension_1 {
+            get {
+                return ResourceManager.GetString("HowToUse_Category_Widget_WeaponAscension_1", resourceCulture);
             }
         }
         
@@ -1093,6 +1207,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Daily Check-In (Event)과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_Event_DailyCheckIn {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_Event_DailyCheckIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Expedition과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string MasterDetail_MasterList_Expedition {
@@ -1134,6 +1257,15 @@ namespace ResinTimer.Resources {
         public static string MasterDetail_MasterList_HowToUse {
             get {
                 return ResourceManager.GetString("MasterDetail_MasterList_HowToUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Realm Currency과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_RealmCurrency {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_RealmCurrency", resourceCulture);
             }
         }
         
@@ -1260,6 +1392,24 @@ namespace ResinTimer.Resources {
         public static string Noti_QuickAction_RunGenshinApp {
             get {
                 return ResourceManager.GetString("Noti_QuickAction_RunGenshinApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   charge is complete.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_RealmCurrency_Message {
+            get {
+                return ResourceManager.GetString("Noti_RealmCurrency_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Realm Currency Noti과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_RealmCurrency_Title {
+            get {
+                return ResourceManager.GetString("Noti_RealmCurrency_Title", resourceCulture);
             }
         }
         
@@ -1404,6 +1554,141 @@ namespace ResinTimer.Resources {
         public static string NowUTC_PreLabel {
             get {
                 return ResourceManager.GetString("NowUTC_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Bare-Bones과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Realm_Rank_1 {
+            get {
+                return ResourceManager.GetString("Realm_Rank_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Fit for a King과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Realm_Rank_10 {
+            get {
+                return ResourceManager.GetString("Realm_Rank_10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Humble Abode과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Realm_Rank_2 {
+            get {
+                return ResourceManager.GetString("Realm_Rank_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cozy과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Realm_Rank_3 {
+            get {
+                return ResourceManager.GetString("Realm_Rank_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Queen-Size과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Realm_Rank_4 {
+            get {
+                return ResourceManager.GetString("Realm_Rank_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Elegant과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Realm_Rank_5 {
+            get {
+                return ResourceManager.GetString("Realm_Rank_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Exquisite과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Realm_Rank_6 {
+            get {
+                return ResourceManager.GetString("Realm_Rank_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Extraordinary과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Realm_Rank_7 {
+            get {
+                return ResourceManager.GetString("Realm_Rank_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Stately과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Realm_Rank_8 {
+            get {
+                return ResourceManager.GetString("Realm_Rank_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Luxury과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Realm_Rank_9 {
+            get {
+                return ResourceManager.GetString("Realm_Rank_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Now Currency과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string RealmCurrency_NowCurrency {
+            get {
+                return ResourceManager.GetString("RealmCurrency_NowCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Realm Rank과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string RealmCurrency_RealmRank {
+            get {
+                return ResourceManager.GetString("RealmCurrency_RealmRank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Until the coins are full과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string RealmCurrency_RemainTimeLabel {
+            get {
+                return ResourceManager.GetString("RealmCurrency_RemainTimeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Trust Rank과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string RealmCurrency_TrustRank {
+            get {
+                return ResourceManager.GetString("RealmCurrency_TrustRank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Can occur difference between input and server time과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string RealmCurrencyTimerPage_Caution {
+            get {
+                return ResourceManager.GetString("RealmCurrencyTimerPage_Caution", resourceCulture);
             }
         }
         

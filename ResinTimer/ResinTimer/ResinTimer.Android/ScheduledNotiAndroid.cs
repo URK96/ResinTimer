@@ -19,9 +19,11 @@ namespace ResinTimer.Droid
         public void CancelAll()
         {
             Cancel<ResinNoti>();
+            Cancel<RealmCurrencyNoti>();
             Cancel<ExpeditionNoti>();
             Cancel<GatheringItemNoti>();
             Cancel<GadgetNoti>();
+            Cancel<FurnishingNoti>();
         }
 
         public void Cancel<T>() where T : Noti
@@ -44,9 +46,11 @@ namespace ResinTimer.Droid
         public void ScheduleAllNoti()
         {
             Schedule<ResinNoti>();
+            Schedule<RealmCurrencyNoti>();
             Schedule<ExpeditionNoti>();
             Schedule<GatheringItemNoti>();
             Schedule<GadgetNoti>();
+            Schedule<FurnishingNoti>();
         }
 
         public void Schedule<T>() where T : Noti

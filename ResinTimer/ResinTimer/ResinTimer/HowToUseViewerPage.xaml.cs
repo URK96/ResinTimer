@@ -41,6 +41,11 @@ namespace ResinTimer
                     ManualContent.Add(new HowToUseContent("Manual_TimerResin_3.png", AppResources.HowToUse_Category_Timer_Resin_3));
                     ManualContent.Add(new HowToUseContent("Manual_TimerResin_4.png", AppResources.HowToUse_Category_Timer_Resin_4));
                     break;
+                case ManualCategory.TimerRealmCurrency:
+                    ManualContent.Add(new HowToUseContent("Manual_TimerRealmCurrency_1.png", AppResources.HowToUse_Category_Timer_RealmCurrency_1));
+                    ManualContent.Add(new HowToUseContent("Manual_TimerRealmCurrency_2.png", AppResources.HowToUse_Category_Timer_RealmCurrency_2));
+                    ManualContent.Add(new HowToUseContent("Manual_TimerRealmCurrency_3.png", AppResources.HowToUse_Category_Timer_RealmCurrency_3));
+                    break;
                 case ManualCategory.TimerExpedition:
                     ManualContent.Add(new HowToUseContent("Manual_TimerExpedition_1.png", AppResources.HowToUse_Category_Timer_Expedition_1));
                     ManualContent.Add(new HowToUseContent("Manual_TimerExpedition_2.png", AppResources.HowToUse_Category_Timer_Expedition_2));
@@ -48,6 +53,10 @@ namespace ResinTimer
                 case ManualCategory.TimerGatheringItem:
                     ManualContent.Add(new HowToUseContent("Manual_TimerGatheringItem_1.png", AppResources.HowToUse_Category_Timer_GatheringItem_1));
                     ManualContent.Add(new HowToUseContent("Manual_TimerGatheringItem_2.png", AppResources.HowToUse_Category_Timer_GatheringItem_2));
+                    break;
+                case ManualCategory.TimerFurnishing:
+                    ManualContent.Add(new HowToUseContent("Manual_TimerFurnishing_1.png", AppResources.HowToUse_Category_Timer_Furnishing_1));
+                    ManualContent.Add(new HowToUseContent("Manual_TimerFurnishing_2.png", AppResources.HowToUse_Category_Timer_Furnishing_2));
                     break;
                 case ManualCategory.TimerGadget:
                     ManualContent.Add(new HowToUseContent("Manual_TimerGadget_1.png", AppResources.HowToUse_Category_Timer_Gadget_1));
@@ -66,6 +75,9 @@ namespace ResinTimer
                 case ManualCategory.WidgetTalentBook:
                     ManualContent.Add(new HowToUseContent("Manual_WidgetTalentBook_1.png", AppResources.HowToUse_Category_Widget_TalentBook_1));
                     break;
+                case ManualCategory.WidgetWeaponAscension:
+                    ManualContent.Add(new HowToUseContent("Manual_WidgetWeaponAscension_1.png", AppResources.HowToUse_Category_Widget_WeaponAscension_1));
+                    break;
             }
         }
 
@@ -74,13 +86,16 @@ namespace ResinTimer
             var title = mCategory switch
             {
                 ManualCategory.TimerResin => AppResources.HowToUse_Category_Timer_Resin,
+                ManualCategory.TimerRealmCurrency => AppResources.HowToUse_Category_Timer_RealmCurrency,
                 ManualCategory.TimerExpedition => AppResources.HowToUse_Category_Timer_Expedition,
                 ManualCategory.TimerGatheringItem => AppResources.HowToUse_Category_Timer_GatheringItem,
                 ManualCategory.TimerGadget => AppResources.HowToUse_Category_Timer_Gadget,
+                ManualCategory.TimerFurnishing => AppResources.HowToUse_Category_Timer_Furnishing,
                 ManualCategory.TimerTalentBook => AppResources.HowToUse_Category_Timer_TalentBook,
                 ManualCategory.TimerWeaponAscension => AppResources.HowToUse_Category_Timer_WeaponAscension,
                 ManualCategory.WidgetResin => AppResources.HowToUse_Category_Widget_Resin,
                 ManualCategory.WidgetTalentBook => AppResources.HowToUse_Category_Widget_TalentBook,
+                ManualCategory.WidgetWeaponAscension => AppResources.HowToUse_Category_Widget_WeaponAscension,
                 _ => string.Empty
             };
 

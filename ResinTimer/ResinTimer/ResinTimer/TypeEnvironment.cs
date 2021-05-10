@@ -92,6 +92,126 @@ namespace ResinTimer
         }
     }
 
+    public static class RealmCurrencyEnvironment
+    {
+        public const int H_TO_S = 3600;
+        public const int M_TO_S = 60;  // Only use test
+
+        public enum RealmRank
+        {
+            BareBones,
+            HumbleAbode,
+            Cozy,
+            QueenSize,
+            Elegant,
+            Exquisite,
+            Extraordinary,
+            Stately,
+            Luxury,
+            KingFit
+        }
+
+        public static int MaxRC => rcCapacity[trustRank - 1];
+        public static int RCRate => aeRate[(int)realmRank];
+
+        public static RealmRank realmRank = RealmRank.BareBones;
+
+        public static int[] aeRate = { 4, 8, 12, 16, 20, 22, 24, 26, 28, 30 };
+        public static int[] rcCapacity = { 300, 600, 900, 1200, 1400, 1600, 1800, 2000, 2200, 2400 };
+
+        public static DateTime endTime;
+        public static int addCount = 0;
+        public static string lastInputTime;
+        public static TimeSpan totalCountTime;
+        public static TimeSpan oneCountTime;
+
+        public static int currency = 0;
+        public static int trustRank = 1;
+
+        public static void LoadValues()
+        {
+            InitAppLang();
+
+            if (Preferences.ContainsKey(SettingConstants.RC_END_TIME))
+            {
+                string endTimeP = Preferences.Get(SettingConstants.RC_END_TIME, "");
+
+                if (!DateTime.TryParse(endTimeP, dtCulture, System.Globalization.DateTimeStyles.None, out endTime))
+                {
+                    endTime = DateTime.Now;
+                }
+            }
+            else
+            {
+                var now = DateTime.Now;
+
+                Preferences.Set(SettingConstants.RC_END_TIME, now.ToString(dtCulture));
+                endTime = now;
+            }
+
+            lastInputTime = Preferences.Get(SettingConstants.RC_LAST_INPUT_TIME, DateTime.Now.ToString(dtCulture));
+            realmRank = (RealmRank)Preferences.Get(SettingConstants.RC_ADEPTAL_LEVEL, 0);
+            trustRank = Preferences.Get(SettingConstants.RC_TRUST_RANK, 1);
+            currency = Preferences.Get(SettingConstants.RC_COUNT, 0);
+            addCount = Preferences.Get(SettingConstants.RC_ADD_COUNT, 0);
+        }
+
+        public static void CalcRC()
+        {
+            var now = DateTime.Now;
+
+            if (endTime <= now)
+            {
+                currency = MaxRC;
+            }
+            else
+            {
+                var lastDT = DateTime.Parse(lastInputTime, dtCulture);
+
+#if TEST
+                int count = (int)(now - lastDT.AddMinutes(addCount)).TotalSeconds / M_TO_S;
+#else
+                int count = (int)(now - lastDT.AddHours(addCount)).TotalSeconds / H_TO_S;
+#endif
+
+                if (count > 0)
+                {
+                    currency += RCRate * count;
+                    addCount += count;
+                }
+            }
+        }
+
+        public static void CalcRemainTime()
+        {
+            var remainCurrency = MaxRC - currency;
+            var remainCount = remainCurrency / RCRate;
+            var lastDT = DateTime.Parse(lastInputTime, dtCulture);
+
+            remainCount += (remainCurrency % RCRate) == 0 ? 0 : 1;
+
+#if TEST
+            endTime = lastDT.AddMinutes(addCount).AddMinutes(remainCount);
+#else
+            endTime = lastDT.AddHours(addCount).AddHours(remainCount);
+#endif
+        }
+
+        public static void SaveValue()
+        {
+            try
+            {
+                Preferences.Set(SettingConstants.RC_COUNT, currency);
+                Preferences.Set(SettingConstants.RC_ADD_COUNT, addCount);
+                Preferences.Set(SettingConstants.RC_END_TIME, endTime.ToString(dtCulture));
+                Preferences.Set(SettingConstants.RC_LAST_INPUT_TIME, lastInputTime);
+                Preferences.Set(SettingConstants.RC_ADEPTAL_LEVEL, (int)realmRank);
+                Preferences.Set(SettingConstants.RC_TRUST_RANK, trustRank);
+            }
+            catch { }
+        }
+    }
+
     public static class ExpeditionEnvironment
     {
         public enum ExpeditionType { Chunk = 0, Ingredient, Mora }
@@ -114,7 +234,7 @@ namespace ResinTimer
     public static class FurnishingEnvironment
     {
         public enum FurnishType { Rarity2, Rarity3, Rarity4 }
-        public static double[] resetTimeList = { 12, 14, 16 }; // Rarity : 2 3 4
+        public static double[] resetTimeList = { 0.1, 14, 16 }; // Rarity : 2 3 4
     }
 
     public static class TalentEnvironment

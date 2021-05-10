@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
-             x:Class="ResinTimer.TimerPages.ResinTimerPage"
-             Title="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}"
+             x:Class="ResinTimer.TimerPages.RealmCurrencyTimerPage"
+             Title="{x:Static resources:AppResources.MasterDetail_MasterList_RealmCurrency}"
              Style="{StaticResource PageStyle}">
 
     <ContentPage.ToolbarItems>
@@ -28,11 +28,11 @@
                      AbsoluteLayout.LayoutBounds="0.5, 0.03"
                      Orientation="Vertical">
 
-            <Label x:Name="CautionResinOnlyLabel" Margin="0, 0, 0, 0" IsVisible="true"
-                   Text="{x:Static resources:AppResources.Caution_ResinInput}" HorizontalTextAlignment="Center" TextColor="OrangeRed" />
+            <Label x:Name="CautionResinOnlyLabel" Margin="0, 0, 0, 0"
+                   Text="{x:Static resources:AppResources.RealmCurrencyTimerPage_Caution}" HorizontalTextAlignment="Center" TextColor="OrangeRed" />
 
             <Label x:Name="RemainTimeLabel"
-                   Text="{x:Static resources:AppResources.MainPage_RemainTimeLabel}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" />
+                   Text="{x:Static resources:AppResources.RealmCurrency_RemainTimeLabel}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" />
 
             <FlexLayout Direction="Row" AlignItems="Center" AlignContent="Center" JustifyContent="Center" Margin="0, 0, 0, 0">
                 <Label x:Name="TotalTimeHour" Text="" Margin="10, 0, 10, 0" FontAttributes="Bold" FontSize="40"/>
@@ -67,18 +67,17 @@
             <gauge:SfCircularGauge.Annotations>
                 <gauge:GaugeAnnotation ViewMargin="0, -20">
                     <gauge:GaugeAnnotation.View>
-                        <Image x:Name="ResinIcon" Source="resin.png" WidthRequest="50" HeightRequest="50" />
+                        <Image Source="realm_currency.png" WidthRequest="50" HeightRequest="50" />
                     </gauge:GaugeAnnotation.View>
                 </gauge:GaugeAnnotation>
             </gauge:SfCircularGauge.Annotations>
 
             <gauge:SfCircularGauge.Headers>
-                <gauge:Header x:Name="ResinCount" Text="" Position="0.5, 0.6" TextSize="30" ForegroundColor="#0682F6"/>
-                <gauge:Header x:Name="OneCountTimer" Text="" Position="0.5, 0.75" TextSize="15" ForegroundColor="#0682F6"/>
+                <gauge:Header x:Name="RCPercentage" Text="" Position="0.5, 0.65" TextSize="30" ForegroundColor="#0682F6"/>
             </gauge:SfCircularGauge.Headers>
 
             <gauge:SfCircularGauge.Scales>
-                <gauge:Scale StartValue="0" EndValue="160" Interval="20"
+                <gauge:Scale x:Name="RCSfScale" StartValue="0" EndValue="300" Interval="30"
                              RimColor="#9a9ca6" LabelColor="#9a9ca6">
 
                     <gauge:Scale.MajorTickSettings>
@@ -90,24 +89,31 @@
                         <gauge:MarkerPointer x:Name="PointerValue" Value="0" Color="#303F9F" MarkerShape="Triangle" />
                     </gauge:Scale.Pointers>
 
-                    <gauge:Scale.Ranges>
-                        <gauge:Range x:Name="ResinRemainTimeRange" StartValue="0" EndValue="0" />
-                    </gauge:Scale.Ranges>
-
                 </gauge:Scale>
             </gauge:SfCircularGauge.Scales>
         </gauge:SfCircularGauge>
 
+        <StackLayout Orientation="Vertical"
+                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                     AbsoluteLayout.LayoutBounds="0.5, 0.8">
+            
+            <Label x:Name="RCCountLabel" Margin="0, 0, 0, 5"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" TextColor="#0682F6" />
+
+            <Label x:Name="RealmRankLabel"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" />
+
+            <Label x:Name="TrustLevelLabel"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" />
+
+        </StackLayout>
+
         <Grid AbsoluteLayout.LayoutFlags="All"
-              AbsoluteLayout.LayoutBounds="0.5, 0.95, 0.95, 0.22">
+              AbsoluteLayout.LayoutBounds="0.5, 0.95, 0.95, 0.08">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
@@ -118,47 +124,7 @@
                     Pressed="QEButtonPressed" Released="QEButtonReleased" Clicked="QEButton_Clicked"/>
             <Button Grid.Row="0" Grid.Column="1"
                     Style="{StaticResource ButtonStyle}"
-                    Text="&lt; 10"
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="0" Grid.Column="2"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="&lt; 20" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="0" Grid.Column="3"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="&lt; 40" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="1" Grid.Column="0"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="+10" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="1" Grid.Column="1"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="+20" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="1" Grid.Column="2"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="+30" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="1" Grid.Column="3"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="+40" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="2" Grid.Column="0"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="-10" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="2" Grid.Column="1"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="-20" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="2" Grid.Column="2"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="-30" 
-                    Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Row="2" Grid.Column="3"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="-40" 
+                    Text="Reset"
                     Pressed="ButtonPressed" Released="ButtonReleased"/>
         </Grid>
     </AbsoluteLayout>

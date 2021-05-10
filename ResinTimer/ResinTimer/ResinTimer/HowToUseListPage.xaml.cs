@@ -30,9 +30,11 @@ namespace ResinTimer
             var list = new List<HowToUseCategory>
             {
                 new HowToUseCategory(ManualCategory.TimerResin),
+                new HowToUseCategory(ManualCategory.TimerRealmCurrency),
                 new HowToUseCategory(ManualCategory.TimerExpedition),
                 new HowToUseCategory(ManualCategory.TimerGatheringItem),
                 new HowToUseCategory(ManualCategory.TimerGadget),
+                new HowToUseCategory(ManualCategory.TimerFurnishing),
                 new HowToUseCategory(ManualCategory.TimerTalentBook),
                 new HowToUseCategory(ManualCategory.TimerWeaponAscension)
             };
@@ -41,6 +43,7 @@ namespace ResinTimer
             {
                 list.Add(new HowToUseCategory(ManualCategory.WidgetResin));
                 list.Add(new HowToUseCategory(ManualCategory.WidgetTalentBook));
+                list.Add(new HowToUseCategory(ManualCategory.WidgetWeaponAscension));
             }
 
             return list;
@@ -84,13 +87,16 @@ namespace ResinTimer
             Category = manualCategory switch
             {
                 ManualCategory.TimerResin => AppResources.HowToUse_Category_Timer_Resin,
+                ManualCategory.TimerRealmCurrency => AppResources.HowToUse_Category_Timer_RealmCurrency,
                 ManualCategory.TimerExpedition => AppResources.HowToUse_Category_Timer_Expedition,
                 ManualCategory.TimerGatheringItem => AppResources.HowToUse_Category_Timer_GatheringItem,
                 ManualCategory.TimerGadget => AppResources.HowToUse_Category_Timer_Gadget,
+                ManualCategory.TimerFurnishing => AppResources.HowToUse_Category_Timer_Furnishing,
                 ManualCategory.TimerTalentBook => AppResources.HowToUse_Category_Timer_TalentBook,
                 ManualCategory.TimerWeaponAscension => AppResources.HowToUse_Category_Timer_WeaponAscension,
                 ManualCategory.WidgetResin => AppResources.HowToUse_Category_Widget_Resin,
                 ManualCategory.WidgetTalentBook => AppResources.HowToUse_Category_Widget_TalentBook,
+                ManualCategory.WidgetWeaponAscension => AppResources.HowToUse_Category_Widget_WeaponAscension,
                 _ => string.Empty
             };
         }

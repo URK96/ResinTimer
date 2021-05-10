@@ -14,7 +14,7 @@ namespace ResinTimer
     public class NotiManager
     {
         public enum EditType { Add, Remove, Edit, EditOnlyTime }
-        public enum NotiType { Resin, Expedition, GatheringItem, Gadget, Furnishing, Checklist }
+        public enum NotiType { Resin, Expedition, GatheringItem, Gadget, Furnishing, Checklist, RealmCurrency }
 
         public NotiType notiType = NotiType.Resin;
 
@@ -40,6 +40,10 @@ namespace ResinTimer
                 if (typeof(T) == typeof(ResinNoti))
                 {
                     value = Preferences.Get(SettingConstants.NOTI_LIST, string.Empty);
+                }
+                else if (typeof(T) == typeof(RealmCurrencyNoti))
+                {
+                    value = Preferences.Get(SettingConstants.REALM_CURRENCY_NOTI_LIST, string.Empty);
                 }
                 else if (typeof(T) == typeof(ExpeditionNoti))
                 {
@@ -96,6 +100,7 @@ namespace ResinTimer
             var key = notiType switch
             {
                 NotiType.Resin => SettingConstants.NOTI_LIST,
+                NotiType.RealmCurrency => SettingConstants.REALM_CURRENCY_NOTI_LIST,
                 NotiType.Expedition => SettingConstants.EXPEDITION_NOTI_LIST,
                 NotiType.GatheringItem => SettingConstants.GATHERINGITEM_NOTI_LIST,
                 NotiType.Gadget => SettingConstants.GADGET_NOTI_LIST,
@@ -180,6 +185,81 @@ namespace ResinTimer
 
             SaveNotis();
             UpdateScheduledNoti<ResinNoti>();
+        }
+    }
+
+    public class RealmCurrencyNotiManager : NotiManager
+    {
+        const int ID_PREINDEX = 500;
+
+        public RealmCurrencyNotiManager() : base()
+        {
+            try
+            {
+                notiType = NotiType.RealmCurrency;
+
+                Notis.AddRange(GetNotiList<RealmCurrencyNoti>());
+
+                if (Notis.Count < 1)
+                {
+                    Notis.Add(new RealmCurrencyNoti(100));
+                    SaveNotis();
+                }
+            }
+            catch (Exception)
+            {
+                DependencyService.Get<IToast>().Show("Fail to initialize noti manager");
+            }
+        }
+
+        public override void RenewalIds()
+        {
+            for (int i = 0; i < Notis.Count; ++i)
+            {
+                Notis[i].NotiId = ID_PREINDEX + (Notis[i] as RealmCurrencyNoti).Percentage;
+            }
+        }
+
+        public void UpdateNotisTime()
+        {
+            for (int i = 0; i < Notis.Count; ++i)
+            {
+                (Notis[i] as RealmCurrencyNoti).UpdateTime();
+            }
+
+            SaveNotis();
+            UpdateScheduledNoti<RealmCurrencyNoti>();
+        }
+
+        public override void EditList(Noti item, EditType type)
+        {
+            var noti = item as RealmCurrencyNoti;
+
+            switch (type)
+            {
+                case EditType.Add:
+                    if (Notis.FindAll(x => (x as RealmCurrencyNoti).Percentage.Equals(noti.Percentage)).Count == 0)
+                    {
+                        Notis.Add(item);
+                        Notis.Sort(SortNotis);
+                    }
+                    else
+                    {
+                        DependencyService.Get<IToast>().Show(AppResources.NotiSettingPage_AlreadyExistToast_Message);
+                    }
+                    break;
+                case EditType.Remove:
+                    Notis.Remove(Notis.Find(x => (x as RealmCurrencyNoti).Percentage.Equals(noti.Percentage)));
+                    break;
+                case EditType.Edit:
+                    (Notis[Notis.FindIndex(x => (x as RealmCurrencyNoti).Percentage.Equals(noti.Percentage))] as RealmCurrencyNoti).Percentage = noti.Percentage;
+                    break;
+                default:
+                    break;
+            }
+
+            SaveNotis();
+            UpdateScheduledNoti<RealmCurrencyNoti>();
         }
     }
 

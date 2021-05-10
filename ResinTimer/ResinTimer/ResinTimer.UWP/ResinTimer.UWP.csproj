@@ -209,6 +209,7 @@
     <Content Include="parametric_transformer.png" />
     <Content Include="plus.png" />
     <Content Include="portable_waypoint.png" />
+    <Content Include="realm_currency.png" />
     <Content Include="refresh.png" />
     <Content Include="resin.png" />
     <Content Include="resintimer_icon.png" />
@@ -281,7 +282,6 @@
     <Content Include="white_iron_chunk.png" />
     <Content Include="xamarin_logo.png" />
     <Content Include="Properties\Default.rd.xml" />
-    <None Include="ResinTimer.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

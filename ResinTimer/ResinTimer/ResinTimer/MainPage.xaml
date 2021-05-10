@@ -15,12 +15,14 @@
                     <ListView.ItemsSource>
                         <x:Array Type="{x:Type local:MainMasterItem}">
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}" Icon="resin.png" Target="{x:Type timers:ResinTimerPage}"/>
+                            <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_RealmCurrency}" Icon="realm_currency.png" Target="{x:Type timers:RealmCurrencyTimerPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Expedition}" Icon="compass.png" Target="{x:Type timers:ExpeditionTimerPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_GatheringItem}" Icon="silk_flower.png" Target="{x:Type timers:GatheringItemTimerPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Gadget}" Icon="parametric_transformer.png" Target="{x:Type timers:GadgetTimerPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Furnishing}" Icon="furnishing_icon.png" Target="{x:Type timers:FurnishingTimerPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Talent}" Icon="talent_freedom.png" Target="{x:Type local:TalentTimerPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_WeaponAscension}" Icon="wa_aerosiderite_4.png" Target="{x:Type local:WeaponAscensionTimerPage}"/>
+                            <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Event_DailyCheckIn}" Icon="fractured_fruit_data.png" Target="{x:Type local:DailyCheckInEventPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_HowToUse}" Target="{x:Type local:HowToUseListPage}" />
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_AppInfo}" Target="{x:Type local:InfoPage}" />
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Settings}" Target="{x:Type local:SettingPage}" />

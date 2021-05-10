@@ -269,7 +269,7 @@ namespace ResinTimer.TimerPages
 
         private async void QEButton_Clicked(object sender, EventArgs e)
         {
-            var dialog = new BaseDialog(AppResources.ResinSimpleEditDialog_Title, new ResinSimpleEditView());
+            var dialog = new BaseDialog(AppResources.ResinSimpleEditDialog_Title, new ResinSimpleEdit());
 
             await PopupNavigation.Instance.PushAsync(dialog);
         }

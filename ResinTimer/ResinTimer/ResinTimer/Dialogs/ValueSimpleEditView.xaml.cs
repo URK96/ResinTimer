@@ -2,6 +2,8 @@
 
 using Rg.Plugins.Popup.Services;
 
+using Syncfusion.SfNumericUpDown.XForms;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,17 +16,19 @@ using Xamarin.Forms.Xaml;
 namespace ResinTimer.Dialogs
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ResinSimpleEditView : ContentView
+    public partial class ValueSimpleEditView : ContentView
     {
-        public int ResinCount { get; set; }
+        public SfNumericUpDown SfUpDown => ValueUpDown;
 
-        public ResinSimpleEditView()
+        internal virtual void ApplyValue() { }
+
+        public ValueSimpleEditView(int initValue, int min, int max)
         {
             InitializeComponent();
 
-            ResinUpDown.Maximum = ResinEnvironment.MAX_RESIN;
-            ResinUpDown.Minimum = 0;
-            ResinUpDown.Value = ResinEnvironment.resin;
+            ValueUpDown.Maximum = max;
+            ValueUpDown.Minimum = min;
+            ValueUpDown.Value = initValue;
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
@@ -33,10 +37,7 @@ namespace ResinTimer.Dialogs
 
             if (btText.Equals(AppResources.Dialog_Ok))
             {
-                ResinEnvironment.endTime = ResinEnvironment.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * (ResinEnvironment.resin - (double)ResinUpDown.Value));
-                ResinEnvironment.lastInputTime = DateTime.Now.ToString();
-                ResinEnvironment.CalcResin();
-                ResinEnvironment.SaveValue();
+                ApplyValue();
             }
 
             await PopupNavigation.Instance.PopAsync();

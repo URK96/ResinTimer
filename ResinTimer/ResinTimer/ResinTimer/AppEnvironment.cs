@@ -19,13 +19,16 @@ namespace ResinTimer
         public enum ManualCategory
         {
             TimerResin = 0,
+            TimerRealmCurrency,
             TimerExpedition,
             TimerGatheringItem,
             TimerGadget,
+            TimerFurnishing,
             TimerTalentBook,
             TimerWeaponAscension,
             WidgetResin,
-            WidgetTalentBook
+            WidgetTalentBook,
+            WidgetWeaponAscension
         }
 
 

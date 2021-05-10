@@ -25,12 +25,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchArch>x86_64</MtouchArch>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
-    <CodesignKey>Apple Development: Jin Hyeok Choi (Q5VX394L8F)</CodesignKey>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <CodesignKey>Apple Distribution: Jin Hyeok Choi (6Y79X3343W)</CodesignKey>
+    <CodesignProvision>ResinTimer</CodesignProvision>
+    <MtouchFastDev>false</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -58,7 +59,7 @@
     <CodesignKey>Apple Distribution: Jin Hyeok Choi (6Y79X3343W)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchInterpreter>-all</MtouchInterpreter>
     <CodesignProvision>ResinTimer</CodesignProvision>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -460,10 +461,16 @@
     <ImageAsset Include="Assets.xcassets\furnishing_rarity_4.png.imageset\furnishing_rarity_4.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\realm_currency.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerWeaponAscension_1.png.imageset\2021-04-18_12-32-38-오전.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerWeaponAscension_1.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\realm_currency.png.imageset\realm_currency.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\wa_aerosiderite_4.png.imageset\Contents.json">

@@ -280,6 +280,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="FurnishingTimerPage_Title" xml:space="preserve">
     <value>Furnishing</value>
   </data>
+  <data name="FurnishingTimerPage_Toolbar_SpeedUp" xml:space="preserve">
+    <value>Speed Up (-4H)</value>
+  </data>
   <data name="Furnishing_Rarity_2" xml:space="preserve">
     <value>★★ Furnish</value>
   </data>
@@ -797,6 +800,9 @@ MIT License</value>
   </data>
   <data name="Toolbar_Reset" xml:space="preserve">
     <value>Reset</value>
+  </data>
+  <data name="Toolbar_ResetAll" xml:space="preserve">
+    <value>Reset All</value>
   </data>
   <data name="WAWidget_Title" xml:space="preserve">
     <value>Today Weapon</value>

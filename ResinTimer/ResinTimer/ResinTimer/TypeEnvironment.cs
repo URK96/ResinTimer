@@ -233,6 +233,7 @@ namespace ResinTimer
 
     public static class FurnishingEnvironment
     {
+        public const int SPEEDUP_HOUR = 4;
         public enum FurnishType { Rarity2, Rarity3, Rarity4 }
         public static double[] resetTimeList = { 12, 14, 16 }; // Rarity : 2 3 4
     }

@@ -27,11 +27,32 @@ namespace ResinTimer.TimerPages
         private Timer updateTimer;
         public NotiManager notiManager;
 
-        internal virtual void ResetItem() { }
+        internal virtual void ResetItem()
+        {
+            if (ListView.SelectedItem != null)
+            {
+                (ListView.SelectedItem as Noti).UpdateTime();
+                notiManager.UpdateNotisTime();
+                RefreshCollectionView(ListView, Notis);
+            }
+        }
+
+        internal virtual void ResetAllItem()
+        {
+            foreach (Noti item in ListView.ItemsSource)
+            {
+                item.UpdateTime();
+                notiManager.UpdateNotisTime();
+            }
+
+            RefreshCollectionView(ListView, Notis);
+        }
+
         internal virtual void EditItem() { }
         internal virtual void AddItem() { }
         internal virtual void RemoveItem() { }
-        internal virtual async void EditItemTime()
+
+        internal virtual async void OpenEditItemTimeDialog()
         {
             if (ListView.SelectedItem != null)
             {
@@ -85,17 +106,20 @@ namespace ResinTimer.TimerPages
                 case 0:  // Reset Item
                     ResetItem();
                     break;
-                case 1: // Edit Item
+                case 1:
+                    ResetAllItem();
+                    break;
+                case 2: // Edit Item
                     EditItem();
                     break;
-                case 2:  // Add Item
+                case 3:  // Add Item
                     AddItem();
                     break;
-                case 3:  // Remove Item
+                case 4:  // Remove Item
                     RemoveItem();
                     break;
-                case 4:  // Edit Item Time
-                    EditItemTime();
+                case 5:  // Edit Item Time
+                    OpenEditItemTimeDialog();
                     break;
                 default:
                     break;
@@ -111,14 +135,15 @@ namespace ResinTimer.TimerPages
             catch (Exception) { }
         }
 
-        private void ListCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        internal virtual void ListCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            bool isVisible = e.CurrentSelection.Count >= 1;
+            bool isEnable = e.CurrentSelection.Count >= 1;
 
-            ResetToolbarItem.IsEnabled = isVisible;
-            EditToolbarItem.IsEnabled = isVisible;
-            RemoveToolbarItem.IsEnabled = isVisible;
-            EditTimeToolbarItem.IsEnabled = isVisible;
+            ResetToolbarItem.IsEnabled = isEnable;
+            ResetAllToolbarItem.IsEnabled = Notis.Count != 0;
+            EditToolbarItem.IsEnabled = isEnable;
+            RemoveToolbarItem.IsEnabled = isEnable;
+            EditTimeToolbarItem.IsEnabled = isEnable;
         }
     }
 }

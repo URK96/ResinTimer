@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using Xamarin.Essentials;
+
+using FEnv = ResinTimer.FurnishingEnvironment;
 
 using static ResinTimer.AppEnvironment;
 
@@ -16,23 +19,30 @@ namespace ResinTimer.TimerPages
 {
     public class FurnishingTimerPage : BaseListTimerPage
     {   
+        private ToolbarItem FurnishingSpeedUpToolbarItem { get; set; }
+
         public FurnishingTimerPage() : base()
         {
             Title = AppResources.FurnishingTimerPage_Title;
             notiManager = new FurnishingNotiManager();
             Notis = notiManager.Notis;
+
+            AddToolbarItem();
         }
 
-        internal override void ResetItem()
+        private void AddToolbarItem()
         {
-            base.ResetItem();
-
-            if (ListView.SelectedItem != null)
+            FurnishingSpeedUpToolbarItem = new ToolbarItem()
             {
-                (ListView.SelectedItem as FurnishingNoti).UpdateTime();
-                (notiManager as FurnishingNotiManager).UpdateNotisTime();
-                RefreshCollectionView(ListView, Notis);
-            }
+                
+                Text = AppResources.FurnishingTimerPage_Toolbar_SpeedUp,
+                Order = ToolbarItemOrder.Secondary,
+                Priority = 10,
+            };
+            FurnishingSpeedUpToolbarItem.Clicked += FurnishingToolbarItem_Clicked;
+
+
+            ToolbarItems.Add(FurnishingSpeedUpToolbarItem);
         }
 
         internal override async void EditItem()
@@ -79,9 +89,34 @@ namespace ResinTimer.TimerPages
             }
         }
 
-        internal override void EditItemTime()
+        internal override void OpenEditItemTimeDialog()
         {
-            base.EditItemTime();
+            base.OpenEditItemTimeDialog();
+        }
+
+        private void FurnishingToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            if (ListView.SelectedItems.Count < 0)
+            {
+                return;
+            }
+
+            var selectedNoti = (FurnishingNoti)ListView.SelectedItem;
+
+            selectedNoti.NotiTime = selectedNoti.NotiTime.AddHours(-FEnv.SPEEDUP_HOUR);
+
+            notiManager.EditList((Noti)ListView.SelectedItem, NotiManager.EditType.EditOnlyTime);
+
+            RefreshCollectionView(ListView, Notis);
+        }
+
+        internal override void ListCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            base.ListCollectionView_SelectionChanged(sender, e);
+
+            bool isEnable = e.CurrentSelection.Count >= 1;
+
+            FurnishingSpeedUpToolbarItem.IsEnabled = isEnable;
         }
     }
 }

@@ -113,6 +113,7 @@ namespace ResinTimer
 
         public virtual void RenewalIds() { }
         public virtual void EditList(Noti item, EditType editType) { }
+        public virtual void UpdateNotisTime() { }
     }
 
     public class ResinNotiManager : NotiManager
@@ -145,7 +146,7 @@ namespace ResinTimer
             }
         }
 
-        public void UpdateNotisTime()
+        public override void UpdateNotisTime()
         {
             for (int i = 0; i < Notis.Count; ++i)
             {
@@ -220,7 +221,7 @@ namespace ResinTimer
             }
         }
 
-        public void UpdateNotisTime()
+        public override void UpdateNotisTime()
         {
             for (int i = 0; i < Notis.Count; ++i)
             {
@@ -281,7 +282,7 @@ namespace ResinTimer
             }
         }
 
-        public void UpdateNotisTime()
+        public override void UpdateNotisTime()
         {
             SaveNotis();
             UpdateScheduledNoti<ExpeditionNoti>();
@@ -348,7 +349,7 @@ namespace ResinTimer
             }
         }
 
-        public void UpdateNotisTime()
+        public override void UpdateNotisTime()
         {
             SaveNotis();
             UpdateScheduledNoti<GatheringItemNoti>();
@@ -410,7 +411,7 @@ namespace ResinTimer
             }
         }
 
-        public void UpdateNotisTime()
+        public override void UpdateNotisTime()
         {
             SaveNotis();
             UpdateScheduledNoti<GadgetNoti>();
@@ -472,7 +473,7 @@ namespace ResinTimer
             }
         }
 
-        public void UpdateNotisTime()
+        public override void UpdateNotisTime()
         {
             SaveNotis();
             UpdateScheduledNoti<FurnishingNoti>();
@@ -505,6 +506,11 @@ namespace ResinTimer
                     Notis[index] = item;
                     Notis[index].UpdateTime();
                     break;
+                case EditType.EditOnlyTime:
+                    var index2 = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
+
+                    Notis[index2] = item;
+                    break;
                 default:
                     break;
             }
@@ -534,7 +540,7 @@ namespace ResinTimer
             }
         }
 
-        public void UpdateNotisTime()
+        public override void UpdateNotisTime()
         {
             SaveNotis();
             UpdateScheduledNoti<ChecklistNoti>();

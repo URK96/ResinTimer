@@ -16,6 +16,17 @@ namespace ResinTimer
         public DailyCheckInEventPage() : base(EVENT_DAILY_CHECKIN_URL)
         {
             Title = AppResources.MasterDetail_MasterList_Event_DailyCheckIn;
+
+            var item = new ToolbarItem()
+            {
+                IconImageSource = "edit.png"
+            };
+            item.Clicked += delegate 
+            { 
+                Services.DailyCheckInService.PrintCookie(WebView); 
+            };
+
+            ToolbarItems.Add(item);
         }
     }
 }

@@ -23,18 +23,6 @@ namespace ResinTimer.TimerPages
             Notis = notiManager.Notis;
         }
 
-        internal override void ResetItem()
-        {
-            base.ResetItem();
-
-            if (ListView.SelectedItem != null)
-            {
-                (ListView.SelectedItem as ExpeditionNoti).UpdateTime();
-                (notiManager as ExpeditionNotiManager).UpdateNotisTime();
-                RefreshCollectionView(ListView, Notis);
-            }
-        }
-
         internal override async void EditItem()
         {
             base.EditItem();
@@ -79,9 +67,9 @@ namespace ResinTimer.TimerPages
             }
         }
 
-        internal override void EditItemTime()
+        internal override void OpenEditItemTimeDialog()
         {
-            base.EditItemTime();
+            base.OpenEditItemTimeDialog();
         }
     }
 }

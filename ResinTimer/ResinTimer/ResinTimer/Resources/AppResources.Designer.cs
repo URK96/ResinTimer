@@ -575,6 +575,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Speed Up (-4H)과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string FurnishingTimerPage_Toolbar_SpeedUp {
+            get {
+                return ResourceManager.GetString("FurnishingTimerPage_Toolbar_SpeedUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Parametric Transformer과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Gadget_Type_ParametricTransformer {
@@ -2022,6 +2031,15 @@ namespace ResinTimer.Resources {
         public static string Toolbar_Reset {
             get {
                 return ResourceManager.GetString("Toolbar_Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Reset All과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Toolbar_ResetAll {
+            get {
+                return ResourceManager.GetString("Toolbar_ResetAll", resourceCulture);
             }
         }
         

@@ -213,7 +213,7 @@ namespace ResinTimer
         public GEnv.GadgetType ItemType { get; set; }
         public string ItemNote { get; set; } = string.Empty;
 
-        public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{GetRemainTimeHM()} {AppResources.GatheringItemTimerPage_Remain}" : AppResources.FurnishingItemTimer_Complete)}";
+        public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{GetRemainTimeHM()} {AppResources.GatheringItemTimerPage_Remain}" : AppResources.GadgetTimerPage_ResetComplete)}";
         public string TypeString => ItemType switch
         {
             GEnv.GadgetType.ParametricTransformer => AppResources.Gadget_Type_ParametricTransformer,
@@ -256,7 +256,7 @@ namespace ResinTimer
         public FEnv.FurnishType ItemType { get; set; }
         public string ItemNote { get; set; } = string.Empty;
 
-        public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{GetRemainTimeHM()} {AppResources.GatheringItemTimerPage_Remain}" : AppResources.GatheringItemTimer_ResetComplete)}";
+        public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{GetRemainTimeHM()} {AppResources.GatheringItemTimerPage_Remain}" : AppResources.FurnishingItemTimer_Complete)}";
         public string TypeString => ItemType switch
         {
             FEnv.FurnishType.Rarity3 => AppResources.Furnishing_Rarity_3,

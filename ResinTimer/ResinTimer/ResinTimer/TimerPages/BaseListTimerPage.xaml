@@ -22,7 +22,7 @@
         <ToolbarItem x:Name="EditToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Edit}" IconImageSource="edit.png" Order="Secondary" Priority="2" Clicked="ToolbarItem_Clicked" />
         <ToolbarItem Text="{x:Static resources:AppResources.Toolbar_Add}" IconImageSource="{OnPlatform Default=plus.png, iOS={AppThemeBinding Light=plus_dark.png, Dark=plus.png}}" Order="Secondary" Priority="3" Clicked="ToolbarItem_Clicked" />
         <ToolbarItem x:Name="RemoveToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Remove}" IconImageSource="{OnPlatform Default=minus.png, iOS={AppThemeBinding Light=minus_black.png, Dark=minus.png}}" Order="Secondary" Priority="4" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem x:Name="EditTimeToolbarItem" Text="{x:Static resources:AppResources.Toolbar_EditTime}" IconImageSource="{OnPlatform Default=apply.png, iOS={AppThemeBinding Light=apply.png, Dark=apply.png}}" Order="Secondary" Priority="5" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="EditTimeToolbarItem" Text="{x:Static resources:AppResources.Toolbar_EditTime}" Order="Secondary" Priority="5" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="ListCollectionView" ItemsSource="{Binding Notis}"

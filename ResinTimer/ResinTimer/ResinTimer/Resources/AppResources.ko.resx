@@ -292,6 +292,9 @@
   <data name="Furnishing_Rarity_4" xml:space="preserve">
     <value>★★★★ 가구</value>
   </data>
+  <data name="GadgetTimerPage_ResetComplete" xml:space="preserve">
+    <value>쿨타임 종료</value>
+  </data>
   <data name="GadgetTimerPage_Title" xml:space="preserve">
     <value>도구 알리미</value>
   </data>

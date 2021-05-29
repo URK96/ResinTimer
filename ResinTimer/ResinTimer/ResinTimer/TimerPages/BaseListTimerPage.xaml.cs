@@ -5,10 +5,7 @@ using Rg.Plugins.Popup.Services;
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -106,7 +103,7 @@ namespace ResinTimer.TimerPages
                 case 0:  // Reset Item
                     ResetItem();
                     break;
-                case 1:
+                case 1:  // Reset All Item
                     ResetAllItem();
                     break;
                 case 2: // Edit Item

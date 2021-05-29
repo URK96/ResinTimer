@@ -93,7 +93,7 @@
       <Version>1.2.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.MediaRouter">
-      <Version>1.2.2.1</Version>
+      <Version>1.2.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Palette">
       <Version>1.0.0.7</Version>
@@ -581,7 +581,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

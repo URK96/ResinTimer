@@ -467,6 +467,9 @@
     <ImageAsset Include="Assets.xcassets\fractured_fruit_data.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\refresh_all.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Manual_TimerRealmCurrency_1.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -525,6 +528,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\realm_currency.png.imageset\realm_currency.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\refresh_all.png.imageset\refresh_all.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\wa_aerosiderite_4.png.imageset\Contents.json">
@@ -901,7 +907,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

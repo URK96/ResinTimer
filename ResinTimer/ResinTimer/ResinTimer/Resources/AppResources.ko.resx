@@ -551,6 +551,9 @@ MIT License</value>
   <data name="MasterDetail_MasterList_RealmCurrency" xml:space="preserve">
     <value>선계 화폐</value>
   </data>
+  <data name="MasterDetail_MasterList_RealmFriendship" xml:space="preserve">
+    <value>선계 호감도</value>
+  </data>
   <data name="MasterDetail_MasterList_Resin" xml:space="preserve">
     <value>레진</value>
   </data>
@@ -667,6 +670,9 @@ MIT License</value>
   </data>
   <data name="RealmCurrency_TrustRank" xml:space="preserve">
     <value>신뢰 등급</value>
+  </data>
+  <data name="RealmFriendship_RemainTimeLabel" xml:space="preserve">
+    <value>호감도 선물이 가득 찰 때까지</value>
   </data>
   <data name="Realm_Rank_1" xml:space="preserve">
     <value>초라한 가옥</value>

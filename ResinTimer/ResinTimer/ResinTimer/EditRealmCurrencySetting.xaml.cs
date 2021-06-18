@@ -10,6 +10,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using RealmEnv = ResinTimer.RealmEnvironment;
 using RCEnv = ResinTimer.RealmCurrencyEnvironment;
 using AppEnv = ResinTimer.AppEnvironment;
 
@@ -41,14 +42,14 @@ namespace ResinTimer
             };
             TrustRankPicker.ItemsSource = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            RealmRankPicker.SelectedIndex = (int)RCEnv.realmRank;
-            TrustRankPicker.SelectedIndex = RCEnv.trustRank - 1;
+            RealmRankPicker.SelectedIndex = (int)RealmEnv.realmRank;
+            TrustRankPicker.SelectedIndex = RealmEnv.trustRank - 1;
         }
 
         private void ApplySetting()
         {
-            RCEnv.realmRank = (RCEnv.RealmRank)RealmRankPicker.SelectedIndex;
-            RCEnv.trustRank = TrustRankPicker.SelectedIndex + 1;
+            RealmEnv.realmRank = (RealmEnv.RealmRank)RealmRankPicker.SelectedIndex;
+            RealmEnv.trustRank = TrustRankPicker.SelectedIndex + 1;
 
             RCEnv.CalcRemainTime();
             RCEnv.SaveValue();

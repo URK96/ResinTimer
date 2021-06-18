@@ -552,6 +552,9 @@ MIT License</value>
   <data name="MasterDetail_MasterList_RealmCurrency" xml:space="preserve">
     <value>Realm Currency</value>
   </data>
+  <data name="MasterDetail_MasterList_RealmFriendship" xml:space="preserve">
+    <value>Realm Friendship</value>
+  </data>
   <data name="MasterDetail_MasterList_Resin" xml:space="preserve">
     <value>Resin</value>
   </data>
@@ -668,6 +671,9 @@ MIT License</value>
   </data>
   <data name="RealmCurrency_TrustRank" xml:space="preserve">
     <value>Trust Rank</value>
+  </data>
+  <data name="RealmFriendship_RemainTimeLabel" xml:space="preserve">
+    <value>Until gifts are full</value>
   </data>
   <data name="Realm_Rank_1" xml:space="preserve">
     <value>Bare-Bones</value>

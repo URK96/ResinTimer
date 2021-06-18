@@ -18,8 +18,14 @@
         public const string RC_ADD_COUNT = "RC_Add_Count";
         public const string RC_LAST_INPUT_TIME = "RC_Last_Input_Time";
         public const string RC_END_TIME = "RC_End_Time";
-        public const string RC_ADEPTAL_LEVEL = "RC_Adeptal_Level";
-        public const string RC_TRUST_RANK = "RC_Trust_Rank";
+
+        public const string REALM_ADEPTAL_LEVEL = "RC_Adeptal_Level";
+        public const string REALM_TRUST_RANK = "RC_Trust_Rank";
+
+        public const string RF_COUNT = "RF_Count";
+        public const string RF_ADD_COUNT = "RF_Add_Count";
+        public const string RF_LAST_INPUT_TIME = "RF_Last_Input_Time";
+        public const string RF_END_TIME = "RF_End_Time";
 
         public const string ITEM_TALENT_LOCATION = "Item_Talent_Location";
         public const string ITEM_TALENT_SERVER = "Item_Talent_Server";

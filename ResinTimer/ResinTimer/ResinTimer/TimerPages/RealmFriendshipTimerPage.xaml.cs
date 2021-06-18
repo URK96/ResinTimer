@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +10,7 @@ using Xamarin.Forms.Xaml;
 using Timer = System.Timers.Timer;
 using TTimer = System.Threading.Timer;
 using RealmEnv = ResinTimer.RealmEnvironment;
-using RCEnv = ResinTimer.RealmCurrencyEnvironment;
+using RFEnv = ResinTimer.RealmFriendshipEnvironment;
 using AppEnv = ResinTimer.AppEnvironment;
 using Xamarin.Essentials;
 using System.Threading;
@@ -22,18 +21,18 @@ using Rg.Plugins.Popup.Services;
 namespace ResinTimer.TimerPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RealmCurrencyTimerPage : ContentPage
+    public partial class RealmFriendshipTimerPage : ContentPage
     {
         private Timer buttonPressTimer;
         private TTimer calcTimer;
 
         private bool isRunReset;
 
-        public RealmCurrencyTimerPage()
+        public RealmFriendshipTimerPage()
         {
             InitializeComponent();
 
-            RCEnv.LoadValues();
+            RFEnv.LoadValues();
 
             if (Device.RuntimePlatform != Device.UWP)
             {
@@ -50,11 +49,11 @@ namespace ResinTimer.TimerPages
                         Vibration.Vibrate(100);
                     }
 
-                    ResetRC();
+                    ResetRF();
                 };
             }
 
-            calcTimer = new TTimer(CalcNowRC, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1));
+            calcTimer = new TTimer(CalcNowRF, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1));
         }
 
         private void SetToolbar()
@@ -68,7 +67,7 @@ namespace ResinTimer.TimerPages
 
             calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1));
 
-            SetRCStatusLabel();
+            SetRFStatusLabel();
 
             SetToolbar();
         }
@@ -77,12 +76,12 @@ namespace ResinTimer.TimerPages
         {
             base.OnDisappearing();
 
-            RCEnv.SaveValue();
+            RFEnv.SaveValue();
 
             calcTimer.Change(Timeout.Infinite, Timeout.Infinite);
         }
 
-        private void SetRCStatusLabel()
+        private void SetRFStatusLabel()
         {
             var realmRankString = RealmEnv.realmRank switch
             {
@@ -98,8 +97,8 @@ namespace ResinTimer.TimerPages
                 _ => AppResources.Realm_Rank_1
             };
 
-            RealmRankLabel.Text = $"{AppResources.RealmCurrency_RealmRank} : {realmRankString} (+{RCEnv.RCRate} / Hour)";
-            TrustLevelLabel.Text = $"{AppResources.RealmCurrency_TrustRank} : {RealmEnv.trustRank} (Max {RCEnv.MaxRC})";
+            RealmRankLabel.Text = $"{AppResources.RealmCurrency_RealmRank} : {realmRankString} (+{RFEnv.RFRate} / Hour)";
+            TrustLevelLabel.Text = $"{AppResources.RealmCurrency_TrustRank} : {RealmEnv.trustRank} (Max {RFEnv.MaxRF})";
         }
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
@@ -119,15 +118,15 @@ namespace ResinTimer.TimerPages
             }
         }
 
-        private void CalcNowRC(object statusInfo)
+        private void CalcNowRF(object statusInfo)
         {
             try
             {
                 var now = DateTime.Now;
 
-                RCEnv.totalCountTime = (RCEnv.endTime > now) ? (RCEnv.endTime - now) : TimeSpan.FromSeconds(0);
+                RFEnv.totalCountTime = (RFEnv.endTime > now) ? (RFEnv.endTime - now) : TimeSpan.FromSeconds(0);
 
-                RCEnv.CalcRC();
+                RFEnv.CalcRF();
 
                 MainThread.BeginInvokeOnMainThread(RefreshInfo);
             }
@@ -143,21 +142,21 @@ namespace ResinTimer.TimerPages
         {
             try
             {
-                TotalTimeHour.Text = $"{(int)RCEnv.totalCountTime.TotalHours}";
-                TotalTimeMinute.Text = $"{RCEnv.totalCountTime.Minutes:D2}";
+                TotalTimeHour.Text = $"{(int)RFEnv.totalCountTime.TotalHours}";
+                TotalTimeMinute.Text = $"{RFEnv.totalCountTime.Minutes:D2}";
 
-                LastInputDateTimeLabel.Text = AppEnv.GetTimeString(DateTime.Parse(RCEnv.lastInputTime, AppEnv.dtCulture));
-                EndDateTimeLabel.Text = AppEnv.GetTimeString(RCEnv.endTime);
+                LastInputDateTimeLabel.Text = AppEnv.GetTimeString(DateTime.Parse(RFEnv.lastInputTime, AppEnv.dtCulture));
+                EndDateTimeLabel.Text = AppEnv.GetTimeString(RFEnv.endTime);
 
-                RCSfScale.EndValue = 100;
-                RCSfScale.Interval = 20;
+                RFSfScale.EndValue = 100;
+                RFSfScale.Interval = 20;
 
-                int percentage = Convert.ToInt32((double)RCEnv.currency / RCEnv.MaxRC * 100);
+                int percentage = Convert.ToInt32((double)RFEnv.bounty / RFEnv.MaxRF * 100);
 
-                RCPercentage.Text = $"{percentage} %";
+                RFPercentage.Text = $"{percentage} %";
                 RangeValue.Value = PointerValue.Value = percentage;
 
-                RCCountLabel.Text = $"{AppResources.RealmCurrency_NowCurrency} : {RCEnv.currency}";
+                RFCountLabel.Text = $"{AppResources.RealmCurrency_NowCurrency} : {RFEnv.bounty}";
 
             }
             catch (Exception ex)
@@ -168,25 +167,25 @@ namespace ResinTimer.TimerPages
             }
         }
 
-        private void ResetRC()
+        private void ResetRF()
         {
             var now = DateTime.Now;
-            int count = RCEnv.MaxRC / RCEnv.RCRate;
+            int count = RFEnv.MaxRF / RFEnv.RFRate;
 
-            count += (RCEnv.MaxRC % RCEnv.RCRate) == 0 ? 0 : 1;
+            count += (RFEnv.MaxRF % RFEnv.RFRate) == 0 ? 0 : 1;
 
-            RCEnv.lastInputTime = now.ToString(AppEnv.dtCulture);
+            RFEnv.lastInputTime = now.ToString(AppEnv.dtCulture);
 
 #if TEST
-            RCEnv.endTime = now.AddMinutes(count);
+            RFEnv.endTime = now.AddMinutes(count);
 #else
-            RCEnv.endTime = now.AddHours(count);
+            RFEnv.endTime = now.AddHours(count);
 #endif
 
-            RCEnv.currency = 0;
-            RCEnv.addCount = 0;
+            RFEnv.bounty = 0;
+            RFEnv.addCount = 0;
 
-            RCEnv.SaveValue();
+            RFEnv.SaveValue();
 
             if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
             {
@@ -208,7 +207,7 @@ namespace ResinTimer.TimerPages
 
                 if (Device.RuntimePlatform == Device.UWP)
                 {
-                    ResetRC();
+                    ResetRF();
                 }
                 else
                 {

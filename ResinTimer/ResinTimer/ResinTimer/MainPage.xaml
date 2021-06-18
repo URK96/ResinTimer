@@ -16,6 +16,7 @@
                         <x:Array Type="{x:Type local:MainMasterItem}">
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}" Icon="resin.png" Target="{x:Type timers:ResinTimerPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_RealmCurrency}" Icon="realm_currency.png" Target="{x:Type timers:RealmCurrencyTimerPage}"/>
+                            <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_RealmFriendship}" Icon="friendship.png" Target="{x:Type timers:RealmFriendshipTimerPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Expedition}" Icon="compass.png" Target="{x:Type timers:ExpeditionTimerPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_GatheringItem}" Icon="silk_flower.png" Target="{x:Type timers:GatheringItemTimerPage}"/>
                             <local:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Gadget}" Icon="parametric_transformer.png" Target="{x:Type timers:GadgetTimerPage}"/>

@@ -35,9 +35,12 @@ namespace ResinTimer.UWP
         public void ScheduleAllNoti()
         {
             Schedule<ResinNoti>();
+            Schedule<RealmCurrencyNoti>();
+            Schedule<RealmFriendshipNoti>();
             Schedule<ExpeditionNoti>();
             Schedule<GatheringItemNoti>();
             Schedule<GadgetNoti>();
+            Schedule<FurnishingNoti>();
         }
 
         public void Schedule<T>() where T : Noti

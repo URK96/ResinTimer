@@ -170,6 +170,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Simple Edit Bounty과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string BountySimpleEditDialog_Title {
+            get {
+                return ResourceManager.GetString("BountySimpleEditDialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   If you report bug via github, you need github account. If you don&apos;t want to create github account, cancel this dialog and use E-Mail for bug reporting. Do you want to continue this process?과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string BugReport_Dialog_Message {
@@ -1437,6 +1446,24 @@ namespace ResinTimer.Resources {
         public static string Noti_RealmCurrency_Title {
             get {
                 return ResourceManager.GetString("Noti_RealmCurrency_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   charge is complete.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_RealmFriendship_Message {
+            get {
+                return ResourceManager.GetString("Noti_RealmFriendship_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Realm Friendship Bounty Noti과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_RealmFriendship_Title {
+            get {
+                return ResourceManager.GetString("Noti_RealmFriendship_Title", resourceCulture);
             }
         }
         

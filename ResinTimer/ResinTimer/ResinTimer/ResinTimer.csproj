@@ -56,6 +56,9 @@
     <Compile Update="EditFurnishingItemPage.xaml.cs">
       <DependentUpon>EditFurnishingItemPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="EditRealmSetting.xaml.cs">
+      <DependentUpon>EditRealmSetting.xaml</DependentUpon>
+    </Compile>
     <Compile Update="EditResinPage.xaml.cs">
       <DependentUpon>EditResinPage.xaml</DependentUpon>
     </Compile>
@@ -102,7 +105,7 @@
     <EmbeddedResource Update="EditGatheringItemPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="EditRealmCurrencySetting.xaml">
+    <EmbeddedResource Update="EditRealmSetting.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="EditResinPage.xaml">

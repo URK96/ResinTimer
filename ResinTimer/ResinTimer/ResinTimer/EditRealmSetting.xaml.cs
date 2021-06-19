@@ -17,9 +17,9 @@ using AppEnv = ResinTimer.AppEnvironment;
 namespace ResinTimer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EditRealmCurrencySetting : ContentPage
+    public partial class EditRealmSetting : ContentPage
     {
-        public EditRealmCurrencySetting()
+        public EditRealmSetting()
         {
             InitializeComponent();
             InitPicker();

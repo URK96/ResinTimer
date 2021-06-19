@@ -20,6 +20,7 @@ namespace ResinTimer.Droid
         {
             Cancel<ResinNoti>();
             Cancel<RealmCurrencyNoti>();
+            Cancel<RealmFriendshipNoti>();
             Cancel<ExpeditionNoti>();
             Cancel<GatheringItemNoti>();
             Cancel<GadgetNoti>();
@@ -47,6 +48,7 @@ namespace ResinTimer.Droid
         {
             Schedule<ResinNoti>();
             Schedule<RealmCurrencyNoti>();
+            Schedule<RealmFriendshipNoti>();
             Schedule<ExpeditionNoti>();
             Schedule<GatheringItemNoti>();
             Schedule<GadgetNoti>();

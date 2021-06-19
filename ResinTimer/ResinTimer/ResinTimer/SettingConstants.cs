@@ -34,6 +34,7 @@
 
         public const string NOTI_LIST = "Noti_List";
         public const string REALM_CURRENCY_NOTI_LIST = "Realm_Currency_Noti_List";
+        public const string REALM_FRIENDSHIP_NOTI_LIST = "Realm_Friendship_Noti_List";
         public const string EXPEDITION_NOTI_LIST = "Expedition_Noti_List";
         public const string GATHERINGITEM_NOTI_LIST = "GatheringItem_Noti_List";
         public const string GADGET_NOTI_LIST = "Gadget_Noti_List";

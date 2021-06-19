@@ -154,6 +154,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Bootstrap_ChangeEnableFail_Title" xml:space="preserve">
     <value>StartUp Enable Process Fail</value>
   </data>
+  <data name="BountySimpleEditDialog_Title" xml:space="preserve">
+    <value>Simple Edit Bounty</value>
+  </data>
   <data name="BugReport_Dialog_Message" xml:space="preserve">
     <value>If you report bug via github, you need github account. If you don't want to create github account, cancel this dialog and use E-Mail for bug reporting. Do you want to continue this process?</value>
   </data>
@@ -641,6 +644,12 @@ MIT License</value>
   </data>
   <data name="Noti_RealmCurrency_Title" xml:space="preserve">
     <value>Realm Currency Noti</value>
+  </data>
+  <data name="Noti_RealmFriendship_Message" xml:space="preserve">
+    <value>charge is complete.</value>
+  </data>
+  <data name="Noti_RealmFriendship_Title" xml:space="preserve">
+    <value>Realm Friendship Bounty Noti</value>
   </data>
   <data name="NowLocation_PreLabel" xml:space="preserve">
     <value>Now Location</value>

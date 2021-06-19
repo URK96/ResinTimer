@@ -108,7 +108,7 @@ namespace ResinTimer.TimerPages
             switch (item.Text)
             {
                 case "Edit":
-                    await Navigation.PushAsync(new EditRealmCurrencySetting(), true);
+                    await Navigation.PushAsync(new EditRealmSetting(), true);
                     break;
                 case "Noti Setting":
                     await Navigation.PushAsync(new RealmCurrencyNotiSettingPage(), true);
@@ -189,7 +189,7 @@ namespace ResinTimer.TimerPages
 
             if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
             {
-                var notiManager = new RealmCurrencyNotiManager();
+                var notiManager = new RealmFriendshipNotiManager();
                 notiManager.UpdateNotisTime();
             }
         }
@@ -267,7 +267,7 @@ namespace ResinTimer.TimerPages
         {
             calcTimer.Change(Timeout.Infinite, Timeout.Infinite);
 
-            var dialog = new BaseDialog(AppResources.CurrencySimpleEditDialog_Title, new RealmCurrencySimpleEdit());
+            var dialog = new BaseDialog(AppResources.BountySimpleEditDialog_Title, new RealmBountySimpleEdit());
 
             dialog.OnClose += delegate { calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1)); };
 

@@ -109,7 +109,7 @@ namespace ResinTimer.TimerPages
             switch (item.Text)
             {
                 case "Edit":
-                    await Navigation.PushAsync(new EditRealmCurrencySetting(), true);
+                    await Navigation.PushAsync(new EditRealmSetting(), true);
                     break;
                 case "Noti Setting":
                     await Navigation.PushAsync(new RealmCurrencyNotiSettingPage(), true);

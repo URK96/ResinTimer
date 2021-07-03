@@ -24,6 +24,14 @@ namespace ResinTimer.TimerPages
         private Timer updateTimer;
         public NotiManager notiManager;
 
+        public BaseListTimerPage()
+        {
+            InitializeComponent();
+
+            BindingContext = this;
+            updateTimer = new Timer(RefreshTime, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
+        }
+
         internal virtual void ResetItem()
         {
             if (ListView.SelectedItem != null)
@@ -64,14 +72,6 @@ namespace ResinTimer.TimerPages
             {
                 DependencyService.Get<IToast>().Show(AppResources.NotiSettingPage_NotSelectedToast_Message);
             }
-        }
-
-        public BaseListTimerPage()
-        {
-            InitializeComponent();
-
-            BindingContext = this;
-            updateTimer = new Timer(RefreshTime, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
         }
 
         protected override void OnAppearing()

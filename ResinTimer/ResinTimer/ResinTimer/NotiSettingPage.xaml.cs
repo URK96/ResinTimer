@@ -63,9 +63,9 @@ namespace ResinTimer
 
         private async void ShowAddItemDialog()
         {
-            var title = AppResources.NotiSettingPage_AddDialog_Title;
-            var summary = $"{AppResources.NotiSettingPage_AddDialog_Summary} (1 ~ {ResinEnvironment.MAX_RESIN})";
-            var result = await DisplayPromptAsync(title, summary, AppResources.Dialog_Ok, AppResources.Dialog_Cancel, null, -1, Keyboard.Numeric, string.Empty);
+            string title = AppResources.NotiSettingPage_AddDialog_Title;
+            string summary = $"{AppResources.NotiSettingPage_AddDialog_Summary} (1 ~ {ResinEnvironment.MAX_RESIN})";
+            string result = await DisplayPromptAsync(title, summary, AppResources.Dialog_Ok, AppResources.Dialog_Cancel, null, -1, Keyboard.Numeric, string.Empty);
 
             if (result == null)
             {
@@ -82,16 +82,16 @@ namespace ResinTimer
                 }
                 else
                 {
-                    var title2 = AppResources.NotiSettingPage_OutOfRangeDialog_Title;
-                    var summary2 = $"{AppResources.NotiSettingPage_OutOfRangeDialog_Summary} (1 ~ {ResinEnvironment.MAX_RESIN})";
+                    string title2 = AppResources.NotiSettingPage_OutOfRangeDialog_Title;
+                    string summary2 = $"{AppResources.NotiSettingPage_OutOfRangeDialog_Summary} (1 ~ {ResinEnvironment.MAX_RESIN})";
 
                     await DisplayAlert(title2, summary2, AppResources.Dialog_Ok);
                 }
             }
             else
             {
-                var title3 = AppResources.NotiSettingPage_NotIntegerDialog_Title;
-                var summary3 = AppResources.NotiSettingPage_NotIntegerDialog_Summary;
+                string title3 = AppResources.NotiSettingPage_NotIntegerDialog_Title;
+                string summary3 = AppResources.NotiSettingPage_NotIntegerDialog_Summary;
 
                 await DisplayAlert(title3, summary3, AppResources.Dialog_Ok);
             }

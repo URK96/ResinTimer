@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ResinTimer.Dialogs;
+using ResinTimer.NotiSettingPages;
+using ResinTimer.Resources;
 
+using Rg.Plugins.Popup.Services;
+
+using System;
+using System.Threading;
+
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using Timer = System.Timers.Timer;
-using TTimer = System.Threading.Timer;
+using AppEnv = ResinTimer.AppEnvironment;
 using RealmEnv = ResinTimer.RealmEnvironment;
 using RFEnv = ResinTimer.RealmFriendshipEnvironment;
-using AppEnv = ResinTimer.AppEnvironment;
-using Xamarin.Essentials;
-using System.Threading;
-using ResinTimer.Resources;
-using ResinTimer.Dialogs;
-using Rg.Plugins.Popup.Services;
+using Timer = System.Timers.Timer;
+using TTimer = System.Threading.Timer;
 
 namespace ResinTimer.TimerPages
 {
@@ -111,7 +110,7 @@ namespace ResinTimer.TimerPages
                     await Navigation.PushAsync(new EditRealmSetting(), true);
                     break;
                 case "Noti Setting":
-                    await Navigation.PushAsync(new RealmCurrencyNotiSettingPage(), true);
+                    await Navigation.PushAsync(new RealmFriendshipNotiSettingPage(), true);
                     break;
                 default:
                     break;

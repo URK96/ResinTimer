@@ -1,4 +1,5 @@
 ﻿using ResinTimer.Dialogs;
+using ResinTimer.NotiSettingPages;
 using ResinTimer.Resources;
 
 using Rg.Plugins.Popup.Services;
@@ -93,7 +94,7 @@ namespace ResinTimer.TimerPages
                     await Navigation.PushAsync(new EditResinPage(), true);
                     break;
                 case "Noti Setting":
-                    await Navigation.PushAsync(new NotiSettingPage(), true);
+                    await Navigation.PushAsync(new ResinNotiSettingPage(), true);
                     break;
                 default:
                     break;

@@ -126,10 +126,10 @@
     <EmbeddedResource Update="LicenseViewer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="NotiSettingPage.xaml">
+    <EmbeddedResource Update="NotiSettingPages\BaseNotiSettingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="RealmCurrencyNotiSettingPage.xaml">
+    <EmbeddedResource Update="NotiSettingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="TimerPages\RealmFriendshipTimerPage.xaml">

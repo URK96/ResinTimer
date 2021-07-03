@@ -1,23 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
+﻿using ResinTimer.Dialogs;
+using ResinTimer.NotiSettingPages;
+using ResinTimer.Resources;
 
+using Rg.Plugins.Popup.Services;
+
+using System;
+using System.Threading;
+
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using AppEnv = ResinTimer.AppEnvironment;
+using RCEnv = ResinTimer.RealmCurrencyEnvironment;
+using RealmEnv = ResinTimer.RealmEnvironment;
 using Timer = System.Timers.Timer;
 using TTimer = System.Threading.Timer;
-using RealmEnv = ResinTimer.RealmEnvironment;
-using RCEnv = ResinTimer.RealmCurrencyEnvironment;
-using AppEnv = ResinTimer.AppEnvironment;
-using Xamarin.Essentials;
-using System.Threading;
-using ResinTimer.Resources;
-using ResinTimer.Dialogs;
-using Rg.Plugins.Popup.Services;
 
 namespace ResinTimer.TimerPages
 {

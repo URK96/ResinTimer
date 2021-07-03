@@ -38,6 +38,7 @@ namespace ResinTimer
     {
         public int Resin { get; set; }
         public int Interval { get; set; }
+        public string NotiValueString => Resin.ToString();
 
         public ResinNoti(int resin)
         {

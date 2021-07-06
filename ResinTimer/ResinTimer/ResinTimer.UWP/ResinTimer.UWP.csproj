@@ -149,6 +149,7 @@
     <Content Include="Character_HuTao_Thumb.png" />
     <Content Include="Character_Jean_Thumb.png" />
     <Content Include="Character_Kaeya_Thumb.png" />
+    <Content Include="Character_Kazuha_Thumb.png" />
     <Content Include="Character_Keqing_Thumb.png" />
     <Content Include="Character_Klee_Thumb.png" />
     <Content Include="Character_Lisa_Thumb.png" />
@@ -179,6 +180,7 @@
     <Content Include="Element_Hydro.png" />
     <Content Include="Element_Pyro.png" />
     <Content Include="fractured_fruit_data.png" />
+    <Content Include="friendship.png" />
     <Content Include="furnishing_icon.png" />
     <Content Include="furnishing_rarity_2.png" />
     <Content Include="furnishing_rarity_3.png" />

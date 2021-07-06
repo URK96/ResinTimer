@@ -129,6 +129,12 @@
   <data name="AppAction_App_Timer_GatheringItem" xml:space="preserve">
     <value>Item</value>
   </data>
+  <data name="AppAction_App_Timer_RealmCurrency" xml:space="preserve">
+    <value>Realm Currency</value>
+  </data>
+  <data name="AppAction_App_Timer_RealmFriendship" xml:space="preserve">
+    <value>Realm Friendship</value>
+  </data>
   <data name="AppAction_App_Timer_Resin" xml:space="preserve">
     <value>Resin</value>
   </data>

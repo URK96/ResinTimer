@@ -78,6 +78,8 @@ namespace ResinTimer
             {
                 await AppActions.SetAsync(
                     new AppAction("app_timer_resin", AppResources.AppAction_App_Timer_Resin, icon: "resin"),
+                    new AppAction("app_timer_realmcurrency", AppResources.AppAction_App_Timer_RealmCurrency, icon: "realm_currency"),
+                    new AppAction("app_timer_realmfriendship", AppResources.AppAction_App_Timer_RealmFriendship, icon: "friendship"),
                     new AppAction("app_timer_expedition", AppResources.AppAction_App_Timer_Expedition, icon: "compass"),
                     new AppAction("app_timer_gatheringitem", AppResources.AppAction_App_Timer_GatheringItem, icon: "silk_flower"),
                     new AppAction("app_timer_gadget", AppResources.AppAction_App_Timer_Gadget, icon: "parametric_transformer"),

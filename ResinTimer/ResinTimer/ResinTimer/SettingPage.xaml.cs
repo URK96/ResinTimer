@@ -19,6 +19,8 @@ namespace ResinTimer
         string[] StartScreenList => new string[]
         {
             AppResources.MasterDetail_MasterList_Resin,
+            AppResources.MasterDetail_MasterList_RealmCurrency,
+            AppResources.MasterDetail_MasterList_RealmFriendship,
             AppResources.MasterDetail_MasterList_Expedition,
             AppResources.MasterDetail_MasterList_GatheringItem,
             AppResources.MasterDetail_MasterList_Gadget,
@@ -58,12 +60,14 @@ namespace ResinTimer
         {
             return value switch
             {
-                1 => AppResources.MasterDetail_MasterList_Expedition,
-                2 => AppResources.MasterDetail_MasterList_GatheringItem,
-                3 => AppResources.MasterDetail_MasterList_Gadget,
-                4 => AppResources.MasterDetail_MasterList_Furnishing,
-                5 => AppResources.MasterDetail_MasterList_Talent,
-                6 => AppResources.MasterDetail_MasterList_WeaponAscension,
+                1 => AppResources.MasterDetail_MasterList_RealmCurrency,
+                2 => AppResources.MasterDetail_MasterList_RealmFriendship,
+                3 => AppResources.MasterDetail_MasterList_Expedition,
+                4 => AppResources.MasterDetail_MasterList_GatheringItem,
+                5 => AppResources.MasterDetail_MasterList_Gadget,
+                6 => AppResources.MasterDetail_MasterList_Furnishing,
+                7 => AppResources.MasterDetail_MasterList_Talent,
+                8 => AppResources.MasterDetail_MasterList_WeaponAscension,
                 _ => AppResources.MasterDetail_MasterList_Resin
             };
         }
@@ -93,15 +97,6 @@ namespace ResinTimer
                     }
                 }
 
-                //var resinNotiManager = new ResinNotiManager();
-                //resinNotiManager.UpdateNotisTime();
-
-                //var expNotiManager = new ExpeditionNotiManager();
-                //expNotiManager.UpdateScheduledNoti<ExpeditionNoti>();
-
-                //var giNotiManager = new GatheringItemNotiManager();
-                //giNotiManager.UpdateScheduledNoti<GatheringItemNoti>();
-
                 DependencyService.Get<IScheduledNoti>().ScheduleAllNoti();
             }
             else
@@ -122,7 +117,7 @@ namespace ResinTimer
 
         private async void StartDetailScreen_Tapped(object sender, EventArgs e)
         {
-            var dialog = new BaseDialog(AppResources.SettingPage_Section_App_Start_DetailScreen_Dialog_Title,
+            BaseDialog dialog = new BaseDialog(AppResources.SettingPage_Section_App_Start_DetailScreen_Dialog_Title,
                 new RadioPreferenceView(StartScreenList, SettingConstants.APP_START_DETAILSCREEN));
 
             dialog.OnClose += delegate { StartDetailScreenNow.Text = GetStartScreenString(Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0)); };
@@ -132,7 +127,7 @@ namespace ResinTimer
 
         private async void AppLang_Tapped(object sender, EventArgs e)
         {
-            var dialog = new BaseDialog(AppResources.SettingPage_Section_App_AppLang_Dialog_Title,
+            BaseDialog dialog = new BaseDialog(AppResources.SettingPage_Section_App_AppLang_Dialog_Title,
                 new RadioPreferenceView(AppLangList, SettingConstants.APP_LANG));
 
             dialog.OnClose += delegate { AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnvironment.AppLang.System)]; };
@@ -142,7 +137,7 @@ namespace ResinTimer
 
         private async void AppInGameServer_Tapped(object sender, EventArgs e)
         {
-            var dialog = new BaseDialog(AppResources.SettingPage_Section_App_InGameServer_Dialog_Title,
+            BaseDialog dialog = new BaseDialog(AppResources.SettingPage_Section_App_InGameServer_Dialog_Title,
                 new RadioPreferenceView(AppEnv.serverList, SettingConstants.APP_INGAMESERVER));
 
             dialog.OnClose += delegate { AppInGameServerNow.Text = AppEnv.serverList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)]; };

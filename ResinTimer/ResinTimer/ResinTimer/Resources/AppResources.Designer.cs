@@ -97,6 +97,24 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Realm Currency과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AppAction_App_Timer_RealmCurrency {
+            get {
+                return ResourceManager.GetString("AppAction_App_Timer_RealmCurrency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Realm Friendship과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AppAction_App_Timer_RealmFriendship {
+            get {
+                return ResourceManager.GetString("AppAction_App_Timer_RealmFriendship", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Resin과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string AppAction_App_Timer_Resin {

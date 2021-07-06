@@ -49,6 +49,23 @@ namespace ResinTimer
 
             return false;
         }
+
+        private void CollectionView_ChildAdded(object sender, ElementEventArgs e)
+        {
+            StackLayout rootLayout = e.Element as StackLayout;
+            Label cName = rootLayout.Children[2] as Label;
+
+            if (cName.Text.Length > 8)
+            {
+                //double newSize = cName.FontSize * 0.8;
+                //double gap = cName.FontSize - newSize;
+
+                //cName.Margin = new Thickness(cName.Margin.Left, cName.Margin.Top, cName.Margin.Right, cName.Margin.Bottom + gap);
+                //cName.FontSize = newSize;
+
+                //cName.FontSize *= 0.8;
+            }
+        }
     }
 
     public class Character

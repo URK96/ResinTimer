@@ -22,6 +22,8 @@ namespace ResinTimer
 
             Detail = new NavigationPage(startPageId switch
             {
+                "app_timer_realmcurrency" => new RealmCurrencyTimerPage(),
+                "app_timer_realmfriendship" => new RealmFriendshipTimerPage(),
                 "app_timer_expedition" => new ExpeditionTimerPage(),
                 "app_timer_gatheringitem" => new GatheringItemTimerPage(),
                 "app_timer_gadget" => new GadgetTimerPage(),
@@ -34,18 +36,19 @@ namespace ResinTimer
         private Page GetStartPage()
         {
             Page startPage;
-            //var bgColor = (Device.RuntimePlatform != Device.UWP) ? Color.FromHex("#3F51B5") : Color.Default;
 
             try
             {
                 startPage = Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0) switch
                 {
-                    1 => new ExpeditionTimerPage(),
-                    2 => new GatheringItemTimerPage(),
-                    3 => new GadgetTimerPage(),
-                    4 => new FurnishingTimerPage(),
-                    5 => new TalentTimerPage(),
-                    6 => new WeaponAscensionTimerPage(),
+                    1 => new RealmCurrencyTimerPage(),
+                    2 => new RealmFriendshipTimerPage(),
+                    3 => new ExpeditionTimerPage(),
+                    4 => new GatheringItemTimerPage(),
+                    5 => new GadgetTimerPage(),
+                    6 => new FurnishingTimerPage(),
+                    7 => new TalentTimerPage(),
+                    8 => new WeaponAscensionTimerPage(),
                     _ => new ResinTimerPage()
                 };
             }
@@ -53,8 +56,6 @@ namespace ResinTimer
             {
                 startPage = new ResinTimerPage();
             }
-
-            //startPage.BackgroundColor = bgColor;
 
             return startPage;
         }

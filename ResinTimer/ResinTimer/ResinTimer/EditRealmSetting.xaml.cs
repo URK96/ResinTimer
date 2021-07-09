@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using RCEnv = ResinTimer.RealmCurrencyEnvironment;
+using RFEnv = ResinTimer.RealmFriendshipEnvironment;
 using RealmEnv = ResinTimer.RealmEnvironment;
 
 namespace ResinTimer
@@ -15,10 +16,14 @@ namespace ResinTimer
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditRealmSetting : ContentPage
     {
-        public EditRealmSetting()
+        RealmEnv.RealmType type;
+
+        public EditRealmSetting(RealmEnv.RealmType type)
         {
             InitializeComponent();
             InitPicker();
+
+            this.type = type;
         }
 
         private void InitPicker()
@@ -47,16 +52,36 @@ namespace ResinTimer
             RealmEnv.realmRank = (RealmEnv.RealmRank)RealmRankPicker.SelectedIndex;
             RealmEnv.trustRank = TrustRankPicker.SelectedIndex + 1;
 
-            RCEnv.CalcRemainTime();
-            RCEnv.SaveValue();
-
-            if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+            switch (type)
             {
-                var notiManager = new RealmCurrencyNotiManager();
-                notiManager.UpdateNotisTime();
+                case RealmEnv.RealmType.Currency:
+                    RCEnv.CalcRemainTime();
+                    RCEnv.SaveValue();
+                    break;
+                case RealmEnv.RealmType.Friendship:
+                    RFEnv.CalcRemainTime();
+                    RFEnv.SaveValue();
+                    break;
             }
 
+            UpdateNotis();
+
             Navigation.PopAsync();
+        }
+
+        private void UpdateNotis()
+        {
+            if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+            {
+                NotiManager notiManager = type switch
+                {
+                    RealmEnv.RealmType.Currency => new RealmCurrencyNotiManager(),
+                    RealmEnv.RealmType.Friendship => new RealmFriendshipNotiManager(),
+                    _ => null
+                };
+
+                notiManager?.UpdateNotisTime();
+            }
         }
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)

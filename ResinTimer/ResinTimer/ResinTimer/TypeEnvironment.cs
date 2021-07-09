@@ -110,6 +110,8 @@ namespace ResinTimer
             KingFit
         }
 
+        public enum RealmType { Currency = 0, Friendship }
+
         public static RealmRank realmRank = RealmRank.BareBones;
         public static int trustRank = 1;
 

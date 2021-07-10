@@ -330,6 +330,7 @@ namespace ResinTimer
                 Preferences.Set(SettingConstants.RF_END_TIME, endTime.ToString(dtCulture));
                 Preferences.Set(SettingConstants.RF_LAST_INPUT_TIME, lastInputTime);
 
+                RealmEnv.SaveValues();
             }
             catch { }
         }

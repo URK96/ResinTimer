@@ -42,7 +42,7 @@
     <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="19.1.0.69" />
     <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="19.1.0.69" />
     <PackageReference Include="System.Text.Json" Version="5.0.2" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
 

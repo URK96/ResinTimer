@@ -413,14 +413,8 @@ namespace ResinTimer
         {
             return Item.ItemName switch
             {
-                "Freedom" => "talent_freedom.png",
-                "Resistance" => "talent_resistance.png",
-                "Ballad" => "talent_ballad.png",
-                "Prosperity" => "talent_prosperity.png",
-                "Diligence" => "talent_diligence.png",
-                "Gold" => "talent_gold.png",
                 "All" => $"talent_all_{Location:F}.png",
-                _ => ""
+                _ => $"talent_{Item.ItemName.Replace(" ", "_").ToLower()}.png"
             };
         }
     }
@@ -477,14 +471,14 @@ namespace ResinTimer
         {
             return Item.ItemName switch
             {
-                "Decarabian" => "wa_decarabian_4.png",
-                "Boreal Wolf" => "wa_boreal_wolf_4.png",
-                "The Dandelion Gladiator" => "wa_dandelion_gladiator_4.png",
-                "Guyun" => "wa_guyun_4.png",
-                "Mist Veiled" => "wa_mist_veiled_4.png",
-                "Aerosiderite" => "wa_aerosiderite_4.png",
+                //"Decarabian" => "wa_decarabian_4.png",
+                //"Boreal Wolf" => "wa_boreal_wolf_4.png",
+                //"The Dandelion Gladiator" => "wa_dandelion_gladiator_4.png",
+                //"Guyun" => "wa_guyun_4.png",
+                //"Mist Veiled" => "wa_mist_veiled_4.png",
+                //"Aerosiderite" => "wa_aerosiderite_4.png",
                 "All" => $"wa_all_{Location:F}.png",
-                _ => ""
+                _ => $"wa_{Item.ItemName.Replace(" ", "_").ToLower()}_4.png"
             };
         }
     }

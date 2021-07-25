@@ -31,7 +31,8 @@ namespace ResinTimer.Droid
         private readonly int[] locationImageViewIds =
         {
             Resource.Id.TalentWidgetIconMondstadt,
-            Resource.Id.TalentWidgetIconLiyue
+            Resource.Id.TalentWidgetIconLiyue,
+            Resource.Id.TalentWidgetIconInazuma
         };
 
         public override void OnReceive(Context context, Intent intent)
@@ -95,7 +96,7 @@ namespace ResinTimer.Droid
         {
             foreach (int id in appWidgetIds)
             {
-                var remoteViews = (Preferences.Get($"{SettingConstants.WIDGET_BACKGROUND}_{id}", "White")) switch
+                var remoteViews = Preferences.Get($"{SettingConstants.WIDGET_BACKGROUND}_{id}", "White") switch
                 {
                     "Black" => new RemoteViews(context.PackageName, Resource.Layout.TalentWidget),
                     _ => new RemoteViews(context.PackageName, Resource.Layout.TalentWidget)
@@ -156,6 +157,7 @@ namespace ResinTimer.Droid
                 {
                     Locations.Mondstadt => Resource.Drawable.talent_all_Mondstadt,
                     Locations.Liyue => Resource.Drawable.talent_all_Liyue,
+                    Locations.Inazuma => Resource.Drawable.talent_all_Inazuma,
                     _ => 0
                 };
             }
@@ -169,6 +171,9 @@ namespace ResinTimer.Droid
                     "Prosperity" => Resource.Drawable.talent_prosperity,
                     "Diligence" => Resource.Drawable.talent_diligence,
                     "Gold" => Resource.Drawable.talent_gold,
+                    "Transience" => Resource.Drawable.talent_transience,
+                    "Elegance" => Resource.Drawable.talent_elegance,
+                    "Light" => Resource.Drawable.talent_light,
                     _ => 0
                 };
             }

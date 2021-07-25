@@ -32,6 +32,11 @@
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:id="@+id/WAWidgetIconLiyue"/>
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:id="@+id/WAWidgetIconInazuma"/>
     </ViewFlipper>
     <LinearLayout
         android:orientation="horizontal"

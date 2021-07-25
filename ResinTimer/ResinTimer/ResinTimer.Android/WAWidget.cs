@@ -31,7 +31,8 @@ namespace ResinTimer.Droid
         private readonly int[] locationImageViewIds =
         {
             Resource.Id.WAWidgetIconMondstadt,
-            Resource.Id.WAWidgetIconLiyue
+            Resource.Id.WAWidgetIconLiyue,
+            Resource.Id.WAWidgetIconInazuma
         };
 
         public override void OnReceive(Context context, Intent intent)
@@ -156,6 +157,7 @@ namespace ResinTimer.Droid
                 {
                     Locations.Mondstadt => Resource.Drawable.wa_all_Mondstadt,
                     Locations.Liyue => Resource.Drawable.wa_all_Liyue,
+                    Locations.Inazuma => Resource.Drawable.wa_all_Inazuma,
                     _ => 0
                 };
             }
@@ -169,6 +171,9 @@ namespace ResinTimer.Droid
                     "Guyun" => Resource.Drawable.wa_guyun_4,
                     "Mist Veiled" => Resource.Drawable.wa_mist_veiled_4,
                     "Aerosiderite" => Resource.Drawable.wa_aerosiderite_4,
+                    "Branch of a Distant Sea" => Resource.Drawable.wa_branch_of_a_distant_sea_4,
+                    "Narukami" => Resource.Drawable.wa_narukami_4,
+                    "Mask" => Resource.Drawable.wa_mask_4,
                     _ => 0
                 };
             }

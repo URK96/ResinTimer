@@ -21,21 +21,28 @@ namespace ResinTimer
     {
         public App(Page startPage = null)
         {
-            InitializeComponent();
-            AppEnvironment.InitAppLang();
-            _ = CreateAppAction();
+            try
+            {
+                InitializeComponent();
+                AppEnvironment.InitAppLang();
+                _ = CreateAppAction();
 
 #if DEBUG
             AppEnvironment.isDebug = true;
 #endif
-            AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
-            AppEnvironment.LoadLocationList();
+                AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
+                AppEnvironment.LoadLocationList();
 
-            SetDefaultPreferences();
+                SetDefaultPreferences();
 
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDQwMzYwQDMxMzkyZTMxMmUzMGpZWFV5TW1ldU1rd0cxWGxMcFAwLzhiWmNuanhoZHZpbkZNcDZPSmI5Y0U9");
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDc4OTEwQDMxMzkyZTMyMmUzMFZQZ1F1ckwxcE9nQnA1UnhFNDJrenVFd0ozYWdObndyUWt0dDEwT1IyVVE9");
 
-            SetMainPage(null);
+                SetMainPage(null);
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IToast>().Show(ex.ToString());
+            }
         }
 
         public void SetMainPage(Page page = null)

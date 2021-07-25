@@ -13,6 +13,7 @@ using AndroidX.Core.App;
 using static ResinTimer.Droid.AndroidAppEnvironment;
 using System.Collections.Generic;
 using System.Linq;
+using Android.Util;
 
 namespace ResinTimer.Droid
 {
@@ -22,29 +23,37 @@ namespace ResinTimer.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
-
-            base.OnCreate(savedInstanceState);
-
-            Rg.Plugins.Popup.Popup.Init(this);
-
-            Xamarin.Forms.Forms.SetFlags(new string[] { "Shapes_Experimental", "SwipeView_Experimental" });
-
-            Xamarin.Forms.DependencyService.Register<ResinTimer.IScheduledNoti, ResinTimer.Droid.ScheduledNotiAndroid>();
-
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-
-            var app = new App();
-
-            app.SetMainPage(Intent.GetStringExtra(KEY_TALENTITEM_CLICK) switch
+            try
             {
-                VALUE_TALENTITEM_CLICK => new NavigationPage(new TalentCharacterPage(Intent.GetStringArrayListExtra(KEY_TALENTITEM_LIST)?.Cast<string>().ToArray())),
-                _ => null
-            });
+                TabLayoutResource = Resource.Layout.Tabbar;
+                ToolbarResource = Resource.Layout.Toolbar;
 
-            LoadApplication(app);
+                base.OnCreate(savedInstanceState);
+
+                Rg.Plugins.Popup.Popup.Init(this);
+
+                Xamarin.Forms.Forms.SetFlags(new string[] { "Shapes_Experimental", "SwipeView_Experimental" });
+
+                Xamarin.Forms.DependencyService.Register<ResinTimer.IScheduledNoti, ResinTimer.Droid.ScheduledNotiAndroid>();
+
+                Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+                global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+                var app = new App();
+
+                app.SetMainPage(Intent.GetStringExtra(KEY_TALENTITEM_CLICK) switch
+                {
+                    VALUE_TALENTITEM_CLICK => new NavigationPage(new TalentCharacterPage(Intent.GetStringArrayListExtra(KEY_TALENTITEM_LIST)?.Cast<string>().ToArray())),
+                    _ => null
+                });
+
+                LoadApplication(app);
+            }
+            catch (Exception ex)
+            {
+                Toast.MakeText(this, ex.ToString(), ToastLength.Long).Show();
+                Log.Error("ResinTimer", ex.ToString());
+            }
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

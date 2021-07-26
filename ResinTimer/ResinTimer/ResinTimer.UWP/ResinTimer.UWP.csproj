@@ -125,6 +125,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="amethyst_lump.png" />
     <Content Include="apply.png" />
     <Content Include="artifact.png" />
     <Content Include="artifact12H.png" />
@@ -172,7 +173,9 @@
     <Content Include="Character_Zhongli_Thumb.png" />
     <Content Include="compass.png" />
     <Content Include="crystal_chunk.png" />
+    <Content Include="crystal_core.png" />
     <Content Include="edit.png" />
+    <Content Include="electro_crystal.png" />
     <Content Include="Element_Anemo.png" />
     <Content Include="Element_Cryo.png" />
     <Content Include="Element_Dendro.png" />
@@ -291,7 +294,7 @@
     <Content Include="wa_all_Mondstadt.png" />
     <Content Include="wa_boreal_wolf_4.png" />
     <Content Include="wa_branch_of_a_distant_sea_4.png" />
-    <Content Include="wa_dandelion_gladiator_4.png" />
+    <Content Include="wa_the_dandelion_gladiator_4.png" />
     <Content Include="wa_decarabian_4.png" />
     <Content Include="wa_guyun_4.png" />
     <Content Include="wa_mask_4.png" />
@@ -316,11 +319,11 @@
       <Version>7.0.2</Version>
     </PackageReference>
     <PackageReference Include="Rg.Plugins.Popup">
-      <Version>2.0.0.11</Version>
+      <Version>2.0.0.12</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.12" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ResinTimer\ResinTimer.csproj">

@@ -656,6 +656,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Amethyst Lump과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItem_Type_AmethystLump {
+            get {
+                return ResourceManager.GetString("GatheringItem_Type_AmethystLump", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Artifact과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string GatheringItem_Type_Artifact {
@@ -688,6 +697,24 @@ namespace ResinTimer.Resources {
         public static string GatheringItem_Type_CrystalChunk {
             get {
                 return ResourceManager.GetString("GatheringItem_Type_CrystalChunk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Crystal Core과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItem_Type_CrystalCore {
+            get {
+                return ResourceManager.GetString("GatheringItem_Type_CrystalCore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Electro Crystal과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GatheringItem_Type_ElectroCrystal {
+            get {
+                return ResourceManager.GetString("GatheringItem_Type_ElectroCrystal", resourceCulture);
             }
         }
         
@@ -2112,6 +2139,15 @@ namespace ResinTimer.Resources {
         public static string Toolbar_ResetAll {
             get {
                 return ResourceManager.GetString("Toolbar_ResetAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Please input correct value과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ValueEdit_ValueError_Message {
+            get {
+                return ResourceManager.GetString("ValueEdit_ValueError_Message", resourceCulture);
             }
         }
         

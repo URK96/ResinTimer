@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using ResinTimer.Resources;
+
+using System;
 
 using Xamarin.Forms;
 
@@ -23,18 +22,23 @@ namespace ResinTimer.Dialogs
         {
             base.ApplyValue();
 
-            var inputValue = int.Parse(SfUpDown.Text);
+            if (int.TryParse(SfUpDown.Text, out int inputValue))
+            {
+                RCEnv.lastInputTime = DateTime.Now.ToString(AppEnv.dtCulture);
+                RCEnv.currency = inputValue; //Convert.ToInt32((double)SfUpDown.Value);
+                RCEnv.addCount = 0;
 
-            RCEnv.lastInputTime = DateTime.Now.ToString(AppEnv.dtCulture);
-            RCEnv.currency = inputValue; //Convert.ToInt32((double)SfUpDown.Value);
-            RCEnv.addCount = 0;
+                RCEnv.CalcRemainTime();
+                RCEnv.CalcRC();
+                RCEnv.SaveValue();
 
-            RCEnv.CalcRemainTime();
-            RCEnv.CalcRC();
-            RCEnv.SaveValue();
-
-            notiManager.UpdateNotisTime();
-            notiManager.UpdateScheduledNoti<RealmCurrencyNoti>();
+                notiManager.UpdateNotisTime();
+                notiManager.UpdateScheduledNoti<RealmCurrencyNoti>();
+            }
+            else
+            {
+                DependencyService.Get<IToast>().Show(AppResources.ValueEdit_ValueError_Message);
+            }
         }
     }
 }

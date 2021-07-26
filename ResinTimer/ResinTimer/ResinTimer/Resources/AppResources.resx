@@ -325,6 +325,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="GatheringItem_ItemNote_None" xml:space="preserve">
     <value>(None)</value>
   </data>
+  <data name="GatheringItem_Type_AmethystLump" xml:space="preserve">
+    <value>Amethyst Lump</value>
+  </data>
   <data name="GatheringItem_Type_Artifact" xml:space="preserve">
     <value>Artifact</value>
   </data>
@@ -336,6 +339,12 @@ Please re-enable alarm in app setting to register notification alarm</value>
   </data>
   <data name="GatheringItem_Type_CrystalChunk" xml:space="preserve">
     <value>Crystal Chunk</value>
+  </data>
+  <data name="GatheringItem_Type_CrystalCore" xml:space="preserve">
+    <value>Crystal Core</value>
+  </data>
+  <data name="GatheringItem_Type_ElectroCrystal" xml:space="preserve">
+    <value>Electro Crystal</value>
   </data>
   <data name="GatheringItem_Type_IronChunk" xml:space="preserve">
     <value>Iron Chunk</value>
@@ -827,6 +836,9 @@ MIT License</value>
   </data>
   <data name="Toolbar_ResetAll" xml:space="preserve">
     <value>Reset All</value>
+  </data>
+  <data name="ValueEdit_ValueError_Message" xml:space="preserve">
+    <value>Please input correct value</value>
   </data>
   <data name="WAWidget_Title" xml:space="preserve">
     <value>Today Weapon</value>

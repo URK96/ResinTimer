@@ -343,9 +343,21 @@ namespace ResinTimer
 
     public static class GatheringItemEnvironment
     {
-        public enum GItemType { MagicCrystalChunk = 0, Artifact, Specialty, Artifact12H, CrystalChunk, WhiteIronChunk, IronChunk }
+        public enum GItemType 
+        { 
+            MagicCrystalChunk = 0, 
+            Artifact, 
+            Specialty, 
+            Artifact12H, 
+            CrystalChunk, 
+            WhiteIronChunk, 
+            IronChunk,
+            ElectroCrystal,
+            CrystalCore,
+            AmethystLump
+        }
 
-        public static double[] resetTimeList = { 72, 24, 48, 12, 72, 48, 24 };
+        public static double[] resetTimeList = { 72, 24, 48, 12, 72, 48, 24, 48, 12, 72 };
     }
 
     public static class GadgetEnvironment

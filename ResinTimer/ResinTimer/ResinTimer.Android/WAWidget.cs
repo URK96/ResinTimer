@@ -167,7 +167,7 @@ namespace ResinTimer.Droid
                 {
                     "Decarabian" => Resource.Drawable.wa_decarabian_4,
                     "Boreal Wolf" => Resource.Drawable.wa_boreal_wolf_4,
-                    "The Dandelion Gladiator" => Resource.Drawable.wa_dandelion_gladiator_4,
+                    "The Dandelion Gladiator" => Resource.Drawable.wa_the_dandelion_gladiator_4,
                     "Guyun" => Resource.Drawable.wa_guyun_4,
                     "Mist Veiled" => Resource.Drawable.wa_mist_veiled_4,
                     "Aerosiderite" => Resource.Drawable.wa_aerosiderite_4,

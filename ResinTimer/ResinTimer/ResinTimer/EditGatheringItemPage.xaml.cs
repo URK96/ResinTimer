@@ -42,7 +42,10 @@ namespace ResinTimer
                 AppResources.GatheringItem_Type_Artifact12H,
                 AppResources.GatheringItem_Type_CrystalChunk,
                 AppResources.GatheringItem_Type_WhiteIronChunk,
-                AppResources.GatheringItem_Type_IronChunk
+                AppResources.GatheringItem_Type_IronChunk,
+                AppResources.GatheringItem_Type_ElectroCrystal,
+                AppResources.GatheringItem_Type_CrystalCore,
+                AppResources.GatheringItem_Type_AmethystLump
             };
 
             if (editType == NotiManager.EditType.Edit)
@@ -59,9 +62,9 @@ namespace ResinTimer
 
         private async void ApplySetting()
         {
-            var type = (GIEnv.GItemType)GatheringItemTypePicker.SelectedIndex;
-            var note = GatheringItemNoteEntry.Text;
-            var manager = notiManager as GatheringItemNotiManager;
+            GIEnv.GItemType type = (GIEnv.GItemType)GatheringItemTypePicker.SelectedIndex;
+            string note = GatheringItemNoteEntry.Text;
+            GatheringItemNotiManager manager = notiManager as GatheringItemNotiManager;
 
             if (editType == NotiManager.EditType.Add)
             {
@@ -85,6 +88,8 @@ namespace ResinTimer
             {
                 case 0:  // Apply
                     ApplySetting();
+                    break;
+                default:
                     break;
             }
         }

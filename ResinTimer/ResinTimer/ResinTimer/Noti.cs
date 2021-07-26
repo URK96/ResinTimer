@@ -219,6 +219,9 @@ namespace ResinTimer
             GIEnv.GItemType.CrystalChunk => AppResources.GatheringItem_Type_CrystalChunk,
             GIEnv.GItemType.WhiteIronChunk => AppResources.GatheringItem_Type_WhiteIronChunk,
             GIEnv.GItemType.IronChunk => AppResources.GatheringItem_Type_IronChunk,
+            GIEnv.GItemType.ElectroCrystal => AppResources.GatheringItem_Type_ElectroCrystal,
+            GIEnv.GItemType.CrystalCore => AppResources.GatheringItem_Type_CrystalCore,
+            GIEnv.GItemType.AmethystLump => AppResources.GatheringItem_Type_AmethystLump,
             _ => AppResources.GatheringItem_Type_MagicalCrystalChunk
         };
         public string TypeImageName => ItemType switch
@@ -229,6 +232,9 @@ namespace ResinTimer
             GIEnv.GItemType.CrystalChunk => "crystal_chunk.png",
             GIEnv.GItemType.WhiteIronChunk => "white_iron_chunk.png",
             GIEnv.GItemType.IronChunk => "iron_chunk.png",
+            GIEnv.GItemType.ElectroCrystal => "electro_crystal.png",
+            GIEnv.GItemType.CrystalCore => "crystal_core.png",
+            GIEnv.GItemType.AmethystLump => "amethyst_lump.png",
             _ => "magical_crystal_chunk.png"
         };
         public bool ItemNoteVisible => !string.IsNullOrWhiteSpace(ItemNote);

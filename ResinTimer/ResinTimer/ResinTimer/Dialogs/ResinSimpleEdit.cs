@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using ResinTimer.Resources;
+
+using System;
 
 using Xamarin.Forms;
 
@@ -23,15 +22,20 @@ namespace ResinTimer.Dialogs
         {
             base.ApplyValue();
 
-            var inputValue = int.Parse(SfUpDown.Text);
+            if (int.TryParse(SfUpDown.Text, out int inputValue))
+            {
+                REnv.endTime = REnv.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * (REnv.resin - inputValue));
+                REnv.lastInputTime = DateTime.Now.ToString(AppEnv.dtCulture);
+                REnv.CalcResin();
+                REnv.SaveValue();
 
-            REnv.endTime = REnv.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * (REnv.resin - inputValue));
-            REnv.lastInputTime = DateTime.Now.ToString(AppEnv.dtCulture);
-            REnv.CalcResin();
-            REnv.SaveValue();
-
-            notiManager.UpdateNotisTime();
-            notiManager.UpdateScheduledNoti<ResinNoti>();
+                notiManager.UpdateNotisTime();
+                notiManager.UpdateScheduledNoti<ResinNoti>();
+            }
+            else
+            {
+                DependencyService.Get<IToast>().Show(AppResources.ValueEdit_ValueError_Message);
+            }
         }
     }
 }

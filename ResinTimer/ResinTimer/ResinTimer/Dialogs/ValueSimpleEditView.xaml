@@ -11,7 +11,7 @@
                                  SelectAllOnFocus="True" SpinValidation="Default"/>-->
        
         <Entry x:Name="ValueUpDown" Margin="0, 10, 0, 0" HorizontalOptions="CenterAndExpand"
-               HorizontalTextAlignment="Center" Keyboard="Numeric"
+               HorizontalTextAlignment="Center" Keyboard="Numeric" WidthRequest="150"
                TextChanged="ValueUpDown_TextChanged" />
 
         <Grid Padding="0, 20, 0, 0">

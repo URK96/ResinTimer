@@ -44,7 +44,7 @@ namespace ResinTimer.Dialogs
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            var btText = (sender as Button).Text;
+            string btText = (sender as Button).Text;
 
             if (btText.Equals(AppResources.Dialog_Ok))
             {
@@ -56,11 +56,12 @@ namespace ResinTimer.Dialogs
 
         private async void ButtonPressed(object sender, EventArgs e)
         {
-            var button = sender as Button;
+            Button button = sender as Button;
 
             try
             {
                 button.BackgroundColor = Color.FromHex("#500682F6");
+
                 await button.ScaleTo(0.95, 100, Easing.SinInOut);
             }
             catch { }
@@ -68,11 +69,12 @@ namespace ResinTimer.Dialogs
 
         private async void ButtonReleased(object sender, EventArgs e)
         {
-            var button = sender as Button;
+            Button button = sender as Button;
 
             try
             {
                 button.BackgroundColor = Color.Transparent;
+
                 await button.ScaleTo(1.0, 100, Easing.SinInOut);
             }
             catch { }
@@ -80,23 +82,23 @@ namespace ResinTimer.Dialogs
 
         private void ValueUpDown_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var entry = sender as Entry;
+            //Entry entry = sender as Entry;
 
-            if (!int.TryParse(e.NewTextValue, out int input))
-            {
-                entry.Text = e.OldTextValue;
-            }
-            else
-            {
-                if (input < minValue)
-                {
-                    entry.Text = minValue.ToString();
-                }
-                else if (input > maxValue)
-                {
-                    entry.Text = maxValue.ToString();
-                }
-            }
+            //if (!int.TryParse(e.NewTextValue, out int input))
+            //{
+            //    entry.Text = e.OldTextValue;
+            //}
+            //else
+            //{
+            //    if (input < minValue)
+            //    {
+            //        entry.Text = minValue.ToString();
+            //    }
+            //    else if (input > maxValue)
+            //    {
+            //        entry.Text = maxValue.ToString();
+            //    }
+            //}
         }
     }
 }

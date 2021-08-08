@@ -313,6 +313,21 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Gadget_Type_PortableWaypoint" xml:space="preserve">
     <value>Portable Waypoint</value>
   </data>
+  <data name="GardeningItemTimer_Complete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="GardeningTimerPage_Title" xml:space="preserve">
+    <value>Gardening</value>
+  </data>
+  <data name="Gardening_JadeField" xml:space="preserve">
+    <value>Jade Field</value>
+  </data>
+  <data name="Gardening_LuxuriantGlebe" xml:space="preserve">
+    <value>Luxuriant Glebe</value>
+  </data>
+  <data name="Gardening_OrderlyMeadow" xml:space="preserve">
+    <value>Orderly Meadow</value>
+  </data>
   <data name="GatheringItemMain_Title" xml:space="preserve">
     <value>Item</value>
   </data>
@@ -561,6 +576,9 @@ MIT License</value>
   <data name="MasterDetail_MasterList_Gadget" xml:space="preserve">
     <value>Gadget</value>
   </data>
+  <data name="MasterDetail_MasterList_Gardening" xml:space="preserve">
+    <value>Gardening</value>
+  </data>
   <data name="MasterDetail_MasterList_GatheringItem" xml:space="preserve">
     <value>Gathering Item</value>
   </data>
@@ -642,6 +660,12 @@ MIT License</value>
   <data name="Noti_Gadget_Title" xml:space="preserve">
     <value>Gadget Noti</value>
   </data>
+  <data name="Noti_Gardening_Message" xml:space="preserve">
+    <value>gardening is complete</value>
+  </data>
+  <data name="Noti_Gardening_Title" xml:space="preserve">
+    <value>Gardening Complete</value>
+  </data>
   <data name="Noti_GatheringItem_Message" xml:space="preserve">
     <value>are restored now</value>
   </data>
@@ -674,6 +698,9 @@ MIT License</value>
   </data>
   <data name="NowUTC_PreLabel" xml:space="preserve">
     <value>Now Region UTC</value>
+  </data>
+  <data name="Overflow_Text" xml:space="preserve">
+    <value>Overflow</value>
   </data>
   <data name="RealmCurrencyNotiSettingPage_AddDialog_Summary" xml:space="preserve">
     <value>Enter the number of currency ratio you would like to be notified of.</value>

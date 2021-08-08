@@ -39,6 +39,7 @@
         public const string GATHERINGITEM_NOTI_LIST = "GatheringItem_Noti_List";
         public const string GADGET_NOTI_LIST = "Gadget_Noti_List";
         public const string FURNISHING_NOTI_LIST = "Furnishing_Noti_List";
+        public const string GARDENING_NOTI_LIST = "Gardening_Noti_List";
         public const string CHECKLIST_LIST = "Checklist_List";
         
         // Setting - App

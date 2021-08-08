@@ -39,7 +39,7 @@ namespace ResinTimer.TimerPages
                 Order = ToolbarItemOrder.Secondary,
                 Priority = 10,
             };
-            FurnishingSpeedUpToolbarItem.Clicked += FurnishingToolbarItem_Clicked;
+            FurnishingSpeedUpToolbarItem.Clicked += FurnishingSpeedUpToolbarItem_Clicked;
 
 
             ToolbarItems.Add(FurnishingSpeedUpToolbarItem);
@@ -94,18 +94,18 @@ namespace ResinTimer.TimerPages
             base.OpenEditItemTimeDialog();
         }
 
-        private void FurnishingToolbarItem_Clicked(object sender, EventArgs e)
+        private void FurnishingSpeedUpToolbarItem_Clicked(object sender, EventArgs e)
         {
             if (ListView.SelectedItems.Count < 0)
             {
                 return;
             }
 
-            var selectedNoti = (FurnishingNoti)ListView.SelectedItem;
+            FurnishingNoti selectedNoti = (FurnishingNoti)ListView.SelectedItem;
 
             selectedNoti.NotiTime = selectedNoti.NotiTime.AddHours(-FEnv.SPEEDUP_HOUR);
 
-            notiManager.EditList((Noti)ListView.SelectedItem, NotiManager.EditType.EditOnlyTime);
+            notiManager.EditList(selectedNoti, NotiManager.EditType.EditOnlyTime);
 
             RefreshCollectionView(ListView, Notis);
         }

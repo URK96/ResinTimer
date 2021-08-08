@@ -647,6 +647,51 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Jade Field과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Gardening_JadeField {
+            get {
+                return ResourceManager.GetString("Gardening_JadeField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Luxuriant Glebe과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Gardening_LuxuriantGlebe {
+            get {
+                return ResourceManager.GetString("Gardening_LuxuriantGlebe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Orderly Meadow과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Gardening_OrderlyMeadow {
+            get {
+                return ResourceManager.GetString("Gardening_OrderlyMeadow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Complete과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GardeningItemTimer_Complete {
+            get {
+                return ResourceManager.GetString("GardeningItemTimer_Complete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Gardening과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GardeningTimerPage_Title {
+            get {
+                return ResourceManager.GetString("GardeningTimerPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   (None)과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string GatheringItem_ItemNote_None {
@@ -1315,6 +1360,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Gardening과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_Gardening {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_Gardening", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Gathering Item과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string MasterDetail_MasterList_GatheringItem {
@@ -1437,6 +1491,24 @@ namespace ResinTimer.Resources {
         public static string Noti_Gadget_Title {
             get {
                 return ResourceManager.GetString("Noti_Gadget_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   gardening is complete과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_Gardening_Message {
+            get {
+                return ResourceManager.GetString("Noti_Gardening_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Gardening Complete과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_Gardening_Title {
+            get {
+                return ResourceManager.GetString("Noti_Gardening_Title", resourceCulture);
             }
         }
         
@@ -1653,6 +1725,15 @@ namespace ResinTimer.Resources {
         public static string NowUTC_PreLabel {
             get {
                 return ResourceManager.GetString("NowUTC_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Overflow과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Overflow_Text {
+            get {
+                return ResourceManager.GetString("Overflow_Text", resourceCulture);
             }
         }
         

@@ -145,6 +145,10 @@ namespace ResinTimer.TimerPages
                 PointerValue.Value = ResinEnvironment.resin;
 
                 ResinRemainTimeRange.EndValue = 160 - ResinEnvironment.oneCountTime.TotalSec * ((double)ResinEnvironment.MAX_RESIN / ResinTime.ONE_RESTORE_INTERVAL);
+
+                int overflowValue = ResinEnvironment.CalcResinOverflow();
+
+                ResinOverflowLabel.Text = (overflowValue < 0) ? "" : $"{AppResources.Overflow_Text} : {overflowValue}";
             }
             catch (Exception ex)
             {

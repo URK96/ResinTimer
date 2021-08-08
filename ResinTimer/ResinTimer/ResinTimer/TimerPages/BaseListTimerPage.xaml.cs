@@ -61,7 +61,7 @@ namespace ResinTimer.TimerPages
         {
             if (ListView.SelectedItem != null)
             {
-                var dialog = new BaseDialog(AppResources.ListTimer_EditTime,
+                BaseDialog dialog = new BaseDialog(AppResources.ListTimer_EditTime,
                     new TimeEditView(ListView.SelectedItem as Noti, notiManager));
 
                 dialog.OnClose += delegate { RefreshCollectionView(ListView, Notis); };

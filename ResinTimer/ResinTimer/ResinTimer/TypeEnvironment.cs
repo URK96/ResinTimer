@@ -92,6 +92,17 @@ namespace ResinTimer
             }
             catch { }
         }
+
+        public static int CalcResinOverflow()
+        {
+            DateTime now = DateTime.Now;
+
+            return now switch
+            {
+                _ when now > endTime => (int)(now - endTime).TotalSeconds / ResinTime.ONE_RESTORE_INTERVAL,
+                _ => -1
+            };
+        }
     }
 
     public static class RealmEnvironment
@@ -374,6 +385,17 @@ namespace ResinTimer
         public static double[] resetTimeList = { 12, 14, 16 }; // Rarity : 2 3 4
     }
 
+    public static class GardeningEnvironment
+    {
+        public const int FULLGROW_INTERVAL = 70;
+        public enum FieldType { JadeField, LuxuriantGlebe, OrderlyMeadow }
+    }
+
+    public static class ChecklistEnvironment
+    {
+        public enum ResetType { Once = 0, Custom, Daily, Weekly, Monthly }
+    }
+
     public static class TalentEnvironment
     {
         public const int RENEWAL_HOUR = 4;
@@ -493,10 +515,5 @@ namespace ResinTimer
                 _ => $"wa_{Item.ItemName.Replace(" ", "_").ToLower()}_4.png"
             };
         }
-    }
-
-    public static class ChecklistEnvironment
-    {
-        public enum ResetType { Once = 0, Custom, Daily, Weekly, Monthly }
     }
 }

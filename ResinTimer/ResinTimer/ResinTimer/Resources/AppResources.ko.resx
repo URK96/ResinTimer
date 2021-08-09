@@ -126,6 +126,9 @@
   <data name="AppAction_App_Timer_Gadget" xml:space="preserve">
     <value>도구</value>
   </data>
+  <data name="AppAction_App_Timer_Gardening" xml:space="preserve">
+    <value>농업</value>
+  </data>
   <data name="AppAction_App_Timer_GatheringItem" xml:space="preserve">
     <value>채집물</value>
   </data>

@@ -88,6 +88,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Gardening과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AppAction_App_Timer_Gardening {
+            get {
+                return ResourceManager.GetString("AppAction_App_Timer_Gardening", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Item과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string AppAction_App_Timer_GatheringItem {

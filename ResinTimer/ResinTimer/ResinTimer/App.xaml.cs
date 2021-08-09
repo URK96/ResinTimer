@@ -70,7 +70,7 @@ namespace ResinTimer
             }
             if (!Preferences.ContainsKey(SettingConstants.NOTI_LIST))
             {
-                var list = new List<ResinNoti>
+                List<ResinNoti> list = new List<ResinNoti>
                 {
                     new ResinNoti(ResinEnvironment.MAX_RESIN)
                 };
@@ -91,6 +91,7 @@ namespace ResinTimer
                     new AppAction("app_timer_gatheringitem", AppResources.AppAction_App_Timer_GatheringItem, icon: "silk_flower"),
                     new AppAction("app_timer_gadget", AppResources.AppAction_App_Timer_Gadget, icon: "parametric_transformer"),
                     new AppAction("app_timer_furnishing", AppResources.AppAction_App_Timer_Furnishing, icon: "furnishing_icon"),
+                    new AppAction("app_timer_gardening", AppResources.AppAction_App_Timer_Gardening, icon: "gardening_jade_field"),
                     new AppAction("app_timer_talent", AppResources.AppAction_App_Timer_Talent, icon: "talent_freedom"),
                     new AppAction("app_timer_wa", AppResources.AppAction_App_Timer_WA, icon: "wa_aerosiderite_4"));
 

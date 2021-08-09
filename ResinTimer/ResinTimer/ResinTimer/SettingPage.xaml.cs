@@ -25,6 +25,7 @@ namespace ResinTimer
             AppResources.MasterDetail_MasterList_GatheringItem,
             AppResources.MasterDetail_MasterList_Gadget,
             AppResources.MasterDetail_MasterList_Furnishing,
+            AppResources.MasterDetail_MasterList_Gardening,
             AppResources.MasterDetail_MasterList_Talent,
             AppResources.MasterDetail_MasterList_WeaponAscension
         };
@@ -66,8 +67,9 @@ namespace ResinTimer
                 4 => AppResources.MasterDetail_MasterList_GatheringItem,
                 5 => AppResources.MasterDetail_MasterList_Gadget,
                 6 => AppResources.MasterDetail_MasterList_Furnishing,
-                7 => AppResources.MasterDetail_MasterList_Talent,
-                8 => AppResources.MasterDetail_MasterList_WeaponAscension,
+                7 => AppResources.MasterDetail_MasterList_Gardening,
+                8 => AppResources.MasterDetail_MasterList_Talent,
+                9 => AppResources.MasterDetail_MasterList_WeaponAscension,
                 _ => AppResources.MasterDetail_MasterList_Resin
             };
         }
@@ -79,7 +81,7 @@ namespace ResinTimer
 
         private async void Notification_OnChanged(object sender, ToggledEventArgs e)
         {
-            var bootService = DependencyService.Get<IBootService>();
+            IBootService bootService = DependencyService.Get<IBootService>();
 
             Preferences.Set(SettingConstants.NOTI_ENABLED, e.Value);
 

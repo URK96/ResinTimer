@@ -28,7 +28,9 @@ namespace ResinTimer
                 "app_timer_gatheringitem" => new GatheringItemTimerPage(),
                 "app_timer_gadget" => new GadgetTimerPage(),
                 "app_timer_furnishing" => new FurnishingTimerPage(),
+                "app_timer_gardening" => new GardeningTimerPage(),
                 "app_timer_talent" => new TalentTimerPage(),
+                "app_timer_wa" => new WeaponAscensionTimerPage(),
                 _ => new ResinTimerPage()
             });
         }
@@ -47,8 +49,9 @@ namespace ResinTimer
                     4 => new GatheringItemTimerPage(),
                     5 => new GadgetTimerPage(),
                     6 => new FurnishingTimerPage(),
-                    7 => new TalentTimerPage(),
-                    8 => new WeaponAscensionTimerPage(),
+                    7 => new GardeningTimerPage(),
+                    8 => new TalentTimerPage(),
+                    9 => new WeaponAscensionTimerPage(),
                     _ => new ResinTimerPage()
                 };
             }

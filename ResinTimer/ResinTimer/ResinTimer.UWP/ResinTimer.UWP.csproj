@@ -189,6 +189,9 @@
     <Content Include="furnishing_rarity_2.png" />
     <Content Include="furnishing_rarity_3.png" />
     <Content Include="furnishing_rarity_4.png" />
+    <Content Include="gardening_jade_field.png" />
+    <Content Include="gardening_luxuriant_glebe.png" />
+    <Content Include="gardening_orderly_meadow.png" />
     <Content Include="info.png" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="ingredient.png" />

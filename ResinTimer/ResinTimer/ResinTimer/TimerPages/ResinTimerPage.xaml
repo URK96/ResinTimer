@@ -104,7 +104,7 @@
                HorizontalTextAlignment="Center" TextColor="OrangeRed" />
 
         <Grid AbsoluteLayout.LayoutFlags="All"
-              AbsoluteLayout.LayoutBounds="0.5, 0.95, 0.95, 0.25">
+              AbsoluteLayout.LayoutBounds="{OnPlatform Android='0.5, 0.95, 0.95, 0.25', Default='0.5, 0.95, 0.95, 0.22'}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />

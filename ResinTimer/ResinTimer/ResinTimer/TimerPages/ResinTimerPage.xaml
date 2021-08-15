@@ -19,7 +19,7 @@
             <Setter Property="BorderWidth" Value="2" />
             <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="CharacterSpacing" Value="3" />
-            <Setter Property="FontSize" Value="Default" />
+            <Setter Property="FontSize" Value="Small" />
         </Style>
     </ContentPage.Resources>
 
@@ -104,7 +104,7 @@
                HorizontalTextAlignment="Center" TextColor="OrangeRed" />
 
         <Grid AbsoluteLayout.LayoutFlags="All"
-              AbsoluteLayout.LayoutBounds="0.5, 0.95, 0.95, 0.22">
+              AbsoluteLayout.LayoutBounds="0.5, 0.95, 0.95, 0.25">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />

@@ -613,7 +613,7 @@ namespace ResinTimer
         {
             try
             {
-                notiType = NotiType.Furnishing;
+                notiType = NotiType.Gardening;
 
                 Notis.AddRange(GetNotiList<GardeningNoti>());
 

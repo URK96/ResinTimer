@@ -95,7 +95,7 @@ namespace ResinTimer
                 return;
             }
 
-            var scheduledService = GetScheduledService();
+            IScheduledNoti scheduledService = GetScheduledService();
 
             scheduledService.Cancel<T>();
             RenewalIds();
@@ -105,7 +105,7 @@ namespace ResinTimer
 
         public void SaveNotis()
         {
-            var key = notiType switch
+            string key = notiType switch
             {
                 NotiType.Resin => SettingConstants.NOTI_LIST,
                 NotiType.RealmCurrency => SettingConstants.REALM_CURRENCY_NOTI_LIST,
@@ -613,7 +613,7 @@ namespace ResinTimer
         {
             try
             {
-                notiType = NotiType.Furnishing;
+                notiType = NotiType.Gardening;
 
                 Notis.AddRange(GetNotiList<GardeningNoti>());
 

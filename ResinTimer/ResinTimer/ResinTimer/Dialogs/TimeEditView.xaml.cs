@@ -29,8 +29,6 @@ namespace ResinTimer.Dialogs
 
         private void InitValue()
         {
-            GetMaxHour();
-
             var ts = (noti.NotiTime > DateTime.Now) ? (noti.NotiTime - DateTime.Now) : TimeSpan.FromSeconds(0);
 
             TimeHour.Text = ((int)ts.TotalHours).ToString();

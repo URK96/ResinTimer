@@ -28,6 +28,7 @@
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageCertificateKeyFile />
+    <GenerateTemporaryStoreCertificate>True</GenerateTemporaryStoreCertificate>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -195,7 +196,6 @@
     <Content Include="gardening_luxuriant_glebe.png" />
     <Content Include="gardening_orderly_meadow.png" />
     <Content Include="info.png" />
-    <None Include="Package.StoreAssociation.xml" />
     <Content Include="ingredient.png" />
     <Content Include="iron_chunk.png" />
     <Content Include="location.png" />
@@ -223,6 +223,7 @@
     <Content Include="minus.png" />
     <Content Include="mora.png" />
     <Content Include="notisetting.png" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="parametric_transformer.png" />
     <Content Include="plus.png" />
     <Content Include="portable_waypoint.png" />

@@ -2026,15 +2026,6 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Enable Quick Calc Vibration과(와) 유사한 지역화된 문자열을 찾습니다.
-        /// </summary>
-        public static string SettingPage_Section_Main_Cell_QuickCalcVibrate_Title {
-            get {
-                return ResourceManager.GetString("SettingPage_Section_Main_Cell_QuickCalcVibrate_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Main과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string SettingPage_Section_Main_Title {
@@ -2049,6 +2040,33 @@ namespace ResinTimer.Resources {
         public static string SettingPage_Section_ResinTimer_Title {
             get {
                 return ResourceManager.GetString("SettingPage_Section_ResinTimer_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Enable Quick Calc Vibration과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_TimerCommon_QuickCalcVibrate_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_TimerCommon_QuickCalcVibrate_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Show Overflow과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_TimerCommon_ShowOverflow_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_TimerCommon_ShowOverflow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Timer과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_TimerCommon_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_TimerCommon_Title", resourceCulture);
             }
         }
         

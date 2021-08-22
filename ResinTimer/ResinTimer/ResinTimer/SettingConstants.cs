@@ -49,7 +49,8 @@
         public const string APP_LANG = "App_Lang";
         public const string APP_INGAMESERVER = "App_InGameServer";
 
-        // Setting - Main
+        // Setting - Timer Common
+        public const string SHOW_OVERFLOW = "Show_Overflow";
         public const string QUICKCALC_VIBRATION = "QuickCalc_Vibration";
 
         // Android Specific

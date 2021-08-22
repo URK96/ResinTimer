@@ -52,7 +52,8 @@ namespace ResinTimer
             AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnv.AppLang.System)];
             AppInGameServerNow.Text = AppEnv.serverList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)];
 
-            // Main Section
+            // Timer Common Section
+            ShowOverflow.On = Preferences.Get(SettingConstants.SHOW_OVERFLOW, false);
             QuickCalcVibration.IsEnabled = Device.RuntimePlatform != Device.UWP;
             QuickCalcVibration.On = Preferences.Get(SettingConstants.QUICKCALC_VIBRATION, true);
         }
@@ -145,6 +146,11 @@ namespace ResinTimer
             dialog.OnClose += delegate { AppInGameServerNow.Text = AppEnv.serverList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)]; };
 
             await PopupNavigation.Instance.PushAsync(dialog);
+        }
+
+        private void ShowOverflow_OnChanged(object sender, ToggledEventArgs e)
+        {
+            Preferences.Set(SettingConstants.SHOW_OVERFLOW, e.Value);
         }
     }
 }

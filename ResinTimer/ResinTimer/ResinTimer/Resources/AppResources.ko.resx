@@ -797,14 +797,20 @@ MIT License</value>
   <data name="SettingPage_Section_App_Use24HTimeFormat_Title" xml:space="preserve">
     <value>24H 시간 형식 사용</value>
   </data>
-  <data name="SettingPage_Section_Main_Cell_QuickCalcVibrate_Title" xml:space="preserve">
-    <value>빠른 계산 진동 활성화</value>
-  </data>
   <data name="SettingPage_Section_Main_Title" xml:space="preserve">
     <value>메인</value>
   </data>
   <data name="SettingPage_Section_ResinTimer_Title" xml:space="preserve">
     <value>레진 알리미</value>
+  </data>
+  <data name="SettingPage_Section_TimerCommon_QuickCalcVibrate_Title" xml:space="preserve">
+    <value>빠른 계산 진동 활성화</value>
+  </data>
+  <data name="SettingPage_Section_TimerCommon_ShowOverflow_Title" xml:space="preserve">
+    <value>초과량 표시</value>
+  </data>
+  <data name="SettingPage_Section_TimerCommon_Title" xml:space="preserve">
+    <value>타이머</value>
   </data>
   <data name="SettingPage_Section_Widget_RootTouch_Title" xml:space="preserve">
     <value>터치 시 앱 실행</value>

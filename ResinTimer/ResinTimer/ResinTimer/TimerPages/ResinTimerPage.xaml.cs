@@ -86,7 +86,7 @@ namespace ResinTimer.TimerPages
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            var item = sender as ToolbarItem;
+            ToolbarItem item = sender as ToolbarItem;
 
             switch (item.Text)
             {
@@ -148,7 +148,7 @@ namespace ResinTimer.TimerPages
 
                 int overflowValue = ResinEnvironment.CalcResinOverflow();
 
-                ResinOverflowLabel.Text = (overflowValue < 0) ? "" : $"{AppResources.Overflow_Text} : {overflowValue}";
+                ResinOverflowLabel.Text = (Preferences.Get(SettingConstants.SHOW_OVERFLOW, false) && (overflowValue > 0)) ? $"{AppResources.Overflow_Text} : {overflowValue}" : "";
             }
             catch (Exception ex)
             {
@@ -160,7 +160,7 @@ namespace ResinTimer.TimerPages
 
         private void QuickCalc()
         {
-            var now = DateTime.Now;
+            DateTime now = DateTime.Now;
 
             ResinEnvironment.lastInputTime = now.ToString(AppEnv.dtCulture);
 
@@ -187,18 +187,20 @@ namespace ResinTimer.TimerPages
 
             if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
             {
-                var notiManager = new ResinNotiManager();
+                ResinNotiManager notiManager = new ResinNotiManager();
+
                 notiManager.UpdateNotisTime();
             }
         }
 
         private async void ButtonPressed(object sender, EventArgs e)
         {
-            var button = sender as Button;
+            Button button = sender as Button;
 
             try
             {
                 button.BackgroundColor = Color.FromHex("#500682F6");
+
                 await button.ScaleTo(0.95, 100, Easing.SinInOut);
 
                 if (!int.TryParse(button.Text, out quickCalcValue))
@@ -228,11 +230,12 @@ namespace ResinTimer.TimerPages
 
         private async void ButtonReleased(object sender, EventArgs e)
         {
-            var button = sender as Button;
+            Button button = sender as Button;
 
             try
             {
                 button.BackgroundColor = Color.Transparent;
+
                 await button.ScaleTo(1.0, 100, Easing.SinInOut);
 
                 if (!(Device.RuntimePlatform == Device.UWP))
@@ -250,7 +253,7 @@ namespace ResinTimer.TimerPages
 
         private async void QEButtonPressed(object sender, EventArgs e)
         {
-            var button = sender as Button;
+            Button button = sender as Button;
 
             try
             {
@@ -262,7 +265,7 @@ namespace ResinTimer.TimerPages
 
         private async void QEButtonReleased(object sender, EventArgs e)
         {
-            var button = sender as Button;
+            Button button = sender as Button;
 
             try
             {
@@ -274,7 +277,7 @@ namespace ResinTimer.TimerPages
 
         private async void QEButton_Clicked(object sender, EventArgs e)
         {
-            var dialog = new BaseDialog(AppResources.ResinSimpleEditDialog_Title, new ResinSimpleEdit());
+            BaseDialog dialog = new BaseDialog(AppResources.ResinSimpleEditDialog_Title, new ResinSimpleEdit());
 
             await PopupNavigation.Instance.PushAsync(dialog);
         }

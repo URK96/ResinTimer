@@ -798,14 +798,20 @@ MIT License</value>
   <data name="SettingPage_Section_App_Use24HTimeFormat_Title" xml:space="preserve">
     <value>Use 24H Time Format</value>
   </data>
-  <data name="SettingPage_Section_Main_Cell_QuickCalcVibrate_Title" xml:space="preserve">
-    <value>Enable Quick Calc Vibration</value>
-  </data>
   <data name="SettingPage_Section_Main_Title" xml:space="preserve">
     <value>Main</value>
   </data>
   <data name="SettingPage_Section_ResinTimer_Title" xml:space="preserve">
     <value>Resin Timer</value>
+  </data>
+  <data name="SettingPage_Section_TimerCommon_QuickCalcVibrate_Title" xml:space="preserve">
+    <value>Enable Quick Calc Vibration</value>
+  </data>
+  <data name="SettingPage_Section_TimerCommon_ShowOverflow_Title" xml:space="preserve">
+    <value>Show Overflow</value>
+  </data>
+  <data name="SettingPage_Section_TimerCommon_Title" xml:space="preserve">
+    <value>Timer</value>
   </data>
   <data name="SettingPage_Section_Widget_RootTouch_Title" xml:space="preserve">
     <value>Run App When Touch</value>

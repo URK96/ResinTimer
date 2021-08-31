@@ -13,7 +13,7 @@ namespace ResinTimer.UWP
 
         public void Notify(Notification notification)
         {
-            var builder = new ToastContentBuilder()
+            ToastContent builder = new ToastContentBuilder()
                 .AddToastActivationInfo("ResinNoti", ToastActivationType.Foreground)
                 .AddText(notification.Title)
                 .AddText(notification.Text)

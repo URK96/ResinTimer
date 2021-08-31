@@ -52,6 +52,7 @@ namespace ResinTimer.iOS
                 if (err != null)
                 {
                     var toast = new ToastiOS();
+
                     toast.Show("Ooops, error");
                 }
             });

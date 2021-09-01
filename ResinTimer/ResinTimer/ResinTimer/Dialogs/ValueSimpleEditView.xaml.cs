@@ -80,6 +80,7 @@ namespace ResinTimer.Dialogs
             catch { }
         }
 
+        // Temporary disable because of UWP crash
         private void ValueUpDown_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Entry entry = sender as Entry;

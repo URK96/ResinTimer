@@ -1,14 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:resources="clr-namespace:ResinTimer.Resources"
-             x:Class="ResinTimer.Dialogs.RadioPreferenceView"
-             Margin="0, 10, 0, 0">
+             x:Class="ResinTimer.Dialogs.CheckBoxPreferenceView">
     <StackLayout Orientation="Vertical">
         <ScrollView>
-            <StackLayout x:Name="RadioListContainer"
-                         Orientation="Vertical"
-                         RadioButtonGroup.GroupName="RadioSelect" />
+            <StackLayout x:Name="CheckBoxListContainer"
+                         Orientation="Vertical" />
         </ScrollView>
 
         <Grid Padding="0, 20, 0, 0">
@@ -19,11 +16,11 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            
+
             <Button x:Name="CancelButton" Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" HeightRequest="50"
                     Text="{x:Static resources:AppResources.Dialog_Cancel}" Style="{StaticResource DialogButtonStyle}"
                     Pressed="ButtonPressed" Released="ButtonReleased" Clicked="Button_Clicked" />
-            
+
             <Button x:Name="OkButton" Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0"
                     Text="{x:Static resources:AppResources.Dialog_Ok}" Style="{StaticResource DialogButtonStyle}" 
                     Pressed="ButtonPressed" Released="ButtonReleased" Clicked="Button_Clicked"/>

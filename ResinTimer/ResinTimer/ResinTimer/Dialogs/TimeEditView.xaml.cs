@@ -29,7 +29,7 @@ namespace ResinTimer.Dialogs
 
         private void InitValue()
         {
-            var ts = (noti.NotiTime > DateTime.Now) ? (noti.NotiTime - DateTime.Now) : TimeSpan.FromSeconds(0);
+            TimeSpan ts = (noti.NotiTime > DateTime.Now) ? (noti.NotiTime - DateTime.Now) : TimeSpan.FromSeconds(0);
 
             TimeHour.Text = ((int)ts.TotalHours).ToString();
             TimeMinute.Text = ts.Minutes.ToString();
@@ -80,7 +80,7 @@ namespace ResinTimer.Dialogs
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            var btText = (sender as Button).Text;
+            string btText = (sender as Button).Text;
 
             if (btText.Equals(AppResources.Dialog_Ok))
             {

@@ -6,6 +6,7 @@ using AndroidX.Core.App;
 
 using ResinTimer.Resources;
 
+using System;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -30,11 +31,6 @@ namespace ResinTimer.Droid
 
         private Android.App.Notification CreateNativeNotification(Context context, Notification notification)
         {
-            //var intent = new Intent(context, typeof(SplashActivity));
-            //var stackBuilder = AndroidX.Core.App.TaskStackBuilder.Create(context);
-            //stackBuilder.AddParentStack(new SplashActivity());
-            //stackBuilder.AddNextIntent(intent);
-
             var builder = new NotificationCompat.Builder(Application.Context, AndroidAppEnvironment.CHANNEL_ID)
                 .SetAutoCancel(true)
                 .SetVisibility((int)NotificationVisibility.Public)
@@ -42,7 +38,7 @@ namespace ResinTimer.Droid
                 .SetContentTitle(notification.Title)
                 .SetContentText(notification.Text)
                 .SetSmallIcon(Application.Context.ApplicationInfo.Icon);
-                
+
             if (context.PackageManager.GetLaunchIntentForPackage("com.miHoYo.GenshinImpact") != null)
             {
                 var runIntent = new Intent(context, typeof(NotiActionReceiver));
@@ -54,9 +50,9 @@ namespace ResinTimer.Droid
                 builder.AddAction(0, AppResources.Noti_QuickAction_RunGenshinApp, pRunIntent);
             }
 
-            if ((notification.NotiType == NotiManager.NotiType.Expedition) ||
-                (notification.NotiType == NotiManager.NotiType.GatheringItem) ||
-                (notification.NotiType == NotiManager.NotiType.Gadget))
+            if (!((notification.NotiType == NotiManager.NotiType.Resin) ||
+                (notification.NotiType == NotiManager.NotiType.RealmCurrency) ||
+                (notification.NotiType == NotiManager.NotiType.RealmFriendship)))
             {
                 var resetIntent = new Intent(context, typeof(NotiActionReceiver));
                 resetIntent.SetAction("RESET_TIMER");
@@ -111,6 +107,9 @@ namespace ResinTimer.Droid
                 {
                     NotiManager.NotiType.Expedition => new ExpeditionNotiManager(),
                     NotiManager.NotiType.GatheringItem => new GatheringItemNotiManager(),
+                    NotiManager.NotiType.Gadget => new GadgetNotiManager(),
+                    NotiManager.NotiType.Furnishing => new FurnishingNotiManager(),
+                    NotiManager.NotiType.Gardening => new GardeningNotiManager(),
                     _ => null
                 };
 
@@ -123,29 +122,30 @@ namespace ResinTimer.Droid
                 var noti = notiManager.Notis.Find(x => x.NotiId.Equals(id));
 
                 ScheduledNotiAndroid.Cancel(noti);
-                noti.UpdateTime();
 
+                noti.UpdateTime();
                 notiManager.SaveNotis();
                 
                 switch (type)
                 {
                     case NotiManager.NotiType.Expedition:
-                        //notiManager.UpdateScheduledNoti<ExpeditionNoti>();
                         ScheduledNotiAndroid.Schedule<ExpeditionNoti>(noti);
                         break;
                     case NotiManager.NotiType.GatheringItem:
-                        //notiManager.UpdateScheduledNoti<GatheringItemNoti>();
                         ScheduledNotiAndroid.Schedule<GatheringItemNoti>(noti);
                         break;
                     case NotiManager.NotiType.Gadget:
-                        //notiManager.UpdateScheduledNoti<GadgetNoti>();
                         ScheduledNotiAndroid.Schedule<GadgetNoti>(noti);
+                        break;
+                    case NotiManager.NotiType.Furnishing:
+                        ScheduledNotiAndroid.Schedule<FurnishingNoti>(noti);
+                        break;
+                    case NotiManager.NotiType.Gardening:
+                        ScheduledNotiAndroid.Schedule<GardeningNoti>(noti);
                         break;
                     default:
                         break;
                 }
-
-
             }
         }
     }

@@ -266,7 +266,7 @@ namespace ResinTimer.TimerPages
         {
             calcTimer.Change(Timeout.Infinite, Timeout.Infinite);
 
-            var dialog = new BaseDialog(AppResources.BountySimpleEditDialog_Title, new RealmBountySimpleEdit());
+            var dialog = new BaseDialog(AppResources.BountySimpleEditDialog_Title, new RealmFriendshipSimpleEdit());
 
             dialog.OnClose += delegate { calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1)); };
 

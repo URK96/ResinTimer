@@ -16,7 +16,7 @@ namespace ResinTimer
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingPage : ContentPage
     {
-        string[] StartScreenList => new string[]
+        private string[] StartScreenList => new string[]
         {
             AppResources.MasterDetail_MasterList_Resin,
             AppResources.MasterDetail_MasterList_RealmCurrency,
@@ -29,7 +29,7 @@ namespace ResinTimer
             AppResources.MasterDetail_MasterList_Talent,
             AppResources.MasterDetail_MasterList_WeaponAscension
         };
-        string[] AppLangList => new string[]
+        private string[] AppLangList => new string[]
         {
             AppResources.SettingPage_Section_App_AppLang_Dialog_Default,
             "English",
@@ -116,6 +116,11 @@ namespace ResinTimer
         private void Use24HTimeFormat_OnChanged(object sender, ToggledEventArgs e)
         {
             Preferences.Set(SettingConstants.APP_USE_24H_TIMEFORMAT, e.Value);
+        }
+
+        private void SelectVisibleMenu_Tapped(object sender, EventArgs e)
+        {
+            // Add open BaseDialog - CheckBoxPreferenceView code
         }
 
         private async void StartDetailScreen_Tapped(object sender, EventArgs e)

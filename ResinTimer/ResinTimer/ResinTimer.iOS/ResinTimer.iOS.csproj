@@ -173,6 +173,9 @@
     <ImageAsset Include="Assets.xcassets\Character_Albedo_Thumb.png.imageset\Character_Albedo_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Aloy_Thumb.png.imageset\Character_Aloy_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Amber_Thumb.png.imageset\Character_Amber_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -224,6 +227,9 @@
     <ImageAsset Include="Assets.xcassets\Character_Klee_Thumb.png.imageset\Character_Klee_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Kujou_Sara_Thumb.png.imageset\Character_Kujou_Sara_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Lisa_Thumb.png.imageset\Character_Lisa_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -237,6 +243,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Qiqi_Thumb.png.imageset\Character_Qiqi_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Raiden_Shogun_Thumb.png.imageset\Character_Raiden_Shogun_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Razor_Thumb.png.imageset\Character_Razor_Thumb.png">
@@ -531,6 +540,15 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Yoimiya_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Aloy_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Kujou_Sara_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Raiden_Shogun_Thumb.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\wa_all_Inazuma.png.imageset\Contents.json">
@@ -1021,7 +1039,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

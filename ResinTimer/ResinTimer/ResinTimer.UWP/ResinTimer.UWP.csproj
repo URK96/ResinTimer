@@ -138,6 +138,7 @@
     <Content Include="Assets\LargeTile.scale-400.png" />
     <Content Include="bugreport.png" />
     <Content Include="Character_Albedo_Thumb.png" />
+    <Content Include="Character_Aloy_Thumb.png" />
     <Content Include="Character_Amber_Thumb.png" />
     <Content Include="Character_Ayaka_Thumb.png" />
     <Content Include="Character_Barbara_Thumb.png" />
@@ -155,11 +156,13 @@
     <Content Include="Character_Kazuha_Thumb.png" />
     <Content Include="Character_Keqing_Thumb.png" />
     <Content Include="Character_Klee_Thumb.png" />
+    <Content Include="Character_Kujou_Sara_Thumb.png" />
     <Content Include="Character_Lisa_Thumb.png" />
     <Content Include="Character_Mona_Thumb.png" />
     <Content Include="Character_Ningguang_Thumb.png" />
     <Content Include="Character_Noelle_Thumb.png" />
     <Content Include="Character_Qiqi_Thumb.png" />
+    <Content Include="Character_Raiden_Shogun_Thumb.png" />
     <Content Include="Character_Razor_Thumb.png" />
     <Content Include="Character_Rosaria_Thumb.png" />
     <Content Include="Character_Sayu_Thumb.png" />

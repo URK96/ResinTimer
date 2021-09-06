@@ -15,7 +15,7 @@
 
                 <ViewCell x:Name="SelectVisibleMenu" 
                           Tapped="SelectVisibleMenu_Tapped">
-                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
+                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}" IsVisible="false">
                         <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_SelectVisibleMenu_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </ViewCell>

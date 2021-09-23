@@ -40,8 +40,6 @@ namespace ResinTimer
         {
             InitializeComponent();
 
-            SelectVisibleMenu.IsEnabled = false;
-
             LoadSettingValue();
         }
 

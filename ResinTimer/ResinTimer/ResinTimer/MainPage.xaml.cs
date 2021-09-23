@@ -95,8 +95,8 @@ namespace ResinTimer
 
         private void MainMenuEditButton_Clicked(object sender, EventArgs e)
         {
-            Detail = new NavigationPage(new EditMainFlyoutList());
-            IsPresented = false;
+            //Detail = new NavigationPage(new EditMainFlyoutList());
+            //IsPresented = false;
         }
     }
 }

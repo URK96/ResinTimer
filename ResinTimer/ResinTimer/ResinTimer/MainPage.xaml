@@ -10,13 +10,13 @@
     <FlyoutPage.Flyout>
         <ContentPage Padding="0,10,0,0" IconImageSource="menu.png" Title="Resin Timer">
             <StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 10">
                     <Label HorizontalOptions="CenterAndExpand"
                            Text="{x:Static resources:AppResources.App_Title}" FontSize="Title" FontAttributes="Bold"
                            HorizontalTextAlignment="Center"/>
-                    <ImageButton x:Name="MainMenuEditButton" Source="realm_currency.png" WidthRequest="30" HeightRequest="30"
+                    <!--<ImageButton x:Name="MainMenuEditButton" Source="realm_currency.png" WidthRequest="30" HeightRequest="30"
                                  BackgroundColor="Transparent"
-                                 Clicked="MainMenuEditButton_Clicked"/>
+                                 Clicked="MainMenuEditButton_Clicked"/>-->
                 </StackLayout>
                 <ListView x:Name="MainListView"
                           ItemSelected="MainListView_ItemSelected">

@@ -56,7 +56,8 @@ namespace ResinTimer.NotiSettingPages
         {
             if (Notis.Count > 1)
             {
-                notiManager.EditList(new RealmCurrencyNoti(notiId), NotiManager.EditType.Remove);
+                notiManager.EditList(new RealmCurrencyNoti(notiId - RealmCurrencyNotiManager.ID_PREINDEX), 
+                    NotiManager.EditType.Remove);
                 RefreshCollectionView(ListView, Notis);
             }
             else

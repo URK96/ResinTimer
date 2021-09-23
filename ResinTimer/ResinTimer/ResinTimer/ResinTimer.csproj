@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
     <Version>1.9.1</Version>
     <UserSecretsId>203b32d9-bd5b-4c42-8919-f7dba54960be</UserSecretsId>
   </PropertyGroup>
@@ -37,10 +37,10 @@
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.12" />
-    <PackageReference Include="Syncfusion.Licensing" Version="19.2.0.56" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.2.0.56" />
-    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="19.2.0.56" />
-    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="19.2.0.56" />
+    <PackageReference Include="Syncfusion.Licensing" Version="19.2.0.62" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.2.0.62" />
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="19.2.0.62" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="19.2.0.62" />
     <PackageReference Include="System.Text.Json" Version="5.0.2" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
@@ -109,6 +109,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="EditGatheringItemPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="EditMainFlyoutList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="EditRealmSetting.xaml">

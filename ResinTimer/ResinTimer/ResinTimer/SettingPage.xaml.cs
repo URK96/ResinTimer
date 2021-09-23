@@ -118,10 +118,10 @@ namespace ResinTimer
             Preferences.Set(SettingConstants.APP_USE_24H_TIMEFORMAT, e.Value);
         }
 
-        private void SelectVisibleMenu_Tapped(object sender, EventArgs e)
-        {
-            // Add open BaseDialog - CheckBoxPreferenceView code
-        }
+        //private void SelectVisibleMenu_Tapped(object sender, EventArgs e)
+        //{
+        //    // Add open BaseDialog - CheckBoxPreferenceView code
+        //}
 
         private async void StartDetailScreen_Tapped(object sender, EventArgs e)
         {

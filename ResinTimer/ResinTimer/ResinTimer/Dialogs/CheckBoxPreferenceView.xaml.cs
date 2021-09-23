@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ResinTimer.Resources;
+using Rg.Plugins.Popup.Services;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,6 +58,18 @@ namespace ResinTimer.Dialogs
                 layout.Children.Add(cbText);
                 CheckBoxListContainer.Children.Add(layout);
             }
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            string btText = (sender as Button).Text;
+
+            if (btText.Equals(AppResources.Dialog_Ok))
+            {
+                
+            }
+
+            await PopupNavigation.Instance.PopAsync();
         }
 
         private async void ButtonPressed(object sender, EventArgs e)

@@ -150,6 +150,9 @@
   <data name="AppName" xml:space="preserve">
     <value>Resin Timer</value>
   </data>
+  <data name="App_Title" xml:space="preserve">
+    <value>Resin Timer</value>
+  </data>
   <data name="BootAlarmRegisterFail" xml:space="preserve">
     <value>Resin alarm register fail
 Please re-enable alarm in app setting to register notification alarm</value>
@@ -860,6 +863,9 @@ MIT License</value>
   </data>
   <data name="Toolbar_Add" xml:space="preserve">
     <value>Add</value>
+  </data>
+  <data name="Toolbar_Apply" xml:space="preserve">
+    <value>Apply</value>
   </data>
   <data name="Toolbar_Edit" xml:space="preserve">
     <value>Edit</value>

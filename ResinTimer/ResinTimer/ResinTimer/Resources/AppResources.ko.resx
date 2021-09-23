@@ -150,6 +150,9 @@
   <data name="AppName" xml:space="preserve">
     <value>레진 알리미</value>
   </data>
+  <data name="App_Title" xml:space="preserve">
+    <value>레진 알리미</value>
+  </data>
   <data name="BootAlarmRegisterFail" xml:space="preserve">
     <value>레진 알람 등록 실패
 앱 설정에서 알람 설정을 다시 활성화하여 알람을 재등록 해주세요</value>
@@ -862,6 +865,9 @@ MIT License</value>
   </data>
   <data name="Toolbar_Add" xml:space="preserve">
     <value>추가</value>
+  </data>
+  <data name="Toolbar_Apply" xml:space="preserve">
+    <value>적용</value>
   </data>
   <data name="Toolbar_Edit" xml:space="preserve">
     <value>수정</value>

@@ -61,6 +61,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Resin Timer과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string App_Title {
+            get {
+                return ResourceManager.GetString("App_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Expedition과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string AppAction_App_Timer_Expedition {
@@ -2211,6 +2220,15 @@ namespace ResinTimer.Resources {
         public static string Toolbar_Add {
             get {
                 return ResourceManager.GetString("Toolbar_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Apply과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Toolbar_Apply {
+            get {
+                return ResourceManager.GetString("Toolbar_Apply", resourceCulture);
             }
         }
         

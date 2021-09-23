@@ -23,7 +23,7 @@
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>1BA2B0D32436C2F07B51D1D8FDFDBB411A5D0A2B</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>C1715A74D483012F92683EFCB4D9F58E1C6947B5</PackageCertificateThumbprint>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -165,6 +165,7 @@
     <Content Include="Character_Raiden_Shogun_Thumb.png" />
     <Content Include="Character_Razor_Thumb.png" />
     <Content Include="Character_Rosaria_Thumb.png" />
+    <Content Include="Character_Sangonomiya_Kokomi_Thumb.png" />
     <Content Include="Character_Sayu_Thumb.png" />
     <Content Include="Character_Sucrose_Thumb.png" />
     <Content Include="Character_Tartaglia_Thumb.png" />

@@ -9,6 +9,20 @@ namespace ResinTimer
 {
     public partial class MainPage : FlyoutPage
     {
+        public enum TimerPage
+        {
+            Resin = 0,
+            RealmCurrency = 1,
+            RealmFriendship,
+            Expedition,
+            GatheringItem,
+            Gadget,
+            Furnishing,
+            Gardening,
+            Talent,
+            WeaponAscension
+        }
+
         public MainPage()
         {
             InitializeComponent();
@@ -77,6 +91,12 @@ namespace ResinTimer
             }
 
             (sender as ListView).SelectedItem = null;
+        }
+
+        private void MainMenuEditButton_Clicked(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new EditMainFlyoutList());
+            IsPresented = false;
         }
     }
 }

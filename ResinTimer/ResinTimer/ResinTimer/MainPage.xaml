@@ -8,8 +8,16 @@
             FlyoutLayoutBehavior="Popover">
 
     <FlyoutPage.Flyout>
-        <ContentPage Padding="0,40,0,0" IconImageSource="menu.png" Title="Resin Timer">
+        <ContentPage Padding="0,10,0,0" IconImageSource="menu.png" Title="Resin Timer">
             <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label HorizontalOptions="CenterAndExpand"
+                           Text="{x:Static resources:AppResources.App_Title}" FontSize="Title" FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"/>
+                    <ImageButton x:Name="MainMenuEditButton" Source="realm_currency.png" WidthRequest="30" HeightRequest="30"
+                                 BackgroundColor="Transparent"
+                                 Clicked="MainMenuEditButton_Clicked"/>
+                </StackLayout>
                 <ListView x:Name="MainListView"
                           ItemSelected="MainListView_ItemSelected">
                     <ListView.ItemsSource>

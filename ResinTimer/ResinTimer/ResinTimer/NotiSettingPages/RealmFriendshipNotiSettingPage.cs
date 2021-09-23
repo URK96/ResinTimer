@@ -56,7 +56,8 @@ namespace ResinTimer.NotiSettingPages
         {
             if (Notis.Count > 1)
             {
-                notiManager.EditList(new RealmFriendshipNoti(notiId), NotiManager.EditType.Remove);
+                notiManager.EditList(new RealmFriendshipNoti(notiId - RealmFriendshipNotiManager.ID_PREINDEX),
+                    NotiManager.EditType.Remove);
                 RefreshCollectionView(ListView, Notis);
             }
             else

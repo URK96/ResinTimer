@@ -28,7 +28,7 @@ namespace ResinTimer
                 _ = CreateAppAction();
 
 #if DEBUG
-            AppEnvironment.isDebug = true;
+                AppEnvironment.isDebug = true;
 #endif
                 AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
                 AppEnvironment.LoadLocationList();

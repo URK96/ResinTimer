@@ -35,7 +35,7 @@ namespace ResinTimer
 
                 SetDefaultPreferences();
 
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDc4OTEwQDMxMzkyZTMyMmUzMFZQZ1F1ckwxcE9nQnA1UnhFNDJrenVFd0ozYWdObndyUWt0dDEwT1IyVVE9");
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTIxNjcxQDMxMzkyZTMzMmUzMGErMFNkT1lGSGNubC9xZWtvVm93NkcrUDFzaEdJTEpVUjRlSkVpUzRKb009");
 
                 SetMainPage(null);
             }

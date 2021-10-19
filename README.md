@@ -8,36 +8,41 @@
 그 외에도 다양한 타이머 기능들이 포함되어 있습니다.
 
 
-# 지원 플랫폼 (Supported Platform)
+## 지원 플랫폼 (Supported Platform)
 
 - iOS 10 or newer
 - Android 6 or newer
 - Windows 10 1909 or newer
 
 
-# 다운로드 (Download)
+## 다운로드 (Download)
 
 - [iOS](https://apps.apple.com/af/app/resin-timer/id1552554585)
 - [Android](https://play.google.com/store/apps/details?id=com.urk.resintimer&hl=en&gl=US)
 - [Windows 10](https://www.microsoft.com/en-US/p/%EB%A0%88%EC%A7%84-%EC%95%8C%EB%A6%AC%EB%AF%B8/9n1wh7j71c0g?cid=msft_web_appsforwindows_chart&activetab=pivot:overviewtab)
 
 
-# 기능 (Feature)
+## 기능 (Feature)
 
-- 레진 타이머
-- 선계 재화 타이머
-- 탐사 타이머
-- 채집물 타이머
-- 도구 타이머
-- 가구 제작 타이머
-- 특성책 타이머
-- 무기 돌파 재료 타이머
-- 일일 출석체크 이벤트 접속 도우미
+- 레진 타이머 (Resin Timer)
+- 선계 재화 타이머 (Realm Currency Timer)
+- 선계 호감도 타이머 (Realm Friendship Timer)
+- 탐사 타이머 (Expedition Timer)
+- 채집물 타이머 (Gathering Item Timer)
+- 도구 타이머 (Gadget Timer)
+- 가구 제작 타이머 (Furnishing Timer)
+- 농업 타이머 (Gardening Timer)
+- 특성책 타이머 (Talent Item Timer)
+- 무기 돌파 재료 타이머 (Weapon Ascension Item Timer)
+- 일일 출석체크 이벤트 접속 도우미 (Daily Check-In Event)
 
-<img alt="1.png" src="https://github.com/URK96/ResinTimer/blob/main/Image/1.png" style="max-width: 40%">
+
+## 스크린샷 (Screenshot)
+
+<img alt="1.png" src="https://github.com/URK96/ResinTimer/blob/main/Image/1.png" width="400px">
 
 
-# 버그 제보 (Report bug)
+## 버그 제보 (Report bug)
 
 Write github issue
 

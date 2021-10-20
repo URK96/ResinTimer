@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
-using UIKit;
+﻿using UIKit;
 
 namespace ResinTimer.iOS
 {
@@ -14,7 +9,8 @@ namespace ResinTimer.iOS
         {
             // if you want to use a different Application Delegate class from "AppDelegate"
             // you can specify it here.
-            UIApplication.Main(args, null, "AppDelegate");
+            //UIApplication.Main(args, null, "AppDelegate");
+            UIApplication.Main(args, null, typeof(AppDelegate));
         }
     }
 }

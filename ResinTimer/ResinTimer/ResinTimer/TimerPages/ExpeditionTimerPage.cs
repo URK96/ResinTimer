@@ -1,4 +1,6 @@
 ﻿using ResinTimer.Dialogs;
+using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
 using ResinTimer.Resources;
 
 using Rg.Plugins.Popup.Services;

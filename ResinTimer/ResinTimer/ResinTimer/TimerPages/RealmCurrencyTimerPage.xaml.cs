@@ -1,4 +1,5 @@
 ﻿using ResinTimer.Dialogs;
+using ResinTimer.Managers.NotiManagers;
 using ResinTimer.NotiSettingPages;
 using ResinTimer.Resources;
 

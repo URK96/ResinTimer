@@ -10,6 +10,8 @@ using Xamarin.Forms;
 using GdEnv = ResinTimer.GardeningEnvironment;
 
 using static ResinTimer.AppEnvironment;
+using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
 
 namespace ResinTimer.TimerPages
 {

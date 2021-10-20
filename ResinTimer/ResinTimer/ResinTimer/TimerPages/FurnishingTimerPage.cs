@@ -14,6 +14,8 @@ using Xamarin.Essentials;
 using FEnv = ResinTimer.FurnishingEnvironment;
 
 using static ResinTimer.AppEnvironment;
+using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
 
 namespace ResinTimer.TimerPages
 {

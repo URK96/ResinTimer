@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using RCEnv = ResinTimer.RealmCurrencyEnvironment;
 using RFEnv = ResinTimer.RealmFriendshipEnvironment;
 using RealmEnv = ResinTimer.RealmEnvironment;
+using ResinTimer.Managers.NotiManagers;
 
 namespace ResinTimer
 {

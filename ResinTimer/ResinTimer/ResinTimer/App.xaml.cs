@@ -4,6 +4,7 @@ using Microsoft.AppCenter.Crashes;
 
 using Newtonsoft.Json;
 
+using ResinTimer.Models.Notis;
 using ResinTimer.Resources;
 
 using System;

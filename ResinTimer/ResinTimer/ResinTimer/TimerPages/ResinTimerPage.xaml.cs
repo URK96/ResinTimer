@@ -14,6 +14,7 @@ using Xamarin.Forms.Xaml;
 using Timer = System.Timers.Timer;
 using TTimer = System.Threading.Timer;
 using AppEnv = ResinTimer.AppEnvironment;
+using ResinTimer.Managers.NotiManagers;
 
 namespace ResinTimer.TimerPages
 {

@@ -1,4 +1,5 @@
-﻿using ResinTimer.Resources;
+﻿using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Resources;
 
 using System;
 

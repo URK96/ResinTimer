@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
+
+using System;
 
 namespace ResinTimer
 {

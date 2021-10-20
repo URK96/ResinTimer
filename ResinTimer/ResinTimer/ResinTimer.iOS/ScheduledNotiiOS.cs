@@ -1,4 +1,5 @@
 ﻿using ResinTimer.iOS;
+using ResinTimer.Managers.NotiManagers;
 
 using System;
 using System.Collections.Generic;

@@ -29,6 +29,7 @@ namespace ResinTimer.iOS
             global::Xamarin.Forms.Forms.Init();
             Syncfusion.SfGauge.XForms.iOS.SfGaugeRenderer.Init();
             Syncfusion.SfNumericUpDown.XForms.iOS.SfNumericUpDownRenderer.Init();
+
             LoadApplication(new App());
 
             UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert | UNAuthorizationOptions.Sound, (approved, err) => { });

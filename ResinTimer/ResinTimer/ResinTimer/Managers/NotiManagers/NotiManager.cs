@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 
 using ResinTimer.Models.Notis;
+using ResinTimer.Services;
 
 using System;
 using System.Collections.Generic;
@@ -85,7 +86,7 @@ namespace ResinTimer.Managers.NotiManagers
             return result;
         }
 
-        public IScheduledNoti GetScheduledService() => DependencyService.Get<IScheduledNoti>();
+        public INotiScheduleService GetScheduledService() => DependencyService.Get<INotiScheduleService>();
 
         public void UpdateScheduledNoti<T>() where T : Noti
         {
@@ -94,7 +95,7 @@ namespace ResinTimer.Managers.NotiManagers
                 return;
             }
 
-            IScheduledNoti scheduledService = GetScheduledService();
+            INotiScheduleService scheduledService = GetScheduledService();
 
             scheduledService.Cancel<T>();
             RenewalIds();

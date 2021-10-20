@@ -2,15 +2,15 @@
 
 using System;
 
-namespace ResinTimer
+namespace ResinTimer.Services
 {
-    public interface IScheduledNoti
+    public interface INotiScheduleService
     {
-        void CancelAll();
-        void Cancel<T>() where T :Noti;
-        void ScheduleAllNoti();
+        void Cancel<T>() where T : Noti;
         void Schedule<T>() where T : Noti;
         void ScheduleCustomNoti(string title, string message, int id, DateTime notiTime);
         void TestNoti(string message = "");
+        void ScheduleAll();
+        void CancelAll();
     }
 }

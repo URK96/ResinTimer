@@ -1,5 +1,6 @@
 ﻿using ResinTimer.Dialogs;
 using ResinTimer.Resources;
+using ResinTimer.Services;
 
 using Rg.Plugins.Popup.Services;
 
@@ -100,11 +101,11 @@ namespace ResinTimer
                     }
                 }
 
-                DependencyService.Get<IScheduledNoti>().ScheduleAllNoti();
+                DependencyService.Get<INotiScheduleService>().ScheduleAll();
             }
             else
             {
-                DependencyService.Get<IScheduledNoti>().CancelAll();
+                DependencyService.Get<INotiScheduleService>().CancelAll();
 
                 if (Device.RuntimePlatform == Device.UWP)
                 {

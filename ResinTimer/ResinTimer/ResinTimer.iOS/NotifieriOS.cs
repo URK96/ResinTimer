@@ -1,11 +1,8 @@
-﻿using Foundation;
+﻿using System;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Foundation;
 
-using UIKit;
+using ResinTimer.Models;
 
 using UserNotifications;
 
@@ -19,7 +16,8 @@ namespace ResinTimer.iOS
 
             if (settings.AlertSetting != UNNotificationSetting.Enabled)
             {
-                var toast = new ToastiOS();
+                ToastiOS toast = new ToastiOS();
+
                 toast.Show("Check Noti Permission");
             }
 
@@ -31,7 +29,7 @@ namespace ResinTimer.iOS
                 Badge = 0
             };
 
-            var dt = notification.NotifyTime;
+            DateTime dt = notification.NotifyTime;
 
             var dateComponent = new NSDateComponents
             {
@@ -51,7 +49,7 @@ namespace ResinTimer.iOS
             {
                 if (err != null)
                 {
-                    var toast = new ToastiOS();
+                    ToastiOS toast = new ToastiOS();
 
                     toast.Show("Ooops, error");
                 }
@@ -61,11 +59,6 @@ namespace ResinTimer.iOS
         public void Cancel(string[] cancelList)
         {
             UNUserNotificationCenter.Current.RemovePendingNotificationRequests(cancelList);
-        }
-
-        public void CancelAll()
-        {
-            UNUserNotificationCenter.Current.RemoveAllPendingNotificationRequests();
         }
     }
 }

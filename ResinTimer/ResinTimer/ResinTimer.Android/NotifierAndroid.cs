@@ -10,6 +10,8 @@ using System;
 using System.IO;
 using System.Xml.Serialization;
 
+using ResinTimer.Models;
+
 namespace ResinTimer.Droid
 {
     public class NotifierAndroid
@@ -21,9 +23,9 @@ namespace ResinTimer.Droid
         /// Notifies the specified notification.
         /// </summary>
         /// <param name="notification">The notification.</param>
-        public void Notify(Notification notification)
+        public void Notify(Models.Notification notification)
         {
-            var triggerTime = NotifyTimeInMilliseconds(notification.NotifyTime);
+            long triggerTime = NotifyTimeInMilliseconds(notification.NotifyTime);
 
             AlarmManager.Set(AlarmType.ElapsedRealtime, SystemClock.ElapsedRealtime() + triggerTime, CreatePendingIntent(notification.Id, notification));
         }
@@ -38,9 +40,9 @@ namespace ResinTimer.Droid
             NotiManager.Cancel(notificationId);
         }
 
-        private PendingIntent CreatePendingIntent(int id, Notification noti = null)
+        private PendingIntent CreatePendingIntent(int id, Models.Notification noti = null)
         {
-            var intent = new Intent(Application.Context, typeof(ScheduledAlarmReceiver)).SetAction($"LocalNotiIntent{id}");
+            Intent intent = new Intent(Application.Context, typeof(ScheduledAlarmReceiver)).SetAction($"LocalNotiIntent{id}");
 
             if (noti != null)
             {
@@ -50,10 +52,10 @@ namespace ResinTimer.Droid
             return PendingIntent.GetBroadcast(Application.Context, 0, intent, PendingIntentFlags.UpdateCurrent);
         }
 
-        private string SerializeNotification(Notification notification)
+        private string SerializeNotification(Models.Notification notification)
         {
-            var xmlSerializer = new XmlSerializer(notification.GetType());
-            using var stringWriter = new StringWriter();
+            XmlSerializer xmlSerializer = new XmlSerializer(notification.GetType());
+            using StringWriter stringWriter = new StringWriter();
 
             xmlSerializer.Serialize(stringWriter, notification);
 
@@ -62,7 +64,7 @@ namespace ResinTimer.Droid
 
         private long NotifyTimeInMilliseconds(DateTime notifyTime)
         {
-            var utcAlarmTimeInMillis = (notifyTime.ToUniversalTime() - DateTime.UtcNow).TotalMilliseconds;
+            double utcAlarmTimeInMillis = (notifyTime.ToUniversalTime() - DateTime.UtcNow).TotalMilliseconds;
 
             return (long)utcAlarmTimeInMillis;
         }

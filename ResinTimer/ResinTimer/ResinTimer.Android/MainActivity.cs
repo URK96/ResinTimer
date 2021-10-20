@@ -34,7 +34,7 @@ namespace ResinTimer.Droid
 
                 Xamarin.Forms.Forms.SetFlags(new string[] { "Shapes_Experimental", "SwipeView_Experimental" });
 
-                Xamarin.Forms.DependencyService.Register<ResinTimer.IScheduledNoti, ResinTimer.Droid.ScheduledNotiAndroid>();
+                //Xamarin.Forms.DependencyService.Register<ResinTimer.NotiScheduleService, ResinTimer.Droid.NotiScheduleAndroid>();
 
                 Xamarin.Essentials.Platform.Init(this, savedInstanceState);
                 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

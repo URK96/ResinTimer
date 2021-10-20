@@ -1,14 +1,13 @@
 ﻿using Android.App;
 using Android.Content;
-using Android.Content.PM;
 
 using AndroidX.Core.App;
 
 using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models;
 using ResinTimer.Models.Notis;
 using ResinTimer.Resources;
 
-using System;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -23,15 +22,15 @@ namespace ResinTimer.Droid
 
         public override void OnReceive(Context context, Intent intent)
         {
-            var extra = intent.GetStringExtra(LocalNotificationKey);
+            string extra = intent.GetStringExtra(LocalNotificationKey);
             var notification = DeserializeNotification(extra);
 
-            var nativeNotification = CreateNativeNotification(context, notification);
+            Android.App.Notification nativeNotification = CreateNativeNotification(context, notification);
 
             NotificationManager.Notify(notification.Id, nativeNotification);
         }
 
-        private Android.App.Notification CreateNativeNotification(Context context, Notification notification)
+        private Android.App.Notification CreateNativeNotification(Context context, Models.Notification notification)
         {
             var builder = new NotificationCompat.Builder(Application.Context, AndroidAppEnvironment.CHANNEL_ID)
                 .SetAutoCancel(true)
@@ -43,11 +42,11 @@ namespace ResinTimer.Droid
 
             if (context.PackageManager.GetLaunchIntentForPackage("com.miHoYo.GenshinImpact") != null)
             {
-                var runIntent = new Intent(context, typeof(NotiActionReceiver));
-                runIntent.SetAction("RUN_GENSHIN");
-                runIntent.PutExtra("NotiId", notification.Id);
+                Intent runIntent = new Intent(context, typeof(NotiActionReceiver))
+                    .SetAction("RUN_GENSHIN")
+                    .PutExtra("NotiId", notification.Id);
 
-                var pRunIntent = PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent);
+                PendingIntent pRunIntent = PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent);
 
                 builder.AddAction(0, AppResources.Noti_QuickAction_RunGenshinApp, pRunIntent);
             }
@@ -56,27 +55,27 @@ namespace ResinTimer.Droid
                 (notification.NotiType == NotiManager.NotiType.RealmCurrency) ||
                 (notification.NotiType == NotiManager.NotiType.RealmFriendship)))
             {
-                var resetIntent = new Intent(context, typeof(NotiActionReceiver));
-                resetIntent.SetAction("RESET_TIMER");
-                resetIntent.PutExtra("NotiId", notification.Id);
-                resetIntent.PutExtra("NotiType", (int)notification.NotiType);
+                Intent resetIntent = new Intent(context, typeof(NotiActionReceiver))
+                    .SetAction("RESET_TIMER")
+                    .PutExtra("NotiId", notification.Id)
+                    .PutExtra("NotiType", (int)notification.NotiType);
 
-                var pResetIntent = PendingIntent.GetBroadcast(context, 0, resetIntent, PendingIntentFlags.UpdateCurrent);
+                PendingIntent pResetIntent = PendingIntent.GetBroadcast(context, 0, resetIntent, PendingIntentFlags.UpdateCurrent);
 
                 builder.AddAction(0, AppResources.Noti_QuickAction_ResetTimer, pResetIntent);
             }
 
-            var nativeNotification = builder.Build();
+            Android.App.Notification nativeNotification = builder.Build();
 
             return nativeNotification;
         }
 
-        private Notification DeserializeNotification(string notificationString)
+        private Models.Notification DeserializeNotification(string notificationString)
         {
-            var xmlSerializer = new XmlSerializer(typeof(Notification));
-            using var stringReader = new StringReader(notificationString);
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Models.Notification));
+            using StringReader stringReader = new StringReader(notificationString);
 
-            var notification = xmlSerializer.Deserialize(stringReader) as Notification;
+            var notification = xmlSerializer.Deserialize(stringReader) as Models.Notification;
 
             return notification;
         }
@@ -90,7 +89,8 @@ namespace ResinTimer.Droid
                 switch (intent.Action)
                 {
                     case "RUN_GENSHIN":
-                        var rIntent = context.PackageManager.GetLaunchIntentForPackage("com.miHoYo.GenshinImpact");
+                        Intent rIntent = context.PackageManager.GetLaunchIntentForPackage("com.miHoYo.GenshinImpact");
+
                         context.StartActivity(rIntent);
 
                         (context.GetSystemService(Context.NotificationService) as NotificationManager).Cancel(intent.GetIntExtra("NotiId", -1));
@@ -103,8 +103,8 @@ namespace ResinTimer.Droid
 
             private void ResetTimer(Intent intent)
             {
-                var id = intent.GetIntExtra("NotiId", -1);
-                var type = (NotiManager.NotiType)intent.GetIntExtra("NotiType", 0);
+                int id = intent.GetIntExtra("NotiId", -1);
+                NotiManager.NotiType type = (NotiManager.NotiType)intent.GetIntExtra("NotiType", 0);
                 NotiManager notiManager = type switch
                 {
                     NotiManager.NotiType.Expedition => new ExpeditionNotiManager(),
@@ -121,9 +121,9 @@ namespace ResinTimer.Droid
                     return;
                 }
 
-                var noti = notiManager.Notis.Find(x => x.NotiId.Equals(id));
+                Noti noti = notiManager.Notis.Find(x => x.NotiId.Equals(id));
 
-                ScheduledNotiAndroid.Cancel(noti);
+                NotiScheduleAndroid.Cancel(noti);
 
                 noti.UpdateTime();
                 notiManager.SaveNotis();
@@ -131,19 +131,19 @@ namespace ResinTimer.Droid
                 switch (type)
                 {
                     case NotiManager.NotiType.Expedition:
-                        ScheduledNotiAndroid.Schedule<ExpeditionNoti>(noti);
+                        NotiScheduleAndroid.Schedule<ExpeditionNoti>(noti);
                         break;
                     case NotiManager.NotiType.GatheringItem:
-                        ScheduledNotiAndroid.Schedule<GatheringItemNoti>(noti);
+                        NotiScheduleAndroid.Schedule<GatheringItemNoti>(noti);
                         break;
                     case NotiManager.NotiType.Gadget:
-                        ScheduledNotiAndroid.Schedule<GadgetNoti>(noti);
+                        NotiScheduleAndroid.Schedule<GadgetNoti>(noti);
                         break;
                     case NotiManager.NotiType.Furnishing:
-                        ScheduledNotiAndroid.Schedule<FurnishingNoti>(noti);
+                        NotiScheduleAndroid.Schedule<FurnishingNoti>(noti);
                         break;
                     case NotiManager.NotiType.Gardening:
-                        ScheduledNotiAndroid.Schedule<GardeningNoti>(noti);
+                        NotiScheduleAndroid.Schedule<GardeningNoti>(noti);
                         break;
                     default:
                         break;

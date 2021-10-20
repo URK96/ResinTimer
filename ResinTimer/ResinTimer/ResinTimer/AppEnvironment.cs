@@ -99,13 +99,18 @@ namespace ResinTimer
             return timeString;
         }
 
-        public static async void RefreshCollectionView<T>(CollectionView cv, List<T> list)
+        public static void RefreshCollectionView<T>(CollectionView cv, List<T> list)
         {
-            ResetCollectionViewSelection(cv);
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                cv.ItemsSource = Array.Empty<T>();
 
-            cv.ItemsSource = Array.Empty<T>();
-            await Task.Delay(10);
-            cv.ItemsSource = list;
+                await Task.Delay(10);
+
+                cv.ItemsSource = list;
+
+                ResetCollectionViewSelection(cv);
+            });
         }
 
         public static void ResetCollectionViewSelection(CollectionView cv)

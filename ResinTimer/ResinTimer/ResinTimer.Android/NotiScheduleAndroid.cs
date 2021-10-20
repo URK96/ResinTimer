@@ -1,38 +1,29 @@
 ﻿using ResinTimer.Droid;
 using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models;
 using ResinTimer.Models.Notis;
+using ResinTimer.Services;
 
 using System;
 
-[assembly: Xamarin.Forms.Dependency(typeof(ScheduledNotiAndroid))]
+[assembly: Xamarin.Forms.Dependency(typeof(NotiScheduleAndroid))]
 
 namespace ResinTimer.Droid
 {
-    public class ScheduledNotiAndroid : IScheduledNoti
+    public class NotiScheduleAndroid : NotiScheduleService
     {
-        NotiManager manager;
+        private readonly NotiManager manager;
 
-        public ScheduledNotiAndroid()
+        public NotiScheduleAndroid()
         {
             manager = new NotiManager();
         }
 
-        public void CancelAll()
+        public override void Cancel<T>()
         {
-            Cancel<ResinNoti>();
-            Cancel<RealmCurrencyNoti>();
-            Cancel<RealmFriendshipNoti>();
-            Cancel<ExpeditionNoti>();
-            Cancel<GatheringItemNoti>();
-            Cancel<GadgetNoti>();
-            Cancel<FurnishingNoti>();
-        }
+            NotifierAndroid notifier = new NotifierAndroid();
 
-        public void Cancel<T>() where T : Noti
-        {
-            var notifier = new NotifierAndroid();
-
-            foreach (var item in manager.GetNotiList<T>())
+            foreach (T item in manager.GetNotiList<T>())
             {
                 notifier.Cancel(item.NotiId);
             }
@@ -40,32 +31,21 @@ namespace ResinTimer.Droid
 
         public static void Cancel(Noti noti)
         {
-            var notifier = new NotifierAndroid();
+            NotifierAndroid notifier = new NotifierAndroid();
 
             notifier.Cancel(noti.NotiId);
         }
 
-        public void ScheduleAllNoti()
+        public override void Schedule<T>()
         {
-            Schedule<ResinNoti>();
-            Schedule<RealmCurrencyNoti>();
-            Schedule<RealmFriendshipNoti>();
-            Schedule<ExpeditionNoti>();
-            Schedule<GatheringItemNoti>();
-            Schedule<GadgetNoti>();
-            Schedule<FurnishingNoti>();
-        }
+            NotifierAndroid notifier = new NotifierAndroid();
+            DateTime now = DateTime.Now;
 
-        public void Schedule<T>() where T : Noti
-        {
-            var notifier = new NotifierAndroid();
-            var now = DateTime.Now;
-
-            foreach (var item in manager.GetNotiList<T>())
+            foreach (T item in manager.GetNotiList<T>())
             {
                 if (item.NotiTime > now)
                 {
-                    var notification = new Notification
+                    Notification notification = new Notification
                     {
                         Title = item.GetNotiTitle(),
                         Text = item.GetNotiText(),
@@ -81,12 +61,12 @@ namespace ResinTimer.Droid
 
         public static void Schedule<T>(Noti noti) where T : Noti
         {
-            var notifier = new NotifierAndroid();
-            var now = DateTime.Now;
+            NotifierAndroid notifier = new NotifierAndroid();
+            DateTime now = DateTime.Now;
 
             if (noti.NotiTime > now)
             {
-                var notification = new Notification
+                Notification notification = new Notification
                 {
                     Title = noti.GetNotiTitle(),
                     Text = noti.GetNotiText(),
@@ -99,9 +79,9 @@ namespace ResinTimer.Droid
             }
         }
 
-        public void ScheduleCustomNoti(string title, string message, int id, DateTime notiTime)
+        public override void ScheduleCustomNoti(string title, string message, int id, DateTime notiTime)
         {
-            var notifier = new NotifierAndroid();
+            NotifierAndroid notifier = new NotifierAndroid();
 
             notifier.Notify(new Notification
             {
@@ -112,9 +92,9 @@ namespace ResinTimer.Droid
             });
         }
 
-        public void TestNoti(string message = "")
+        public override void TestNoti(string message = "")
         {
-            var notifier = new NotifierAndroid();
+            NotifierAndroid notifier = new NotifierAndroid();
 
             notifier.Notify(new Notification
             {

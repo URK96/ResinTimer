@@ -9,9 +9,9 @@ namespace ResinTimer.UWP
 {
     public class NotifierUWP
     {
-        public ToastNotifier UWPNotifier => UWPAppEnvironment.toastNotifier;
+        private ToastNotifier UWPNotifier => UWPAppEnvironment.toastNotifier;
 
-        public void Notify(Notification notification)
+        public void Notify(Models.Notification notification)
         {
             ToastContent builder = new ToastContentBuilder()
                 .AddToastActivationInfo("ResinNoti", ToastActivationType.Foreground)
@@ -31,7 +31,6 @@ namespace ResinTimer.UWP
         public void Cancel(string tag)
         {
             var scheduledList = GetScheduledList();
-
             var toastItem = scheduledList.FirstOrDefault(x => x.Tag.Equals(tag));
 
             if (toastItem != null)
@@ -48,6 +47,9 @@ namespace ResinTimer.UWP
             }
         }
 
-        public IReadOnlyList<ScheduledToastNotification> GetScheduledList() => UWPNotifier.GetScheduledToastNotifications();
+        public IReadOnlyList<ScheduledToastNotification> GetScheduledList()
+        {
+            return UWPNotifier.GetScheduledToastNotifications();
+        }
     }
 }

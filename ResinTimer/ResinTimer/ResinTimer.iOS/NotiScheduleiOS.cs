@@ -1,35 +1,37 @@
 ﻿using ResinTimer.iOS;
 using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models;
+using ResinTimer.Services;
 
 using System;
 using System.Collections.Generic;
 
-[assembly: Xamarin.Forms.Dependency(typeof(ScheduledNotiiOS))]
+using UserNotifications;
+
+[assembly: Xamarin.Forms.Dependency(typeof(NotiScheduleiOS))]
 
 namespace ResinTimer.iOS
 {
-    public class ScheduledNotiiOS : IScheduledNoti
+    public class NotiScheduleiOS : NotiScheduleService
     {
-        NotiManager manager;
+        private readonly NotiManager manager;
 
-        public ScheduledNotiiOS()
+        public NotiScheduleiOS()
         {
             manager = new NotiManager();
         }
 
-        public void CancelAll()
+        public override void CancelAll()
         {
-            var notifier = new NotifieriOS();
-
-            notifier.CancelAll();
+            UNUserNotificationCenter.Current.RemoveAllPendingNotificationRequests();
         }
 
-        public void Cancel<T>() where T : Noti
+        public override void Cancel<T>()
         {
-            var notifier = new NotifieriOS();
-            var cancelList = new List<string>();
+            NotifieriOS notifier = new NotifieriOS();
+            List<string> cancelList = new List<string>();
 
-            foreach (var item in manager.GetNotiList<T>())
+            foreach (T item in manager.GetNotiList<T>())
             {
                 cancelList.Add(item.NotiId.ToString());
             }
@@ -37,27 +39,16 @@ namespace ResinTimer.iOS
             notifier.Cancel(cancelList.ToArray());
         }
 
-        public void ScheduleAllNoti()
+        public override void Schedule<T>()
         {
-            Schedule<ResinNoti>();
-            Schedule<RealmCurrencyNoti>();
-            Schedule<RealmFriendshipNoti>();
-            Schedule<ExpeditionNoti>();
-            Schedule<GatheringItemNoti>();
-            Schedule<GadgetNoti>();
-            Schedule<FurnishingNoti>();
-        }
+            NotifieriOS notifier = new NotifieriOS();
+            DateTime now = DateTime.Now;
 
-        public void Schedule<T>() where T : Noti
-        {
-            var notifier = new NotifieriOS();
-            var now = DateTime.Now;
-
-            foreach (var item in manager.GetNotiList<T>())
+            foreach (T item in manager.GetNotiList<T>())
             {
                 if (item.NotiTime > now)
                 {
-                    var notification = new Notification
+                    Notification notification = new Notification
                     {
                         Title = item.GetNotiTitle(),
                         Text = item.GetNotiText(),
@@ -71,9 +62,9 @@ namespace ResinTimer.iOS
             }
         }
 
-        public void TestNoti(string message = "")
+        public override void TestNoti(string message = "")
         {
-            var notifier = new NotifieriOS();
+            NotifieriOS notifier = new NotifieriOS();
 
             notifier.Notify(new Notification
             {
@@ -84,9 +75,9 @@ namespace ResinTimer.iOS
             }, "TestNoti");
         }
 
-        public void ScheduleCustomNoti(string title, string message, int id, DateTime notiTime)
+        public override void ScheduleCustomNoti(string title, string message, int id, DateTime notiTime)
         {
-            var notifier = new NotifieriOS();
+            NotifieriOS notifier = new NotifieriOS();
 
             notifier.Notify(new Notification
             {

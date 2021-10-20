@@ -2,13 +2,6 @@
 using ResinTimer.Models.Notis;
 using ResinTimer.Resources;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 using static ResinTimer.AppEnvironment;
@@ -30,6 +23,7 @@ namespace ResinTimer.NotiSettingPages
             if (Notis.Count > 1)
             {
                 notiManager.EditList(new ResinNoti(notiId), NotiManager.EditType.Remove);
+
                 RefreshCollectionView(ListView, Notis);
             }
             else
@@ -55,7 +49,8 @@ namespace ResinTimer.NotiSettingPages
                     (count <= 160))
                 {
                     notiManager.EditList(new ResinNoti(count), NotiManager.EditType.Add);
-                    MainThread.BeginInvokeOnMainThread(() => { RefreshCollectionView(ListView, Notis); });
+
+                    RefreshCollectionView(ListView, Notis);
                 }
                 else
                 {

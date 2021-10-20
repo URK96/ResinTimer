@@ -1,9 +1,10 @@
-﻿using ResinTimer.Managers.NotiManagers;
-using ResinTimer.Models.Notis;
+﻿using ResinTimer.Models.Notis;
 
 using System;
 
-namespace ResinTimer
+using NotiType = ResinTimer.Managers.NotiManagers.NotiManager.NotiType;
+
+namespace ResinTimer.Models
 {
     public class Notification
     {
@@ -39,26 +40,24 @@ namespace ResinTimer
         /// </value>
         public DateTime NotifyTime { get; set; }
 
-        public NotiManager.NotiType NotiType { get; set; }
+        public NotiType NotiType { get; set; }
 
         public void SetType<T>() where T : Noti
         {
-            if (typeof(T) == typeof(ResinNoti))
+            Type t = typeof(T);
+
+            NotiType = t switch
             {
-                NotiType = NotiManager.NotiType.Resin;
-            }
-            else if (typeof(T) == typeof(ExpeditionNoti))
-            {
-                NotiType = NotiManager.NotiType.Expedition;
-            }
-            else if (typeof(T) == typeof(GatheringItemNoti))
-            {
-                NotiType = NotiManager.NotiType.GatheringItem;
-            }
-            else if (typeof(T) == typeof(GadgetNoti))
-            {
-                NotiType = NotiManager.NotiType.Gadget;
-            }
+                _ when t.IsAssignableFrom(typeof(ResinNoti)) => NotiType.Resin,
+                _ when t.IsAssignableFrom(typeof(RealmCurrencyNoti)) => NotiType.RealmCurrency,
+                _ when t.IsAssignableFrom(typeof(RealmFriendshipNoti)) => NotiType.RealmFriendship,
+                _ when t.IsAssignableFrom(typeof(ExpeditionNoti)) => NotiType.Expedition,
+                _ when t.IsAssignableFrom(typeof(GatheringItemNoti)) => NotiType.GatheringItem,
+                _ when t.IsAssignableFrom(typeof(GadgetNoti)) => NotiType.Gadget,
+                _ when t.IsAssignableFrom(typeof(FurnishingNoti)) => NotiType.Furnishing,
+                _ when t.IsAssignableFrom(typeof(GardeningNoti)) => NotiType.Gardening,
+                _ => NotiType.Resin
+            };
         }
     }
 }

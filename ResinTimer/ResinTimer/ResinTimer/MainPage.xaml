@@ -2,6 +2,7 @@
 <FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:models="clr-namespace:ResinTimer.Models"
+            xmlns:local="clr-namespace:ResinTimer"
             xmlns:timers="clr-namespace:ResinTimer.TimerPages"
             xmlns:resources="clr-namespace:ResinTimer.Resources"
             x:Class="ResinTimer.MainPage"
@@ -19,7 +20,7 @@
                 <ListView x:Name="MainListView"
                           ItemSelected="MainListView_ItemSelected">
                     <ListView.ItemsSource>
-                        <x:Array Type="{x:Type local:MainMasterItem}">
+                        <x:Array Type="{x:Type models:MainMasterItem}">
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}" Icon="resin.png" Target="{x:Type timers:ResinTimerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_RealmCurrency}" Icon="realm_currency.png" Target="{x:Type timers:RealmCurrencyTimerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_RealmFriendship}" Icon="friendship.png" Target="{x:Type timers:RealmFriendshipTimerPage}"/>

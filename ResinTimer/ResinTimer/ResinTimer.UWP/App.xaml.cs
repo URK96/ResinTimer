@@ -96,10 +96,10 @@ namespace ResinTimer.UWP
                     UWPAppEnvironment.toastNotifier = ToastNotificationManager.CreateToastNotifier();
                 }
 
-                var notiUWP = new ScheduledNotiUWP();
+                var notiUWP = new NotiScheduleUWP();
 
                 notiUWP.CancelAll();
-                notiUWP.ScheduleAllNoti();
+                notiUWP.ScheduleAll();
 
                 builder.AddToastActivationInfo("BootNotiRegister", ToastActivationType.Foreground);
                 builder.AddText(AppResources.BootAlarmRegisterSuccess);

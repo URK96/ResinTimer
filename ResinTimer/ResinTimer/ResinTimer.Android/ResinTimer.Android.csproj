@@ -119,7 +119,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScheduledAlarmReceiver.cs" />
-    <Compile Include="ScheduledNotiAndroid.cs" />
+    <Compile Include="NotiScheduleAndroid.cs" />
     <Compile Include="SplashActivity.cs" />
     <Compile Include="WAWidget.cs" />
     <Compile Include="TalentWidget.cs" />
@@ -659,7 +659,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

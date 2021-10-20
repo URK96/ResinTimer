@@ -1,28 +1,24 @@
-﻿using ResinTimer.UWP;
+﻿using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models;
+using ResinTimer.Services;
+using ResinTimer.UWP;
 
 using System;
 
-[assembly: Xamarin.Forms.Dependency(typeof(ScheduledNotiUWP))]
+[assembly: Xamarin.Forms.Dependency(typeof(NotiScheduleUWP))]
 
 namespace ResinTimer.UWP
 {
-    public class ScheduledNotiUWP : IScheduledNoti
+    public class NotiScheduleUWP : NotiScheduleService
     {
-        NotiManager manager;
+        private readonly NotiManager manager;
 
-        public ScheduledNotiUWP()
+        public NotiScheduleUWP()
         {
             manager = new NotiManager();
         }
 
-        public void CancelAll()
-        {
-            NotifierUWP notifier = new NotifierUWP();
-
-            notifier.CancelAll();
-        }
-
-        public void Cancel<T>() where T : Noti
+        public override void Cancel<T>()
         {
             NotifierUWP notifier = new NotifierUWP();
 
@@ -32,19 +28,7 @@ namespace ResinTimer.UWP
             }
         }
 
-        public void ScheduleAllNoti()
-        {
-            Schedule<ResinNoti>();
-            Schedule<RealmCurrencyNoti>();
-            Schedule<RealmFriendshipNoti>();
-            Schedule<ExpeditionNoti>();
-            Schedule<GatheringItemNoti>();
-            Schedule<GadgetNoti>();
-            Schedule<FurnishingNoti>();
-            Schedule<GardeningNoti>();
-        }
-
-        public void Schedule<T>() where T : Noti
+        public override void Schedule<T>()
         {
             NotifierUWP notifier = new NotifierUWP();
             DateTime now = DateTime.Now;
@@ -67,14 +51,21 @@ namespace ResinTimer.UWP
             }
         }
 
-        public void ScheduleCustomNoti(string title, string message, int id, DateTime notiTime)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void TestNoti(string message = "")
+        public override void ScheduleCustomNoti(string title, string message, int id, DateTime notiTime)
         {
             
+        }
+
+        public override void TestNoti(string message = "")
+        {
+            
+        }
+
+        public override void CancelAll()
+        {
+            NotifierUWP notifier = new NotifierUWP();
+
+            notifier.CancelAll();
         }
     }
 }

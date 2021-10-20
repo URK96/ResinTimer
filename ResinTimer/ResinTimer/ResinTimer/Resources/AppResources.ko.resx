@@ -570,7 +570,7 @@ MIT License</value>
     <value>앱 정보</value>
   </data>
   <data name="MasterDetail_MasterList_Event_DailyCheckIn" xml:space="preserve">
-    <value>매일 출석체크 (이벤트)</value>
+    <value>매일 출석체크</value>
   </data>
   <data name="MasterDetail_MasterList_Expedition" xml:space="preserve">
     <value>탐사</value>
@@ -607,6 +607,9 @@ MIT License</value>
   </data>
   <data name="MasterDetail_MasterList_WeaponAscension" xml:space="preserve">
     <value>무기 돌파</value>
+  </data>
+  <data name="MasterDetail_MasterList_Web_GenshinWorldMap" xml:space="preserve">
+    <value>월드맵</value>
   </data>
   <data name="NotiSettingPage_AddDialog_Summary" xml:space="preserve">
     <value>알림을 받고 싶은 레진 개수를 입력하세요</value>

@@ -1,5 +1,6 @@
-﻿
-using ResinTimer.Droid;
+﻿using ResinTimer.Droid;
+using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
 
 using System;
 

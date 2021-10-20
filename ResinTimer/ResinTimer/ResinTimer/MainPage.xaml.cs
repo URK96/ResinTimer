@@ -1,4 +1,5 @@
-﻿using ResinTimer.TimerPages;
+﻿using ResinTimer.Models;
+using ResinTimer.TimerPages;
 
 using System;
 

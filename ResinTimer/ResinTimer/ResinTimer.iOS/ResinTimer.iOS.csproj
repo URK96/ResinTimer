@@ -557,6 +557,12 @@
     <ImageAsset Include="Assets.xcassets\Character_Sangonomiya_Kokomi_Thumb.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\geshin_worldmap.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\geshin_worldmap.png.imageset\geshin_worldmap.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\wa_all_Inazuma.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ResinTimer
+namespace ResinTimer.Models
 {
     public class MainMasterItem
     {

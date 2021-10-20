@@ -4,6 +4,8 @@ using Android.Content.PM;
 
 using AndroidX.Core.App;
 
+using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
 using ResinTimer.Resources;
 
 using System;

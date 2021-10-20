@@ -1342,7 +1342,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Daily Check-In (Event)과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Daily Check-In과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string MasterDetail_MasterList_Event_DailyCheckIn {
             get {
@@ -1455,6 +1455,15 @@ namespace ResinTimer.Resources {
         public static string MasterDetail_MasterList_WeaponAscension {
             get {
                 return ResourceManager.GetString("MasterDetail_MasterList_WeaponAscension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   World Map과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_Web_GenshinWorldMap {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_Web_GenshinWorldMap", resourceCulture);
             }
         }
         

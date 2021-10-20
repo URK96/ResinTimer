@@ -571,7 +571,7 @@ MIT License</value>
     <value>App Info</value>
   </data>
   <data name="MasterDetail_MasterList_Event_DailyCheckIn" xml:space="preserve">
-    <value>Daily Check-In (Event)</value>
+    <value>Daily Check-In</value>
   </data>
   <data name="MasterDetail_MasterList_Expedition" xml:space="preserve">
     <value>Expedition</value>
@@ -608,6 +608,9 @@ MIT License</value>
   </data>
   <data name="MasterDetail_MasterList_WeaponAscension" xml:space="preserve">
     <value>Weapon Asc.</value>
+  </data>
+  <data name="MasterDetail_MasterList_Web_GenshinWorldMap" xml:space="preserve">
+    <value>World Map</value>
   </data>
   <data name="NotiSettingPage_AddDialog_Summary" xml:space="preserve">
     <value>Enter the number of resins you would like to be notified of.</value>

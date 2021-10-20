@@ -653,6 +653,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Character_Sangonomiya_Kokomi_Thumb.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\geshin_worldmap.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

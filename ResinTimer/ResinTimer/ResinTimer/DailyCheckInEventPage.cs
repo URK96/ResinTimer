@@ -1,11 +1,6 @@
 ﻿using ResinTimer.Resources;
 using ResinTimer.Services;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Xamarin.Forms;
 
 namespace ResinTimer
@@ -21,7 +16,7 @@ namespace ResinTimer
             {
                 IconImageSource = "edit.png"
             };
-            item.Clicked += delegate 
+            item.Clicked += delegate
             { 
                 DailyCheckInService.PrintCookie(WebView); 
             };

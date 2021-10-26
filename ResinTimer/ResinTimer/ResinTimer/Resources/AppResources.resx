@@ -117,6 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountCautionPage_SubTitle" xml:space="preserve">
+    <value>Caution</value>
+  </data>
+  <data name="AccountCautionPage_Title" xml:space="preserve">
+    <value>Caution</value>
+  </data>
+  <data name="AccountSetting_Caution_Message" xml:space="preserve">
+    <value>Account information is important personal information. Thus, this app will never collect it, and it will only be stored on your device.
+
+Users can delete the information at any time, and please note that we are not responsible for any disadvantages caused by using the function, except in cases where the app bug.</value>
+  </data>
+  <data name="AccountSetting_Complete" xml:space="preserve">
+    <value>Success to set account info</value>
+  </data>
+  <data name="AccountSetting_CookieInputMethod_Auto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="AccountSetting_CookieInputMethod_Description" xml:space="preserve">
+    <value>Choose how to set cookie information.
+
+Auto: After logging in from the Hoyolab attendance check page, click the Apply button in the upper right corner to recognize and set cookies
+
+Manual: Enter cookie information (ltuid, ltoken values) directly</value>
+  </data>
+  <data name="AccountSetting_CookieInputMethod_Manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="AccountSetting_SetCookieInfo_Fail" xml:space="preserve">
+    <value>Fail to set cookie info</value>
+  </data>
+  <data name="AccountSyncConfigPage_Title" xml:space="preserve">
+    <value>Sync Config</value>
+  </data>
+  <data name="AccountSyncConfig_ConfigSection_Title" xml:space="preserve">
+    <value>Config Feature</value>
+  </data>
+  <data name="AccountSyncStatusPage_Disconnected_Tip" xml:space="preserve">
+    <value>Cannot receive data from server with this account.
+You can renew account to solve this problem.</value>
+  </data>
+  <data name="AccountSyncStatusPage_RemoveAccount_Button" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="AccountSyncStatusPage_RemoveAccount_Fail" xml:space="preserve">
+    <value>Remove account fail</value>
+  </data>
+  <data name="AccountSyncStatusPage_RemoveAccount_Success" xml:space="preserve">
+    <value>Remove account success</value>
+  </data>
+  <data name="AccountSyncStatusPage_RenewAccount_Button" xml:space="preserve">
+    <value>Renew</value>
+  </data>
+  <data name="AccountSyncStatusPage_Title" xml:space="preserve">
+    <value>Sync Status</value>
+  </data>
+  <data name="AccountSyncStatus_Checking" xml:space="preserve">
+    <value>Checking...</value>
+  </data>
+  <data name="AccountSyncStatus_Connected" xml:space="preserve">
+    <value>Connected</value>
+  </data>
+  <data name="AccountSyncStatus_Disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="AccountSyncStatus_Disconnected" xml:space="preserve">
+    <value>Disconnected</value>
+  </data>
+  <data name="AccountUIDInputPage_SubTitle" xml:space="preserve">
+    <value>Input UID</value>
+  </data>
+  <data name="AccountUIDInputPage_Title" xml:space="preserve">
+    <value>Input UID</value>
+  </data>
   <data name="AppAction_App_Timer_Expedition" xml:space="preserve">
     <value>Expedition</value>
   </data>
@@ -199,8 +272,17 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="Dialog_Agree" xml:space="preserve">
+    <value>Agree</value>
+  </data>
+  <data name="Dialog_Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
   <data name="Dialog_Cancel" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="Dialog_Disagree" xml:space="preserve">
+    <value>Disagree</value>
   </data>
   <data name="Dialog_No" xml:space="preserve">
     <value>No</value>
@@ -774,6 +856,15 @@ MIT License</value>
   <data name="ResinWidget_UpdateComplete" xml:space="preserve">
     <value>Update Resin Widget Complete</value>
   </data>
+  <data name="SettingPage_Section_App_AccountSync_Connected" xml:space="preserve">
+    <value>Connected</value>
+  </data>
+  <data name="SettingPage_Section_App_AccountSync_NotConnected" xml:space="preserve">
+    <value>Not Connected</value>
+  </data>
+  <data name="SettingPage_Section_App_AccountSync_Title" xml:space="preserve">
+    <value>Account Sync</value>
+  </data>
   <data name="SettingPage_Section_App_AppLang_Dialog_Default" xml:space="preserve">
     <value>System Default</value>
   </data>
@@ -830,6 +921,18 @@ MIT License</value>
   </data>
   <data name="SettingPage_Title" xml:space="preserve">
     <value>Setting</value>
+  </data>
+  <data name="Sync_Fail" xml:space="preserve">
+    <value>Sync Fail</value>
+  </data>
+  <data name="Sync_Renew" xml:space="preserve">
+    <value>Renew</value>
+  </data>
+  <data name="Sync_Success" xml:space="preserve">
+    <value>Sync Success</value>
+  </data>
+  <data name="Sync_Working" xml:space="preserve">
+    <value>Working...</value>
   </data>
   <data name="TalentCharacterPage_Title" xml:space="preserve">
     <value>Apply Characters</value>

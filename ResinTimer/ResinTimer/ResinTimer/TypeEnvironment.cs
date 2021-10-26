@@ -47,7 +47,7 @@ namespace ResinTimer
             }
             else
             {
-                var now = DateTime.Now;
+                DateTime now = DateTime.Now;
 
                 Preferences.Set(SettingConstants.END_TIME, now.ToString(dtCulture));
                 endTime = now;
@@ -69,16 +69,10 @@ namespace ResinTimer
 
         public static void CalcResin()
         {
-            var now = DateTime.Now;
+            DateTime now = DateTime.Now;
 
-            if (endTime <= now)
-            {
-                resin = MAX_RESIN;
-            }
-            else
-            {
-                resin = MAX_RESIN - (Convert.ToInt32((endTime - now).TotalSeconds) / ResinTime.ONE_RESTORE_INTERVAL) - 1;
-            }
+            resin = (endTime <= now) ? MAX_RESIN :
+                MAX_RESIN - (Convert.ToInt32((endTime - now).TotalSeconds) / ResinTime.ONE_RESTORE_INTERVAL) - 1;
         }
 
         public static void SaveValue()

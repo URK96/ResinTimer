@@ -8,7 +8,7 @@
              Style="{StaticResource PageStyle}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="EditToolbarItem" Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
         <ToolbarItem x:Name="NotiToolbarItem" Text="Noti Setting" IconImageSource="notisetting.png" Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
@@ -103,7 +103,8 @@
                AbsoluteLayout.LayoutBounds="0.5, 0.95, 1, 0.30"
                HorizontalTextAlignment="Center" TextColor="OrangeRed" />
 
-        <Grid AbsoluteLayout.LayoutFlags="All"
+        <Grid x:Name="ManualControlLayout" 
+              AbsoluteLayout.LayoutFlags="All"
               AbsoluteLayout.LayoutBounds="{OnPlatform Android='0.5, 0.95, 0.95, 0.25', Default='0.5, 0.95, 0.95, 0.22'}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -166,6 +167,23 @@
                     Text="-40" 
                     Pressed="ButtonPressed" Released="ButtonReleased"/>
         </Grid>
-    </AbsoluteLayout>
 
+        <Grid x:Name="SyncControlLayout" 
+              AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutBounds="{OnPlatform Android='0.5, 0.95, 0.95, 0.25', Default='0.5, 0.95, 0.95, 0.22'}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label x:Name="SyncStatusLabel" Grid.Row="0"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                   FontAttributes="Bold" FontSize="Title" />
+
+            <Button x:Name="ManualSyncButton" Grid.Row="1"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="{x:Static resources:AppResources.Sync_Renew}" 
+                    Clicked="ManualSyncButton_Clicked" Pressed="QEButtonPressed" Released="QEButtonReleased"/>
+        </Grid>
+    </AbsoluteLayout>
 </ContentPage>

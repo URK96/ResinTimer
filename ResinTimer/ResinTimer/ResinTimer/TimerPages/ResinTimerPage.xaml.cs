@@ -15,12 +15,19 @@ using Timer = System.Timers.Timer;
 using TTimer = System.Threading.Timer;
 using AppEnv = ResinTimer.AppEnvironment;
 using ResinTimer.Managers.NotiManagers;
+using System.Threading.Tasks;
+using GenshinInfo.Managers;
+using GenshinInfo.Constants;
+using System.Collections.Generic;
 
 namespace ResinTimer.TimerPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ResinTimerPage : ContentPage
     {
+        private bool IsSyncEnabled => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_RESIN_ENABLED, false) &&
+            Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false);
+
         private Timer buttonPressTimer;
         private TTimer calcTimer;
 
@@ -40,7 +47,7 @@ namespace ResinTimer.TimerPages
 
             if (!(Device.RuntimePlatform == Device.UWP))
             {
-                buttonPressTimer = new Timer(500)
+                buttonPressTimer = new(500)
                 {
                     AutoReset = false
                 };
@@ -57,7 +64,9 @@ namespace ResinTimer.TimerPages
                 };
             }
 
-            calcTimer = new TTimer(CalcTimeResin, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
+            calcTimer = new(CalcTimeResin, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
+
+            _ = SyncData();
         }
 
         private void SetToolbar()
@@ -69,11 +78,10 @@ namespace ResinTimer.TimerPages
         {
             base.OnAppearing();
 
-            CautionResinOnlyLabel.IsVisible = ResinEnvironment.applyType == ResinEnvironment.ApplyType.Resin;
+            SetToolbar();
+            SetLayoutAppearance();
 
             calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
-
-            SetToolbar();
         }
 
         protected override void OnDisappearing()
@@ -83,6 +91,21 @@ namespace ResinTimer.TimerPages
             ResinEnvironment.SaveValue();
 
             calcTimer.Change(Timeout.Infinite, Timeout.Infinite);
+        }
+
+        private void SetLayoutAppearance()
+        {
+            CautionResinOnlyLabel.IsVisible = !IsSyncEnabled &&
+                (ResinEnvironment.applyType == ResinEnvironment.ApplyType.Resin);
+            //LastInputDateTimeLabel.IsVisible = !IsSyncEnabled;
+            
+            ManualControlLayout.IsVisible = !IsSyncEnabled;
+            SyncControlLayout.IsVisible = IsSyncEnabled;
+
+            if (IsSyncEnabled)
+            {
+                ToolbarItems.Remove(EditToolbarItem);
+            }
         }
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
@@ -121,7 +144,7 @@ namespace ResinTimer.TimerPages
 
                 MainThread.BeginInvokeOnMainThread(RefreshInfo);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
 #if DEBUG
                 DependencyService.Get<IToast>().Show(ex.ToString());
@@ -183,12 +206,55 @@ namespace ResinTimer.TimerPages
                     ResinEnvironment.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * quickCalcValue);
             }
 
-            ResinEnvironment.CalcResin();
+            UpdateSaveData();
+        }
+
+        private async Task SyncData()
+        {
+            ManualSyncButton.IsEnabled = false;
+            SyncStatusLabel.TextColor = Color.Default;
+            SyncStatusLabel.Text = AppResources.Sync_Working;
+
+            await Task.Delay(100);
+
+            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+
+            Dictionary<string, string> dic = await manager.GetRealTimeNotes();
+
+            if ((dic is not null) &&
+                int.TryParse(dic[Indexes.DailyNote.ResinRecoveryTime], out int recoveryTime))
+            {
+                TimeSpan ts = TimeSpan.FromSeconds(recoveryTime);
+                DateTime now = DateTime.Now;
+
+                ResinEnvironment.endTime = (ResinEnvironment.endTime < now) ?
+                    ResinEnvironment.endTime :
+                    now.Add(ts);
+
+                ResinEnvironment.lastInputTime = now.ToString(AppEnv.dtCulture);
+
+                UpdateSaveData();
+
+                SyncStatusLabel.TextColor = Color.Green;
+                SyncStatusLabel.Text = AppResources.Sync_Success;
+            }
+            else
+            {
+                SyncStatusLabel.TextColor = Color.OrangeRed;
+                SyncStatusLabel.Text = AppResources.Sync_Fail;
+            }
+
+            ManualSyncButton.IsEnabled = true;
+        }
+
+        private void UpdateSaveData()
+        {
+            //ResinEnvironment.CalcResin();
             ResinEnvironment.SaveValue();
 
             if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
             {
-                ResinNotiManager notiManager = new ResinNotiManager();
+                ResinNotiManager notiManager = new();
 
                 notiManager.UpdateNotisTime();
             }
@@ -278,9 +344,14 @@ namespace ResinTimer.TimerPages
 
         private async void QEButton_Clicked(object sender, EventArgs e)
         {
-            BaseDialog dialog = new BaseDialog(AppResources.ResinSimpleEditDialog_Title, new ResinSimpleEdit());
+            BaseDialog dialog = new(AppResources.ResinSimpleEditDialog_Title, new ResinSimpleEdit());
 
             await PopupNavigation.Instance.PushAsync(dialog);
+        }
+
+        private async void ManualSyncButton_Clicked(object sender, EventArgs e)
+        {
+            await SyncData();
         }
     }
 }

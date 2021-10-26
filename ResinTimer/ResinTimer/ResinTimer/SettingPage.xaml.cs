@@ -81,6 +81,11 @@ namespace ResinTimer
             Preferences.Set(SettingConstants.QUICKCALC_VIBRATION, e.Value);
         }
 
+        private async void AccountSync_Tapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Pages.AccountSyncPages.AccountSyncStatusPage(), true);
+        }
+
         private async void Notification_OnChanged(object sender, ToggledEventArgs e)
         {
             IBootService bootService = DependencyService.Get<IBootService>();

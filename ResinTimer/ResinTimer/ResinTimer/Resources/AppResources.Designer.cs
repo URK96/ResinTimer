@@ -61,6 +61,211 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Caution과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountCautionPage_SubTitle {
+            get {
+                return ResourceManager.GetString("AccountCautionPage_SubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Caution과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountCautionPage_Title {
+            get {
+                return ResourceManager.GetString("AccountCautionPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Account information is important personal information. Thus, this app will never collect it, and it will only be stored on your device.
+        ///
+        ///Users can delete the information at any time, and please note that we are not responsible for any disadvantages caused by using the function, except in cases where the app bug.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSetting_Caution_Message {
+            get {
+                return ResourceManager.GetString("AccountSetting_Caution_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Success to set account info과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSetting_Complete {
+            get {
+                return ResourceManager.GetString("AccountSetting_Complete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Auto과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSetting_CookieInputMethod_Auto {
+            get {
+                return ResourceManager.GetString("AccountSetting_CookieInputMethod_Auto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Choose how to set cookie information.
+        ///
+        ///Auto: After logging in from the Hoyolab attendance check page, click the Apply button in the upper right corner to recognize and set cookies
+        ///
+        ///Manual: Enter cookie information (ltuid, ltoken values) directly과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSetting_CookieInputMethod_Description {
+            get {
+                return ResourceManager.GetString("AccountSetting_CookieInputMethod_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Manual과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSetting_CookieInputMethod_Manual {
+            get {
+                return ResourceManager.GetString("AccountSetting_CookieInputMethod_Manual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Fail to set cookie info과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSetting_SetCookieInfo_Fail {
+            get {
+                return ResourceManager.GetString("AccountSetting_SetCookieInfo_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Config Feature과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncConfig_ConfigSection_Title {
+            get {
+                return ResourceManager.GetString("AccountSyncConfig_ConfigSection_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sync Config과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncConfigPage_Title {
+            get {
+                return ResourceManager.GetString("AccountSyncConfigPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Checking...과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatus_Checking {
+            get {
+                return ResourceManager.GetString("AccountSyncStatus_Checking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Connected과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatus_Connected {
+            get {
+                return ResourceManager.GetString("AccountSyncStatus_Connected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Disabled과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatus_Disabled {
+            get {
+                return ResourceManager.GetString("AccountSyncStatus_Disabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Disconnected과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatus_Disconnected {
+            get {
+                return ResourceManager.GetString("AccountSyncStatus_Disconnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cannot receive data from server with this account.
+        ///You can renew account to solve this problem.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatusPage_Disconnected_Tip {
+            get {
+                return ResourceManager.GetString("AccountSyncStatusPage_Disconnected_Tip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Remove과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatusPage_RemoveAccount_Button {
+            get {
+                return ResourceManager.GetString("AccountSyncStatusPage_RemoveAccount_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Remove account fail과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatusPage_RemoveAccount_Fail {
+            get {
+                return ResourceManager.GetString("AccountSyncStatusPage_RemoveAccount_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Remove account success과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatusPage_RemoveAccount_Success {
+            get {
+                return ResourceManager.GetString("AccountSyncStatusPage_RemoveAccount_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Renew과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatusPage_RenewAccount_Button {
+            get {
+                return ResourceManager.GetString("AccountSyncStatusPage_RenewAccount_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sync Status과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatusPage_Title {
+            get {
+                return ResourceManager.GetString("AccountSyncStatusPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Input UID과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountUIDInputPage_SubTitle {
+            get {
+                return ResourceManager.GetString("AccountUIDInputPage_SubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Input UID과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountUIDInputPage_Title {
+            get {
+                return ResourceManager.GetString("AccountUIDInputPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Resin Timer과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string App_Title {
@@ -305,11 +510,38 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Agree과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Dialog_Agree {
+            get {
+                return ResourceManager.GetString("Dialog_Agree", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Apply과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Dialog_Apply {
+            get {
+                return ResourceManager.GetString("Dialog_Apply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cancel과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Dialog_Cancel {
             get {
                 return ResourceManager.GetString("Dialog_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Disagree과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Dialog_Disagree {
+            get {
+                return ResourceManager.GetString("Dialog_Disagree", resourceCulture);
             }
         }
         
@@ -1954,6 +2186,33 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Connected과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_AccountSync_Connected {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_AccountSync_Connected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Not Connected과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_AccountSync_NotConnected {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_AccountSync_NotConnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Account Sync과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_AccountSync_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_AccountSync_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   System Default과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string SettingPage_Section_App_AppLang_Dialog_Default {
@@ -2121,6 +2380,42 @@ namespace ResinTimer.Resources {
         public static string SettingPage_Title {
             get {
                 return ResourceManager.GetString("SettingPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sync Fail과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Sync_Fail {
+            get {
+                return ResourceManager.GetString("Sync_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Renew과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Sync_Renew {
+            get {
+                return ResourceManager.GetString("Sync_Renew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sync Success과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Sync_Success {
+            get {
+                return ResourceManager.GetString("Sync_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Working...과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Sync_Working {
+            get {
+                return ResourceManager.GetString("Sync_Working", resourceCulture);
             }
         }
         

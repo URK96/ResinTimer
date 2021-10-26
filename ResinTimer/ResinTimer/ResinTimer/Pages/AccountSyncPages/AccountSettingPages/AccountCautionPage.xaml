@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:ResinTimer.Resources"
+             x:Class="ResinTimer.Pages.AccountSyncPages.AccountSettingPages.AccountCautionPage"
+             Title="{x:Static resources:AppResources.AccountCautionPage_Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Close" IconImageSource="close.png" Order="Primary" Priority="0" Clicked="ToolbarItemClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=20}" />
+            <Setter Property="BorderColor" Value="#0682F6" />
+            <Setter Property="BorderWidth" Value="2" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="CharacterSpacing" Value="3" />
+            <Setter Property="FontSize" Value="Default" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" 
+               Text="{x:Static resources:AppResources.AccountCautionPage_SubTitle}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+               FontAttributes="Bold" FontSize="Title" />
+
+        <ScrollView Grid.Row="1">
+            <Label Padding="10" Text="{x:Static resources:AppResources.AccountSetting_Caution_Message}" />
+        </ScrollView>
+
+        <StackLayout Orientation="Vertical" Grid.Row="2" Margin="40">
+            <Button x:Name="CautionAgreeButton" Margin="0, 0, 0, 5"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="{x:Static resources:AppResources.Dialog_Agree}"
+                    Clicked="CautionSelectButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased" />
+            <Button x:Name="CautionDisagreeButton"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="{x:Static resources:AppResources.Dialog_Disagree}"
+                    Clicked="CautionSelectButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

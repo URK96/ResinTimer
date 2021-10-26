@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:ResinTimer.Resources"
+             x:Class="ResinTimer.Pages.AccountSyncPages.AccountSyncConfigPage"
+             Title="{x:Static resources:AppResources.AccountSyncConfigPage_Title}">
+
+    <TableView Intent="Settings">
+        <TableRoot>
+            <TableSection Title="{x:Static resources:AppResources.AccountSyncConfig_ConfigSection_Title}">
+                <SwitchCell x:Name="SyncConfigResin" OnColor="#0682F6"
+                            Text="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>

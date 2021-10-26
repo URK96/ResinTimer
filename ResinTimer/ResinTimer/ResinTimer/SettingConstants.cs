@@ -41,13 +41,20 @@
         public const string FURNISHING_NOTI_LIST = "Furnishing_Noti_List";
         public const string GARDENING_NOTI_LIST = "Gardening_Noti_List";
         public const string CHECKLIST_LIST = "Checklist_List";
-        
+
         // Setting - App
+        public const string APP_ACCOUNTSYNC_ENABLED = "App_AccountSync_Enabled";
+        public const string APP_ACCOUNTSYNC_UID = "App_AccountSync_UID";
+        public const string APP_ACCOUNTSYNC_LTOKEN = "App_AccountSync_ltoken";
+        public const string APP_ACCOUNTSYNC_LTUID = "App_AccountSync_ltuid";
         public const string NOTI_ENABLED = "Noti_Enabled";
         public const string APP_START_DETAILSCREEN = "App_Start_DetailScreen";
         public const string APP_USE_24H_TIMEFORMAT = "App_Use_24H_TimeFormat";
         public const string APP_LANG = "App_Lang";
         public const string APP_INGAMESERVER = "App_InGameServer";
+
+        // Setting - App - AccountSync
+        public const string APP_ACCOUNTSYNC_RESIN_ENABLED = "App_AccountSync_Resin_Enabled";
 
         // Setting - Timer Common
         public const string SHOW_OVERFLOW = "Show_Overflow";

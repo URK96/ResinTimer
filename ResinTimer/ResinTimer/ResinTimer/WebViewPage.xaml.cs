@@ -18,12 +18,10 @@ namespace ResinTimer
         {
             InitializeComponent();
 
-            WebView.Cookies = new System.Net.CookieContainer();
-
             NavigateURL(url);
         }
 
-        private void NavigateURL(string url)
+        public void NavigateURL(string url)
         {
             BaseWebView.Source = url;
             BaseWebView.Reload();

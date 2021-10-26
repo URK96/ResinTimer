@@ -97,7 +97,6 @@ namespace ResinTimer.TimerPages
         {
             CautionResinOnlyLabel.IsVisible = !IsSyncEnabled &&
                 (ResinEnvironment.applyType == ResinEnvironment.ApplyType.Resin);
-            //LastInputDateTimeLabel.IsVisible = !IsSyncEnabled;
             
             ManualControlLayout.IsVisible = !IsSyncEnabled;
             SyncControlLayout.IsVisible = IsSyncEnabled;
@@ -222,14 +221,22 @@ namespace ResinTimer.TimerPages
             Dictionary<string, string> dic = await manager.GetRealTimeNotes();
 
             if ((dic is not null) &&
-                int.TryParse(dic[Indexes.DailyNote.ResinRecoveryTime], out int recoveryTime))
+                int.TryParse(dic[Indexes.DailyNote.ResinRecoveryTime], out int recoveryTime) &&
+                int.TryParse(dic[Indexes.DailyNote.CurrentResin], out int serverResin))
             {
+                if (recoveryTime > ResinEnvironment.MAX_RESIN * 8 * 60)
+                {
+                    recoveryTime = 0;
+                }
+                else if (serverResin > ResinEnvironment.MAX_RESIN)
+                {
+                    recoveryTime = -(serverResin - ResinEnvironment.MAX_RESIN) * 8 * 60;
+                }
+
                 TimeSpan ts = TimeSpan.FromSeconds(recoveryTime);
                 DateTime now = DateTime.Now;
 
-                ResinEnvironment.endTime = (ResinEnvironment.endTime < now) ?
-                    ResinEnvironment.endTime :
-                    now.Add(ts);
+                ResinEnvironment.endTime = now.Add(ts);
 
                 ResinEnvironment.lastInputTime = now.ToString(AppEnv.dtCulture);
 

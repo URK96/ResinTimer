@@ -123,6 +123,15 @@
   <data name="AccountCautionPage_Title" xml:space="preserve">
     <value>Caution</value>
   </data>
+  <data name="AccountCookieInputAutoPage_Title" xml:space="preserve">
+    <value>Input Cookie (Auto)</value>
+  </data>
+  <data name="AccountCookieInputManualPage_Title" xml:space="preserve">
+    <value>Input Cookie (Manual)</value>
+  </data>
+  <data name="AccountCookieInputPage_Title" xml:space="preserve">
+    <value>Input Cookie</value>
+  </data>
   <data name="AccountSetting_Caution_Message" xml:space="preserve">
     <value>Account information is important personal information. Thus, this app will never collect it, and it will only be stored on your device.
 
@@ -146,6 +155,9 @@ Manual: Enter cookie information (ltuid, ltoken values) directly</value>
   </data>
   <data name="AccountSetting_SetCookieInfo_Fail" xml:space="preserve">
     <value>Fail to set cookie info</value>
+  </data>
+  <data name="AccountSetting_SetCookieInfo_Success" xml:space="preserve">
+    <value>Success to set cookie info</value>
   </data>
   <data name="AccountSyncConfigPage_Title" xml:space="preserve">
     <value>Sync Config</value>

@@ -123,6 +123,15 @@
   <data name="AccountCautionPage_Title" xml:space="preserve">
     <value>주의</value>
   </data>
+  <data name="AccountCookieInputAutoPage_Title" xml:space="preserve">
+    <value>Cookie 입력 (자동)</value>
+  </data>
+  <data name="AccountCookieInputManualPage_Title" xml:space="preserve">
+    <value>Cookie 입력 (수동)</value>
+  </data>
+  <data name="AccountCookieInputPage_Title" xml:space="preserve">
+    <value>Cookie 입력</value>
+  </data>
   <data name="AccountSetting_Caution_Message" xml:space="preserve">
     <value>계정 정보는 소중한 개인 정보입니다. 이에 따라 해당 앱에서는 절대로 이를 수집하지 않으며, 본인의 기기에만 저장됩니다.
 
@@ -146,6 +155,9 @@
   </data>
   <data name="AccountSetting_SetCookieInfo_Fail" xml:space="preserve">
     <value>Cookie 정보 입력 실패</value>
+  </data>
+  <data name="AccountSetting_SetCookieInfo_Success" xml:space="preserve">
+    <value>Cookie 정보 입력 성공</value>
   </data>
   <data name="AccountSyncConfigPage_Title" xml:space="preserve">
     <value>연동 구성 설정</value>

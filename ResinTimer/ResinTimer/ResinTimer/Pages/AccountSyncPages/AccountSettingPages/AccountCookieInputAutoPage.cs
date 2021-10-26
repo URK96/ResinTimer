@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ResinTimer.Resources;
+
+using System;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -12,6 +14,8 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
 
         public AccountCookieInputAutoPage() : base(SiteUrl)
         {
+            Title = AppResources.AccountCookieInputAutoPage_Title;
+
             ToolbarItem closeItem = new()
             {
                 Text = "Close",
@@ -31,6 +35,9 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
             };
             applyItem.Clicked += async delegate
             {
+                WebView.Cookies = new CookieContainer();
+                NavigateURL(SiteUrl);
+
                 await CheckCookies();
             };
 
@@ -49,11 +56,13 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
 
                 Utils.SetAccountCookieInfo(ltuid, ltoken);
 
+                Utils.ShowToast(AppResources.AccountSetting_Complete);
+
                 await Navigation.PopModalAsync();
             }
             catch (Exception)
             {
-                DependencyService.Get<IToast>().Show("Cannot find account cookie");
+                Utils.ShowToast(AppResources.AccountSetting_SetCookieInfo_Fail);
             }
         }
     }

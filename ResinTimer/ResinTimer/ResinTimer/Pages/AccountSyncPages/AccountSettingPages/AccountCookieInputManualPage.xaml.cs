@@ -27,7 +27,7 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
             }
             catch (Exception)
             {
-                DependencyService.Get<IToast>().Show(AppResources.AccountSetting_SetCookieInfo_Fail);
+                Utils.ShowToast(AppResources.AccountSetting_SetCookieInfo_Fail);
             }
         }
 

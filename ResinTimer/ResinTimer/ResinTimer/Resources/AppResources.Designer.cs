@@ -79,6 +79,33 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Input Cookie (Auto)과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountCookieInputAutoPage_Title {
+            get {
+                return ResourceManager.GetString("AccountCookieInputAutoPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Input Cookie (Manual)과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountCookieInputManualPage_Title {
+            get {
+                return ResourceManager.GetString("AccountCookieInputManualPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Input Cookie과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountCookieInputPage_Title {
+            get {
+                return ResourceManager.GetString("AccountCookieInputPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Account information is important personal information. Thus, this app will never collect it, and it will only be stored on your device.
         ///
         ///Users can delete the information at any time, and please note that we are not responsible for any disadvantages caused by using the function, except in cases where the app bug.과(와) 유사한 지역화된 문자열을 찾습니다.
@@ -135,6 +162,15 @@ namespace ResinTimer.Resources {
         public static string AccountSetting_SetCookieInfo_Fail {
             get {
                 return ResourceManager.GetString("AccountSetting_SetCookieInfo_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Success to set cookie info과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSetting_SetCookieInfo_Success {
+            get {
+                return ResourceManager.GetString("AccountSetting_SetCookieInfo_Success", resourceCulture);
             }
         }
         

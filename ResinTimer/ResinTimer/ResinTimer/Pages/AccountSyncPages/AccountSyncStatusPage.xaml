@@ -47,8 +47,9 @@
         </StackLayout>
 
         <Grid AbsoluteLayout.LayoutFlags="All"
-              AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.8, 0.20">
+              AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.8, 0.35">
             <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
@@ -75,6 +76,11 @@
                     Text="{x:Static resources:AppResources.AccountSyncStatusPage_RemoveAccount_Button}"
                     Clicked="RemoveAccountButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased" />
             </StackLayout>
+
+            <Button x:Name="EnableDailyNoteButton" Grid.Row="2" IsEnabled="False"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="{x:Static resources:AppResources.AccountSyncStatusPage_EnableDailyNote_Button}"
+                    Clicked="EnableDailyNoteButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased" />
         </Grid>
     </AbsoluteLayout>
 </ContentPage>

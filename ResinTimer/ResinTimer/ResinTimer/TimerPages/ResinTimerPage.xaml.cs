@@ -210,6 +210,7 @@ namespace ResinTimer.TimerPages
 
         private async Task SyncData()
         {
+            SyncStatusTipLabel.IsVisible = false;
             ManualSyncButton.IsEnabled = false;
             SyncStatusLabel.TextColor = Color.Default;
             SyncStatusLabel.Text = AppResources.Sync_Working;
@@ -218,7 +219,7 @@ namespace ResinTimer.TimerPages
 
             GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
 
-            Dictionary<string, string> dic = await manager.GetRealTimeNotes();
+            Dictionary<string, string> dic = await manager.GetDailyNotes();
 
             if ((dic is not null) &&
                 int.TryParse(dic[Indexes.DailyNote.ResinRecoveryTime], out int recoveryTime) &&
@@ -249,6 +250,7 @@ namespace ResinTimer.TimerPages
             {
                 SyncStatusLabel.TextColor = Color.OrangeRed;
                 SyncStatusLabel.Text = AppResources.Sync_Fail;
+                SyncStatusTipLabel.IsVisible = true;
             }
 
             ManualSyncButton.IsEnabled = true;

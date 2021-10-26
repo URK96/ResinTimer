@@ -239,6 +239,33 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Enable Daily Note과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatusPage_EnableDailyNote_Button {
+            get {
+                return ResourceManager.GetString("AccountSyncStatusPage_EnableDailyNote_Button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Fail to enable daily note과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatusPage_EnableDailyNote_Fail {
+            get {
+                return ResourceManager.GetString("AccountSyncStatusPage_EnableDailyNote_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Success to enable daily note과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AccountSyncStatusPage_EnableDailyNote_Success {
+            get {
+                return ResourceManager.GetString("AccountSyncStatusPage_EnableDailyNote_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Remove과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string AccountSyncStatusPage_RemoveAccount_Button {
@@ -2200,6 +2227,15 @@ namespace ResinTimer.Resources {
         public static string ResinSimpleEditDialog_Title {
             get {
                 return ResourceManager.GetString("ResinSimpleEditDialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Renew your account information or try to enable daily note on the account sync status screen.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ResinTimerPage_SyncTip {
+            get {
+                return ResourceManager.GetString("ResinTimerPage_SyncTip", resourceCulture);
             }
         }
         

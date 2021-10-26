@@ -170,15 +170,23 @@
 
         <Grid x:Name="SyncControlLayout" 
               AbsoluteLayout.LayoutFlags="All"
-              AbsoluteLayout.LayoutBounds="{OnPlatform Android='0.5, 0.95, 0.95, 0.25', Default='0.5, 0.95, 0.95, 0.22'}">
+              AbsoluteLayout.LayoutBounds="{OnPlatform Android='0.5, 0.95, 0.95, 0.28', Default='0.5, 0.95, 0.95, 0.25'}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Label x:Name="SyncStatusLabel" Grid.Row="0"
-                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                   FontAttributes="Bold" FontSize="Title" />
+            <StackLayout Orientation="Vertical" Grid.Row="0">
+                <Label x:Name="SyncStatusLabel"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                       FontAttributes="Bold" FontSize="Title" />
+
+                <Label x:Name="SyncStatusTipLabel" Margin="0, 2, 0, 0" IsVisible="False"
+                       Text="{x:Static resources:AppResources.ResinTimerPage_SyncTip}" TextColor="OrangeRed"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                       FontAttributes="Bold" FontSize="Subtitle" />
+            </StackLayout>
+            
 
             <Button x:Name="ManualSyncButton" Grid.Row="1"
                     Style="{StaticResource ButtonStyle}"

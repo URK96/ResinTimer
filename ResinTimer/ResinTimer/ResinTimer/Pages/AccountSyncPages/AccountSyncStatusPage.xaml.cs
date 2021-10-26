@@ -44,6 +44,7 @@ namespace ResinTimer.Pages.AccountSyncPages
             AccountUIDLabel.Text = $"UID : {Utils.UID}";
             AccountSyncDisconnectedTipLabel.IsVisible = false;
             AccountSyncStatusLabel.TextColor = Color.Default;
+            EnableDailyNoteButton.IsEnabled = false;
 
             if (IsSyncEnabled)
             {
@@ -66,6 +67,7 @@ namespace ResinTimer.Pages.AccountSyncPages
                     AppResources.AccountSyncStatus_Disconnected;
                 AccountSyncStatusLabel.TextColor = isConnected ? Color.Green : Color.OrangeRed;
                 AccountSyncDisconnectedTipLabel.IsVisible = !isConnected;
+                EnableDailyNoteButton.IsEnabled = isConnected;
             }
             else
             {
@@ -98,6 +100,22 @@ namespace ResinTimer.Pages.AccountSyncPages
             catch (Exception)
             {
                 Utils.ShowToast(AppResources.AccountSyncStatusPage_RemoveAccount_Fail);
+            }
+        }
+
+        private async void EnableDailyNoteButtonClicked(object sender, EventArgs e)
+        {
+            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+
+            try
+            {
+                Utils.ShowToast(await manager.SetDailyNoteSwitch(true) ?
+                    AppResources.AccountSyncStatusPage_EnableDailyNote_Success :
+                    AppResources.AccountSyncStatusPage_EnableDailyNote_Fail);
+            }
+            catch (Exception)
+            {
+                Utils.ShowToast(AppResources.AccountSyncStatusPage_EnableDailyNote_Fail);
             }
         }
 

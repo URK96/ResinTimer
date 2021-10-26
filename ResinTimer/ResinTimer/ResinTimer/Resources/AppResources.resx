@@ -169,6 +169,15 @@ Manual: Enter cookie information (ltuid, ltoken values) directly</value>
     <value>Cannot receive data from server with this account.
 You can renew account to solve this problem.</value>
   </data>
+  <data name="AccountSyncStatusPage_EnableDailyNote_Button" xml:space="preserve">
+    <value>Enable Daily Note</value>
+  </data>
+  <data name="AccountSyncStatusPage_EnableDailyNote_Fail" xml:space="preserve">
+    <value>Fail to enable daily note</value>
+  </data>
+  <data name="AccountSyncStatusPage_EnableDailyNote_Success" xml:space="preserve">
+    <value>Success to enable daily note</value>
+  </data>
   <data name="AccountSyncStatusPage_RemoveAccount_Button" xml:space="preserve">
     <value>Remove</value>
   </data>
@@ -861,6 +870,9 @@ MIT License</value>
   </data>
   <data name="ResinSimpleEditDialog_Title" xml:space="preserve">
     <value>Simple Edit Resin</value>
+  </data>
+  <data name="ResinTimerPage_SyncTip" xml:space="preserve">
+    <value>Renew your account information or try to enable daily note on the account sync status screen.</value>
   </data>
   <data name="ResinWidget_Name" xml:space="preserve">
     <value>Resin Widget</value>

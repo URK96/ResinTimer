@@ -66,7 +66,10 @@ namespace ResinTimer.TimerPages
 
             calcTimer = new(CalcTimeResin, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
 
-            _ = SyncData();
+            if (IsSyncEnabled)
+            {
+                _ = SyncData();
+            }
         }
 
         private void SetToolbar()
@@ -219,11 +222,11 @@ namespace ResinTimer.TimerPages
 
             GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
 
-            Dictionary<string, string> dic = await manager.GetDailyNotes();
+            Dictionary<string, string> dic = await manager.GetRealTimeNotes();
 
             if ((dic is not null) &&
-                int.TryParse(dic[Indexes.DailyNote.ResinRecoveryTime], out int recoveryTime) &&
-                int.TryParse(dic[Indexes.DailyNote.CurrentResin], out int serverResin))
+                int.TryParse(dic[Indexes.RealTimeNote.ResinRecoveryTime], out int recoveryTime) &&
+                int.TryParse(dic[Indexes.RealTimeNote.CurrentResin], out int serverResin))
             {
                 if (recoveryTime > ResinEnvironment.MAX_RESIN * 8 * 60)
                 {

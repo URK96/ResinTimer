@@ -55,29 +55,27 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <StackLayout Orientation="Horizontal" Grid.Row="0" 
-                         HorizontalOptions="Center">
-                <Switch x:Name="AccountSyncEnableSwitch" />
+            <Label Grid.Row="0" Grid.Column="0" 
+                   Text="Enable Sync" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
 
-                <Label Text="Enable Sync" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-            </StackLayout>
+            <Switch x:Name="AccountSyncEnableSwitch" Grid.Row="0" Grid.Column="1"
+                    HorizontalOptions="Center" VerticalOptions="Center"/>
 
-            <StackLayout Orientation="Horizontal" Grid.Row="1"
-                         HorizontalOptions="CenterAndExpand">
-                <Button x:Name="RenewAccountButton" Grid.Row="1"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="{x:Static resources:AppResources.AccountSyncStatusPage_RenewAccount_Button}"
-                    Clicked="RenewAccountButtonClicked"  Pressed="ButtonPressed" Released="ButtonReleased" />
+            <Button x:Name="RenewAccountButton" Grid.Row="1" Grid.Column="0"
+                Style="{StaticResource ButtonStyle}"
+                Text="{x:Static resources:AppResources.AccountSyncStatusPage_RenewAccount_Button}"
+                Clicked="RenewAccountButtonClicked"  Pressed="ButtonPressed" Released="ButtonReleased" />
                 
-                <Button x:Name="RemoveAccountButton" Grid.Row="1"
-                    Style="{StaticResource ButtonStyleReverse}"
-                    Text="{x:Static resources:AppResources.AccountSyncStatusPage_RemoveAccount_Button}"
-                    Clicked="RemoveAccountButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased" />
-            </StackLayout>
+            <Button x:Name="RemoveAccountButton" Grid.Row="1" Grid.Column="1"
+                Style="{StaticResource ButtonStyleReverse}"
+                Text="{x:Static resources:AppResources.AccountSyncStatusPage_RemoveAccount_Button}"
+                Clicked="RemoveAccountButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased" />
 
-            <Button x:Name="EnableDailyNoteButton" Grid.Row="2" IsEnabled="False"
+            <Button x:Name="EnableDailyNoteButton" Grid.Row="2" Grid.ColumnSpan="2" 
+                    IsEnabled="False"
                     Style="{StaticResource ButtonStyle}"
                     Text="{x:Static resources:AppResources.AccountSyncStatusPage_EnableDailyNote_Button}"
                     Clicked="EnableDailyNoteButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased" />

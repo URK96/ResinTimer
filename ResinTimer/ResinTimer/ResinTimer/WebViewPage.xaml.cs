@@ -12,6 +12,7 @@ namespace ResinTimer
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class WebViewPage : ContentPage
     {
+        public StackLayout RootLayout => WebViewRootLayout;
         public WebView WebView => BaseWebView;
 
         public WebViewPage(string url)

@@ -10,7 +10,7 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
 {
     public class AccountCookieInputAutoPage : WebViewPage
     {
-        const string SiteUrl = "https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481";
+        private const string SiteUrl = "https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481";
 
         public AccountCookieInputAutoPage() : base(SiteUrl)
         {
@@ -35,21 +35,31 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
             };
             applyItem.Clicked += async delegate
             {
-                WebView.Cookies = new CookieContainer();
-                NavigateURL(SiteUrl);
+                RootLayout.Children.Clear();
 
-                await CheckCookies();
+                WebView wv = new()
+                {
+                    VerticalOptions = LayoutOptions.FillAndExpand
+                };
+
+                wv.Cookies = new CookieContainer();
+
+                RootLayout.Children.Add(wv);
+
+                wv.Source = SiteUrl;
+
+                await CheckCookies(wv);
             };
 
             ToolbarItems.Add(closeItem);
             ToolbarItems.Add(applyItem);
         }
 
-        private async Task CheckCookies()
+        private async Task CheckCookies(WebView wv)
         {
             try
             {
-                CookieCollection cookies = WebView.Cookies.GetCookies(new Uri(SiteUrl));
+                CookieCollection cookies = wv.Cookies.GetCookies(new Uri(SiteUrl));
 
                 string ltuid = cookies["ltuid"].Value;
                 string ltoken = cookies["ltoken"].Value;

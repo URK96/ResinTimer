@@ -239,7 +239,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Enable Daily Note과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Enable Real-Time Note과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string AccountSyncStatusPage_EnableDailyNote_Button {
             get {
@@ -248,7 +248,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Fail to enable daily note과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Fail to enable real-time note과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string AccountSyncStatusPage_EnableDailyNote_Fail {
             get {
@@ -257,7 +257,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Success to enable daily note과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Success to enable real-time note과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string AccountSyncStatusPage_EnableDailyNote_Success {
             get {
@@ -2231,7 +2231,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Renew your account information or try to enable daily note on the account sync status screen.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Renew your account information or try to enable real-time note on the account sync status screen.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string ResinTimerPage_SyncTip {
             get {

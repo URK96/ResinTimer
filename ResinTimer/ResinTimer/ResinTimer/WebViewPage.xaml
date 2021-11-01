@@ -4,10 +4,9 @@
              x:Class="ResinTimer.WebViewPage">
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout x:Name="WebViewRootLayout">
             <WebView x:Name="BaseWebView" VerticalOptions="FillAndExpand"/>
         </StackLayout>
-        
     </ContentPage.Content>
     
 </ContentPage>

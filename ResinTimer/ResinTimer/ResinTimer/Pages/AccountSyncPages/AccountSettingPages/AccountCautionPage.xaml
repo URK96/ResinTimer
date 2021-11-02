@@ -24,26 +24,29 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="4*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" 
+        <Label Grid.Row="0" Grid.ColumnSpan="2"
                Text="{x:Static resources:AppResources.AccountCautionPage_SubTitle}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
                FontAttributes="Bold" FontSize="Title" />
 
-        <ScrollView Grid.Row="1">
+        <ScrollView Grid.Row="1" Grid.ColumnSpan="2">
             <Label Padding="10" Text="{x:Static resources:AppResources.AccountSetting_Caution_Message}" />
         </ScrollView>
 
-        <StackLayout Orientation="Vertical" Grid.Row="2" Margin="40">
-            <Button x:Name="CautionAgreeButton" Margin="0, 0, 0, 5"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="{x:Static resources:AppResources.Dialog_Agree}"
-                    Clicked="CautionSelectButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased" />
-            <Button x:Name="CautionDisagreeButton"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="{x:Static resources:AppResources.Dialog_Disagree}"
-                    Clicked="CautionSelectButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased" />
-        </StackLayout>
+        <Button x:Name="CautionAgreeButton" Grid.Row="2" Grid.Column="0" Margin="20"
+                Style="{StaticResource ButtonStyle}"
+                Text="{x:Static resources:AppResources.Dialog_Agree}"
+                Clicked="CautionSelectButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased" />
+
+        <Button x:Name="CautionDisagreeButton" Grid.Row="2" Grid.Column="1" Margin="20"
+                Style="{StaticResource ButtonStyle}"
+                Text="{x:Static resources:AppResources.Dialog_Disagree}"
+                Clicked="CautionSelectButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased" />
     </Grid>
 </ContentPage>

@@ -43,12 +43,15 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
                 };
 
                 wv.Cookies = new CookieContainer();
+                wv.Navigated += async (sender, e) =>
+                {
+                    await Task.Delay(2000);
+                    await CheckCookies(sender as WebView);
+                };
 
                 RootLayout.Children.Add(wv);
 
                 wv.Source = SiteUrl;
-
-                await CheckCookies(wv);
             };
 
             ToolbarItems.Add(closeItem);

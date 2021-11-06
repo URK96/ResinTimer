@@ -19,7 +19,7 @@
                     <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0, 10, 0, 10">
                         <Image HorizontalOptions="Center" VerticalOptions="Center" 
                                WidthRequest="25" Source="{Binding ElementIconString}" />
-                        <Image HorizontalOptions="Center" VerticalOptions="Center" 
+                        <Image HorizontalOptions="Center" VerticalOptions="Center"
                                Source="{Binding IconString}" />
                         <Label HorizontalOptions="Center" VerticalOptions="Center" 
                                Text="{Binding LocationName}" HorizontalTextAlignment="Center" FontSize="{OnPlatform Android=Medium, UWP=Small, iOS=Large}" />

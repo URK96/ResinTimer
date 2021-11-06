@@ -170,127 +170,130 @@
     <ImageAsset Include="Assets.xcassets\bugreport.png.imageset\bugreport.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Albedo_Thumb.png.imageset\Character_Albedo_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Albedo_Thumb.png.imageset\Character_Albedo_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Aloy_Thumb.png.imageset\Character_Aloy_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Aloy_Thumb.png.imageset\Character_Aloy_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Amber_Thumb.png.imageset\Character_Amber_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Amber_Thumb.png.imageset\Character_Amber_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Ayaka_Thumb.png.imageset\Character_Ayaka_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Ayaka_Thumb.png.imageset\Character_Ayaka_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Barbara_Thumb.png.imageset\Character_Barbara_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Barbara_Thumb.png.imageset\Character_Barbara_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Beidou_Thumb.png.imageset\Character_Beidou_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Beidou_Thumb.png.imageset\Character_Beidou_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Bennett_Thumb.png.imageset\Character_Bennett_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Bennett_Thumb.png.imageset\Character_Bennett_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Chongyun_Thumb.png.imageset\Character_Chongyun_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Chongyun_Thumb.png.imageset\Character_Chongyun_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Diluc_Thumb.png.imageset\Character_Diluc_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Diluc_Thumb.png.imageset\Character_Diluc_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Diona_Thumb.png.imageset\Character_Diona_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Diona_Thumb.png.imageset\Character_Diona_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Eula_Thumb.png.imageset\Character_Eula_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Eula_Thumb.png.imageset\Character_Eula_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Fischl_Thumb.png.imageset\Character_Fischl_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Fischl_Thumb.png.imageset\Character_Fischl_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Ganyu_Thumb.png.imageset\Character_Ganyu_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Ganyu_Thumb.png.imageset\Character_Ganyu_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_HuTao_Thumb.png.imageset\Character_HuTao_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_HuTao_Thumb.png.imageset\Character_HuTao_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Jean_Thumb.png.imageset\Character_Jean_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Jean_Thumb.png.imageset\Character_Jean_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Kaeya_Thumb.png.imageset\Character_Kaeya_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Kaeya_Thumb.png.imageset\Character_Kaeya_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Kazuha_Thumb.png.imageset\Character_Kazuha_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Kazuha_Thumb.png.imageset\Character_Kazuha_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Keqing_Thumb.png.imageset\Character_Keqing_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Keqing_Thumb.png.imageset\Character_Keqing_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Klee_Thumb.png.imageset\Character_Klee_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Klee_Thumb.png.imageset\Character_Klee_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Kujou_Sara_Thumb.png.imageset\Character_Kujou_Sara_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Kujou_Sara_Thumb.png.imageset\Character_Kujou_Sara_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Lisa_Thumb.png.imageset\Character_Lisa_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Lisa_Thumb.png.imageset\Character_Lisa_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Mona_Thumb.png.imageset\Character_Mona_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Mona_Thumb.png.imageset\Character_Mona_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Ningguang_Thumb.png.imageset\Character_Ningguang_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Ningguang_Thumb.png.imageset\Character_Ningguang_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Noelle_Thumb.png.imageset\Character_Noelle_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Noelle_Thumb.png.imageset\Character_Noelle_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Qiqi_Thumb.png.imageset\Character_Qiqi_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Qiqi_Thumb.png.imageset\Character_Qiqi_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Raiden_Shogun_Thumb.png.imageset\Character_Raiden_Shogun_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Raiden_Shogun_Thumb.png.imageset\Character_Raiden_Shogun_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Razor_Thumb.png.imageset\Character_Razor_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Razor_Thumb.png.imageset\Character_Razor_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Rosaria_Thumb.png.imageset\Character_Rosaria_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Rosaria_Thumb.png.imageset\Character_Rosaria_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Sangonomiya_Kokomi_Thumb.png.imageset\Character_Sangonomiya_Kokomi_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Sangonomiya_Kokomi_Thumb.png.imageset\Character_Sangonomiya_Kokomi_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Sayu_Thumb.png.imageset\Character_Sayu_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Sayu_Thumb.png.imageset\Character_Sayu_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Sucrose_Thumb.png.imageset\Character_Sucrose_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Sucrose_Thumb.png.imageset\Character_Sucrose_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Tartaglia_Thumb.png.imageset\Character_Tartaglia_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Tartaglia_Thumb.png.imageset\Character_Tartaglia_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Traveler_Thumb.png.imageset\Character_Traveler_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Thoma_Thumb.png.imageset\Character_Thoma_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Venti_Thumb.png.imageset\Character_Venti_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Traveler_Thumb.png.imageset\Character_Traveler_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Xiangling_Thumb.png.imageset\Character_Xiangling_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Venti_Thumb.png.imageset\Character_Venti_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Xiao_Thumb.png.imageset\Character_Xiao_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Xiangling_Thumb.png.imageset\Character_Xiangling_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Xingqiu_Thumb.png.imageset\Character_Xingqiu_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Xiao_Thumb.png.imageset\Character_Xiao_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Xinyan_Thumb.png.imageset\Character_Xinyan_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Xingqiu_Thumb.png.imageset\Character_Xingqiu_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Yanfei_Thumb.png.imageset\Character_Yanfei_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Xinyan_Thumb.png.imageset\Character_Xinyan_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Yoimiya_Thumb.png.imageset\Character_Yoimiya_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Yanfei_Thumb.png.imageset\Character_Yanfei_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Character_Zhongli_Thumb.png.imageset\Character_Zhongli_Thumb.png">
+    <ImageAsset Include="Assets.xcassets\Character_Yoimiya_Thumb.png.imageset\Character_Yoimiya_Thumb1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Zhongli_Thumb.png.imageset\Character_Zhongli_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\chunk.png.imageset\chunk.png">
@@ -567,6 +570,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\close.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Thoma_Thumb.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\wa_all_Inazuma.png.imageset\Contents.json">
@@ -1057,7 +1063,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

@@ -33,7 +33,7 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
                 Priority = 1,
                 IconImageSource = "apply.png"
             };
-            applyItem.Clicked += async delegate
+            applyItem.Clicked += delegate
             {
                 RootLayout.Children.Clear();
 

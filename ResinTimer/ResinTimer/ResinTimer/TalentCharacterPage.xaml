@@ -20,7 +20,7 @@
                         <Image HorizontalOptions="Center" VerticalOptions="Center" 
                                WidthRequest="25" Source="{Binding ElementIconString}" />
                         <Image HorizontalOptions="Center" VerticalOptions="Center"
-                               Source="{Binding IconString}" />
+                               WidthRequest="75" Source="{Binding IconString}" />
                         <Label HorizontalOptions="Center" VerticalOptions="Center" 
                                Text="{Binding LocationName}" HorizontalTextAlignment="Center" FontSize="{OnPlatform Android=Medium, UWP=Small, iOS=Large}" />
                     </StackLayout>

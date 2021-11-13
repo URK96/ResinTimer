@@ -109,7 +109,7 @@ namespace ResinTimer.Pages.AccountSyncPages
 
             try
             {
-                Utils.ShowToast(await manager.SetDailyNoteSwitch(true) ?
+                Utils.ShowToast(await manager.SetRealTimeNoteSetting(true) ?
                     AppResources.AccountSyncStatusPage_EnableDailyNote_Success :
                     AppResources.AccountSyncStatusPage_EnableDailyNote_Fail);
             }

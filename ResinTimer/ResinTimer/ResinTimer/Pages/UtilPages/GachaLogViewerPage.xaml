@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:ResinTimer.Pages.UtilPages"
+            x:Class="ResinTimer.Pages.UtilPages.GachaLogViewerPage">
+
+    <!--<TabbedPage.ToolbarItems>
+        <ToolbarItem x:Name="ResetToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Reset}" IconImageSource="refresh.png" Order="Primary" Priority="0" Clicked="ToolbarItemClicked" />
+        <ToolbarItem x:Name="ResetAllToolbarItem" Text="{x:Static resources:AppResources.Toolbar_ResetAll}" IconImageSource="refresh_all.png" Order="Primary" Priority="1" Clicked="ToolbarItemClicked" />
+        <ToolbarItem x:Name="EditToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Edit}" IconImageSource="{OnPlatform Android=edit.png, UWP=edit.png}" Order="Secondary" Priority="2" Clicked="ToolbarItemClicked" />
+    </TabbedPage.ToolbarItems>-->
+
+    <local:GachaLogViewerPermanentPage />
+
+    <local:GachaLogViewerWeaponEventPage />
+
+    <local:GachaLogViewerCharacterEventPage />
+</TabbedPage>

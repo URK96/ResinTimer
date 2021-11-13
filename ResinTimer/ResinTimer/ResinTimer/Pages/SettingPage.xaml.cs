@@ -12,7 +12,7 @@ using Xamarin.Forms.Xaml;
 
 using AppEnv = ResinTimer.AppEnvironment;
 
-namespace ResinTimer
+namespace ResinTimer.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingPage : ContentPage

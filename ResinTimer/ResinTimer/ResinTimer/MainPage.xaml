@@ -3,7 +3,9 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:models="clr-namespace:ResinTimer.Models"
             xmlns:local="clr-namespace:ResinTimer"
+            xmlns:pages="clr-namespace:ResinTimer.Pages"
             xmlns:timers="clr-namespace:ResinTimer.TimerPages"
+            xmlns:utils="clr-namespace:ResinTimer.Pages.UtilPages"
             xmlns:resources="clr-namespace:ResinTimer.Resources"
             x:Class="ResinTimer.MainPage"
             FlyoutLayoutBehavior="Popover">
@@ -31,11 +33,12 @@
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Gardening}" Icon="gardening_jade_field.png" Target="{x:Type timers:GardeningTimerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Talent}" Icon="talent_freedom.png" Target="{x:Type local:TalentTimerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_WeaponAscension}" Icon="wa_aerosiderite_4.png" Target="{x:Type local:WeaponAscensionTimerPage}"/>
+                            <models:MainMasterItem Title="Gacha Log" Target="{x:Type utils:GachaLogViewerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Event_DailyCheckIn}" Icon="fractured_fruit_data.png" Target="{x:Type local:DailyCheckInEventPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Web_GenshinWorldMap}" Icon="geshin_worldmap.png" Target="{x:Type local:GenshinWorldMapPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_HowToUse}" Target="{x:Type local:HowToUseListPage}" />
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_AppInfo}" Target="{x:Type local:InfoPage}" />
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Settings}" Target="{x:Type local:SettingPage}" />
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_AppInfo}" Target="{x:Type pages:InfoPage}" />
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Settings}" Target="{x:Type pages:SettingPage}" />
                         </x:Array>
                     </ListView.ItemsSource>
 

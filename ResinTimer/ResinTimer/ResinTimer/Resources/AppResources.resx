@@ -410,6 +410,12 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Furnishing_Rarity_4" xml:space="preserve">
     <value>★★★★ Furnish</value>
   </data>
+  <data name="GachaType_Character" xml:space="preserve">
+    <value>Character</value>
+  </data>
+  <data name="GachaType_Weapon" xml:space="preserve">
+    <value>Weapon</value>
+  </data>
   <data name="GadgetTimerPage_ResetComplete" xml:space="preserve">
     <value>Cooldown end</value>
   </data>
@@ -1005,6 +1011,9 @@ MIT License</value>
   </data>
   <data name="Toolbar_Remove" xml:space="preserve">
     <value>Remove</value>
+  </data>
+  <data name="Toolbar_Renew" xml:space="preserve">
+    <value>Renew</value>
   </data>
   <data name="Toolbar_Reset" xml:space="preserve">
     <value>Reset</value>

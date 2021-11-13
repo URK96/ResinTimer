@@ -6,7 +6,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ResinTimer
+namespace ResinTimer.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InfoPage : ContentPage

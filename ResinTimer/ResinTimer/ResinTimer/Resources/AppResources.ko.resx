@@ -410,6 +410,12 @@
   <data name="Furnishing_Rarity_4" xml:space="preserve">
     <value>★★★★ 가구</value>
   </data>
+  <data name="GachaType_Character" xml:space="preserve">
+    <value>캐릭터</value>
+  </data>
+  <data name="GachaType_Weapon" xml:space="preserve">
+    <value>무기</value>
+  </data>
   <data name="GadgetTimerPage_ResetComplete" xml:space="preserve">
     <value>쿨타임 종료</value>
   </data>
@@ -1007,6 +1013,9 @@ MIT License</value>
   </data>
   <data name="Toolbar_Remove" xml:space="preserve">
     <value>제거</value>
+  </data>
+  <data name="Toolbar_Renew" xml:space="preserve">
+    <value>갱신</value>
   </data>
   <data name="Toolbar_ResetAll" xml:space="preserve">
     <value>모두 초기화</value>

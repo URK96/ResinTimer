@@ -32,16 +32,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AppCenter" Version="4.4.0" />
+    <PackageReference Include="Microsoft.AppCenter" Version="4.4.0">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.4.0" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.4.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.13" />
-    <PackageReference Include="Syncfusion.Licensing" Version="19.3.0.46" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.3.0.46" />
-    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="19.3.0.46" />
-    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="19.3.0.46" />
-    <PackageReference Include="System.Text.Json" Version="5.0.2" />
+    <PackageReference Include="Syncfusion.Licensing" Version="19.3.0.48" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.3.0.48">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="19.3.0.48" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="19.3.0.48">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
@@ -132,7 +137,7 @@
     <EmbeddedResource Update="HowToUseViewerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="InfoPage.xaml">
+    <EmbeddedResource Update="Pages\InfoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="LicensePage.xaml">
@@ -165,6 +170,12 @@
     <EmbeddedResource Update="Pages\AccountSyncPages\AccountSyncStatusPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Pages\UtilPages\GachaLogViewerBasePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\UtilPages\GachaLogViewerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.es.resx">
       <SubType>Designer</SubType>
       <Generator></Generator>
@@ -185,7 +196,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="SettingPage.xaml">
+    <EmbeddedResource Update="Pages\SettingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="TalentCharacterPage.xaml">

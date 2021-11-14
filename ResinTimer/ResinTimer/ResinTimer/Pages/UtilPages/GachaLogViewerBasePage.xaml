@@ -48,8 +48,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Margin="0, 10, 0, 10"
-               Text="Last Update" HorizontalTextAlignment="Center" />
+        <Label Grid.Row="0" Margin="0, 5, 0, 5"
+               Text="Last Update" HorizontalTextAlignment="Center"
+               FontAttributes="Bold" />
 
         <CollectionView x:Name="ListCollectionView" Grid.Row="1" ItemsSource="{Binding LogList}" IsVisible="True"
                         ItemsLayout="VerticalList"
@@ -62,10 +63,15 @@
                                Style="{StaticResource FrameStyle}">
                             <Frame.BorderColor>#0682F6</Frame.BorderColor>
                             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                                <Label Text="{Binding PrintGachaDateTime}" 
+                                <Label Text="{Binding PrintGachaDateTime}" HorizontalTextAlignment="Center"
                                        FontSize="Title" />
-                                <Label Text="{Binding TotalGachaInfos}" />
-                                <Label Margin="0, 10, 0, 0" Text="{Binding SimpleGachaInfo}" />
+
+                                <Label Margin="0, 10, 0, 0" 
+                                       Text="{Binding SimpleGachaInfo}" HorizontalTextAlignment="Center"
+                                       FontSize="Subtitle" />
+
+                                <Label Margin="0, 10, 0, 0" 
+                                       Text="{Binding TotalGachaInfos}" HorizontalTextAlignment="Center" />
                             </StackLayout>
                         </Frame>
                     </ContentView>

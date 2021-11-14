@@ -924,6 +924,60 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Fail to renew wish logs. Check your network connection or Authkey status.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GachaLogViewer_RenewLogList_Fail {
+            get {
+                return ResourceManager.GetString("GachaLogViewer_RenewLogList_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Load from server...과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GachaLogViewer_RenewLogList_Load {
+            get {
+                return ResourceManager.GetString("GachaLogViewer_RenewLogList_Load", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Character과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GachaLogViewer_Tab_Character {
+            get {
+                return ResourceManager.GetString("GachaLogViewer_Tab_Character", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Permenent과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GachaLogViewer_Tab_Permenent {
+            get {
+                return ResourceManager.GetString("GachaLogViewer_Tab_Permenent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Weapon과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GachaLogViewer_Tab_Weapon {
+            get {
+                return ResourceManager.GetString("GachaLogViewer_Tab_Weapon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Wish Log과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GachaLogViewer_Title {
+            get {
+                return ResourceManager.GetString("GachaLogViewer_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Character과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string GachaType_Character {
@@ -1544,6 +1598,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Last Update : 과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string LastUpdate_Label {
+            get {
+                return ResourceManager.GetString("LastUpdate_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Toast.iOS
         ///Syncfusion.Licensing
         ///Syncfusion.Xamarin.SfGauge
@@ -1678,6 +1741,15 @@ namespace ResinTimer.Resources {
         public static string MasterDetail_MasterList_Furnishing {
             get {
                 return ResourceManager.GetString("MasterDetail_MasterList_Furnishing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Wish Log과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_GachaLog {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_GachaLog", resourceCulture);
             }
         }
         
@@ -2632,6 +2704,15 @@ namespace ResinTimer.Resources {
         public static string Toolbar_Edit {
             get {
                 return ResourceManager.GetString("Toolbar_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Edit Authkey과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Toolbar_EditAuthkey {
+            get {
+                return ResourceManager.GetString("Toolbar_EditAuthkey", resourceCulture);
             }
         }
         

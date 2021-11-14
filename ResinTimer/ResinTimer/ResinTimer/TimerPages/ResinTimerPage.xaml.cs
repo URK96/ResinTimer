@@ -161,8 +161,8 @@ namespace ResinTimer.TimerPages
                 TotalTimeHour.Text = $"{ResinEnvironment.totalCountTime.Hour:D2}";
                 TotalTimeMinute.Text = $"{ResinEnvironment.totalCountTime.Min:D2}";
 
-                LastInputDateTimeLabel.Text = AppEnv.GetTimeString(DateTime.Parse(ResinEnvironment.lastInputTime, AppEnv.dtCulture));
-                EndDateTimeLabel.Text = AppEnv.GetTimeString(ResinEnvironment.endTime);
+                LastInputDateTimeLabel.Text = Utils.GetTimeString(DateTime.Parse(ResinEnvironment.lastInputTime, AppEnv.dtCulture));
+                EndDateTimeLabel.Text = Utils.GetTimeString(ResinEnvironment.endTime);
 
                 ResinCount.Text = ResinEnvironment.resin.ToString();
                 OneCountTimer.Text = ResinEnvironment.oneCountTime.TimeMinSec;

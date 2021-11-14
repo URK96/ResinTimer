@@ -12,7 +12,7 @@ namespace ResinTimer.Models
         public DateTime GachaDateTime { get; private set; }
         public List<GachaInfo> GachaInfos { get; private set; }
 
-        public string PrintGachaDateTime => GachaDateTime.ToString();
+        public string PrintGachaDateTime => Utils.GetTimeString(GachaDateTime);
         public string GachaShortDateTime => GachaDateTime.ToString("yyyy,MM,dd,HH,mm,ss");
 
         private GachaLogGroup()

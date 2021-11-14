@@ -410,6 +410,24 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Furnishing_Rarity_4" xml:space="preserve">
     <value>★★★★ Furnish</value>
   </data>
+  <data name="GachaLogViewer_RenewLogList_Fail" xml:space="preserve">
+    <value>Fail to renew wish logs. Check your network connection or Authkey status.</value>
+  </data>
+  <data name="GachaLogViewer_RenewLogList_Load" xml:space="preserve">
+    <value>Load from server...</value>
+  </data>
+  <data name="GachaLogViewer_Tab_Character" xml:space="preserve">
+    <value>Character</value>
+  </data>
+  <data name="GachaLogViewer_Tab_Permenent" xml:space="preserve">
+    <value>Permenent</value>
+  </data>
+  <data name="GachaLogViewer_Tab_Weapon" xml:space="preserve">
+    <value>Weapon</value>
+  </data>
+  <data name="GachaLogViewer_Title" xml:space="preserve">
+    <value>Wish Log</value>
+  </data>
   <data name="GachaType_Character" xml:space="preserve">
     <value>Character</value>
   </data>
@@ -634,6 +652,9 @@ You can refresh weapon ascension material status by touching layout except butto
   <data name="InfoPage_Title" xml:space="preserve">
     <value>App Info</value>
   </data>
+  <data name="LastUpdate_Label" xml:space="preserve">
+    <value>Last Update : </value>
+  </data>
   <data name="LibraryList" xml:space="preserve">
     <value>Toast.iOS
 Syncfusion.Licensing
@@ -687,6 +708,9 @@ MIT License</value>
   </data>
   <data name="MasterDetail_MasterList_Furnishing" xml:space="preserve">
     <value>Furnishing</value>
+  </data>
+  <data name="MasterDetail_MasterList_GachaLog" xml:space="preserve">
+    <value>Wish Log</value>
   </data>
   <data name="MasterDetail_MasterList_Gadget" xml:space="preserve">
     <value>Gadget</value>
@@ -1005,6 +1029,9 @@ MIT License</value>
   </data>
   <data name="Toolbar_Edit" xml:space="preserve">
     <value>Edit</value>
+  </data>
+  <data name="Toolbar_EditAuthkey" xml:space="preserve">
+    <value>Edit Authkey</value>
   </data>
   <data name="Toolbar_EditTime" xml:space="preserve">
     <value>Edit Time</value>

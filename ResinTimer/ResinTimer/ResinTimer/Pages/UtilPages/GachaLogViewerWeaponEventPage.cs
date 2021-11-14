@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using ResinTimer.Resources;
 
 using static GenshinInfo.Managers.GachaInfoManager;
 
@@ -13,7 +8,7 @@ namespace ResinTimer.Pages.UtilPages
     {
         public GachaLogViewerWeaponEventPage()
         {
-            Title = "Weapon";
+            Title = AppResources.GachaLogViewer_Tab_Weapon;
 
             gachaListType = GachaTypeNum.WeaponEvent;
         }

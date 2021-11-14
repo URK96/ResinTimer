@@ -76,29 +76,6 @@ namespace ResinTimer
             };
         }
 
-        public static string GetTimeString(DateTime dt)
-        {
-            var langValue = (AppLang)Preferences.Get(SettingConstants.APP_LANG, (int)AppLang.System);
-            bool setting24H = Preferences.Get(SettingConstants.APP_USE_24H_TIMEFORMAT, false);
-            string date = $"{dt:d}";
-            string time = dt.ToString($"{(setting24H ? "HH" : "hh")}:mm:ss");
-
-            string timeString;
-
-            switch (langValue)
-            {
-                case AppLang.Korean:
-                case AppLang.System when CultureInfo.InstalledUICulture.Name.Equals("ko-KR"):
-                    timeString = $"{date} {(setting24H ? string.Empty : $"{dt:tt} ")}{time}";
-                    break;
-                default:
-                    timeString = $"{date} {time}{(setting24H ? string.Empty : $" {dt:tt}")}";
-                    break;
-            }
-
-            return timeString;
-        }
-
         public static void RefreshCollectionView<T>(CollectionView cv, List<T> list)
         {
             MainThread.BeginInvokeOnMainThread(async () =>

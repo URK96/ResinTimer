@@ -16,10 +16,5 @@ namespace ResinTimer.Pages.UtilPages
         {
             InitializeComponent();
         }
-
-        private void ToolbarItemClicked(object sender, EventArgs e)
-        {
-
-        }
     }
 }

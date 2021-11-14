@@ -71,7 +71,7 @@ namespace ResinTimer.Droid
                 };
 
                 remoteViews.SetTextViewText(Resource.Id.ResinWidgetCount, ResinEnvironment.resin.ToString());
-                remoteViews.SetTextViewText(Resource.Id.ResinWidgetEndTime, AppEnvironment.GetTimeString(ResinEnvironment.endTime));
+                remoteViews.SetTextViewText(Resource.Id.ResinWidgetEndTime, Utils.GetTimeString(ResinEnvironment.endTime));
 
                 CreateClickIntent(context, appWidgetIds, remoteViews);
 

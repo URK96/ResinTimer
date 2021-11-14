@@ -145,8 +145,8 @@ namespace ResinTimer.TimerPages
                 TotalTimeHour.Text = $"{(int)RFEnv.totalCountTime.TotalHours}";
                 TotalTimeMinute.Text = $"{RFEnv.totalCountTime.Minutes:D2}";
 
-                LastInputDateTimeLabel.Text = AppEnv.GetTimeString(DateTime.Parse(RFEnv.lastInputTime, AppEnv.dtCulture));
-                EndDateTimeLabel.Text = AppEnv.GetTimeString(RFEnv.endTime);
+                LastInputDateTimeLabel.Text = Utils.GetTimeString(DateTime.Parse(RFEnv.lastInputTime, AppEnv.dtCulture));
+                EndDateTimeLabel.Text = Utils.GetTimeString(RFEnv.endTime);
 
                 RFSfScale.EndValue = 100;
                 RFSfScale.Interval = 20;

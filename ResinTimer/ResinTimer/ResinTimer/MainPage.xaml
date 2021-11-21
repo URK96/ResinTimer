@@ -20,7 +20,7 @@
                 </StackLayout>
                 
                 <ListView x:Name="MainListView"
-                          ItemSelected="MainListView_ItemSelected">
+                          ItemSelected="MainListViewItemSelected">
                     <ListView.ItemsSource>
                         <x:Array Type="{x:Type models:MainMasterItem}">
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}" Icon="resin.png" Target="{x:Type timers:ResinTimerPage}"/>

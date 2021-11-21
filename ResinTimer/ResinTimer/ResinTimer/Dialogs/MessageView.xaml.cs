@@ -22,15 +22,8 @@ namespace ResinTimer.Dialogs
             MessageLabel.Text = message;
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void ButtonClicked(object sender, EventArgs e)
         {
-            string btText = (sender as Button).Text;
-
-            if (btText.Equals(AppResources.Dialog_Ok))
-            {
-
-            }
-
             await PopupNavigation.Instance.PopAsync();
         }
 

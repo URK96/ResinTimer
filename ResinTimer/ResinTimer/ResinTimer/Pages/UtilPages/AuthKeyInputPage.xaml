@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:ResinTimer.Resources"
+             x:Class="ResinTimer.Pages.UtilPages.AuthKeyInputPage"
+             Title="{x:Static resources:AppResources.AuthKeyInputPage_Title}">
+    
+    <ContentPage.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=20}" />
+            <Setter Property="BorderColor" Value="#0682F6" />
+            <Setter Property="BorderWidth" Value="3" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="CharacterSpacing" Value="5" />
+            <Setter Property="FontSize" Value="Default" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Apply" Text="Apply" IconImageSource="apply.png" Order="Primary" Priority="0" Clicked="ToolbarApplyClicked" />
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutFlags="All"
+                     AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.8, 0.3"
+                     Orientation="Vertical" HorizontalOptions="Fill">
+            <Label Text="{x:Static resources:AppResources.AuthKeyInputPage_UrlInput}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            <Entry x:Name="AuthKeyUrlInputEntry" Margin="0, 20, 0, 0"
+                   Placeholder="{x:Static resources:AppResources.AuthKeyInputPage_UrlInputEntry_Placeholder}"
+                   ClearButtonVisibility="WhileEditing" />
+
+            <Label Margin="0, 30, 0, 0"
+                   Text="{x:Static resources:AppResources.AuthKeyInputPage_HowToGet}" TextColor="#0682F6"
+                   HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding UrlOpenTabCommand}"
+                                          CommandParameter="https://gravel-shrew-9cf.notion.site/How-to-get-AuthKey-URL-5858d5f693dd4d6e8590a05d20b56cc0"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

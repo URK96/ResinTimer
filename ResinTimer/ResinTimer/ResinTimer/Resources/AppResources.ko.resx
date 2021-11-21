@@ -247,6 +247,24 @@
   <data name="App_Title" xml:space="preserve">
     <value>레진 알리미</value>
   </data>
+  <data name="AuthKeyInputPage_HowToGet" xml:space="preserve">
+    <value>AuthKey URL을 어떻게 얻나요?</value>
+  </data>
+  <data name="AuthKeyInputPage_InputAuthKey_Fail" xml:space="preserve">
+    <value>URL로부터 AuthKey 획득에 실패했습니다. 입력한 URL을 다시 한 번 확인 해주세요.</value>
+  </data>
+  <data name="AuthKeyInputPage_InputAuthKey_Success" xml:space="preserve">
+    <value>URL로부터 AuthKey 획득에 성공했습니다.</value>
+  </data>
+  <data name="AuthKeyInputPage_Title" xml:space="preserve">
+    <value>AuthKey 입력</value>
+  </data>
+  <data name="AuthKeyInputPage_UrlInput" xml:space="preserve">
+    <value>AuthKey URL</value>
+  </data>
+  <data name="AuthKeyInputPage_UrlInputEntry_Placeholder" xml:space="preserve">
+    <value>AuthKey URL 입력</value>
+  </data>
   <data name="BootAlarmRegisterFail" xml:space="preserve">
     <value>레진 알람 등록 실패
 앱 설정에서 알람 설정을 다시 활성화하여 알람을 재등록 해주세요</value>
@@ -410,11 +428,17 @@
   <data name="Furnishing_Rarity_4" xml:space="preserve">
     <value>★★★★ 가구</value>
   </data>
+  <data name="GachaLogViewer_LogList_NoItem" xml:space="preserve">
+    <value>기원 기록을 찾을 수 없습니다</value>
+  </data>
   <data name="GachaLogViewer_RenewLogList_Fail" xml:space="preserve">
     <value>기원 기록 조회에 실패했습니다. 네트워크 또는 Authkey 상태를 확인해주세요.</value>
   </data>
   <data name="GachaLogViewer_RenewLogList_Load" xml:space="preserve">
     <value>서버에서 불러오는 중...</value>
+  </data>
+  <data name="GachaLogViewer_RenewLogList_Processing" xml:space="preserve">
+    <value>기록 처리 중...</value>
   </data>
   <data name="GachaLogViewer_Tab_Character" xml:space="preserve">
     <value>캐릭터</value>
@@ -901,7 +925,7 @@ MIT License</value>
     <value>레진 간편 수정</value>
   </data>
   <data name="ResinTimerPage_SyncTip" xml:space="preserve">
-    <value>계정 정보를 다시 갱신하거나, 계정 연동 상태 화면에서 실시간 노트 활성화를 시도해보세요.</value>
+    <value>계정 정보를 다시 갱신하거나, 계정 연동 상태 화면 또는 HoYoLAB에서 실시간 노트 활성화를 시도해보세요.</value>
   </data>
   <data name="ResinWidget_Name" xml:space="preserve">
     <value>레진 위젯</value>
@@ -1028,6 +1052,9 @@ MIT License</value>
   </data>
   <data name="Toolbar_Apply" xml:space="preserve">
     <value>적용</value>
+  </data>
+  <data name="Toolbar_AuthKeyInput" xml:space="preserve">
+    <value>AuthKey 입력</value>
   </data>
   <data name="Toolbar_Edit" xml:space="preserve">
     <value>수정</value>

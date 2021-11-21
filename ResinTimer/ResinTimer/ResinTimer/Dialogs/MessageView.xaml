@@ -8,22 +8,8 @@
             <Label x:Name="MessageLabel" />
         </ScrollView>
 
-        <Grid Padding="0, 20, 0, 0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <Button x:Name="CancelButton" Grid.Row="0" Grid.Column="0" Margin="5, 0, 5, 0" HeightRequest="50"
-                    Text="{x:Static resources:AppResources.Dialog_Cancel}" Style="{StaticResource DialogButtonStyle}"
-                    Pressed="ButtonPressed" Released="ButtonReleased" Clicked="Button_Clicked" />
-
-            <Button x:Name="OkButton" Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0"
-                    Text="{x:Static resources:AppResources.Dialog_Ok}" Style="{StaticResource DialogButtonStyle}" 
-                    Pressed="ButtonPressed" Released="ButtonReleased" Clicked="Button_Clicked"/>
-        </Grid>
+        <Button x:Name="OkButton" Grid.Row="0" Grid.Column="1" Margin="5, 0, 5, 0"
+                Text="{x:Static resources:AppResources.Dialog_Ok}" Style="{StaticResource DialogButtonStyle}" 
+                Pressed="ButtonPressed" Released="ButtonReleased" Clicked="ButtonClicked"/>
     </StackLayout>
 </ContentView>

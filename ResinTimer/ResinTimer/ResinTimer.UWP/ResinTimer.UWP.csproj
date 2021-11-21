@@ -179,9 +179,11 @@
     <Content Include="Character_Yanfei_Thumb.png" />
     <Content Include="Character_Yoimiya_Thumb.png" />
     <Content Include="Character_Zhongli_Thumb.png" />
+    <Content Include="close.png" />
     <Content Include="compass.png" />
     <Content Include="crystal_chunk.png" />
     <Content Include="crystal_core.png" />
+    <Content Include="delete.png" />
     <Content Include="edit.png" />
     <Content Include="electro_crystal.png" />
     <Content Include="Element_Anemo.png" />
@@ -205,6 +207,7 @@
     <Content Include="ingredient.png" />
     <Content Include="intertwined_fate.png" />
     <Content Include="iron_chunk.png" />
+    <Content Include="key.png" />
     <Content Include="location.png" />
     <Content Include="magical_crystal_chunk.png" />
     <Content Include="Manual_TimerExpedition_1.png" />

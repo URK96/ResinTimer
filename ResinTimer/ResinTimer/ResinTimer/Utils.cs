@@ -34,6 +34,26 @@ namespace ResinTimer
             DependencyService.Get<IToast>().Show(message);
         }
 
+        /// <summary>
+        /// Convert specific date/time string to DateTime
+        /// </summary>
+        /// <param name="dateTimeStr">Input 'yyyy,MM,dd,HH,mm,ss' format date/time string</param>
+        /// <returns>DateTime result from input string</returns>
+        public static DateTime GetDateTimeFromString(string dateTimeStr)
+        {
+            string[] splits = dateTimeStr.Split(',');
+
+            DateTime dt = new(
+                int.Parse(splits[0]),
+                int.Parse(splits[1]),
+                int.Parse(splits[2]),
+                int.Parse(splits[3]),
+                int.Parse(splits[4]),
+                int.Parse(splits[5]));
+
+            return dt;
+        }
+
         public static string GetTimeString(DateTime dt)
         {
             var langValue = (AppLang)Preferences.Get(SettingConstants.APP_LANG, (int)AppLang.System);
@@ -46,7 +66,7 @@ namespace ResinTimer
             switch (langValue)
             {
                 case AppLang.Korean:
-                case AppLang.System when CultureInfo.InstalledUICulture.Name.Equals("ko-KR"):
+                case AppLang.System when CultureInfo.CurrentUICulture.Name.Equals("ko-KR"):
                     timeString = $"{date} {(setting24H ? string.Empty : $"{dt:tt} ")}{time}";
                     break;
                 default:

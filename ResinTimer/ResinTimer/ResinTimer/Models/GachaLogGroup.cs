@@ -1,5 +1,7 @@
 ﻿using GenshinInfo.Models;
 
+using Newtonsoft.Json;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +11,13 @@ namespace ResinTimer.Models
 {
     public class GachaLogGroup
     {
-        public DateTime GachaDateTime { get; private set; }
-        public List<GachaInfo> GachaInfos { get; private set; }
+        public DateTime GachaDateTime { get; set; }
+        public List<GachaInfo> GachaInfos { get; set; }
 
         public string PrintGachaDateTime => Utils.GetTimeString(GachaDateTime);
         public string GachaShortDateTime => GachaDateTime.ToString("yyyy,MM,dd,HH,mm,ss");
 
-        private GachaLogGroup()
+        public GachaLogGroup()
         {
             GachaInfos = new List<GachaInfo>();
         }
@@ -33,6 +35,7 @@ namespace ResinTimer.Models
                 int.Parse(splits[5]));
         }
 
+        [JsonIgnore]
         public string TotalGachaInfos
         {
             get
@@ -48,6 +51,7 @@ namespace ResinTimer.Models
             }
         }
 
+        [JsonIgnore]
         public string SimpleGachaInfo
         {
             get

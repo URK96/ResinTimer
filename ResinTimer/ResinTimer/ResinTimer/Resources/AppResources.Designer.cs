@@ -437,6 +437,60 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   How to get AuthKey URL?과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AuthKeyInputPage_HowToGet {
+            get {
+                return ResourceManager.GetString("AuthKeyInputPage_HowToGet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Fail to get AuthKey from URL. Check input URL again.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AuthKeyInputPage_InputAuthKey_Fail {
+            get {
+                return ResourceManager.GetString("AuthKeyInputPage_InputAuthKey_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Success to get AuthKey from URL과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AuthKeyInputPage_InputAuthKey_Success {
+            get {
+                return ResourceManager.GetString("AuthKeyInputPage_InputAuthKey_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Input AuthKey과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AuthKeyInputPage_Title {
+            get {
+                return ResourceManager.GetString("AuthKeyInputPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   AuthKey URL과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AuthKeyInputPage_UrlInput {
+            get {
+                return ResourceManager.GetString("AuthKeyInputPage_UrlInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Input AuthKey URL과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string AuthKeyInputPage_UrlInputEntry_Placeholder {
+            get {
+                return ResourceManager.GetString("AuthKeyInputPage_UrlInputEntry_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Resin alarm register fail
         ///Please re-enable alarm in app setting to register notification alarm과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
@@ -924,6 +978,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Cannot find wish logs과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GachaLogViewer_LogList_NoItem {
+            get {
+                return ResourceManager.GetString("GachaLogViewer_LogList_NoItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Fail to renew wish logs. Check your network connection or Authkey status.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string GachaLogViewer_RenewLogList_Fail {
@@ -938,6 +1001,15 @@ namespace ResinTimer.Resources {
         public static string GachaLogViewer_RenewLogList_Load {
             get {
                 return ResourceManager.GetString("GachaLogViewer_RenewLogList_Load", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Processing logs...과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GachaLogViewer_RenewLogList_Processing {
+            get {
+                return ResourceManager.GetString("GachaLogViewer_RenewLogList_Processing", resourceCulture);
             }
         }
         
@@ -2321,7 +2393,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Renew your account information or try to enable real-time note on the account sync status screen.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Renew your account information or try to enable real-time note on the account sync status screen or HoYoLAB.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string ResinTimerPage_SyncTip {
             get {
@@ -2695,6 +2767,15 @@ namespace ResinTimer.Resources {
         public static string Toolbar_Apply {
             get {
                 return ResourceManager.GetString("Toolbar_Apply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Input AuthKey과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Toolbar_AuthKeyInput {
+            get {
+                return ResourceManager.GetString("Toolbar_AuthKeyInput", resourceCulture);
             }
         }
         

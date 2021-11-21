@@ -1,24 +1,25 @@
-﻿using ResinTimer.Dialogs;
+﻿using GenshinInfo.Constants;
+using GenshinInfo.Managers;
+
+using ResinTimer.Dialogs;
+using ResinTimer.Managers.NotiManagers;
 using ResinTimer.NotiSettingPages;
 using ResinTimer.Resources;
 
 using Rg.Plugins.Popup.Services;
 
 using System;
+using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using AppEnv = ResinTimer.AppEnvironment;
 using Timer = System.Timers.Timer;
 using TTimer = System.Threading.Timer;
-using AppEnv = ResinTimer.AppEnvironment;
-using ResinTimer.Managers.NotiManagers;
-using System.Threading.Tasks;
-using GenshinInfo.Managers;
-using GenshinInfo.Constants;
-using System.Collections.Generic;
 
 namespace ResinTimer.TimerPages
 {
@@ -110,7 +111,7 @@ namespace ResinTimer.TimerPages
             }
         }
 
-        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        private async void ToolbarItemClicked(object sender, EventArgs e)
         {
             ToolbarItem item = sender as ToolbarItem;
 
@@ -176,12 +177,7 @@ namespace ResinTimer.TimerPages
 
                 ResinOverflowLabel.Text = (Preferences.Get(SettingConstants.SHOW_OVERFLOW, false) && (overflowValue > 0)) ? $"{AppResources.Overflow_Text} : {overflowValue}" : "";
             }
-            catch (Exception ex)
-            {
-#if DEBUG
-                //DependencyService.Get<IToast>().Show(ex.ToString());
-#endif
-            }
+            catch (Exception) { }
         }
 
         private void QuickCalc()

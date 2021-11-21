@@ -247,6 +247,24 @@ You can renew account to solve this problem.</value>
   <data name="App_Title" xml:space="preserve">
     <value>Resin Timer</value>
   </data>
+  <data name="AuthKeyInputPage_HowToGet" xml:space="preserve">
+    <value>How to get AuthKey URL?</value>
+  </data>
+  <data name="AuthKeyInputPage_InputAuthKey_Fail" xml:space="preserve">
+    <value>Fail to get AuthKey from URL. Check input URL again.</value>
+  </data>
+  <data name="AuthKeyInputPage_InputAuthKey_Success" xml:space="preserve">
+    <value>Success to get AuthKey from URL</value>
+  </data>
+  <data name="AuthKeyInputPage_Title" xml:space="preserve">
+    <value>Input AuthKey</value>
+  </data>
+  <data name="AuthKeyInputPage_UrlInput" xml:space="preserve">
+    <value>AuthKey URL</value>
+  </data>
+  <data name="AuthKeyInputPage_UrlInputEntry_Placeholder" xml:space="preserve">
+    <value>Input AuthKey URL</value>
+  </data>
   <data name="BootAlarmRegisterFail" xml:space="preserve">
     <value>Resin alarm register fail
 Please re-enable alarm in app setting to register notification alarm</value>
@@ -410,11 +428,17 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Furnishing_Rarity_4" xml:space="preserve">
     <value>★★★★ Furnish</value>
   </data>
+  <data name="GachaLogViewer_LogList_NoItem" xml:space="preserve">
+    <value>Cannot find wish logs</value>
+  </data>
   <data name="GachaLogViewer_RenewLogList_Fail" xml:space="preserve">
     <value>Fail to renew wish logs. Check your network connection or Authkey status.</value>
   </data>
   <data name="GachaLogViewer_RenewLogList_Load" xml:space="preserve">
     <value>Load from server...</value>
+  </data>
+  <data name="GachaLogViewer_RenewLogList_Processing" xml:space="preserve">
+    <value>Processing logs...</value>
   </data>
   <data name="GachaLogViewer_Tab_Character" xml:space="preserve">
     <value>Character</value>
@@ -902,7 +926,7 @@ MIT License</value>
     <value>Simple Edit Resin</value>
   </data>
   <data name="ResinTimerPage_SyncTip" xml:space="preserve">
-    <value>Renew your account information or try to enable real-time note on the account sync status screen.</value>
+    <value>Renew your account information or try to enable real-time note on the account sync status screen or HoYoLAB.</value>
   </data>
   <data name="ResinWidget_Name" xml:space="preserve">
     <value>Resin Widget</value>
@@ -1026,6 +1050,9 @@ MIT License</value>
   </data>
   <data name="Toolbar_Apply" xml:space="preserve">
     <value>Apply</value>
+  </data>
+  <data name="Toolbar_AuthKeyInput" xml:space="preserve">
+    <value>Input AuthKey</value>
   </data>
   <data name="Toolbar_Edit" xml:space="preserve">
     <value>Edit</value>

@@ -10,44 +10,18 @@ namespace ResinTimer
 {
     public partial class MainPage : FlyoutPage
     {
-        public enum TimerPage
-        {
-            Resin = 0,
-            RealmCurrency = 1,
-            RealmFriendship,
-            Expedition,
-            GatheringItem,
-            Gadget,
-            Furnishing,
-            Gardening,
-            Talent,
-            WeaponAscension
-        }
-
         public MainPage()
         {
             InitializeComponent();
 
-            Detail = new NavigationPage(GetStartPage());
+            ApplyDetailPage(new(GetStartPage()));
         }
 
         public MainPage(string startPageId)
         {
             InitializeComponent();
 
-            Detail = new NavigationPage(startPageId switch
-            {
-                "app_timer_realmcurrency" => new RealmCurrencyTimerPage(),
-                "app_timer_realmfriendship" => new RealmFriendshipTimerPage(),
-                "app_timer_expedition" => new ExpeditionTimerPage(),
-                "app_timer_gatheringitem" => new GatheringItemTimerPage(),
-                "app_timer_gadget" => new GadgetTimerPage(),
-                "app_timer_furnishing" => new FurnishingTimerPage(),
-                "app_timer_gardening" => new GardeningTimerPage(),
-                "app_timer_talent" => new TalentTimerPage(),
-                "app_timer_wa" => new WeaponAscensionTimerPage(),
-                _ => new ResinTimerPage()
-            });
+            ApplyDetailPage(new(GetShortcutStartPage(startPageId)));
         }
 
         private Page GetStartPage()
@@ -78,7 +52,24 @@ namespace ResinTimer
             return startPage;
         }
 
-        private void MainListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private Page GetShortcutStartPage(string startPageId)
+        {
+            return startPageId switch
+            {
+                "app_timer_realmcurrency" => new RealmCurrencyTimerPage(),
+                "app_timer_realmfriendship" => new RealmFriendshipTimerPage(),
+                "app_timer_expedition" => new ExpeditionTimerPage(),
+                "app_timer_gatheringitem" => new GatheringItemTimerPage(),
+                "app_timer_gadget" => new GadgetTimerPage(),
+                "app_timer_furnishing" => new FurnishingTimerPage(),
+                "app_timer_gardening" => new GardeningTimerPage(),
+                "app_timer_talent" => new TalentTimerPage(),
+                "app_timer_wa" => new WeaponAscensionTimerPage(),
+                _ => new ResinTimerPage()
+            };
+        }
+
+        private void MainListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null)
             {
@@ -87,11 +78,25 @@ namespace ResinTimer
 
             if (e.SelectedItem is MainMasterItem item)
             {
-                Detail = new NavigationPage(Activator.CreateInstance(item.Target) as Page);
+                ApplyDetailPage(new(Activator.CreateInstance(item.Target) as Page)
+                {
+                    BarBackgroundColor = Color.FromHex("#0682F6")
+                });
+
                 IsPresented = false;
             }
 
             (sender as ListView).SelectedItem = null;
+        }
+
+        private void ApplyDetailPage(NavigationPage page)
+        {
+            if (Device.RuntimePlatform is Device.UWP)
+            {
+                page.BarBackgroundColor = Color.FromHex("#0078E8");
+            }
+
+            Detail = page;
         }
 
         private void MainMenuEditButton_Clicked(object sender, EventArgs e)

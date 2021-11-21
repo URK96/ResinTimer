@@ -42,6 +42,12 @@
         public const string GARDENING_NOTI_LIST = "Gardening_Noti_List";
         public const string CHECKLIST_LIST = "Checklist_List";
 
+        public const string GACHALOGVIEWER_PERMANENT_LASTUPDATE_INFO = "GachaLogViewer_Permanent_LastUpdate_Info";
+        public const string GACHALOGVIEWER_WEAPON_LASTUPDATE_INFO = "GachaLogViewer_Weapon_LastUpdate_Info";
+        public const string GACHALOGVIEWER_CHARACTER_LASTUPDATE_INFO = "GachaLogViewer_Character_LastUpdate_Info";
+
+        public const string AUTHKEY_COMMON = "AuthKey_Common";
+
         // Setting - App
         public const string APP_ACCOUNTSYNC_ENABLED = "App_AccountSync_Enabled";
         public const string APP_ACCOUNTSYNC_UID = "App_AccountSync_UID";

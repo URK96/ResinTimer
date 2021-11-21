@@ -5,7 +5,7 @@ using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using TimerPage = ResinTimer.MainPage.TimerPage;
+using TimerPage = ResinTimer.AppEnvironment.TimerPage;
 
 namespace ResinTimer
 {

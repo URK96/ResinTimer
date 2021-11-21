@@ -38,7 +38,7 @@
     </ContentPage.Resources>
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="EditToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Edit}" IconImageSource="edit.png" Order="Secondary" Priority="0" Clicked="ToolbarItemClicked" />
+        <ToolbarItem x:Name="AuthKeyInputToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Edit}" IconImageSource="key.png" Order="Primary" Priority="0" Clicked="ToolbarItemClicked" />
         <ToolbarItem x:Name="RenewToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Renew}" IconImageSource="refresh.png" Order="Primary" Priority="1" Clicked="ToolbarItemClicked" />
     </ContentPage.ToolbarItems>
 
@@ -48,8 +48,8 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Margin="0, 5, 0, 5"
-               Text="Last Update" HorizontalTextAlignment="Center"
+        <Label x:Name="LastUpdateLabel" Grid.Row="0" Margin="0, 5, 0, 5"
+               HorizontalTextAlignment="Center"
                FontAttributes="Bold" />
 
         <CollectionView x:Name="ListCollectionView" Grid.Row="1" ItemsSource="{Binding LogList}" IsVisible="True"

@@ -30,9 +30,22 @@ namespace ResinTimer
             WidgetTalentBook,
             WidgetWeaponAscension
         }
+        public enum TimerPage
+        {
+            Resin = 0,
+            RealmCurrency = 1,
+            RealmFriendship,
+            Expedition,
+            GatheringItem,
+            Gadget,
+            Furnishing,
+            Gardening,
+            Talent,
+            WeaponAscension
+        }
 
 
-        public static CultureInfo dtCulture = new CultureInfo("en-US");
+        public static CultureInfo dtCulture = new("en-US");
         public static bool isDebug = false;
         public static bool isRunningNotiThread = false;
 
@@ -50,6 +63,8 @@ namespace ResinTimer
 
         public static void LoadLocationList() => locations = genshinDB.GetAllLocations();
         public static string GetUTCString(int offset) => $"UTC{((offset >= 0) ? "+" : "")}{offset}";
+
+        public static string GetLangShortCode => CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
 
         public static Color GetBackgroundColor()
         {
@@ -69,9 +84,10 @@ namespace ResinTimer
 
             AppResources.Culture = CultureInfo.CurrentCulture = settingValue switch
             {
-                (int)AppLang.English => CultureInfo.GetCultureInfo("en-US"),
-                (int)AppLang.Korean => CultureInfo.GetCultureInfo("ko-KR"),
-                _ when CultureInfo.CurrentUICulture.Name.Equals("ko-KR") => CultureInfo.GetCultureInfo("ko-KR"),
+                (int)AppLang.English or
+                (int)AppLang.System when CultureInfo.CurrentUICulture.Name.Contains("en")=> CultureInfo.GetCultureInfo("en-US"),
+                (int)AppLang.Korean or
+                (int)AppLang.System when CultureInfo.CurrentUICulture.Name.Contains("ko") => CultureInfo.GetCultureInfo("ko-KR"),
                 _ => CultureInfo.GetCultureInfo("en-US")
             };
         }

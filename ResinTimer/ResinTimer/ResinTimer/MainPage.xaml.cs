@@ -78,10 +78,7 @@ namespace ResinTimer
 
             if (e.SelectedItem is MainMasterItem item)
             {
-                ApplyDetailPage(new(Activator.CreateInstance(item.Target) as Page)
-                {
-                    BarBackgroundColor = Color.FromHex("#0682F6")
-                });
+                ApplyDetailPage(new(Activator.CreateInstance(item.Target) as Page));
 
                 IsPresented = false;
             }

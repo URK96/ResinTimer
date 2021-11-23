@@ -46,10 +46,9 @@ namespace ResinTimer.Pages.UtilPages
         {
             base.OnDisappearing();
 
-            cancelTokenSource?.Cancel();
-
             try
             {
+                cancelTokenSource?.Cancel();
                 cancelTokenSource?.Dispose();
             }
             catch { }

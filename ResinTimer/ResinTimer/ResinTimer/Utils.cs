@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using System.Windows.Input;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -15,6 +16,8 @@ namespace ResinTimer
         public static string UID => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_UID, string.Empty);
         public static string Ltuid => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_LTUID, string.Empty);
         public static string Ltoken => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_LTOKEN, string.Empty);
+
+        public static Command<string> UrlOpenCommand => new(async (url) => await Launcher.OpenAsync(url));
 
         public static void ResetAccountInfo()
         {

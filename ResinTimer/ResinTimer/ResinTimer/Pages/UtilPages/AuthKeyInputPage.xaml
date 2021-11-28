@@ -30,7 +30,7 @@
                    ClearButtonVisibility="WhileEditing" />
 
             <Label Margin="0, 30, 0, 0"
-                   Text="{x:Static resources:AppResources.AuthKeyInputPage_HowToGet}" TextColor="#0682F6"
+                   Text="{x:Static resources:AppResources.AuthKeyInputPage_HowToGet}" TextColor="#0682F6" TextDecorations="Underline"
                    HorizontalTextAlignment="Center">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding UrlOpenTabCommand}"

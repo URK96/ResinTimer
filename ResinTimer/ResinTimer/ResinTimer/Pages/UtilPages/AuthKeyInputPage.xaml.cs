@@ -14,7 +14,7 @@ namespace ResinTimer.Pages.UtilPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AuthKeyInputPage : ContentPage
     {
-        public ICommand UrlOpenTabCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
+        public ICommand UrlOpenTabCommand => Utils.UrlOpenCommand;
 
         public AuthKeyInputPage()
         {

@@ -76,17 +76,17 @@ namespace ResinTimer.Pages
             };
         }
 
-        private void QuickCalcVibration_OnChanged(object sender, ToggledEventArgs e)
+        private void QuickCalcVibrationOnChanged(object sender, ToggledEventArgs e)
         {
             Preferences.Set(SettingConstants.QUICKCALC_VIBRATION, e.Value);
         }
 
-        private async void AccountSync_Tapped(object sender, EventArgs e)
+        private async void AccountSyncTapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Pages.AccountSyncPages.AccountSyncStatusPage(), true);
+            await Navigation.PushAsync(new AccountSyncPages.AccountSyncStatusPage(), true);
         }
 
-        private async void Notification_OnChanged(object sender, ToggledEventArgs e)
+        private async void NotificationOnChanged(object sender, ToggledEventArgs e)
         {
             IBootService bootService = DependencyService.Get<IBootService>();
 
@@ -119,17 +119,17 @@ namespace ResinTimer.Pages
             }
         }
 
-        private void Use24HTimeFormat_OnChanged(object sender, ToggledEventArgs e)
+        private void Use24HTimeFormatOnChanged(object sender, ToggledEventArgs e)
         {
             Preferences.Set(SettingConstants.APP_USE_24H_TIMEFORMAT, e.Value);
         }
 
-        //private void SelectVisibleMenu_Tapped(object sender, EventArgs e)
+        //private void SelectVisibleMenuTapped(object sender, EventArgs e)
         //{
         //    // Add open BaseDialog - CheckBoxPreferenceView code
         //}
 
-        private async void StartDetailScreen_Tapped(object sender, EventArgs e)
+        private async void StartDetailScreenTapped(object sender, EventArgs e)
         {
             BaseDialog dialog = new BaseDialog(AppResources.SettingPage_Section_App_Start_DetailScreen_Dialog_Title,
                 new RadioPreferenceView(StartScreenList, SettingConstants.APP_START_DETAILSCREEN));
@@ -139,7 +139,7 @@ namespace ResinTimer.Pages
             await PopupNavigation.Instance.PushAsync(dialog);
         }
 
-        private async void AppLang_Tapped(object sender, EventArgs e)
+        private async void AppLangTapped(object sender, EventArgs e)
         {
             BaseDialog dialog = new BaseDialog(AppResources.SettingPage_Section_App_AppLang_Dialog_Title,
                 new RadioPreferenceView(AppLangList, SettingConstants.APP_LANG));
@@ -149,7 +149,7 @@ namespace ResinTimer.Pages
             await PopupNavigation.Instance.PushAsync(dialog);
         }
 
-        private async void AppInGameServer_Tapped(object sender, EventArgs e)
+        private async void AppInGameServerTapped(object sender, EventArgs e)
         {
             BaseDialog dialog = new BaseDialog(AppResources.SettingPage_Section_App_InGameServer_Dialog_Title,
                 new RadioPreferenceView(AppEnv.serverList, SettingConstants.APP_INGAMESERVER));
@@ -159,7 +159,12 @@ namespace ResinTimer.Pages
             await PopupNavigation.Instance.PushAsync(dialog);
         }
 
-        private void ShowOverflow_OnChanged(object sender, ToggledEventArgs e)
+        private async void CheckmiHoYoAPIStatusTapped(object sender, EventArgs e)
+        {
+            //await PopupNavigation.Instance.PushAsync(dialog);
+        }
+
+        private void ShowOverflowOnChanged(object sender, ToggledEventArgs e)
         {
             Preferences.Set(SettingConstants.SHOW_OVERFLOW, e.Value);
         }

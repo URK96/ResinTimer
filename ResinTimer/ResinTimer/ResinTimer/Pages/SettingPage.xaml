@@ -10,18 +10,17 @@
         <TableRoot>
             <TableSection Title="{x:Static resources:AppResources.SettingPage_Section_App_Title}">
                 <ViewCell x:Name="AccountSync" 
-                          Tapped="AccountSync_Tapped">
+                          Tapped="AccountSyncTapped">
                     <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
                         <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_AccountSync_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
-                        <Label x:Name="AccountSyncNow"
-                               HorizontalOptions="EndAndExpand"
+                        <Label HorizontalOptions="EndAndExpand"
                                Text=">" VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </ViewCell>
                 
                 <SwitchCell x:Name="Notification" OnColor="#0682F6"
                             Text="{x:Static resources:AppResources.SettingPage_Section_App_Cell_Notification_Title}"
-                            OnChanged="Notification_OnChanged" />
+                            OnChanged="NotificationOnChanged" />
 
                 <!--<ViewCell x:Name="SelectVisibleMenu" 
                           Tapped="SelectVisibleMenu_Tapped">
@@ -31,7 +30,7 @@
                 </ViewCell>-->
 
                 <ViewCell x:Name="StartDetailScreen" 
-                          Tapped="StartDetailScreen_Tapped">
+                          Tapped="StartDetailScreenTapped">
                     <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
                         <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_Start_DetailScreen_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
                         <Label x:Name="StartDetailScreenNow"
@@ -42,10 +41,10 @@
                 
                 <SwitchCell x:Name="Use24HTimeFormat" OnColor="#0682F6"
                             Text="{x:Static resources:AppResources.SettingPage_Section_App_Use24HTimeFormat_Title}"
-                            OnChanged="Use24HTimeFormat_OnChanged" />
+                            OnChanged="Use24HTimeFormatOnChanged" />
                 
                 <ViewCell x:Name="AppLang" 
-                          Tapped="AppLang_Tapped">
+                          Tapped="AppLangTapped">
                     <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
                         <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_AppLang_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
                         <Label x:Name="AppLangNow"
@@ -55,7 +54,7 @@
                 </ViewCell>
 
                 <ViewCell x:Name="AppInGameServer" 
-                          Tapped="AppInGameServer_Tapped">
+                          Tapped="AppInGameServerTapped">
                     <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
                         <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_InGameServer_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
                         <Label x:Name="AppInGameServerNow"
@@ -63,16 +62,25 @@
                                VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </ViewCell>
+
+                <!--<ViewCell x:Name="CheckmiHoYoAPIStatus" 
+                          Tapped="CheckmiHoYoAPIStatusTapped">
+                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
+                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_CheckmiHoYoAPIStatus_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
+                        <Label HorizontalOptions="EndAndExpand"
+                               Text=">" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </ViewCell>-->
             </TableSection>
 
             <TableSection Title="{x:Static resources:AppResources.SettingPage_Section_TimerCommon_Title}">
                 <SwitchCell x:Name="ShowOverflow" OnColor="#0682F6"
                             Text="{x:Static resources:AppResources.SettingPage_Section_TimerCommon_ShowOverflow_Title}"
-                            OnChanged="ShowOverflow_OnChanged" />
+                            OnChanged="ShowOverflowOnChanged" />
 
                 <SwitchCell x:Name="QuickCalcVibration" OnColor="#0682F6"
                             Text="{x:Static resources:AppResources.SettingPage_Section_TimerCommon_QuickCalcVibrate_Title}"
-                            OnChanged="QuickCalcVibration_OnChanged" />
+                            OnChanged="QuickCalcVibrationOnChanged" />
             </TableSection>
         </TableRoot>
     </TableView>

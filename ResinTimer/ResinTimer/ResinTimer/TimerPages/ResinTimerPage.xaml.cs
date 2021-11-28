@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -26,6 +27,8 @@ namespace ResinTimer.TimerPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ResinTimerPage : ContentPage
     {
+        public ICommand UrlOpenTabCommand => Utils.UrlOpenCommand;
+
         private bool IsSyncEnabled => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_RESIN_ENABLED, false) &&
             Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false);
 
@@ -40,6 +43,8 @@ namespace ResinTimer.TimerPages
         public ResinTimerPage()
         {
             InitializeComponent();
+
+            BindingContext = this;
 
             ResinEnvironment.oneCountTime = new ResinTime(0);
             ResinEnvironment.totalCountTime = new ResinTime(0);
@@ -333,6 +338,7 @@ namespace ResinTimer.TimerPages
             try
             {
                 button.BackgroundColor = Color.FromHex("#500682F6");
+
                 await button.ScaleTo(0.95, 100, Easing.SinInOut);
             }
             catch { }
@@ -345,6 +351,7 @@ namespace ResinTimer.TimerPages
             try
             {
                 button.BackgroundColor = Color.Transparent;
+
                 await button.ScaleTo(1.0, 100, Easing.SinInOut);
             }
             catch { }

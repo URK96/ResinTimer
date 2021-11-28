@@ -15,10 +15,13 @@ namespace ResinTimer
         public StackLayout RootLayout => WebViewRootLayout;
         public WebView WebView => BaseWebView;
 
-        public WebViewPage(string url)
+        public WebViewPage()
         {
             InitializeComponent();
+        }
 
+        public WebViewPage(string url) : this()
+        {
             NavigateURL(url);
         }
 

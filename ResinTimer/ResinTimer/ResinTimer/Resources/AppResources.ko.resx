@@ -432,7 +432,9 @@
     <value>기원 기록을 찾을 수 없습니다</value>
   </data>
   <data name="GachaLogViewer_RenewLogList_Fail" xml:space="preserve">
-    <value>기원 기록 조회에 실패했습니다. 네트워크 또는 Authkey 상태를 확인해주세요.</value>
+    <value>기원 기록 조회에 실패했습니다. 
+네트워크 또는 Authkey 상태를 확인해주세요. 
+또는 miHoYo의 API가 작동하지 않는 경우일 수 있으므로, '설정 - API 상태' 에서 점검해보세요.</value>
   </data>
   <data name="GachaLogViewer_RenewLogList_Load" xml:space="preserve">
     <value>서버에서 불러오는 중...</value>
@@ -925,7 +927,7 @@ MIT License</value>
     <value>레진 간편 수정</value>
   </data>
   <data name="ResinTimerPage_SyncTip" xml:space="preserve">
-    <value>계정 정보를 다시 갱신하거나, 계정 연동 상태 화면 또는 HoYoLAB에서 실시간 노트 활성화를 시도해보세요.</value>
+    <value>레진 동기화 문제를 어떻게 해결하나요?</value>
   </data>
   <data name="ResinWidget_Name" xml:space="preserve">
     <value>레진 위젯</value>
@@ -953,6 +955,9 @@ MIT License</value>
   </data>
   <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
     <value>알림 활성화</value>
+  </data>
+  <data name="SettingPage_Section_App_CheckmiHoYoAPIStatus_Title" xml:space="preserve">
+    <value>miHoYo API 상태 확인</value>
   </data>
   <data name="SettingPage_Section_App_InGameServer_Dialog_Title" xml:space="preserve">
     <value>서버 선택</value>

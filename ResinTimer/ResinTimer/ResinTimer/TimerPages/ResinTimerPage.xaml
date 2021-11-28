@@ -182,9 +182,14 @@
                        FontAttributes="Bold" FontSize="Title" />
 
                 <Label x:Name="SyncStatusTipLabel" Margin="0, 2, 0, 0" IsVisible="False"
-                       Text="{x:Static resources:AppResources.ResinTimerPage_SyncTip}" TextColor="OrangeRed"
+                       Text="{x:Static resources:AppResources.ResinTimerPage_SyncTip}" TextColor="#0682F6" TextDecorations="Underline"
                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                       FontAttributes="Bold" FontSize="Caption" />
+                       FontAttributes="Bold" FontSize="Caption">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding UrlOpenTabCommand}"
+                                              CommandParameter="https://gravel-shrew-9cf.notion.site/How-to-solve-resin-sync-issue-18c9dfd3f21b457f8cbe9a85b1c57144" />
+                    </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
             
             <Button x:Name="ManualSyncButton" Grid.Row="1"

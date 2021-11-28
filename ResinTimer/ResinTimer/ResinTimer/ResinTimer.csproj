@@ -38,16 +38,16 @@
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.4.0" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.4.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.13" />
-    <PackageReference Include="Syncfusion.Licensing" Version="19.3.0.48" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.3.0.48">
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.14" />
+    <PackageReference Include="Syncfusion.Licensing" Version="19.3.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.3.0.55">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="19.3.0.48" />
-    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="19.3.0.48">
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="19.3.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="19.3.0.55">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 
@@ -171,6 +171,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\UtilPages\AuthKeyInputPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\UtilPages\CheckmiHoYoAPIStatusPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\UtilPages\GachaLogViewerBasePage.xaml">

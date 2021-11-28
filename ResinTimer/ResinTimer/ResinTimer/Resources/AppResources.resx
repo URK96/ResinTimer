@@ -432,7 +432,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
     <value>Cannot find wish logs</value>
   </data>
   <data name="GachaLogViewer_RenewLogList_Fail" xml:space="preserve">
-    <value>Fail to renew wish logs. Check your network connection or Authkey status.</value>
+    <value>Fail to renew wish logs. 
+Check your network connection or Authkey status. 
+Or miHoYo's API may not working now, check API status on 'Setting - API Status'.</value>
   </data>
   <data name="GachaLogViewer_RenewLogList_Load" xml:space="preserve">
     <value>Load from server...</value>
@@ -926,7 +928,7 @@ MIT License</value>
     <value>Simple Edit Resin</value>
   </data>
   <data name="ResinTimerPage_SyncTip" xml:space="preserve">
-    <value>Renew your account information or try to enable real-time note on the account sync status screen or HoYoLAB.</value>
+    <value>How to solve resin sync issue?</value>
   </data>
   <data name="ResinWidget_Name" xml:space="preserve">
     <value>Resin Widget</value>
@@ -954,6 +956,9 @@ MIT License</value>
   </data>
   <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
     <value>Enable Notification</value>
+  </data>
+  <data name="SettingPage_Section_App_CheckmiHoYoAPIStatus_Title" xml:space="preserve">
+    <value>Check miHoYo API Status</value>
   </data>
   <data name="SettingPage_Section_App_InGameServer_Dialog_Title" xml:space="preserve">
     <value>Select Server</value>

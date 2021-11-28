@@ -987,7 +987,9 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Fail to renew wish logs. Check your network connection or Authkey status.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   Fail to renew wish logs. 
+        ///Check your network connection or Authkey status. 
+        ///Or miHoYo&apos;s API may not working now, check API status on &apos;Setting - API Status&apos;.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string GachaLogViewer_RenewLogList_Fail {
             get {
@@ -2393,7 +2395,7 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Renew your account information or try to enable real-time note on the account sync status screen or HoYoLAB.과(와) 유사한 지역화된 문자열을 찾습니다.
+        ///   How to solve resin sync issue?과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string ResinTimerPage_SyncTip {
             get {
@@ -2479,6 +2481,15 @@ namespace ResinTimer.Resources {
         public static string SettingPage_Section_App_Cell_Notification_Title {
             get {
                 return ResourceManager.GetString("SettingPage_Section_App_Cell_Notification_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Check miHoYo API Status과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_CheckmiHoYoAPIStatus_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_CheckmiHoYoAPIStatus_Title", resourceCulture);
             }
         }
         

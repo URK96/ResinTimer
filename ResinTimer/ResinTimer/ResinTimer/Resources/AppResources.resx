@@ -211,6 +211,27 @@ You can renew account to solve this problem.</value>
   <data name="AccountUIDInputPage_Title" xml:space="preserve">
     <value>Input UID</value>
   </data>
+  <data name="APICheck_APIName_RealTimeNote" xml:space="preserve">
+    <value>Real-Time Note API</value>
+  </data>
+  <data name="APICheck_APIName_RealTimeNoteSetting" xml:space="preserve">
+    <value>Real-Time Note Setting API</value>
+  </data>
+  <data name="APICheck_APIName_WishLog" xml:space="preserve">
+    <value>Wish Log API</value>
+  </data>
+  <data name="APICheck_Fail" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+  <data name="APICheck_Pass" xml:space="preserve">
+    <value>Pass</value>
+  </data>
+  <data name="APICheck_Status_Checking" xml:space="preserve">
+    <value>Checking...</value>
+  </data>
+  <data name="APICheck_Status_WaitRefresh" xml:space="preserve">
+    <value>Press top-right refresh button to start checking process</value>
+  </data>
   <data name="AppAction_App_Timer_Expedition" xml:space="preserve">
     <value>Expedition</value>
   </data>

@@ -329,6 +329,69 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Real-Time Note API과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string APICheck_APIName_RealTimeNote {
+            get {
+                return ResourceManager.GetString("APICheck_APIName_RealTimeNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Real-Time Note Setting API과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string APICheck_APIName_RealTimeNoteSetting {
+            get {
+                return ResourceManager.GetString("APICheck_APIName_RealTimeNoteSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Wish Log API과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string APICheck_APIName_WishLog {
+            get {
+                return ResourceManager.GetString("APICheck_APIName_WishLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Fail과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string APICheck_Fail {
+            get {
+                return ResourceManager.GetString("APICheck_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Pass과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string APICheck_Pass {
+            get {
+                return ResourceManager.GetString("APICheck_Pass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Checking...과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string APICheck_Status_Checking {
+            get {
+                return ResourceManager.GetString("APICheck_Status_Checking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Press top-right refresh button to start checking process과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string APICheck_Status_WaitRefresh {
+            get {
+                return ResourceManager.GetString("APICheck_Status_WaitRefresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Resin Timer과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string App_Title {

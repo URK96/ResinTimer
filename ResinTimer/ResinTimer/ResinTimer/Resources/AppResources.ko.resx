@@ -211,6 +211,27 @@
   <data name="AccountUIDInputPage_Title" xml:space="preserve">
     <value>UID 입력</value>
   </data>
+  <data name="APICheck_APIName_RealTimeNote" xml:space="preserve">
+    <value>실시간 노트 API</value>
+  </data>
+  <data name="APICheck_APIName_RealTimeNoteSetting" xml:space="preserve">
+    <value>실시간 노트 설정 API</value>
+  </data>
+  <data name="APICheck_APIName_WishLog" xml:space="preserve">
+    <value>기원 기록 API</value>
+  </data>
+  <data name="APICheck_Fail" xml:space="preserve">
+    <value>실패</value>
+  </data>
+  <data name="APICheck_Pass" xml:space="preserve">
+    <value>통과</value>
+  </data>
+  <data name="APICheck_Status_Checking" xml:space="preserve">
+    <value>테스트 중...</value>
+  </data>
+  <data name="APICheck_Status_WaitRefresh" xml:space="preserve">
+    <value>상단 오른쪽 새로고침 버튼을 눌러 테스트를 시작하세요</value>
+  </data>
   <data name="AppAction_App_Timer_Expedition" xml:space="preserve">
     <value>탐사</value>
   </data>

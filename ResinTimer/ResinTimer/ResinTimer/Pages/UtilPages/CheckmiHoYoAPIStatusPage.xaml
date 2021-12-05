@@ -1,12 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:ResinTimer.Resources"
              x:Class="ResinTimer.Pages.UtilPages.CheckmiHoYoAPIStatusPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    
+    <ContentPage.Resources>
+        <Color x:Key="LightPrimaryColor">WhiteSmoke</Color>
+        <Color x:Key="LightSecondaryColor">Black</Color>
+        <Color x:Key="DarkPrimaryColor">Gray</Color>
+        <Color x:Key="DarkSecondaryColor">White</Color>
+
+        <Style x:Key="FrameStyle" TargetType="Frame">
+            <Setter Property="BackgroundColor"
+                    Value="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}" />
+        </Style>
+
+        <Style TargetType="ContentView">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="Transparent" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="{AppThemeBinding Light=SkyBlue, Dark=#0078E8}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="RenewToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Renew}" IconImageSource="refresh.png" Order="Primary" Priority="0" Clicked="RenewToolbarItemClicked" />
+    </ContentPage.ToolbarItems>
+
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <CollectionView x:Name="ListCollectionView" Grid.Row="0" ItemsSource="{Binding ResultList}" IsVisible="False"
+                        ItemsLayout="VerticalList"
+                        SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView>
+                        <Frame CornerRadius="10" HasShadow="True"  Margin="20, 20, 20, 20"
+                               Style="{StaticResource FrameStyle}">
+                            <Frame.BorderColor>#0682F6</Frame.BorderColor>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                                <Label Text="{Binding PrintGachaDateTime}" HorizontalTextAlignment="Center"
+                                       FontSize="Title" />
+
+                                <Label Margin="0, 10, 0, 0" 
+                                       Text="{Binding SimpleGachaInfo}" HorizontalTextAlignment="Center"
+                                       FontSize="Subtitle" />
+
+                                <Label Margin="0, 10, 0, 0" 
+                                       Text="{Binding TotalGachaInfos}" HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </Frame>
+                    </ContentView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <StackLayout x:Name="BusyLayout" Orientation="Vertical" Grid.Row="0" IsVisible="True"
+                     HorizontalOptions="Center" VerticalOptions="Center">
+            <ActivityIndicator x:Name="BusyIndicator" 
+                               IsRunning="False" Color="#0682F6"/>
+
+            <Label x:Name="BusyStatusLabel" HorizontalTextAlignment="Center"
+                   Text="{x:Static resources:AppResources.APICheck_Status_WaitRefresh}" />
         </StackLayout>
-    </ContentPage.Content>
+    </Grid>
 </ContentPage>

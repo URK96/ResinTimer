@@ -1,4 +1,5 @@
 ﻿using ResinTimer.Dialogs;
+using ResinTimer.Pages.UtilPages;
 using ResinTimer.Resources;
 using ResinTimer.Services;
 
@@ -161,7 +162,7 @@ namespace ResinTimer.Pages
 
         private async void CheckmiHoYoAPIStatusTapped(object sender, EventArgs e)
         {
-            //await PopupNavigation.Instance.PushAsync(dialog);
+            await Navigation.PushAsync(new CheckmiHoYoAPIStatusPage());
         }
 
         private void ShowOverflowOnChanged(object sender, ToggledEventArgs e)

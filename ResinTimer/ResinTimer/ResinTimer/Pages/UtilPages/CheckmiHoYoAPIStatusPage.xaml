@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
-             x:Class="ResinTimer.Pages.UtilPages.CheckmiHoYoAPIStatusPage">
+             x:Class="ResinTimer.Pages.UtilPages.CheckmiHoYoAPIStatusPage"
+             Title="{x:Static resources:AppResources.CheckingmiHoYoAPIStatusPage_Title}">
     
     <ContentPage.Resources>
         <Color x:Key="LightPrimaryColor">WhiteSmoke</Color>
@@ -56,15 +57,16 @@
                                Style="{StaticResource FrameStyle}">
                             <Frame.BorderColor>#0682F6</Frame.BorderColor>
                             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                                <Label Text="{Binding PrintGachaDateTime}" HorizontalTextAlignment="Center"
+                                <Label Text="{Binding APIName}" HorizontalTextAlignment="Center"
                                        FontSize="Title" />
 
                                 <Label Margin="0, 10, 0, 0" 
-                                       Text="{Binding SimpleGachaInfo}" HorizontalTextAlignment="Center"
+                                       Text="{Binding ResultString}" TextColor="{Binding ResultTextColor}" HorizontalTextAlignment="Center"
                                        FontSize="Subtitle" />
 
-                                <Label Margin="0, 10, 0, 0" 
-                                       Text="{Binding TotalGachaInfos}" HorizontalTextAlignment="Center" />
+                                <Label Margin="0, 10, 0, 0" IsVisible="{Binding ShowDetail}"
+                                       Text="{Binding ResultDetail}" TextColor="{Binding ResultTextColor}" HorizontalTextAlignment="Center"
+                                       FontSize="Caption" />
                             </StackLayout>
                         </Frame>
                     </ContentView>

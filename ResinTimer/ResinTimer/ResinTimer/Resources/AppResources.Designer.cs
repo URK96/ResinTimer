@@ -627,6 +627,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   miHoYo API Status과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string CheckingmiHoYoAPIStatusPage_Title {
+            get {
+                return ResourceManager.GetString("CheckingmiHoYoAPIStatusPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Custom과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Checklist_Type_Custom {

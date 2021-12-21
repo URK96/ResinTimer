@@ -42,6 +42,8 @@ namespace ResinTimer.Pages.UtilPages
 
         private async Task CheckAPIProcess()
         {
+            ResultList.Clear();
+            
             ListCollectionView.IsVisible = false;
             BusyLayout.IsVisible = true;
             BusyIndicator.IsRunning = true;
@@ -77,6 +79,9 @@ namespace ResinTimer.Pages.UtilPages
                     APIType.WishLog => await TestAPIService.TestWishLogAPI(AuthKey),
                     _ => (false, string.Empty)
                 };
+
+                result.IsPass = testResult.Item1;
+                result.ResultDetail = testResult.Item2;
             }
             catch (Exception ex)
             {
@@ -115,7 +120,13 @@ namespace ResinTimer.Pages.UtilPages
 
         private async void RenewToolbarItemClicked(object sender, EventArgs e)
         {
+            ToolbarItem item = sender as ToolbarItem;
+
+            item.IsEnabled = false;
+
             await CheckAPIProcess();
+
+            item.IsEnabled = true;
         }
     }
 }

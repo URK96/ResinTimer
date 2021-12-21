@@ -11,6 +11,7 @@ namespace ResinTimer.Models
         public string ResultDetail { get; set; }
         public string ResultString => IsPass ? AppResources.APICheck_Pass : 
             AppResources.APICheck_Fail;
-        public Color ResultTextColor => IsPass ? Color.Green : Color.Red;
+        public Color ResultTextColor => IsPass ? Color.LightGreen : Color.Red;
+        public bool ShowDetail => !IsPass;
     }
 }

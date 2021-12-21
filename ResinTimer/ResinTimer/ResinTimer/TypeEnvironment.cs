@@ -416,8 +416,8 @@ namespace ResinTimer
             };
 
             Item = (from item in genshinDB.talentItems
-                       where item.Location.Equals(Location) && item.AvailableDayOfWeeks.Contains(dowValue)
-                       select item).First();
+                    where item.Location.Equals(Location) && item.AvailableDayOfWeeks.Contains(dowValue)
+                    select item).First();
         }
 
         public static TalentItem CheckNowTalentBook(Locations location)

@@ -311,6 +311,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Caution_ResinInput" xml:space="preserve">
     <value>Input only resin can cause time inaccuracy x~x</value>
   </data>
+  <data name="CheckingmiHoYoAPIStatusPage_Title" xml:space="preserve">
+    <value>miHoYo API Status</value>
+  </data>
   <data name="Checklist_Type_Custom" xml:space="preserve">
     <value>Custom</value>
   </data>

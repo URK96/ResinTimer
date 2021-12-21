@@ -311,6 +311,9 @@
   <data name="Caution_ResinInput" xml:space="preserve">
     <value>레진만 입력하면 인게임과 차이가 날 수 있습니다 x~x</value>
   </data>
+  <data name="CheckingmiHoYoAPIStatusPage_Title" xml:space="preserve">
+    <value>miHoYo API 상태</value>
+  </data>
   <data name="Checklist_Type_Custom" xml:space="preserve">
     <value>커스텀</value>
   </data>

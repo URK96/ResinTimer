@@ -8,6 +8,8 @@ namespace ResinTimer.Models
     {
         public TalentItem Item { get; set; }
         public string ItemName => AppEnv.genshinDB.FindLangDic(Item.ItemName);
+        public string LocationName => AppEnv.genshinDB.FindLangDic(
+            AppEnv.genshinDB.GetLocationName(Item.Location));
         public string ItemImageString
         {
             get

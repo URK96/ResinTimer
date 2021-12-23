@@ -51,17 +51,34 @@
                     <Frame CornerRadius="10" HasShadow="True"  Margin="20, 20, 20, 20"
                                Style="{StaticResource FrameStyle}">
                         <Frame.BorderColor>#0682F6</Frame.BorderColor>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                <Image WidthRequest="50" HeightRequest="50" Source="{Binding ItemImageString}" />
 
-                                <StackLayout Orientation="Vertical" Margin="20, 0, 0, 0">
-                                    <Label Text="{Binding ItemName}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                                    <!--<Label Margin="0, 5, 0, 0" 
-                                               Text="{Binding ExpectedNotiTimeString}" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />-->
-                                </StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Row="0" Grid.Column="0" 
+                                   WidthRequest="50" HeightRequest="50"
+                                   Source="{Binding ItemImageString}" />
+
+                            <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+                                <Label Text="{Binding ItemName}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                       FontSize="Title" FontAttributes="Bold" />
+
+                                <Label Margin="0, 5, 0, 0"
+                                       Text="{Binding LocationName}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                       FontSize="Subtitle"/>
                             </StackLayout>
-                        </StackLayout>
+
+                            <Label Grid.Row="0" Grid.Column="2"
+                                   Text=">" VerticalTextAlignment="Center"
+                                   FontSize="Title"/>
+                        </Grid>
                     </Frame>
                 </ContentView>
             </DataTemplate>

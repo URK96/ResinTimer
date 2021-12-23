@@ -75,7 +75,7 @@ namespace ResinTimer.Droid
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
             TalentEnv.LoadSettings();
-            AppEnv.LoadNowTZInfo();
+            //AppEnv.LoadNowTZInfo();
             
             if (AppEnv.genshinDB == null)
             {

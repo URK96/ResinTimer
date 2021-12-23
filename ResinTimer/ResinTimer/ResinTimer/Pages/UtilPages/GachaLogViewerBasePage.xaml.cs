@@ -79,7 +79,7 @@ namespace ResinTimer.Pages.UtilPages
                 {
                     LogList.AddRange(saveLogList);
 
-                    AppEnv.RefreshCollectionView(ListCollectionView, LogList);
+                    Utils.RefreshCollectionView(ListCollectionView, LogList);
                 }
 
                 string dtStr = Preferences.Get(gachaListType switch
@@ -209,7 +209,7 @@ namespace ResinTimer.Pages.UtilPages
 
                 await Task.Delay(1000);
 
-                AppEnv.RefreshCollectionView(ListCollectionView, LogList);
+                Utils.RefreshCollectionView(ListCollectionView, LogList);
 
                 await FileManager.SaveObject(logSaveFilePath, LogList);
 

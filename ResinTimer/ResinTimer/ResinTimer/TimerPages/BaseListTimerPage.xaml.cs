@@ -40,7 +40,7 @@ namespace ResinTimer.TimerPages
             {
                 (ListView.SelectedItem as Noti).UpdateTime();
                 notiManager.UpdateNotisTime();
-                RefreshCollectionView(ListView, Notis);
+                Utils.RefreshCollectionView(ListView, Notis);
             }
         }
 
@@ -52,7 +52,7 @@ namespace ResinTimer.TimerPages
                 notiManager.UpdateNotisTime();
             }
 
-            RefreshCollectionView(ListView, Notis);
+            Utils.RefreshCollectionView(ListView, Notis);
         }
 
         internal virtual void EditItem() { }
@@ -66,7 +66,7 @@ namespace ResinTimer.TimerPages
                 BaseDialog dialog = new BaseDialog(AppResources.ListTimer_EditTime,
                     new TimeEditView(ListView.SelectedItem as Noti, notiManager));
 
-                dialog.OnClose += delegate { RefreshCollectionView(ListView, Notis); };
+                dialog.OnClose += delegate { Utils.RefreshCollectionView(ListView, Notis); };
 
                 await PopupNavigation.Instance.PushAsync(dialog);
             }
@@ -84,7 +84,7 @@ namespace ResinTimer.TimerPages
             {
                 updateTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
 
-                RefreshCollectionView(ListCollectionView, Notis);
+                Utils.RefreshCollectionView(ListCollectionView, Notis);
             }
             catch { }
         }
@@ -129,7 +129,10 @@ namespace ResinTimer.TimerPages
         {
             try
             {
-                MainThread.BeginInvokeOnMainThread(() => { RefreshCollectionView(ListCollectionView, Notis); });
+                MainThread.BeginInvokeOnMainThread(() => 
+                { 
+                    Utils.RefreshCollectionView(ListCollectionView, Notis); 
+                });
             }
             catch (Exception) { }
         }

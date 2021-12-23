@@ -14,6 +14,7 @@ using RealmEnv = ResinTimer.RealmEnvironment;
 
 using static GenshinDB_Core.GenshinDB;
 using static ResinTimer.AppEnvironment;
+using ResinTimer.Models;
 
 namespace ResinTimer
 {
@@ -390,12 +391,40 @@ namespace ResinTimer
         public enum ResetType { Once = 0, Custom, Daily, Weekly, Monthly }
     }
 
-    public static class TalentEnvironment
+    public class TalentEnvironment
     {
         public const int RENEWAL_HOUR = 4;
 
+        public static TalentEnvironment Instance => instance.Value;
+
+        private static readonly Lazy<TalentEnvironment> instance = 
+            new(() => new TalentEnvironment());
+
         public static Locations Location { get; set; }
         public static TalentItem Item { get; set; }
+
+        public List<TalentListItem> Items { get; }
+
+        private TalentEnvironment()
+        {
+            Items = new();
+        }
+
+        public void UpdateNowTalentBooks()
+        {
+            DayOfWeek dayOfWeekValue = Utils.GetServerDayOfWeek();
+
+            var items = from item in genshinDB.talentItems
+                        where item.AvailableDayOfWeeks.Contains(dayOfWeekValue)
+                        select item;
+
+            Items.Clear();
+
+            foreach (TalentItem item in items)
+            {
+                Items.Add(new TalentListItem(item));
+            }
+        }
 
         public static void LoadSettings()
         {

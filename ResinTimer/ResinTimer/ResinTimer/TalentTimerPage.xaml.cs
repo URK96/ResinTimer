@@ -32,7 +32,7 @@ namespace ResinTimer
             try
             {
                 TalentEnv.LoadSettings();
-                AppEnv.LoadNowTZInfo();
+                //AppEnv.LoadNowTZInfo();
                 //AppEnv.LoadLocationList();
                 TalentEnv.CheckNowTalentBook();
                 RefreshInfo();

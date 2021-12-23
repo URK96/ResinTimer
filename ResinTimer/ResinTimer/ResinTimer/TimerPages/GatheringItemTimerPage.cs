@@ -58,7 +58,7 @@ namespace ResinTimer.TimerPages
             {
                 notiManager.EditList(ListView.SelectedItem as Noti, NotiManager.EditType.Remove);
 
-                RefreshCollectionView(ListView, Notis);
+                Utils.RefreshCollectionView(ListView, Notis);
             }
             else
             {

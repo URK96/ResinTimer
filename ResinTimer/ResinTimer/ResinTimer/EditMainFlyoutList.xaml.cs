@@ -72,8 +72,8 @@ namespace ResinTimer
 
                 CollectionView cv = sender as CollectionView;
 
-                AppEnvironment.RefreshCollectionView(cv, MainMenuItems);
-                AppEnvironment.ResetCollectionViewSelection(cv);
+                Utils.RefreshCollectionView(cv, MainMenuItems);
+                Utils.ResetCollectionViewSelection(cv);
             }
         }
 

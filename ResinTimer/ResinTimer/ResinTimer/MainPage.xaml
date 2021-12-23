@@ -31,7 +31,7 @@
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Gadget}" Icon="parametric_transformer.png" Target="{x:Type timers:GadgetTimerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Furnishing}" Icon="furnishing_icon.png" Target="{x:Type timers:FurnishingTimerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Gardening}" Icon="gardening_jade_field.png" Target="{x:Type timers:GardeningTimerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Talent}" Icon="talent_freedom.png" Target="{x:Type local:TalentTimerPage}"/>
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Talent}" Icon="talent_freedom.png" Target="{x:Type timers:TalentItemTimerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_WeaponAscension}" Icon="wa_aerosiderite_4.png" Target="{x:Type local:WeaponAscensionTimerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_GachaLog}" Icon="intertwined_fate.png" Target="{x:Type utils:GachaLogViewerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Event_DailyCheckIn}" Icon="fractured_fruit_data.png" Target="{x:Type local:DailyCheckInEventPage}"/>

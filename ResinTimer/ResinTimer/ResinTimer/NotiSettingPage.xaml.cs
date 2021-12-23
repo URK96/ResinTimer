@@ -80,7 +80,8 @@ namespace ResinTimer
                     (count <= 160))
                 {
                     notiManager.EditList(new ResinNoti(count), NotiManager.EditType.Add);
-                    RefreshCollectionView(ListCollectionView, Notis);
+
+                    Utils.RefreshCollectionView(ListCollectionView, Notis);
                 }
                 else
                 {
@@ -104,7 +105,8 @@ namespace ResinTimer
             if (Notis.Count > 1)
             {
                 notiManager.EditList(new ResinNoti(resin), NotiManager.EditType.Remove);
-                RefreshCollectionView(ListCollectionView, Notis);
+
+                Utils.RefreshCollectionView(ListCollectionView, Notis);
             }
             else
             {

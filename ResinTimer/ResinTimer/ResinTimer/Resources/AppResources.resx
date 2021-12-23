@@ -1044,6 +1044,9 @@ MIT License</value>
   <data name="TalentCharacterPage_Title" xml:space="preserve">
     <value>Apply Characters</value>
   </data>
+  <data name="TalentItemTimerPage_Title" xml:space="preserve">
+    <value>Talent Item</value>
+  </data>
   <data name="TalentTimerPage_NowBook_PreLabel" xml:space="preserve">
     <value>Now Talent Book</value>
   </data>

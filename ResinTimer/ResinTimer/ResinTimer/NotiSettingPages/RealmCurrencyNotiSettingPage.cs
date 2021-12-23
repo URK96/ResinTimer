@@ -15,7 +15,7 @@ namespace ResinTimer.NotiSettingPages
             notiManager = new RealmCurrencyNotiManager();
             Notis = notiManager.Notis;
 
-            RefreshCollectionView(ListView, Notis);
+            Utils.RefreshCollectionView(ListView, Notis);
         }
 
         internal override async void ShowAddItemDialog()
@@ -35,7 +35,8 @@ namespace ResinTimer.NotiSettingPages
                     (count <= 100))
                 {
                     notiManager.EditList(new RealmCurrencyNoti(count), NotiManager.EditType.Add);
-                    RefreshCollectionView(ListView, Notis);
+
+                    Utils.RefreshCollectionView(ListView, Notis);
                 }
                 else
                 {
@@ -60,7 +61,8 @@ namespace ResinTimer.NotiSettingPages
             {
                 notiManager.EditList(new RealmCurrencyNoti(notiId - RealmCurrencyNotiManager.ID_PREINDEX), 
                     NotiManager.EditType.Remove);
-                RefreshCollectionView(ListView, Notis);
+
+                Utils.RefreshCollectionView(ListView, Notis);
             }
             else
             {

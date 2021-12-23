@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:ResinTimer.Resources"
+             x:Class="ResinTimer.TimerPages.BaseMaterialTimerPage">
+
+    <ContentPage.Resources>
+        <Color x:Key="LightPrimaryColor">WhiteSmoke</Color>
+        <Color x:Key="LightSecondaryColor">Black</Color>
+        <Color x:Key="DarkPrimaryColor">Gray</Color>
+        <Color x:Key="DarkSecondaryColor">White</Color>
+
+        <Style x:Key="FrameStyle" TargetType="Frame">
+            <Setter Property="BackgroundColor"
+                    Value="{AppThemeBinding Light={StaticResource LightPrimaryColor}, Dark={StaticResource DarkPrimaryColor}}" />
+        </Style>
+
+        <Style TargetType="ContentView">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="Transparent" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="{AppThemeBinding Light=SkyBlue, Dark=#0078E8}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="NotiToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Reset}" IconImageSource="notisetting.png" Order="Primary" Priority="0" Clicked="ToolbarItemClicked" />
+    </ContentPage.ToolbarItems>
+
+    <CollectionView x:Name="ListCollectionView" ItemsSource="{Binding Items}"
+                    ItemsLayout="VerticalList"
+                    SelectionMode="Single"
+                    SelectionChanged="ListCollectionViewSelectionChanged">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <ContentView>
+                    <Frame CornerRadius="10" HasShadow="True"  Margin="20, 20, 20, 20"
+                               Style="{StaticResource FrameStyle}">
+                        <Frame.BorderColor>#0682F6</Frame.BorderColor>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <Image WidthRequest="50" HeightRequest="50" Source="{Binding ItemImageString}" />
+
+                                <StackLayout Orientation="Vertical" Margin="20, 0, 0, 0">
+                                    <Label Text="{Binding ItemName}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                    <!--<Label Margin="0, 5, 0, 0" 
+                                               Text="{Binding ExpectedNotiTimeString}" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />-->
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </ContentView>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+</ContentPage>

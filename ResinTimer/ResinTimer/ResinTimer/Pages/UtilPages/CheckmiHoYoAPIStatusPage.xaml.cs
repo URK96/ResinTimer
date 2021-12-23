@@ -57,7 +57,7 @@ namespace ResinTimer.Pages.UtilPages
             UpdateCheckingStatusText(APIType.WishLog);
             await CheckAPI(APIType.WishLog);
 
-            AppEnv.RefreshCollectionView(ListCollectionView, ResultList);
+            Utils.RefreshCollectionView(ListCollectionView, ResultList);
 
             ListCollectionView.IsVisible = true;
             BusyLayout.IsVisible = false;

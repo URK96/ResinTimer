@@ -41,7 +41,7 @@ namespace ResinTimer
             {
                 updateTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
 
-                RefreshCollectionView(ListCollectionView, Notis);
+                Utils.RefreshCollectionView(ListCollectionView, Notis);
             }
             catch { }
         }
@@ -98,14 +98,17 @@ namespace ResinTimer
         {
             notiManager.EditList(noti, NotiManager.EditType.Remove);
 
-            RefreshCollectionView(ListCollectionView, Notis);
+            Utils.RefreshCollectionView(ListCollectionView, Notis);
         }
 
         private void RefreshTime(object statusInfo)
         {
             try
             {
-                MainThread.BeginInvokeOnMainThread(() => { RefreshCollectionView(ListCollectionView, Notis); });
+                MainThread.BeginInvokeOnMainThread(() => 
+                { 
+                    Utils.RefreshCollectionView(ListCollectionView, Notis); 
+                });
             }
             catch (Exception) { }
         }

@@ -30,7 +30,7 @@ namespace ResinTimer
             try
             {
                 WAEnv.LoadSettings();
-                AppEnv.LoadNowTZInfo();
+                //AppEnv.LoadNowTZInfo();
                 //AppEnv.LoadLocationList();
                 WAEnv.CheckNowWAItem();
                 RefreshInfo();

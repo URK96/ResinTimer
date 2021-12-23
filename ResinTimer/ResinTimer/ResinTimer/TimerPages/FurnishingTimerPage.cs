@@ -83,7 +83,7 @@ namespace ResinTimer.TimerPages
             {
                 notiManager.EditList(ListView.SelectedItem as Noti, NotiManager.EditType.Remove);
 
-                RefreshCollectionView(ListView, Notis);
+                Utils.RefreshCollectionView(ListView, Notis);
             }
             else
             {
@@ -109,7 +109,7 @@ namespace ResinTimer.TimerPages
 
             notiManager.EditList(selectedNoti, NotiManager.EditType.EditOnlyTime);
 
-            RefreshCollectionView(ListView, Notis);
+            Utils.RefreshCollectionView(ListView, Notis);
         }
 
         internal override void ListCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)

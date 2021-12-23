@@ -52,14 +52,14 @@ namespace ResinTimer
         public static GenshinDB genshinDB;
 
         public static Servers Server { get; set; }
-        public static TimeZoneInfo TZInfo { get; set; }
+        public static TimeZoneInfo TZInfo => TimeZoneInfo.Local;
 
         public static int[] serverUTCs = { -5, 8, 1, 8 };
         public static string[] serverList = new string[] { "America", "Asia", "Europe", "TW, HK, MO" };
 
         public static List<string> locations;
 
-        public static void LoadNowTZInfo() => TZInfo = TimeZoneInfo.Local;
+        //public static void LoadNowTZInfo() => TZInfo = TimeZoneInfo.Local;
 
         public static void LoadLocationList() => locations = genshinDB.GetAllLocations();
         public static string GetUTCString(int offset) => $"UTC{((offset >= 0) ? "+" : "")}{offset}";
@@ -92,24 +92,9 @@ namespace ResinTimer
             };
         }
 
-        public static void RefreshCollectionView<T>(CollectionView cv, List<T> list)
+        public static void LoadAppSettings()
         {
-            MainThread.BeginInvokeOnMainThread(async () =>
-            {
-                cv.ItemsSource = Array.Empty<T>();
-
-                await Task.Delay(10);
-
-                cv.ItemsSource = list;
-
-                ResetCollectionViewSelection(cv);
-            });
-        }
-
-        public static void ResetCollectionViewSelection(CollectionView cv)
-        {
-            cv.SelectedItems = null;
-            cv.SelectedItem = null;
+            Server = (Servers)Preferences.Get(SettingConstants.APP_INGAMESERVER, 0);
         }
     }
 }

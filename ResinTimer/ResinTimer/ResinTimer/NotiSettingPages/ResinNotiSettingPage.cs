@@ -15,7 +15,7 @@ namespace ResinTimer.NotiSettingPages
             notiManager = new ResinNotiManager();
             Notis = notiManager.Notis;
 
-            RefreshCollectionView(ListView, Notis);
+            Utils.RefreshCollectionView(ListView, Notis);
         }
 
         internal override void RemoveItem(int notiId)
@@ -24,7 +24,7 @@ namespace ResinTimer.NotiSettingPages
             {
                 notiManager.EditList(new ResinNoti(notiId), NotiManager.EditType.Remove);
 
-                RefreshCollectionView(ListView, Notis);
+                Utils.RefreshCollectionView(ListView, Notis);
             }
             else
             {
@@ -50,7 +50,7 @@ namespace ResinTimer.NotiSettingPages
                 {
                     notiManager.EditList(new ResinNoti(count), NotiManager.EditType.Add);
 
-                    RefreshCollectionView(ListView, Notis);
+                    Utils.RefreshCollectionView(ListView, Notis);
                 }
                 else
                 {

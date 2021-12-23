@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 using Xamarin.Essentials;
@@ -78,6 +79,43 @@ namespace ResinTimer
             }
 
             return timeString;
+        }
+
+        public static DayOfWeek GetServerDayOfWeek()
+        {
+            const int RENEWAL_HOUR = 4;
+
+            LoadAppSettings();
+
+            int interval = TZInfo.BaseUtcOffset.Hours - serverUTCs[(int)Server];
+            int realRenewalHour = RENEWAL_HOUR + interval;
+            DateTime now = DateTime.Now;
+
+            return (now.Hour - realRenewalHour) switch
+            {
+                int result when result < 0 => now.AddDays(-1).DayOfWeek,
+                _ => now.DayOfWeek
+            };
+        }
+
+        public static void RefreshCollectionView<T>(CollectionView cv, List<T> list)
+        {
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                cv.ItemsSource = Array.Empty<T>();
+
+                await Task.Delay(10);
+
+                cv.ItemsSource = list;
+
+                ResetCollectionViewSelection(cv);
+            });
+        }
+
+        public static void ResetCollectionViewSelection(CollectionView cv)
+        {
+            cv.SelectedItems = null;
+            cv.SelectedItem = null;
         }
     }
 }

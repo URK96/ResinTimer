@@ -70,7 +70,7 @@ namespace ResinTimer.TimerPages
                 };
             }
 
-            calcTimer = new(CalcTimeResin, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
+            //calcTimer = new(CalcTimeResin, new AutoResetEvent(false), TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(0.5));
 
             if (IsSyncEnabled)
             {
@@ -90,16 +90,18 @@ namespace ResinTimer.TimerPages
             SetToolbar();
             SetLayoutAppearance();
 
-            calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
+            //calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
+            calcTimer = new(CalcTimeResin, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
 
-            ResinEnvironment.SaveValue();
+            calcTimer.Change(Timeout.InfiniteTimeSpan, Timeout.InfiniteTimeSpan);
+            calcTimer.Dispose();
 
-            calcTimer.Change(Timeout.Infinite, Timeout.Infinite);
+            ResinEnvironment.SaveValue();
         }
 
         private void SetLayoutAppearance()
@@ -183,6 +185,10 @@ namespace ResinTimer.TimerPages
                 ResinOverflowLabel.Text = (Preferences.Get(SettingConstants.SHOW_OVERFLOW, false) && (overflowValue > 0)) ? $"{AppResources.Overflow_Text} : {overflowValue}" : "";
             }
             catch (Exception) { }
+            finally
+            {
+                System.Diagnostics.Debug.WriteLine("Resin info refresh");
+            }
         }
 
         private void QuickCalc()

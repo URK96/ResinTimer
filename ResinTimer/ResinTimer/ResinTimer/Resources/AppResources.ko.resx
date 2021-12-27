@@ -1043,6 +1043,9 @@ MIT License</value>
   <data name="TalentCharacterPage_Title" xml:space="preserve">
     <value>적용 캐릭터</value>
   </data>
+  <data name="TalentItemTimerPage_NowBook_All" xml:space="preserve">
+    <value>모든 책 획득 가능</value>
+  </data>
   <data name="TalentItemTimerPage_Title" xml:space="preserve">
     <value>특성책</value>
   </data>

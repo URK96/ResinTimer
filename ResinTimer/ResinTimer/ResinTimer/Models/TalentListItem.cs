@@ -1,5 +1,7 @@
 ﻿using GenshinDB_Core.Types;
 
+using ResinTimer.Resources;
+
 using AppEnv = ResinTimer.AppEnvironment;
 
 namespace ResinTimer.Models
@@ -7,7 +9,9 @@ namespace ResinTimer.Models
     public class TalentListItem
     {
         public TalentItem Item { get; set; }
-        public string ItemName => AppEnv.genshinDB.FindLangDic(Item.ItemName);
+        public string ItemName => 
+            Item.ItemName.Equals("All") ? AppResources.TalentItemTimerPage_NowBook_All :
+            AppEnv.genshinDB.FindLangDic(Item.ItemName);
         public string LocationName => AppEnv.genshinDB.FindLangDic(
             AppEnv.genshinDB.GetLocationName(Item.Location));
         public string ItemImageString

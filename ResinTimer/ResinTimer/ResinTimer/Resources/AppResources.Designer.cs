@@ -2746,6 +2746,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   All books available과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentItemTimerPage_NowBook_All {
+            get {
+                return ResourceManager.GetString("TalentItemTimerPage_NowBook_All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Talent Item과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string TalentItemTimerPage_Title {

@@ -24,7 +24,7 @@ namespace ResinTimer.TimerPages
             BindingContext = this;
         }
 
-        internal virtual void ShowDetailInfo() { }
+        internal virtual void ShowDetailInfo(object selectedItem) { }
 
         private void ToolbarItemClicked(object sender, EventArgs e)
         {
@@ -39,7 +39,10 @@ namespace ResinTimer.TimerPages
 
         private void ListCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ShowDetailInfo();
+            if (e.CurrentSelection.Count > 0)
+            {
+                ShowDetailInfo(e.CurrentSelection.FirstOrDefault());
+            }
         }
 
         protected override void OnAppearing()

@@ -15,6 +15,7 @@ using RealmEnv = ResinTimer.RealmEnvironment;
 using static GenshinDB_Core.GenshinDB;
 using static ResinTimer.AppEnvironment;
 using ResinTimer.Models;
+using ResinTimer.Models.Materials;
 
 namespace ResinTimer
 {
@@ -403,7 +404,7 @@ namespace ResinTimer
         public static Locations Location { get; set; }
         public static TalentItem Item { get; set; }
 
-        public List<TalentListItem> Items { get; }
+        public List<IMaterialItem> Items { get; }
 
         private TalentEnvironment()
         {
@@ -476,19 +477,46 @@ namespace ResinTimer
         }
     }
 
-    public static class WeaponAscensionEnvironment
+    public class WeaponAscensionEnvironment
     {
         public const int RENEWAL_HOUR = 4;
 
+        public static WeaponAscensionEnvironment Instance => instance.Value;
+
+        private static readonly Lazy<WeaponAscensionEnvironment> instance =
+            new(() => new WeaponAscensionEnvironment());
+
         public static Locations Location { get; set; }
         public static WeaponAscensionItem Item { get; set; }
+
+        public List<IMaterialItem> Items { get; }
+
+        private WeaponAscensionEnvironment()
+        {
+            Items = new();
+        }
+
+        public void UpdateNowWAItems()
+        {
+            DayOfWeek dayOfWeekValue = Utils.GetServerDayOfWeek();
+
+            var items = from item in genshinDB.weaponAscensionItems
+                        where item.AvailableDayOfWeeks.Contains(dayOfWeekValue)
+                        select item;
+
+            Items.Clear();
+
+            foreach (WeaponAscensionItem item in items)
+            {
+                Items.Add(new WAListItem(item));
+            }
+        }
 
         public static void LoadSettings()
         {
             Server = (Servers)Preferences.Get(SettingConstants.APP_INGAMESERVER, 0);
             Location = (Locations)Preferences.Get(SettingConstants.ITEM_WEAPONASCENSION_LOCATION, 0);
         }
-
 
         public static void CheckNowWAItem()
         {

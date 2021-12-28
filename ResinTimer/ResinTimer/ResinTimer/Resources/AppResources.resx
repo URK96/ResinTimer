@@ -1113,6 +1113,12 @@ MIT License</value>
   <data name="ValueEdit_ValueError_Message" xml:space="preserve">
     <value>Please input correct value</value>
   </data>
+  <data name="WAItemTimerPage_PreLabel_All" xml:space="preserve">
+    <value>All Items available</value>
+  </data>
+  <data name="WAItemTimerPage_Title" xml:space="preserve">
+    <value>Weapon Asc.</value>
+  </data>
   <data name="WAWidget_Title" xml:space="preserve">
     <value>Today Weapon</value>
   </data>

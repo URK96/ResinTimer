@@ -1115,6 +1115,12 @@ MIT License</value>
   <data name="ValueEdit_ValueError_Message" xml:space="preserve">
     <value>올바른 값을 입력해주세요</value>
   </data>
+  <data name="WAItemTimerPage_PreLabel_All" xml:space="preserve">
+    <value>모든 재료 획득 가능</value>
+  </data>
+  <data name="WAItemTimerPage_Title" xml:space="preserve">
+    <value>무기 돌파</value>
+  </data>
   <data name="WAWidget_Title" xml:space="preserve">
     <value>오늘의 무기재료</value>
   </data>

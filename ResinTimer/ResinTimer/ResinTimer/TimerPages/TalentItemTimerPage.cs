@@ -1,4 +1,4 @@
-﻿using ResinTimer.Models;
+﻿using ResinTimer.Models.Materials;
 using ResinTimer.Resources;
 
 using System.Collections.Generic;

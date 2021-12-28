@@ -2953,6 +2953,24 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   All Items available과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string WAItemTimerPage_PreLabel_All {
+            get {
+                return ResourceManager.GetString("WAItemTimerPage_PreLabel_All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Weapon Asc.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string WAItemTimerPage_Title {
+            get {
+                return ResourceManager.GetString("WAItemTimerPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Today Weapon과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string WAWidget_Title {

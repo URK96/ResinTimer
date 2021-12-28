@@ -4,11 +4,11 @@ using ResinTimer.Resources;
 
 using AppEnv = ResinTimer.AppEnvironment;
 
-namespace ResinTimer.Models
+namespace ResinTimer.Models.Materials
 {
-    public class TalentListItem
+    public class TalentListItem : IMaterialItem
     {
-        public TalentItem Item { get; set; }
+        public TalentItem Item { get; }
         public string ItemName => 
             Item.ItemName.Equals("All") ? AppResources.TalentItemTimerPage_NowBook_All :
             AppEnv.genshinDB.FindLangDic(Item.ItemName);

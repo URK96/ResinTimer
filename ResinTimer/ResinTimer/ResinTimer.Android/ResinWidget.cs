@@ -43,12 +43,19 @@ namespace ResinTimer.Droid
             base.OnReceive(context, intent);
         }
 
-        public override void OnUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
+        public override async void OnUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
-            ResinEnvironment.LoadValues();
-            ResinEnvironment.CalcResin();
+            if (ResinEnvironment.IsSyncEnabled)
+            {
+                await ResinEnvironment.SyncServerData();
+            }
+            else
+            {
+                ResinEnvironment.LoadValues();
+                ResinEnvironment.CalcResin();
+            }
 
             UpdateLayout(context, appWidgetManager, appWidgetIds);
 
@@ -143,12 +150,19 @@ namespace ResinTimer.Droid
             base.OnReceive(context, intent);
         }
 
-        public override void OnUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
+        public override async void OnUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
-            ResinEnvironment.LoadValues();
-            ResinEnvironment.CalcResin();
+            if (ResinEnvironment.IsSyncEnabled)
+            {
+                await ResinEnvironment.SyncServerData();
+            }
+            else
+            {
+                ResinEnvironment.LoadValues();
+                ResinEnvironment.CalcResin();
+            }
 
             UpdateLayout(context, appWidgetManager, appWidgetIds);
 

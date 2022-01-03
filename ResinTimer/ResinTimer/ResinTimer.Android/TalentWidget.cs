@@ -15,6 +15,7 @@ using static ResinTimer.Droid.AndroidAppEnvironment;
 
 using TalentEnv = ResinTimer.TalentEnvironment;
 using AppEnv = ResinTimer.AppEnvironment;
+using ResinTimer.Models.Materials;
 
 namespace ResinTimer.Droid
 {
@@ -74,13 +75,9 @@ namespace ResinTimer.Droid
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
-            TalentEnv.LoadSettings();
-            //AppEnv.LoadNowTZInfo();
-            
-            if (AppEnv.genshinDB == null)
-            {
-                AppEnv.genshinDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
-            }
+            TalentEnv.Instance.UpdateNowTalentBooks();
+
+            AppEnv.genshinDB ??= new GenshinDB_Core.GenshinDB(AppResources.Culture);
 
             UpdateLayout(context, appWidgetManager, appWidgetIds);
 
@@ -107,9 +104,12 @@ namespace ResinTimer.Droid
                 for (int i = 0; i < locationImageViewIds.Length; ++i)
                 {
                     var location = (Locations)i;
-                    string itemName = TalentEnv.CheckNowTalentBook(location).ItemName;
+                    TalentListItem item = TalentEnv.Instance.Items
+                        .Find(x => (x as TalentListItem).Item.Location == location) as TalentListItem;
+                    string itemName = item.Item.ItemName;
 
                     remoteViews.SetImageViewResource(locationImageViewIds[i], GetTalentBookImageId(itemName, location));
+
                     CreateTalentIconClickIntent(context, remoteViews, locationImageViewIds[i], itemName, location);
                 }
 

@@ -1,21 +1,21 @@
-﻿using GenshinDB_Core;
-using GenshinDB_Core.Types;
+﻿using GenshinDB_Core.Types;
 
-using ResinTimer.Resources;
+using GenshinInfo.Constants;
+using GenshinInfo.Managers;
+
+using ResinTimer.Models.Materials;
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 using Xamarin.Essentials;
-using Xamarin.Forms;
-
-using RealmEnv = ResinTimer.RealmEnvironment;
 
 using static GenshinDB_Core.GenshinDB;
 using static ResinTimer.AppEnvironment;
-using ResinTimer.Models;
-using ResinTimer.Models.Materials;
+
+using RealmEnv = ResinTimer.RealmEnvironment;
 
 namespace ResinTimer
 {
@@ -33,6 +33,9 @@ namespace ResinTimer
         public static ResinTime oneCountTime;
 
         public static int resin = 0;
+
+        public static bool IsSyncEnabled => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_RESIN_ENABLED, false) &&
+            Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false);
 
         public static void LoadValues()
         {
@@ -65,6 +68,7 @@ namespace ResinTimer
             else
             {
                 resin = 0;
+
                 Preferences.Set(SettingConstants.RESIN_COUNT, resin);
             }
         }
@@ -98,6 +102,48 @@ namespace ResinTimer
                 _ when now > endTime => (int)(now - endTime).TotalSeconds / ResinTime.ONE_RESTORE_INTERVAL,
                 _ => -1
             };
+        }
+
+        public static async Task<bool> SyncServerData()
+        {
+            try
+            {
+                GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+                Dictionary<string, string> dic = await manager.GetRealTimeNotes();
+
+                if ((dic is not null) &&
+                    int.TryParse(dic[Indexes.RealTimeNote.ResinRecoveryTime], out int recoveryTime) &&
+                    int.TryParse(dic[Indexes.RealTimeNote.CurrentResin], out int serverResin))
+                {
+                    if (recoveryTime > MAX_RESIN * 8 * 60)
+                    {
+                        recoveryTime = 0;
+                    }
+                    else if (serverResin > MAX_RESIN)
+                    {
+                        recoveryTime = -(serverResin - MAX_RESIN) * 8 * 60;
+                    }
+
+                    TimeSpan ts = TimeSpan.FromSeconds(recoveryTime);
+                    DateTime now = DateTime.Now;
+
+                    endTime = now.Add(ts);
+
+                    lastInputTime = now.ToString(dtCulture);
+
+                    CalcResin();
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 

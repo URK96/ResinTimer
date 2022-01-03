@@ -29,9 +29,6 @@ namespace ResinTimer.TimerPages
     {
         public ICommand UrlOpenTabCommand => Utils.UrlOpenCommand;
 
-        private bool IsSyncEnabled => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_RESIN_ENABLED, false) &&
-            Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false);
-
         private Timer buttonPressTimer;
         private TTimer calcTimer;
 
@@ -70,9 +67,7 @@ namespace ResinTimer.TimerPages
                 };
             }
 
-            //calcTimer = new(CalcTimeResin, new AutoResetEvent(false), TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(0.5));
-
-            if (IsSyncEnabled)
+            if (ResinEnvironment.IsSyncEnabled)
             {
                 _ = SyncData();
             }
@@ -106,13 +101,15 @@ namespace ResinTimer.TimerPages
 
         private void SetLayoutAppearance()
         {
-            CautionResinOnlyLabel.IsVisible = !IsSyncEnabled &&
+            bool isSyncEnabled = ResinEnvironment.IsSyncEnabled;
+
+            CautionResinOnlyLabel.IsVisible = !isSyncEnabled &&
                 (ResinEnvironment.applyType == ResinEnvironment.ApplyType.Resin);
             
-            ManualControlLayout.IsVisible = !IsSyncEnabled;
-            SyncControlLayout.IsVisible = IsSyncEnabled;
+            ManualControlLayout.IsVisible = !isSyncEnabled;
+            SyncControlLayout.IsVisible = isSyncEnabled;
 
-            if (IsSyncEnabled)
+            if (isSyncEnabled)
             {
                 ToolbarItems.Remove(EditToolbarItem);
             }
@@ -227,30 +224,8 @@ namespace ResinTimer.TimerPages
 
             await Task.Delay(100);
 
-            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
-
-            Dictionary<string, string> dic = await manager.GetRealTimeNotes();
-
-            if ((dic is not null) &&
-                int.TryParse(dic[Indexes.RealTimeNote.ResinRecoveryTime], out int recoveryTime) &&
-                int.TryParse(dic[Indexes.RealTimeNote.CurrentResin], out int serverResin))
+            if (await ResinEnvironment.SyncServerData())
             {
-                if (recoveryTime > ResinEnvironment.MAX_RESIN * 8 * 60)
-                {
-                    recoveryTime = 0;
-                }
-                else if (serverResin > ResinEnvironment.MAX_RESIN)
-                {
-                    recoveryTime = -(serverResin - ResinEnvironment.MAX_RESIN) * 8 * 60;
-                }
-
-                TimeSpan ts = TimeSpan.FromSeconds(recoveryTime);
-                DateTime now = DateTime.Now;
-
-                ResinEnvironment.endTime = now.Add(ts);
-
-                ResinEnvironment.lastInputTime = now.ToString(AppEnv.dtCulture);
-
                 UpdateSaveData();
 
                 SyncStatusLabel.TextColor = Color.Green;
@@ -268,7 +243,6 @@ namespace ResinTimer.TimerPages
 
         private void UpdateSaveData()
         {
-            //ResinEnvironment.CalcResin();
             ResinEnvironment.SaveValue();
 
             if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))

@@ -95,11 +95,5 @@ namespace ResinTimer
 
             Detail = page;
         }
-
-        private void MainMenuEditButton_Clicked(object sender, EventArgs e)
-        {
-            //Detail = new NavigationPage(new EditMainFlyoutList());
-            //IsPresented = false;
-        }
     }
 }

@@ -5,7 +5,6 @@ using ResinTimer.Resources;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -59,16 +58,14 @@ namespace ResinTimer
 
         public static List<string> locations;
 
-        //public static void LoadNowTZInfo() => TZInfo = TimeZoneInfo.Local;
+        public static string GetLangShortCode => CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
 
         public static void LoadLocationList() => locations = genshinDB.GetAllLocations();
         public static string GetUTCString(int offset) => $"UTC{((offset >= 0) ? "+" : "")}{offset}";
 
-        public static string GetLangShortCode => CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
-
         public static Color GetBackgroundColor()
         {
-            if (Device.RuntimePlatform == Device.iOS)
+            if (Device.RuntimePlatform is Device.iOS)
             {
                 return (Application.Current.RequestedTheme == OSAppTheme.Dark) ? Color.Black : Color.White;
             }
@@ -85,7 +82,7 @@ namespace ResinTimer
             AppResources.Culture = CultureInfo.CurrentCulture = settingValue switch
             {
                 (int)AppLang.English or
-                (int)AppLang.System when CultureInfo.CurrentUICulture.Name.Contains("en")=> CultureInfo.GetCultureInfo("en-US"),
+                (int)AppLang.System when CultureInfo.CurrentUICulture.Name.Contains("en") => CultureInfo.GetCultureInfo("en-US"),
                 (int)AppLang.Korean or
                 (int)AppLang.System when CultureInfo.CurrentUICulture.Name.Contains("ko") => CultureInfo.GetCultureInfo("ko-KR"),
                 _ => CultureInfo.GetCultureInfo("en-US")

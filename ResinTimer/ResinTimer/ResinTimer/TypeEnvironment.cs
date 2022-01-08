@@ -602,12 +602,6 @@ namespace ResinTimer
         {
             return Item.ItemName switch
             {
-                //"Decarabian" => "wa_decarabian_4.png",
-                //"Boreal Wolf" => "wa_boreal_wolf_4.png",
-                //"The Dandelion Gladiator" => "wa_dandelion_gladiator_4.png",
-                //"Guyun" => "wa_guyun_4.png",
-                //"Mist Veiled" => "wa_mist_veiled_4.png",
-                //"Aerosiderite" => "wa_aerosiderite_4.png",
                 "All" => $"wa_all_{Location:F}.png",
                 _ => $"wa_{Item.ItemName.Replace(" ", "_").ToLower()}_4.png"
             };

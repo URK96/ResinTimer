@@ -19,7 +19,7 @@ namespace ResinTimer.Managers.NotiManagers
 
                 if (Notis.Count < 1)
                 {
-                    Notis.Add(new ResinNoti(ResinEnvironment.MAX_RESIN));
+                    Notis.Add(new ResinNoti(ResinEnvironment.MaxResin));
                     SaveNotis();
                 }
             }

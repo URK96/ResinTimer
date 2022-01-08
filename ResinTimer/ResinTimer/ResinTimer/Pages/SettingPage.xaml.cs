@@ -52,7 +52,7 @@ namespace ResinTimer.Pages
             StartDetailScreenNow.Text = GetStartScreenString(Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0));
             Use24HTimeFormat.On = Preferences.Get(SettingConstants.APP_USE_24H_TIMEFORMAT, false);
             AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnv.AppLang.System)];
-            AppInGameServerNow.Text = AppEnv.serverList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)];
+            AppInGameServerNow.Text = AppEnv.ServerList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)];
 
             // Timer Common Section
             ShowOverflow.On = Preferences.Get(SettingConstants.SHOW_OVERFLOW, false);
@@ -153,9 +153,9 @@ namespace ResinTimer.Pages
         private async void AppInGameServerTapped(object sender, EventArgs e)
         {
             BaseDialog dialog = new BaseDialog(AppResources.SettingPage_Section_App_InGameServer_Dialog_Title,
-                new RadioPreferenceView(AppEnv.serverList, SettingConstants.APP_INGAMESERVER));
+                new RadioPreferenceView(AppEnv.ServerList, SettingConstants.APP_INGAMESERVER));
 
-            dialog.OnClose += delegate { AppInGameServerNow.Text = AppEnv.serverList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)]; };
+            dialog.OnClose += delegate { AppInGameServerNow.Text = AppEnv.ServerList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)]; };
 
             await PopupNavigation.Instance.PushAsync(dialog);
         }

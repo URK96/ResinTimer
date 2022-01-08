@@ -121,7 +121,7 @@
             <Button Grid.Row="0" Grid.Column="0"
                     Style="{StaticResource ButtonStyle}"
                     Text="Q.E."
-                    Pressed="QEButtonPressed" Released="QEButtonReleased" Clicked="QEButton_Clicked"/>
+                    Pressed="QEButtonPressed" Released="QEButtonReleased" Clicked="QEButtonClicked"/>
             <Button Grid.Row="0" Grid.Column="1"
                     Style="{StaticResource ButtonStyle}"
                     Text="&lt; 10"
@@ -195,7 +195,7 @@
             <Button x:Name="ManualSyncButton" Grid.Row="1"
                     Style="{StaticResource ButtonStyle}"
                     Text="{x:Static resources:AppResources.Sync_Renew}" 
-                    Clicked="ManualSyncButton_Clicked" Pressed="QEButtonPressed" Released="QEButtonReleased"/>
+                    Clicked="ManualSyncButtonClicked" Pressed="QEButtonPressed" Released="QEButtonReleased"/>
         </Grid>
     </AbsoluteLayout>
 </ContentPage>

@@ -15,7 +15,7 @@ namespace ResinTimer.Dialogs
     {
         private ResinNotiManager notiManager;
 
-        public ResinSimpleEdit() : base(REnv.resin, 0, REnv.MAX_RESIN)
+        public ResinSimpleEdit() : base(REnv.Resin, 0, REnv.MaxResin)
         {
             notiManager = new ResinNotiManager();
         }
@@ -26,8 +26,8 @@ namespace ResinTimer.Dialogs
 
             if (int.TryParse(SfUpDown.Text, out int inputValue))
             {
-                REnv.endTime = REnv.endTime.AddSeconds(ResinTime.ONE_RESTORE_INTERVAL * (REnv.resin - inputValue));
-                REnv.lastInputTime = DateTime.Now.ToString(AppEnv.dtCulture);
+                REnv.EndTime = REnv.EndTime.AddSeconds(REnv.ONE_RESTORE_INTERVAL * (REnv.Resin - inputValue));
+                REnv.LastInputTime = DateTime.Now.ToString(AppEnv.DTCulture);
                 REnv.CalcResin();
                 REnv.SaveValue();
 

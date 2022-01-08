@@ -29,9 +29,9 @@ namespace ResinTimer
                 _ = CreateAppAction();
 
 #if DEBUG
-                AppEnvironment.isDebug = true;
+                AppEnvironment.IsDebug = true;
 #endif
-                AppEnvironment.genshinDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
+                AppEnvironment.GDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
                 AppEnvironment.LoadLocationList();
 
                 SetDefaultPreferences();
@@ -73,7 +73,7 @@ namespace ResinTimer
             {
                 List<ResinNoti> list = new List<ResinNoti>
                 {
-                    new ResinNoti(ResinEnvironment.MAX_RESIN)
+                    new ResinNoti(ResinEnvironment.MaxResin)
                 };
 
                 Preferences.Set(SettingConstants.NOTI_LIST, JsonConvert.SerializeObject(list));

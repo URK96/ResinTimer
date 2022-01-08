@@ -39,7 +39,7 @@ namespace ResinTimer.TimerPages
 
             if (currentItem.Item.ItemName.Equals("All"))
             {
-                items.AddRange(from item in AppEnv.genshinDB.talentItems
+                items.AddRange(from item in AppEnv.GDB.talentItems
                                where item.Location.Equals(currentItem.Item.Location)
                                select item.ItemName);
             }

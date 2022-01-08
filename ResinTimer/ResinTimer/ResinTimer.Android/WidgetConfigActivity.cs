@@ -137,8 +137,8 @@ namespace ResinTimer.Droid
                 _ => new RemoteViews(PackageName, Resource.Layout.ResinWidget)
             };
 
-            remoteViews.SetTextViewText(Resource.Id.ResinWidgetCount, ResinEnvironment.resin.ToString());
-            remoteViews.SetTextViewText(Resource.Id.ResinWidgetEndTime, ResinEnvironment.endTime.ToString());
+            remoteViews.SetTextViewText(Resource.Id.ResinWidgetCount, ResinEnvironment.Resin.ToString());
+            remoteViews.SetTextViewText(Resource.Id.ResinWidgetEndTime, ResinEnvironment.EndTime.ToString());
 
             remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetRootLayout, CreateClickIntent());
 
@@ -179,11 +179,11 @@ namespace ResinTimer.Droid
             switch (widgetLayoutId)
             {
                 case Resource.Layout.ResinWidget:
-                    previewView.FindViewById<TextView>(Resource.Id.ResinWidgetCount).Text = ResinEnvironment.MAX_RESIN.ToString();
+                    previewView.FindViewById<TextView>(Resource.Id.ResinWidgetCount).Text = ResinEnvironment.MaxResin.ToString();
                     previewView.FindViewById<TextView>(Resource.Id.ResinWidgetEndTime).Text = DateTime.Now.ToString();
                     break;
                 case Resource.Layout.ResinWidgetSimple:
-                    previewView.FindViewById<TextView>(Resource.Id.ResinWidgetSimpleCount).Text = ResinEnvironment.MAX_RESIN.ToString();
+                    previewView.FindViewById<TextView>(Resource.Id.ResinWidgetSimpleCount).Text = ResinEnvironment.MaxResin.ToString();
                     break;
             }
         }

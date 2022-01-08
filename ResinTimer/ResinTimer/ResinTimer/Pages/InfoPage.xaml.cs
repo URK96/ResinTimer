@@ -15,14 +15,17 @@ namespace ResinTimer.Pages
         {
             InitializeComponent();
 
-            VersionLabel.Text = $"v{AppInfo.VersionString} {(AppEnvironment.isDebug ? "Debug" : "Release")}";
+            VersionLabel.Text = $"v{AppInfo.VersionString} {(AppEnvironment.IsDebug ? "Debug" : "Release")}";
         }
 
         private async void BugReportToolbarItemClicked(object sender, EventArgs e)
         {
             try
             {
-                if (await DisplayAlert(AppResources.BugReport_Dialog_Title, AppResources.BugReport_Dialog_Message, AppResources.Dialog_Yes, AppResources.Dialog_No))
+                if (await DisplayAlert(AppResources.BugReport_Dialog_Title, 
+                                       AppResources.BugReport_Dialog_Message, 
+                                       AppResources.Dialog_Yes, 
+                                       AppResources.Dialog_No))
                 {
                     await Launcher.OpenAsync("https://github.com/URK96/ResinTimer/issues/new");
                 }
@@ -41,12 +44,20 @@ namespace ResinTimer.Pages
 
         private async void GithubButtonClicked(object sender, EventArgs e)
         {
-            await Launcher.TryOpenAsync("https://github.com/URK96/ResinTimer");
+            try
+            {
+                await Launcher.OpenAsync("https://github.com/URK96/ResinTimer");
+            }
+            catch { }
         }
 
         private async void DevHomeButtonClicked(object sender, EventArgs e)
         {
-            await Launcher.TryOpenAsync("https://urkhome.azurewebsites.net/");
+            try
+            {
+                await Launcher.OpenAsync("https://urkhome.azurewebsites.net/");
+            }
+            catch { }
         }
 
         private async void ButtonPressed(object sender, EventArgs e)
@@ -56,6 +67,7 @@ namespace ResinTimer.Pages
             try
             {
                 button.BackgroundColor = Color.FromHex("#500682F6");
+
                 await button.ScaleTo(0.95, 100, Easing.SinInOut);
             }
             catch { }
@@ -68,6 +80,7 @@ namespace ResinTimer.Pages
             try
             {
                 button.BackgroundColor = Color.Transparent;
+
                 await button.ScaleTo(1.0, 100, Easing.SinInOut);
             }
             catch { }

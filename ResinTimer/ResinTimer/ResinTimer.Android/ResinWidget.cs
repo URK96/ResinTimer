@@ -77,8 +77,8 @@ namespace ResinTimer.Droid
                     _ => new RemoteViews(context.PackageName, Resource.Layout.ResinWidget)
                 };
 
-                remoteViews.SetTextViewText(Resource.Id.ResinWidgetCount, ResinEnvironment.resin.ToString());
-                remoteViews.SetTextViewText(Resource.Id.ResinWidgetEndTime, Utils.GetTimeString(ResinEnvironment.endTime));
+                remoteViews.SetTextViewText(Resource.Id.ResinWidgetCount, ResinEnvironment.Resin.ToString());
+                remoteViews.SetTextViewText(Resource.Id.ResinWidgetEndTime, Utils.GetTimeString(ResinEnvironment.EndTime));
 
                 CreateClickIntent(context, appWidgetIds, remoteViews);
 
@@ -186,7 +186,7 @@ namespace ResinTimer.Droid
 
                 var remoteViews = new RemoteViews(context.PackageName, Resource.Layout.ResinWidgetSimple);
 
-                remoteViews.SetTextViewText(Resource.Id.ResinWidgetSimpleCount, ResinEnvironment.resin.ToString());
+                remoteViews.SetTextViewText(Resource.Id.ResinWidgetSimpleCount, ResinEnvironment.Resin.ToString());
 
                 CreateClickIntent(context, appWidgetIds, remoteViews);
 

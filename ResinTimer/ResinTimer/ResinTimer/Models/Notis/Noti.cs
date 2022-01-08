@@ -9,7 +9,8 @@ namespace ResinTimer.Models.Notis
         public DateTime NotiTime { get; set; }
         public int NotiId { get; set; }
 
-        public string ExpectedNotiTimeString => $"{AppResources.NotiSettingPage_List_ExpectedNotiTime}\n{Utils.GetTimeString(NotiTime)}";
+        public string ExpectedNotiTimeString => 
+            $"{AppResources.NotiSettingPage_List_ExpectedNotiTime}\n{Utils.GetTimeString(NotiTime)}";
 
         public abstract void UpdateTime();
         public abstract string GetNotiTitle();

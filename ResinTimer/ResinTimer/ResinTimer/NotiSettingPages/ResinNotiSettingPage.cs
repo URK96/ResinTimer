@@ -4,8 +4,6 @@ using ResinTimer.Resources;
 
 using Xamarin.Forms;
 
-using static ResinTimer.AppEnvironment;
-
 namespace ResinTimer.NotiSettingPages
 {
     public class ResinNotiSettingPage : BaseNotiSettingPage
@@ -35,7 +33,7 @@ namespace ResinTimer.NotiSettingPages
         internal override async void ShowAddItemDialog()
         {
             string title = AppResources.NotiSettingPage_AddDialog_Title;
-            string summary = $"{AppResources.NotiSettingPage_AddDialog_Summary} (1 ~ {ResinEnvironment.MAX_RESIN})";
+            string summary = $"{AppResources.NotiSettingPage_AddDialog_Summary} (1 ~ {ResinEnvironment.MaxResin})";
             string result = await DisplayPromptAsync(title, summary, AppResources.Dialog_Ok, AppResources.Dialog_Cancel, null, -1, Keyboard.Numeric, string.Empty);
 
             if (result == null)
@@ -55,7 +53,7 @@ namespace ResinTimer.NotiSettingPages
                 else
                 {
                     string title2 = AppResources.NotiSettingPage_OutOfRangeDialog_Title;
-                    string summary2 = $"{AppResources.NotiSettingPage_OutOfRangeDialog_Summary} (1 ~ {ResinEnvironment.MAX_RESIN})";
+                    string summary2 = $"{AppResources.NotiSettingPage_OutOfRangeDialog_Summary} (1 ~ {ResinEnvironment.MaxResin})";
 
                     await DisplayAlert(title2, summary2, AppResources.Dialog_Ok);
                 }

@@ -77,7 +77,7 @@ namespace ResinTimer.Droid
 
             WAEnv.Instance.UpdateNowWAItems();
 
-            AppEnv.genshinDB ??= new GenshinDB_Core.GenshinDB(AppResources.Culture);
+            AppEnv.GDB ??= new GenshinDB_Core.GenshinDB(AppResources.Culture);
 
             UpdateLayout(context, appWidgetManager, appWidgetIds);
 
@@ -185,7 +185,7 @@ namespace ResinTimer.Droid
 
             if (itemName.Equals("All"))
             {
-                items.AddRange(from item in AppEnv.genshinDB.weaponAscensionItems
+                items.AddRange(from item in AppEnv.GDB.weaponAscensionItems
                                where item.Location.Equals(location)
                                select item.ItemName);
             }

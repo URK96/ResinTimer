@@ -8,9 +8,9 @@ namespace ResinTimer.Models.HomeItems
 {
     public class ResinHomeItem : IHomeItem
     {
-        public string StatusMessage => $"{REnv.resin} / {REnv.MAX_RESIN}";
+        public string StatusMessage => $"{REnv.Resin} / {REnv.MaxResin}";
 
-        public string OptionalMessage => throw new NotImplementedException();
+        public string OptionalMessage => REnv.TotalCountTime.ToString();
 
         public string ImageString => "resin.png";
     }

@@ -11,9 +11,9 @@ namespace ResinTimer.Models.Materials
         public TalentItem Item { get; }
         public string ItemName => 
             Item.ItemName.Equals("All") ? AppResources.TalentItemTimerPage_NowBook_All :
-            AppEnv.genshinDB.FindLangDic(Item.ItemName);
-        public string LocationName => AppEnv.genshinDB.FindLangDic(
-            AppEnv.genshinDB.GetLocationName(Item.Location));
+            AppEnv.GDB.FindLangDic(Item.ItemName);
+        public string LocationName => AppEnv.GDB.FindLangDic(
+            AppEnv.GDB.GetLocationName(Item.Location));
         public string ItemImageString
         {
             get

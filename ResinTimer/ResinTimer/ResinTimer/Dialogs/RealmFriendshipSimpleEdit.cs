@@ -26,7 +26,7 @@ namespace ResinTimer.Dialogs
 
             if (int.TryParse(SfUpDown.Text, out int inputValue))
             {
-                RFEnv.lastInputTime = DateTime.Now.ToString(AppEnv.dtCulture);
+                RFEnv.lastInputTime = DateTime.Now.ToString(AppEnv.DTCulture);
                 RFEnv.bounty = inputValue; //Convert.ToInt32((double)SfUpDown.Value);
                 RFEnv.addCount = 0;
                 

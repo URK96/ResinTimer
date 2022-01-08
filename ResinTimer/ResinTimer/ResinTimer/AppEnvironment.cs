@@ -44,30 +44,30 @@ namespace ResinTimer
         }
 
 
-        public static CultureInfo dtCulture = new("en-US");
-        public static bool isDebug = false;
-        public static bool isRunningNotiThread = false;
+        public static CultureInfo DTCulture = new("en-US");
+        public static bool IsDebug = false;
+        public static bool IsRunningNotiThread = false;
 
-        public static GenshinDB genshinDB;
+        public static GenshinDB GDB;
 
         public static Servers Server { get; set; }
         public static TimeZoneInfo TZInfo => TimeZoneInfo.Local;
 
-        public static int[] serverUTCs = { -5, 8, 1, 8 };
-        public static string[] serverList = new string[] { "America", "Asia", "Europe", "TW, HK, MO" };
+        public static int[] ServerUTCs = { -5, 8, 1, 8 };
+        public static string[] ServerList = new string[] { "America", "Asia", "Europe", "TW, HK, MO" };
 
-        public static List<string> locations;
+        public static List<string> Locations;
 
         public static string GetLangShortCode => CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
 
-        public static void LoadLocationList() => locations = genshinDB.GetAllLocations();
+        public static void LoadLocationList() => Locations = GDB.GetAllLocations();
         public static string GetUTCString(int offset) => $"UTC{((offset >= 0) ? "+" : "")}{offset}";
 
         public static Color GetBackgroundColor()
         {
             if (Device.RuntimePlatform is Device.iOS)
             {
-                return (Application.Current.RequestedTheme == OSAppTheme.Dark) ? Color.Black : Color.White;
+                return (Application.Current.RequestedTheme is OSAppTheme.Dark) ? Color.Black : Color.White;
             }
             else
             {

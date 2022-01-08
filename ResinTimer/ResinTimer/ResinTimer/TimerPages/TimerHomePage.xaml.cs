@@ -9,16 +9,27 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using REnv = ResinTimer.ResinEnvironment;
+
 namespace ResinTimer.TimerPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TimerHomePage : ContentPage
     {
-        private List<IHomeItem> Items { get; }
+        public List<IHomeItem> Items { get; }
 
         public TimerHomePage()
         {
             InitializeComponent();
+
+            REnv.LoadValues();
+
+            Items = new()
+            {
+                new ResinHomeItem()
+            };
+
+            BindingContext = this;
         }
 
         private async void EditToolbarItemClicked(object sender, EventArgs e)

@@ -2,6 +2,8 @@
 
 using System;
 
+using REnv = ResinTimer.ResinEnvironment;
+
 namespace ResinTimer.Models.Notis
 {
     public class ResinNoti : Noti
@@ -13,22 +15,23 @@ namespace ResinTimer.Models.Notis
         public ResinNoti(int resin)
         {
             NotiId = Resin = resin;
-            Interval = (ResinEnvironment.MAX_RESIN - Resin) * ResinTime.ONE_RESTORE_INTERVAL;
+            Interval = (REnv.MaxResin - Resin) * REnv.ONE_RESTORE_INTERVAL;
 
             try
             {
-                NotiTime = ResinEnvironment.endTime.AddSeconds(-Interval);
+                NotiTime = REnv.EndTime.AddSeconds(-Interval);
             }
             catch (Exception)
             {
-                ResinEnvironment.LoadValues();
-                NotiTime = ResinEnvironment.endTime.AddSeconds(-Interval);
+                REnv.LoadValues();
+
+                NotiTime = REnv.EndTime.AddSeconds(-Interval);
             }
         }
 
         public override void UpdateTime()
         {
-            NotiTime = ResinEnvironment.endTime.AddSeconds(-Interval);
+            NotiTime = REnv.EndTime.AddSeconds(-Interval);
         }
 
         public override string GetNotiTitle() => AppResources.NotiTitle;

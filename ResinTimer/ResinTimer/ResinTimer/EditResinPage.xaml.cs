@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using AppEnv = ResinTimer.AppEnvironment;
+using REnv = ResinTimer.ResinEnvironment;
 
 namespace ResinTimer
 {
@@ -25,65 +26,66 @@ namespace ResinTimer
             int.TryParse(NowTotalTimeMinute.Text, out int min);
             int.TryParse(NowTotalTimeSecond.Text, out int sec);
 
-            ResinEnvironment.totalCountTime.SetTime(hour, min, sec);
+            REnv.TotalCountTime = new(hour, min, sec);
         }
 
         private void SetResinValue()
         {
-            int.TryParse(NowResinCount.Text, out ResinEnvironment.resin);
+            int.TryParse(NowResinCount.Text, out REnv.Resin);
         }
 
         private void CalcRemainTime()
         {
-            var now = DateTime.Now;
+            DateTime now = DateTime.Now;
 
-            switch (ResinEnvironment.applyType)
+            switch (REnv.ManualApplyType)
             {
-                case ResinEnvironment.ApplyType.Time:
-                    int totalSec = ResinEnvironment.totalCountTime.TotalSec;
-
-                    ResinEnvironment.oneCountTime.SetTime(totalSec % ResinTime.ONE_RESTORE_INTERVAL);
+                case REnv.ApplyType.Time:
+                    REnv.OneCountTime = TimeSpan.FromSeconds(
+                        REnv.TotalCountTime.TotalSeconds % REnv.ONE_RESTORE_INTERVAL);
                     break;
-                case ResinEnvironment.ApplyType.Resin:
-                    ResinEnvironment.oneCountTime.SetTime(ResinTime.ONE_RESTORE_INTERVAL);
-                    ResinEnvironment.totalCountTime.SetTime(ResinTime.ONE_RESTORE_INTERVAL * (ResinEnvironment.MAX_RESIN - ResinEnvironment.resin));
+                case REnv.ApplyType.Resin:
+                    REnv.OneCountTime = TimeSpan.FromSeconds(REnv.ONE_RESTORE_INTERVAL);
+                    REnv.TotalCountTime = TimeSpan.FromSeconds(
+                        REnv.ONE_RESTORE_INTERVAL * (REnv.MaxResin - REnv.Resin));
                     break;
             }
 
-            ResinEnvironment.endTime = now.AddHours(ResinEnvironment.totalCountTime.Hour).AddMinutes(ResinEnvironment.totalCountTime.Min).AddSeconds(ResinEnvironment.totalCountTime.Sec);
+            REnv.EndTime = now.AddSeconds(REnv.TotalCountTime.TotalSeconds);
         }
 
         private void ApplyButtonClicked(object sender, EventArgs e)
         {
             if (CurrentPage.Title == AppResources.EditPage_TabTime_Title)
             {
-                ResinEnvironment.applyType = ResinEnvironment.ApplyType.Time;
+                REnv.ManualApplyType = REnv.ApplyType.Time;
             }
             else if (CurrentPage.Title == AppResources.EditPage_TabResin_Title)
             {
-                ResinEnvironment.applyType = ResinEnvironment.ApplyType.Resin;
+                REnv.ManualApplyType = REnv.ApplyType.Resin;
             }
 
-            switch (ResinEnvironment.applyType)
+            switch (REnv.ManualApplyType)
             {
-                case ResinEnvironment.ApplyType.Time:
+                case REnv.ApplyType.Time:
                     SetTimeValue();
                     break;
-                case ResinEnvironment.ApplyType.Resin:
+                case REnv.ApplyType.Resin:
                     SetResinValue();
                     break;
                 default:
                     break;
             }
 
-            ResinEnvironment.lastInputTime = DateTime.Now.ToString(AppEnv.dtCulture);
+            REnv.LastInputTime = DateTime.Now.ToString(AppEnv.DTCulture);
 
             CalcRemainTime();
-            ResinEnvironment.SaveValue();
+            REnv.SaveValue();
 
             if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
             {
-                var notiManager = new ResinNotiManager();
+                ResinNotiManager notiManager = new();
+
                 notiManager.UpdateNotisTime();
             }
 
@@ -97,6 +99,7 @@ namespace ResinTimer
             try
             {
                 button.BackgroundColor = Color.FromHex("#500682F6");
+
                 await button.ScaleTo(0.95, 100, Easing.SinInOut);
             }
             catch { }
@@ -109,6 +112,7 @@ namespace ResinTimer
             try
             {
                 button.BackgroundColor = Color.Transparent;
+
                 await button.ScaleTo(1.0, 100, Easing.SinInOut);
             }
             catch { }

@@ -87,7 +87,7 @@ namespace ResinTimer
 
             LoadAppSettings();
 
-            int interval = TZInfo.BaseUtcOffset.Hours - serverUTCs[(int)Server];
+            int interval = TZInfo.BaseUtcOffset.Hours - ServerUTCs[(int)Server];
             int realRenewalHour = RENEWAL_HOUR + interval;
             DateTime now = DateTime.Now;
 

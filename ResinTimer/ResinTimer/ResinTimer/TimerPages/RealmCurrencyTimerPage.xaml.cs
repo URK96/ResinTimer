@@ -145,7 +145,7 @@ namespace ResinTimer.TimerPages
                 TotalTimeHour.Text = $"{(int)RCEnv.totalCountTime.TotalHours}";
                 TotalTimeMinute.Text = $"{RCEnv.totalCountTime.Minutes:D2}";
 
-                LastInputDateTimeLabel.Text = Utils.GetTimeString(DateTime.Parse(RCEnv.lastInputTime, AppEnv.dtCulture));
+                LastInputDateTimeLabel.Text = Utils.GetTimeString(DateTime.Parse(RCEnv.lastInputTime, AppEnv.DTCulture));
                 EndDateTimeLabel.Text = Utils.GetTimeString(RCEnv.endTime);
 
                 RCSfScale.EndValue = 100;
@@ -174,7 +174,7 @@ namespace ResinTimer.TimerPages
 
             count += (RCEnv.MaxRC % RCEnv.RCRate) == 0 ? 0 : 1;
 
-            RCEnv.lastInputTime = now.ToString(AppEnv.dtCulture);
+            RCEnv.lastInputTime = now.ToString(AppEnv.DTCulture);
 
 #if TEST
             RCEnv.endTime = now.AddMinutes(count);

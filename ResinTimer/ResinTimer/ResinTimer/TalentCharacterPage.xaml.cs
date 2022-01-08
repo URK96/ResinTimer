@@ -20,7 +20,7 @@ namespace ResinTimer
             Characters = new List<Character>();
             items = itemNames;
 
-            foreach (var character in from c in AppEnvironment.genshinDB.characters
+            foreach (var character in from c in AppEnvironment.GDB.characters
                                       where CheckCharacter(c.TalentItem)
                                       select c)
             {
@@ -78,7 +78,7 @@ namespace ResinTimer
         public Character(GenshinDB_Core.Types.Character character)
         {
             CharacterInfo = character;
-            LocationName = AppEnvironment.genshinDB.FindLangDic(character.Name);
+            LocationName = AppEnvironment.GDB.FindLangDic(character.Name);
         }
     }
 }

@@ -23,16 +23,17 @@ namespace ResinTimer
     {
         public enum ApplyType { Time = 0, Resin }
 
-        public static ApplyType applyType = ApplyType.Time;
+        public static ApplyType ManualApplyType = ApplyType.Time;
 
-        public const int MAX_RESIN = 160;
+        public const int MaxResin = 160;
+        public const int ONE_RESTORE_INTERVAL = 480;
 
-        public static DateTime endTime;
-        public static string lastInputTime;
-        public static ResinTime totalCountTime;
-        public static ResinTime oneCountTime;
+        public static DateTime EndTime;
+        public static string LastInputTime;
+        public static TimeSpan TotalCountTime;
+        public static TimeSpan OneCountTime;
 
-        public static int resin = 0;
+        public static int Resin = 0;
 
         public static bool IsSyncEnabled => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_RESIN_ENABLED, false) &&
             Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false);
@@ -45,50 +46,57 @@ namespace ResinTimer
             {
                 string endTimeP = Preferences.Get(SettingConstants.END_TIME, "");
 
-                if (!DateTime.TryParse(endTimeP, dtCulture, System.Globalization.DateTimeStyles.None, out endTime))
+                if (!DateTime.TryParse(endTimeP, DTCulture, System.Globalization.DateTimeStyles.None, out EndTime))
                 {
-                    endTime = DateTime.Now;
+                    EndTime = DateTime.Now;
                 }
             }
             else
             {
                 DateTime now = DateTime.Now;
 
-                Preferences.Set(SettingConstants.END_TIME, now.ToString(dtCulture));
-                endTime = now;
+                Preferences.Set(SettingConstants.END_TIME, now.ToString(DTCulture));
+
+                EndTime = now;
             }
 
-            lastInputTime = Preferences.Get(SettingConstants.LAST_INPUT_TIME, DateTime.Now.ToString(dtCulture));
-            applyType = (ApplyType)Preferences.Get(SettingConstants.RESIN_INPUT_TYPE, (int)ApplyType.Time);
+            LastInputTime = Preferences.Get(SettingConstants.LAST_INPUT_TIME, DateTime.Now.ToString(DTCulture));
+            ManualApplyType = (ApplyType)Preferences.Get(SettingConstants.RESIN_INPUT_TYPE, (int)ApplyType.Time);
 
             if (Preferences.ContainsKey(SettingConstants.RESIN_COUNT))
             {
-                resin = Preferences.Get(SettingConstants.RESIN_COUNT, 0);
+                Resin = Preferences.Get(SettingConstants.RESIN_COUNT, 0);
             }
             else
             {
-                resin = 0;
+                Resin = 0;
 
-                Preferences.Set(SettingConstants.RESIN_COUNT, resin);
+                Preferences.Set(SettingConstants.RESIN_COUNT, Resin);
             }
+        }
+
+        public static void CalcResinTime()
+        {
+            TotalCountTime = EndTime - DateTime.Now;
+            OneCountTime = TimeSpan.FromSeconds(TotalCountTime.TotalSeconds % ONE_RESTORE_INTERVAL);
         }
 
         public static void CalcResin()
         {
             DateTime now = DateTime.Now;
 
-            resin = (endTime <= now) ? MAX_RESIN :
-                MAX_RESIN - (Convert.ToInt32((endTime - now).TotalSeconds) / ResinTime.ONE_RESTORE_INTERVAL) - 1;
+            Resin = (EndTime <= now) ? MaxResin :
+                MaxResin - (Convert.ToInt32((EndTime - now).TotalSeconds) / ONE_RESTORE_INTERVAL) - 1;
         }
 
         public static void SaveValue()
         {
             try
             {
-                Preferences.Set(SettingConstants.RESIN_COUNT, resin);
-                Preferences.Set(SettingConstants.END_TIME, endTime.ToString(dtCulture));
-                Preferences.Set(SettingConstants.LAST_INPUT_TIME, lastInputTime);
-                Preferences.Set(SettingConstants.RESIN_INPUT_TYPE, (int)applyType);
+                Preferences.Set(SettingConstants.RESIN_COUNT, Resin);
+                Preferences.Set(SettingConstants.END_TIME, EndTime.ToString(DTCulture));
+                Preferences.Set(SettingConstants.LAST_INPUT_TIME, LastInputTime);
+                Preferences.Set(SettingConstants.RESIN_INPUT_TYPE, (int)ManualApplyType);
             }
             catch { }
         }
@@ -99,7 +107,7 @@ namespace ResinTimer
 
             return now switch
             {
-                _ when now > endTime => (int)(now - endTime).TotalSeconds / ResinTime.ONE_RESTORE_INTERVAL,
+                _ when now > EndTime => (int)(now - EndTime).TotalSeconds / ONE_RESTORE_INTERVAL,
                 _ => -1
             };
         }
@@ -115,21 +123,21 @@ namespace ResinTimer
                     int.TryParse(dic[Indexes.RealTimeNote.ResinRecoveryTime], out int recoveryTime) &&
                     int.TryParse(dic[Indexes.RealTimeNote.CurrentResin], out int serverResin))
                 {
-                    if (recoveryTime > MAX_RESIN * 8 * 60)
+                    if (recoveryTime > MaxResin * 8 * 60)
                     {
                         recoveryTime = 0;
                     }
-                    else if (serverResin > MAX_RESIN)
+                    else if (serverResin > MaxResin)
                     {
-                        recoveryTime = -(serverResin - MAX_RESIN) * 8 * 60;
+                        recoveryTime = -(serverResin - MaxResin) * 8 * 60;
                     }
 
                     TimeSpan ts = TimeSpan.FromSeconds(recoveryTime);
                     DateTime now = DateTime.Now;
 
-                    endTime = now.Add(ts);
+                    EndTime = now.Add(ts);
 
-                    lastInputTime = now.ToString(dtCulture);
+                    LastInputTime = now.ToString(DTCulture);
 
                     CalcResin();
                 }
@@ -208,7 +216,7 @@ namespace ResinTimer
             {
                 string endTimeP = Preferences.Get(SettingConstants.RC_END_TIME, "");
 
-                if (!DateTime.TryParse(endTimeP, dtCulture, System.Globalization.DateTimeStyles.None, out endTime))
+                if (!DateTime.TryParse(endTimeP, DTCulture, System.Globalization.DateTimeStyles.None, out endTime))
                 {
                     endTime = DateTime.Now;
                 }
@@ -217,12 +225,12 @@ namespace ResinTimer
             {
                 DateTime now = DateTime.Now;
 
-                Preferences.Set(SettingConstants.RC_END_TIME, now.ToString(dtCulture));
+                Preferences.Set(SettingConstants.RC_END_TIME, now.ToString(DTCulture));
 
                 endTime = now;
             }
 
-            lastInputTime = Preferences.Get(SettingConstants.RC_LAST_INPUT_TIME, DateTime.Now.ToString(dtCulture));
+            lastInputTime = Preferences.Get(SettingConstants.RC_LAST_INPUT_TIME, DateTime.Now.ToString(DTCulture));
             currency = Preferences.Get(SettingConstants.RC_COUNT, 0);
             addCount = Preferences.Get(SettingConstants.RC_ADD_COUNT, 0);
 
@@ -239,7 +247,7 @@ namespace ResinTimer
             }
             else
             {
-                DateTime lastDT = DateTime.Parse(lastInputTime, dtCulture);
+                DateTime lastDT = DateTime.Parse(lastInputTime, DTCulture);
 
 #if TEST
                 int count = (int)(now - lastDT.AddMinutes(addCount)).TotalSeconds / M_TO_S;
@@ -259,7 +267,7 @@ namespace ResinTimer
         {
             int remainCurrency = MaxRC - currency;
             int remainCount = remainCurrency / RCRate;
-            DateTime lastDT = DateTime.Parse(lastInputTime, dtCulture);
+            DateTime lastDT = DateTime.Parse(lastInputTime, DTCulture);
 
             remainCount += (remainCurrency % RCRate) == 0 ? 0 : 1;
 
@@ -276,7 +284,7 @@ namespace ResinTimer
             {
                 Preferences.Set(SettingConstants.RC_COUNT, currency);
                 Preferences.Set(SettingConstants.RC_ADD_COUNT, addCount);
-                Preferences.Set(SettingConstants.RC_END_TIME, endTime.ToString(dtCulture));
+                Preferences.Set(SettingConstants.RC_END_TIME, endTime.ToString(DTCulture));
                 Preferences.Set(SettingConstants.RC_LAST_INPUT_TIME, lastInputTime);
 
                 RealmEnv.SaveValues();
@@ -312,7 +320,7 @@ namespace ResinTimer
             {
                 string endTimeP = Preferences.Get(SettingConstants.RF_END_TIME, "");
 
-                if (!DateTime.TryParse(endTimeP, dtCulture, System.Globalization.DateTimeStyles.None, out endTime))
+                if (!DateTime.TryParse(endTimeP, DTCulture, System.Globalization.DateTimeStyles.None, out endTime))
                 {
                     endTime = DateTime.Now;
                 }
@@ -321,12 +329,12 @@ namespace ResinTimer
             {
                 DateTime now = DateTime.Now;
 
-                Preferences.Set(SettingConstants.RF_END_TIME, now.ToString(dtCulture));
+                Preferences.Set(SettingConstants.RF_END_TIME, now.ToString(DTCulture));
 
                 endTime = now;
             }
 
-            lastInputTime = Preferences.Get(SettingConstants.RF_LAST_INPUT_TIME, DateTime.Now.ToString(dtCulture));
+            lastInputTime = Preferences.Get(SettingConstants.RF_LAST_INPUT_TIME, DateTime.Now.ToString(DTCulture));
             bounty = Preferences.Get(SettingConstants.RF_COUNT, 0);
             addCount = Preferences.Get(SettingConstants.RF_ADD_COUNT, 0);
 
@@ -343,7 +351,7 @@ namespace ResinTimer
             }
             else
             {
-                DateTime lastDT = DateTime.Parse(lastInputTime, dtCulture);
+                DateTime lastDT = DateTime.Parse(lastInputTime, DTCulture);
 
 #if TEST
                 int count = (int)(now - lastDT.AddMinutes(addCount)).TotalSeconds / M_TO_S;
@@ -363,7 +371,7 @@ namespace ResinTimer
         {
             int remainCurrency = MaxRF - bounty;
             int remainCount = remainCurrency / RFRate;
-            DateTime lastDT = DateTime.Parse(lastInputTime, dtCulture);
+            DateTime lastDT = DateTime.Parse(lastInputTime, DTCulture);
 
             remainCount += (remainCurrency % RFRate) == 0 ? 0 : 1;
 
@@ -380,7 +388,7 @@ namespace ResinTimer
             {
                 Preferences.Set(SettingConstants.RF_COUNT, bounty);
                 Preferences.Set(SettingConstants.RF_ADD_COUNT, addCount);
-                Preferences.Set(SettingConstants.RF_END_TIME, endTime.ToString(dtCulture));
+                Preferences.Set(SettingConstants.RF_END_TIME, endTime.ToString(DTCulture));
                 Preferences.Set(SettingConstants.RF_LAST_INPUT_TIME, lastInputTime);
 
                 RealmEnv.SaveValues();
@@ -461,7 +469,7 @@ namespace ResinTimer
         {
             DayOfWeek dayOfWeekValue = Utils.GetServerDayOfWeek();
 
-            var items = from item in genshinDB.talentItems
+            var items = from item in GDB.talentItems
                         where item.AvailableDayOfWeeks.Contains(dayOfWeekValue)
                         select item;
 
@@ -481,7 +489,7 @@ namespace ResinTimer
 
         public static void CheckNowTalentBook()
         {
-            int interval = TZInfo.BaseUtcOffset.Hours - serverUTCs[(int)Server];
+            int interval = TZInfo.BaseUtcOffset.Hours - ServerUTCs[(int)Server];
             int realRenewalHour = RENEWAL_HOUR + interval;
             var now = DateTime.Now;
 
@@ -491,14 +499,14 @@ namespace ResinTimer
                 _ => now.DayOfWeek
             };
 
-            Item = (from item in genshinDB.talentItems
+            Item = (from item in GDB.talentItems
                     where item.Location.Equals(Location) && item.AvailableDayOfWeeks.Contains(dowValue)
                     select item).First();
         }
 
         public static TalentItem CheckNowTalentBook(Locations location)
         {
-            int interval = TZInfo.BaseUtcOffset.Hours - serverUTCs[(int)Server];
+            int interval = TZInfo.BaseUtcOffset.Hours - ServerUTCs[(int)Server];
             int realRenewalHour = RENEWAL_HOUR + interval;
             var now = DateTime.Now;
 
@@ -508,7 +516,7 @@ namespace ResinTimer
                 _ => now.DayOfWeek
             };
 
-            return (from item in genshinDB.talentItems
+            return (from item in GDB.talentItems
                     where item.Location.Equals(location) && item.AvailableDayOfWeeks.Contains(dowValue)
                     select item).First();
         }
@@ -546,7 +554,7 @@ namespace ResinTimer
         {
             DayOfWeek dayOfWeekValue = Utils.GetServerDayOfWeek();
 
-            var items = from item in genshinDB.weaponAscensionItems
+            var items = from item in GDB.weaponAscensionItems
                         where item.AvailableDayOfWeeks.Contains(dayOfWeekValue)
                         select item;
 
@@ -566,7 +574,7 @@ namespace ResinTimer
 
         public static void CheckNowWAItem()
         {
-            int interval = TZInfo.BaseUtcOffset.Hours - serverUTCs[(int)Server];
+            int interval = TZInfo.BaseUtcOffset.Hours - ServerUTCs[(int)Server];
             int realRenewalHour = RENEWAL_HOUR + interval;
             var now = DateTime.Now;
 
@@ -576,14 +584,14 @@ namespace ResinTimer
                 _ => now.DayOfWeek
             };
 
-            Item = (from item in genshinDB.weaponAscensionItems
+            Item = (from item in GDB.weaponAscensionItems
                     where item.Location.Equals(Location) && item.AvailableDayOfWeeks.Contains(dowValue)
                     select item).First();
         }
 
         public static WeaponAscensionItem CheckNowWAItem(Locations location)
         {
-            int interval = TZInfo.BaseUtcOffset.Hours - serverUTCs[(int)Server];
+            int interval = TZInfo.BaseUtcOffset.Hours - ServerUTCs[(int)Server];
             int realRenewalHour = RENEWAL_HOUR + interval;
             var now = DateTime.Now;
 
@@ -593,7 +601,7 @@ namespace ResinTimer
                 _ => now.DayOfWeek
             };
 
-            return (from item in genshinDB.weaponAscensionItems
+            return (from item in GDB.weaponAscensionItems
                     where item.Location.Equals(location) && item.AvailableDayOfWeeks.Contains(dowValue)
                     select item).First();
         }

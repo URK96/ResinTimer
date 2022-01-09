@@ -8,8 +8,8 @@
              Style="{StaticResource PageStyle}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem x:Name="NotiToolbarItem" Text="Noti Setting" IconImageSource="notisetting.png" Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="0" Clicked="ToolbarItemClicked" />
+        <ToolbarItem x:Name="NotiToolbarItem" Text="Noti Setting" IconImageSource="notisetting.png" Order="Primary" Priority="1" Clicked="ToolbarItemClicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
@@ -121,7 +121,7 @@
             <Button Grid.Row="0" Grid.Column="0"
                     Style="{StaticResource ButtonStyle}"
                     Text="Q.E."
-                    Pressed="QEButtonPressed" Released="QEButtonReleased" Clicked="QEButton_Clicked"/>
+                    Pressed="QEButtonPressed" Released="QEButtonReleased" Clicked="QEButtonClicked"/>
             <Button Grid.Row="0" Grid.Column="1"
                     Style="{StaticResource ButtonStyle}"
                     Text="Reset"

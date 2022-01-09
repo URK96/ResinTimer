@@ -788,6 +788,9 @@ MIT License</value>
   <data name="MasterDetail_MasterList_Talent" xml:space="preserve">
     <value>특성책</value>
   </data>
+  <data name="MasterDetail_MasterList_TimerMain" xml:space="preserve">
+    <value>메인</value>
+  </data>
   <data name="MasterDetail_MasterList_WeaponAscension" xml:space="preserve">
     <value>무기 돌파</value>
   </data>
@@ -1081,6 +1084,9 @@ MIT License</value>
   </data>
   <data name="TalentWidget_UpdateComplete" xml:space="preserve">
     <value>특성책 위젯 갱신 완료</value>
+  </data>
+  <data name="TimerMainPage_Title" xml:space="preserve">
+    <value>타이머 요약</value>
   </data>
   <data name="Toolbar_Add" xml:space="preserve">
     <value>추가</value>

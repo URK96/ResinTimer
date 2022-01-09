@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using REnv = ResinTimer.ResinEnvironment;
-
 namespace ResinTimer.TimerPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -22,11 +20,12 @@ namespace ResinTimer.TimerPages
         {
             InitializeComponent();
 
-            REnv.LoadValues();
-
             Items = new()
             {
-                new ResinHomeItem()
+                new ResinHomeItem(),
+                new RealmCurrencyHomeItem(),
+                new RealmFriendshipHomeItem(),
+                new ExpeditionHomeItem()
             };
 
             BindingContext = this;

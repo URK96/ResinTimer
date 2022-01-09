@@ -44,14 +44,14 @@ namespace ResinTimer
             };
             TrustRankPicker.ItemsSource = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            RealmRankPicker.SelectedIndex = (int)RealmEnv.realmRank;
-            TrustRankPicker.SelectedIndex = RealmEnv.trustRank - 1;
+            RealmRankPicker.SelectedIndex = (int)RealmEnv.RealmRank;
+            TrustRankPicker.SelectedIndex = RealmEnv.TrustRank - 1;
         }
 
         private void ApplySetting()
         {
-            RealmEnv.realmRank = (RealmEnv.RealmRank)RealmRankPicker.SelectedIndex;
-            RealmEnv.trustRank = TrustRankPicker.SelectedIndex + 1;
+            RealmEnv.RealmRank = (RealmEnv.RealmRankEnum)RealmRankPicker.SelectedIndex;
+            RealmEnv.TrustRank = TrustRankPicker.SelectedIndex + 1;
 
             switch (type)
             {

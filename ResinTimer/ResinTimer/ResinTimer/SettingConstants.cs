@@ -2,12 +2,7 @@
 {
     public static class SettingConstants
     {
-        enum StartScreen
-        {
-            Resin = 0,
-            Expedition,
-            GatheringItem
-        }
+
 
         public const string RESIN_COUNT = "Resin_Count";
         public const string LAST_INPUT_TIME = "Last_Input_Time";

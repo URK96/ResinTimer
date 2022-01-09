@@ -15,7 +15,7 @@ namespace ResinTimer.Dialogs
     {
         private RealmCurrencyNotiManager notiManager;
 
-        public RealmCurrencySimpleEdit() : base(RCEnv.currency, 0, RCEnv.MaxRC)
+        public RealmCurrencySimpleEdit() : base(RCEnv.Currency, 0, RCEnv.MaxRC)
         {
             notiManager = new RealmCurrencyNotiManager();
         }
@@ -26,9 +26,9 @@ namespace ResinTimer.Dialogs
 
             if (int.TryParse(SfUpDown.Text, out int inputValue))
             {
-                RCEnv.lastInputTime = DateTime.Now.ToString(AppEnv.DTCulture);
-                RCEnv.currency = inputValue; //Convert.ToInt32((double)SfUpDown.Value);
-                RCEnv.addCount = 0;
+                RCEnv.LastInputTime = DateTime.Now.ToString(AppEnv.DTCulture);
+                RCEnv.Currency = inputValue; //Convert.ToInt32((double)SfUpDown.Value);
+                RCEnv.AddCount = 0;
 
                 RCEnv.CalcRemainTime();
                 RCEnv.CalcRC();

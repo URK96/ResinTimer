@@ -14,7 +14,7 @@ namespace ResinTimer.Managers.NotiManagers
         {
             try
             {
-                notiType = NotiType.GatheringItem;
+                NotiType = NotificationType.GatheringItem;
 
                 Notis.AddRange(GetNotiList<GatheringItemNoti>());
 

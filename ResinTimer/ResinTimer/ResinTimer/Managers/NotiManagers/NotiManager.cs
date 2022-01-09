@@ -14,9 +14,9 @@ namespace ResinTimer.Managers.NotiManagers
     public class NotiManager
     {
         public enum EditType { Add, Remove, Edit, EditOnlyTime }
-        public enum NotiType { Resin, Expedition, GatheringItem, Gadget, Furnishing, Checklist, RealmCurrency, RealmFriendship, Gardening }
+        public enum NotificationType { Resin, Expedition, GatheringItem, Gadget, Furnishing, Checklist, RealmCurrency, RealmFriendship, Gardening }
 
-        public NotiType notiType = NotiType.Resin;
+        public NotificationType NotiType = NotificationType.Resin;
 
         public List<Noti> Notis { get; set; }
 
@@ -33,7 +33,7 @@ namespace ResinTimer.Managers.NotiManagers
         public List<T> GetNotiList<T>() where T : Noti
         {
             string value = string.Empty;
-            List<T> result = new List<T>();
+            List<T> result = new();
 
             try
             {
@@ -105,16 +105,16 @@ namespace ResinTimer.Managers.NotiManagers
 
         public void SaveNotis()
         {
-            string key = notiType switch
+            string key = NotiType switch
             {
-                NotiType.Resin => SettingConstants.NOTI_LIST,
-                NotiType.RealmCurrency => SettingConstants.REALM_CURRENCY_NOTI_LIST,
-                NotiType.RealmFriendship => SettingConstants.REALM_FRIENDSHIP_NOTI_LIST,
-                NotiType.Expedition => SettingConstants.EXPEDITION_NOTI_LIST,
-                NotiType.GatheringItem => SettingConstants.GATHERINGITEM_NOTI_LIST,
-                NotiType.Gadget => SettingConstants.GADGET_NOTI_LIST,
-                NotiType.Furnishing => SettingConstants.FURNISHING_NOTI_LIST,
-                NotiType.Gardening => SettingConstants.GARDENING_NOTI_LIST,
+                NotificationType.Resin => SettingConstants.NOTI_LIST,
+                NotificationType.RealmCurrency => SettingConstants.REALM_CURRENCY_NOTI_LIST,
+                NotificationType.RealmFriendship => SettingConstants.REALM_FRIENDSHIP_NOTI_LIST,
+                NotificationType.Expedition => SettingConstants.EXPEDITION_NOTI_LIST,
+                NotificationType.GatheringItem => SettingConstants.GATHERINGITEM_NOTI_LIST,
+                NotificationType.Gadget => SettingConstants.GADGET_NOTI_LIST,
+                NotificationType.Furnishing => SettingConstants.FURNISHING_NOTI_LIST,
+                NotificationType.Gardening => SettingConstants.GARDENING_NOTI_LIST,
                 _ => string.Empty
             };
 

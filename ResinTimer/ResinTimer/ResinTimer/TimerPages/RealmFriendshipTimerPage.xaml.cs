@@ -23,10 +23,10 @@ namespace ResinTimer.TimerPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RealmFriendshipTimerPage : ContentPage
     {
-        private Timer buttonPressTimer;
-        private TTimer calcTimer;
+        private Timer _buttonPressTimer;
+        private TTimer _calcTimer;
 
-        private bool isRunReset;
+        private bool _isRunReset;
 
         public RealmFriendshipTimerPage()
         {
@@ -34,15 +34,15 @@ namespace ResinTimer.TimerPages
 
             RFEnv.LoadValues();
 
-            if (Device.RuntimePlatform != Device.UWP)
+            if (Device.RuntimePlatform is not Device.UWP)
             {
-                buttonPressTimer = new Timer(500)
+                _buttonPressTimer = new(500)
                 {
                     AutoReset = false
                 };
-                buttonPressTimer.Elapsed += delegate
+                _buttonPressTimer.Elapsed += delegate
                 {
-                    isRunReset = true;
+                    _isRunReset = true;
 
                     if (Preferences.Get(SettingConstants.QUICKCALC_VIBRATION, true))
                     {
@@ -53,7 +53,7 @@ namespace ResinTimer.TimerPages
                 };
             }
 
-            calcTimer = new TTimer(CalcNowRF, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1));
+            _calcTimer = new(CalcNowRF, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1));
         }
 
         private void SetToolbar()
@@ -65,10 +65,9 @@ namespace ResinTimer.TimerPages
         {
             base.OnAppearing();
 
-            calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1));
+            _calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1));
 
             SetRFStatusLabel();
-
             SetToolbar();
         }
 
@@ -78,30 +77,32 @@ namespace ResinTimer.TimerPages
 
             RFEnv.SaveValue();
 
-            calcTimer.Change(Timeout.Infinite, Timeout.Infinite);
+            _calcTimer.Change(Timeout.Infinite, Timeout.Infinite);
         }
 
         private void SetRFStatusLabel()
         {
-            var realmRankString = RealmEnv.realmRank switch
+            string realmRankString = RealmEnv.RealmRank switch
             {
-                RealmEnv.RealmRank.HumbleAbode => AppResources.Realm_Rank_2,
-                RealmEnv.RealmRank.Cozy => AppResources.Realm_Rank_3,
-                RealmEnv.RealmRank.QueenSize => AppResources.Realm_Rank_4,
-                RealmEnv.RealmRank.Elegant => AppResources.Realm_Rank_5,
-                RealmEnv.RealmRank.Exquisite => AppResources.Realm_Rank_6,
-                RealmEnv.RealmRank.Extraordinary => AppResources.Realm_Rank_7,
-                RealmEnv.RealmRank.Stately => AppResources.Realm_Rank_8,
-                RealmEnv.RealmRank.Luxury => AppResources.Realm_Rank_9,
-                RealmEnv.RealmRank.KingFit => AppResources.Realm_Rank_10,
+                RealmEnv.RealmRankEnum.HumbleAbode => AppResources.Realm_Rank_2,
+                RealmEnv.RealmRankEnum.Cozy => AppResources.Realm_Rank_3,
+                RealmEnv.RealmRankEnum.QueenSize => AppResources.Realm_Rank_4,
+                RealmEnv.RealmRankEnum.Elegant => AppResources.Realm_Rank_5,
+                RealmEnv.RealmRankEnum.Exquisite => AppResources.Realm_Rank_6,
+                RealmEnv.RealmRankEnum.Extraordinary => AppResources.Realm_Rank_7,
+                RealmEnv.RealmRankEnum.Stately => AppResources.Realm_Rank_8,
+                RealmEnv.RealmRankEnum.Luxury => AppResources.Realm_Rank_9,
+                RealmEnv.RealmRankEnum.KingFit => AppResources.Realm_Rank_10,
                 _ => AppResources.Realm_Rank_1
             };
 
-            RealmRankLabel.Text = $"{AppResources.RealmCurrency_RealmRank} : {realmRankString} (+{RFEnv.RFRate} / Hour)";
-            TrustLevelLabel.Text = $"{AppResources.RealmCurrency_TrustRank} : {RealmEnv.trustRank} (Max {RFEnv.MaxRF})";
+            RealmRankLabel.Text = 
+                $"{AppResources.RealmCurrency_RealmRank} : {realmRankString} (+{RFEnv.RFRate} / 1H)";
+            TrustLevelLabel.Text = 
+                $"{AppResources.RealmCurrency_TrustRank} : {RealmEnv.TrustRank} (Max {RFEnv.MaxRF})";
         }
 
-        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        private async void ToolbarItemClicked(object sender, EventArgs e)
         {
             var item = sender as ToolbarItem;
 
@@ -124,7 +125,7 @@ namespace ResinTimer.TimerPages
             {
                 var now = DateTime.Now;
 
-                RFEnv.totalCountTime = (RFEnv.endTime > now) ? (RFEnv.endTime - now) : TimeSpan.FromSeconds(0);
+                RFEnv.TotalCountTime = (RFEnv.EndTime > now) ? (RFEnv.EndTime - now) : TimeSpan.FromSeconds(0);
 
                 RFEnv.CalcRF();
 
@@ -142,21 +143,21 @@ namespace ResinTimer.TimerPages
         {
             try
             {
-                TotalTimeHour.Text = $"{(int)RFEnv.totalCountTime.TotalHours}";
-                TotalTimeMinute.Text = $"{RFEnv.totalCountTime.Minutes:D2}";
+                TotalTimeHour.Text = $"{(int)RFEnv.TotalCountTime.TotalHours}";
+                TotalTimeMinute.Text = $"{RFEnv.TotalCountTime.Minutes:D2}";
 
-                LastInputDateTimeLabel.Text = Utils.GetTimeString(DateTime.Parse(RFEnv.lastInputTime, AppEnv.DTCulture));
-                EndDateTimeLabel.Text = Utils.GetTimeString(RFEnv.endTime);
+                LastInputDateTimeLabel.Text = Utils.GetTimeString(DateTime.Parse(RFEnv.LastInputTime, AppEnv.DTCulture));
+                EndDateTimeLabel.Text = Utils.GetTimeString(RFEnv.EndTime);
 
                 RFSfScale.EndValue = 100;
                 RFSfScale.Interval = 20;
 
-                int percentage = Convert.ToInt32((double)RFEnv.bounty / RFEnv.MaxRF * 100);
+                int percentage = RFEnv.Percentage;
 
                 RFPercentage.Text = $"{percentage} %";
                 RangeValue.Value = PointerValue.Value = percentage;
 
-                RFCountLabel.Text = $"{AppResources.RealmCurrency_NowCurrency} : {RFEnv.bounty}";
+                RFCountLabel.Text = $"{AppResources.RealmCurrency_NowCurrency} : {RFEnv.Bounty}";
 
             }
             catch (Exception ex)
@@ -169,28 +170,27 @@ namespace ResinTimer.TimerPages
 
         private void ResetRF()
         {
-            var now = DateTime.Now;
+            DateTime now = DateTime.Now;
             int count = RFEnv.MaxRF / RFEnv.RFRate;
 
             count += (RFEnv.MaxRF % RFEnv.RFRate) == 0 ? 0 : 1;
 
-            RFEnv.lastInputTime = now.ToString(AppEnv.DTCulture);
+            RFEnv.LastInputTime = now.ToString(AppEnv.DTCulture);
 
 #if TEST
-            RFEnv.endTime = now.AddMinutes(count);
+            RFEnv.EndTime = now.AddMinutes(count);
 #else
-            RFEnv.endTime = now.AddHours(count);
+            RFEnv.EndTime = now.AddHours(count);
 #endif
 
-            RFEnv.bounty = 0;
-            RFEnv.addCount = 0;
+            RFEnv.Bounty = 0;
+            RFEnv.AddCount = 0;
 
             RFEnv.SaveValue();
 
             if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
             {
-                var notiManager = new RealmFriendshipNotiManager();
-                notiManager.UpdateNotisTime();
+                new RealmFriendshipNotiManager().UpdateNotisTime();
             }
         }
 
@@ -201,17 +201,18 @@ namespace ResinTimer.TimerPages
             try
             {
                 button.BackgroundColor = Color.FromHex("#500682F6");
+
                 await button.ScaleTo(0.95, 100, Easing.SinInOut);
 
-                isRunReset = false;
+                _isRunReset = false;
 
-                if (Device.RuntimePlatform == Device.UWP)
+                if (Device.RuntimePlatform is Device.UWP)
                 {
                     ResetRF();
                 }
                 else
                 {
-                    buttonPressTimer.Start();
+                    _buttonPressTimer.Start();
                 }
             }
             catch { }
@@ -224,13 +225,14 @@ namespace ResinTimer.TimerPages
             try
             {
                 button.BackgroundColor = Color.Transparent;
+
                 await button.ScaleTo(1.0, 100, Easing.SinInOut);
 
-                if (Device.RuntimePlatform != Device.UWP)
+                if (Device.RuntimePlatform is not Device.UWP)
                 {
-                    buttonPressTimer.Stop();
+                    _buttonPressTimer.Stop();
 
-                    if (!isRunReset)
+                    if (!_isRunReset)
                     {
                         DependencyService.Get<IToast>().Show(AppResources.MainPage_QuickCalcButton_Toast);
                     }
@@ -246,6 +248,7 @@ namespace ResinTimer.TimerPages
             try
             {
                 button.BackgroundColor = Color.FromHex("#500682F6");
+
                 await button.ScaleTo(0.95, 100, Easing.SinInOut);
             }
             catch { }
@@ -258,18 +261,19 @@ namespace ResinTimer.TimerPages
             try
             {
                 button.BackgroundColor = Color.Transparent;
+
                 await button.ScaleTo(1.0, 100, Easing.SinInOut);
             }
             catch { }
         }
 
-        private async void QEButton_Clicked(object sender, EventArgs e)
+        private async void QEButtonClicked(object sender, EventArgs e)
         {
-            calcTimer.Change(Timeout.Infinite, Timeout.Infinite);
+            _calcTimer.Change(Timeout.Infinite, Timeout.Infinite);
 
             var dialog = new BaseDialog(AppResources.BountySimpleEditDialog_Title, new RealmFriendshipSimpleEdit());
 
-            dialog.OnClose += delegate { calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1)); };
+            dialog.OnClose += delegate { _calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1)); };
 
             await PopupNavigation.Instance.PushAsync(dialog);
         }

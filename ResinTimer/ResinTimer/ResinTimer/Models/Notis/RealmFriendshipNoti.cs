@@ -42,7 +42,7 @@ namespace ResinTimer.Models.Notis
 #if TEST
             NotiTime = RFEnv.endTime.AddMinutes(-Interval);
 #else
-            NotiTime = RFEnv.endTime.AddHours(-Interval);
+            NotiTime = RFEnv.EndTime.AddHours(-Interval);
 #endif
         }
 

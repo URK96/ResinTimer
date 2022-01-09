@@ -51,9 +51,9 @@ namespace ResinTimer.Droid
                 builder.AddAction(0, AppResources.Noti_QuickAction_RunGenshinApp, pRunIntent);
             }
 
-            if (!((notification.NotiType == NotiManager.NotiType.Resin) ||
-                (notification.NotiType == NotiManager.NotiType.RealmCurrency) ||
-                (notification.NotiType == NotiManager.NotiType.RealmFriendship)))
+            if (!((notification.NotiType == NotiManager.NotificationType.Resin) ||
+                (notification.NotiType == NotiManager.NotificationType.RealmCurrency) ||
+                (notification.NotiType == NotiManager.NotificationType.RealmFriendship)))
             {
                 Intent resetIntent = new Intent(context, typeof(NotiActionReceiver))
                     .SetAction("RESET_TIMER")
@@ -104,14 +104,14 @@ namespace ResinTimer.Droid
             private void ResetTimer(Intent intent)
             {
                 int id = intent.GetIntExtra("NotiId", -1);
-                NotiManager.NotiType type = (NotiManager.NotiType)intent.GetIntExtra("NotiType", 0);
+                NotiManager.NotificationType type = (NotiManager.NotificationType)intent.GetIntExtra("NotiType", 0);
                 NotiManager notiManager = type switch
                 {
-                    NotiManager.NotiType.Expedition => new ExpeditionNotiManager(),
-                    NotiManager.NotiType.GatheringItem => new GatheringItemNotiManager(),
-                    NotiManager.NotiType.Gadget => new GadgetNotiManager(),
-                    NotiManager.NotiType.Furnishing => new FurnishingNotiManager(),
-                    NotiManager.NotiType.Gardening => new GardeningNotiManager(),
+                    NotiManager.NotificationType.Expedition => new ExpeditionNotiManager(),
+                    NotiManager.NotificationType.GatheringItem => new GatheringItemNotiManager(),
+                    NotiManager.NotificationType.Gadget => new GadgetNotiManager(),
+                    NotiManager.NotificationType.Furnishing => new FurnishingNotiManager(),
+                    NotiManager.NotificationType.Gardening => new GardeningNotiManager(),
                     _ => null
                 };
 
@@ -130,19 +130,19 @@ namespace ResinTimer.Droid
                 
                 switch (type)
                 {
-                    case NotiManager.NotiType.Expedition:
+                    case NotiManager.NotificationType.Expedition:
                         NotiScheduleAndroid.Schedule<ExpeditionNoti>(noti);
                         break;
-                    case NotiManager.NotiType.GatheringItem:
+                    case NotiManager.NotificationType.GatheringItem:
                         NotiScheduleAndroid.Schedule<GatheringItemNoti>(noti);
                         break;
-                    case NotiManager.NotiType.Gadget:
+                    case NotiManager.NotificationType.Gadget:
                         NotiScheduleAndroid.Schedule<GadgetNoti>(noti);
                         break;
-                    case NotiManager.NotiType.Furnishing:
+                    case NotiManager.NotificationType.Furnishing:
                         NotiScheduleAndroid.Schedule<FurnishingNoti>(noti);
                         break;
-                    case NotiManager.NotiType.Gardening:
+                    case NotiManager.NotificationType.Gardening:
                         NotiScheduleAndroid.Schedule<GardeningNoti>(noti);
                         break;
                     default:

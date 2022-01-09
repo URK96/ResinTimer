@@ -1981,6 +1981,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Main과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_TimerMain {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_TimerMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Weapon Asc.과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string MasterDetail_MasterList_WeaponAscension {
@@ -2850,6 +2859,15 @@ namespace ResinTimer.Resources {
         public static string TalentWidget_UpdateComplete {
             get {
                 return ResourceManager.GetString("TalentWidget_UpdateComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Timer Main과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TimerMainPage_Title {
+            get {
+                return ResourceManager.GetString("TimerMainPage_Title", resourceCulture);
             }
         }
         

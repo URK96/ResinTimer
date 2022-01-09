@@ -8,13 +8,13 @@ namespace ResinTimer.Managers.NotiManagers
 {
     public class ExpeditionNotiManager : NotiManager
     {
-        const int ID_PREINDEX = 1000;
+        const int IdPreIndex = 1000;
 
         public ExpeditionNotiManager() : base()
         {
             try
             {
-                notiType = NotiType.Expedition;
+                NotiType = NotificationType.Expedition;
 
                 Notis.AddRange(GetNotiList<ExpeditionNoti>());
             }
@@ -34,7 +34,7 @@ namespace ResinTimer.Managers.NotiManagers
         {
             for (int i = 0; i < Notis.Count; ++i)
             {
-                Notis[i].NotiId = ID_PREINDEX + i;
+                Notis[i].NotiId = IdPreIndex + i;
             }
         }
 
@@ -43,24 +43,22 @@ namespace ResinTimer.Managers.NotiManagers
             switch (type)
             {
                 case EditType.Add:
-                    item.NotiId = ID_PREINDEX + Notis.Count;
+                    item.NotiId = IdPreIndex + Notis.Count;
 
                     Notis.Add(item);
                     Notis.Sort(SortNotis);
                     break;
                 case EditType.Remove:
-                    Notis.Remove(Notis.Find(x => x.NotiId.Equals(item.NotiId)));
+                    Notis.Remove(Notis.Find(x => x.NotiId == item.NotiId));
                     break;
                 case EditType.Edit:
-                    var index = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
+                    int index = Notis.FindIndex(x => x.NotiId == item.NotiId);
 
                     Notis[index] = item;
                     Notis[index].UpdateTime();
                     break;
                 case EditType.EditOnlyTime:
-                    var index2 = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
-
-                    Notis[index2] = item;
+                    Notis[Notis.FindIndex(x => x.NotiId == item.NotiId)] = item;
                     break;
                 default:
                     break;

@@ -13,13 +13,14 @@ namespace ResinTimer.Managers.NotiManagers
         {
             try
             {
-                notiType = NotiType.Resin;
+                NotiType = NotificationType.Resin;
 
                 Notis.AddRange(GetNotiList<ResinNoti>());
 
                 if (Notis.Count < 1)
                 {
                     Notis.Add(new ResinNoti(ResinEnvironment.MaxResin));
+
                     SaveNotis();
                 }
             }
@@ -55,7 +56,7 @@ namespace ResinTimer.Managers.NotiManagers
             switch (type)
             {
                 case EditType.Add:
-                    if (Notis.FindAll(x => (x as ResinNoti).Resin.Equals(noti.Resin)).Count == 0)
+                    if (Notis.FindAll(x => (x as ResinNoti).Resin == noti.Resin).Count is 0)
                     {
                         Notis.Add(item);
                         Notis.Sort(SortNotis);
@@ -66,10 +67,12 @@ namespace ResinTimer.Managers.NotiManagers
                     }
                     break;
                 case EditType.Remove:
-                    Notis.Remove(Notis.Find(x => (x as ResinNoti).Resin.Equals(noti.Resin)));
+                    Notis.Remove(
+                        Notis.Find(x => (x as ResinNoti).Resin == noti.Resin));
                     break;
                 case EditType.Edit:
-                    (Notis[Notis.FindIndex(x => (x as ResinNoti).Resin.Equals(noti.Resin))] as ResinNoti).Resin = noti.Resin;
+                    (Notis[Notis.FindIndex(x => (x as ResinNoti).Resin == noti.Resin)] as ResinNoti)
+                        .Resin = noti.Resin;
                     break;
                 default:
                     break;

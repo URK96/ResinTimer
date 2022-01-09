@@ -2,7 +2,7 @@
 
 using System;
 
-using NotiType = ResinTimer.Managers.NotiManagers.NotiManager.NotiType;
+using NotificationType = ResinTimer.Managers.NotiManagers.NotiManager.NotificationType;
 
 namespace ResinTimer.Models
 {
@@ -40,7 +40,7 @@ namespace ResinTimer.Models
         /// </value>
         public DateTime NotifyTime { get; set; }
 
-        public NotiType NotiType { get; set; }
+        public NotificationType NotiType { get; set; }
 
         public void SetType<T>() where T : Noti
         {
@@ -48,15 +48,15 @@ namespace ResinTimer.Models
 
             NotiType = t switch
             {
-                _ when t.IsAssignableFrom(typeof(ResinNoti)) => NotiType.Resin,
-                _ when t.IsAssignableFrom(typeof(RealmCurrencyNoti)) => NotiType.RealmCurrency,
-                _ when t.IsAssignableFrom(typeof(RealmFriendshipNoti)) => NotiType.RealmFriendship,
-                _ when t.IsAssignableFrom(typeof(ExpeditionNoti)) => NotiType.Expedition,
-                _ when t.IsAssignableFrom(typeof(GatheringItemNoti)) => NotiType.GatheringItem,
-                _ when t.IsAssignableFrom(typeof(GadgetNoti)) => NotiType.Gadget,
-                _ when t.IsAssignableFrom(typeof(FurnishingNoti)) => NotiType.Furnishing,
-                _ when t.IsAssignableFrom(typeof(GardeningNoti)) => NotiType.Gardening,
-                _ => NotiType.Resin
+                _ when t.IsAssignableFrom(typeof(ResinNoti)) => NotificationType.Resin,
+                _ when t.IsAssignableFrom(typeof(RealmCurrencyNoti)) => NotificationType.RealmCurrency,
+                _ when t.IsAssignableFrom(typeof(RealmFriendshipNoti)) => NotificationType.RealmFriendship,
+                _ when t.IsAssignableFrom(typeof(ExpeditionNoti)) => NotificationType.Expedition,
+                _ when t.IsAssignableFrom(typeof(GatheringItemNoti)) => NotificationType.GatheringItem,
+                _ when t.IsAssignableFrom(typeof(GadgetNoti)) => NotificationType.Gadget,
+                _ when t.IsAssignableFrom(typeof(FurnishingNoti)) => NotificationType.Furnishing,
+                _ when t.IsAssignableFrom(typeof(GardeningNoti)) => NotificationType.Gardening,
+                _ => NotificationType.Resin
             };
         }
     }

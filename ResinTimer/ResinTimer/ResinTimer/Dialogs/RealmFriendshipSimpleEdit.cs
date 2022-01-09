@@ -15,7 +15,7 @@ namespace ResinTimer.Dialogs
     {
         private RealmFriendshipNotiManager notiManager;
 
-        public RealmFriendshipSimpleEdit() : base(RFEnv.bounty, 0, RFEnv.MaxRF)
+        public RealmFriendshipSimpleEdit() : base(RFEnv.Bounty, 0, RFEnv.MaxRF)
         {
             notiManager = new RealmFriendshipNotiManager();
         }
@@ -26,9 +26,9 @@ namespace ResinTimer.Dialogs
 
             if (int.TryParse(SfUpDown.Text, out int inputValue))
             {
-                RFEnv.lastInputTime = DateTime.Now.ToString(AppEnv.DTCulture);
-                RFEnv.bounty = inputValue; //Convert.ToInt32((double)SfUpDown.Value);
-                RFEnv.addCount = 0;
+                RFEnv.LastInputTime = DateTime.Now.ToString(AppEnv.DTCulture);
+                RFEnv.Bounty = inputValue; //Convert.ToInt32((double)SfUpDown.Value);
+                RFEnv.AddCount = 0;
                 
                 RFEnv.CalcRemainTime();
                 RFEnv.CalcRF();

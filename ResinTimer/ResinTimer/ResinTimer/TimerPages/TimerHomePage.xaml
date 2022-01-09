@@ -37,9 +37,9 @@
         </Style>
     </ContentPage.Resources>
 
-    <ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem x:Name="EditToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Edit}" IconImageSource="edit.png" Order="Primary" Priority="0" Clicked="EditToolbarItemClicked" />
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
 
     <CollectionView x:Name="ListCollectionView" ItemsSource="{Binding Items}"
                     ItemsLayout="VerticalList"

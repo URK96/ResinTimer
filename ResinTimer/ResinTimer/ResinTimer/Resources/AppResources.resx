@@ -789,6 +789,9 @@ MIT License</value>
   <data name="MasterDetail_MasterList_Talent" xml:space="preserve">
     <value>Talent Item</value>
   </data>
+  <data name="MasterDetail_MasterList_TimerMain" xml:space="preserve">
+    <value>Main</value>
+  </data>
   <data name="MasterDetail_MasterList_WeaponAscension" xml:space="preserve">
     <value>Weapon Asc.</value>
   </data>
@@ -1079,6 +1082,9 @@ MIT License</value>
   </data>
   <data name="TalentWidget_UpdateComplete" xml:space="preserve">
     <value>Talent Widget Updated</value>
+  </data>
+  <data name="TimerMainPage_Title" xml:space="preserve">
+    <value>Timer Main</value>
   </data>
   <data name="Toolbar_Add" xml:space="preserve">
     <value>Add</value>

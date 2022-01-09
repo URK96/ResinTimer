@@ -157,7 +157,7 @@ namespace ResinTimer
 
     public static class RealmEnvironment
     {
-        public enum RealmRank
+        public enum RealmRankEnum
         {
             BareBones,
             HumbleAbode,
@@ -173,40 +173,40 @@ namespace ResinTimer
 
         public enum RealmType { Currency = 0, Friendship }
 
-        public static RealmRank realmRank = RealmRank.BareBones;
-        public static int trustRank = 1;
+        public static RealmRankEnum RealmRank = RealmRankEnum.BareBones;
+        public static int TrustRank = 1;
 
         public static void LoadValues()
         {
-            realmRank = (RealmRank)Preferences.Get(SettingConstants.REALM_ADEPTAL_LEVEL, 0);
-            trustRank = Preferences.Get(SettingConstants.REALM_TRUST_RANK, 1);
+            RealmRank = (RealmRankEnum)Preferences.Get(SettingConstants.REALM_ADEPTAL_LEVEL, 0);
+            TrustRank = Preferences.Get(SettingConstants.REALM_TRUST_RANK, 1);
         }
 
         public static void SaveValues()
         {
-            Preferences.Set(SettingConstants.REALM_ADEPTAL_LEVEL, (int)realmRank);
-            Preferences.Set(SettingConstants.REALM_TRUST_RANK, trustRank);
+            Preferences.Set(SettingConstants.REALM_ADEPTAL_LEVEL, (int)RealmRank);
+            Preferences.Set(SettingConstants.REALM_TRUST_RANK, TrustRank);
         }
     }
 
     public static class RealmCurrencyEnvironment
     {
-        public const int H_TO_S = 3600;
-        public const int M_TO_S = 60;  // Only use test
+        public const int HourToSec = 3600;
+        public const int MinToSec = 60;  // Only use test
 
-        public static int MaxRC => rcCapacity[RealmEnv.trustRank - 1];
-        public static int RCRate => aeRate[(int)RealmEnv.realmRank];
+        public static int MaxRC => s_rcCapacity[RealmEnv.TrustRank - 1];
+        public static int RCRate => s_aeRate[(int)RealmEnv.RealmRank];
+        public static int Percentage => Convert.ToInt32((double)Currency / MaxRC * 100);
 
-        private static int[] aeRate = { 4, 8, 12, 16, 20, 22, 24, 26, 28, 30 };
-        private static int[] rcCapacity = { 300, 600, 900, 1200, 1400, 1600, 1800, 2000, 2200, 2400 };
+        private static readonly int[] s_aeRate = { 4, 8, 12, 16, 20, 22, 24, 26, 28, 30 };
+        private static readonly int[] s_rcCapacity = { 300, 600, 900, 1200, 1400, 1600, 1800, 2000, 2200, 2400 };
 
-        public static DateTime endTime;
-        public static int addCount = 0;
-        public static string lastInputTime;
-        public static TimeSpan totalCountTime;
-        public static TimeSpan oneCountTime;
-
-        public static int currency = 0;
+        public static DateTime EndTime;
+        public static int AddCount = 0;
+        public static int Currency = 0;
+        public static string LastInputTime;
+        public static TimeSpan TotalCountTime;
+        public static TimeSpan OneCountTime;
 
         public static void LoadValues()
         {
@@ -216,9 +216,9 @@ namespace ResinTimer
             {
                 string endTimeP = Preferences.Get(SettingConstants.RC_END_TIME, "");
 
-                if (!DateTime.TryParse(endTimeP, DTCulture, System.Globalization.DateTimeStyles.None, out endTime))
+                if (!DateTime.TryParse(endTimeP, DTCulture, System.Globalization.DateTimeStyles.None, out EndTime))
                 {
-                    endTime = DateTime.Now;
+                    EndTime = DateTime.Now;
                 }
             }
             else
@@ -227,12 +227,12 @@ namespace ResinTimer
 
                 Preferences.Set(SettingConstants.RC_END_TIME, now.ToString(DTCulture));
 
-                endTime = now;
+                EndTime = now;
             }
 
-            lastInputTime = Preferences.Get(SettingConstants.RC_LAST_INPUT_TIME, DateTime.Now.ToString(DTCulture));
-            currency = Preferences.Get(SettingConstants.RC_COUNT, 0);
-            addCount = Preferences.Get(SettingConstants.RC_ADD_COUNT, 0);
+            LastInputTime = Preferences.Get(SettingConstants.RC_LAST_INPUT_TIME, DateTime.Now.ToString(DTCulture));
+            Currency = Preferences.Get(SettingConstants.RC_COUNT, 0);
+            AddCount = Preferences.Get(SettingConstants.RC_ADD_COUNT, 0);
 
             RealmEnv.LoadValues();
         }
@@ -241,40 +241,40 @@ namespace ResinTimer
         {
             DateTime now = DateTime.Now;
 
-            if (endTime <= now)
+            if (EndTime <= now)
             {
-                currency = MaxRC;
+                Currency = MaxRC;
             }
             else
             {
-                DateTime lastDT = DateTime.Parse(lastInputTime, DTCulture);
+                DateTime lastDT = DateTime.Parse(LastInputTime, DTCulture);
 
 #if TEST
                 int count = (int)(now - lastDT.AddMinutes(addCount)).TotalSeconds / M_TO_S;
 #else
-                int count = (int)(now - lastDT.AddHours(addCount)).TotalSeconds / H_TO_S;
+                int count = (int)(now - lastDT.AddHours(AddCount)).TotalSeconds / HourToSec;
 #endif
 
                 if (count > 0)
                 {
-                    currency += RCRate * count;
-                    addCount += count;
+                    Currency += RCRate * count;
+                    AddCount += count;
                 }
             }
         }
 
         public static void CalcRemainTime()
         {
-            int remainCurrency = MaxRC - currency;
+            int remainCurrency = MaxRC - Currency;
             int remainCount = remainCurrency / RCRate;
-            DateTime lastDT = DateTime.Parse(lastInputTime, DTCulture);
+            DateTime lastDT = DateTime.Parse(LastInputTime, DTCulture);
 
             remainCount += (remainCurrency % RCRate) == 0 ? 0 : 1;
 
 #if TEST
-            endTime = lastDT.AddMinutes(addCount).AddMinutes(remainCount);
+            EndTime = lastDT.AddMinutes(AddCount).AddMinutes(remainCount);
 #else
-            endTime = lastDT.AddHours(addCount).AddHours(remainCount);
+            EndTime = lastDT.AddHours(AddCount).AddHours(remainCount);
 #endif
         }
 
@@ -282,10 +282,10 @@ namespace ResinTimer
         {
             try
             {
-                Preferences.Set(SettingConstants.RC_COUNT, currency);
-                Preferences.Set(SettingConstants.RC_ADD_COUNT, addCount);
-                Preferences.Set(SettingConstants.RC_END_TIME, endTime.ToString(DTCulture));
-                Preferences.Set(SettingConstants.RC_LAST_INPUT_TIME, lastInputTime);
+                Preferences.Set(SettingConstants.RC_COUNT, Currency);
+                Preferences.Set(SettingConstants.RC_ADD_COUNT, AddCount);
+                Preferences.Set(SettingConstants.RC_END_TIME, EndTime.ToString(DTCulture));
+                Preferences.Set(SettingConstants.RC_LAST_INPUT_TIME, LastInputTime);
 
                 RealmEnv.SaveValues();
             }
@@ -295,22 +295,22 @@ namespace ResinTimer
 
     public static class RealmFriendshipEnvironment
     {
-        public const int H_TO_S = 3600;
-        public const int M_TO_S = 60;  // Only use test
+        public const int HourToSec = 3600;
+        public const int MinToSec = 60;  // Only use test
 
-        public static int MaxRF => rfCapacity[RealmEnv.trustRank - 1];
-        public static int RFRate => aeRate[(int)RealmEnv.realmRank];
+        public static int MaxRF => s_rfCapacity[RealmEnv.TrustRank - 1];
+        public static int RFRate => s_aeRate[(int)RealmEnv.RealmRank];
+        public static int Percentage => Convert.ToInt32((double)Bounty / MaxRF * 100);
 
-        private static int[] aeRate = { 2, 2, 3, 3, 4, 4, 4, 5, 5, 5 };
-        private static int[] rfCapacity = { 50, 100, 150, 200, 250, 300, 350, 400, 450, 500 };
+        private static readonly int[] s_aeRate = { 2, 2, 3, 3, 4, 4, 4, 5, 5, 5 };
+        private static readonly int[] s_rfCapacity = { 50, 100, 150, 200, 250, 300, 350, 400, 450, 500 };
 
-        public static DateTime endTime;
-        public static int addCount = 0;
-        public static string lastInputTime;
-        public static TimeSpan totalCountTime;
-        public static TimeSpan oneCountTime;
-
-        public static int bounty = 0;
+        public static DateTime EndTime;
+        public static int AddCount = 0;
+        public static int Bounty = 0;
+        public static string LastInputTime;
+        public static TimeSpan TotalCountTime;
+        public static TimeSpan OneCountTime;
 
         public static void LoadValues()
         {
@@ -320,9 +320,9 @@ namespace ResinTimer
             {
                 string endTimeP = Preferences.Get(SettingConstants.RF_END_TIME, "");
 
-                if (!DateTime.TryParse(endTimeP, DTCulture, System.Globalization.DateTimeStyles.None, out endTime))
+                if (!DateTime.TryParse(endTimeP, DTCulture, System.Globalization.DateTimeStyles.None, out EndTime))
                 {
-                    endTime = DateTime.Now;
+                    EndTime = DateTime.Now;
                 }
             }
             else
@@ -331,12 +331,12 @@ namespace ResinTimer
 
                 Preferences.Set(SettingConstants.RF_END_TIME, now.ToString(DTCulture));
 
-                endTime = now;
+                EndTime = now;
             }
 
-            lastInputTime = Preferences.Get(SettingConstants.RF_LAST_INPUT_TIME, DateTime.Now.ToString(DTCulture));
-            bounty = Preferences.Get(SettingConstants.RF_COUNT, 0);
-            addCount = Preferences.Get(SettingConstants.RF_ADD_COUNT, 0);
+            LastInputTime = Preferences.Get(SettingConstants.RF_LAST_INPUT_TIME, DateTime.Now.ToString(DTCulture));
+            Bounty = Preferences.Get(SettingConstants.RF_COUNT, 0);
+            AddCount = Preferences.Get(SettingConstants.RF_ADD_COUNT, 0);
 
             RealmEnv.LoadValues();
         }
@@ -345,40 +345,40 @@ namespace ResinTimer
         {
             DateTime now = DateTime.Now;
 
-            if (endTime <= now)
+            if (EndTime <= now)
             {
-                bounty = MaxRF;
+                Bounty = MaxRF;
             }
             else
             {
-                DateTime lastDT = DateTime.Parse(lastInputTime, DTCulture);
+                DateTime lastDT = DateTime.Parse(LastInputTime, DTCulture);
 
 #if TEST
-                int count = (int)(now - lastDT.AddMinutes(addCount)).TotalSeconds / M_TO_S;
+                int count = (int)(now - lastDT.AddMinutes(AddCount)).TotalSeconds / M_TO_S;
 #else
-                int count = (int)(now - lastDT.AddHours(addCount)).TotalSeconds / H_TO_S;
+                int count = (int)(now - lastDT.AddHours(AddCount)).TotalSeconds / HourToSec;
 #endif
 
                 if (count > 0)
                 {
-                    bounty += RFRate * count;
-                    addCount += count;
+                    Bounty += RFRate * count;
+                    AddCount += count;
                 }
             }
         }
 
         public static void CalcRemainTime()
         {
-            int remainCurrency = MaxRF - bounty;
+            int remainCurrency = MaxRF - Bounty;
             int remainCount = remainCurrency / RFRate;
-            DateTime lastDT = DateTime.Parse(lastInputTime, DTCulture);
+            DateTime lastDT = DateTime.Parse(LastInputTime, DTCulture);
 
             remainCount += (remainCurrency % RFRate) == 0 ? 0 : 1;
 
 #if TEST
-            endTime = lastDT.AddMinutes(addCount).AddMinutes(remainCount);
+            EndTime = lastDT.AddMinutes(AddCount).AddMinutes(remainCount);
 #else
-            endTime = lastDT.AddHours(addCount).AddHours(remainCount);
+            EndTime = lastDT.AddHours(AddCount).AddHours(remainCount);
 #endif
         }
 
@@ -386,10 +386,10 @@ namespace ResinTimer
         {
             try
             {
-                Preferences.Set(SettingConstants.RF_COUNT, bounty);
-                Preferences.Set(SettingConstants.RF_ADD_COUNT, addCount);
-                Preferences.Set(SettingConstants.RF_END_TIME, endTime.ToString(DTCulture));
-                Preferences.Set(SettingConstants.RF_LAST_INPUT_TIME, lastInputTime);
+                Preferences.Set(SettingConstants.RF_COUNT, Bounty);
+                Preferences.Set(SettingConstants.RF_ADD_COUNT, AddCount);
+                Preferences.Set(SettingConstants.RF_END_TIME, EndTime.ToString(DTCulture));
+                Preferences.Set(SettingConstants.RF_LAST_INPUT_TIME, LastInputTime);
 
                 RealmEnv.SaveValues();
             }

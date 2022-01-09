@@ -14,7 +14,7 @@ namespace ResinTimer.Managers.NotiManagers
         {
             try
             {
-                notiType = NotiType.Furnishing;
+                NotiType = NotificationType.Furnishing;
 
                 Notis.AddRange(GetNotiList<FurnishingNoti>());
 

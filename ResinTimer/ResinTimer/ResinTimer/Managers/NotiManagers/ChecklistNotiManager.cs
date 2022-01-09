@@ -14,7 +14,7 @@ namespace ResinTimer.Managers.NotiManagers
         {
             try
             {
-                notiType = NotiType.Checklist;
+                NotiType = NotificationType.Checklist;
 
                 Notis.AddRange(GetNotiList<ChecklistNoti>());
 

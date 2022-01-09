@@ -15,7 +15,7 @@ namespace ResinTimer.Managers.NotiManagers
         {
             try
             {
-                notiType = NotiType.RealmFriendship;
+                NotiType = NotificationType.RealmFriendship;
 
                 Notis.AddRange(GetNotiList<RealmFriendshipNoti>());
 

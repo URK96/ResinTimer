@@ -105,7 +105,7 @@ namespace ResinTimer.TimerPages
 
             FurnishingNoti selectedNoti = (FurnishingNoti)ListView.SelectedItem;
 
-            selectedNoti.NotiTime = selectedNoti.NotiTime.AddHours(-FEnv.SPEEDUP_HOUR);
+            selectedNoti.NotiTime = selectedNoti.NotiTime.AddHours(-FEnv.SpeedUpHour);
 
             notiManager.EditList(selectedNoti, NotiManager.EditType.EditOnlyTime);
 

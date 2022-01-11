@@ -30,7 +30,7 @@ namespace ResinTimer.Dialogs
                 RCEnv.Currency = inputValue; //Convert.ToInt32((double)SfUpDown.Value);
                 RCEnv.AddCount = 0;
 
-                RCEnv.CalcRemainTime();
+                RCEnv.CalcEndTime();
                 RCEnv.CalcRC();
                 RCEnv.SaveValue();
 

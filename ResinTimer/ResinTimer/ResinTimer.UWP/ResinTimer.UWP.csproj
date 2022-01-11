@@ -169,6 +169,7 @@
     <Content Include="Character_Rosaria_Thumb.png" />
     <Content Include="Character_Sangonomiya_Kokomi_Thumb.png" />
     <Content Include="Character_Sayu_Thumb.png" />
+    <Content Include="Character_Shenhe_Thumb.png" />
     <Content Include="Character_Sucrose_Thumb.png" />
     <Content Include="Character_Tartaglia_Thumb.png" />
     <Content Include="Character_Thoma_Thumb.png" />
@@ -180,6 +181,7 @@
     <Content Include="Character_Xinyan_Thumb.png" />
     <Content Include="Character_Yanfei_Thumb.png" />
     <Content Include="Character_Yoimiya_Thumb.png" />
+    <Content Include="Character_Yun_Jin_Thumb.png" />
     <Content Include="Character_Zhongli_Thumb.png" />
     <Content Include="close.png" />
     <Content Include="compass.png" />

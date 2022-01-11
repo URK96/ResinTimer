@@ -37,7 +37,7 @@ namespace ResinTimer.Models.Notis
         public void EditItemType(FEnv.FurnishType type)
         {
             ItemType = type;
-            ResetTime = TimeSpan.FromHours(FEnv.resetTimeList[(int)type]);
+            ResetTime = TimeSpan.FromHours(FEnv.ResetTimeList[(int)type]);
         }
 
         public override void UpdateTime()

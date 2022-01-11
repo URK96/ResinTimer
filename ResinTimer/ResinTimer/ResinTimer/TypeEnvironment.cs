@@ -261,9 +261,18 @@ namespace ResinTimer
                     AddCount += count;
                 }
             }
+
+            CalcReaminTime();
         }
 
-        public static void CalcRemainTime()
+        private static void CalcReaminTime()
+        {
+            DateTime now = DateTime.Now;
+
+            TotalCountTime = (EndTime > now) ? (EndTime - now) : TimeSpan.FromSeconds(0);
+        }
+
+        public static void CalcEndTime()
         {
             int remainCurrency = MaxRC - Currency;
             int remainCount = remainCurrency / RCRate;
@@ -365,9 +374,18 @@ namespace ResinTimer
                     AddCount += count;
                 }
             }
+
+            CalcRemainTime();
         }
 
-        public static void CalcRemainTime()
+        private static void CalcRemainTime()
+        {
+            var now = DateTime.Now;
+
+            TotalCountTime = (EndTime > now) ? (EndTime - now) : TimeSpan.FromSeconds(0);
+        }
+
+        public static void CalcEndTime()
         {
             int remainCurrency = MaxRF - Bounty;
             int remainCount = remainCurrency / RFRate;
@@ -418,26 +436,29 @@ namespace ResinTimer
             AmethystLump
         }
 
-        public static double[] resetTimeList = { 72, 24, 48, 12, 72, 48, 24, 48, 12, 72 };
+        public static double[] ResetTimeList = { 72, 24, 48, 12, 72, 48, 24, 48, 12, 72 };
     }
 
     public static class GadgetEnvironment
     {
         public enum GadgetType { ParametricTransformer = 0, PortableWaypoint }
 
-        public static double[] resetTimeList = { 166, 168 };
+        public static double[] ResetTimeList = { 166, 168 };
     }
 
     public static class FurnishingEnvironment
     {
-        public const int SPEEDUP_HOUR = 4;
+        public const int SpeedUpHour = 4;
+
         public enum FurnishType { Rarity2, Rarity3, Rarity4 }
-        public static double[] resetTimeList = { 12, 14, 16 }; // Rarity : 2 3 4
+
+        public static double[] ResetTimeList = { 12, 14, 16 }; // Rarity : 2 3 4
     }
 
     public static class GardeningEnvironment
     {
-        public const int FULLGROW_INTERVAL = 70;
+        public const int FullGrowInterval = 70;
+
         public enum FieldType { JadeField, LuxuriantGlebe, OrderlyMeadow }
     }
 
@@ -448,15 +469,12 @@ namespace ResinTimer
 
     public class TalentEnvironment
     {
-        public const int RENEWAL_HOUR = 4;
+        public const int RenewalHour = 4;
 
-        public static TalentEnvironment Instance => instance.Value;
+        public static TalentEnvironment Instance => s_instance.Value;
 
-        private static readonly Lazy<TalentEnvironment> instance = 
+        private static readonly Lazy<TalentEnvironment> s_instance = 
             new(() => new TalentEnvironment());
-
-        public static Locations Location { get; set; }
-        public static TalentItem Item { get; set; }
 
         public List<IMaterialItem> Items { get; }
 
@@ -480,68 +498,16 @@ namespace ResinTimer
                 Items.Add(new TalentListItem(item));
             }
         }
-
-        public static void LoadSettings()
-        {
-            Server = (Servers)Preferences.Get(SettingConstants.APP_INGAMESERVER, 0);
-            Location = (Locations)Preferences.Get(SettingConstants.ITEM_TALENT_LOCATION, 0);
-        }        
-
-        public static void CheckNowTalentBook()
-        {
-            int interval = TZInfo.BaseUtcOffset.Hours - ServerUTCs[(int)Server];
-            int realRenewalHour = RENEWAL_HOUR + interval;
-            var now = DateTime.Now;
-
-            var dowValue = (now.Hour - realRenewalHour) switch
-            {
-                int result when result < 0 => now.AddDays(-1).DayOfWeek,
-                _ => now.DayOfWeek
-            };
-
-            Item = (from item in GDB.talentItems
-                    where item.Location.Equals(Location) && item.AvailableDayOfWeeks.Contains(dowValue)
-                    select item).First();
-        }
-
-        public static TalentItem CheckNowTalentBook(Locations location)
-        {
-            int interval = TZInfo.BaseUtcOffset.Hours - ServerUTCs[(int)Server];
-            int realRenewalHour = RENEWAL_HOUR + interval;
-            var now = DateTime.Now;
-
-            var dowValue = (now.Hour - realRenewalHour) switch
-            {
-                int result when result < 0 => now.AddDays(-1).DayOfWeek,
-                _ => now.DayOfWeek
-            };
-
-            return (from item in GDB.talentItems
-                    where item.Location.Equals(location) && item.AvailableDayOfWeeks.Contains(dowValue)
-                    select item).First();
-        }
-
-        public static string GetTalentBookImageName()
-        {
-            return Item.ItemName switch
-            {
-                "All" => $"talent_all_{Location:F}.png",
-                _ => $"talent_{Item.ItemName.Replace(" ", "_").ToLower()}.png"
-            };
-        }
     }
 
     public class WeaponAscensionEnvironment
     {
-        public const int RENEWAL_HOUR = 4;
+        public const int RenewalHour = 4;
 
-        public static WeaponAscensionEnvironment Instance => instance.Value;
+        public static WeaponAscensionEnvironment Instance => s_instance.Value;
 
-        private static readonly Lazy<WeaponAscensionEnvironment> instance =
+        private static readonly Lazy<WeaponAscensionEnvironment> s_instance =
             new(() => new WeaponAscensionEnvironment());
-
-        public static Locations Location { get; set; }
-        public static WeaponAscensionItem Item { get; set; }
 
         public List<IMaterialItem> Items { get; }
 
@@ -564,55 +530,6 @@ namespace ResinTimer
             {
                 Items.Add(new WAListItem(item));
             }
-        }
-
-        public static void LoadSettings()
-        {
-            Server = (Servers)Preferences.Get(SettingConstants.APP_INGAMESERVER, 0);
-            Location = (Locations)Preferences.Get(SettingConstants.ITEM_WEAPONASCENSION_LOCATION, 0);
-        }
-
-        public static void CheckNowWAItem()
-        {
-            int interval = TZInfo.BaseUtcOffset.Hours - ServerUTCs[(int)Server];
-            int realRenewalHour = RENEWAL_HOUR + interval;
-            var now = DateTime.Now;
-
-            var dowValue = (now.Hour - realRenewalHour) switch
-            {
-                int result when result < 0 => now.AddDays(-1).DayOfWeek,
-                _ => now.DayOfWeek
-            };
-
-            Item = (from item in GDB.weaponAscensionItems
-                    where item.Location.Equals(Location) && item.AvailableDayOfWeeks.Contains(dowValue)
-                    select item).First();
-        }
-
-        public static WeaponAscensionItem CheckNowWAItem(Locations location)
-        {
-            int interval = TZInfo.BaseUtcOffset.Hours - ServerUTCs[(int)Server];
-            int realRenewalHour = RENEWAL_HOUR + interval;
-            var now = DateTime.Now;
-
-            var dowValue = (now.Hour - realRenewalHour) switch
-            {
-                int result when result < 0 => now.AddDays(-1).DayOfWeek,
-                _ => now.DayOfWeek
-            };
-
-            return (from item in GDB.weaponAscensionItems
-                    where item.Location.Equals(location) && item.AvailableDayOfWeeks.Contains(dowValue)
-                    select item).First();
-        }
-
-        public static string GetWPItemImageName()
-        {
-            return Item.ItemName switch
-            {
-                "All" => $"wa_all_{Location:F}.png",
-                _ => $"wa_{Item.ItemName.Replace(" ", "_").ToLower()}_4.png"
-            };
         }
     }
 }

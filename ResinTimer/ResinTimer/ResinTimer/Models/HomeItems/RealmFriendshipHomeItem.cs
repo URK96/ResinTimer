@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using RFEnv = ResinTimer.RealmFriendshipEnvironment;
+﻿using RFEnv = ResinTimer.RealmFriendshipEnvironment;
 
 namespace ResinTimer.Models.HomeItems
 {
@@ -17,6 +13,7 @@ namespace ResinTimer.Models.HomeItems
         public RealmFriendshipHomeItem()
         {
             RFEnv.LoadValues();
+            RFEnv.CalcRF();
         }
     }
 }

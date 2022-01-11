@@ -39,7 +39,7 @@ namespace ResinTimer.Models.Notis
         public void EditItemType(GdEnv.FieldType type)
         {
             FieldType = type;
-            ResetTime = TimeSpan.FromHours(GdEnv.FULLGROW_INTERVAL);
+            ResetTime = TimeSpan.FromHours(GdEnv.FullGrowInterval);
         }
 
         public override void UpdateTime()

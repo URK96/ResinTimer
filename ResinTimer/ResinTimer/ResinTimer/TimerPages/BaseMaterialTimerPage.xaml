@@ -58,7 +58,7 @@
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="6*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
@@ -76,8 +76,8 @@
                             </StackLayout>
 
                             <Label Grid.Row="0" Grid.Column="2"
-                                   Text=">" VerticalTextAlignment="Center"
-                                   FontSize="Title"/>
+                                   Text="▶" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                   FontSize="Subtitle"/>
                         </Grid>
                     </Frame>
                 </ContentView>

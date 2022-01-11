@@ -56,11 +56,11 @@ namespace ResinTimer
             switch (type)
             {
                 case RealmEnv.RealmType.Currency:
-                    RCEnv.CalcRemainTime();
+                    RCEnv.CalcEndTime();
                     RCEnv.SaveValue();
                     break;
                 case RealmEnv.RealmType.Friendship:
-                    RFEnv.CalcRemainTime();
+                    RFEnv.CalcEndTime();
                     RFEnv.SaveValue();
                     break;
             }

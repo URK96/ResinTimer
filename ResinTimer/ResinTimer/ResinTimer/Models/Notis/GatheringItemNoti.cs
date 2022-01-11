@@ -51,7 +51,7 @@ namespace ResinTimer.Models.Notis
         public void EditItemType(GIEnv.GItemType type)
         {
             ItemType = type;
-            ResetTime = TimeSpan.FromHours(GIEnv.resetTimeList[(int)type]);
+            ResetTime = TimeSpan.FromHours(GIEnv.ResetTimeList[(int)type]);
         }
 
         public override void UpdateTime()

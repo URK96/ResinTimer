@@ -8,7 +8,7 @@ namespace ResinTimer.Managers.NotiManagers
 {
     public class GardeningNotiManager : NotiManager
     {
-        const int ID_PREINDEX = 3900;
+        const int IdPreIndex = 3900;
 
         public GardeningNotiManager() : base()
         {
@@ -36,7 +36,7 @@ namespace ResinTimer.Managers.NotiManagers
         {
             for (int i = 0; i < Notis.Count; ++i)
             {
-                Notis[i].NotiId = ID_PREINDEX + i;
+                Notis[i].NotiId = IdPreIndex + i;
             }
         }
 
@@ -45,24 +45,22 @@ namespace ResinTimer.Managers.NotiManagers
             switch (type)
             {
                 case EditType.Add:
-                    item.NotiId = ID_PREINDEX + Notis.Count;
+                    item.NotiId = IdPreIndex + Notis.Count;
 
                     Notis.Add(item);
                     Notis.Sort(SortNotis);
                     break;
                 case EditType.Remove:
-                    Notis.Remove(Notis.Find(x => x.NotiId.Equals(item.NotiId)));
+                    Notis.Remove(Notis.Find(x => x.NotiId == item.NotiId));
                     break;
                 case EditType.Edit:
-                    int index = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
+                    int index = Notis.FindIndex(x => x.NotiId == item.NotiId);
 
                     Notis[index] = item;
                     Notis[index].UpdateTime();
                     break;
                 case EditType.EditOnlyTime:
-                    int index2 = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
-
-                    Notis[index2] = item;
+                    Notis[Notis.FindIndex(x => x.NotiId == item.NotiId)] = item;
                     break;
                 default:
                     break;

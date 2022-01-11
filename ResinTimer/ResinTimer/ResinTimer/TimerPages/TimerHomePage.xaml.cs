@@ -25,7 +25,11 @@ namespace ResinTimer.TimerPages
                 new ResinHomeItem(),
                 new RealmCurrencyHomeItem(),
                 new RealmFriendshipHomeItem(),
-                new ExpeditionHomeItem()
+                new ExpeditionHomeItem(),
+                new GIHomeItem(),
+                new GadgetHomeItem(),
+                new FurnishingHomeItem(),
+                new GardeningHomeItem()
             };
 
             BindingContext = this;

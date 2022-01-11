@@ -123,10 +123,6 @@ namespace ResinTimer.TimerPages
         {
             try
             {
-                var now = DateTime.Now;
-
-                RFEnv.TotalCountTime = (RFEnv.EndTime > now) ? (RFEnv.EndTime - now) : TimeSpan.FromSeconds(0);
-
                 RFEnv.CalcRF();
 
                 MainThread.BeginInvokeOnMainThread(RefreshInfo);

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using RCEnv = ResinTimer.RealmCurrencyEnvironment;
+﻿using RCEnv = ResinTimer.RealmCurrencyEnvironment;
 
 namespace ResinTimer.Models.HomeItems
 {
@@ -17,6 +13,7 @@ namespace ResinTimer.Models.HomeItems
         public RealmCurrencyHomeItem()
         {
             RCEnv.LoadValues();
+            RCEnv.CalcRC();
         }
     }
 }

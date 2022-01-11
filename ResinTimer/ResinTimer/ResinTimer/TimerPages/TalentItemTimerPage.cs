@@ -28,16 +28,14 @@ namespace ResinTimer.TimerPages
         {
             base.ShowDetailInfo(selectedItem);
 
-            var currentItem = selectedItem as TalentListItem;
-
-            if (currentItem == null)
+            if (selectedItem is not TalentListItem currentItem)
             {
                 return;
             }
 
             List<string> items = new();
 
-            if (currentItem.Item.ItemName.Equals("All"))
+            if (currentItem.Item.ItemName is "All")
             {
                 items.AddRange(from item in AppEnv.GDB.talentItems
                                where item.Location.Equals(currentItem.Item.Location)

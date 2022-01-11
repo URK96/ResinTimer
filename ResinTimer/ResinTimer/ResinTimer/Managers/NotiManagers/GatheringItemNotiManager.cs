@@ -8,7 +8,7 @@ namespace ResinTimer.Managers.NotiManagers
 {
     public class GatheringItemNotiManager : NotiManager
     {
-        const int ID_PREINDEX = 1500;
+        const int IdPreIndex = 1500;
 
         public GatheringItemNotiManager() : base()
         {
@@ -36,7 +36,7 @@ namespace ResinTimer.Managers.NotiManagers
         {
             for (int i = 0; i < Notis.Count; ++i)
             {
-                Notis[i].NotiId = ID_PREINDEX + i;
+                Notis[i].NotiId = IdPreIndex + i;
             }
         }
 
@@ -45,16 +45,16 @@ namespace ResinTimer.Managers.NotiManagers
             switch (type)
             {
                 case EditType.Add:
-                    item.NotiId = ID_PREINDEX + Notis.Count;
+                    item.NotiId = IdPreIndex + Notis.Count;
 
                     Notis.Add(item);
                     Notis.Sort(SortNotis);
                     break;
                 case EditType.Remove:
-                    Notis.Remove(Notis.Find(x => x.NotiId.Equals(item.NotiId)));
+                    Notis.Remove(Notis.Find(x => x.NotiId == item.NotiId));
                     break;
                 case EditType.Edit:
-                    var index = Notis.FindIndex(x => x.NotiId.Equals(item.NotiId));
+                    var index = Notis.FindIndex(x => x.NotiId == item.NotiId);
 
                     Notis[index] = item;
                     Notis[index].UpdateTime();

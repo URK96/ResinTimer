@@ -30,7 +30,7 @@ namespace ResinTimer.Dialogs
                 RFEnv.Bounty = inputValue; //Convert.ToInt32((double)SfUpDown.Value);
                 RFEnv.AddCount = 0;
                 
-                RFEnv.CalcRemainTime();
+                RFEnv.CalcEndTime();
                 RFEnv.CalcRF();
                 RFEnv.SaveValue();
 

@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ResinTimer
+namespace ResinTimer.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WebViewPage : ContentPage
+    public partial class WebViewBasePage : ContentPage
     {
         public StackLayout RootLayout => WebViewRootLayout;
         public WebView WebView => BaseWebView;
 
-        public WebViewPage()
+        public WebViewBasePage()
         {
             InitializeComponent();
         }
 
-        public WebViewPage(string url) : this()
+        public WebViewBasePage(string url) : this()
         {
             NavigateURL(url);
         }

@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
 {
-    public class AccountCookieInputAutoPage : WebViewPage
+    public class AccountCookieInputAutoPage : WebViewBasePage
     {
         private const string SiteUrl = "https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481";
 

@@ -83,12 +83,12 @@ namespace ResinTimer
 
         public static DayOfWeek GetServerDayOfWeek()
         {
-            const int RENEWAL_HOUR = 4;
+            const int RenewalHour = 4;
 
             LoadAppSettings();
 
             int interval = TZInfo.BaseUtcOffset.Hours - ServerUTCs[(int)Server];
-            int realRenewalHour = RENEWAL_HOUR + interval;
+            int realRenewalHour = RenewalHour + interval;
             DateTime now = DateTime.Now;
 
             return (now.Hour - realRenewalHour) switch

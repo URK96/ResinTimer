@@ -797,6 +797,9 @@ MIT License</value>
   <data name="MasterDetail_MasterList_Web_GenshinWorldMap" xml:space="preserve">
     <value>월드맵</value>
   </data>
+  <data name="MasterDetail_MasterList_Web_MaterialCalcOfficail" xml:space="preserve">
+    <value>육성 계산기</value>
+  </data>
   <data name="NotiSettingPage_AddDialog_Summary" xml:space="preserve">
     <value>알림을 받고 싶은 레진 개수를 입력하세요</value>
   </data>
@@ -1085,8 +1088,14 @@ MIT License</value>
   <data name="TalentWidget_UpdateComplete" xml:space="preserve">
     <value>특성책 위젯 갱신 완료</value>
   </data>
+  <data name="TimerMainPage_Complete" xml:space="preserve">
+    <value>완료</value>
+  </data>
+  <data name="TimerMainPage_Remain" xml:space="preserve">
+    <value>남음</value>
+  </data>
   <data name="TimerMainPage_Title" xml:space="preserve">
-    <value>타이머 요약</value>
+    <value>메인</value>
   </data>
   <data name="Toolbar_Add" xml:space="preserve">
     <value>추가</value>

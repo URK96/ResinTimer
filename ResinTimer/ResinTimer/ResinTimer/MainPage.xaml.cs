@@ -32,16 +32,17 @@ namespace ResinTimer
             {
                 startPage = Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0) switch
                 {
-                    1 => new RealmCurrencyTimerPage(),
-                    2 => new RealmFriendshipTimerPage(),
-                    3 => new ExpeditionTimerPage(),
-                    4 => new GatheringItemTimerPage(),
-                    5 => new GadgetTimerPage(),
-                    6 => new FurnishingTimerPage(),
-                    7 => new GardeningTimerPage(),
-                    8 => new TalentItemTimerPage(),
-                    9 => new WAItemTimerPage(),
-                    _ => new ResinTimerPage()
+                    1 => new ResinTimerPage(),
+                    2 => new RealmCurrencyTimerPage(),
+                    3 => new RealmFriendshipTimerPage(),
+                    4 => new ExpeditionTimerPage(),
+                    5 => new GatheringItemTimerPage(),
+                    6 => new GadgetTimerPage(),
+                    7 => new FurnishingTimerPage(),
+                    8 => new GardeningTimerPage(),
+                    9 => new TalentItemTimerPage(),
+                    10 => new WAItemTimerPage(),
+                    _ => new TimerHomePage()
                 };
             }
             catch
@@ -56,6 +57,7 @@ namespace ResinTimer
         {
             return startPageId switch
             {
+                "app_timer_resin" => new ResinTimerPage(),
                 "app_timer_realmcurrency" => new RealmCurrencyTimerPage(),
                 "app_timer_realmfriendship" => new RealmFriendshipTimerPage(),
                 "app_timer_expedition" => new ExpeditionTimerPage(),
@@ -65,7 +67,7 @@ namespace ResinTimer
                 "app_timer_gardening" => new GardeningTimerPage(),
                 "app_timer_talent" => new TalentItemTimerPage(),
                 "app_timer_wa" => new WAItemTimerPage(),
-                _ => new ResinTimerPage()
+                _ => new TimerHomePage()
             };
         }
 

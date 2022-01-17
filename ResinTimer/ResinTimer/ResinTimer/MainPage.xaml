@@ -33,11 +33,12 @@
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Talent}" Icon="talent_freedom.png" Target="{x:Type timers:TalentItemTimerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_WeaponAscension}" Icon="wa_aerosiderite_4.png" Target="{x:Type timers:WAItemTimerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_GachaLog}" Icon="intertwined_fate.png" Target="{x:Type utils:GachaLogViewerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Event_DailyCheckIn}" Icon="fractured_fruit_data.png" Target="{x:Type local:DailyCheckInEventPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Web_GenshinWorldMap}" Icon="geshin_worldmap.png" Target="{x:Type local:GenshinWorldMapPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_HowToUse}" Target="{x:Type local:HowToUseListPage}" />
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_AppInfo}" Target="{x:Type pages:InfoPage}" />
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Settings}" Target="{x:Type pages:SettingPage}" />
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Event_DailyCheckIn}" Icon="fractured_fruit_data.png" Target="{x:Type utils:DailyCheckInEventPage}"/>
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Web_GenshinWorldMap}" Icon="geshin_worldmap.png" Target="{x:Type utils:GenshinWorldMapPage}"/>
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Web_MaterialCalcOfficail}" Icon="heros_wit.png" Target="{x:Type utils:MaterialCalcOfficialPage}"/>
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_HowToUse}" Target="{x:Type local:HowToUseListPage}"/>
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_AppInfo}" Target="{x:Type pages:InfoPage}"/>
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Settings}" Target="{x:Type pages:SettingPage}"/>
                         </x:Array>
                     </ListView.ItemsSource>
 

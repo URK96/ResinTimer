@@ -1,4 +1,8 @@
-﻿using RCEnv = ResinTimer.RealmCurrencyEnvironment;
+﻿using System;
+
+using ResinTimer.Resources;
+
+using RCEnv = ResinTimer.RealmCurrencyEnvironment;
 
 namespace ResinTimer.Models.HomeItems
 {
@@ -6,7 +10,9 @@ namespace ResinTimer.Models.HomeItems
     {
         public string StatusMessage => $"{RCEnv.Percentage} %";
 
-        public string OptionalMessage => $"{RCEnv.TotalCountTime.Hours} : {RCEnv.TotalCountTime.Minutes}";
+        public string OptionalMessage => (RCEnv.EndTime > DateTime.Now) ?
+            $"{RCEnv.TotalCountTime.Hours} : {RCEnv.TotalCountTime.Minutes:D2} {AppResources.TimerMainPage_Remain}" :
+            AppResources.TimerMainPage_Complete;
 
         public string ImageString => "realm_currency.png";
 

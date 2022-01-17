@@ -1,11 +1,9 @@
 ﻿using ResinTimer.Resources;
 using ResinTimer.Services;
 
-using Xamarin.Forms;
-
-namespace ResinTimer
+namespace ResinTimer.Pages.UtilPages
 {
-    public class DailyCheckInEventPage : WebViewPage
+    public class DailyCheckInEventPage : WebViewBasePage
     {
         public DailyCheckInEventPage() : base(DailyCheckInService.EVENT_DAILY_CHECKIN_URL)
         {

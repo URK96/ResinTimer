@@ -7,7 +7,7 @@ using AppEnv = ResinTimer.AppEnvironment;
 
 namespace ResinTimer.Pages.UtilPages
 {
-    public class GachaLogWebViewPage : WebViewPage
+    public class GachaLogWebViewPage : WebViewBasePage
     {
         public GachaLogWebViewPage()
         {

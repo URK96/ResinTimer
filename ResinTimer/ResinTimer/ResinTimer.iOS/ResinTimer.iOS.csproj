@@ -599,6 +599,12 @@
     <ImageAsset Include="Assets.xcassets\Character_Yun_Jin_Thumb.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\heros_wit.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\heros_wit.png.imageset\heros_wit.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\key.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -1099,7 +1105,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

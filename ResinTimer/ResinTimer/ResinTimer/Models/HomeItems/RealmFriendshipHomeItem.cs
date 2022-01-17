@@ -1,4 +1,8 @@
-﻿using RFEnv = ResinTimer.RealmFriendshipEnvironment;
+﻿using ResinTimer.Resources;
+
+using System;
+
+using RFEnv = ResinTimer.RealmFriendshipEnvironment;
 
 namespace ResinTimer.Models.HomeItems
 {
@@ -6,7 +10,9 @@ namespace ResinTimer.Models.HomeItems
     {
         public string StatusMessage => $"{RFEnv.Percentage} %";
 
-        public string OptionalMessage => $"{RFEnv.TotalCountTime.Hours} : {RFEnv.TotalCountTime.Minutes}";
+        public string OptionalMessage => (RFEnv.EndTime > DateTime.Now) ?
+            $"{RFEnv.TotalCountTime.Hours} : {RFEnv.TotalCountTime.Minutes:D2} {AppResources.TimerMainPage_Remain}" :
+            AppResources.TimerMainPage_Complete;
 
         public string ImageString => "friendship.png";
 

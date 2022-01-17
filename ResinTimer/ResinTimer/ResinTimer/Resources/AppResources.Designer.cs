@@ -2008,6 +2008,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Material Calc과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string MasterDetail_MasterList_Web_MaterialCalcOfficail {
+            get {
+                return ResourceManager.GetString("MasterDetail_MasterList_Web_MaterialCalcOfficail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   expedition is complete과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Noti_Expedition_Message {
@@ -2859,6 +2868,24 @@ namespace ResinTimer.Resources {
         public static string TalentWidget_UpdateComplete {
             get {
                 return ResourceManager.GetString("TalentWidget_UpdateComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Complete과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TimerMainPage_Complete {
+            get {
+                return ResourceManager.GetString("TimerMainPage_Complete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Remain과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TimerMainPage_Remain {
+            get {
+                return ResourceManager.GetString("TimerMainPage_Remain", resourceCulture);
             }
         }
         

@@ -798,6 +798,9 @@ MIT License</value>
   <data name="MasterDetail_MasterList_Web_GenshinWorldMap" xml:space="preserve">
     <value>World Map</value>
   </data>
+  <data name="MasterDetail_MasterList_Web_MaterialCalcOfficail" xml:space="preserve">
+    <value>Material Calc</value>
+  </data>
   <data name="NotiSettingPage_AddDialog_Summary" xml:space="preserve">
     <value>Enter the number of resins you would like to be notified of.</value>
   </data>
@@ -1082,6 +1085,12 @@ MIT License</value>
   </data>
   <data name="TalentWidget_UpdateComplete" xml:space="preserve">
     <value>Talent Widget Updated</value>
+  </data>
+  <data name="TimerMainPage_Complete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="TimerMainPage_Remain" xml:space="preserve">
+    <value>Remain</value>
   </data>
   <data name="TimerMainPage_Title" xml:space="preserve">
     <value>Timer Main</value>

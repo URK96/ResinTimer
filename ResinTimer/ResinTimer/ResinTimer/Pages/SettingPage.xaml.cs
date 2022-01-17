@@ -20,6 +20,7 @@ namespace ResinTimer.Pages
     {
         private string[] StartScreenList => new string[]
         {
+            AppResources.MasterDetail_MasterList_TimerMain,
             AppResources.MasterDetail_MasterList_Resin,
             AppResources.MasterDetail_MasterList_RealmCurrency,
             AppResources.MasterDetail_MasterList_RealmFriendship,
@@ -49,14 +50,15 @@ namespace ResinTimer.Pages
         {
             // App Section
             Notification.On = Preferences.Get(SettingConstants.NOTI_ENABLED, false);
-            StartDetailScreenNow.Text = GetStartScreenString(Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0));
+            StartDetailScreenNow.Text = GetStartScreenString(
+                Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0));
             Use24HTimeFormat.On = Preferences.Get(SettingConstants.APP_USE_24H_TIMEFORMAT, false);
             AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnv.AppLang.System)];
             AppInGameServerNow.Text = AppEnv.ServerList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)];
 
             // Timer Common Section
             ShowOverflow.On = Preferences.Get(SettingConstants.SHOW_OVERFLOW, false);
-            QuickCalcVibration.IsEnabled = Device.RuntimePlatform != Device.UWP;
+            QuickCalcVibration.IsEnabled = Device.RuntimePlatform is not Device.UWP;
             QuickCalcVibration.On = Preferences.Get(SettingConstants.QUICKCALC_VIBRATION, true);
         }
 
@@ -64,16 +66,17 @@ namespace ResinTimer.Pages
         {
             return value switch
             {
-                1 => AppResources.MasterDetail_MasterList_RealmCurrency,
-                2 => AppResources.MasterDetail_MasterList_RealmFriendship,
-                3 => AppResources.MasterDetail_MasterList_Expedition,
-                4 => AppResources.MasterDetail_MasterList_GatheringItem,
-                5 => AppResources.MasterDetail_MasterList_Gadget,
-                6 => AppResources.MasterDetail_MasterList_Furnishing,
-                7 => AppResources.MasterDetail_MasterList_Gardening,
-                8 => AppResources.MasterDetail_MasterList_Talent,
-                9 => AppResources.MasterDetail_MasterList_WeaponAscension,
-                _ => AppResources.MasterDetail_MasterList_Resin
+                1 => AppResources.MasterDetail_MasterList_Resin,
+                2 => AppResources.MasterDetail_MasterList_RealmCurrency,
+                3 => AppResources.MasterDetail_MasterList_RealmFriendship,
+                4 => AppResources.MasterDetail_MasterList_Expedition,
+                5 => AppResources.MasterDetail_MasterList_GatheringItem,
+                6 => AppResources.MasterDetail_MasterList_Gadget,
+                7 => AppResources.MasterDetail_MasterList_Furnishing,
+                8 => AppResources.MasterDetail_MasterList_Gardening,
+                9 => AppResources.MasterDetail_MasterList_Talent,
+                10 => AppResources.MasterDetail_MasterList_WeaponAscension,
+                _ => AppResources.MasterDetail_MasterList_TimerMain
             };
         }
 
@@ -95,7 +98,7 @@ namespace ResinTimer.Pages
 
             if (e.Value)
             {
-                if (Device.RuntimePlatform == Device.UWP)
+                if (Device.RuntimePlatform is Device.UWP)
                 {
                     if (!await bootService.Register())
                     {
@@ -113,7 +116,7 @@ namespace ResinTimer.Pages
             {
                 DependencyService.Get<INotiScheduleService>().CancelAll();
 
-                if (Device.RuntimePlatform == Device.UWP)
+                if (Device.RuntimePlatform is Device.UWP)
                 {
                     await bootService.Unregister();
                 }
@@ -132,30 +135,40 @@ namespace ResinTimer.Pages
 
         private async void StartDetailScreenTapped(object sender, EventArgs e)
         {
-            BaseDialog dialog = new BaseDialog(AppResources.SettingPage_Section_App_Start_DetailScreen_Dialog_Title,
+            BaseDialog dialog = new(AppResources.SettingPage_Section_App_Start_DetailScreen_Dialog_Title,
                 new RadioPreferenceView(StartScreenList, SettingConstants.APP_START_DETAILSCREEN));
 
-            dialog.OnClose += delegate { StartDetailScreenNow.Text = GetStartScreenString(Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0)); };
+            dialog.OnClose += delegate 
+            { 
+                StartDetailScreenNow.Text = GetStartScreenString(
+                    Preferences.Get(SettingConstants.APP_START_DETAILSCREEN, 0)); 
+            };
 
             await PopupNavigation.Instance.PushAsync(dialog);
         }
 
         private async void AppLangTapped(object sender, EventArgs e)
         {
-            BaseDialog dialog = new BaseDialog(AppResources.SettingPage_Section_App_AppLang_Dialog_Title,
+            BaseDialog dialog = new(AppResources.SettingPage_Section_App_AppLang_Dialog_Title,
                 new RadioPreferenceView(AppLangList, SettingConstants.APP_LANG));
 
-            dialog.OnClose += delegate { AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnvironment.AppLang.System)]; };
+            dialog.OnClose += delegate 
+            { 
+                AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnv.AppLang.System)];
+            };
 
             await PopupNavigation.Instance.PushAsync(dialog);
         }
 
         private async void AppInGameServerTapped(object sender, EventArgs e)
         {
-            BaseDialog dialog = new BaseDialog(AppResources.SettingPage_Section_App_InGameServer_Dialog_Title,
+            BaseDialog dialog = new(AppResources.SettingPage_Section_App_InGameServer_Dialog_Title,
                 new RadioPreferenceView(AppEnv.ServerList, SettingConstants.APP_INGAMESERVER));
 
-            dialog.OnClose += delegate { AppInGameServerNow.Text = AppEnv.ServerList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)]; };
+            dialog.OnClose += delegate 
+            { 
+                AppInGameServerNow.Text = AppEnv.ServerList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)];
+            };
 
             await PopupNavigation.Instance.PushAsync(dialog);
         }

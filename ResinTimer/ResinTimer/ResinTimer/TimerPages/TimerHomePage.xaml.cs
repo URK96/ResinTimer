@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -40,9 +39,30 @@ namespace ResinTimer.TimerPages
             await Navigation.PushAsync(new EditMainFlyoutList());
         }
 
-        private void ListCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void ListCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (e.CurrentSelection.Count < 1)
+            {
+                return;
+            }
 
+            var item = e.CurrentSelection.FirstOrDefault() as IHomeItem;
+            var flyoutPage = Application.Current.MainPage as FlyoutPage;
+
+            await Task.Delay(100);
+
+            flyoutPage.Detail = new NavigationPage(item switch
+            {
+                ResinHomeItem => new ResinTimerPage(),
+                RealmCurrencyHomeItem => new RealmCurrencyTimerPage(),
+                RealmFriendshipHomeItem => new RealmFriendshipTimerPage(),
+                ExpeditionHomeItem => new ExpeditionTimerPage(),
+                GIHomeItem => new GatheringItemTimerPage(),
+                GadgetHomeItem => new GadgetTimerPage(),
+                FurnishingHomeItem => new FurnishingTimerPage(),
+                GardeningHomeItem => new GardeningTimerPage(),
+                _ => new ResinTimerPage()
+            });
         }
     }
 }

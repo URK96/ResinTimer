@@ -329,6 +329,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="Checklist_Type_Weekly" xml:space="preserve">
     <value>Weekly</value>
   </data>
+  <data name="Common_FeatureIsNotReady" xml:space="preserve">
+    <value>This feature will be updated</value>
+  </data>
   <data name="CurrencySimpleEditDialog_Title" xml:space="preserve">
     <value>Simple Edit Currency</value>
   </data>

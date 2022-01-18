@@ -6,15 +6,15 @@ using REnv = ResinTimer.ResinEnvironment;
 
 namespace ResinTimer.Models.HomeItems
 {
-    public class ResinHomeItem : IHomeItem
+    public class ResinHomeItem : HomeItem
     {
-        public string StatusMessage => $"{REnv.Resin} / {REnv.MaxResin}";
+        public override string StatusMessage => $"{REnv.Resin} / {REnv.MaxResin}";
 
-        public string OptionalMessage => (REnv.EndTime > DateTime.Now) ?
+        public override string OptionalMessage => (REnv.EndTime > DateTime.Now) ?
             $"{REnv.TotalCountTime.Hours} : {REnv.TotalCountTime.Minutes:D2} {AppResources.TimerMainPage_Remain}" :
             AppResources.TimerMainPage_Complete;
 
-        public string ImageString => "resin.png";
+        public override string ImageString => "resin.png";
 
         public ResinHomeItem()
         {

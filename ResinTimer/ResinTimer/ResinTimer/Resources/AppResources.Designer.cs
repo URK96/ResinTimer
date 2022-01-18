@@ -681,6 +681,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   This feature will be updated과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Common_FeatureIsNotReady {
+            get {
+                return ResourceManager.GetString("Common_FeatureIsNotReady", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Simple Edit Currency과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string CurrencySimpleEditDialog_Title {

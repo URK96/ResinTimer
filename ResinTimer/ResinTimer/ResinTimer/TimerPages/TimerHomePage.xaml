@@ -71,7 +71,7 @@
                                 <Label Text="{Binding StatusMessage}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                                        FontSize="Title" FontAttributes="Bold" />
 
-                                <Label Margin="0, 5, 0, 0"
+                                <Label Margin="0, 5, 0, 0" IsVisible="{Binding OptionalVisible}"
                                        Text="{Binding OptionalMessage}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                                        FontSize="Subtitle"/>
                             </StackLayout>

@@ -13,7 +13,7 @@ namespace ResinTimer.TimerPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TimerHomePage : ContentPage
     {
-        public List<IHomeItem> Items { get; }
+        public List<HomeItem> Items { get; }
 
         public TimerHomePage()
         {
@@ -46,7 +46,7 @@ namespace ResinTimer.TimerPages
                 return;
             }
 
-            var item = e.CurrentSelection.FirstOrDefault() as IHomeItem;
+            var item = e.CurrentSelection.FirstOrDefault() as HomeItem;
             var flyoutPage = Application.Current.MainPage as FlyoutPage;
 
             await Task.Delay(100);

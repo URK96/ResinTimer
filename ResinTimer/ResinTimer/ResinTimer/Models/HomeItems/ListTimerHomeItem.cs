@@ -7,9 +7,9 @@ using System.Text;
 
 namespace ResinTimer.Models.HomeItems
 {
-    public abstract class ListTimerHomeItem : IHomeItem
+    public abstract class ListTimerHomeItem : HomeItem
     {
-        public string StatusMessage
+        public override string StatusMessage
         {
             get
             {
@@ -21,9 +21,9 @@ namespace ResinTimer.Models.HomeItems
             }
         }
 
-        public virtual string OptionalMessage => string.Empty;
+        public override string OptionalMessage => string.Empty;
 
-        public abstract string ImageString { get; }
+        //public string ImageString { get; }
 
         private readonly NotiManager _manager;
 

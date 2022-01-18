@@ -1,5 +1,7 @@
 ﻿using ResinTimer.Resources;
 
+using Xamarin.Forms;
+
 using WAEnv = ResinTimer.WeaponAscensionEnvironment;
 
 namespace ResinTimer.TimerPages
@@ -17,6 +19,11 @@ namespace ResinTimer.TimerPages
             WAEnv.Instance.UpdateNowWAItems();
 
             base.OnAppearing();
+        }
+
+        internal override void ShowDetailInfo(object selectedItem)
+        {
+            DependencyService.Get<IToast>().Show(AppResources.Common_FeatureIsNotReady);
         }
     }
 }

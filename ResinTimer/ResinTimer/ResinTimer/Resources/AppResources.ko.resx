@@ -329,6 +329,9 @@
   <data name="Checklist_Type_Weekly" xml:space="preserve">
     <value>매주</value>
   </data>
+  <data name="Common_FeatureIsNotReady" xml:space="preserve">
+    <value>추후 업데이트 예정입니다.</value>
+  </data>
   <data name="CurrencySimpleEditDialog_Title" xml:space="preserve">
     <value>화폐 간편 수정</value>
   </data>

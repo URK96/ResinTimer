@@ -6,15 +6,16 @@ using RFEnv = ResinTimer.RealmFriendshipEnvironment;
 
 namespace ResinTimer.Models.HomeItems
 {
-    public class RealmFriendshipHomeItem : IHomeItem
+    public class RealmFriendshipHomeItem : HomeItem
     {
-        public string StatusMessage => $"{RFEnv.Percentage} %";
+        public override string StatusMessage => $"{RFEnv.Percentage} %";
 
-        public string OptionalMessage => (RFEnv.EndTime > DateTime.Now) ?
-            $"{RFEnv.TotalCountTime.Hours} : {RFEnv.TotalCountTime.Minutes:D2} {AppResources.TimerMainPage_Remain}" :
+        public override string OptionalMessage => (RFEnv.EndTime > DateTime.Now) ?
+            $"{(int)RFEnv.TotalCountTime.TotalHours} : {RFEnv.TotalCountTime.Minutes:D2} " +
+            $"{AppResources.TimerMainPage_Remain}" :
             AppResources.TimerMainPage_Complete;
 
-        public string ImageString => "friendship.png";
+        public override string ImageString => "friendship.png";
 
         public RealmFriendshipHomeItem()
         {

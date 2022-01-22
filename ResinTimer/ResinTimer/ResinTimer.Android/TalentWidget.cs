@@ -77,8 +77,6 @@ namespace ResinTimer.Droid
 
             TalentEnv.Instance.UpdateNowTalentBooks();
 
-            AppEnv.GDB ??= new GenshinDB_Core.GenshinDB(AppResources.Culture);
-
             UpdateLayout(context, appWidgetManager, appWidgetIds);
 
             if (isClick)
@@ -103,7 +101,7 @@ namespace ResinTimer.Droid
 
                 for (int i = 0; i < locationImageViewIds.Length; ++i)
                 {
-                    var location = (Locations)i;
+                    Locations location = (Locations)i;
                     TalentListItem item = TalentEnv.Instance.Items
                         .Find(x => (x as TalentListItem).Item.Location == location) as TalentListItem;
                     string itemName = item.Item.ItemName;
@@ -141,7 +139,7 @@ namespace ResinTimer.Droid
 
         private void CreateTalentIconClickIntent(Context context, RemoteViews remoteViews, int id, string itemName, Locations location)
         {
-            var runIntent = new Intent(context, typeof(TalentWidget));
+            Intent runIntent = new Intent(context, typeof(TalentWidget));
             runIntent.SetAction(Intent.ActionMain);
             runIntent.PutExtra(KEY_RUNAPP, VALUE_RUNAPP);
             runIntent.PutStringArrayListExtra(KEY_TALENTITEM_LIST, CreateTalentList(itemName, location));
@@ -181,18 +179,11 @@ namespace ResinTimer.Droid
 
         private List<string> CreateTalentList(string itemName, Locations location)
         {
-            var items = new List<string>();
+            List<string> items = new List<string>();
 
-            if (itemName.Equals("All"))
-            {
-                items.AddRange(from item in AppEnv.GDB.talentItems
-                               where item.Location.Equals(location)
-                               select item.ItemName);
-            }
-            else
-            {
-                items.Add(itemName);
-            }
+            items.AddRange(from TalentListItem item in TalentEnv.Instance.Items
+                           where item.Item.Location == location
+                           select item.Item.ItemName);
 
             return items;
         }

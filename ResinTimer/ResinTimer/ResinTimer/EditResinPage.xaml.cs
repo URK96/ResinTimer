@@ -42,12 +42,12 @@ namespace ResinTimer
             {
                 case REnv.ApplyType.Time:
                     REnv.OneCountTime = TimeSpan.FromSeconds(
-                        REnv.TotalCountTime.TotalSeconds % REnv.ONE_RESTORE_INTERVAL);
+                        REnv.TotalCountTime.TotalSeconds % REnv.OneRestoreInterval);
                     break;
                 case REnv.ApplyType.Resin:
-                    REnv.OneCountTime = TimeSpan.FromSeconds(REnv.ONE_RESTORE_INTERVAL);
+                    REnv.OneCountTime = TimeSpan.FromSeconds(REnv.OneRestoreInterval);
                     REnv.TotalCountTime = TimeSpan.FromSeconds(
-                        REnv.ONE_RESTORE_INTERVAL * (REnv.MaxResin - REnv.Resin));
+                        REnv.OneRestoreInterval * (REnv.MaxResin - REnv.Resin));
                     break;
             }
 

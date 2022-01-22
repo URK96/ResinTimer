@@ -127,6 +127,36 @@
                     Text="Reset"
                     Pressed="ButtonPressed" Released="ButtonReleased"/>
         </Grid>
+
+        <!--<Grid x:Name="SyncControlLayout" 
+              AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutBounds="{OnPlatform Android='0.5, 0.95, 0.95, 0.20', Default='0.5, 0.95, 0.95, 0.20'}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Orientation="Vertical" Grid.Row="0">
+                <Label x:Name="SyncStatusLabel"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                       FontAttributes="Bold" FontSize="Title" />
+
+                <Label x:Name="SyncStatusTipLabel" Margin="0, 2, 0, 0" IsVisible="False"
+                       Text="{x:Static resources:AppResources.Common_SyncTip}" TextColor="#0682F6" TextDecorations="Underline"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                       FontAttributes="Bold" FontSize="Caption">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding UrlOpenTabCommand}"
+                                              CommandParameter="https://gravel-shrew-9cf.notion.site/How-to-solve-resin-sync-issue-18c9dfd3f21b457f8cbe9a85b1c57144" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+            <Button x:Name="ManualSyncButton" Grid.Row="1"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="{x:Static resources:AppResources.Sync_Renew}" 
+                    Clicked="ManualSyncButtonClicked" Pressed="QEButtonPressed" Released="QEButtonReleased"/>
+        </Grid>-->
     </AbsoluteLayout>
 
 </ContentPage>

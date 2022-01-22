@@ -77,8 +77,6 @@ namespace ResinTimer.Droid
 
             WAEnv.Instance.UpdateNowWAItems();
 
-            AppEnv.GDB ??= new GenshinDB_Core.GenshinDB(AppResources.Culture);
-
             UpdateLayout(context, appWidgetManager, appWidgetIds);
 
             if (isClick)
@@ -141,7 +139,7 @@ namespace ResinTimer.Droid
 
         private void CreateWAIconClickIntent(Context context, RemoteViews remoteViews, int id, string itemName, Locations location)
         {
-            var runIntent = new Intent(context, typeof(WAWidget));
+            Intent runIntent = new Intent(context, typeof(WAWidget));
             runIntent.SetAction(Intent.ActionMain);
             runIntent.PutExtra(KEY_RUNAPP, VALUE_RUNAPP);
             runIntent.PutStringArrayListExtra(KEY_WAITEM_LIST, CreateWAList(itemName, location));
@@ -181,17 +179,11 @@ namespace ResinTimer.Droid
 
         private List<string> CreateWAList(string itemName, Locations location)
         {
-            var items = new List<string>();
+            List<string> items = new List<string>();
 
-            if (itemName.Equals("All"))
+            foreach (WAListItem item in WAEnv.Instance.Items)
             {
-                items.AddRange(from item in AppEnv.GDB.weaponAscensionItems
-                               where item.Location.Equals(location)
-                               select item.ItemName);
-            }
-            else
-            {
-                items.Add(itemName);
+                items.Add(item.Item.ItemName);
             }
 
             return items;

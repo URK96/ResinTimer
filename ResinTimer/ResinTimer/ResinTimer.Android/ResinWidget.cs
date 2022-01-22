@@ -7,9 +7,14 @@ using Android.Widget;
 
 using AndroidX.Core.Content.Resources;
 
+using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
+
 using Xamarin.Essentials;
 
 using static ResinTimer.Droid.AndroidAppEnvironment;
+
+using REnv = ResinTimer.ResinEnvironment;
 
 namespace ResinTimer.Droid
 {
@@ -47,14 +52,23 @@ namespace ResinTimer.Droid
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
-            if (ResinEnvironment.IsSyncEnabled)
+            if (REnv.IsSyncEnabled)
             {
-                await ResinEnvironment.SyncServerData();
+                await REnv.SyncServerData();
+
+                REnv.SaveValue();
+
+                if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+                {
+                    ResinNotiManager notiManager = new ResinNotiManager();
+
+                    notiManager.UpdateNotisTime();
+                }
             }
             else
             {
-                ResinEnvironment.LoadValues();
-                ResinEnvironment.CalcResin();
+                REnv.LoadValues();
+                REnv.CalcResin();
             }
 
             UpdateLayout(context, appWidgetManager, appWidgetIds);
@@ -77,8 +91,8 @@ namespace ResinTimer.Droid
                     _ => new RemoteViews(context.PackageName, Resource.Layout.ResinWidget)
                 };
 
-                remoteViews.SetTextViewText(Resource.Id.ResinWidgetCount, ResinEnvironment.Resin.ToString());
-                remoteViews.SetTextViewText(Resource.Id.ResinWidgetEndTime, Utils.GetTimeString(ResinEnvironment.EndTime));
+                remoteViews.SetTextViewText(Resource.Id.ResinWidgetCount, REnv.Resin.ToString());
+                remoteViews.SetTextViewText(Resource.Id.ResinWidgetEndTime, Utils.GetTimeString(REnv.EndTime));
 
                 CreateClickIntent(context, appWidgetIds, remoteViews);
 
@@ -154,14 +168,23 @@ namespace ResinTimer.Droid
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
-            if (ResinEnvironment.IsSyncEnabled)
+            if (REnv.IsSyncEnabled)
             {
-                await ResinEnvironment.SyncServerData();
+                await REnv.SyncServerData();
+
+                REnv.SaveValue();
+
+                if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+                {
+                    ResinNotiManager notiManager = new ResinNotiManager();
+
+                    notiManager.UpdateNotisTime();
+                }
             }
             else
             {
-                ResinEnvironment.LoadValues();
-                ResinEnvironment.CalcResin();
+                REnv.LoadValues();
+                REnv.CalcResin();
             }
 
             UpdateLayout(context, appWidgetManager, appWidgetIds);
@@ -186,7 +209,7 @@ namespace ResinTimer.Droid
 
                 var remoteViews = new RemoteViews(context.PackageName, Resource.Layout.ResinWidgetSimple);
 
-                remoteViews.SetTextViewText(Resource.Id.ResinWidgetSimpleCount, ResinEnvironment.Resin.ToString());
+                remoteViews.SetTextViewText(Resource.Id.ResinWidgetSimpleCount, REnv.Resin.ToString());
 
                 CreateClickIntent(context, appWidgetIds, remoteViews);
 

@@ -182,7 +182,7 @@
                        FontAttributes="Bold" FontSize="Title" />
 
                 <Label x:Name="SyncStatusTipLabel" Margin="0, 2, 0, 0" IsVisible="False"
-                       Text="{x:Static resources:AppResources.ResinTimerPage_SyncTip}" TextColor="#0682F6" TextDecorations="Underline"
+                       Text="{x:Static resources:AppResources.Common_SyncTip}" TextColor="#0682F6" TextDecorations="Underline"
                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                        FontAttributes="Bold" FontSize="Caption">
                     <Label.GestureRecognizers>

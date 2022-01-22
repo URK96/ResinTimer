@@ -15,7 +15,7 @@ namespace ResinTimer.Models.Notis
         public ResinNoti(int resin)
         {
             NotiId = Resin = resin;
-            Interval = (REnv.MaxResin - Resin) * REnv.ONE_RESTORE_INTERVAL;
+            Interval = (REnv.MaxResin - Resin) * REnv.OneRestoreInterval;
 
             try
             {

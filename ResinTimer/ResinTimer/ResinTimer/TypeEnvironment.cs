@@ -4,6 +4,7 @@ using GenshinInfo.Constants;
 using GenshinInfo.Managers;
 
 using ResinTimer.Models.Materials;
+using ResinTimer.Resources;
 
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace ResinTimer
         public static ApplyType ManualApplyType = ApplyType.Time;
 
         public const int MaxResin = 160;
-        public const int ONE_RESTORE_INTERVAL = 480;
+        public const int OneRestoreInterval = 480;
 
         public static DateTime EndTime;
         public static string LastInputTime;
@@ -35,8 +36,8 @@ namespace ResinTimer
 
         public static int Resin = 0;
 
-        public static bool IsSyncEnabled => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_RESIN_ENABLED, false) &&
-            Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false);
+        public static bool IsSyncEnabled => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false) &&
+            Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_RESIN_ENABLED, false);
 
         public static void LoadValues()
         {
@@ -78,7 +79,7 @@ namespace ResinTimer
         public static void CalcResinTime()
         {
             TotalCountTime = EndTime - DateTime.Now;
-            OneCountTime = TimeSpan.FromSeconds(TotalCountTime.TotalSeconds % ONE_RESTORE_INTERVAL);
+            OneCountTime = TimeSpan.FromSeconds(TotalCountTime.TotalSeconds % OneRestoreInterval);
         }
 
         public static void CalcResin()
@@ -86,7 +87,7 @@ namespace ResinTimer
             DateTime now = DateTime.Now;
 
             Resin = (EndTime <= now) ? MaxResin :
-                MaxResin - (Convert.ToInt32((EndTime - now).TotalSeconds) / ONE_RESTORE_INTERVAL) - 1;
+                MaxResin - (Convert.ToInt32((EndTime - now).TotalSeconds) / OneRestoreInterval) - 1;
         }
 
         public static void SaveValue()
@@ -107,7 +108,7 @@ namespace ResinTimer
 
             return now switch
             {
-                _ when now > EndTime => (int)(now - EndTime).TotalSeconds / ONE_RESTORE_INTERVAL,
+                _ when now > EndTime => (int)(now - EndTime).TotalSeconds / OneRestoreInterval,
                 _ => -1
             };
         }
@@ -485,6 +486,8 @@ namespace ResinTimer
 
         public void UpdateNowTalentBooks()
         {
+            GDB ??= new(AppResources.Culture);
+
             DayOfWeek dayOfWeekValue = Utils.GetServerDayOfWeek();
 
             var items = from item in GDB.talentItems
@@ -518,6 +521,8 @@ namespace ResinTimer
 
         public void UpdateNowWAItems()
         {
+            GDB ??= new(AppResources.Culture);
+
             DayOfWeek dayOfWeekValue = Utils.GetServerDayOfWeek();
 
             var items = from item in GDB.weaponAscensionItems

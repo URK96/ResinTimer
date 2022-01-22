@@ -19,7 +19,16 @@ namespace ResinTimer.Models.HomeItems
         public ResinHomeItem()
         {
             REnv.LoadValues();
-            REnv.CalcResin();
+
+            if (REnv.IsSyncEnabled)
+            {
+                 _ = REnv.SyncServerData();
+            }
+            else
+            {
+                REnv.CalcResin();
+            }
+
             REnv.CalcResinTime();
         }
     }

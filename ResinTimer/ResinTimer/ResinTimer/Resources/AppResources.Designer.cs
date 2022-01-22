@@ -690,6 +690,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   How to solve sync issue?과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Common_SyncTip {
+            get {
+                return ResourceManager.GetString("Common_SyncTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Simple Edit Currency과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string CurrencySimpleEditDialog_Title {
@@ -2490,15 +2499,6 @@ namespace ResinTimer.Resources {
         public static string ResinSimpleEditDialog_Title {
             get {
                 return ResourceManager.GetString("ResinSimpleEditDialog_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   How to solve resin sync issue?과(와) 유사한 지역화된 문자열을 찾습니다.
-        /// </summary>
-        public static string ResinTimerPage_SyncTip {
-            get {
-                return ResourceManager.GetString("ResinTimerPage_SyncTip", resourceCulture);
             }
         }
         

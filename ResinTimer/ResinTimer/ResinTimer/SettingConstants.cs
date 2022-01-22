@@ -56,6 +56,7 @@
 
         // Setting - App - AccountSync
         public const string APP_ACCOUNTSYNC_RESIN_ENABLED = "App_AccountSync_Resin_Enabled";
+        public const string APP_ACCOUNTSYNC_REALMCURRENCY_ENABLED = "App_AccountSync_RealmCurrency_Enabled";
 
         // Setting - Timer Common
         public const string SHOW_OVERFLOW = "Show_Overflow";

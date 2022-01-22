@@ -26,7 +26,7 @@ namespace ResinTimer.Dialogs
 
             if (int.TryParse(SfUpDown.Text, out int inputValue))
             {
-                REnv.EndTime = REnv.EndTime.AddSeconds(REnv.ONE_RESTORE_INTERVAL * (REnv.Resin - inputValue));
+                REnv.EndTime = REnv.EndTime.AddSeconds(REnv.OneRestoreInterval * (REnv.Resin - inputValue));
                 REnv.LastInputTime = DateTime.Now.ToString(AppEnv.DTCulture);
                 REnv.CalcResin();
                 REnv.SaveValue();

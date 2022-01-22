@@ -332,6 +332,9 @@
   <data name="Common_FeatureIsNotReady" xml:space="preserve">
     <value>추후 업데이트 예정입니다.</value>
   </data>
+  <data name="Common_SyncTip" xml:space="preserve">
+    <value>동기화 문제를 어떻게 해결하나요?</value>
+  </data>
   <data name="CurrencySimpleEditDialog_Title" xml:space="preserve">
     <value>화폐 간편 수정</value>
   </data>
@@ -958,9 +961,6 @@ MIT License</value>
   </data>
   <data name="ResinSimpleEditDialog_Title" xml:space="preserve">
     <value>레진 간편 수정</value>
-  </data>
-  <data name="ResinTimerPage_SyncTip" xml:space="preserve">
-    <value>레진 동기화 문제를 어떻게 해결하나요?</value>
   </data>
   <data name="ResinWidget_Name" xml:space="preserve">
     <value>레진 위젯</value>

@@ -18,15 +18,21 @@ namespace ResinTimer.Pages.AccountSyncPages
         {
             SyncConfigResin.On = Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_RESIN_ENABLED, false);
             SyncConfigResin.OnChanged += SyncConfigOnChanged;
+            SyncConfigRealmCurrency.On = 
+                Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_REALMCURRENCY_ENABLED, false);
+            SyncConfigRealmCurrency.OnChanged += SyncConfigOnChanged;
         }
 
         private void SyncConfigOnChanged(object sender, ToggledEventArgs e)
         {
             SwitchCell cell = sender as SwitchCell;
 
-            string key = cell switch
+            string key = cell.Text switch
             {
-                _ when cell.Text.Equals(SyncConfigResin.Text)  => SettingConstants.APP_ACCOUNTSYNC_RESIN_ENABLED,
+                string cellKey when cellKey == SyncConfigResin.Text => 
+                    SettingConstants.APP_ACCOUNTSYNC_RESIN_ENABLED,
+                string cellKey when cellKey == SyncConfigRealmCurrency.Text => 
+                    SettingConstants.APP_ACCOUNTSYNC_REALMCURRENCY_ENABLED,
                 _ => null
             };
 

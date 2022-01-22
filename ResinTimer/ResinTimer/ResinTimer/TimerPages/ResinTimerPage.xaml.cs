@@ -178,7 +178,7 @@ namespace ResinTimer.TimerPages
                 PointerValue.Value = REnv.Resin;
 
                 ResinRemainTimeRange.EndValue = REnv.MaxResin - REnv.OneCountTime.TotalSeconds * 
-                    ((double)REnv.MaxResin / REnv.ONE_RESTORE_INTERVAL);
+                    ((double)REnv.MaxResin / REnv.OneRestoreInterval);
 
                 int overflowValue = REnv.CalcResinOverflow();
 
@@ -207,15 +207,15 @@ namespace ResinTimer.TimerPages
             if (_isQuickOTCalc)
             {
                 REnv.EndTime = REnv.EndTime.AddSeconds(
-                    REnv.ONE_RESTORE_INTERVAL * (REnv.Resin / _quickOTCalcValue) * _quickOTCalcValue);
+                    REnv.OneRestoreInterval * (REnv.Resin / _quickOTCalcValue) * _quickOTCalcValue);
 
                 _isQuickOTCalc = false;
             }
             else
             {
                 REnv.EndTime = ((REnv.Resin - _quickCalcValue) < 0) ?
-                    now.AddSeconds(REnv.ONE_RESTORE_INTERVAL * REnv.MaxResin) :
-                    REnv.EndTime.AddSeconds(REnv.ONE_RESTORE_INTERVAL * _quickCalcValue);
+                    now.AddSeconds(REnv.OneRestoreInterval * REnv.MaxResin) :
+                    REnv.EndTime.AddSeconds(REnv.OneRestoreInterval * _quickCalcValue);
             }
 
             UpdateSaveData();

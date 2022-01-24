@@ -3,12 +3,15 @@ using Android.Appwidget;
 using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
+using Android.Util;
 using Android.Widget;
 
 using AndroidX.Core.Content.Resources;
 
 using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models.Notis;
+
+using System;
 
 using Xamarin.Essentials;
 
@@ -54,15 +57,21 @@ namespace ResinTimer.Droid
 
             if (REnv.IsSyncEnabled)
             {
-                await REnv.SyncServerData();
-
-                REnv.SaveValue();
-
-                if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+                try
                 {
-                    ResinNotiManager notiManager = new ResinNotiManager();
+                    await REnv.SyncServerData();
 
-                    notiManager.UpdateNotisTime();
+                    REnv.SaveValue();
+
+                    if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+                    { 
+                        new ResinNotiManager().UpdateNotisTime();
+                        new NotiScheduleAndroid().Schedule<ResinNoti>();
+                    }
+                }
+                catch (Exception)
+                {
+                    Toast.MakeText(context, Resources.AppResources.ResinWidget_UpdateFail, ToastLength.Short).Show();
                 }
             }
             else
@@ -170,15 +179,21 @@ namespace ResinTimer.Droid
 
             if (REnv.IsSyncEnabled)
             {
-                await REnv.SyncServerData();
-
-                REnv.SaveValue();
-
-                if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+                try
                 {
-                    ResinNotiManager notiManager = new ResinNotiManager();
+                    await REnv.SyncServerData();
 
-                    notiManager.UpdateNotisTime();
+                    REnv.SaveValue();
+
+                    if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+                    {
+                        new ResinNotiManager().UpdateNotisTime();
+                        new NotiScheduleAndroid().Schedule<ResinNoti>();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Toast.MakeText(context, ex.ToString(), ToastLength.Long).Show();
                 }
             }
             else

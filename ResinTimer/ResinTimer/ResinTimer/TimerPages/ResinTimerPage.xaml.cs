@@ -3,6 +3,7 @@ using GenshinInfo.Managers;
 
 using ResinTimer.Dialogs;
 using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
 using ResinTimer.NotiSettingPages;
 using ResinTimer.Resources;
 
@@ -256,6 +257,7 @@ namespace ResinTimer.TimerPages
                 ResinNotiManager notiManager = new();
 
                 notiManager.UpdateNotisTime();
+                notiManager.UpdateScheduledNoti<ResinNoti>();
             }
         }
 

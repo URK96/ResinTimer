@@ -2521,6 +2521,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Update Resin Widget Fail과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string ResinWidget_UpdateFail {
+            get {
+                return ResourceManager.GetString("ResinWidget_UpdateFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Connected과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string SettingPage_Section_App_AccountSync_Connected {

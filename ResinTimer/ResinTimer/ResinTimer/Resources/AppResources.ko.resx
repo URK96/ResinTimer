@@ -968,6 +968,9 @@ MIT License</value>
   <data name="ResinWidget_UpdateComplete" xml:space="preserve">
     <value>레진 위젯 갱신 완료</value>
   </data>
+  <data name="ResinWidget_UpdateFail" xml:space="preserve">
+    <value>레진 위젯 갱신 실패</value>
+  </data>
   <data name="SettingPage_Section_App_AccountSync_Connected" xml:space="preserve">
     <value>연결됨</value>
   </data>

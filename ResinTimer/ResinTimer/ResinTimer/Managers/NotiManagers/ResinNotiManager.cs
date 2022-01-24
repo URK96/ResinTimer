@@ -46,7 +46,7 @@ namespace ResinTimer.Managers.NotiManagers
             }
 
             SaveNotis();
-            UpdateScheduledNoti<ResinNoti>();
+            //UpdateScheduledNoti<ResinNoti>();
         }
 
         public override void EditList(Noti item, EditType type)

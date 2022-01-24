@@ -1,4 +1,5 @@
 ﻿using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
 using ResinTimer.Resources;
 
 using System;
@@ -80,6 +81,7 @@ namespace ResinTimer
             REnv.LastInputTime = DateTime.Now.ToString(AppEnv.DTCulture);
 
             CalcRemainTime();
+
             REnv.SaveValue();
 
             if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
@@ -87,6 +89,7 @@ namespace ResinTimer
                 ResinNotiManager notiManager = new();
 
                 notiManager.UpdateNotisTime();
+                notiManager.UpdateScheduledNoti<ResinNoti>();
             }
 
             Navigation.PopAsync();

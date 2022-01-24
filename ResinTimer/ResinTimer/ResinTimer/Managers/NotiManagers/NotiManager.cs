@@ -86,7 +86,7 @@ namespace ResinTimer.Managers.NotiManagers
             return result;
         }
 
-        public INotiScheduleService GetScheduledService() => DependencyService.Get<INotiScheduleService>();
+        public NotiScheduleService GetScheduledService() => DependencyService.Get<NotiScheduleService>();
 
         public void UpdateScheduledNoti<T>() where T : Noti
         {
@@ -95,7 +95,7 @@ namespace ResinTimer.Managers.NotiManagers
                 return;
             }
 
-            INotiScheduleService scheduledService = GetScheduledService();
+            NotiScheduleService scheduledService = GetScheduledService();
 
             scheduledService.Cancel<T>();
             RenewalIds();

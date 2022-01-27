@@ -18,16 +18,9 @@ namespace ResinTimer.NotiSettingPages
 
         internal override void RemoveItem(int notiId)
         {
-            if (Notis.Count > 1)
-            {
-                notiManager.EditList(new ResinNoti(notiId), NotiManager.EditType.Remove);
+            notiManager.EditList(new ResinNoti(notiId), NotiManager.EditType.Remove);
 
-                Utils.RefreshCollectionView(ListView, Notis);
-            }
-            else
-            {
-                DependencyService.Get<IToast>().Show(AppResources.NotiSettingPage_CannotRemoveToast_Message);
-            }
+            Utils.RefreshCollectionView(ListView, Notis);
         }
 
         internal override async void ShowAddItemDialog()

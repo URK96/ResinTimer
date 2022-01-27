@@ -35,15 +35,8 @@ namespace ResinTimer.NotiSettingPages
                 case 0:  // Add Item
                     ShowAddItemDialog();
                     break;
-                case 1:  // Remove Item (Only UWP)
-                    if (ListView.SelectedItem != null)
-                    {
-                        RemoveItem((ListView.SelectedItem as Noti).NotiId);
-                    }
-                    else
-                    {
-                        DependencyService.Get<IToast>().Show(AppResources.NotiSettingPage_NotSelectedToast_Message);
-                    }
+                case 1:  // Remove Item
+                    RemoveItem((ListView.SelectedItem as Noti).NotiId);
                     break;
                 default:
                     break;

@@ -55,18 +55,29 @@ namespace ResinTimer.Droid
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
+            REnv.LoadValues();
+
             if (REnv.IsSyncEnabled)
             {
                 try
                 {
-                    await REnv.SyncServerData();
+                    if (await REnv.SyncServerData())
+                    {
+                        REnv.SaveValue();
 
-                    REnv.SaveValue();
+                        if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+                        {
+                            var notiManager = new ResinNotiManager();
+                            var notiScheduleAndroid = new NotiScheduleAndroid();
 
-                    if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
-                    { 
-                        new ResinNotiManager().UpdateNotisTime();
-                        new NotiScheduleAndroid().Schedule<ResinNoti>();
+                            if (notiManager.Notis.Count > 0)
+                            {
+                                notiManager.UpdateNotisTime();
+
+                                notiScheduleAndroid.Cancel<ResinNoti>();
+                                notiScheduleAndroid.Schedule<ResinNoti>();
+                            }
+                        }
                     }
                 }
                 catch (Exception)
@@ -74,11 +85,8 @@ namespace ResinTimer.Droid
                     Toast.MakeText(context, Resources.AppResources.ResinWidget_UpdateFail, ToastLength.Short).Show();
                 }
             }
-            else
-            {
-                REnv.LoadValues();
-                REnv.CalcResin();
-            }
+
+            REnv.CalcResin();
 
             UpdateLayout(context, appWidgetManager, appWidgetIds);
 
@@ -177,30 +185,39 @@ namespace ResinTimer.Droid
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
+            REnv.LoadValues();
+
             if (REnv.IsSyncEnabled)
             {
                 try
                 {
-                    await REnv.SyncServerData();
-
-                    REnv.SaveValue();
-
-                    if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+                    if (await REnv.SyncServerData())
                     {
-                        new ResinNotiManager().UpdateNotisTime();
-                        new NotiScheduleAndroid().Schedule<ResinNoti>();
+                        REnv.SaveValue();
+
+                        if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+                        {
+                            var notiManager = new ResinNotiManager();
+                            var notiScheduleAndroid = new NotiScheduleAndroid();
+
+                            if (notiManager.Notis.Count > 0)
+                            {
+                                notiManager.UpdateNotisTime();
+
+                                notiScheduleAndroid.Cancel<ResinNoti>();
+                                notiScheduleAndroid.Schedule<ResinNoti>();
+                            }
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Toast.MakeText(context, ex.ToString(), ToastLength.Long).Show();
+                    Toast.MakeText(context, Resources.AppResources.ResinWidget_UpdateFail, ToastLength.Short).Show();
+                    Log.Error("ResinWidget", ex.ToString());
                 }
             }
-            else
-            {
-                REnv.LoadValues();
-                REnv.CalcResin();
-            }
+
+            REnv.CalcResin();
 
             UpdateLayout(context, appWidgetManager, appWidgetIds);
 

@@ -2,6 +2,7 @@
 using ResinTimer.Resources;
 
 using System;
+using System.IO;
 
 using Xamarin.Forms;
 
@@ -16,13 +17,6 @@ namespace ResinTimer.Managers.NotiManagers
                 NotiType = NotificationType.Resin;
 
                 Notis.AddRange(GetNotiList<ResinNoti>());
-
-                if (Notis.Count < 1)
-                {
-                    Notis.Add(new ResinNoti(ResinEnvironment.MaxResin));
-
-                    SaveNotis();
-                }
             }
             catch (Exception)
             {

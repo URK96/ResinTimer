@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <LangVersion>latest</LangVersion>
-    <Version>1.9.1</Version>
+    <Version>1.15.3</Version>
     <UserSecretsId>203b32d9-bd5b-4c42-8919-f7dba54960be</UserSecretsId>
   </PropertyGroup>
 
@@ -147,9 +147,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="NotiSettingPages\BaseNotiSettingPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="NotiSettingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\AccountSyncPages\AccountSettingPages\AccountCautionPage.xaml">

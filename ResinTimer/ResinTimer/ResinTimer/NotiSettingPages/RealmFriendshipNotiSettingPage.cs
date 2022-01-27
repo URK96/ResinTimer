@@ -57,17 +57,10 @@ namespace ResinTimer.NotiSettingPages
 
         internal override void RemoveItem(int notiId)
         {
-            if (Notis.Count > 1)
-            {
-                notiManager.EditList(new RealmFriendshipNoti(notiId - RealmFriendshipNotiManager.ID_PREINDEX),
-                    NotiManager.EditType.Remove);
+            notiManager.EditList(new RealmFriendshipNoti(notiId - RealmFriendshipNotiManager.ID_PREINDEX),
+                NotiManager.EditType.Remove);
 
-                Utils.RefreshCollectionView(ListView, Notis);
-            }
-            else
-            {
-                DependencyService.Get<IToast>().Show(AppResources.NotiSettingPage_CannotRemoveToast_Message);
-            }
+            Utils.RefreshCollectionView(ListView, Notis);
         }
     }
 }

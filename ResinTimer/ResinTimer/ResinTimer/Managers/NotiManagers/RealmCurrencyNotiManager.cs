@@ -18,12 +18,6 @@ namespace ResinTimer.Managers.NotiManagers
                 NotiType = NotificationType.RealmCurrency;
 
                 Notis.AddRange(GetNotiList<RealmCurrencyNoti>());
-
-                if (Notis.Count < 1)
-                {
-                    Notis.Add(new RealmCurrencyNoti(100));
-                    SaveNotis();
-                }
             }
             catch (Exception)
             {

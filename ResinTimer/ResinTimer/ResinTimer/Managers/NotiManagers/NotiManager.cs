@@ -81,12 +81,15 @@ namespace ResinTimer.Managers.NotiManagers
                     result.AddRange(deserialized);
                 }
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
             return result;
         }
 
-        public NotiScheduleService GetScheduledService() => DependencyService.Get<NotiScheduleService>();
+        public INotiScheduleService GetScheduledService() => DependencyService.Get<INotiScheduleService>();
 
         public void UpdateScheduledNoti<T>() where T : Noti
         {
@@ -95,7 +98,7 @@ namespace ResinTimer.Managers.NotiManagers
                 return;
             }
 
-            NotiScheduleService scheduledService = GetScheduledService();
+            INotiScheduleService scheduledService = GetScheduledService();
 
             scheduledService.Cancel<T>();
             RenewalIds();

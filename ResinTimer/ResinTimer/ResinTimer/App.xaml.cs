@@ -34,7 +34,7 @@ namespace ResinTimer
                 AppEnvironment.GDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
                 AppEnvironment.LoadLocationList();
 
-                SetDefaultPreferences();
+                //SetDefaultPreferences();
 
                 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTQ5NjcxQDMxMzkyZTM0MmUzMFZGNm56TGV5VjZZUjkwRUpiMFpNRXZFRXVjMktnbDVPR1M2Z1NrSGpvNEE9");
 
@@ -71,7 +71,7 @@ namespace ResinTimer
             }
             if (!Preferences.ContainsKey(SettingConstants.NOTI_LIST))
             {
-                List<ResinNoti> list = new List<ResinNoti>
+                List<ResinNoti> list = new()
                 {
                     new ResinNoti(ResinEnvironment.MaxResin)
                 };

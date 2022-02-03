@@ -1,4 +1,5 @@
-﻿using GenshinInfo.Managers;
+﻿using GenshinInfo.Enums;
+using GenshinInfo.Managers;
 using GenshinInfo.Models;
 
 using ResinTimer.Managers;
@@ -16,8 +17,6 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using static GenshinInfo.Managers.GachaInfoManager;
 
 using AppEnv = ResinTimer.AppEnvironment;
 
@@ -140,7 +139,7 @@ namespace ResinTimer.Pages.UtilPages
                 BusyLayout.IsVisible = true;
                 BusyIndicator.IsRunning = true;
 
-                List<GachaInfo> infoList = new();
+                List<GachaDataInfo> infoList = new();
                 GachaInfoManager manager = new();
                 string lastId = "0";
 
@@ -159,7 +158,8 @@ namespace ResinTimer.Pages.UtilPages
 
                     string shortCode = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
 
-                    List<GachaInfo> result = await manager.GetGachaInfos(gachaListType, lastId, AppEnv.GetLangShortCode);
+                    List<GachaDataInfo> result = 
+                        await manager.GetGachaInfos(gachaListType, lastId, AppEnv.GetLangShortCode);
 
                     if (result is null)
                     {
@@ -182,14 +182,15 @@ namespace ResinTimer.Pages.UtilPages
 
                 await Task.Delay(500);
 
-                foreach (GachaInfo info in infoList)
+                foreach (var info in infoList)
                 {
                     if (cancelToken.IsCancellationRequested)
                     {
                         return;
                     }
 
-                    GachaLogGroup group = LogList.FirstOrDefault(x => x.GachaShortDateTime.Equals(info.GachaShortDateTime));
+                    GachaLogGroup group = LogList.FirstOrDefault(x => 
+                        x.GachaShortDateTime.Equals(info.GachaShortDateTime));
 
                     if (group is not null)
                     {
@@ -215,7 +216,7 @@ namespace ResinTimer.Pages.UtilPages
 
                 CheckLogList();
             }
-            catch (Exception ex)
+            catch
             {
                 BusyIndicator.IsRunning = false;
                 BusyStatusLabel.Text = AppResources.GachaLogViewer_RenewLogList_Fail;

@@ -1,9 +1,9 @@
-﻿using ResinTimer.Managers;
+﻿using GenshinInfo.Enums;
+
+using ResinTimer.Managers;
 using ResinTimer.Resources;
 
 using System.IO;
-
-using static GenshinInfo.Managers.GachaInfoManager;
 
 namespace ResinTimer.Pages.UtilPages
 {
@@ -18,7 +18,7 @@ namespace ResinTimer.Pages.UtilPages
             gachaListType = GachaTypeNum.Permanent;
             logSaveFilePath = LogSaveFilePath;
 
-            LoadInitLogs();
+            _ = LoadInitLogs();
         }
     }
 }

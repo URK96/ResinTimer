@@ -2,6 +2,7 @@
 
 using GenshinInfo.Constants;
 using GenshinInfo.Managers;
+using GenshinInfo.Models;
 
 using ResinTimer.Models.Materials;
 using ResinTimer.Resources;
@@ -118,26 +119,20 @@ namespace ResinTimer
             try
             {
                 GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
-                Dictionary<string, string> dic = await manager.GetRealTimeNotes();
+                RTNoteData data = await manager.GetRealTimeNotes();
 
-                if ((dic is not null) &&
-                    int.TryParse(dic[Indexes.RealTimeNote.ResinRecoveryTime], out int recoveryTime) &&
-                    int.TryParse(dic[Indexes.RealTimeNote.CurrentResin], out int serverResin))
+                if (data is not null)
                 {
-                    if (recoveryTime > MaxResin * 8 * 60)
+                    TimeSpan addInterval = data.ResinRecoveryTime;
+
+                    if (data.CurrentResin > MaxResin)
                     {
-                        recoveryTime = 0;
-                    }
-                    else if (serverResin > MaxResin)
-                    {
-                        recoveryTime = -(serverResin - MaxResin) * 8 * 60;
+                        addInterval = TimeSpan.FromMinutes(-(data.CurrentResin - MaxResin) * 8);
                     }
 
-                    TimeSpan ts = TimeSpan.FromSeconds(recoveryTime);
                     DateTime now = DateTime.Now;
 
-                    EndTime = now.Add(ts);
-
+                    EndTime = now.Add(addInterval);
                     LastInputTime = now.ToString(DTCulture);
 
                     CalcResin();
@@ -147,7 +142,7 @@ namespace ResinTimer
                     return false;
                 }
             }
-            catch (Exception)
+            catch
             {
                 return false;
             }

@@ -12,14 +12,14 @@ namespace ResinTimer.Models
     public class GachaLogGroup
     {
         public DateTime GachaDateTime { get; set; }
-        public List<GachaInfo> GachaInfos { get; set; }
+        public List<GachaDataInfo> GachaInfos { get; set; }
 
         public string PrintGachaDateTime => Utils.GetTimeString(GachaDateTime);
         public string GachaShortDateTime => GachaDateTime.ToString("yyyy,MM,dd,HH,mm,ss");
 
         public GachaLogGroup()
         {
-            GachaInfos = new List<GachaInfo>();
+            GachaInfos = new();
         }
 
         public GachaLogGroup(string dateTimeStr) : this()
@@ -42,7 +42,7 @@ namespace ResinTimer.Models
             {
                 StringBuilder sb = new();
 
-                foreach (GachaInfo info in GachaInfos)
+                foreach (var info in GachaInfos)
                 {
                     sb.AppendLine($"☆{info.ItemRank} {info.ItemType} {info.ItemName}");
                 }

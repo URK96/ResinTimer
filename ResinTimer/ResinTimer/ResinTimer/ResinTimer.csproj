@@ -33,23 +33,23 @@
 
   <ItemGroup>
     <PackageReference Include="GenshinInfo" Version="1.0.0" />
-    <PackageReference Include="Microsoft.AppCenter" Version="4.4.0">
+    <PackageReference Include="Microsoft.AppCenter" Version="4.5.0">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.4.0" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.4.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.5.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.14" />
-    <PackageReference Include="Syncfusion.Licensing" Version="19.4.0.38" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.4.0.38">
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
+    <PackageReference Include="Syncfusion.Licensing" Version="19.4.0.50" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.4.0.50">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="19.4.0.38" />
-    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="19.4.0.38">
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="19.4.0.50" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="19.4.0.50">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2291" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
   </ItemGroup>
 
   <ItemGroup>

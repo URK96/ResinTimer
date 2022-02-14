@@ -1,5 +1,6 @@
 ﻿using ResinTimer.Dialogs;
 using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
 using ResinTimer.NotiSettingPages;
 using ResinTimer.Resources;
 
@@ -7,6 +8,8 @@ using Rg.Plugins.Popup.Services;
 
 using System;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -23,6 +26,8 @@ namespace ResinTimer.TimerPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RealmCurrencyTimerPage : ContentPage
     {
+        public ICommand UrlOpenTabCommand => Utils.UrlOpenCommand;
+
         private Timer _buttonPressTimer;
         private TTimer _calcTimer;
 
@@ -31,6 +36,8 @@ namespace ResinTimer.TimerPages
         public RealmCurrencyTimerPage()
         {
             InitializeComponent();
+
+            BindingContext = this;
 
             RCEnv.LoadValues();
 
@@ -53,7 +60,10 @@ namespace ResinTimer.TimerPages
                 };
             }
 
-            _calcTimer = new(CalcNowRC, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1));
+            if (RCEnv.IsSyncEnabled)
+            {
+                _ = SyncData();
+            }
         }
 
         private void SetToolbar()
@@ -65,19 +75,33 @@ namespace ResinTimer.TimerPages
         {
             base.OnAppearing();
 
-            _calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1));
-
             SetRCStatusLabel();
             SetToolbar();
+            SetLayoutAppearance();
+
+            _calcTimer = new(CalcNowRC, 
+                new AutoResetEvent(false),
+                TimeSpan.FromSeconds(0), 
+                TimeSpan.FromSeconds(1));
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
 
-            RCEnv.SaveValue();
+            _calcTimer.Change(Timeout.InfiniteTimeSpan, Timeout.InfiniteTimeSpan);
+            _calcTimer.Dispose();
 
-            _calcTimer.Change(Timeout.Infinite, Timeout.Infinite);
+            RCEnv.SaveValue();
+        }
+
+        private void SetLayoutAppearance()
+        {
+            bool isSyncEnabled = RCEnv.IsSyncEnabled;
+
+            CautionLabel.IsVisible = !isSyncEnabled;
+            ManualControlLayout.IsVisible = !isSyncEnabled;
+            SyncControlLayout.IsVisible = isSyncEnabled;
         }
 
         private void SetRCStatusLabel()
@@ -96,8 +120,13 @@ namespace ResinTimer.TimerPages
                 _ => AppResources.Realm_Rank_1
             };
 
-            RealmRankLabel.Text = $"{AppResources.RealmCurrency_RealmRank} : {realmRankString} (+{RCEnv.RCRate} / 1H)";
-            TrustLevelLabel.Text = $"{AppResources.RealmCurrency_TrustRank} : {RealmEnv.TrustRank} (Max {RCEnv.MaxRC})";
+            RealmRankLabel.Text =
+                $"{AppResources.RealmCurrency_RealmRank} : " +
+                (RCEnv.IsSyncEnabled ? "Sync Mode" : $"{realmRankString} (+{RCEnv.RCRate} / 1H)");
+            TrustLevelLabel.Text = 
+                $"{AppResources.RealmCurrency_TrustRank} : " +
+                $"{(RCEnv.IsSyncEnabled ? "Sync Mode" : RealmEnv.TrustRank)}" +
+                $" (Max {RCEnv.MaxRC})";
         }
 
         private async void ToolbarItemClicked(object sender, EventArgs e)
@@ -140,7 +169,8 @@ namespace ResinTimer.TimerPages
                 TotalTimeHour.Text = $"{(int)RCEnv.TotalCountTime.TotalHours}";
                 TotalTimeMinute.Text = $"{RCEnv.TotalCountTime.Minutes:D2}";
 
-                LastInputDateTimeLabel.Text = Utils.GetTimeString(DateTime.Parse(RCEnv.LastInputTime, AppEnv.DTCulture));
+                LastInputDateTimeLabel.Text = Utils.GetTimeString(
+                    DateTime.Parse(RCEnv.LastInputTime, AppEnv.DTCulture));
                 EndDateTimeLabel.Text = Utils.GetTimeString(RCEnv.EndTime);
 
                 RCSfScale.EndValue = 100;
@@ -185,6 +215,42 @@ namespace ResinTimer.TimerPages
             if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
             {
                 new RealmCurrencyNotiManager().UpdateNotisTime();
+            }
+        }
+
+        private async Task SyncData()
+        {
+            SyncStatusTipLabel.IsVisible = false;
+            ManualSyncButton.IsEnabled = false;
+            ManualSyncButton.BorderColor = Color.Default;
+
+            await Task.Delay(100);
+
+            if (await RCEnv.SyncServerData())
+            {
+                UpdateSaveData();
+
+                ManualSyncButton.BorderColor = Color.Green;
+            }
+            else
+            {
+                ManualSyncButton.BorderColor = Color.OrangeRed;
+                SyncStatusTipLabel.IsVisible = true;
+            }
+
+            ManualSyncButton.IsEnabled = true;
+        }
+
+        private void UpdateSaveData()
+        {
+            RCEnv.SaveValue();
+
+            if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+            {
+                RealmCurrencyNotiManager notiManager = new();
+
+                notiManager.UpdateNotisTime();
+                notiManager.UpdateScheduledNoti<RealmCurrencyNoti>();
             }
         }
 
@@ -270,6 +336,11 @@ namespace ResinTimer.TimerPages
             dialog.OnClose += delegate { _calcTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1)); };
 
             await PopupNavigation.Instance.PushAsync(dialog);
+        }
+
+        private async void ManualSyncButtonClicked(object sender, EventArgs e)
+        {
+            await SyncData();
         }
     }
 }

@@ -190,7 +190,7 @@ namespace ResinTimer
         public const int HourToSec = 3600;
         public const int MinToSec = 60;  // Only use test
 
-        public static int MaxRC => s_rcCapacity[RealmEnv.TrustRank - 1];
+        public static int MaxRC => IsSyncEnabled ? s_serverMaxRC : s_rcCapacity[RealmEnv.TrustRank - 1];
         public static int RCRate => s_aeRate[(int)RealmEnv.RealmRank];
         public static int Percentage => Convert.ToInt32((double)Currency / MaxRC * 100);
 
@@ -203,6 +203,11 @@ namespace ResinTimer
         public static string LastInputTime;
         public static TimeSpan TotalCountTime;
         public static TimeSpan OneCountTime;
+
+        public static bool IsSyncEnabled => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false) &&
+            Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_REALMCURRENCY_ENABLED, false);
+
+        private static int s_serverMaxRC = s_rcCapacity[RealmEnv.TrustRank - 1];
 
         public static void LoadValues()
         {
@@ -281,6 +286,45 @@ namespace ResinTimer
 #else
             EndTime = lastDT.AddHours(AddCount).AddHours(remainCount);
 #endif
+        }
+
+        public static async Task<bool> SyncServerData()
+        {
+            try
+            {
+                GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+                RTNoteData data = await manager.GetRealTimeNotes();
+
+                if (data is not null)
+                {
+                    TimeSpan addInterval = data.HomeCoinRecoveryTime;
+
+                    s_serverMaxRC = data.MaxHomeCoin;
+
+                    if (data.CurrentHomeCoin >= s_serverMaxRC)
+                    {
+                        addInterval = TimeSpan.FromSeconds(0);
+                    }
+
+                    DateTime now = DateTime.Now;
+
+                    Currency = data.CurrentHomeCoin;
+                    EndTime = now.Add(addInterval);
+                    LastInputTime = now.ToString(DTCulture);
+
+                    CalcReaminTime();
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public static void SaveValue()

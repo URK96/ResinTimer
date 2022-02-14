@@ -4,11 +4,7 @@
              xmlns:resources="clr-namespace:ResinTimer.Resources"
              x:Class="ResinTimer.Pages.AccountSyncPages.AccountSyncStatusPage"
              Title="{x:Static resources:AppResources.AccountSyncStatusPage_Title}">
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Edit Config" IconImageSource="edit.png" Order="Primary" Priority="0" Clicked="ToolbarItemClicked" />
-    </ContentPage.ToolbarItems>
-
+    
     <ContentPage.Resources>
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=20}" />

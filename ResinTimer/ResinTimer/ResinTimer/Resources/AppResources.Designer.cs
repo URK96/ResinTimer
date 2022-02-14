@@ -175,24 +175,6 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
-        ///   Config Feature과(와) 유사한 지역화된 문자열을 찾습니다.
-        /// </summary>
-        public static string AccountSyncConfig_ConfigSection_Title {
-            get {
-                return ResourceManager.GetString("AccountSyncConfig_ConfigSection_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sync Config과(와) 유사한 지역화된 문자열을 찾습니다.
-        /// </summary>
-        public static string AccountSyncConfigPage_Title {
-            get {
-                return ResourceManager.GetString("AccountSyncConfigPage_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Checking...과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string AccountSyncStatus_Checking {
@@ -2647,6 +2629,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Timer Sync Setting과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_TimerSyncSetting_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_TimerSyncSetting_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   App과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string SettingPage_Section_App_Title {
@@ -2913,6 +2904,24 @@ namespace ResinTimer.Resources {
         public static string TimerMainPage_Title {
             get {
                 return ResourceManager.GetString("TimerMainPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sync Feature과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TimerSyncConfig_ConfigSection_Title {
+            get {
+                return ResourceManager.GetString("TimerSyncConfig_ConfigSection_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Timer Sync Config과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TimerSyncConfigPage_Title {
+            get {
+                return ResourceManager.GetString("TimerSyncConfigPage_Title", resourceCulture);
             }
         }
         

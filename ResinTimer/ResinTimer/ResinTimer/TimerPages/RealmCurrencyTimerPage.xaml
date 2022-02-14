@@ -28,7 +28,7 @@
                      AbsoluteLayout.LayoutBounds="0.5, 0.03"
                      Orientation="Vertical">
 
-            <Label x:Name="CautionResinOnlyLabel" Margin="0, 0, 0, 0"
+            <Label x:Name="CautionLabel" Margin="0, 0, 0, 0"
                    Text="{x:Static resources:AppResources.RealmCurrencyTimerPage_Caution}" HorizontalTextAlignment="Center" TextColor="OrangeRed" FontSize="Small" />
 
             <Label x:Name="RemainTimeLabel"
@@ -95,20 +95,21 @@
 
         <StackLayout Orientation="Vertical"
                      AbsoluteLayout.LayoutFlags="PositionProportional"
-                     AbsoluteLayout.LayoutBounds="0.5, 0.8">
+                     AbsoluteLayout.LayoutBounds="0.5, 0.75">
             
             <Label x:Name="RCCountLabel" Margin="0, 0, 0, 5"
-                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" TextColor="#0682F6" />
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small" TextColor="#0682F6" />
 
             <Label x:Name="RealmRankLabel"
-                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" />
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small" />
 
             <Label x:Name="TrustLevelLabel"
-                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Subtitle" />
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small" />
 
         </StackLayout>
 
-        <Grid AbsoluteLayout.LayoutFlags="All"
+        <Grid x:Name="ManualControlLayout" 
+              AbsoluteLayout.LayoutFlags="All"
               AbsoluteLayout.LayoutBounds="0.5, 0.95, 0.95, 0.08">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -128,19 +129,15 @@
                     Pressed="ButtonPressed" Released="ButtonReleased"/>
         </Grid>
 
-        <!--<Grid x:Name="SyncControlLayout" 
+        <Grid x:Name="SyncControlLayout" 
               AbsoluteLayout.LayoutFlags="All"
-              AbsoluteLayout.LayoutBounds="{OnPlatform Android='0.5, 0.95, 0.95, 0.20', Default='0.5, 0.95, 0.95, 0.20'}">
+              AbsoluteLayout.LayoutBounds="{OnPlatform Android='0.5, 0.95, 0.95, 0.15', Default='0.5, 0.95, 0.95, 0.20'}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*" />
+                <RowDefinition Height="0.5*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <StackLayout Orientation="Vertical" Grid.Row="0">
-                <Label x:Name="SyncStatusLabel"
-                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                       FontAttributes="Bold" FontSize="Title" />
-
                 <Label x:Name="SyncStatusTipLabel" Margin="0, 2, 0, 0" IsVisible="False"
                        Text="{x:Static resources:AppResources.Common_SyncTip}" TextColor="#0682F6" TextDecorations="Underline"
                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
@@ -156,7 +153,7 @@
                     Style="{StaticResource ButtonStyle}"
                     Text="{x:Static resources:AppResources.Sync_Renew}" 
                     Clicked="ManualSyncButtonClicked" Pressed="QEButtonPressed" Released="QEButtonReleased"/>
-        </Grid>-->
+        </Grid>
     </AbsoluteLayout>
 
 </ContentPage>

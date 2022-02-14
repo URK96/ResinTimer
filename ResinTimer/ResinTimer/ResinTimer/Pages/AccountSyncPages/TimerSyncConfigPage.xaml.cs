@@ -5,9 +5,9 @@ using Xamarin.Forms.Xaml;
 namespace ResinTimer.Pages.AccountSyncPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AccountSyncConfigPage : ContentPage
+    public partial class TimerSyncConfigPage : ContentPage
     {
-        public AccountSyncConfigPage()
+        public TimerSyncConfigPage()
         {
             InitializeComponent();
 

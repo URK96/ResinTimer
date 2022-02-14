@@ -159,12 +159,6 @@
   <data name="AccountSetting_SetCookieInfo_Success" xml:space="preserve">
     <value>Cookie 정보 입력 성공</value>
   </data>
-  <data name="AccountSyncConfigPage_Title" xml:space="preserve">
-    <value>연동 구성 설정</value>
-  </data>
-  <data name="AccountSyncConfig_ConfigSection_Title" xml:space="preserve">
-    <value>연동 구성 범위</value>
-  </data>
   <data name="AccountSyncStatusPage_Disconnected_Tip" xml:space="preserve">
     <value>해당 계정으로 서버에서 정보를 불러올 수 없습니다.
 계정 갱신이 해당 문제를 해결하는데 도움이 될 수 있습니다.</value>
@@ -1010,6 +1004,9 @@ MIT License</value>
   <data name="SettingPage_Section_App_Start_DetailScreen_Title" xml:space="preserve">
     <value>시작 화면 설정</value>
   </data>
+  <data name="SettingPage_Section_App_TimerSyncSetting_Title" xml:space="preserve">
+    <value>타이머 동기화 설정</value>
+  </data>
   <data name="SettingPage_Section_App_Title" xml:space="preserve">
     <value>앱</value>
   </data>
@@ -1102,6 +1099,12 @@ MIT License</value>
   </data>
   <data name="TimerMainPage_Title" xml:space="preserve">
     <value>메인</value>
+  </data>
+  <data name="TimerSyncConfigPage_Title" xml:space="preserve">
+    <value>타이머 연동 설정</value>
+  </data>
+  <data name="TimerSyncConfig_ConfigSection_Title" xml:space="preserve">
+    <value>연동 구성 범위</value>
   </data>
   <data name="Toolbar_Add" xml:space="preserve">
     <value>추가</value>

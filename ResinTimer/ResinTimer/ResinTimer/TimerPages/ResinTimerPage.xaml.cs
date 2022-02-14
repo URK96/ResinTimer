@@ -1,7 +1,4 @@
-﻿using GenshinInfo.Constants;
-using GenshinInfo.Managers;
-
-using ResinTimer.Dialogs;
+﻿using ResinTimer.Dialogs;
 using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models.Notis;
 using ResinTimer.NotiSettingPages;
@@ -10,7 +7,6 @@ using ResinTimer.Resources;
 using Rg.Plugins.Popup.Services;
 
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -108,7 +104,6 @@ namespace ResinTimer.TimerPages
 
             CautionResinOnlyLabel.IsVisible = !isSyncEnabled &&
                 (REnv.ManualApplyType is REnv.ApplyType.Resin);
-            
             ManualControlLayout.IsVisible = !isSyncEnabled;
             SyncControlLayout.IsVisible = isSyncEnabled;
 

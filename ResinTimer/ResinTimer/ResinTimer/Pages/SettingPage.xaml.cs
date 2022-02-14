@@ -62,6 +62,16 @@ namespace ResinTimer.Pages
             QuickCalcVibration.On = Preferences.Get(SettingConstants.QUICKCALC_VIBRATION, true);
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            bool isAccountSyncEnabled = Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false);
+
+            TimerSyncSetting.IsEnabled = isAccountSyncEnabled;
+            TimerSyncSettingArrowLabel.Text = isAccountSyncEnabled ? ">" : "X";
+        }
+
         private string GetStartScreenString(int value)
         {
             return value switch
@@ -88,6 +98,11 @@ namespace ResinTimer.Pages
         private async void AccountSyncTapped(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AccountSyncPages.AccountSyncStatusPage(), true);
+        }
+
+        private async void TimerSyncSettingTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AccountSyncPages.TimerSyncConfigPage(), true);
         }
 
         private async void NotificationOnChanged(object sender, ToggledEventArgs e)

@@ -32,13 +32,6 @@ namespace ResinTimer.Pages.AccountSyncPages
             await CheckAccountSyncStatus();
         }
 
-        private async void ToolbarItemClicked(object sender, EventArgs e)
-        {
-            // Only have edit item
-
-            await Navigation.PushAsync(new AccountSyncConfigPage());
-        }
-
         private async Task CheckAccountSyncStatus()
         {
             AccountUIDLabel.Text = $"UID : {Utils.UID}";

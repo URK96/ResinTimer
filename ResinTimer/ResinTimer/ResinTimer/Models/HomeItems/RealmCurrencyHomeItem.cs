@@ -20,7 +20,15 @@ namespace ResinTimer.Models.HomeItems
         public RealmCurrencyHomeItem()
         {
             RCEnv.LoadValues();
-            RCEnv.CalcRC();
+
+            if (RCEnv.IsSyncEnabled)
+            {
+                _ = RCEnv.SyncServerData();
+            }
+            else
+            {
+                RCEnv.CalcRC();
+            }
         }
     }
 }

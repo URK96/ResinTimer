@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace ResinTimer.Droid
 {
-    [Activity(Label = "@string/AppName", Name = "com.urk.resintimer.SplashActivity", Icon = "@drawable/resintimer_icon", Theme = "@style/ResinTimer.Splash", MainLauncher = true, NoHistory = true)]
+    [Activity(Label = "@string/AppName", Name = "com.urk.resintimer.SplashActivity", 
+              Icon = "@drawable/resintimer_icon", Theme = "@style/ResinTimer.Splash", 
+              MainLauncher = true, NoHistory = true, Exported = true)]
     public class SplashActivity : AndroidX.AppCompat.App.AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

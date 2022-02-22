@@ -21,7 +21,7 @@ using REnv = ResinTimer.ResinEnvironment;
 
 namespace ResinTimer.Droid
 {
-    [BroadcastReceiver(Label = "Resin Widget")]
+    [BroadcastReceiver(Label = "Resin Widget", Enabled = true, Exported = true)]
     [IntentFilter(new string[] { AppWidgetManager.ActionAppwidgetUpdate, Intent.ActionMain })]
     [MetaData("android.appwidget.provider", Resource = "@xml/widgetprovider_resin_full")]
     public class ResinWidget : AppWidgetProvider
@@ -165,7 +165,7 @@ namespace ResinTimer.Droid
         }
     }
 
-    [BroadcastReceiver(Label = "Resin Widget Simple")]
+    [BroadcastReceiver(Label = "Resin Widget Simple", Enabled = true, Exported = true)]
     [IntentFilter(new string[] { AppWidgetManager.ActionAppwidgetUpdate })]
     [MetaData("android.appwidget.provider", Resource = "@xml/widgetprovider_resin_simple")]
     public class ResinWidgetSimple : AppWidgetProvider

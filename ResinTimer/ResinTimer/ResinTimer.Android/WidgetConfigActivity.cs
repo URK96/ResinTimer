@@ -18,7 +18,7 @@ using Xamarin.Essentials;
 
 namespace ResinTimer.Droid
 {
-    [Activity(Label = "WidgetConfigActivity", Name = "com.urk.resintimer.WidgetConfigActivity", Theme = "@style/ResinTimer")]
+    [Activity(Label = "WidgetConfigActivity", Name = "com.urk.resintimer.WidgetConfigActivity", Theme = "@style/ResinTimer", Exported = true)]
     [IntentFilter(new string[] { "android.appwidget.action.APPWIDGET_CONFIGURE" })]
     public class WidgetConfigActivity : AppCompatActivity
     {

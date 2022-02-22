@@ -10,7 +10,7 @@ using Xamarin.Essentials;
 
 namespace ResinTimer.Droid
 {
-    [BroadcastReceiver(Enabled = true, Exported = false)]
+    [BroadcastReceiver(Enabled = true, Exported = true)]
     [IntentFilter(new string[] { Intent.ActionBootCompleted, "android.intent.action.QUICKBOOT_POWERON" })]
     public class BootReceiver : BroadcastReceiver
     {

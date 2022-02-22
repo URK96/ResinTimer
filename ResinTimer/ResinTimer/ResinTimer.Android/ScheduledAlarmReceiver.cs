@@ -13,7 +13,7 @@ using System.Xml.Serialization;
 
 namespace ResinTimer.Droid
 {
-    [BroadcastReceiver]
+    [BroadcastReceiver(Enabled = true, Exported = true)]
     public class ScheduledAlarmReceiver : BroadcastReceiver
     {
         public const string LocalNotificationKey = "LocalNotification";
@@ -80,7 +80,7 @@ namespace ResinTimer.Droid
             return notification;
         }
 
-        [BroadcastReceiver]
+        [BroadcastReceiver(Enabled = true, Exported = true)]
         [IntentFilter(new string[] { "RUN_GENSHIN", "RESET_TIMER" })]
         public class NotiActionReceiver : BroadcastReceiver
         {

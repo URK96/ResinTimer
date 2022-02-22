@@ -19,7 +19,7 @@ using ResinTimer.Models.Materials;
 
 namespace ResinTimer.Droid
 {
-    [BroadcastReceiver(Label = "Weapon Ascension Widget")]
+    [BroadcastReceiver(Label = "Weapon Ascension Widget", Enabled = true, Exported = true)]
     [IntentFilter(new string[] { AppWidgetManager.ActionAppwidgetUpdate, Intent.ActionMain, ACTION_NEXT, ACTION_PREVIOUS })]
     [MetaData("android.appwidget.provider", Resource = "@xml/widgetprovider_wa_full")]
     public class WAWidget : AppWidgetProvider

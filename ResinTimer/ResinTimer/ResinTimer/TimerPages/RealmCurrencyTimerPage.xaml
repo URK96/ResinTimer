@@ -8,7 +8,7 @@
              Style="{StaticResource PageStyle}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="0" Clicked="ToolbarItemClicked" />
+        <ToolbarItem x:Name="EditRealmEnvironment" Text="Edit" IconImageSource="edit.png" Order="Primary" Priority="0" Clicked="ToolbarItemClicked" />
         <ToolbarItem x:Name="NotiToolbarItem" Text="Noti Setting" IconImageSource="notisetting.png" Order="Primary" Priority="1" Clicked="ToolbarItemClicked" />
     </ContentPage.ToolbarItems>
 
@@ -96,16 +96,11 @@
         <StackLayout Orientation="Vertical"
                      AbsoluteLayout.LayoutFlags="PositionProportional"
                      AbsoluteLayout.LayoutBounds="0.5, 0.75">
-            
-            <Label x:Name="RCCountLabel" Margin="0, 0, 0, 5"
-                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small" TextColor="#0682F6" />
-
             <Label x:Name="RealmRankLabel"
                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small" />
 
             <Label x:Name="TrustLevelLabel"
                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="Small" />
-
         </StackLayout>
 
         <Grid x:Name="ManualControlLayout" 
@@ -131,7 +126,7 @@
 
         <Grid x:Name="SyncControlLayout" 
               AbsoluteLayout.LayoutFlags="All"
-              AbsoluteLayout.LayoutBounds="{OnPlatform Android='0.5, 0.95, 0.95, 0.15', Default='0.5, 0.95, 0.95, 0.20'}">
+              AbsoluteLayout.LayoutBounds="{OnPlatform Android='0.5, 0.95, 0.95, 0.15', Default='0.5, 0.95, 0.95, 0.15'}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.5*" />
                 <RowDefinition Height="*" />

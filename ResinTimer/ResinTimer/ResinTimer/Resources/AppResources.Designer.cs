@@ -2467,6 +2467,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Percentage is not calculated in sync mode과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string RealmCurrencyTimerPage_Caution_SyncMode {
+            get {
+                return ResourceManager.GetString("RealmCurrencyTimerPage_Caution_SyncMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Until gifts are full과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string RealmFriendship_RemainTimeLabel {

@@ -221,8 +221,7 @@ namespace ResinTimer.TimerPages
         {
             SyncStatusTipLabel.IsVisible = false;
             ManualSyncButton.IsEnabled = false;
-            SyncStatusLabel.TextColor = Color.Default;
-            SyncStatusLabel.Text = AppResources.Sync_Working;
+            ManualSyncButton.BorderColor = Color.Default;
 
             await Task.Delay(100);
 
@@ -230,13 +229,11 @@ namespace ResinTimer.TimerPages
             {
                 UpdateSaveData();
 
-                SyncStatusLabel.TextColor = Color.Green;
-                SyncStatusLabel.Text = AppResources.Sync_Success;
+                ManualSyncButton.BorderColor = Color.Green;
             }
             else
             {
-                SyncStatusLabel.TextColor = Color.OrangeRed;
-                SyncStatusLabel.Text = AppResources.Sync_Fail;
+                ManualSyncButton.BorderColor = Color.OrangeRed;
                 SyncStatusTipLabel.IsVisible = true;
             }
 

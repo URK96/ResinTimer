@@ -909,6 +909,9 @@ MIT License</value>
   <data name="RealmCurrencyTimerPage_Caution" xml:space="preserve">
     <value>Can occur difference between input and server time</value>
   </data>
+  <data name="RealmCurrencyTimerPage_Caution_SyncMode" xml:space="preserve">
+    <value>Percentage is not calculated in sync mode</value>
+  </data>
   <data name="RealmCurrency_NowCurrency" xml:space="preserve">
     <value>Now Currency</value>
   </data>

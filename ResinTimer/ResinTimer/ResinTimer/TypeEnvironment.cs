@@ -1,6 +1,5 @@
 ﻿using GenshinDB_Core.Types;
 
-using GenshinInfo.Constants;
 using GenshinInfo.Managers;
 using GenshinInfo.Models;
 
@@ -14,7 +13,6 @@ using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 
-using static GenshinDB_Core.GenshinDB;
 using static ResinTimer.AppEnvironment;
 
 using RealmEnv = ResinTimer.RealmEnvironment;

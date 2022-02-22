@@ -99,9 +99,17 @@ namespace ResinTimer.TimerPages
         {
             bool isSyncEnabled = RCEnv.IsSyncEnabled;
 
-            CautionLabel.IsVisible = !isSyncEnabled;
             ManualControlLayout.IsVisible = !isSyncEnabled;
             SyncControlLayout.IsVisible = isSyncEnabled;
+
+            CautionLabel.Text = isSyncEnabled ?
+                AppResources.RealmCurrencyTimerPage_Caution_SyncMode :
+                AppResources.RealmCurrencyTimerPage_Caution;
+
+            if (isSyncEnabled)
+            {
+                ToolbarItems.Remove(EditRealmEnvironment);
+            }
         }
 
         private void SetRCStatusLabel()
@@ -180,9 +188,6 @@ namespace ResinTimer.TimerPages
 
                 RCPercentage.Text = $"{percentage} %";
                 RangeValue.Value = PointerValue.Value = percentage;
-
-                RCCountLabel.Text = $"{AppResources.RealmCurrency_NowCurrency} : {RCEnv.Currency}";
-
             }
             catch (Exception ex)
             {

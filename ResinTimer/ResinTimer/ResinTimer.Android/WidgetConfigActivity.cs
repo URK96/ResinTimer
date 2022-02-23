@@ -151,7 +151,7 @@ namespace ResinTimer.Droid
             intent.PutExtra(AppWidgetManager.ExtraAppwidgetIds, new int[] { widgetId });
             intent.PutExtra(KEY_CLICKUPDATE, VALUE_CLICKUPDATE);
 
-            return PendingIntent.GetBroadcast(this, 0, intent, PendingIntentFlags.UpdateCurrent);
+            return PendingIntent.GetBroadcast(this, 0, intent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable);
         }
 
         private void WidgetConfigBackgroundSelector_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)

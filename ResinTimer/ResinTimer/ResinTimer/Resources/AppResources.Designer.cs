@@ -2890,6 +2890,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Fail to update Talent Widget...과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string TalentWidget_UpdateFail {
+            get {
+                return ResourceManager.GetString("TalentWidget_UpdateFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Complete과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string TimerMainPage_Complete {
@@ -3066,6 +3075,15 @@ namespace ResinTimer.Resources {
         public static string WAWidget_UpdateComplete {
             get {
                 return ResourceManager.GetString("WAWidget_UpdateComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Fail to update WA Widget...과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string WAWidget_UpdateFail {
+            get {
+                return ResourceManager.GetString("WAWidget_UpdateFail", resourceCulture);
             }
         }
         

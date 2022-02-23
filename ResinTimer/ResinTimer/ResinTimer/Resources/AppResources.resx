@@ -1092,6 +1092,9 @@ MIT License</value>
   <data name="TalentWidget_UpdateComplete" xml:space="preserve">
     <value>Talent Widget Updated</value>
   </data>
+  <data name="TalentWidget_UpdateFail" xml:space="preserve">
+    <value>Fail to update Talent Widget...</value>
+  </data>
   <data name="TimerMainPage_Complete" xml:space="preserve">
     <value>Complete</value>
   </data>
@@ -1151,6 +1154,9 @@ MIT License</value>
   </data>
   <data name="WAWidget_UpdateComplete" xml:space="preserve">
     <value>WA Widget Updated</value>
+  </data>
+  <data name="WAWidget_UpdateFail" xml:space="preserve">
+    <value>Fail to update WA Widget...</value>
   </data>
   <data name="WeaponAscensionTimerPage_NowWA_PreLabel" xml:space="preserve">
     <value>Now W.A. Item</value>

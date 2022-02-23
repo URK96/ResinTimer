@@ -35,7 +35,7 @@ namespace ResinTimer.Droid
             var builder = new NotificationCompat.Builder(Application.Context, AndroidAppEnvironment.CHANNEL_ID)
                 .SetAutoCancel(true)
                 .SetVisibility((int)NotificationVisibility.Public)
-                .SetContentIntent(PendingIntent.GetActivity(context, 0, new Intent(context, typeof(SplashActivity)), PendingIntentFlags.UpdateCurrent))
+                .SetContentIntent(PendingIntent.GetActivity(context, 0, new Intent(context, typeof(SplashActivity)), PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable))
                 .SetContentTitle(notification.Title)
                 .SetContentText(notification.Text)
                 .SetSmallIcon(Application.Context.ApplicationInfo.Icon);
@@ -46,7 +46,7 @@ namespace ResinTimer.Droid
                     .SetAction("RUN_GENSHIN")
                     .PutExtra("NotiId", notification.Id);
 
-                PendingIntent pRunIntent = PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent);
+                PendingIntent pRunIntent = PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable);
 
                 builder.AddAction(0, AppResources.Noti_QuickAction_RunGenshinApp, pRunIntent);
             }
@@ -60,7 +60,7 @@ namespace ResinTimer.Droid
                     .PutExtra("NotiId", notification.Id)
                     .PutExtra("NotiType", (int)notification.NotiType);
 
-                PendingIntent pResetIntent = PendingIntent.GetBroadcast(context, 0, resetIntent, PendingIntentFlags.UpdateCurrent);
+                PendingIntent pResetIntent = PendingIntent.GetBroadcast(context, 0, resetIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable);
 
                 builder.AddAction(0, AppResources.Noti_QuickAction_ResetTimer, pResetIntent);
             }

@@ -1094,6 +1094,9 @@ MIT License</value>
   <data name="TalentWidget_UpdateComplete" xml:space="preserve">
     <value>특성책 위젯 갱신 완료</value>
   </data>
+  <data name="TalentWidget_UpdateFail" xml:space="preserve">
+    <value>특성책 위젯 갱신 실패...</value>
+  </data>
   <data name="TimerMainPage_Complete" xml:space="preserve">
     <value>완료</value>
   </data>
@@ -1153,6 +1156,9 @@ MIT License</value>
   </data>
   <data name="WAWidget_UpdateComplete" xml:space="preserve">
     <value>무기 재료 위젯 갱신 완료</value>
+  </data>
+  <data name="WAWidget_UpdateFail" xml:space="preserve">
+    <value>무기 재료 위젯 갱신 실패...</value>
   </data>
   <data name="WeaponAscensionTimerPage_NowWA_PreLabel" xml:space="preserve">
     <value>현재 무기 돌파 재료</value>

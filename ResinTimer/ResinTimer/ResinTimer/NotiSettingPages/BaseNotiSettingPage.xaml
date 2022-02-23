@@ -19,8 +19,8 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add Noti" IconImageSource="plus.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem x:Name="NotiRemoveToolbarItem" Text="Remove Noti" IconImageSource="minus.png" Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Text="Add Noti" IconImageSource="plus.png" Order="Primary" Priority="0" Clicked="ToolbarItemClicked" />
+        <ToolbarItem x:Name="NotiRemoveToolbarItem" Text="Remove Noti" IconImageSource="minus.png" Order="Primary" Priority="1" Clicked="ToolbarItemClicked" />
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="ListCollectionView" ItemsSource="{Binding Notis}"

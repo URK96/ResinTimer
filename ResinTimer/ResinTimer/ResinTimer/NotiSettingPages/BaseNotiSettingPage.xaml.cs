@@ -28,7 +28,7 @@ namespace ResinTimer.NotiSettingPages
         internal virtual void ShowAddItemDialog() { }
         internal virtual void RemoveItem(int notiId) { }
 
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        private void ToolbarItemClicked(object sender, EventArgs e)
         {
             switch ((sender as ToolbarItem).Priority)
             {
@@ -36,7 +36,10 @@ namespace ResinTimer.NotiSettingPages
                     ShowAddItemDialog();
                     break;
                 case 1:  // Remove Item
-                    RemoveItem((ListView.SelectedItem as Noti).NotiId);
+                    if (ListView.SelectedItem != null)
+                    {
+                        RemoveItem((ListView.SelectedItem as Noti).NotiId);
+                    }
                     break;
                 default:
                     break;

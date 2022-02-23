@@ -75,9 +75,16 @@ namespace ResinTimer.Droid
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
-            WAEnv.Instance.UpdateNowWAItems();
+            try
+            {
+                WAEnv.Instance.UpdateNowWAItems();
 
-            UpdateLayout(context, appWidgetManager, appWidgetIds);
+                UpdateLayout(context, appWidgetManager, appWidgetIds);
+            }
+            catch
+            {
+                Toast.MakeText(context, AppResources.WAWidget_UpdateFail, ToastLength.Short).Show();
+            }
 
             if (isClick)
             {
@@ -132,9 +139,9 @@ namespace ResinTimer.Droid
             nextIntent.SetAction(ACTION_NEXT);
             nextIntent.PutExtra(AppWidgetManager.ExtraAppwidgetId, id);
 
-            remoteViews.SetOnClickPendingIntent(Resource.Id.WAWidgetRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent));
-            remoteViews.SetOnClickPendingIntent(Resource.Id.WAWidgetPreviousButton, PendingIntent.GetBroadcast(context, 1, prevIntent, PendingIntentFlags.UpdateCurrent));
-            remoteViews.SetOnClickPendingIntent(Resource.Id.WAWidgetNextButton, PendingIntent.GetBroadcast(context, 2, nextIntent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.WAWidgetRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.WAWidgetPreviousButton, PendingIntent.GetBroadcast(context, 1, prevIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.WAWidgetNextButton, PendingIntent.GetBroadcast(context, 2, nextIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable));
         }
 
         private void CreateWAIconClickIntent(Context context, RemoteViews remoteViews, int id, string itemName, Locations location)
@@ -144,7 +151,7 @@ namespace ResinTimer.Droid
             runIntent.PutExtra(KEY_RUNAPP, VALUE_RUNAPP);
             runIntent.PutStringArrayListExtra(KEY_WAITEM_LIST, CreateWAList(itemName, location));
 
-            remoteViews.SetOnClickPendingIntent(id, PendingIntent.GetBroadcast(context, id, runIntent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(id, PendingIntent.GetBroadcast(context, id, runIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable));
         }
 
         private int GetWABookImageId(string itemName, Locations location)

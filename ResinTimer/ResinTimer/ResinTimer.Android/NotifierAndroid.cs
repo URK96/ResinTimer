@@ -49,7 +49,7 @@ namespace ResinTimer.Droid
                 intent.PutExtra(ScheduledAlarmReceiver.LocalNotificationKey, SerializeNotification(noti));
             }
 
-            return PendingIntent.GetBroadcast(Application.Context, 0, intent, PendingIntentFlags.UpdateCurrent);
+            return PendingIntent.GetBroadcast(Application.Context, 0, intent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable);
         }
 
         private string SerializeNotification(Models.Notification notification)

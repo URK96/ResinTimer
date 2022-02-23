@@ -55,12 +55,13 @@ namespace ResinTimer.Droid
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
-            REnv.LoadValues();
-
-            if (REnv.IsSyncEnabled)
+            try
             {
-                try
+                REnv.LoadValues();
+
+                if (REnv.IsSyncEnabled)
                 {
+
                     if (await REnv.SyncServerData())
                     {
                         REnv.SaveValue();
@@ -79,16 +80,17 @@ namespace ResinTimer.Droid
                             }
                         }
                     }
+
                 }
-                catch (Exception)
-                {
-                    Toast.MakeText(context, Resources.AppResources.ResinWidget_UpdateFail, ToastLength.Short).Show();
-                }
+
+                REnv.CalcResin();
+
+                UpdateLayout(context, appWidgetManager, appWidgetIds);
             }
-
-            REnv.CalcResin();
-
-            UpdateLayout(context, appWidgetManager, appWidgetIds);
+            catch
+            {
+                Toast.MakeText(context, Resources.AppResources.ResinWidget_UpdateFail, ToastLength.Short).Show();
+            }
 
             if (isClick)
             {
@@ -102,16 +104,18 @@ namespace ResinTimer.Droid
         {
             foreach (int id in appWidgetIds)
             {
-                var remoteViews = (Preferences.Get($"{SettingConstants.WIDGET_BACKGROUND}_{id}", "White")) switch
-                {
-                    "Black" => new RemoteViews(context.PackageName, Resource.Layout.ResinWidget_Black),
-                    _ => new RemoteViews(context.PackageName, Resource.Layout.ResinWidget)
-                };
+                //var remoteViews = (Preferences.Get($"{SettingConstants.WIDGET_BACKGROUND}_{id}", "White")) switch
+                //{
+                //    "Black" => new RemoteViews(context.PackageName, Resource.Layout.ResinWidget_Black),
+                //    _ => new RemoteViews(context.PackageName, Resource.Layout.ResinWidget)
+                //};
+
+                var remoteViews = new RemoteViews(context.PackageName, Resource.Layout.ResinWidget);
+
+                CreateClickIntent(context, appWidgetIds, remoteViews);
 
                 remoteViews.SetTextViewText(Resource.Id.ResinWidgetCount, REnv.Resin.ToString());
                 remoteViews.SetTextViewText(Resource.Id.ResinWidgetEndTime, Utils.GetTimeString(REnv.EndTime));
-
-                CreateClickIntent(context, appWidgetIds, remoteViews);
 
                 manager.UpdateAppWidget(id, remoteViews);
             }
@@ -128,8 +132,8 @@ namespace ResinTimer.Droid
             runIntent.SetAction(Intent.ActionMain);
             runIntent.PutExtra(KEY_RUNAPP, VALUE_RUNAPP);
 
-            remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent));
-            remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetIcon, PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetIcon, PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable));
         }
 
         private GradientDrawable CreateBG(Context context, int id)
@@ -185,12 +189,13 @@ namespace ResinTimer.Droid
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
-            REnv.LoadValues();
-
-            if (REnv.IsSyncEnabled)
+            try
             {
-                try
+                REnv.LoadValues();
+
+                if (REnv.IsSyncEnabled)
                 {
+
                     if (await REnv.SyncServerData())
                     {
                         REnv.SaveValue();
@@ -209,17 +214,17 @@ namespace ResinTimer.Droid
                             }
                         }
                     }
+
                 }
-                catch (Exception ex)
-                {
-                    Toast.MakeText(context, Resources.AppResources.ResinWidget_UpdateFail, ToastLength.Short).Show();
-                    Log.Error("ResinWidget", ex.ToString());
-                }
+
+                REnv.CalcResin();
+
+                UpdateLayout(context, appWidgetManager, appWidgetIds);
             }
-
-            REnv.CalcResin();
-
-            UpdateLayout(context, appWidgetManager, appWidgetIds);
+            catch
+            {
+                Toast.MakeText(context, Resources.AppResources.ResinWidget_UpdateFail, ToastLength.Short).Show();
+            }
 
             if (isClick)
             {
@@ -241,9 +246,9 @@ namespace ResinTimer.Droid
 
                 var remoteViews = new RemoteViews(context.PackageName, Resource.Layout.ResinWidgetSimple);
 
-                remoteViews.SetTextViewText(Resource.Id.ResinWidgetSimpleCount, REnv.Resin.ToString());
-
                 CreateClickIntent(context, appWidgetIds, remoteViews);
+
+                remoteViews.SetTextViewText(Resource.Id.ResinWidgetSimpleCount, REnv.Resin.ToString());
 
                 manager.UpdateAppWidget(id, remoteViews);
             }
@@ -260,8 +265,8 @@ namespace ResinTimer.Droid
             runIntent.SetAction(Intent.ActionMain);
             runIntent.PutExtra(KEY_RUNAPP, VALUE_RUNAPP);
 
-            remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetSimpleRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent));
-            remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetSimpleIcon, PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetSimpleRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.ResinWidgetSimpleIcon, PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable));
         }
 
         public override void OnEnabled(Context context)

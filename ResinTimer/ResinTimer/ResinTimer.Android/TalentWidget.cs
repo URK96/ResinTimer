@@ -75,9 +75,16 @@ namespace ResinTimer.Droid
         {
             base.OnUpdate(context, appWidgetManager, appWidgetIds);
 
-            TalentEnv.Instance.UpdateNowTalentBooks();
+            try
+            {
+                TalentEnv.Instance.UpdateNowTalentBooks();
 
-            UpdateLayout(context, appWidgetManager, appWidgetIds);
+                UpdateLayout(context, appWidgetManager, appWidgetIds);
+            }
+            catch
+            {
+                Toast.MakeText(context, AppResources.TalentWidget_UpdateFail, ToastLength.Short).Show();
+            }
 
             if (isClick)
             {
@@ -132,9 +139,9 @@ namespace ResinTimer.Droid
             nextIntent.SetAction(ACTION_NEXT);
             nextIntent.PutExtra(AppWidgetManager.ExtraAppwidgetId, id);
 
-            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent));
-            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetPreviousButton, PendingIntent.GetBroadcast(context, 1, prevIntent, PendingIntentFlags.UpdateCurrent));
-            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetNextButton, PendingIntent.GetBroadcast(context, 2, nextIntent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetRootLayout, PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetPreviousButton, PendingIntent.GetBroadcast(context, 1, prevIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable));
+            remoteViews.SetOnClickPendingIntent(Resource.Id.TalentWidgetNextButton, PendingIntent.GetBroadcast(context, 2, nextIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable));
         }
 
         private void CreateTalentIconClickIntent(Context context, RemoteViews remoteViews, int id, string itemName, Locations location)
@@ -144,7 +151,7 @@ namespace ResinTimer.Droid
             runIntent.PutExtra(KEY_RUNAPP, VALUE_RUNAPP);
             runIntent.PutStringArrayListExtra(KEY_TALENTITEM_LIST, CreateTalentList(itemName, location));
 
-            remoteViews.SetOnClickPendingIntent(id, PendingIntent.GetBroadcast(context, id, runIntent, PendingIntentFlags.UpdateCurrent));
+            remoteViews.SetOnClickPendingIntent(id, PendingIntent.GetBroadcast(context, id, runIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable));
         }
 
         private int GetTalentBookImageId(string itemName, Locations location)

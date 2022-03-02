@@ -51,8 +51,8 @@ namespace ResinTimer.UWP
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             if ((e.Kind == ActivationKind.StartupTask) &&
-            Preferences.ContainsKey(SettingConstants.NOTI_LIST) &&
-            Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+                Preferences.ContainsKey(SettingConstants.NOTI_LIST) &&
+                Preferences.Get(SettingConstants.NOTI_ENABLED, false))
             {
                 NotiBootstrap();
             }

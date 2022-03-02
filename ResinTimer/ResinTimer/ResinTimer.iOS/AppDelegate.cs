@@ -30,12 +30,14 @@ namespace ResinTimer.iOS
             Syncfusion.SfGauge.XForms.iOS.SfGaugeRenderer.Init();
             Syncfusion.SfNumericUpDown.XForms.iOS.SfNumericUpDownRenderer.Init();
 
-            LoadApplication(new App());
+            App xfApp = new App();
+
+            LoadApplication(xfApp);
 
             UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert | UNAuthorizationOptions.Sound, (approved, err) => { });
             UNUserNotificationCenter.Current.Delegate = new UserNotificationCenterDelegate();
 
-            //return true;
+            xfApp.SetMainPage(null);
 
             return base.FinishedLaunching(app, options);
         }

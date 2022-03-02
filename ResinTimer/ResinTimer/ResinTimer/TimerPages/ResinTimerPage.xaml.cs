@@ -185,7 +185,7 @@ namespace ResinTimer.TimerPages
             catch (Exception) { }
             finally
             {
-                System.Diagnostics.Debug.WriteLine("Resin info refresh");
+                //System.Diagnostics.Debug.WriteLine("Resin info refresh");
             }
         }
 
@@ -214,7 +214,7 @@ namespace ResinTimer.TimerPages
                     REnv.EndTime.AddSeconds(REnv.OneRestoreInterval * _quickCalcValue);
             }
 
-            UpdateSaveData();
+            REnv.UpdateSaveData();
         }
 
         private async Task SyncData()
@@ -227,7 +227,7 @@ namespace ResinTimer.TimerPages
 
             if (await REnv.SyncServerData())
             {
-                UpdateSaveData();
+                REnv.UpdateSaveData();
 
                 ManualSyncButton.BorderColor = Color.Green;
             }
@@ -240,18 +240,18 @@ namespace ResinTimer.TimerPages
             ManualSyncButton.IsEnabled = true;
         }
 
-        private void UpdateSaveData()
-        {
-            REnv.SaveValue();
+        //private void UpdateSaveData()
+        //{
+        //    REnv.SaveValue();
 
-            if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
-            {
-                ResinNotiManager notiManager = new();
+        //    if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+        //    {
+        //        ResinNotiManager notiManager = new();
 
-                notiManager.UpdateNotisTime();
-                notiManager.UpdateScheduledNoti<ResinNoti>();
-            }
-        }
+        //        notiManager.UpdateNotisTime();
+        //        notiManager.UpdateScheduledNoti<ResinNoti>();
+        //    }
+        //}
 
         private async void ButtonPressed(object sender, EventArgs e)
         {

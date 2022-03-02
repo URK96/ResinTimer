@@ -34,6 +34,13 @@ namespace ResinTimer.TimerPages
             BindingContext = this;
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            Utils.RefreshCollectionView(ListCollectionView, Items);
+        }
+
         private async void EditToolbarItemClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EditMainFlyoutList());

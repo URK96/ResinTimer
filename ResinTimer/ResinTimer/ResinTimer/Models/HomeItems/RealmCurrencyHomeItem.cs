@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 using ResinTimer.Resources;
 
@@ -21,14 +22,24 @@ namespace ResinTimer.Models.HomeItems
         {
             RCEnv.LoadValues();
 
+            Task.Run(UpdateInfo);
+        }
+
+        private async Task UpdateInfo()
+        {
             if (RCEnv.IsSyncEnabled)
             {
-                _ = RCEnv.SyncServerData();
+                if (await RCEnv.SyncServerData())
+                {
+                    RCEnv.UpdateSaveData();
+
+                    return;
+                }
             }
-            else
-            {
-                RCEnv.CalcRC();
-            }
+
+            Xamarin.Forms.DependencyService.Get<IToast>().Show("Currency sync fail");
+
+            RCEnv.CalcRC();
         }
     }
 }

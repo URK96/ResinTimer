@@ -13,7 +13,11 @@ namespace ResinTimer.UWP
                 UWPAppEnvironment.toastNotifier = ToastNotificationManager.CreateToastNotifier();
             }
 
-            LoadApplication(new ResinTimer.App());
+            var app = new ResinTimer.App();
+
+            LoadApplication(app);
+
+            app.SetMainPage(null);
         }
     }
 }

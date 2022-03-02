@@ -38,7 +38,7 @@ namespace ResinTimer
 
                 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTQ5NjcxQDMxMzkyZTM0MmUzMFZGNm56TGV5VjZZUjkwRUpiMFpNRXZFRXVjMktnbDVPR1M2Z1NrSGpvNEE9");
 
-                SetMainPage(null);
+                //SetMainPage(null);
             }
             catch (Exception ex)
             {

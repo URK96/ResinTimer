@@ -233,7 +233,7 @@ namespace ResinTimer.TimerPages
 
             if (await RCEnv.SyncServerData())
             {
-                UpdateSaveData();
+                RCEnv.UpdateSaveData();
 
                 ManualSyncButton.BorderColor = Color.Green;
             }
@@ -246,18 +246,18 @@ namespace ResinTimer.TimerPages
             ManualSyncButton.IsEnabled = true;
         }
 
-        private void UpdateSaveData()
-        {
-            RCEnv.SaveValue();
+        //private void UpdateSaveData()
+        //{
+        //    RCEnv.SaveValue();
 
-            if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
-            {
-                RealmCurrencyNotiManager notiManager = new();
+        //    if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+        //    {
+        //        RealmCurrencyNotiManager notiManager = new();
 
-                notiManager.UpdateNotisTime();
-                notiManager.UpdateScheduledNoti<RealmCurrencyNoti>();
-            }
-        }
+        //        notiManager.UpdateNotisTime();
+        //        notiManager.UpdateScheduledNoti<RealmCurrencyNoti>();
+        //    }
+        //}
 
         private async void ButtonPressed(object sender, EventArgs e)
         {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 using ResinTimer.Resources;
 
@@ -20,15 +21,22 @@ namespace ResinTimer.Models.HomeItems
         {
             REnv.LoadValues();
 
+            Task.Run(UpdateInfo);
+        }
+
+        private async Task UpdateInfo()
+        {
             if (REnv.IsSyncEnabled)
             {
-                 _ = REnv.SyncServerData();
-            }
-            else
-            {
-                REnv.CalcResin();
+                if (await REnv.SyncServerData())
+                {
+                    REnv.UpdateSaveData();
+
+                    return;
+                }
             }
 
+            REnv.CalcResin();
             REnv.CalcResinTime();
         }
     }

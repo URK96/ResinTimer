@@ -3,7 +3,12 @@
 using GenshinInfo.Managers;
 using GenshinInfo.Models;
 
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+
+using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models.Materials;
+using ResinTimer.Models.Notis;
 using ResinTimer.Resources;
 
 using System;
@@ -101,6 +106,28 @@ namespace ResinTimer
             catch { }
         }
 
+        public static void UpdateSaveData()
+        {
+            SaveValue();
+
+            if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+            {
+                ResinNotiManager notiManager = new();
+
+                Analytics.TrackEvent("Save & Update Resin Noti");
+
+                try
+                {
+                    notiManager.UpdateNotisTime();
+                    notiManager.UpdateScheduledNoti<ResinNoti>();
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+            }
+        }
+
         public static int CalcResinOverflow()
         {
             DateTime now = DateTime.Now;
@@ -190,7 +217,7 @@ namespace ResinTimer
 
         public static int MaxRC => IsSyncEnabled ? s_serverMaxRC : s_rcCapacity[RealmEnv.TrustRank - 1];
         public static int RCRate => s_aeRate[(int)RealmEnv.RealmRank];
-        public static int Percentage => Convert.ToInt32((double)Currency / MaxRC * 100);
+        public static int Percentage => Currency * 100 / MaxRC;
 
         private static readonly int[] s_aeRate = { 4, 8, 12, 16, 20, 22, 24, 26, 28, 30 };
         private static readonly int[] s_rcCapacity = { 300, 600, 900, 1200, 1400, 1600, 1800, 2000, 2200, 2400 };
@@ -297,7 +324,10 @@ namespace ResinTimer
                 {
                     TimeSpan addInterval = data.HomeCoinRecoveryTime;
 
-                    s_serverMaxRC = data.MaxHomeCoin;
+                    if (data.MaxHomeCoin > 0)
+                    {
+                        s_serverMaxRC = data.MaxHomeCoin;
+                    }
 
                     if (data.CurrentHomeCoin >= s_serverMaxRC)
                     {
@@ -337,6 +367,23 @@ namespace ResinTimer
                 RealmEnv.SaveValues();
             }
             catch { }
+        }
+
+        public static void UpdateSaveData()
+        {
+            SaveValue();
+
+            if (Preferences.Get(SettingConstants.NOTI_ENABLED, false))
+            {
+                RealmCurrencyNotiManager notiManager = new();
+
+                try
+                {
+                    notiManager.UpdateNotisTime();
+                    notiManager.UpdateScheduledNoti<RealmCurrencyNoti>();
+                }
+                catch { }
+            }
         }
     }
 

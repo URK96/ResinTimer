@@ -139,13 +139,10 @@ namespace ResinTimer
             };
         }
 
-        public static async Task<bool> SyncServerData()
+        public static bool SyncServerData(RTNoteData data)
         {
             try
             {
-                GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
-                RTNoteData data = await manager.GetRealTimeNotes();
-
                 if (data is not null)
                 {
                     TimeSpan addInterval = data.ResinRecoveryTime;
@@ -313,13 +310,10 @@ namespace ResinTimer
 #endif
         }
 
-        public static async Task<bool> SyncServerData()
+        public static bool SyncServerData(RTNoteData data)
         {
             try
             {
-                GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
-                RTNoteData data = await manager.GetRealTimeNotes();
-
                 if (data is not null)
                 {
                     TimeSpan addInterval = data.HomeCoinRecoveryTime;

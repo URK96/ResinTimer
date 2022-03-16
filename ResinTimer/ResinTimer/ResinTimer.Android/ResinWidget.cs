@@ -8,6 +8,7 @@ using Android.Widget;
 
 using AndroidX.Core.Content.Resources;
 
+using ResinTimer.Helper;
 using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models.Notis;
 
@@ -61,8 +62,7 @@ namespace ResinTimer.Droid
 
                 if (REnv.IsSyncEnabled)
                 {
-
-                    if (await REnv.SyncServerData())
+                    if (await SyncHelper.Update(SyncHelper.SyncTarget.RealmCurrency))
                     {
                         REnv.SaveValue();
 
@@ -196,7 +196,7 @@ namespace ResinTimer.Droid
                 if (REnv.IsSyncEnabled)
                 {
 
-                    if (await REnv.SyncServerData())
+                    if (await SyncHelper.Update(SyncHelper.SyncTarget.Resin))
                     {
                         REnv.SaveValue();
 

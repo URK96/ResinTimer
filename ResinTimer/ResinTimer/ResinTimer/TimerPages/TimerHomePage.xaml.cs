@@ -1,4 +1,5 @@
-﻿using ResinTimer.Models.HomeItems;
+﻿using ResinTimer.Helper;
+using ResinTimer.Models.HomeItems;
 
 using System;
 using System.Collections.Generic;
@@ -34,9 +35,19 @@ namespace ResinTimer.TimerPages
             BindingContext = this;
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
+
+            await UpdateItemsInfo();
+        }
+
+        private async Task UpdateItemsInfo()
+        {
+            await SyncHelper.UpdateAll();
+
+            (Items[0] as ResinHomeItem).UpdateInfo();
+            (Items[1] as RealmCurrencyHomeItem).UpdateInfo();
 
             Utils.RefreshCollectionView(ListCollectionView, Items);
         }

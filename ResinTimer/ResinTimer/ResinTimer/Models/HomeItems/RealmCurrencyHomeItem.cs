@@ -21,24 +21,10 @@ namespace ResinTimer.Models.HomeItems
         public RealmCurrencyHomeItem()
         {
             RCEnv.LoadValues();
-
-            Task.Run(UpdateInfo);
         }
 
-        private async Task UpdateInfo()
+        public void UpdateInfo()
         {
-            if (RCEnv.IsSyncEnabled)
-            {
-                if (await RCEnv.SyncServerData())
-                {
-                    RCEnv.UpdateSaveData();
-
-                    return;
-                }
-            }
-
-            Xamarin.Forms.DependencyService.Get<IToast>().Show("Currency sync fail");
-
             RCEnv.CalcRC();
         }
     }

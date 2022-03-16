@@ -37,7 +37,6 @@ namespace ResinTimer.Droid
         public void Cancel(int notificationId)
         {
             AlarmManager.Cancel(CreatePendingIntent(notificationId));
-            NotiManager.Cancel(notificationId);
         }
 
         private PendingIntent CreatePendingIntent(int id, Models.Notification noti = null)

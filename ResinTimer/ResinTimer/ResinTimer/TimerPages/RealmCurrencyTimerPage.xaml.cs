@@ -1,4 +1,5 @@
 ﻿using ResinTimer.Dialogs;
+using ResinTimer.Helper;
 using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models.Notis;
 using ResinTimer.NotiSettingPages;
@@ -231,7 +232,7 @@ namespace ResinTimer.TimerPages
 
             await Task.Delay(100);
 
-            if (await RCEnv.SyncServerData())
+            if (await SyncHelper.Update(SyncHelper.SyncTarget.RealmCurrency))
             {
                 RCEnv.UpdateSaveData();
 

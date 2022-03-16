@@ -4,7 +4,6 @@ using Android.Content;
 using AndroidX.Core.App;
 
 using ResinTimer.Managers.NotiManagers;
-using ResinTimer.Models;
 using ResinTimer.Models.Notis;
 using ResinTimer.Resources;
 
@@ -18,62 +17,67 @@ namespace ResinTimer.Droid
     {
         public const string LocalNotificationKey = "LocalNotification";
 
-        public NotificationManager NotificationManager => Application.Context.GetSystemService(Context.NotificationService) as NotificationManager;
+        private NotificationManager NotificationManager =>
+            Application.Context.GetSystemService(Context.NotificationService) as NotificationManager;
 
         public override void OnReceive(Context context, Intent intent)
         {
             string extra = intent.GetStringExtra(LocalNotificationKey);
             var notification = DeserializeNotification(extra);
 
-            Android.App.Notification nativeNotification = CreateNativeNotification(context, notification);
+            Notification nativeNotification = CreateNativeNotification(context, notification);
 
             NotificationManager.Notify(notification.Id, nativeNotification);
         }
 
-        private Android.App.Notification CreateNativeNotification(Context context, Models.Notification notification)
+        private Notification CreateNativeNotification(Context context, Models.Notification notification)
         {
             var builder = new NotificationCompat.Builder(Application.Context, AndroidAppEnvironment.CHANNEL_ID)
                 .SetAutoCancel(true)
                 .SetVisibility((int)NotificationVisibility.Public)
-                .SetContentIntent(PendingIntent.GetActivity(context, 0, new Intent(context, typeof(SplashActivity)), PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable))
+                .SetContentIntent(PendingIntent.GetActivity(context, 0, new Intent(context, typeof(SplashActivity)),
+                                                            PendingIntentFlags.UpdateCurrent |
+                                                            PendingIntentFlags.Mutable))
                 .SetContentTitle(notification.Title)
                 .SetContentText(notification.Text)
                 .SetSmallIcon(Application.Context.ApplicationInfo.Icon);
 
-            if (context.PackageManager.GetLaunchIntentForPackage("com.miHoYo.GenshinImpact") != null)
+            if (context.PackageManager.GetLaunchIntentForPackage("com.miHoYo.GenshinImpact") is not null)
             {
                 Intent runIntent = new Intent(context, typeof(NotiActionReceiver))
                     .SetAction("RUN_GENSHIN")
                     .PutExtra("NotiId", notification.Id);
 
-                PendingIntent pRunIntent = PendingIntent.GetBroadcast(context, 0, runIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable);
+                PendingIntent pRunIntent = PendingIntent.GetBroadcast(context, 0, runIntent, 
+                                                                      PendingIntentFlags.UpdateCurrent | 
+                                                                      PendingIntentFlags.Mutable);
 
                 builder.AddAction(0, AppResources.Noti_QuickAction_RunGenshinApp, pRunIntent);
             }
 
-            if (!((notification.NotiType == NotiManager.NotificationType.Resin) ||
-                (notification.NotiType == NotiManager.NotificationType.RealmCurrency) ||
-                (notification.NotiType == NotiManager.NotificationType.RealmFriendship)))
+            if (!((notification.NotiType is NotiManager.NotificationType.Resin) ||
+                (notification.NotiType is NotiManager.NotificationType.RealmCurrency) ||
+                (notification.NotiType is NotiManager.NotificationType.RealmFriendship)))
             {
                 Intent resetIntent = new Intent(context, typeof(NotiActionReceiver))
                     .SetAction("RESET_TIMER")
                     .PutExtra("NotiId", notification.Id)
                     .PutExtra("NotiType", (int)notification.NotiType);
 
-                PendingIntent pResetIntent = PendingIntent.GetBroadcast(context, 0, resetIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Mutable);
+                PendingIntent pResetIntent = PendingIntent.GetBroadcast(context, 0, resetIntent, 
+                                                                        PendingIntentFlags.UpdateCurrent |
+                                                                        PendingIntentFlags.Mutable);
 
                 builder.AddAction(0, AppResources.Noti_QuickAction_ResetTimer, pResetIntent);
             }
 
-            Android.App.Notification nativeNotification = builder.Build();
-
-            return nativeNotification;
+            return builder.Build();
         }
 
         private Models.Notification DeserializeNotification(string notificationString)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Models.Notification));
-            using StringReader stringReader = new StringReader(notificationString);
+            XmlSerializer xmlSerializer = new(typeof(Models.Notification));
+            using StringReader stringReader = new(notificationString);
 
             var notification = xmlSerializer.Deserialize(stringReader) as Models.Notification;
 
@@ -93,7 +97,8 @@ namespace ResinTimer.Droid
 
                         context.StartActivity(rIntent);
 
-                        (context.GetSystemService(Context.NotificationService) as NotificationManager).Cancel(intent.GetIntExtra("NotiId", -1));
+                        (context.GetSystemService(Context.NotificationService) as NotificationManager)
+                            .Cancel(intent.GetIntExtra("NotiId", -1));
                         break;
                     case "RESET_TIMER":
                         ResetTimer(intent);
@@ -115,7 +120,7 @@ namespace ResinTimer.Droid
                     _ => null
                 };
 
-                if ((notiManager == null) ||
+                if ((notiManager is null) ||
                     (id == -1))
                 {
                     return;

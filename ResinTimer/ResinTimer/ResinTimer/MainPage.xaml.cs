@@ -47,7 +47,7 @@ namespace ResinTimer
             }
             catch
             {
-                startPage = new ResinTimerPage();
+                startPage = new TimerHomePage();
             }
 
             return startPage;

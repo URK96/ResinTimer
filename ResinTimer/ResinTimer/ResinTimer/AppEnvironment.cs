@@ -13,6 +13,11 @@ namespace ResinTimer
 {
     public static class AppEnvironment
     {
+        public enum StartPageEnum
+        {
+            Default = 0,
+            TalentBookCharacter = 1
+        }
         public enum AppLang { System = 0, English, Korean }
         public enum Servers { America, Asia, Europe, TWHKMO }
         public enum ManualCategory

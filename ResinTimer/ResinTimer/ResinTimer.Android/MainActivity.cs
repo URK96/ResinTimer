@@ -40,11 +40,12 @@ namespace ResinTimer.Droid
                 Xamarin.Essentials.Platform.Init(this, savedInstanceState);
                 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-                App app = new App();
-
+                App app = new();
+                    
                 app.SetMainPage(Intent.GetStringExtra(KEY_TALENTITEM_CLICK) switch
                 {
-                    VALUE_TALENTITEM_CLICK => new NavigationPage(new TalentCharacterPage(Intent.GetStringArrayListExtra(KEY_TALENTITEM_LIST)?.ToArray())),
+                    VALUE_TALENTITEM_CLICK => new NavigationPage(
+                        new TalentCharacterPage(Intent.GetStringArrayListExtra(KEY_TALENTITEM_LIST)?.ToArray())),
                     _ => null
                 });
 

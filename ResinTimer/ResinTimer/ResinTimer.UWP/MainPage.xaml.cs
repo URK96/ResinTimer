@@ -17,7 +17,7 @@ namespace ResinTimer.UWP
 
             LoadApplication(app);
 
-            app.SetMainPage(null);
+            //app.SetMainPage(null);
         }
     }
 }

@@ -16,29 +16,38 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
+using AppEnv = ResinTimer.AppEnvironment;
+
 namespace ResinTimer
 {
     public partial class App : Application
     {
-        public App(Page startPage = null)
+        private string syncfusionKey = 
+            "NTQ5NjcxQDMxMzkyZTM0MmUzMFZGNm56TGV5VjZZUjkwRUpiMFpNRXZFRXVjMktnbDVPR1M2Z1NrSGpvNEE9";
+
+        public App()
         {
             try
             {
                 InitializeComponent();
-                AppEnvironment.InitAppLang();
+                AppEnv.InitAppLang();
                 _ = CreateAppAction();
 
 #if DEBUG
-                AppEnvironment.IsDebug = true;
+                AppEnv.IsDebug = true;
 #endif
-                AppEnvironment.GDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
-                AppEnvironment.LoadLocationList();
+                AppEnv.GDB = new GenshinDB_Core.GenshinDB(AppResources.Culture);
+                AppEnv.LoadLocationList();
 
                 //SetDefaultPreferences();
 
-                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTQ5NjcxQDMxMzkyZTM0MmUzMFZGNm56TGV5VjZZUjkwRUpiMFpNRXZFRXVjMktnbDVPR1M2Z1NrSGpvNEE9");
+                Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
 
-                //SetMainPage(null);
+                // Android use direct call this method on MainActivity.cs
+                if (DeviceInfo.Platform != DevicePlatform.Android)
+                {
+                    SetMainPage(null);
+                }
             }
             catch (Exception ex)
             {
@@ -46,7 +55,7 @@ namespace ResinTimer
             }
         }
 
-        public void SetMainPage(Page page = null)
+        public void SetMainPage(Page page)
         {
             MainPage = page ?? new MainPage();
         }

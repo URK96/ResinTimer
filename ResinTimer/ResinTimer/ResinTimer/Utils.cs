@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -65,20 +63,14 @@ namespace ResinTimer
             string date = $"{dt:d}";
             string time = dt.ToString($"{(setting24H ? "HH" : "hh")}:mm:ss");
 
-            string timeString;
-
-            switch (langValue)
+            return langValue switch
             {
-                case AppLang.Korean:
-                case AppLang.System when CultureInfo.CurrentUICulture.Name.Equals("ko-KR"):
-                    timeString = $"{date} {(setting24H ? string.Empty : $"{dt:tt} ")}{time}";
-                    break;
-                default:
-                    timeString = $"{date} {time}{(setting24H ? string.Empty : $" {dt:tt}")}";
-                    break;
-            }
+                AppLang.Korean or
+                AppLang.System when CultureInfo.CurrentUICulture.Name.Equals("ko-KR") =>
+                    $"{date} {(setting24H ? string.Empty : $"{dt:tt} ")}{time}",
 
-            return timeString;
+                _ => $"{date} {time}{(setting24H ? string.Empty : $" {dt:tt}")}"
+            };
         }
 
         public static DayOfWeek GetServerDayOfWeek()

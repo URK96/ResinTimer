@@ -60,35 +60,6 @@ namespace ResinTimer
             MainPage = page ?? new MainPage();
         }
 
-        private void SetDefaultPreferences()
-        {
-            if (!Preferences.ContainsKey(SettingConstants.LAST_INPUT_TIME))
-            {
-                Preferences.Set(SettingConstants.LAST_INPUT_TIME, DateTime.Now.ToString());
-            }
-            if (!Preferences.ContainsKey(SettingConstants.RESIN_INPUT_TYPE))
-            {
-                Preferences.Set(SettingConstants.RESIN_INPUT_TYPE, (int)ResinEnvironment.ApplyType.Time);
-            }
-            if (!Preferences.ContainsKey(SettingConstants.QUICKCALC_VIBRATION))
-            {
-                Preferences.Set(SettingConstants.QUICKCALC_VIBRATION, true);
-            }
-            if (!Preferences.ContainsKey(SettingConstants.NOTI_ENABLED))
-            {
-                Preferences.Set(SettingConstants.NOTI_ENABLED, false);
-            }
-            if (!Preferences.ContainsKey(SettingConstants.NOTI_LIST))
-            {
-                List<ResinNoti> list = new()
-                {
-                    new ResinNoti(ResinEnvironment.MaxResin)
-                };
-
-                Preferences.Set(SettingConstants.NOTI_LIST, JsonConvert.SerializeObject(list));
-            }
-        }
-
         private async Task CreateAppAction()
         {
             try

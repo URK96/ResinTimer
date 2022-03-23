@@ -32,47 +32,30 @@ namespace ResinTimer.Managers.NotiManagers
 
         public List<T> GetNotiList<T>() where T : Noti
         {
-            string value = string.Empty;
             List<T> result = new();
 
             try
             {
-                if (typeof(T) == typeof(ResinNoti))
+                string key = typeof(T) switch
                 {
-                    value = Preferences.Get(SettingConstants.NOTI_LIST, string.Empty);
-                }
-                else if (typeof(T) == typeof(RealmCurrencyNoti))
+                    Type t when t == typeof(ResinNoti) => SettingConstants.NOTI_LIST,
+                    Type t when t == typeof(RealmCurrencyEnvironment) => SettingConstants.REALM_CURRENCY_NOTI_LIST,
+                    Type t when t == typeof(RealmFriendshipNoti) => SettingConstants.REALM_FRIENDSHIP_NOTI_LIST,
+                    Type t when t == typeof(ExpeditionNoti) => SettingConstants.EXPEDITION_NOTI_LIST,
+                    Type t when t == typeof(GatheringItemNoti) => SettingConstants.GATHERINGITEM_NOTI_LIST,
+                    Type t when t == typeof(GadgetNoti) => SettingConstants.GADGET_NOTI_LIST,
+                    Type t when t == typeof(FurnishingNoti) => SettingConstants.FURNISHING_NOTI_LIST,
+                    Type t when t == typeof(GardeningNoti) => SettingConstants.GARDENING_NOTI_LIST,
+                    Type t when t == typeof(ChecklistNoti) => SettingConstants.CHECKLIST_LIST,
+                    _ => string.Empty
+                };
+
+                if (string.IsNullOrEmpty(key))
                 {
-                    value = Preferences.Get(SettingConstants.REALM_CURRENCY_NOTI_LIST, string.Empty);
+                    return result;
                 }
-                else if (typeof(T) == typeof(RealmFriendshipNoti))
-                {
-                    value = Preferences.Get(SettingConstants.REALM_FRIENDSHIP_NOTI_LIST, string.Empty);
-                }
-                else if (typeof(T) == typeof(ExpeditionNoti))
-                {
-                    value = Preferences.Get(SettingConstants.EXPEDITION_NOTI_LIST, string.Empty);
-                }
-                else if (typeof(T) == typeof(GatheringItemNoti))
-                {
-                    value = Preferences.Get(SettingConstants.GATHERINGITEM_NOTI_LIST, string.Empty);
-                }
-                else if (typeof(T) == typeof(GadgetNoti))
-                {
-                    value = Preferences.Get(SettingConstants.GADGET_NOTI_LIST, string.Empty);
-                }
-                else if (typeof(T) == typeof(FurnishingNoti))
-                {
-                    value = Preferences.Get(SettingConstants.FURNISHING_NOTI_LIST, string.Empty);
-                }
-                else if (typeof(T) == typeof(GardeningNoti))
-                {
-                    value = Preferences.Get(SettingConstants.GARDENING_NOTI_LIST, string.Empty);
-                }
-                else if (typeof(T) == typeof(ChecklistNoti))
-                {
-                    value = Preferences.Get(SettingConstants.CHECKLIST_LIST, string.Empty);
-                }
+
+                string value = Preferences.Get(key, string.Empty);
 
                 List<T> deserialized = JsonConvert.DeserializeObject<List<T>>(value);
 
@@ -81,10 +64,7 @@ namespace ResinTimer.Managers.NotiManagers
                     result.AddRange(deserialized);
                 }
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch { }
 
             return result;
         }

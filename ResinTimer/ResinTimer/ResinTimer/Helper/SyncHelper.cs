@@ -45,8 +45,15 @@ namespace ResinTimer.Helper
         {
             RTNoteData data = await GetRTNoteData();
 
-            REnv.SyncServerData(data);
-            RCEnv.SyncServerData(data);
+            if (REnv.SyncServerData(data))
+            {
+                REnv.SaveValue();
+            }
+
+            if (RCEnv.SyncServerData(data))
+            {
+                RCEnv.SaveValue();
+            }
         }
     }
 }

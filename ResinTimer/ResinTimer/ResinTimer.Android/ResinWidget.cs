@@ -3,7 +3,6 @@ using Android.Appwidget;
 using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
-using Android.Util;
 using Android.Widget;
 
 using AndroidX.Core.Content.Resources;
@@ -12,12 +11,11 @@ using ResinTimer.Helper;
 using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models.Notis;
 
-using System;
-
 using Xamarin.Essentials;
 
 using static ResinTimer.Droid.AndroidAppEnvironment;
 
+using Context = Android.Content.Context;
 using REnv = ResinTimer.ResinEnvironment;
 
 namespace ResinTimer.Droid
@@ -62,7 +60,7 @@ namespace ResinTimer.Droid
 
                 if (REnv.IsSyncEnabled)
                 {
-                    if (await SyncHelper.Update(SyncHelper.SyncTarget.RealmCurrency))
+                    if (await SyncHelper.Update(SyncHelper.SyncTarget.Resin))
                     {
                         REnv.SaveValue();
 
@@ -80,7 +78,6 @@ namespace ResinTimer.Droid
                             }
                         }
                     }
-
                 }
 
                 REnv.CalcResin();
@@ -195,7 +192,6 @@ namespace ResinTimer.Droid
 
                 if (REnv.IsSyncEnabled)
                 {
-
                     if (await SyncHelper.Update(SyncHelper.SyncTarget.Resin))
                     {
                         REnv.SaveValue();
@@ -214,7 +210,6 @@ namespace ResinTimer.Droid
                             }
                         }
                     }
-
                 }
 
                 REnv.CalcResin();

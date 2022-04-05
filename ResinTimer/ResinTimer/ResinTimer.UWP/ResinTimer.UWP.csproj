@@ -11,7 +11,7 @@
     <AssemblyName>ResinTimer.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.20348.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
@@ -23,7 +23,7 @@
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>C1715A74D483012F92683EFCB4D9F58E1C6947B5</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>33E46489F1239EE018E772FEDE5724C4A791E8E2</PackageCertificateThumbprint>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -140,6 +140,7 @@
     <Content Include="Character_Albedo_Thumb.png" />
     <Content Include="Character_Aloy_Thumb.png" />
     <Content Include="Character_Amber_Thumb.png" />
+    <Content Include="Character_Arataki_Itto_Thumb.png" />
     <Content Include="Character_Ayaka_Thumb.png" />
     <Content Include="Character_Barbara_Thumb.png" />
     <Content Include="Character_Beidou_Thumb.png" />
@@ -150,10 +151,10 @@
     <Content Include="Character_Eula_Thumb.png" />
     <Content Include="Character_Fischl_Thumb.png" />
     <Content Include="Character_Ganyu_Thumb.png" />
+    <Content Include="Character_Gorou_Thumb.png" />
     <Content Include="Character_HuTao_Thumb.png" />
     <Content Include="Character_Jean_Thumb.png" />
     <Content Include="Character_Kaeya_Thumb.png" />
-    <Content Include="Character_Kamisato_Ayato_Thumb.png" />
     <Content Include="Character_Kazuha_Thumb.png" />
     <Content Include="Character_Keqing_Thumb.png" />
     <Content Include="Character_Klee_Thumb.png" />
@@ -168,6 +169,7 @@
     <Content Include="Character_Rosaria_Thumb.png" />
     <Content Include="Character_Sangonomiya_Kokomi_Thumb.png" />
     <Content Include="Character_Sayu_Thumb.png" />
+    <Content Include="Character_Shenhe_Thumb.png" />
     <Content Include="Character_Sucrose_Thumb.png" />
     <Content Include="Character_Tartaglia_Thumb.png" />
     <Content Include="Character_Thoma_Thumb.png" />
@@ -177,12 +179,16 @@
     <Content Include="Character_Xiao_Thumb.png" />
     <Content Include="Character_Xingqiu_Thumb.png" />
     <Content Include="Character_Xinyan_Thumb.png" />
+    <Content Include="Character_Yae_Miko_Thumb.png" />
     <Content Include="Character_Yanfei_Thumb.png" />
     <Content Include="Character_Yoimiya_Thumb.png" />
+    <Content Include="Character_Yun_Jin_Thumb.png" />
     <Content Include="Character_Zhongli_Thumb.png" />
+    <Content Include="close.png" />
     <Content Include="compass.png" />
     <Content Include="crystal_chunk.png" />
     <Content Include="crystal_core.png" />
+    <Content Include="delete.png" />
     <Content Include="edit.png" />
     <Content Include="electro_crystal.png" />
     <Content Include="Element_Anemo.png" />
@@ -202,9 +208,12 @@
     <Content Include="gardening_luxuriant_glebe.png" />
     <Content Include="gardening_orderly_meadow.png" />
     <Content Include="geshin_worldmap.png" />
+    <Content Include="heros_wit.png" />
     <Content Include="info.png" />
     <Content Include="ingredient.png" />
+    <Content Include="intertwined_fate.png" />
     <Content Include="iron_chunk.png" />
+    <Content Include="key.png" />
     <Content Include="location.png" />
     <Content Include="magical_crystal_chunk.png" />
     <Content Include="Manual_TimerExpedition_1.png" />
@@ -316,6 +325,7 @@
     <Content Include="white_iron_chunk.png" />
     <Content Include="xamarin_logo.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <None Include="ResinTimer.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -329,14 +339,14 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
-      <Version>7.1.1</Version>
+      <Version>7.1.2</Version>
     </PackageReference>
     <PackageReference Include="Rg.Plugins.Popup">
-      <Version>2.0.0.13</Version>
+      <Version>2.1.0</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.13" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ResinTimer\ResinTimer.csproj">

@@ -3771,10 +3771,10 @@ namespace ResinTimer.Droid
 			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickLength = global::ResinTimer.Droid.Resource.Attribute.scaleMinorTickLength;
 			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickOffset = global::ResinTimer.Droid.Resource.Attribute.scaleMinorTickOffset;
 			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickSize = global::ResinTimer.Droid.Resource.Attribute.scaleMinorTickSize;
+			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTicksPerInterval = global::ResinTimer.Droid.Resource.Attribute.scaleMinorTicksPerInterval;
 			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickStartOffset = global::ResinTimer.Droid.Resource.Attribute.scaleMinorTickStartOffset;
 			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickStrokeWidth = global::ResinTimer.Droid.Resource.Attribute.scaleMinorTickStrokeWidth;
 			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTickWidth = global::ResinTimer.Droid.Resource.Attribute.scaleMinorTickWidth;
-			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleMinorTicksPerInterval = global::ResinTimer.Droid.Resource.Attribute.scaleMinorTicksPerInterval;
 			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleNumberofDecimalDigits = global::ResinTimer.Droid.Resource.Attribute.scaleNumberofDecimalDigits;
 			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleOffset = global::ResinTimer.Droid.Resource.Attribute.scaleOffset;
 			global::Com.Syncfusion.Gauges.Resource.Attribute.scaleOpposedPosition = global::ResinTimer.Droid.Resource.Attribute.scaleOpposedPosition;
@@ -3971,8 +3971,8 @@ namespace ResinTimer.Droid
 			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMinorTickColor = global::ResinTimer.Droid.Resource.Styleable.SfLinearGauge_scaleMinorTickColor;
 			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMinorTickLength = global::ResinTimer.Droid.Resource.Styleable.SfLinearGauge_scaleMinorTickLength;
 			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMinorTickOffset = global::ResinTimer.Droid.Resource.Styleable.SfLinearGauge_scaleMinorTickOffset;
-			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMinorTickStrokeWidth = global::ResinTimer.Droid.Resource.Styleable.SfLinearGauge_scaleMinorTickStrokeWidth;
 			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMinorTicksPerInterval = global::ResinTimer.Droid.Resource.Styleable.SfLinearGauge_scaleMinorTicksPerInterval;
+			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleMinorTickStrokeWidth = global::ResinTimer.Droid.Resource.Styleable.SfLinearGauge_scaleMinorTickStrokeWidth;
 			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleOffset = global::ResinTimer.Droid.Resource.Styleable.SfLinearGauge_scaleOffset;
 			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleOpposedPosition = global::ResinTimer.Droid.Resource.Styleable.SfLinearGauge_scaleOpposedPosition;
 			global::Com.Syncfusion.Gauges.Resource.Styleable.SfLinearGauge_scaleOrientation = global::ResinTimer.Droid.Resource.Styleable.SfLinearGauge_scaleOrientation;

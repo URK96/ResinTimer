@@ -1,15 +1,14 @@
-﻿using GenshinInfo.Constants.Indexes;
-using GenshinInfo.Managers;
+﻿using GenshinInfo.Managers;
 using GenshinInfo.Models;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
+using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
+
 using System.Threading.Tasks;
 
-using AppEnv = ResinTimer.AppEnvironment;
-using REnv = ResinTimer.ResinEnvironment;
+using ExpEnv = ResinTimer.ExpeditionEnvironment;
 using RCEnv = ResinTimer.RealmCurrencyEnvironment;
+using REnv = ResinTimer.ResinEnvironment;
 
 namespace ResinTimer.Helper
 {
@@ -19,6 +18,7 @@ namespace ResinTimer.Helper
         {
             Resin = 0,
             RealmCurrency = 1,
+            Expedition = 2,
         }
 
         public static async Task<RTNoteData> GetRTNoteData()
@@ -37,6 +37,7 @@ namespace ResinTimer.Helper
             {
                 SyncTarget.Resin => REnv.SyncServerData(data),
                 SyncTarget.RealmCurrency => RCEnv.SyncServerData(data),
+                SyncTarget.Expedition => ExpEnv.SyncServerData(data),
                 _ => false
             };
         }
@@ -53,6 +54,11 @@ namespace ResinTimer.Helper
             if (RCEnv.SyncServerData(data))
             {
                 RCEnv.SaveValue();
+            }
+
+            if (ExpEnv.SyncServerData(data))
+            {
+                new ExpeditionNotiManager().UpdateScheduledNoti<ExpeditionNoti>();
             }
         }
     }

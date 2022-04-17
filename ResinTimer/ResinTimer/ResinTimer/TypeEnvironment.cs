@@ -1,9 +1,7 @@
 ﻿using GenshinDB_Core.Types;
 
-using GenshinInfo.Managers;
 using GenshinInfo.Models;
 
-using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 
 using ResinTimer.Managers.NotiManagers;
@@ -14,7 +12,6 @@ using ResinTimer.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 
@@ -496,7 +493,41 @@ namespace ResinTimer
 
     public static class ExpeditionEnvironment
     {
-        public enum ExpeditionType { Chunk = 0, Ingredient, Mora }
+        public enum ExpeditionType { Sync = -1, Chunk = 0, Ingredient, Mora }
+
+        public static bool IsSyncEnabled => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false) &&
+            Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_EXPEDITION_ENABLED, false);
+
+        public static bool SyncServerData(RTNoteData data)
+        {
+            try
+            {
+                if (data is not null)
+                {
+                    ExpeditionNotiManager manager = new();
+
+                    manager.Notis.Clear();
+                    
+                    foreach (var expedition in data.Expeditions)
+                    {
+                        ExpeditionNoti noti = new(expedition.RemainedTime, ExpeditionType.Sync)
+                        {
+                            SyncModeImage = $"Character_{expedition.AvatarName.Replace(' ', '_')}_Thumb.png"
+                        };
+
+                        manager.Notis.Add(noti);
+                    }
+
+                    manager.SaveNotis();
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 
     public static class GatheringItemEnvironment

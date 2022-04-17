@@ -38,12 +38,16 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
+        <!--Use manual mode-->
         <ToolbarItem x:Name="ResetToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Reset}" IconImageSource="refresh.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
         <ToolbarItem x:Name="ResetAllToolbarItem" Text="{x:Static resources:AppResources.Toolbar_ResetAll}" IconImageSource="refresh_all.png" Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked" />
         <ToolbarItem x:Name="EditToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Edit}" IconImageSource="{OnPlatform Android=edit.png, UWP=edit.png}" Order="Secondary" Priority="2" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem Text="{x:Static resources:AppResources.Toolbar_Add}" IconImageSource="{OnPlatform Android=plus.png, UWP=plus.png}" Order="Secondary" Priority="3" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="AddToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Add}" IconImageSource="{OnPlatform Android=plus.png, UWP=plus.png}" Order="Secondary" Priority="3" Clicked="ToolbarItem_Clicked" />
         <ToolbarItem x:Name="RemoveToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Remove}" IconImageSource="{OnPlatform Android=minus.png, UWP=minus.png}" Order="Secondary" Priority="4" Clicked="ToolbarItem_Clicked" />
         <ToolbarItem x:Name="EditTimeToolbarItem" Text="{x:Static resources:AppResources.Toolbar_EditTime}" Order="Secondary" Priority="5" Clicked="ToolbarItem_Clicked" />
+        
+        <!--Use sync mode-->
+        <ToolbarItem x:Name="RenewToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Renew}" IconImageSource="refresh.png" Order="Primary" Priority="6" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="ListCollectionView" ItemsSource="{Binding Notis}"

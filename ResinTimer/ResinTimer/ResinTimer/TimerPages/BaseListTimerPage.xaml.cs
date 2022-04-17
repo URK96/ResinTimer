@@ -13,7 +13,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using static ResinTimer.AppEnvironment;
+using ExpEnv = ResinTimer.ExpeditionEnvironment;
 
 namespace ResinTimer.TimerPages
 {
@@ -23,23 +23,42 @@ namespace ResinTimer.TimerPages
         public List<Noti> Notis { get; set; }
         public CollectionView ListView => ListCollectionView;
 
-        private Timer updateTimer;
-        public NotiManager notiManager;
+        internal NotiManager NotiManager;
+
+        private Timer _updateTimer;
 
         public BaseListTimerPage()
         {
             InitializeComponent();
 
+            SetToolbarItem();
+
             BindingContext = this;
-            updateTimer = new Timer(RefreshTime, new AutoResetEvent(false), TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
+        }
+
+        private void SetToolbarItem()
+        {
+            if (ExpEnv.IsSyncEnabled)
+            {
+                ToolbarItems.Remove(ResetToolbarItem);
+                ToolbarItems.Remove(ResetAllToolbarItem);
+                ToolbarItems.Remove(EditToolbarItem);
+                ToolbarItems.Remove(AddToolbarItem);
+                ToolbarItems.Remove(RemoveToolbarItem);
+                ToolbarItems.Remove(EditTimeToolbarItem);
+            }
+            else
+            {
+                ToolbarItems.Remove(RenewToolbarItem);
+            }
         }
 
         internal virtual void ResetItem()
         {
-            if (ListView.SelectedItem != null)
+            if (ListView.SelectedItem is not null)
             {
                 (ListView.SelectedItem as Noti).UpdateTime();
-                notiManager.UpdateNotisTime();
+                NotiManager.UpdateNotisTime();
                 Utils.RefreshCollectionView(ListView, Notis);
             }
         }
@@ -49,7 +68,7 @@ namespace ResinTimer.TimerPages
             foreach (Noti item in ListView.ItemsSource)
             {
                 item.UpdateTime();
-                notiManager.UpdateNotisTime();
+                NotiManager.UpdateNotisTime();
             }
 
             Utils.RefreshCollectionView(ListView, Notis);
@@ -61,10 +80,10 @@ namespace ResinTimer.TimerPages
 
         internal virtual async void OpenEditItemTimeDialog()
         {
-            if (ListView.SelectedItem != null)
+            if (ListView.SelectedItem is not null)
             {
-                BaseDialog dialog = new BaseDialog(AppResources.ListTimer_EditTime,
-                    new TimeEditView(ListView.SelectedItem as Noti, notiManager));
+                BaseDialog dialog = new(AppResources.ListTimer_EditTime,
+                    new TimeEditView(ListView.SelectedItem as Noti, NotiManager));
 
                 dialog.OnClose += delegate { Utils.RefreshCollectionView(ListView, Notis); };
 
@@ -82,7 +101,8 @@ namespace ResinTimer.TimerPages
 
             try
             {
-                updateTimer.Change(TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
+                _updateTimer = new Timer(RefreshTime, new AutoResetEvent(false),
+                                        TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
 
                 Utils.RefreshCollectionView(ListCollectionView, Notis);
             }
@@ -93,9 +113,10 @@ namespace ResinTimer.TimerPages
         {
             base.OnDisappearing();
 
-            updateTimer.Change(Timeout.Infinite, Timeout.Infinite);
+            _updateTimer?.Change(Timeout.Infinite, Timeout.Infinite);
+            _updateTimer?.Dispose();
 
-            notiManager.SaveNotis();
+            NotiManager.SaveNotis();
         }
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
@@ -120,12 +141,15 @@ namespace ResinTimer.TimerPages
                 case 5:  // Edit Item Time
                     OpenEditItemTimeDialog();
                     break;
+                case 6:  // Sync data
+                    RefreshTime(null);
+                    break;
                 default:
                     break;
             }
         }
 
-        private void RefreshTime(object statusInfo)
+        internal virtual void RefreshTime(object statusInfo)
         {
             try
             {

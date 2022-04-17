@@ -30,6 +30,12 @@ namespace ResinTimer.Managers.NotiManagers
             return x.NotiId.CompareTo(y.NotiId);
         }
 
+        public void ReloadNotiList<T>() where T : Noti
+        {
+            Notis.Clear();
+            Notis.AddRange(GetNotiList<T>());
+        }
+
         public List<T> GetNotiList<T>() where T : Noti
         {
             List<T> result = new();

@@ -21,8 +21,8 @@ namespace ResinTimer.TimerPages
         public GadgetTimerPage() : base()
         {
             Title = AppResources.GadgetTimerPage_Title;
-            notiManager = new GadgetNotiManager();
-            Notis = notiManager.Notis;
+            NotiManager = new GadgetNotiManager();
+            Notis = NotiManager.Notis;
         }
 
         internal override async void EditItem()
@@ -31,7 +31,7 @@ namespace ResinTimer.TimerPages
 
             if (ListView.SelectedItem != null)
             {
-                await Navigation.PushAsync(new EditGadgetItemPage(notiManager, NotiManager.EditType.Edit, ListView.SelectedItem as GadgetNoti));
+                await Navigation.PushAsync(new EditGadgetItemPage(NotiManager, NotiManager.EditType.Edit, ListView.SelectedItem as GadgetNoti));
             }
             else
             {
@@ -43,13 +43,13 @@ namespace ResinTimer.TimerPages
         {
             base.AddItem();
 
-            if (notiManager.Notis.Count >= 100)
+            if (NotiManager.Notis.Count >= 100)
             {
                 DependencyService.Get<IToast>().Show(AppResources.ListTimer_LimitExceed);
             }
             else
             {
-                await Navigation.PushAsync(new EditGadgetItemPage(notiManager, NotiManager.EditType.Add));
+                await Navigation.PushAsync(new EditGadgetItemPage(NotiManager, NotiManager.EditType.Add));
             }
         }
 
@@ -59,7 +59,7 @@ namespace ResinTimer.TimerPages
 
             if (ListView.SelectedItem != null)
             {
-                notiManager.EditList(ListView.SelectedItem as Noti, NotiManager.EditType.Remove);
+                NotiManager.EditList(ListView.SelectedItem as Noti, NotiManager.EditType.Remove);
 
                 Utils.RefreshCollectionView(ListView, Notis);
             }

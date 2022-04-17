@@ -10,8 +10,12 @@
             <TableSection Title="{x:Static resources:AppResources.TimerSyncConfig_ConfigSection_Title}">
                 <SwitchCell x:Name="SyncConfigResin" OnColor="#0682F6"
                             Text="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}" />
+                
                 <SwitchCell x:Name="SyncConfigRealmCurrency" OnColor="#0682F6"
                             Text="{x:Static resources:AppResources.MasterDetail_MasterList_RealmCurrency}" />
+                
+                <SwitchCell x:Name="SyncConfigExpedition" OnColor="#0682F6"
+                            Text="{x:Static resources:AppResources.MasterDetail_MasterList_Expedition}" />
             </TableSection>
         </TableRoot>
     </TableView>

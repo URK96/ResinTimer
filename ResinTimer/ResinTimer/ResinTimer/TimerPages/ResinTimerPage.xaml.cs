@@ -84,17 +84,16 @@ namespace ResinTimer.TimerPages
             SetToolbar();
             SetLayoutAppearance();
 
-            _calcTimer = new(CalcTimeResin, 
-                new AutoResetEvent(false), 
-                TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
+            _calcTimer = new(CalcTimeResin, new AutoResetEvent(false), 
+                             TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(0.5));
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
 
-            _calcTimer.Change(Timeout.InfiniteTimeSpan, Timeout.InfiniteTimeSpan);
-            _calcTimer.Dispose();
+            _calcTimer?.Change(Timeout.InfiniteTimeSpan, Timeout.InfiniteTimeSpan);
+            _calcTimer?.Dispose();
 
             REnv.SaveValue();
         }

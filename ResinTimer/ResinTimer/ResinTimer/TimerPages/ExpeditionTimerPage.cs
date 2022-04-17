@@ -1,18 +1,10 @@
-﻿using ResinTimer.Dialogs;
+﻿using ResinTimer.Helper;
 using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models.Notis;
 using ResinTimer.Resources;
-
-using Rg.Plugins.Popup.Services;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Xamarin.Forms;
 
-using static ResinTimer.AppEnvironment;
+using ExpEnv = ResinTimer.ExpeditionEnvironment;
 
 namespace ResinTimer.TimerPages
 {
@@ -21,17 +13,19 @@ namespace ResinTimer.TimerPages
         public ExpeditionTimerPage() : base()
         {
             Title = AppResources.ExpeditionMain_Title;
-            notiManager = new ExpeditionNotiManager();
-            Notis = notiManager.Notis;
+            NotiManager = new ExpeditionNotiManager();
+            Notis = NotiManager.Notis;
         }
 
         internal override async void EditItem()
         {
             base.EditItem();
 
-            if (ListView.SelectedItem != null)
+            if (ListView.SelectedItem is not null)
             {
-                await Navigation.PushAsync(new EditExpeditionItemPage(notiManager, NotiManager.EditType.Edit, ListView.SelectedItem as ExpeditionNoti));
+                await Navigation.PushAsync(
+                    new EditExpeditionItemPage(NotiManager, NotiManager.EditType.Edit, 
+                                               ListView.SelectedItem as ExpeditionNoti));
             }
             else
             {
@@ -43,13 +37,13 @@ namespace ResinTimer.TimerPages
         {
             base.AddItem();
 
-            if (notiManager.Notis.Count >= 5)
+            if (NotiManager.Notis.Count >= 5)
             {
                 DependencyService.Get<IToast>().Show(AppResources.ListTimer_LimitExceed);
             }
             else
             {
-                await Navigation.PushAsync(new EditExpeditionItemPage(notiManager, NotiManager.EditType.Add));
+                await Navigation.PushAsync(new EditExpeditionItemPage(NotiManager, NotiManager.EditType.Add));
             }
         }
 
@@ -57,9 +51,9 @@ namespace ResinTimer.TimerPages
         {
             base.RemoveItem();
 
-            if (ListView.SelectedItem != null)
+            if (ListView.SelectedItem is not null)
             {
-                notiManager.EditList(ListView.SelectedItem as Noti, NotiManager.EditType.Remove);
+                NotiManager.EditList(ListView.SelectedItem as Noti, NotiManager.EditType.Remove);
 
                 Utils.RefreshCollectionView(ListView, Notis);
             }
@@ -72,6 +66,23 @@ namespace ResinTimer.TimerPages
         internal override void OpenEditItemTimeDialog()
         {
             base.OpenEditItemTimeDialog();
+        }
+
+        internal override void RefreshTime(object statusInfo)
+        {
+            if (ExpEnv.IsSyncEnabled)
+            {
+                SyncHelper.Update(SyncHelper.SyncTarget.Expedition).GetAwaiter().OnCompleted(() =>
+                {
+                    NotiManager.ReloadNotiList<ExpeditionNoti>();
+
+                    base.RefreshTime(statusInfo);
+                });
+            }
+            else
+            {
+                base.RefreshTime(statusInfo);
+            }
         }
     }
 }

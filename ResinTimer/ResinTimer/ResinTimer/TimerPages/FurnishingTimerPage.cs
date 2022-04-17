@@ -26,8 +26,8 @@ namespace ResinTimer.TimerPages
         public FurnishingTimerPage() : base()
         {
             Title = AppResources.FurnishingTimerPage_Title;
-            notiManager = new FurnishingNotiManager();
-            Notis = notiManager.Notis;
+            NotiManager = new FurnishingNotiManager();
+            Notis = NotiManager.Notis;
 
             AddToolbarItem();
         }
@@ -53,7 +53,7 @@ namespace ResinTimer.TimerPages
 
             if (ListView.SelectedItem != null)
             {
-                await Navigation.PushAsync(new EditFurnishingItemPage(notiManager, NotiManager.EditType.Edit, ListView.SelectedItem as FurnishingNoti));
+                await Navigation.PushAsync(new EditFurnishingItemPage(NotiManager, NotiManager.EditType.Edit, ListView.SelectedItem as FurnishingNoti));
             }
             else
             {
@@ -65,13 +65,13 @@ namespace ResinTimer.TimerPages
         {
             base.AddItem();
 
-            if (notiManager.Notis.Count >= 5)
+            if (NotiManager.Notis.Count >= 5)
             {
                 DependencyService.Get<IToast>().Show(AppResources.ListTimer_LimitExceed);
             }
             else
             {
-                await Navigation.PushAsync(new EditFurnishingItemPage(notiManager, NotiManager.EditType.Add));
+                await Navigation.PushAsync(new EditFurnishingItemPage(NotiManager, NotiManager.EditType.Add));
             }
         }
 
@@ -81,7 +81,7 @@ namespace ResinTimer.TimerPages
 
             if (ListView.SelectedItem != null)
             {
-                notiManager.EditList(ListView.SelectedItem as Noti, NotiManager.EditType.Remove);
+                NotiManager.EditList(ListView.SelectedItem as Noti, NotiManager.EditType.Remove);
 
                 Utils.RefreshCollectionView(ListView, Notis);
             }
@@ -107,7 +107,7 @@ namespace ResinTimer.TimerPages
 
             selectedNoti.NotiTime = selectedNoti.NotiTime.AddHours(-FEnv.SpeedUpHour);
 
-            notiManager.EditList(selectedNoti, NotiManager.EditType.EditOnlyTime);
+            NotiManager.EditList(selectedNoti, NotiManager.EditType.EditOnlyTime);
 
             Utils.RefreshCollectionView(ListView, Notis);
         }

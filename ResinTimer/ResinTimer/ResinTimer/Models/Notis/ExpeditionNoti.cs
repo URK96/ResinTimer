@@ -1,4 +1,6 @@
-﻿using ResinTimer.Resources;
+﻿using GenshinInfo.Models;
+
+using ResinTimer.Resources;
 
 using System;
 
@@ -12,6 +14,7 @@ namespace ResinTimer.Models.Notis
         public TimeSpan StandardTime { get; set; }
         public ExpEnv.ExpeditionType ExpeditionType { get; set; }
         public string ItemNote { get; set; } = string.Empty;
+        public string SyncModeImage { get; set; } = string.Empty;
 
         public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{NotiTime - DateTime.Now:hh\\:mm} {AppResources.ExpeditionTimerPage_Remain}" : AppResources.Expedition_Complete)}";
         public string TypeString => ExpeditionType switch
@@ -22,6 +25,7 @@ namespace ResinTimer.Models.Notis
         };
         public string TypeImageName => ExpeditionType switch
         {
+            ExpEnv.ExpeditionType.Sync => SyncModeImage,
             ExpEnv.ExpeditionType.Ingredient => "ingredient.png",
             ExpEnv.ExpeditionType.Mora => "mora.png",
             _ => "magical_crystal_chunk.png"

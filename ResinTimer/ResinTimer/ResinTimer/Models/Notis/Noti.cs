@@ -8,6 +8,7 @@ namespace ResinTimer.Models.Notis
     {
         public DateTime NotiTime { get; set; }
         public int NotiId { get; set; }
+        public bool IsSyncItem { get; set; } = false;
 
         public string ExpectedNotiTimeString => 
             $"{AppResources.NotiSettingPage_List_ExpectedNotiTime}\n{Utils.GetTimeString(NotiTime)}";

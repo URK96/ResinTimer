@@ -46,17 +46,20 @@ namespace ResinTimer.Helper
         {
             RTNoteData data = await GetRTNoteData();
 
-            if (REnv.SyncServerData(data))
+            if (REnv.IsSyncEnabled && 
+                REnv.SyncServerData(data))
             {
                 REnv.SaveValue();
             }
 
-            if (RCEnv.SyncServerData(data))
+            if (RCEnv.IsSyncEnabled &&
+                RCEnv.SyncServerData(data))
             {
                 RCEnv.SaveValue();
             }
 
-            if (ExpEnv.SyncServerData(data))
+            if (ExpEnv.IsSyncEnabled && 
+                ExpEnv.SyncServerData(data))
             {
                 new ExpeditionNotiManager().UpdateScheduledNoti<ExpeditionNoti>();
             }

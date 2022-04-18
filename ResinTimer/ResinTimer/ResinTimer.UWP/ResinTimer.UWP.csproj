@@ -299,6 +299,7 @@
     <Content Include="server.png" />
     <Content Include="setting.png" />
     <Content Include="silk_flower.png" />
+    <Content Include="sync.png" />
     <Content Include="talent_all_Inazuma.png" />
     <Content Include="talent_all_Liyue.png" />
     <Content Include="talent_all_Mondstadt.png" />

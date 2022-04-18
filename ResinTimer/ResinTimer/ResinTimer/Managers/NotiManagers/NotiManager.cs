@@ -113,5 +113,13 @@ namespace ResinTimer.Managers.NotiManagers
         public virtual void RenewalIds() { }
         public virtual void EditList(Noti item, EditType editType) { }
         public virtual void UpdateNotisTime() { }
+
+        public virtual void RemoveAllSyncNotiItems<T>() where T : Noti
+        {
+            Notis.RemoveAll(x => x.IsSyncItem);
+
+            SaveNotis();
+            UpdateScheduledNoti<T>();
+        }
     }
 }

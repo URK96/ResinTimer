@@ -22310,97 +22310,100 @@ namespace ResinTimer.Droid
 			public const int splash_screen = 2131165697;
 			
 			// aapt resource value: 0x7F070202
-			public const int talent_all_Inazuma = 2131165698;
+			public const int sync = 2131165698;
 			
 			// aapt resource value: 0x7F070203
-			public const int talent_all_Liyue = 2131165699;
+			public const int talent_all_Inazuma = 2131165699;
 			
 			// aapt resource value: 0x7F070204
-			public const int talent_all_Mondstadt = 2131165700;
+			public const int talent_all_Liyue = 2131165700;
 			
 			// aapt resource value: 0x7F070205
-			public const int talent_ballad = 2131165701;
+			public const int talent_all_Mondstadt = 2131165701;
 			
 			// aapt resource value: 0x7F070206
-			public const int talent_diligence = 2131165702;
+			public const int talent_ballad = 2131165702;
 			
 			// aapt resource value: 0x7F070207
-			public const int talent_elegance = 2131165703;
+			public const int talent_diligence = 2131165703;
 			
 			// aapt resource value: 0x7F070208
-			public const int talent_freedom = 2131165704;
+			public const int talent_elegance = 2131165704;
 			
 			// aapt resource value: 0x7F070209
-			public const int talent_gold = 2131165705;
+			public const int talent_freedom = 2131165705;
 			
 			// aapt resource value: 0x7F07020A
-			public const int talent_light = 2131165706;
+			public const int talent_gold = 2131165706;
 			
 			// aapt resource value: 0x7F07020B
-			public const int talent_prosperity = 2131165707;
+			public const int talent_light = 2131165707;
 			
 			// aapt resource value: 0x7F07020C
-			public const int talent_resistance = 2131165708;
+			public const int talent_prosperity = 2131165708;
 			
 			// aapt resource value: 0x7F07020D
-			public const int talent_transience = 2131165709;
+			public const int talent_resistance = 2131165709;
 			
 			// aapt resource value: 0x7F07020E
-			public const int test_custom_background = 2131165710;
+			public const int talent_transience = 2131165710;
 			
 			// aapt resource value: 0x7F07020F
-			public const int test_level_drawable = 2131165711;
+			public const int test_custom_background = 2131165711;
 			
 			// aapt resource value: 0x7F070210
-			public const int tooltip_frame_dark = 2131165712;
+			public const int test_level_drawable = 2131165712;
 			
 			// aapt resource value: 0x7F070211
-			public const int tooltip_frame_light = 2131165713;
+			public const int tooltip_frame_dark = 2131165713;
 			
 			// aapt resource value: 0x7F070212
-			public const int UpButton = 2131165714;
+			public const int tooltip_frame_light = 2131165714;
 			
 			// aapt resource value: 0x7F070213
-			public const int wa_aerosiderite_4 = 2131165715;
+			public const int UpButton = 2131165715;
 			
 			// aapt resource value: 0x7F070214
-			public const int wa_all_Inazuma = 2131165716;
+			public const int wa_aerosiderite_4 = 2131165716;
 			
 			// aapt resource value: 0x7F070215
-			public const int wa_all_Liyue = 2131165717;
+			public const int wa_all_Inazuma = 2131165717;
 			
 			// aapt resource value: 0x7F070216
-			public const int wa_all_Mondstadt = 2131165718;
+			public const int wa_all_Liyue = 2131165718;
 			
 			// aapt resource value: 0x7F070217
-			public const int wa_boreal_wolf_4 = 2131165719;
+			public const int wa_all_Mondstadt = 2131165719;
 			
 			// aapt resource value: 0x7F070218
-			public const int wa_branch_of_a_distant_sea_4 = 2131165720;
+			public const int wa_boreal_wolf_4 = 2131165720;
 			
 			// aapt resource value: 0x7F070219
-			public const int wa_decarabian_4 = 2131165721;
+			public const int wa_branch_of_a_distant_sea_4 = 2131165721;
 			
 			// aapt resource value: 0x7F07021A
-			public const int wa_guyun_4 = 2131165722;
+			public const int wa_decarabian_4 = 2131165722;
 			
 			// aapt resource value: 0x7F07021B
-			public const int wa_mask_4 = 2131165723;
+			public const int wa_guyun_4 = 2131165723;
 			
 			// aapt resource value: 0x7F07021C
-			public const int wa_mist_veiled_4 = 2131165724;
+			public const int wa_mask_4 = 2131165724;
 			
 			// aapt resource value: 0x7F07021D
-			public const int wa_narukami_4 = 2131165725;
+			public const int wa_mist_veiled_4 = 2131165725;
 			
 			// aapt resource value: 0x7F07021E
-			public const int wa_the_dandelion_gladiator_4 = 2131165726;
+			public const int wa_narukami_4 = 2131165726;
 			
 			// aapt resource value: 0x7F07021F
-			public const int white_iron_chunk = 2131165727;
+			public const int wa_the_dandelion_gladiator_4 = 2131165727;
 			
 			// aapt resource value: 0x7F070220
-			public const int xamarin_logo = 2131165728;
+			public const int white_iron_chunk = 2131165728;
+			
+			// aapt resource value: 0x7F070221
+			public const int xamarin_logo = 2131165729;
 			
 			static Drawable()
 			{

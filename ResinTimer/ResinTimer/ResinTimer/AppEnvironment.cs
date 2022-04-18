@@ -5,6 +5,7 @@ using ResinTimer.Resources;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Threading;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -84,12 +85,13 @@ namespace ResinTimer
         {
             int settingValue = Preferences.Get(SettingConstants.APP_LANG, (int)AppLang.System);
 
-            AppResources.Culture = CultureInfo.CurrentCulture = settingValue switch
+            Thread.CurrentThread.CurrentUICulture = AppResources.Culture = CultureInfo.CurrentCulture = 
+                settingValue switch
             {
-                (int)AppLang.English or
-                (int)AppLang.System when CultureInfo.CurrentUICulture.Name.Contains("en") => CultureInfo.GetCultureInfo("en-US"),
-                (int)AppLang.Korean or
-                (int)AppLang.System when CultureInfo.CurrentUICulture.Name.Contains("ko") => CultureInfo.GetCultureInfo("ko-KR"),
+                (int)AppLang.Korean => CultureInfo.GetCultureInfo("ko-KR"),
+                (int)AppLang.System when CultureInfo.CurrentUICulture.Name.Contains("ko") => 
+                    CultureInfo.GetCultureInfo("ko-KR"),
+
                 _ => CultureInfo.GetCultureInfo("en-US")
             };
         }

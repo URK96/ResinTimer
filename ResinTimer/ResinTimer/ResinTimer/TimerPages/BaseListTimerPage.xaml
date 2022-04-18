@@ -57,27 +57,38 @@
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <ContentView>
-                    <Frame CornerRadius="10" HasShadow="True"  Margin="20, 20, 20, 20"
-                               Style="{StaticResource FrameStyle}">
+                    <Frame CornerRadius="10" HasShadow="True" Margin="20, 20, 20, 20"
+                           Style="{StaticResource FrameStyle}">
                         <Frame.BorderColor>#0682F6</Frame.BorderColor>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                <Image WidthRequest="50" HeightRequest="50" Source="{Binding TypeImageName}" />
 
-                                <StackLayout Orientation="Vertical" Margin="20, 0, 0, 0">
-                                    <Label Text="{Binding RemainTimeString}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                                    <Label Margin="0, 5, 0, 0" 
-                                               Text="{Binding ExpectedNotiTimeString}" FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                        <AbsoluteLayout>
+                            <Image WidthRequest="25" IsVisible="{Binding IsSyncItem}"
+                                   Source="sync.png" />
+
+                            <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional"
+                                         AbsoluteLayout.LayoutBounds="0.5, 0.5"
+                                         Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                    <Image WidthRequest="50" HeightRequest="50" Source="{Binding TypeImageName}" />
+
+                                    <StackLayout Orientation="Vertical" Margin="20, 0, 0, 0">
+                                        <Label Text="{Binding RemainTimeString}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                               FontSize="Title" FontAttributes="Bold" />
+
+                                        <Label Margin="0, 5, 0, 0" 
+                                               Text="{Binding ExpectedNotiTimeString}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                               FontSize="Subtitle" />
+                                    </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
 
-                            <Label Margin="0, 10, 0, 0" IsVisible="{Binding ItemNoteVisible}"
-                                       Text="{Binding ItemNote}" FontSize="Subtitle" FontAttributes="Bold" HorizontalTextAlignment="Center" />
-                        </StackLayout>
+                                <Label Margin="0, 10, 0, 0" IsVisible="{Binding ItemNoteVisible}"
+                                       Text="{Binding ItemNote}" HorizontalTextAlignment="Center"
+                                       FontSize="Subtitle" FontAttributes="Bold" />
+                            </StackLayout>
+                        </AbsoluteLayout>
                     </Frame>
                 </ContentView>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
-    
 </ContentPage>

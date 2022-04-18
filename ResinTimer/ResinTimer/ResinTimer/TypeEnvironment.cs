@@ -512,13 +512,14 @@ namespace ResinTimer
                     {
                         ExpeditionNoti noti = new(expedition.RemainedTime, ExpeditionType.Sync)
                         {
-                            SyncModeImage = $"Character_{expedition.AvatarName.Replace(' ', '_')}_Thumb.png"
+                            SyncModeCharacter = expedition.AvatarName
                         };
 
                         manager.Notis.Add(noti);
                     }
 
                     manager.SaveNotis();
+                    manager.UpdateScheduledNoti<ExpeditionNoti>();
                 }
             }
             catch

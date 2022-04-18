@@ -1,9 +1,8 @@
-﻿using GenshinInfo.Models;
-
-using ResinTimer.Resources;
+﻿using ResinTimer.Resources;
 
 using System;
 
+using AppEnv = ResinTimer.AppEnvironment;
 using ExpEnv = ResinTimer.ExpeditionEnvironment;
 
 namespace ResinTimer.Models.Notis
@@ -14,11 +13,19 @@ namespace ResinTimer.Models.Notis
         public TimeSpan StandardTime { get; set; }
         public ExpEnv.ExpeditionType ExpeditionType { get; set; }
         public string ItemNote { get; set; } = string.Empty;
-        public string SyncModeImage { get; set; } = string.Empty;
+        public string SyncModeCharacter { get; set; } = string.Empty;
 
-        public string RemainTimeString => $"{((NotiTime >= DateTime.Now) ? $"{NotiTime - DateTime.Now:hh\\:mm} {AppResources.ExpeditionTimerPage_Remain}" : AppResources.Expedition_Complete)}";
+        public string SyncModeImage => string.IsNullOrWhiteSpace(SyncModeCharacter) ?
+            string.Empty :
+            $"Character_{SyncModeCharacter.Replace(' ', '_')}_Thumb.png";
+
+        public string RemainTimeString => (NotiTime >= DateTime.Now) ?
+            $"{NotiTime - DateTime.Now:hh\\:mm} {AppResources.ExpeditionTimerPage_Remain}" :
+            AppResources.Expedition_Complete;
         public string TypeString => ExpeditionType switch
         {
+            ExpEnv.ExpeditionType.Sync => 
+                $"(Sync) {(AppEnv.GDB ??= new(AppResources.Culture)).FindLangDic(SyncModeCharacter)}",
             ExpEnv.ExpeditionType.Ingredient => AppResources.Expedition_Type_Ingredient,
             ExpEnv.ExpeditionType.Mora => AppResources.Expedition_Type_Mora,
             _ => AppResources.Expedition_Type_Chunk
@@ -32,9 +39,11 @@ namespace ResinTimer.Models.Notis
         };
         public bool ItemNoteVisible => !string.IsNullOrWhiteSpace(ItemNote);
 
-        public ExpeditionNoti(TimeSpan interval, ExpEnv.ExpeditionType type = ExpEnv.ExpeditionType.Chunk, bool applyTimeEffect = false)
+        public ExpeditionNoti(TimeSpan interval, ExpEnv.ExpeditionType type = ExpEnv.ExpeditionType.Chunk,
+                              bool applyTimeEffect = false)
         {
             ExpeditionType = type;
+            IsSyncItem = type is ExpEnv.ExpeditionType.Sync;
 
             EditTime(interval, applyTimeEffect);
         }
@@ -53,6 +62,7 @@ namespace ResinTimer.Models.Notis
         }
 
         public override string GetNotiTitle() => AppResources.Noti_Expedition_Title;
-        public override string GetNotiText() => $"'{TypeString} {ExpeditionTime.Hours}H' {AppResources.Noti_Expedition_Message}";
+        public override string GetNotiText() => $"'{TypeString} {ExpeditionTime.Hours}H' " +
+            $"{AppResources.Noti_Expedition_Message}";
     }
 }

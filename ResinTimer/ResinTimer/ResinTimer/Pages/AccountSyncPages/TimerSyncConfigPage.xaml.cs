@@ -1,4 +1,7 @@
-﻿using Xamarin.Essentials;
+﻿using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
+
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -45,6 +48,12 @@ namespace ResinTimer.Pages.AccountSyncPages
             if (key is not null)
             {
                 Preferences.Set(key, e.Value);
+            }
+
+            if ((cell == SyncConfigExpedition) &&
+                !e.Value)
+            {
+                new ExpeditionNotiManager().RemoveAllSyncNotiItems<ExpeditionNoti>();
             }
         }
     }

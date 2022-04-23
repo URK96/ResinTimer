@@ -1,9 +1,8 @@
 ﻿using ResinTimer.Managers.NotiManagers;
+using ResinTimer.Models.Notis;
 
 using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ResinTimer.Models.HomeItems
 {
@@ -30,6 +29,11 @@ namespace ResinTimer.Models.HomeItems
         public ListTimerHomeItem(NotiManager manager)
         {
             _manager = manager;
+        }
+
+        public void UpdateInfo<T>() where T : Noti
+        {
+            _manager.ReloadNotiList<T>();
         }
     }
 }

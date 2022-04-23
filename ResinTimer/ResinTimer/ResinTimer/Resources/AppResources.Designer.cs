@@ -690,6 +690,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Receive Extra Reward과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyMission_ExtraRewardReceived_PreLabel {
+            get {
+                return ResourceManager.GetString("DailyMission_ExtraRewardReceived_PreLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Delete과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Delete {
@@ -1354,6 +1363,24 @@ namespace ResinTimer.Resources {
         public static string GatheringItemTimerPage_Remain {
             get {
                 return ResourceManager.GetString("GatheringItemTimerPage_Remain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Daily Mission과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HomeItem_DailyMission {
+            get {
+                return ResourceManager.GetString("HomeItem_DailyMission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   50% Less Resin Consumption과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string HomeItem_ResinDiscount_PreLabel {
+            get {
+                return ResourceManager.GetString("HomeItem_ResinDiscount_PreLabel", resourceCulture);
             }
         }
         

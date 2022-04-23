@@ -4,7 +4,8 @@
              xmlns:resources="clr-namespace:ResinTimer.Resources"
              x:Class="ResinTimer.Pages.SettingPage"
              Title="{x:Static resources:AppResources.SettingPage_Title}"
-             Style="{StaticResource PageStyle}">
+             Style="{StaticResource PageStyle}"
+             Padding="{OnPlatform UWP='20, 0, 20, 0'}">
 
     <TableView Intent="Settings">
         <TableRoot>
@@ -14,7 +15,7 @@
                     <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
                         <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_AccountSync_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
                         <Label HorizontalOptions="EndAndExpand"
-                               Text=">" VerticalTextAlignment="Center"/>
+                               Text="▶" VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </ViewCell>
                 
@@ -23,7 +24,7 @@
                     <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
                         <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_TimerSyncSetting_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
                         <Label x:Name="TimerSyncSettingArrowLabel" HorizontalOptions="EndAndExpand"
-                               Text=">" VerticalTextAlignment="Center"/>
+                               Text="▶" VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </ViewCell>
                 
@@ -77,7 +78,7 @@
                     <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
                         <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_CheckmiHoYoAPIStatus_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
                         <Label HorizontalOptions="EndAndExpand"
-                               Text=">" VerticalTextAlignment="Center"/>
+                               Text="▶" VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </ViewCell>
             </TableSection>

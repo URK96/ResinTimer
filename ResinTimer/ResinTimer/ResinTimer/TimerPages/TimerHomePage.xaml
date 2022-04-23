@@ -76,8 +76,8 @@
                                        FontSize="Subtitle"/>
                             </StackLayout>
 
-                            <Label Grid.Row="0" Grid.Column="2"
-                                   Text=">" VerticalTextAlignment="Center"
+                            <Label Grid.Row="0" Grid.Column="2" IsVisible="{Binding HasSubMenu}"
+                                   Text="▶" VerticalTextAlignment="Center"
                                    FontSize="Title"/>
                         </Grid>
                     </Frame>

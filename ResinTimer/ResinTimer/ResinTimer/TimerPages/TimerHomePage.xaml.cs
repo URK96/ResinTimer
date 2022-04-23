@@ -1,5 +1,6 @@
 ﻿using ResinTimer.Helper;
 using ResinTimer.Models.HomeItems;
+using ResinTimer.Models.Notis;
 
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
+using DMEnv = ResinTimer.DailyMissionEnvironment;
 
 namespace ResinTimer.TimerPages
 {
@@ -20,7 +23,14 @@ namespace ResinTimer.TimerPages
         {
             InitializeComponent();
 
-            Items = new()
+            Items = new();
+
+            if (DMEnv.IsSyncEnabled)
+            {
+                Items.Add(new DailyMissionHomeItem());
+            }
+
+            Items.AddRange(new HomeItem[]
             {
                 new ResinHomeItem(),
                 new RealmCurrencyHomeItem(),
@@ -30,26 +40,28 @@ namespace ResinTimer.TimerPages
                 new GadgetHomeItem(),
                 new FurnishingHomeItem(),
                 new GardeningHomeItem()
-            };
+            });
 
             BindingContext = this;
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            await UpdateItemsInfo();
+            UpdateItemsInfo();
         }
 
-        private async Task UpdateItemsInfo()
+        private void UpdateItemsInfo()
         {
-            await SyncHelper.UpdateAll();
+            SyncHelper.UpdateAll().GetAwaiter().OnCompleted(() =>
+            {
+                (Items.Find(x => x is ResinHomeItem) as ResinHomeItem)?.UpdateInfo();
+                (Items.Find(x => x is RealmCurrencyHomeItem) as RealmCurrencyHomeItem)?.UpdateInfo();
+                (Items.Find(x => x is ExpeditionHomeItem) as ExpeditionHomeItem)?.UpdateInfo<ExpeditionNoti>();
 
-            (Items[0] as ResinHomeItem).UpdateInfo();
-            (Items[1] as RealmCurrencyHomeItem).UpdateInfo();
-
-            Utils.RefreshCollectionView(ListCollectionView, Items);
+                Utils.RefreshCollectionView(ListCollectionView, Items);
+            });
         }
 
         private async void EditToolbarItemClicked(object sender, EventArgs e)
@@ -66,6 +78,11 @@ namespace ResinTimer.TimerPages
 
             var item = e.CurrentSelection.FirstOrDefault() as HomeItem;
             var flyoutPage = Application.Current.MainPage as FlyoutPage;
+
+            if (!item.HasSubMenu)
+            {
+                return;
+            }
 
             await Task.Delay(100);
 

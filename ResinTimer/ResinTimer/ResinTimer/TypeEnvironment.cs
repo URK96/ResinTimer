@@ -647,4 +647,68 @@ namespace ResinTimer
             }
         }
     }
+
+    public static class DailyMissionEnvironment
+    {
+        public static int FinishedCount { get; private set; }
+        public static int TotalCount { get; private set; }
+        public static bool IsReceiveExtraTaskReward { get; private set; }
+        public static bool IsSyncSuccess { get; private set; }
+        public static bool IsSyncEnabled => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false) &&
+            Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_DAILYMISSION_ENABLED, false);
+
+        public static void SyncServerData(RTNoteData data)
+        {
+            try
+            {
+                if (data is not null)
+                {
+                    FinishedCount = data.FinishedTaskNum;
+                    TotalCount = data.TotalTaskNum;
+                    IsReceiveExtraTaskReward = data.IsExtraTaskRewardReceived;
+                }
+                else
+                {
+                    IsSyncSuccess = false;
+                }
+            }
+            catch
+            {
+                IsSyncSuccess = false;
+            }
+
+            IsSyncSuccess = true;
+        }
+    }
+
+    public static class ResinDiscountEnvironment
+    {
+        public static int RemainCount { get; private set; }
+        public static int TotalCount { get; private set; }
+        public static bool IsSyncSuccess { get; private set; }
+        public static bool IsSyncEnabled => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false) &&
+            Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_RESINDISCOUNT_ENABLED, false);
+
+        public static void SyncServerData(RTNoteData data)
+        {
+            try
+            {
+                if (data is not null)
+                {
+                    RemainCount = data.RemainResinDiscountNum;
+                    TotalCount = data.ResinDiscountNumLimit;
+                }
+                else
+                {
+                    IsSyncSuccess = false;
+                }
+            }
+            catch
+            {
+                IsSyncSuccess = false;
+            }
+
+            IsSyncSuccess = true;
+        }
+    }
 }

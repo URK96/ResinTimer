@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using ExpEnv = ResinTimer.ExpeditionEnvironment;
 using RCEnv = ResinTimer.RealmCurrencyEnvironment;
 using REnv = ResinTimer.ResinEnvironment;
+using DMEnv = ResinTimer.DailyMissionEnvironment;
 
 namespace ResinTimer.Helper
 {
@@ -19,6 +20,8 @@ namespace ResinTimer.Helper
             Resin = 0,
             RealmCurrency = 1,
             Expedition = 2,
+            DailyMission = 3,
+            WeeklyBoss = 4,
         }
 
         public static async Task<RTNoteData> GetRTNoteData()
@@ -45,6 +48,11 @@ namespace ResinTimer.Helper
         public static async Task UpdateAll()
         {
             RTNoteData data = await GetRTNoteData();
+
+            if (DMEnv.IsSyncEnabled)
+            {
+                DMEnv.SyncServerData(data);
+            }
 
             if (REnv.IsSyncEnabled && 
                 REnv.SyncServerData(data))

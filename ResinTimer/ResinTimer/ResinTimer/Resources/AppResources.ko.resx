@@ -332,6 +332,9 @@
   <data name="CurrencySimpleEditDialog_Title" xml:space="preserve">
     <value>화폐 간편 수정</value>
   </data>
+  <data name="DailyMission_ExtraRewardReceived_PreLabel" xml:space="preserve">
+    <value>보상 수령</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>삭제</value>
   </data>
@@ -555,6 +558,12 @@
   </data>
   <data name="GatheringItem_Type_WhiteIronChunk" xml:space="preserve">
     <value>백철석</value>
+  </data>
+  <data name="HomeItem_DailyMission" xml:space="preserve">
+    <value>일일 미션</value>
+  </data>
+  <data name="HomeItem_ResinDiscount_PreLabel" xml:space="preserve">
+    <value>50% 레진 소모 감소</value>
   </data>
   <data name="HowToUsePage_Title" xml:space="preserve">
     <value>사용 설명서</value>

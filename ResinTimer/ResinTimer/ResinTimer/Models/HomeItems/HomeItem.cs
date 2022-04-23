@@ -6,5 +6,6 @@
         public abstract string OptionalMessage { get; }
         public abstract string ImageString { get; }
         public bool OptionalVisible => !string.IsNullOrWhiteSpace(OptionalMessage);
+        public bool HasSubMenu { get; internal set; } = true;
     }
 }

@@ -8,6 +8,9 @@
     <TableView Intent="Settings">
         <TableRoot>
             <TableSection Title="{x:Static resources:AppResources.TimerSyncConfig_ConfigSection_Title}">
+                <SwitchCell x:Name="SyncConfigDailyMission" OnColor="#0682F6"
+                            Text="{x:Static resources:AppResources.HomeItem_DailyMission}" />
+                
                 <SwitchCell x:Name="SyncConfigResin" OnColor="#0682F6"
                             Text="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}" />
                 

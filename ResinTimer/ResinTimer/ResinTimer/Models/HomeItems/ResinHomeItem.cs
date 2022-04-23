@@ -1,8 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using ResinTimer.Resources;
 
-using ResinTimer.Helper;
-using ResinTimer.Resources;
+using System;
 
 using REnv = ResinTimer.ResinEnvironment;
 

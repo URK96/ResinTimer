@@ -329,6 +329,9 @@
     <ImageAsset Include="Assets.xcassets\crystal_core.png.imageset\crystal_core.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\daily_mission.png.imageset\daily_mission.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\edit.png.imageset\edit_ios.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -615,6 +618,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Kamisato_Ayato_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\daily_mission.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\sync.png.imageset\Contents.json">
@@ -1123,7 +1129,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

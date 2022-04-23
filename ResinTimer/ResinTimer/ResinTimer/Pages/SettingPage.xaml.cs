@@ -69,7 +69,7 @@ namespace ResinTimer.Pages
             bool isAccountSyncEnabled = Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false);
 
             TimerSyncSetting.IsEnabled = isAccountSyncEnabled;
-            TimerSyncSettingArrowLabel.Text = isAccountSyncEnabled ? ">" : "X";
+            TimerSyncSettingArrowLabel.Text = isAccountSyncEnabled ? "▶" : "X";
         }
 
         private string GetStartScreenString(int value)

@@ -189,6 +189,7 @@
     <Content Include="compass.png" />
     <Content Include="crystal_chunk.png" />
     <Content Include="crystal_core.png" />
+    <Content Include="daily_mission.png" />
     <Content Include="delete.png" />
     <Content Include="edit.png" />
     <Content Include="electro_crystal.png" />

@@ -19,6 +19,9 @@ namespace ResinTimer.Pages.AccountSyncPages
 
         private void InitSetting()
         {
+            SyncConfigDailyMission.On = Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_DAILYMISSION_ENABLED, false);
+            SyncConfigDailyMission.OnChanged += SyncConfigOnChanged;
+
             SyncConfigResin.On = Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_RESIN_ENABLED, false);
             SyncConfigResin.OnChanged += SyncConfigOnChanged;
 
@@ -36,6 +39,8 @@ namespace ResinTimer.Pages.AccountSyncPages
 
             string key = cell.Text switch
             {
+                string cellKey when cellKey == SyncConfigDailyMission.Text =>
+                    SettingConstants.APP_ACCOUNTSYNC_DAILYMISSION_ENABLED,
                 string cellKey when cellKey == SyncConfigResin.Text => 
                     SettingConstants.APP_ACCOUNTSYNC_RESIN_ENABLED,
                 string cellKey when cellKey == SyncConfigRealmCurrency.Text => 

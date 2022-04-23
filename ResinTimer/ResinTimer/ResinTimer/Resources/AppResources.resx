@@ -332,6 +332,9 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="CurrencySimpleEditDialog_Title" xml:space="preserve">
     <value>Simple Edit Currency</value>
   </data>
+  <data name="DailyMission_ExtraRewardReceived_PreLabel" xml:space="preserve">
+    <value>Receive Extra Reward</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
@@ -555,6 +558,12 @@ Or miHoYo's API may not working now, check API status on 'Setting - API Status'.
   </data>
   <data name="GatheringItem_Type_WhiteIronChunk" xml:space="preserve">
     <value>White Iron Chunk</value>
+  </data>
+  <data name="HomeItem_DailyMission" xml:space="preserve">
+    <value>Daily Mission</value>
+  </data>
+  <data name="HomeItem_ResinDiscount_PreLabel" xml:space="preserve">
+    <value>50% Less Resin Consumption</value>
   </data>
   <data name="HowToUsePage_Title" xml:space="preserve">
     <value>How To Use</value>

@@ -31,14 +31,12 @@ namespace ResinTimer.TimerPages
         {
             InitializeComponent();
 
-            SetToolbarItem();
-
             BindingContext = this;
         }
 
         private void SetToolbarItem()
         {
-            if (ExpEnv.IsSyncEnabled)
+            if ((ExpEnv.IsSyncEnabled && (NotiManager is ExpeditionNotiManager)))
             {
                 ToolbarItems.Remove(ResetToolbarItem);
                 ToolbarItems.Remove(ResetAllToolbarItem);
@@ -101,6 +99,8 @@ namespace ResinTimer.TimerPages
 
             try
             {
+                SetToolbarItem();
+
                 _updateTimer = new Timer(RefreshTime, new AutoResetEvent(false),
                                         TimeSpan.FromSeconds(0), TimeSpan.FromMinutes(1));
 

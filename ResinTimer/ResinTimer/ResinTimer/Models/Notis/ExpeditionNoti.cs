@@ -51,7 +51,7 @@ namespace ResinTimer.Models.Notis
         public void EditTime(TimeSpan interval, bool applyTimeEffect = false)
         {
             StandardTime = interval;
-            ExpeditionTime = TimeSpan.FromHours(interval.Hours * (applyTimeEffect ? 0.75 : 1));
+            ExpeditionTime = TimeSpan.FromSeconds(interval.TotalSeconds * (applyTimeEffect ? 0.75 : 1));
 
             UpdateTime();
         }

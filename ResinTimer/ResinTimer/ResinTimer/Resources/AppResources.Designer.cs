@@ -699,6 +699,87 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   You have already check-in daily reward과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyReward_CheckIn_AlreadySignIn {
+            get {
+                return ResourceManager.GetString("DailyReward_CheckIn_AlreadySignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Fail to check-in daily reward...과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyReward_CheckIn_Fail {
+            get {
+                return ResourceManager.GetString("DailyReward_CheckIn_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Success to check-in daily reward!과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyReward_CheckIn_Success {
+            get {
+                return ResourceManager.GetString("DailyReward_CheckIn_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Auto Check-In과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyRewardPage_AutoCheckIn {
+            get {
+                return ResourceManager.GetString("DailyRewardPage_AutoCheckIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Check-In과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyRewardPage_CheckIn {
+            get {
+                return ResourceManager.GetString("DailyRewardPage_CheckIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Website과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyRewardPage_GoToWebsite {
+            get {
+                return ResourceManager.GetString("DailyRewardPage_GoToWebsite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cannot receive data from miHoYo&apos;s server. Please check network status and Account Sync status and try again. Or you can try to click &apos;Website&apos; button on bottom for direct access.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyRewardPage_ServerErrorMessage {
+            get {
+                return ResourceManager.GetString("DailyRewardPage_ServerErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Daily Reward과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyRewardPage_Title {
+            get {
+                return ResourceManager.GetString("DailyRewardPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Today&apos;s reward과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyRewardPage_TodayReward_Title {
+            get {
+                return ResourceManager.GetString("DailyRewardPage_TodayReward_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Delete과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Delete {

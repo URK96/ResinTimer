@@ -7,7 +7,7 @@ namespace ResinTimer.Pages.UtilPages
     {
         public DailyCheckInEventPage() : base(DailyCheckInService.EVENT_DAILY_CHECKIN_URL)
         {
-            Title = AppResources.MasterDetail_MasterList_Event_DailyCheckIn;
+            Title = AppResources.MasterDetail_MasterList_Event_DailyCheckIn + " (Web)";
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using ResinTimer.Models;
+using ResinTimer.Pages.UtilPages;
+using ResinTimer.Resources;
 using ResinTimer.TimerPages;
 
 using System;
@@ -73,14 +75,23 @@ namespace ResinTimer
 
         private void MainListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (e.SelectedItem == null)
+            if (e.SelectedItem is null)
             {
                 return;
             }
 
             if (e.SelectedItem is MainMasterItem item)
             {
-                ApplyDetailPage(new(Activator.CreateInstance(item.Target) as Page));
+                NavigationPage detailPage = item.Title switch
+                {
+                    string title when (title == AppResources.MasterDetail_MasterList_Event_DailyCheckIn) &&
+                                      !Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_ENABLED, false) =>
+                        new(new DailyCheckInEventPage()),
+
+                    _ => new(Activator.CreateInstance(item.Target) as Page)
+                };
+
+                ApplyDetailPage(detailPage);
 
                 IsPresented = false;
             }

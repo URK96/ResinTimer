@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:ResinTimer.Resources"
+             x:Class="ResinTimer.Pages.UtilPages.DailyRewardPage"
+             Title="{x:Static resources:AppResources.DailyRewardPage_Title}">
+
+    <ContentPage.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, iOS=20, UWP=20}" />
+            <Setter Property="BorderColor" Value="#0682F6" />
+            <Setter Property="BorderWidth" Value="2" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="CharacterSpacing" Value="3" />
+            <Setter Property="FontSize" Value="Small" />
+        </Style>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <StackLayout x:Name="DailyRewardInfoLayout" 
+                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                     AbsoluteLayout.LayoutBounds="0.5, 0.1"
+                     Orientation="Vertical">
+
+            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                   Text="{x:Static resources:AppResources.DailyRewardPage_TodayReward_Title}" 
+                   FontAttributes="Bold" FontSize="Title" />
+
+            <Label x:Name="TodayRewardName" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="0, 10, 0, 0"
+                   FontSize="Medium" />
+            <Label x:Name="TodayRewardCount" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                   FontSize="Medium" />
+
+            <Image x:Name="TodayRewardIcon" WidthRequest="150" HeightRequest="150" Aspect="AspectFill" />
+        </StackLayout>
+
+        <Label x:Name="ServerErrorLabel" IsVisible="False" Margin="10, 0, 10, 0"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               AbsoluteLayout.LayoutBounds="0.5, 0.3"
+               Text="{x:Static resources:AppResources.DailyRewardPage_ServerErrorMessage}"
+               TextColor="OrangeRed" />
+
+        <Grid x:Name="DailyRewardButtonLayout"  
+              AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.85, 0.2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Orientation="Horizontal" Grid.Row="0" HorizontalOptions="Center" Margin="0,0,0,20">
+                <Label Text="{x:Static resources:AppResources.DailyRewardPage_AutoCheckIn}"
+                       VerticalTextAlignment="Center"
+                       FontAttributes="Bold"/>
+
+                <Switch x:Name="AutoCheckInSwitch" Toggled="AutoCheckInSwitch_Toggled"/>
+            </StackLayout>
+
+            <Button x:Name="DailyRewardCheckInButton" Grid.Row="1" Grid.Column="0"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="{x:Static resources:AppResources.DailyRewardPage_CheckIn}"
+                    Clicked="CheckInButton_Clicked"  Pressed="ButtonPressed" Released="ButtonReleased" />
+
+            <Button Grid.Row="2" Grid.Column="0"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="{x:Static resources:AppResources.DailyRewardPage_GoToWebsite}" 
+                    Clicked="GoToWebsiteButton_Clicked" Pressed="ButtonPressed" Released="ButtonReleased" />
+        </Grid>
+
+        <ActivityIndicator x:Name="DailyRewardLoadingIndicator"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.5, 0.5" />
+    </AbsoluteLayout>
+
+</ContentPage>

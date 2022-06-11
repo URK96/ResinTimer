@@ -41,6 +41,8 @@
 
         public const string AUTHKEY_COMMON = "AuthKey_Common";
 
+        public const string DAILYREWARD_ENABLE_AUTOCHECKIN = "DailyReward_Enable_AutoCheckIn";
+
         // Setting - App
         public const string APP_ACCOUNTSYNC_ENABLED = "App_AccountSync_Enabled";
         public const string APP_ACCOUNTSYNC_UID = "App_AccountSync_UID";

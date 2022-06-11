@@ -335,6 +335,33 @@ Please re-enable alarm in app setting to register notification alarm</value>
   <data name="DailyMission_ExtraRewardReceived_PreLabel" xml:space="preserve">
     <value>Receive Extra Reward</value>
   </data>
+  <data name="DailyRewardPage_AutoCheckIn" xml:space="preserve">
+    <value>Auto Check-In</value>
+  </data>
+  <data name="DailyRewardPage_CheckIn" xml:space="preserve">
+    <value>Check-In</value>
+  </data>
+  <data name="DailyRewardPage_GoToWebsite" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="DailyRewardPage_ServerErrorMessage" xml:space="preserve">
+    <value>Cannot receive data from miHoYo's server. Please check network status and Account Sync status and try again. Or you can try to click 'Website' button on bottom for direct access.</value>
+  </data>
+  <data name="DailyRewardPage_Title" xml:space="preserve">
+    <value>Daily Reward</value>
+  </data>
+  <data name="DailyRewardPage_TodayReward_Title" xml:space="preserve">
+    <value>Today's reward</value>
+  </data>
+  <data name="DailyReward_CheckIn_AlreadySignIn" xml:space="preserve">
+    <value>You have already check-in daily reward</value>
+  </data>
+  <data name="DailyReward_CheckIn_Fail" xml:space="preserve">
+    <value>Fail to check-in daily reward...</value>
+  </data>
+  <data name="DailyReward_CheckIn_Success" xml:space="preserve">
+    <value>Success to check-in daily reward!</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>

@@ -696,10 +696,13 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Character_Yelan_Thumb.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Character_Kuki_Shinobu_Thumb.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

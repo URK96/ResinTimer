@@ -239,6 +239,9 @@
     <ImageAsset Include="Assets.xcassets\Character_Kujou_Sara_Thumb.png.imageset\Character_Kujou_Sara_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Kuki_Shinobu_Thumb.png.imageset\Character_Kuki_Shinobu_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Lisa_Thumb.png.imageset\Character_Lisa_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -627,6 +630,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Yelan_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Kuki_Shinobu_Thumb.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\sync.png.imageset\Contents.json">
@@ -1135,7 +1141,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

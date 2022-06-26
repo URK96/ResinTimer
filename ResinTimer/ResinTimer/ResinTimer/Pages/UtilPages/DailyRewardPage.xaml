@@ -52,7 +52,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <StackLayout Orientation="Horizontal" Grid.Row="0" HorizontalOptions="Center" Margin="0,0,0,20">
+            <StackLayout Orientation="Horizontal" Grid.Row="0" HorizontalOptions="Center" Margin="0,0,0,20" IsVisible="False">
                 <Label Text="{x:Static resources:AppResources.DailyRewardPage_AutoCheckIn}"
                        VerticalTextAlignment="Center"
                        FontAttributes="Bold"/>

@@ -30,9 +30,12 @@ namespace ResinTimer.Helper
 
         public static async Task<DailyRewardListItemData> GetNowDailyRewardItem()
         {
+            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
             DailyRewardListData listData = await GetDailyRewardList();
+            DailyRewardStatusData statusData = await manager.GetDailyRewardStatus();
+            int index = statusData.TotalSignDayCount + (statusData.IsSign ? -1 : 0);
 
-            return listData.Rewards[DateTime.UtcNow.Day - 1];
+            return listData.Rewards[index];
         }
 
         private static async Task<DailyRewardListData> GetDailyRewardList()

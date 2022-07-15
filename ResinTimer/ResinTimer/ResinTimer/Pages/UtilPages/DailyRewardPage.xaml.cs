@@ -72,6 +72,8 @@ namespace ResinTimer.Pages.UtilPages
 
         private async Task<bool> UpdateTodayRewardInfo(CancellationToken cancelToken)
         {
+            using WebClient wc = new();
+
             bool updateResult = true;
 
             if (cancelToken.IsCancellationRequested)
@@ -90,21 +92,12 @@ namespace ResinTimer.Pages.UtilPages
 
                 TodayRewardName.Text = itemData.ItemName;
 
-                string tempFilePath = System.IO.Path.Combine(FileSystem.CacheDirectory, "daily_reward.png");
-
                 if (cancelToken.IsCancellationRequested)
                 {
                     return false;
                 }
 
-                await new WebClient().DownloadFileTaskAsync(itemData.IconUrl, tempFilePath);
-
-                if (cancelToken.IsCancellationRequested)
-                {
-                    return false;
-                }
-
-                ImageSource iconSource = ImageSource.FromFile(tempFilePath);
+                ImageSource iconSource = ImageSource.FromUri(new Uri(itemData.IconUrl));
 
                 TodayRewardIcon.Source = iconSource;
                 TodayRewardCount.Text = $"(x{itemData.ItemCount})";

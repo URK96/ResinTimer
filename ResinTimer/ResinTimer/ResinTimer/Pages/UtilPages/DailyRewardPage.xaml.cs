@@ -2,13 +2,13 @@
 
 using ResinTimer.Helper;
 using ResinTimer.Resources;
+using ResinTimer.Services;
 
 using System;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
-using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,6 +28,8 @@ namespace ResinTimer.Pages.UtilPages
         {
             base.OnAppearing();
 
+            DailyRewardCheckInButton.BorderColor = Color.Default;
+
             DailyRewardInfoLayout.IsVisible = false;
             ServerErrorLabel.IsVisible = false;
             DailyRewardCheckInButton.IsEnabled = false;
@@ -36,23 +38,22 @@ namespace ResinTimer.Pages.UtilPages
 
             // Update Auto Check-In switch
 
-            AutoCheckInSwitch.Toggled -= AutoCheckInSwitch_Toggled;
-
-            AutoCheckInSwitch.IsToggled = Preferences.Get(SettingConstants.DAILYREWARD_ENABLE_AUTOCHECKIN, false);
-
-            AutoCheckInSwitch.Toggled += AutoCheckInSwitch_Toggled;
+            UpdateAutoCheckInStatus();
 
 
             // Run Reward Update Task
 
             _rewardUpdateTaskCancelTokenSource = new();
 
-            bool updateResult = await UpdateTodayRewardInfo(_rewardUpdateTaskCancelTokenSource.Token);
-
-            if (updateResult)
+            if (await UpdateTodayRewardInfo(_rewardUpdateTaskCancelTokenSource.Token))
             {
                 DailyRewardInfoLayout.IsVisible = true;
                 DailyRewardCheckInButton.IsEnabled = true;
+
+
+                DailyRewardCheckInButton.BorderColor =
+                    (await DailyRewardHelper.CheckInTodayDailyReward() is DailyRewardHelper.SignInResult.AlreadySignIn) ?
+                    Color.Green : Color.FromHex("#0682F6");
             }
             else
             {
@@ -68,6 +69,15 @@ namespace ResinTimer.Pages.UtilPages
 
             _rewardUpdateTaskCancelTokenSource?.Cancel();
             _rewardUpdateTaskCancelTokenSource?.Dispose();
+        }
+
+        private void UpdateAutoCheckInStatus()
+        {
+            AutoCheckInSwitch.Toggled -= AutoCheckInSwitch_Toggled;
+
+            AutoCheckInSwitch.IsToggled = DependencyService.Get<IDailyCheckInService>().IsRegistered();
+
+            AutoCheckInSwitch.Toggled += AutoCheckInSwitch_Toggled;
         }
 
         private async Task<bool> UpdateTodayRewardInfo(CancellationToken cancelToken)
@@ -114,11 +124,30 @@ namespace ResinTimer.Pages.UtilPages
         {
             bool isEnabled = e.Value;
 
-            Preferences.Set(SettingConstants.DAILYREWARD_ENABLE_AUTOCHECKIN, isEnabled);
-
-            if (isEnabled)
+            try
             {
+                if (isEnabled)
+                {
+                    DependencyService.Get<IDailyCheckInService>().Register();
+                }
+                else
+                {
+                    DependencyService.Get<IDailyCheckInService>().Unregister();
+                }
 
+                DependencyService.Get<IToast>().Show(isEnabled ? 
+                    AppResources.DailyRewardPage_AutoCheckIn_Register_Success : 
+                    AppResources.DailyRewardPage_AutoCheckIn_Unregister_Success);
+            }
+            catch
+            {
+                DependencyService.Get<IToast>().Show(isEnabled ?
+                    AppResources.DailyRewardPage_AutoCheckIn_Register_Fail :
+                    AppResources.DailyRewardPage_AutoCheckIn_Unregister_Fail);
+            }
+            finally
+            {
+                UpdateAutoCheckInStatus();
             }
         }
 

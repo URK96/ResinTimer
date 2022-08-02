@@ -18701,10 +18701,22 @@ namespace ResinTimer.Droid
 			public const int config_materialPreferenceIconSpaceReserved = 2130968578;
 			
 			// aapt resource value: 0x7F040003
-			public const int is_tablet = 2130968579;
+			public const int enable_system_alarm_service_default = 2130968579;
 			
 			// aapt resource value: 0x7F040004
-			public const int mtrl_btn_textappearance_all_caps = 2130968580;
+			public const int enable_system_foreground_service_default = 2130968580;
+			
+			// aapt resource value: 0x7F040005
+			public const int enable_system_job_service_default = 2130968581;
+			
+			// aapt resource value: 0x7F040006
+			public const int is_tablet = 2130968582;
+			
+			// aapt resource value: 0x7F040007
+			public const int mtrl_btn_textappearance_all_caps = 2130968583;
+			
+			// aapt resource value: 0x7F040008
+			public const int workmanager_test_configuration = 2130968584;
 			
 			static Boolean()
 			{
@@ -24207,19 +24219,22 @@ namespace ResinTimer.Droid
 			public const int view_tree_lifecycle_owner = 2131231320;
 			
 			// aapt resource value: 0x7F080259
-			public const int view_tree_saved_state_registry_owner = 2131231321;
+			public const int view_tree_on_back_pressed_dispatcher_owner = 2131231321;
 			
 			// aapt resource value: 0x7F08025A
-			public const int view_tree_view_model_store_owner = 2131231322;
+			public const int view_tree_saved_state_registry_owner = 2131231322;
 			
 			// aapt resource value: 0x7F08025B
-			public const int visible = 2131231323;
+			public const int view_tree_view_model_store_owner = 2131231323;
 			
 			// aapt resource value: 0x7F08025C
-			public const int visible_removing_fragment_view_tag = 2131231324;
+			public const int visible = 2131231324;
 			
 			// aapt resource value: 0x7F08025D
-			public const int volume_item_container = 2131231325;
+			public const int visible_removing_fragment_view_tag = 2131231325;
+			
+			// aapt resource value: 0x7F08025E
+			public const int volume_item_container = 2131231326;
 			
 			// aapt resource value: 0x7F08001D
 			public const int WAWidgetIconFlipper = 2131230749;
@@ -24245,8 +24260,8 @@ namespace ResinTimer.Droid
 			// aapt resource value: 0x7F080024
 			public const int WAWidgetTitle = 2131230756;
 			
-			// aapt resource value: 0x7F08025E
-			public const int west = 2131231326;
+			// aapt resource value: 0x7F08025F
+			public const int west = 2131231327;
 			
 			// aapt resource value: 0x7F080025
 			public const int WidgetConfigureApply = 2131230757;
@@ -24263,29 +24278,29 @@ namespace ResinTimer.Droid
 			// aapt resource value: 0x7F080029
 			public const int WidgetSettingPreviewLayout = 2131230761;
 			
-			// aapt resource value: 0x7F080260
-			public const int withinBounds = 2131231328;
-			
-			// aapt resource value: 0x7F08025F
-			public const int withText = 2131231327;
-			
 			// aapt resource value: 0x7F080261
-			public const int wrap = 2131231329;
+			public const int withinBounds = 2131231329;
+			
+			// aapt resource value: 0x7F080260
+			public const int withText = 2131231328;
 			
 			// aapt resource value: 0x7F080262
-			public const int wrap_content = 2131231330;
+			public const int wrap = 2131231330;
 			
 			// aapt resource value: 0x7F080263
-			public const int wrap_content_constrained = 2131231331;
+			public const int wrap_content = 2131231331;
 			
 			// aapt resource value: 0x7F080264
-			public const int x_left = 2131231332;
+			public const int wrap_content_constrained = 2131231332;
 			
 			// aapt resource value: 0x7F080265
-			public const int x_right = 2131231333;
+			public const int x_left = 2131231333;
 			
 			// aapt resource value: 0x7F080266
-			public const int zero_corner_chip = 2131231334;
+			public const int x_right = 2131231334;
+			
+			// aapt resource value: 0x7F080267
+			public const int zero_corner_chip = 2131231335;
 			
 			static Id()
 			{

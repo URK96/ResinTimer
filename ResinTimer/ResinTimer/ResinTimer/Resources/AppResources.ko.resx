@@ -338,6 +338,18 @@
   <data name="DailyRewardPage_AutoCheckIn" xml:space="preserve">
     <value>자동 출석체크</value>
   </data>
+  <data name="DailyRewardPage_AutoCheckIn_Register_Fail" xml:space="preserve">
+    <value>자동 출석체크 등록 실패 :(</value>
+  </data>
+  <data name="DailyRewardPage_AutoCheckIn_Register_Success" xml:space="preserve">
+    <value>자동 출석체크 등록 성공 :)</value>
+  </data>
+  <data name="DailyRewardPage_AutoCheckIn_Unregister_Fail" xml:space="preserve">
+    <value>자동 출석체크 해제 실패 :(</value>
+  </data>
+  <data name="DailyRewardPage_AutoCheckIn_Unregister_Success" xml:space="preserve">
+    <value>자동 출석체크 해제 성공 :)</value>
+  </data>
   <data name="DailyRewardPage_CheckIn" xml:space="preserve">
     <value>출석체크</value>
   </data>
@@ -874,6 +886,9 @@ MIT License</value>
   </data>
   <data name="NotiTitle" xml:space="preserve">
     <value>레진 충전 알림</value>
+  </data>
+  <data name="Noti_AutoDailyCheckIn_Title" xml:space="preserve">
+    <value>자동 출석체크 알림</value>
   </data>
   <data name="Noti_Expedition_Message" xml:space="preserve">
     <value>탐사가 완료되었습니다.</value>

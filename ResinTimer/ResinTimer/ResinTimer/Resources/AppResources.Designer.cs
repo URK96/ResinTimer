@@ -735,6 +735,42 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Fail to register Auto Daily Check-In :(과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyRewardPage_AutoCheckIn_Register_Fail {
+            get {
+                return ResourceManager.GetString("DailyRewardPage_AutoCheckIn_Register_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Success to register Auto Daily Check-In :)과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyRewardPage_AutoCheckIn_Register_Success {
+            get {
+                return ResourceManager.GetString("DailyRewardPage_AutoCheckIn_Register_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Fail to unregister Auto Daily Check-In :(과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyRewardPage_AutoCheckIn_Unregister_Fail {
+            get {
+                return ResourceManager.GetString("DailyRewardPage_AutoCheckIn_Unregister_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Success to unregister Auto Daily Check-In :)과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyRewardPage_AutoCheckIn_Unregister_Success {
+            get {
+                return ResourceManager.GetString("DailyRewardPage_AutoCheckIn_Unregister_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Check-In과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string DailyRewardPage_CheckIn {
@@ -2121,6 +2157,15 @@ namespace ResinTimer.Resources {
         public static string MasterDetail_MasterList_Web_MaterialCalcOfficail {
             get {
                 return ResourceManager.GetString("MasterDetail_MasterList_Web_MaterialCalcOfficail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Auto Daily Check-In과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Noti_AutoDailyCheckIn_Title {
+            get {
+                return ResourceManager.GetString("Noti_AutoDailyCheckIn_Title", resourceCulture);
             }
         }
         

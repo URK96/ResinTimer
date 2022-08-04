@@ -45,7 +45,7 @@ namespace ResinTimer.Managers.NotiManagers
                 string key = typeof(T) switch
                 {
                     Type t when t == typeof(ResinNoti) => SettingConstants.NOTI_LIST,
-                    Type t when t == typeof(RealmCurrencyEnvironment) => SettingConstants.REALM_CURRENCY_NOTI_LIST,
+                    Type t when t == typeof(RealmCurrencyNoti) => SettingConstants.REALM_CURRENCY_NOTI_LIST,
                     Type t when t == typeof(RealmFriendshipNoti) => SettingConstants.REALM_FRIENDSHIP_NOTI_LIST,
                     Type t when t == typeof(ExpeditionNoti) => SettingConstants.EXPEDITION_NOTI_LIST,
                     Type t when t == typeof(GatheringItemNoti) => SettingConstants.GATHERINGITEM_NOTI_LIST,

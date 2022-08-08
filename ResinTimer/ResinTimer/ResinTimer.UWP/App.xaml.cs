@@ -25,6 +25,10 @@ using Xamarin.Essentials;
 using ResinTimer.Resources;
 using Windows.ApplicationModel.Background;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.AppService;
+using Windows.UI.Core;
+using Windows.UI.Popups;
+using Windows.Data.Xml.Dom;
 
 namespace ResinTimer.UWP
 {
@@ -33,6 +37,10 @@ namespace ResinTimer.UWP
     /// </summary>
     sealed partial class App : Application
     {
+        public static BackgroundTaskDeferral AppServiceDeferral;
+        public static AppServiceConnection Connection;
+        public static bool IsBackground = false;
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -41,6 +49,14 @@ namespace ResinTimer.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            this.EnteredBackground += delegate 
+            { 
+                IsBackground = true;
+            };
+            this.LeavingBackground += delegate 
+            { 
+                IsBackground = false; 
+            };
         }
 
         /// <summary>
@@ -58,10 +74,8 @@ namespace ResinTimer.UWP
             }
             else
             {
-
                 InitializeApp(e);
                 Platform.OnLaunched(e);
-
             }
         }
 
@@ -125,6 +139,48 @@ namespace ResinTimer.UWP
         {
             base.OnBackgroundActivated(args);
 
+            if (args.TaskInstance.TriggerDetails is AppServiceTriggerDetails details)
+            {
+                AppServiceDeferral = args.TaskInstance.GetDeferral();
+                Connection = details.AppServiceConnection;
+
+                args.TaskInstance.Canceled += delegate { AppServiceDeferral?.Complete(); };
+                Connection.RequestReceived += Connection_RequestReceived;
+            }
+        }
+
+        private async void Connection_RequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
+        {
+            if (args.Request.Message.ContainsKey("content"))
+            {
+                object message = null;
+                args.Request.Message.TryGetValue("content", out message);
+
+                if (!App.IsBackground)
+                {
+                    await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, new DispatchedHandler(async () =>
+                    {
+                        await new MessageDialog(message.ToString()).ShowAsync();
+                    }));
+                }
+                else
+                {
+                    ToastTemplateType toastTemplate = ToastTemplateType.ToastText02;
+                    XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
+
+                    XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
+                    toastTextElements[0].AppendChild(toastXml.CreateTextNode("UWP with Systray"));
+                    toastTextElements[1].AppendChild(toastXml.CreateTextNode(message.ToString()));
+
+                    ToastNotification toast = new ToastNotification(toastXml);
+                    ToastNotificationManager.CreateToastNotifier().Show(toast);
+                }
+            }
+
+            if (args.Request.Message.ContainsKey("exit"))
+            {
+                App.Current.Exit();
+            }
         }
 
         private void InitializeApp(IActivatedEventArgs e)
@@ -209,7 +265,9 @@ namespace ResinTimer.UWP
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
+
             //TODO: Save application state and stop any background activity
+            AppServiceDeferral?.Complete();
             deferral.Complete();
         }
     }

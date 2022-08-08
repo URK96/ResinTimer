@@ -329,6 +329,7 @@
     <Content Include="wa_mist_veiled_4.png" />
     <Content Include="wa_narukami_4.png" />
     <Content Include="white_iron_chunk.png" />
+    <Content Include="Win32\ResinTimerUWPTray.exe" />
     <Content Include="xamarin_logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <None Include="ResinTimer.UWP_TemporaryKey.pfx" />
@@ -359,6 +360,11 @@
       <Project>{05D0F248-5905-491C-9B1E-EB902D2BE4D1}</Project>
       <Name>ResinTimer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsDesktop, Version=10.0.18362.0">
+      <Name>Windows Desktop Extensions for the UWP</Name>
+    </SDKReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

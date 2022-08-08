@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30711.63
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResinTimer.UWP", "ResinTimer\ResinTimer.UWP\ResinTimer.UWP.csproj", "{9B5D4C62-F670-4459-B30D-A80E4EBB747C}"
 EndProject
@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResinTimer.Android", "Resin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResinTimer.iOS", "ResinTimer\ResinTimer.iOS\ResinTimer.iOS.csproj", "{99A90443-0139-46AB-9501-D9C97AB86BA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResinTimer", "ResinTimer\ResinTimer\ResinTimer.csproj", "{E4B20526-895C-4FA9-94B3-E79BC1F95F1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResinTimer", "ResinTimer\ResinTimer\ResinTimer.csproj", "{E4B20526-895C-4FA9-94B3-E79BC1F95F1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResinTimerUWPTray", "ResinTimerUWPTray\ResinTimerUWPTray.csproj", "{22095016-0B59-45C0-B82D-420871B6F835}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -171,6 +173,30 @@ Global
 		{E4B20526-895C-4FA9-94B3-E79BC1F95F1F}.Release|x86.ActiveCfg = Release|Any CPU
 		{E4B20526-895C-4FA9-94B3-E79BC1F95F1F}.Release|x86.Build.0 = Release|Any CPU
 		{E4B20526-895C-4FA9-94B3-E79BC1F95F1F}.Release|x86.Deploy.0 = Release|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Debug|ARM.Build.0 = Debug|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Debug|x64.Build.0 = Debug|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Debug|x86.Build.0 = Debug|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Release|ARM.ActiveCfg = Release|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Release|ARM.Build.0 = Release|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Release|iPhone.Build.0 = Release|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Release|x64.ActiveCfg = Release|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Release|x64.Build.0 = Release|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Release|x86.ActiveCfg = Release|Any CPU
+		{22095016-0B59-45C0-B82D-420871B6F835}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

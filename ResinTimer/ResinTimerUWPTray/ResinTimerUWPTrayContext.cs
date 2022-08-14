@@ -7,11 +7,16 @@ namespace ResinTimerUWPTray
 {
     internal class ResinTimerUWPTrayContext : ApplicationContext
     {
-        private AppServiceConnection connection;
-        private readonly Form _ = new Form1();
+        internal static ResinTimerUWPTrayContext Instance;
+
+        internal AppServiceConnection Connection { get; private set; }
+
+        private readonly Form _preventExitInstance = new();
 
         public ResinTimerUWPTrayContext()
         {
+            Instance = this;
+
             NotifyIcon notifyIcon = new()
             {
                 Icon = Properties.Resource.AppIcon,
@@ -19,7 +24,10 @@ namespace ResinTimerUWPTray
                 ContextMenuStrip = CreateMenuItems()
             };
 
+            notifyIcon.MouseClick += NotifyIcon_MouseClick;
             notifyIcon.DoubleClick += OpenParentApp;
+
+            _ = CreateConnection();
         }
 
         private ContextMenuStrip CreateMenuItems()
@@ -75,38 +83,54 @@ namespace ResinTimerUWPTray
             await appListEntries.FirstOrDefault()?.LaunchAsync();
         }
 
-        private async Task SendToUWP(ValueSet message)
+        private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
         {
-            if (connection is null)
+            if (e.Button is MouseButtons.Left)
             {
-                string packageFamilyName = Package.Current.Id.FamilyName;
-
-                connection = new()
+                if (TrayInfoForm.Instance is null)
                 {
-                    PackageFamilyName = Package.Current.Id.FamilyName,
-                    AppServiceName = "TrayExtensionService"
-                };
-
-                connection.ServiceClosed += Connection_ServiceClosed;
-
-                AppServiceConnectionStatus status = await connection.OpenAsync();
-
-                if (status is not AppServiceConnectionStatus.Success)
-                {
-                    MessageBox.Show($"Status: {status} {packageFamilyName}");
-
-                    return;
+                    new TrayInfoForm().Show();
                 }
             }
+        }
 
-            await connection.SendMessageAsync(message);
+        private async Task CreateConnection()
+        {
+            string packageFamilyName = Package.Current.Id.FamilyName;
+
+            Connection = new()
+            {
+                PackageFamilyName = Package.Current.Id.FamilyName,
+                AppServiceName = "TrayExtensionService"
+            };
+
+            Connection.ServiceClosed += Connection_ServiceClosed;
+
+            AppServiceConnectionStatus status = await Connection.OpenAsync();
+
+            if (status is not AppServiceConnectionStatus.Success)
+            {
+                MessageBox.Show($"Status: {status} {packageFamilyName}");
+
+                return;
+            }
+        }
+
+        internal async Task SendToUWP(ValueSet message)
+        {
+            if (Connection is null)
+            {
+                await CreateConnection();
+            }
+
+            await Connection.SendMessageAsync(message);
         }
 
         private void Connection_ServiceClosed(AppServiceConnection sender, AppServiceClosedEventArgs args)
         {
-            connection.ServiceClosed -= Connection_ServiceClosed;
+            Connection.ServiceClosed -= Connection_ServiceClosed;
 
-            connection = null;
+            Connection = null;
         }
     }
 }

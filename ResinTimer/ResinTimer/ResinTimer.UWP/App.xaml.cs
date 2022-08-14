@@ -29,6 +29,7 @@ using Windows.ApplicationModel.AppService;
 using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.Data.Xml.Dom;
+using ResinTimer.Helper;
 
 namespace ResinTimer.UWP
 {
@@ -151,35 +152,87 @@ namespace ResinTimer.UWP
 
         private async void Connection_RequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
         {
-            if (args.Request.Message.ContainsKey("content"))
+            const string UpdateAllRequestKey = "UpdateAllRequest";
+            const string ResinInfoKey = "ResinInfo";
+            const string RealmCoinInfoKey = "RealmCoinInfo";
+            const string RealmFriendshipInfoKey = "RealmFriendshipInfo";
+
+            ValueSet message = args.Request.Message;
+
+            if (message.ContainsKey("content"))
             {
-                object message = null;
-                args.Request.Message.TryGetValue("content", out message);
+                object val = null;
+                args.Request.Message.TryGetValue("content", out val);
 
-                if (!App.IsBackground)
-                {
-                    await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, new DispatchedHandler(async () =>
-                    {
-                        await new MessageDialog(message.ToString()).ShowAsync();
-                    }));
-                }
-                else
-                {
-                    ToastTemplateType toastTemplate = ToastTemplateType.ToastText02;
-                    XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
+                ToastTemplateType toastTemplate = ToastTemplateType.ToastText02;
+                XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
 
-                    XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
-                    toastTextElements[0].AppendChild(toastXml.CreateTextNode("UWP with Systray"));
-                    toastTextElements[1].AppendChild(toastXml.CreateTextNode(message.ToString()));
+                XmlNodeList toastTextElements = toastXml.GetElementsByTagName("text");
+                toastTextElements[0].AppendChild(toastXml.CreateTextNode("UWP with Systray"));
+                toastTextElements[1].AppendChild(toastXml.CreateTextNode(val.ToString()));
 
-                    ToastNotification toast = new ToastNotification(toastXml);
-                    ToastNotificationManager.CreateToastNotifier().Show(toast);
-                }
+                ToastNotification toast = new ToastNotification(toastXml);
+                ToastNotificationManager.CreateToastNotifier().Show(toast);
             }
 
-            if (args.Request.Message.ContainsKey("exit"))
+            if (message.ContainsKey(UpdateAllRequestKey))
             {
-                App.Current.Exit();
+                // Resin Info Load & Update
+
+                ResinEnvironment.LoadValues();
+                ResinEnvironment.CalcResin();
+                ResinEnvironment.CalcResinTime();
+
+                if (ResinEnvironment.IsSyncEnabled)
+                {
+                    await SyncHelper.Update(SyncHelper.SyncTarget.Resin);
+                }
+
+                ResinEnvironment.UpdateSaveData();
+
+
+                // Realm Currency Info Load & Update
+
+                RealmCurrencyEnvironment.LoadValues();
+                RealmCurrencyEnvironment.CalcRC();
+
+                if (RealmCurrencyEnvironment.IsSyncEnabled)
+                {
+                    await SyncHelper.Update(SyncHelper.SyncTarget.RealmCurrency);
+                }
+
+                RealmCurrencyEnvironment.UpdateSaveData();
+
+
+                // Realm Friendship Info Load & Update
+
+                RealmFriendshipEnvironment.LoadValues();
+                RealmFriendshipEnvironment.CalcRF();
+
+                RealmFriendshipEnvironment.SaveValue();
+
+                await Connection?.SendMessageAsync(new ValueSet()
+                {
+                    { ResinInfoKey, null },
+                    { "NowResin", ResinEnvironment.Resin },
+                    { "MaxResin", ResinEnvironment.MaxResin },
+                    { "ResinRemainTime", ResinEnvironment.TotalCountTime },
+                    { "IsResinSync", ResinEnvironment.IsSyncEnabled },
+                    { RealmCoinInfoKey, null },
+                    { "NowRC", RealmCurrencyEnvironment.Currency },
+                    { "MaxRC", RealmCurrencyEnvironment.MaxRC },
+                    { "RCRemainTime", RealmCurrencyEnvironment.TotalCountTime },
+                    { "IsRealmCoinSync", RealmCurrencyEnvironment.IsSyncEnabled },
+                    { RealmFriendshipInfoKey, null },
+                    { "NowRF", RealmFriendshipEnvironment.Bounty },
+                    { "MaxRF", RealmFriendshipEnvironment.MaxRF },
+                    { "RFRemainTime", RealmFriendshipEnvironment.TotalCountTime },
+                });
+            }
+
+            if (message.ContainsKey("exit"))
+            {
+                Current.Exit();
             }
         }
 

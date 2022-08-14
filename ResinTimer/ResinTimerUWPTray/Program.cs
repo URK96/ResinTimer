@@ -13,10 +13,9 @@ namespace ResinTimerUWPTray
 
             string mutexName = "ResinTimerUWPTrayMutex";
 
-            if (!Mutex.TryOpenExisting(mutexName, out Mutex mutex))
+            if (!Mutex.TryOpenExisting(mutexName, out _))
             {
-                mutex = new(false, mutexName);
-
+                Mutex mutex = new(false, mutexName);
                 ApplicationConfiguration.Initialize();
                 Application.Run(new ResinTimerUWPTrayContext());
 

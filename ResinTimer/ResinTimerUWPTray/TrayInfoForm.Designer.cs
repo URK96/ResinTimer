@@ -38,7 +38,7 @@
             this.RealmCoinRemainTimeInfoLabel = new System.Windows.Forms.Label();
             this.RealmCoinInfoLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.RealmFriendshipInfoPanel = new System.Windows.Forms.Panel();
             this.RealmFriendshipRemainTimeInfoLabel = new System.Windows.Forms.Label();
             this.RealmFriendshipInfoLabel = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -48,12 +48,13 @@
             this.RealmCoinInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RealmCoinSyncStatusIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.RealmFriendshipInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // ResinInfoPanel
             // 
+            this.ResinInfoPanel.BackColor = System.Drawing.Color.Transparent;
             this.ResinInfoPanel.Controls.Add(this.ResinSyncStatusIcon);
             this.ResinInfoPanel.Controls.Add(this.ResinRemainTimeInfoLabel);
             this.ResinInfoPanel.Controls.Add(this.ResinInfoLabel);
@@ -77,6 +78,7 @@
             // ResinRemainTimeInfoLabel
             // 
             this.ResinRemainTimeInfoLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ResinRemainTimeInfoLabel.ForeColor = System.Drawing.Color.SteelBlue;
             this.ResinRemainTimeInfoLabel.Location = new System.Drawing.Point(54, 26);
             this.ResinRemainTimeInfoLabel.Name = "ResinRemainTimeInfoLabel";
             this.ResinRemainTimeInfoLabel.Size = new System.Drawing.Size(113, 18);
@@ -87,6 +89,7 @@
             // ResinInfoLabel
             // 
             this.ResinInfoLabel.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ResinInfoLabel.ForeColor = System.Drawing.Color.SteelBlue;
             this.ResinInfoLabel.Location = new System.Drawing.Point(54, 3);
             this.ResinInfoLabel.Name = "ResinInfoLabel";
             this.ResinInfoLabel.Size = new System.Drawing.Size(113, 23);
@@ -106,6 +109,7 @@
             // 
             // RealmCoinInfoPanel
             // 
+            this.RealmCoinInfoPanel.BackColor = System.Drawing.Color.Transparent;
             this.RealmCoinInfoPanel.Controls.Add(this.RealmCoinSyncStatusIcon);
             this.RealmCoinInfoPanel.Controls.Add(this.RealmCoinRemainTimeInfoLabel);
             this.RealmCoinInfoPanel.Controls.Add(this.RealmCoinInfoLabel);
@@ -129,6 +133,7 @@
             // RealmCoinRemainTimeInfoLabel
             // 
             this.RealmCoinRemainTimeInfoLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RealmCoinRemainTimeInfoLabel.ForeColor = System.Drawing.Color.SteelBlue;
             this.RealmCoinRemainTimeInfoLabel.Location = new System.Drawing.Point(54, 26);
             this.RealmCoinRemainTimeInfoLabel.Name = "RealmCoinRemainTimeInfoLabel";
             this.RealmCoinRemainTimeInfoLabel.Size = new System.Drawing.Size(113, 18);
@@ -139,6 +144,7 @@
             // RealmCoinInfoLabel
             // 
             this.RealmCoinInfoLabel.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RealmCoinInfoLabel.ForeColor = System.Drawing.Color.SteelBlue;
             this.RealmCoinInfoLabel.Location = new System.Drawing.Point(54, 3);
             this.RealmCoinInfoLabel.Name = "RealmCoinInfoLabel";
             this.RealmCoinInfoLabel.Size = new System.Drawing.Size(113, 23);
@@ -156,19 +162,21 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel1
+            // RealmFriendshipInfoPanel
             // 
-            this.panel1.Controls.Add(this.RealmFriendshipRemainTimeInfoLabel);
-            this.panel1.Controls.Add(this.RealmFriendshipInfoLabel);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(12, 118);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(193, 47);
-            this.panel1.TabIndex = 4;
+            this.RealmFriendshipInfoPanel.BackColor = System.Drawing.Color.Transparent;
+            this.RealmFriendshipInfoPanel.Controls.Add(this.RealmFriendshipRemainTimeInfoLabel);
+            this.RealmFriendshipInfoPanel.Controls.Add(this.RealmFriendshipInfoLabel);
+            this.RealmFriendshipInfoPanel.Controls.Add(this.pictureBox2);
+            this.RealmFriendshipInfoPanel.Location = new System.Drawing.Point(12, 118);
+            this.RealmFriendshipInfoPanel.Name = "RealmFriendshipInfoPanel";
+            this.RealmFriendshipInfoPanel.Size = new System.Drawing.Size(193, 47);
+            this.RealmFriendshipInfoPanel.TabIndex = 4;
             // 
             // RealmFriendshipRemainTimeInfoLabel
             // 
             this.RealmFriendshipRemainTimeInfoLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RealmFriendshipRemainTimeInfoLabel.ForeColor = System.Drawing.Color.SteelBlue;
             this.RealmFriendshipRemainTimeInfoLabel.Location = new System.Drawing.Point(54, 26);
             this.RealmFriendshipRemainTimeInfoLabel.Name = "RealmFriendshipRemainTimeInfoLabel";
             this.RealmFriendshipRemainTimeInfoLabel.Size = new System.Drawing.Size(113, 18);
@@ -179,6 +187,7 @@
             // RealmFriendshipInfoLabel
             // 
             this.RealmFriendshipInfoLabel.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RealmFriendshipInfoLabel.ForeColor = System.Drawing.Color.SteelBlue;
             this.RealmFriendshipInfoLabel.Location = new System.Drawing.Point(54, 3);
             this.RealmFriendshipInfoLabel.Name = "RealmFriendshipInfoLabel";
             this.RealmFriendshipInfoLabel.Size = new System.Drawing.Size(113, 23);
@@ -201,7 +210,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(217, 272);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.RealmFriendshipInfoPanel);
             this.Controls.Add(this.RealmCoinInfoPanel);
             this.Controls.Add(this.ResinInfoPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -222,7 +231,7 @@
             this.RealmCoinInfoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RealmCoinSyncStatusIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.RealmFriendshipInfoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -237,7 +246,7 @@
         private Label RealmCoinRemainTimeInfoLabel;
         private Label RealmCoinInfoLabel;
         private PictureBox pictureBox1;
-        private Panel panel1;
+        private Panel RealmFriendshipInfoPanel;
         private Label RealmFriendshipRemainTimeInfoLabel;
         private Label RealmFriendshipInfoLabel;
         private PictureBox pictureBox2;

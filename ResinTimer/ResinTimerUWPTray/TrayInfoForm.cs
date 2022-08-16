@@ -33,30 +33,58 @@ namespace ResinTimerUWPTray
             if (TrayContext.Instance.Connection is not null)
             {
                 TrayContext.Instance.Connection.RequestReceived += Connection_RequestReceived;
+
+                _updateUITimer = new()
+                {
+                    Interval = (int)TimeSpan.FromSeconds(1).TotalMilliseconds
+                };
+                _updateUITimer.Tick += UpdateUITimer_Tick;
+
+                _updateDataTimer = new()
+                {
+                    Interval = TimeSpan.FromSeconds(1).TotalMilliseconds
+                };
+                _updateDataTimer.Elapsed += UpdateDataTimer_Elapsed;
+
+                _updateDataTimer.Start();
+                _updateUITimer.Start();
+            }
+            else
+            {
+                ShowNoConnectionIndicator();
             }
 
-            _updateUITimer = new()
-            {
-                Interval = (int)TimeSpan.FromSeconds(1).TotalMilliseconds
-            };
-            _updateUITimer.Tick += UpdateUITimer_Tick;
-
-            _updateDataTimer = new()
-            {
-                Interval = TimeSpan.FromSeconds(1).TotalMilliseconds
-            };
-            _updateDataTimer.Elapsed += UpdateDataTimer_Elapsed;
-
-            _updateDataTimer.Start();
-            _updateUITimer.Start();
-
             Focus();
+        }
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            WindowUtils.EnableAcrylic(this, Color.Transparent);
+
+            base.OnHandleCreated(e);
         }
 
         private void SetSyncIconVisibility()
         {
             ResinSyncStatusIcon.Visible = _resinInfo?.IsSync ?? false;
             RealmCoinSyncStatusIcon.Visible = _realmCoinInfo?.IsSync ?? false;
+        }
+
+        private void ShowNoConnectionIndicator()
+        {
+            ResinInfoPanel.Visible = false;
+            RealmCoinInfoPanel.Visible = false;
+            RealmFriendshipInfoPanel.Visible = false;
+
+            Label retryLabel = new()
+            {
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Consolas", 11f, FontStyle.Bold, GraphicsUnit.Point),
+                Text = AppResources.UWPTrayInfo_NoConnection
+            };
+
+            Controls.Add(retryLabel);
         }
 
         private void SetTrayInfoFormPosition()
@@ -176,8 +204,8 @@ namespace ResinTimerUWPTray
 
         private void CloseTrayInfoForm()
         {
-            _updateDataTimer.Stop();
-            _updateUITimer.Stop();
+            _updateDataTimer?.Stop();
+            _updateUITimer?.Stop();
 
             if (TrayContext.Instance.Connection is not null)
             {
@@ -199,18 +227,20 @@ namespace ResinTimerUWPTray
 
         private void TrayInfoForm_Paint(object sender, PaintEventArgs e)
         {
-            const int BorderWidth = 3;
+            //const int BorderWidth = 3;
 
-            Pen pen = new(Color.FromArgb(0x780682F6))
-            {
-                Width = BorderWidth
-            };
+            //Pen pen = new(Color.FromArgb(0x780682F6))
+            //{
+            //    Width = BorderWidth
+            //};
 
-            int startOffset = BorderWidth / 2;
-            int endOffset = BorderWidth;
+            //int startOffset = BorderWidth / 2;
+            //int endOffset = BorderWidth;
 
-            e.Graphics.DrawRectangle(pen, new Rectangle(startOffset, startOffset, 
-                                                        Width - endOffset, Height - endOffset));
+            //e.Graphics.DrawRectangle(pen, new Rectangle(startOffset, startOffset, 
+            //                                            Width - endOffset, Height - endOffset));
+
+            e.Graphics.Clear(Color.Transparent);
         }
 
         private void TrayInfoForm_Deactivate(object sender, EventArgs e)

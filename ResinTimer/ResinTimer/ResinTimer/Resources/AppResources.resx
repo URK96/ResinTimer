@@ -1191,6 +1191,9 @@ MIT License</value>
   <data name="Toolbar_ResetAll" xml:space="preserve">
     <value>Reset All</value>
   </data>
+  <data name="UWPTrayInfo_NoConnection" xml:space="preserve">
+    <value>No connection with ResinTimer application. Please retry to open tray info.</value>
+  </data>
   <data name="ValueEdit_ValueError_Message" xml:space="preserve">
     <value>Please input correct value</value>
   </data>

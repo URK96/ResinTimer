@@ -3187,6 +3187,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   No connection with ResinTimer application. Please retry to open tray info.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string UWPTrayInfo_NoConnection {
+            get {
+                return ResourceManager.GetString("UWPTrayInfo_NoConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Please input correct value과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string ValueEdit_ValueError_Message {

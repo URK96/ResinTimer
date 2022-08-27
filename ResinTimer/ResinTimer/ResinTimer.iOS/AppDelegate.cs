@@ -35,6 +35,8 @@ namespace ResinTimer.iOS
             UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert | UNAuthorizationOptions.Sound, (approved, err) => { });
             UNUserNotificationCenter.Current.Delegate = new UserNotificationCenterDelegate();
 
+            UIApplication.SharedApplication.SetMinimumBackgroundFetchInterval(UIApplication.BackgroundFetchIntervalMinimum);
+
             return base.FinishedLaunching(app, options);
         }
 

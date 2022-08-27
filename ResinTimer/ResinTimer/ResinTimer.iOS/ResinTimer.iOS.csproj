@@ -197,6 +197,9 @@
     <ImageAsset Include="Assets.xcassets\Character_Chongyun_Thumb.png.imageset\Character_Chongyun_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Collei_Thumb.png.imageset\Character_Collei_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Diluc_Thumb.png.imageset\Character_Diluc_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -285,6 +288,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Thoma_Thumb.png.imageset\Character_Thoma_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Tighnari_Thumb.png.imageset\Character_Tighnari_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Traveler_Thumb.png.imageset\Character_Traveler_Thumb1.png">
@@ -641,6 +647,39 @@
     <ImageAsset Include="Assets.xcassets\Character_Shikanoin_Heizou_Thumb.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Collei_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Tighnari_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\talent_admonition.png.imageset\talent_admonition.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\talent_all_Sumeru.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\talent_admonition.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\talent_ingenuity.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\talent_praxis.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\wa_all_Sumeru.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\wa_oasis_garden_4.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\wa_scorching_might_4.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\wa_talisman_of_the_forest_dew_4.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\sync.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -659,7 +698,19 @@
     <ImageAsset Include="Assets.xcassets\sync.png.imageset\sync.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\talent_all_Sumeru.png.imageset\talent_all_Sumeru.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\talent_ingenuity.png.imageset\talent_ingenuity.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\talent_praxis.png.imageset\talent_praxis.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\wa_all_Inazuma.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\wa_all_Sumeru.png.imageset\wa_all_Sumeru.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\wa_branch_of_a_distant_sea_4.png.imageset\Contents.json">
@@ -777,6 +828,15 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\wa_branch_of_a_distant_sea_4.png.imageset\wa_branch_of_a_distant_sea_4.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\wa_oasis_garden_4.png.imageset\wa_oasis_garden_4.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\wa_scorching_might_4.png.imageset\wa_scorching_might_4.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\wa_talisman_of_the_forest_dew_4.png.imageset\wa_talisman_of_the_forest_dew_4.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\wa_the_dandelion_gladiator_4.png.imageset\Contents.json">
@@ -1147,7 +1207,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

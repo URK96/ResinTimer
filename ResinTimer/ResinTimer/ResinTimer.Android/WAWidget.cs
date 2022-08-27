@@ -3,10 +3,10 @@ using Android.Appwidget;
 using Android.Content;
 using Android.Widget;
 
+using ResinTimer.Models.Materials;
 using ResinTimer.Resources;
 
 using System.Collections.Generic;
-using System.Linq;
 
 using Xamarin.Essentials;
 
@@ -14,8 +14,6 @@ using static GenshinDB_Core.GenshinDB;
 using static ResinTimer.Droid.AndroidAppEnvironment;
 
 using WAEnv = ResinTimer.WeaponAscensionEnvironment;
-using AppEnv = ResinTimer.AppEnvironment;
-using ResinTimer.Models.Materials;
 
 namespace ResinTimer.Droid
 {
@@ -33,7 +31,8 @@ namespace ResinTimer.Droid
         {
             Resource.Id.WAWidgetIconMondstadt,
             Resource.Id.WAWidgetIconLiyue,
-            Resource.Id.WAWidgetIconInazuma
+            Resource.Id.WAWidgetIconInazuma,
+            Resource.Id.WAWidgetIconSumeru
         };
 
         public override void OnReceive(Context context, Intent intent)
@@ -163,6 +162,7 @@ namespace ResinTimer.Droid
                     Locations.Mondstadt => Resource.Drawable.wa_all_Mondstadt,
                     Locations.Liyue => Resource.Drawable.wa_all_Liyue,
                     Locations.Inazuma => Resource.Drawable.wa_all_Inazuma,
+                    Locations.Sumeru => Resource.Drawable.wa_all_Sumeru,
                     _ => 0
                 };
             }
@@ -179,6 +179,9 @@ namespace ResinTimer.Droid
                     "Branch of a Distant Sea" => Resource.Drawable.wa_branch_of_a_distant_sea_4,
                     "Narukami" => Resource.Drawable.wa_narukami_4,
                     "Mask" => Resource.Drawable.wa_mask_4,
+                    "Talisman of the Forest Dew" => Resource.Drawable.wa_talisman_of_the_forest_dew_4,
+                    "Oasis Garden" => Resource.Drawable.wa_oasis_garden_4,
+                    "Scorching Might" => Resource.Drawable.wa_scorching_might_4,
                     _ => 0
                 };
             }

@@ -3,6 +3,7 @@ using Android.Appwidget;
 using Android.Content;
 using Android.Widget;
 
+using ResinTimer.Models.Materials;
 using ResinTimer.Resources;
 
 using System.Collections.Generic;
@@ -14,8 +15,6 @@ using static GenshinDB_Core.GenshinDB;
 using static ResinTimer.Droid.AndroidAppEnvironment;
 
 using TalentEnv = ResinTimer.TalentEnvironment;
-using AppEnv = ResinTimer.AppEnvironment;
-using ResinTimer.Models.Materials;
 
 namespace ResinTimer.Droid
 {
@@ -33,7 +32,8 @@ namespace ResinTimer.Droid
         {
             Resource.Id.TalentWidgetIconMondstadt,
             Resource.Id.TalentWidgetIconLiyue,
-            Resource.Id.TalentWidgetIconInazuma
+            Resource.Id.TalentWidgetIconInazuma,
+            Resource.Id.TalentWidgetIconSumeru
         };
 
         public override void OnReceive(Context context, Intent intent)
@@ -163,6 +163,7 @@ namespace ResinTimer.Droid
                     Locations.Mondstadt => Resource.Drawable.talent_all_Mondstadt,
                     Locations.Liyue => Resource.Drawable.talent_all_Liyue,
                     Locations.Inazuma => Resource.Drawable.talent_all_Inazuma,
+                    Locations.Sumeru => Resource.Drawable.talent_all_Sumeru,
                     _ => 0
                 };
             }
@@ -179,6 +180,9 @@ namespace ResinTimer.Droid
                     "Transience" => Resource.Drawable.talent_transience,
                     "Elegance" => Resource.Drawable.talent_elegance,
                     "Light" => Resource.Drawable.talent_light,
+                    "Admonition" => Resource.Drawable.talent_admonition,
+                    "Ingenuity" => Resource.Drawable.talent_ingenuity,
+                    "Praxis" => Resource.Drawable.talent_praxis,
                     _ => 0
                 };
             }

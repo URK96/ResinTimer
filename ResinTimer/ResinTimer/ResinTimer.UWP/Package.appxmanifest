@@ -12,7 +12,7 @@
   <Identity
     Name="51675URK96.52713F0631765"
     Publisher="CN=URK96"
-    Version="1.18.1.0" />
+    Version="1.19.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="dd2a6655-330a-4139-ae69-bf8ce5cbe542" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

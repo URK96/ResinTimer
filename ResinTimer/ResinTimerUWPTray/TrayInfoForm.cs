@@ -209,7 +209,11 @@ namespace ResinTimerUWPTray
 
             if (TrayContext.Instance.Connection is not null)
             {
-                TrayContext.Instance.Connection.RequestReceived -= Connection_RequestReceived;
+                try
+                {
+                    TrayContext.Instance.Connection.RequestReceived -= Connection_RequestReceived;
+                }
+                catch { }
             }
 
             Close();
@@ -227,19 +231,6 @@ namespace ResinTimerUWPTray
 
         private void TrayInfoForm_Paint(object sender, PaintEventArgs e)
         {
-            //const int BorderWidth = 3;
-
-            //Pen pen = new(Color.FromArgb(0x780682F6))
-            //{
-            //    Width = BorderWidth
-            //};
-
-            //int startOffset = BorderWidth / 2;
-            //int endOffset = BorderWidth;
-
-            //e.Graphics.DrawRectangle(pen, new Rectangle(startOffset, startOffset, 
-            //                                            Width - endOffset, Height - endOffset));
-
             e.Graphics.Clear(Color.Transparent);
         }
 

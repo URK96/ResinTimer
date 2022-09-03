@@ -11,6 +11,7 @@ namespace ResinTimerUWPTray
 
         internal AppServiceConnection Connection { get; private set; }
 
+        // Do not remove this instance
         private readonly Form _preventExitInstance = new();
 
         public ResinTimerUWPTrayContext()
@@ -38,15 +39,15 @@ namespace ResinTimerUWPTray
 
             openAppMenuItem.Click += OpenParentApp;
 
-            ToolStripMenuItem sendTestMessageMenuItem = new("Send Test Message");
+            //ToolStripMenuItem sendTestMessageMenuItem = new("Send Test Message");
 
-            sendTestMessageMenuItem.Click += async delegate
-            {
-                await SendToUWP(new()
-                {
-                    { "content", "Test Message" }
-                });
-            };
+            //sendTestMessageMenuItem.Click += async delegate
+            //{
+            //    await SendToUWP(new()
+            //    {
+            //        { "content", "Test Message" }
+            //    });
+            //};
 
             ToolStripMenuItem exitMenuItem = new("Exit Tray Service");
 
@@ -58,7 +59,7 @@ namespace ResinTimerUWPTray
             ContextMenuStrip contextMenuStrip = new();
 
             contextMenuStrip.Items.Add(openAppMenuItem);
-            contextMenuStrip.Items.Add(sendTestMessageMenuItem);
+            //contextMenuStrip.Items.Add(sendTestMessageMenuItem);
             contextMenuStrip.Items.Add(exitMenuItem);
 
             return contextMenuStrip;

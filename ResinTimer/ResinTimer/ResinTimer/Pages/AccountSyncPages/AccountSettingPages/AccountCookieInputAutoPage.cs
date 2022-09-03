@@ -11,6 +11,7 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
     public class AccountCookieInputAutoPage : WebViewBasePage
     {
         private const string SiteUrl = "https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481";
+        private string _navigateUrl = string.Empty;
 
         public AccountCookieInputAutoPage() : base(SiteUrl)
         {
@@ -45,8 +46,12 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
                 wv.Cookies = new CookieContainer();
                 wv.Navigated += async (sender, e) =>
                 {
-                    await Task.Delay(2000);
+                    await Task.Delay(4000);
                     await CheckCookies(sender as WebView);
+                };
+                wv.Navigating += (sender, e) =>
+                {
+                    _navigateUrl = e.Url;
                 };
 
                 RootLayout.Children.Add(wv);
@@ -62,7 +67,7 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
         {
             try
             {
-                CookieCollection cookies = wv.Cookies.GetCookies(new Uri(SiteUrl));
+                CookieCollection cookies = wv.Cookies.GetCookies(new Uri(_navigateUrl));
 
                 string ltuid = cookies["ltuid"].Value;
                 string ltoken = cookies["ltoken"].Value;

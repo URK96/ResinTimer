@@ -53,6 +53,7 @@
         public const string APP_USE_24H_TIMEFORMAT = "App_Use_24H_TimeFormat";
         public const string APP_LANG = "App_Lang";
         public const string APP_INGAMESERVER = "App_InGameServer";
+        public const string APP_BACKGROUNDTRAYSERVICE_ENABLED = "App_BackgroundTrayService_Enabled";
 
         // Setting - App - AccountSync
         public const string APP_ACCOUNTSYNC_RESIN_ENABLED = "App_AccountSync_Resin_Enabled";

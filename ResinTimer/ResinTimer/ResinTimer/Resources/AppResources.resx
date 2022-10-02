@@ -1038,6 +1038,9 @@ MIT License</value>
   <data name="SettingPage_Section_App_AppLang_Title" xml:space="preserve">
     <value>App Language</value>
   </data>
+  <data name="SettingPage_Section_App_BackgroundTrayService_Title" xml:space="preserve">
+    <value>Enable Background Tray Service</value>
+  </data>
   <data name="SettingPage_Section_App_Cell_Notification_Title" xml:space="preserve">
     <value>Enable Notification</value>
   </data>

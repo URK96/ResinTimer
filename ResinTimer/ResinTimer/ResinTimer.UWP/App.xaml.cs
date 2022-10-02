@@ -127,7 +127,8 @@ namespace ResinTimer.UWP
             {
                 if (builder != null)
                 {
-                    UWPAppEnvironment.toastNotifier.AddToSchedule(new ScheduledToastNotification(builder.GetToastContent().GetXml(), DateTime.Now.AddSeconds(3)));
+                    UWPAppEnvironment.toastNotifier.AddToSchedule(
+                        new ScheduledToastNotification(builder.GetToastContent().GetXml(), DateTime.Now.AddSeconds(3)));
                 }
 
                 await Task.Delay(3000);
@@ -140,13 +141,18 @@ namespace ResinTimer.UWP
         {
             base.OnBackgroundActivated(args);
 
-            if (args.TaskInstance.TriggerDetails is AppServiceTriggerDetails details)
+            if (Preferences.Get(SettingConstants.APP_BACKGROUNDTRAYSERVICE_ENABLED, false) &&
+                (args.TaskInstance.TriggerDetails is AppServiceTriggerDetails details))
             {
                 AppServiceDeferral = args.TaskInstance.GetDeferral();
                 Connection = details.AppServiceConnection;
 
                 args.TaskInstance.Canceled += delegate { AppServiceDeferral?.Complete(); };
                 Connection.RequestReceived += Connection_RequestReceived;
+            }
+            else
+            {
+                args.TaskInstance.GetDeferral()?.Complete();
             }
         }
 
@@ -315,11 +321,15 @@ namespace ResinTimer.UWP
         /// <param name="e">Details about the suspend request.</param>
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
-            var deferral = e.SuspendingOperation?.GetDeferral();
+            try
+            {
+                var deferral = e.SuspendingOperation?.GetDeferral();
 
-            //TODO: Save application state and stop any background activity
-            AppServiceDeferral?.Complete();
-            deferral?.Complete();
+                //TODO: Save application state and stop any background activity
+                AppServiceDeferral?.Complete();
+                deferral?.Complete();
+            }
+            catch { }
         }
     }
 }

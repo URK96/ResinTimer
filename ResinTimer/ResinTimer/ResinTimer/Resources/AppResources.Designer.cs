@@ -2728,6 +2728,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Enable Background Tray Service과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_BackgroundTrayService_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_BackgroundTrayService_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Enable Notification과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string SettingPage_Section_App_Cell_Notification_Title {

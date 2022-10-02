@@ -43,7 +43,16 @@ namespace ResinTimer.Pages
         {
             InitializeComponent();
 
+            InitSpecificPlatformSetting();
             LoadSettingValue();
+        }
+
+        private void InitSpecificPlatformSetting()
+        {
+            if (Device.RuntimePlatform is not Device.UWP)
+            {
+                AppSettingSection.Remove(BackgroundTrayServiceSetting);
+            }
         }
 
         private void LoadSettingValue()
@@ -55,6 +64,11 @@ namespace ResinTimer.Pages
             Use24HTimeFormat.On = Preferences.Get(SettingConstants.APP_USE_24H_TIMEFORMAT, false);
             AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnv.AppLang.System)];
             AppInGameServerNow.Text = AppEnv.ServerList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)];
+
+            if (Device.RuntimePlatform is Device.UWP)
+            {
+                BackgroundTrayServiceSetting.On = Preferences.Get(SettingConstants.APP_BACKGROUNDTRAYSERVICE_ENABLED, false);
+            }
 
             // Timer Common Section
             ShowOverflow.On = Preferences.Get(SettingConstants.SHOW_OVERFLOW, false);
@@ -196,6 +210,14 @@ namespace ResinTimer.Pages
         private void ShowOverflowOnChanged(object sender, ToggledEventArgs e)
         {
             Preferences.Set(SettingConstants.SHOW_OVERFLOW, e.Value);
+        }
+
+        private void BackgroundTrayServiceSettingOnChanged(object sender, ToggledEventArgs e)
+        {
+            if (sender is SwitchCell cell)
+            {
+                Preferences.Set(SettingConstants.APP_BACKGROUNDTRAYSERVICE_ENABLED, e.Value);
+            }
         }
     }
 }

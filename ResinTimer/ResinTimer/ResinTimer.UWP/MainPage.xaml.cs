@@ -5,6 +5,7 @@ using Windows.UI.Core.Preview;
 using Windows.UI.Notifications;
 using Windows.UI.Xaml.Controls;
 using System;
+using Xamarin.Essentials;
 
 namespace ResinTimer.UWP
 {
@@ -38,16 +39,19 @@ namespace ResinTimer.UWP
 
         private async void SystemNavigationManager_CloseRequested(object sender, SystemNavigationCloseRequestedPreviewEventArgs e)
         {
-            Deferral deferral = e.GetDeferral();
-
-            if (ApiInformation.IsApiContractPresent("Windows.ApplicationModel.FullTrustAppContract", 1, 0))
+            if (Preferences.Get(SettingConstants.APP_BACKGROUNDTRAYSERVICE_ENABLED, false))
             {
-                await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+                Deferral deferral = e.GetDeferral();
+
+                if (ApiInformation.IsApiContractPresent("Windows.ApplicationModel.FullTrustAppContract", 1, 0))
+                {
+                    await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+                }
+
+                e.Handled = false;
+
+                deferral.Complete();
             }
-
-            e.Handled = false;
-
-            deferral.Complete();
         }
     }
 }

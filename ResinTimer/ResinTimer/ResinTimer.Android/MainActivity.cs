@@ -14,6 +14,9 @@ using static ResinTimer.Droid.AndroidAppEnvironment;
 using System.Collections.Generic;
 using System.Linq;
 using Android.Util;
+using ResinTimer.TimerPages;
+using Rg.Plugins.Popup.Services;
+using Java.Util.Prefs;
 
 namespace ResinTimer.Droid
 {
@@ -22,6 +25,8 @@ namespace ResinTimer.Droid
     [IntentFilter(new[] { Xamarin.Essentials.Platform.Intent.ActionAppAction }, Categories = new[] { Android.Content.Intent.CategoryDefault })]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        private App _app;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             try
@@ -49,6 +54,8 @@ namespace ResinTimer.Droid
                     _ => null
                 });
 
+                _app = app;
+
                 LoadApplication(app);
             }
             catch (Exception ex)
@@ -67,7 +74,28 @@ namespace ResinTimer.Droid
 
         public override void OnBackPressed()
         {
-            Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
+            if (Xamarin.Essentials.Preferences.Get(SettingConstants.APP_RETURNSTARTPAGE_ENABLED, true))
+            {
+                if (PopupNavigation.Instance.PopupStack.Count > 0)
+                {
+                    Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
+                }
+                else if ((_app is not null) &&
+                         (_app.MainPage is MainPage page) &&
+                         ((page.Detail as NavigationPage).CurrentPage.Navigation.NavigationStack.Count <= 1) &&
+                         ((page.Detail as NavigationPage).CurrentPage is not TimerHomePage))
+                {
+                    page.ApplyDetailPage(new(new TimerHomePage()));
+                }
+                else
+                {
+                    base.OnBackPressed();
+                }
+            }
+            else
+            {
+                Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
+            }
         }
 
         protected override void OnResume()

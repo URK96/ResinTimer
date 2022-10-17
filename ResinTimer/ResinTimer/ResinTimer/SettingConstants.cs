@@ -54,6 +54,7 @@
         public const string APP_LANG = "App_Lang";
         public const string APP_INGAMESERVER = "App_InGameServer";
         public const string APP_BACKGROUNDTRAYSERVICE_ENABLED = "App_BackgroundTrayService_Enabled";
+        public const string APP_RETURNSTARTPAGE_ENABLED = "App_ReturnStartPage_Enabled";
 
         // Setting - App - AccountSync
         public const string APP_ACCOUNTSYNC_RESIN_ENABLED = "App_AccountSync_Resin_Enabled";

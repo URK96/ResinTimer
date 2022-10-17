@@ -53,6 +53,11 @@ namespace ResinTimer.Pages
             {
                 AppSettingSection.Remove(BackgroundTrayServiceSetting);
             }
+
+            if (Device.RuntimePlatform is not Device.Android)
+            {
+                AppSettingSection.Remove(ReturnStartPageSetting);
+            }
         }
 
         private void LoadSettingValue()
@@ -68,6 +73,11 @@ namespace ResinTimer.Pages
             if (Device.RuntimePlatform is Device.UWP)
             {
                 BackgroundTrayServiceSetting.On = Preferences.Get(SettingConstants.APP_BACKGROUNDTRAYSERVICE_ENABLED, false);
+            }
+
+            if (Device.RuntimePlatform is Device.Android)
+            {
+                ReturnStartPageSetting.On = Preferences.Get(SettingConstants.APP_RETURNSTARTPAGE_ENABLED, true);
             }
 
             // Timer Common Section
@@ -174,6 +184,11 @@ namespace ResinTimer.Pages
             };
 
             await PopupNavigation.Instance.PushAsync(dialog);
+        }
+
+        private void ReturnStartPageSettingOnChanged(object sender, ToggledEventArgs e)
+        {
+            Preferences.Set(SettingConstants.APP_RETURNSTARTPAGE_ENABLED, e.Value);
         }
 
         private async void AppLangTapped(object sender, EventArgs e)

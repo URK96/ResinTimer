@@ -99,7 +99,7 @@ namespace ResinTimer
             (sender as ListView).SelectedItem = null;
         }
 
-        private void ApplyDetailPage(NavigationPage page)
+        public void ApplyDetailPage(NavigationPage page)
         {
             if (Device.RuntimePlatform is Device.UWP)
             {

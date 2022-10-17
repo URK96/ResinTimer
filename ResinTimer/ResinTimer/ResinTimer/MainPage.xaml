@@ -21,7 +21,7 @@
                           ItemSelected="MainListViewItemSelected">
                     <ListView.ItemsSource>
                         <x:Array Type="{x:Type models:MainMasterItem}">
-                            <models:MainMasterItem Title="Main" Icon="" Target="{x:Type timers:TimerHomePage}"/>
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MainPage_Title}" Icon="" Target="{x:Type timers:TimerHomePage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}" Icon="resin.png" Target="{x:Type timers:ResinTimerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_RealmCurrency}" Icon="realm_currency.png" Target="{x:Type timers:RealmCurrencyTimerPage}"/>
                             <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_RealmFriendship}" Icon="friendship.png" Target="{x:Type timers:RealmFriendshipTimerPage}"/>

@@ -1052,6 +1052,9 @@ MIT License</value>
   <data name="SettingPage_Section_App_InGameServer_Title" xml:space="preserve">
     <value>게임 서버</value>
   </data>
+  <data name="SettingPage_Section_App_ReturnStartPageSetting_Title" xml:space="preserve">
+    <value>뒤로가기 시 메인 페이지로 복귀</value>
+  </data>
   <data name="SettingPage_Section_App_SelectVisibleMenu_Title" xml:space="preserve">
     <value>메뉴 표시 항목 설정</value>
   </data>

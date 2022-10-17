@@ -2773,6 +2773,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Return Home Page When Run Back Button과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string SettingPage_Section_App_ReturnStartPageSetting_Title {
+            get {
+                return ResourceManager.GetString("SettingPage_Section_App_ReturnStartPageSetting_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Set menus visibility과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string SettingPage_Section_App_SelectVisibleMenu_Title {

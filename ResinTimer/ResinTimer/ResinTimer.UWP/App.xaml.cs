@@ -49,15 +49,15 @@ namespace ResinTimer.UWP
         public App()
         {
             this.InitializeComponent();
-            this.Suspending += OnSuspending;
-            this.EnteredBackground += delegate 
-            { 
-                IsBackground = true;
-            };
-            this.LeavingBackground += delegate 
-            { 
-                IsBackground = false; 
-            };
+            //this.Suspending += OnSuspending;
+            //this.EnteredBackground += delegate 
+            //{ 
+            //    IsBackground = true;
+            //};
+            //this.LeavingBackground += delegate 
+            //{ 
+            //    IsBackground = false; 
+            //};
         }
 
         /// <summary>

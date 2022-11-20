@@ -49,7 +49,7 @@ namespace ResinTimer.Pages
 
         private void InitSpecificPlatformSetting()
         {
-            if (Device.RuntimePlatform is not Device.UWP)
+            if (true)//Device.RuntimePlatform is not Device.UWP)
             {
                 AppSettingSection.Remove(BackgroundTrayServiceSetting);
             }

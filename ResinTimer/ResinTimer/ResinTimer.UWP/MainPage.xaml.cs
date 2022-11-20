@@ -22,8 +22,8 @@ namespace ResinTimer.UWP
         {
             this.InitializeComponent();
 
-            SystemNavigationManagerPreview mgr = SystemNavigationManagerPreview.GetForCurrentView();
-            mgr.CloseRequested += SystemNavigationManager_CloseRequested;
+            //SystemNavigationManagerPreview mgr = SystemNavigationManagerPreview.GetForCurrentView();
+            //mgr.CloseRequested += SystemNavigationManager_CloseRequested;
 
             if (UWPAppEnvironment.toastNotifier == null)
             {
@@ -39,19 +39,19 @@ namespace ResinTimer.UWP
 
         private async void SystemNavigationManager_CloseRequested(object sender, SystemNavigationCloseRequestedPreviewEventArgs e)
         {
-            if (Preferences.Get(SettingConstants.APP_BACKGROUNDTRAYSERVICE_ENABLED, false))
-            {
-                Deferral deferral = e.GetDeferral();
+            //if (Preferences.Get(SettingConstants.APP_BACKGROUNDTRAYSERVICE_ENABLED, false))
+            //{
+            //    Deferral deferral = e.GetDeferral();
 
-                if (ApiInformation.IsApiContractPresent("Windows.ApplicationModel.FullTrustAppContract", 1, 0))
-                {
-                    await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
-                }
+            //    if (ApiInformation.IsApiContractPresent("Windows.ApplicationModel.FullTrustAppContract", 1, 0))
+            //    {
+            //        await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+            //    }
 
-                e.Handled = false;
+            //    e.Handled = false;
 
-                deferral.Complete();
-            }
+            //    deferral.Complete();
+            //}
         }
     }
 }

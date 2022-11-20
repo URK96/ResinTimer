@@ -166,6 +166,7 @@
     <Content Include="Character_Klee_Thumb.png" />
     <Content Include="Character_Kujou_Sara_Thumb.png" />
     <Content Include="Character_Kuki_Shinobu_Thumb.png" />
+    <Content Include="Character_Layla_Thumb.png" />
     <Content Include="Character_Lisa_Thumb.png" />
     <Content Include="Character_Mona_Thumb.png" />
     <Content Include="Character_Nahida_Thumb.png" />
@@ -345,7 +346,6 @@
     <Content Include="wa_mist_veiled_4.png" />
     <Content Include="wa_narukami_4.png" />
     <Content Include="white_iron_chunk.png" />
-    <Content Include="Win32\ResinTimerUWPTray.exe" />
     <Content Include="xamarin_logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <None Include="ResinTimer.UWP_TemporaryKey.pfx" />
@@ -381,6 +381,9 @@
     <SDKReference Include="WindowsDesktop, Version=10.0.22000.0">
       <Name>Windows Desktop Extensions for the UWP</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Win32\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

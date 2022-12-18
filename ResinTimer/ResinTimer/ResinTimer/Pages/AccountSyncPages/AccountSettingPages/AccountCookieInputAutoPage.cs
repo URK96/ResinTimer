@@ -10,7 +10,7 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
 {
     public class AccountCookieInputAutoPage : WebViewBasePage
     {
-        private const string SiteUrl = "https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481";
+        private const string SiteUrl = "https://act.hoyolab.com/ys/event/signin-sea-v3/index.html?act_id=e202102251931481";
         private string _navigateUrl = string.Empty;
 
         public AccountCookieInputAutoPage() : base(SiteUrl)

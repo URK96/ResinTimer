@@ -1,13 +1,10 @@
-﻿using GenshinInfo.Models;
-
-using ResinTimer.Helper;
-using ResinTimer.Resources;
+﻿using ResinTimer.Resources;
 using ResinTimer.Services;
+using ResinTimer.ViewModels;
 
 using System;
-using System.Net;
+using System.ComponentModel;
 using System.Threading;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,52 +12,55 @@ using Xamarin.Forms.Xaml;
 namespace ResinTimer.Pages.UtilPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DailyRewardPage : ContentPage
+    public partial class DailyRewardPage : TabbedPage, INotifyPropertyChanged
     {
+        private DailyRewardPageViewModel _viewModel;
         private CancellationTokenSource _rewardUpdateTaskCancelTokenSource;
 
         public DailyRewardPage()
         {
             InitializeComponent();
+
+            ItemsSource = new DailyRewardPageViewModel[]
+            {
+                new(DailyRewardPageViewModel.GameTypeEnum.Genshin),
+                new(DailyRewardPageViewModel.GameTypeEnum.Honkai3rd)
+            };
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            DailyRewardCheckInButton.BorderColor = Color.Default;
+            //_viewModel = SelectedItem as DailyRewardPageViewModel;
 
-            DailyRewardInfoLayout.IsVisible = false;
-            ServerErrorLabel.IsVisible = false;
-            DailyRewardCheckInButton.IsEnabled = false;
-            DailyRewardLoadingIndicator.IsRunning = true;
+            ////DailyRewardCheckInButton.BorderColor = Color.Default;
 
-
-            // Update Auto Check-In switch
-
-            UpdateAutoCheckInStatus();
+            ////DailyRewardInfoLayout.IsVisible = false;
+            //_viewModel.ErrorMessageVisibled = false;
+            ////DailyRewardCheckInButton.IsEnabled = false;
 
 
-            // Run Reward Update Task
+            ////// Update Auto Check-In switch
 
-            _rewardUpdateTaskCancelTokenSource = new();
-
-            if (await UpdateTodayRewardInfo(_rewardUpdateTaskCancelTokenSource.Token))
-            {
-                DailyRewardInfoLayout.IsVisible = true;
-                DailyRewardCheckInButton.IsEnabled = true;
+            //UpdateAutoCheckInStatus();
 
 
-                DailyRewardCheckInButton.BorderColor =
-                    (await DailyRewardHelper.CheckInTodayDailyReward() is DailyRewardHelper.SignInResult.AlreadySignIn) ?
-                    Color.Green : Color.FromHex("#0682F6");
-            }
-            else
-            {
-                ServerErrorLabel.IsVisible = true;
-            }
+            ////// Run Reward Update Task
 
-            DailyRewardLoadingIndicator.IsRunning = false;
+            //_rewardUpdateTaskCancelTokenSource = new();
+
+            //if (await _viewModel.UpdateTodayRewardInfo(_rewardUpdateTaskCancelTokenSource.Token))
+            //{
+            //    //DailyRewardInfoLayout.IsVisible = true;
+            //    //DailyRewardCheckInButton.IsEnabled = true;
+
+            //    await _viewModel.UpdateCheckInStatus();
+            //}
+            //else
+            //{
+            //    _viewModel.ErrorMessageVisibled = true;
+            //}
         }
 
         protected override void OnDisappearing()
@@ -71,53 +71,43 @@ namespace ResinTimer.Pages.UtilPages
             _rewardUpdateTaskCancelTokenSource?.Dispose();
         }
 
-        private void UpdateAutoCheckInStatus()
+        private async void TabbedPage_CurrentPageChanged(object sender, EventArgs e)
         {
-            AutoCheckInSwitch.Toggled -= AutoCheckInSwitch_Toggled;
+            _viewModel = SelectedItem as DailyRewardPageViewModel;
 
-            AutoCheckInSwitch.IsToggled = DependencyService.Get<IDailyCheckInService>().IsRegistered();
+            //DailyRewardCheckInButton.BorderColor = Color.Default;
 
-            AutoCheckInSwitch.Toggled += AutoCheckInSwitch_Toggled;
+            //DailyRewardInfoLayout.IsVisible = false;
+            _viewModel.ErrorMessageVisibled = false;
+            //DailyRewardCheckInButton.IsEnabled = false;
+
+
+            //// Update Auto Check-In switch
+
+            UpdateAutoCheckInStatus();
+
+
+            //// Run Reward Update Task
+
+            _rewardUpdateTaskCancelTokenSource = new();
+
+            if (await _viewModel.UpdateTodayRewardInfo(_rewardUpdateTaskCancelTokenSource.Token))
+            {
+                //DailyRewardInfoLayout.IsVisible = true;
+                //DailyRewardCheckInButton.IsEnabled = true;
+
+                await _viewModel.UpdateCheckInStatus();
+            }
+            else
+            {
+                _viewModel.ErrorMessageVisibled = true;
+            }
         }
 
-        private async Task<bool> UpdateTodayRewardInfo(CancellationToken cancelToken)
+        private void UpdateAutoCheckInStatus()
         {
-            using WebClient wc = new();
-
-            bool updateResult = true;
-
-            if (cancelToken.IsCancellationRequested)
-            {
-                return false;
-            }
-
-            try
-            {
-                DailyRewardListItemData itemData = await DailyRewardHelper.GetNowDailyRewardItem();
-
-                if (cancelToken.IsCancellationRequested)
-                {
-                    return false;
-                }
-
-                TodayRewardName.Text = itemData.ItemName;
-
-                if (cancelToken.IsCancellationRequested)
-                {
-                    return false;
-                }
-
-                ImageSource iconSource = ImageSource.FromUri(new Uri(itemData.IconUrl));
-
-                TodayRewardIcon.Source = iconSource;
-                TodayRewardCount.Text = $"(x{itemData.ItemCount})";
-            }
-            catch
-            {
-                updateResult = false;
-            }
-
-            return updateResult;
+            _viewModel.AutoCheckInSwitchEnabled = true;
+            _viewModel.AutoCheckInEnabled = DependencyService.Get<IDailyCheckInService>().IsRegistered();
         }
 
         private void AutoCheckInSwitch_Toggled(object sender, ToggledEventArgs e)
@@ -153,18 +143,20 @@ namespace ResinTimer.Pages.UtilPages
 
         private async void CheckInButton_Clicked(object sender, EventArgs e)
         {
-            DailyRewardCheckInButton.IsEnabled = false;
+            await _viewModel?.CheckInTodayReward();
 
-            string message = await DailyRewardHelper.CheckInTodayDailyReward() switch
-            {
-                DailyRewardHelper.SignInResult.Success => AppResources.DailyReward_CheckIn_Success,
-                DailyRewardHelper.SignInResult.AlreadySignIn => AppResources.DailyReward_CheckIn_AlreadySignIn,
-                _ => AppResources.DailyReward_CheckIn_Fail
-            };
+            //DailyRewardCheckInButton.IsEnabled = false;
 
-            DependencyService.Get<IToast>().Show(message);
+            //string message = await DailyRewardHelper.CheckInTodayDailyReward() switch
+            //{
+            //    DailyRewardHelper.SignInResult.Success => AppResources.DailyReward_CheckIn_Success,
+            //    DailyRewardHelper.SignInResult.AlreadySignIn => AppResources.DailyReward_CheckIn_AlreadySignIn,
+            //    _ => AppResources.DailyReward_CheckIn_Fail
+            //};
 
-            DailyRewardCheckInButton.IsEnabled = true;
+            //DependencyService.Get<IToast>().Show(message);
+
+            //DailyRewardCheckInButton.IsEnabled = true;
         }
 
         private async void GoToWebsiteButton_Clicked(object sender, EventArgs e)

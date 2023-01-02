@@ -538,6 +538,12 @@ Or miHoYo's API may not working now, check API status on 'Setting - API Status'.
   <data name="Gadget_Type_PortableWaypoint" xml:space="preserve">
     <value>Portable Waypoint</value>
   </data>
+  <data name="GameType_Genshin" xml:space="preserve">
+    <value>Genshin</value>
+  </data>
+  <data name="GameType_Honkai3rd" xml:space="preserve">
+    <value>Honkai 3rd</value>
+  </data>
   <data name="GardeningItemTimer_Complete" xml:space="preserve">
     <value>Complete</value>
   </data>

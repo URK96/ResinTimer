@@ -1304,6 +1304,24 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Genshin과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GameType_Genshin {
+            get {
+                return ResourceManager.GetString("GameType_Genshin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Honkai 3rd과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GameType_Honkai3rd {
+            get {
+                return ResourceManager.GetString("GameType_Honkai3rd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Jade Field과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Gardening_JadeField {

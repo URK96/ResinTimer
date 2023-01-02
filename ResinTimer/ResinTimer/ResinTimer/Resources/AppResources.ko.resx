@@ -538,6 +538,12 @@
   <data name="Gadget_Type_PortableWaypoint" xml:space="preserve">
     <value>포켓 워프 포인트</value>
   </data>
+  <data name="GameType_Genshin" xml:space="preserve">
+    <value>원신</value>
+  </data>
+  <data name="GameType_Honkai3rd" xml:space="preserve">
+    <value>붕괴 3rd</value>
+  </data>
   <data name="GardeningItemTimer_Complete" xml:space="preserve">
     <value>재배 완료</value>
   </data>

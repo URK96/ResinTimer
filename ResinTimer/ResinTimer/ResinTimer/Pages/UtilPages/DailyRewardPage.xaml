@@ -92,6 +92,7 @@
                         <Button x:Name="DailyRewardCheckInButton"
                                 Grid.Row="1"
                                 Grid.Column="0"
+                                BorderColor="{Binding CheckInButtonBorderColor}"
                                 Clicked="CheckInButton_Clicked"
                                 IsEnabled="{Binding CheckInButtonEnabled}"
                                 Pressed="ButtonPressed"

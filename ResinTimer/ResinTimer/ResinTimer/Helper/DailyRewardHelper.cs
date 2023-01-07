@@ -28,21 +28,53 @@ namespace ResinTimer.Helper
             return (await manager.SignInDailyReward()) ? SignInResult.Success : SignInResult.Fail;
         }
 
+        public static async Task<bool> CheckSignInStatus()
+        {
+            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+
+            return (await manager.GetDailyRewardStatus()).IsSign;
+        }
+
         public static async Task<DailyRewardListItemData> GetNowDailyRewardItem()
         {
             GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
-            DailyRewardListData listData = await GetDailyRewardList();
+            DailyRewardListData listData = await manager.GetDailyRewardList(Thread.CurrentThread.CurrentUICulture.Name);
             DailyRewardStatusData statusData = await manager.GetDailyRewardStatus();
             int index = statusData.TotalSignDayCount + (statusData.IsSign ? -1 : 0);
 
             return listData.Rewards[index];
         }
 
-        private static async Task<DailyRewardListData> GetDailyRewardList()
+
+        // Honkai 3rd
+
+        public static async Task<SignInResult> CheckInHonkaiTodayDailyReward()
         {
             GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
 
-            return await manager.GetDailyRewardList(Thread.CurrentThread.CurrentUICulture.Name);
+            if ((await manager.GetHonkaiDailyRewardStatus()).IsSign)
+            {
+                return SignInResult.AlreadySignIn;
+            }
+
+            return (await manager.SignInHonkaiDailyReward()) ? SignInResult.Success : SignInResult.Fail;
+        }
+
+        public static async Task<bool> CheckHonkaiSignInStatus()
+        {
+            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+
+            return (await manager.GetHonkaiDailyRewardStatus()).IsSign;
+        }
+
+        public static async Task<DailyRewardListItemData> GetHonkaiNowDailyRewardItem()
+        {
+            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            DailyRewardListData listData = await manager.GetHonkaiDailyRewardList(Thread.CurrentThread.CurrentUICulture.Name);
+            DailyRewardStatusData statusData = await manager.GetHonkaiDailyRewardStatus();
+            int index = statusData.TotalSignDayCount + (statusData.IsSign ? -1 : 0);
+
+            return listData.Rewards[index];
         }
     }
 }

@@ -141,7 +141,16 @@ namespace ResinTimer.ViewModels
             {
                 IsRunningUpdate = true;
 
-                DailyRewardListItemData itemData = await DailyRewardHelper.GetNowDailyRewardItem();
+                TodayRewardItemName = string.Empty;
+                TodayRewardItemCount = null;
+                TodayRewardItemIcon = null;
+
+                DailyRewardListItemData itemData = _gameType switch
+                {
+                    GameTypeEnum.Honkai3rd => await DailyRewardHelper.GetHonkaiNowDailyRewardItem(),
+
+                    _ => await DailyRewardHelper.GetNowDailyRewardItem()
+                };
 
                 if (cancelToken.IsCancellationRequested)
                 {
@@ -178,9 +187,25 @@ namespace ResinTimer.ViewModels
             return updateResult;
         }
 
+        internal void UpdateAutoCheckInStatus()
+        {
+            if (Device.RuntimePlatform is Device.Android)
+            {
+                AutoCheckInEnabled = DependencyService.Get<IDailyCheckInService>().IsRegistered();
+                AutoCheckInSwitchEnabled = true;
+            }
+        }
+
         internal async Task UpdateCheckInStatus()
         {
-            _isCheckIn = await DailyRewardHelper.CheckInTodayDailyReward() is DailyRewardHelper.SignInResult.AlreadySignIn;
+            DailyRewardHelper.SignInResult result = _gameType switch
+            {
+                GameTypeEnum.Honkai3rd => await DailyRewardHelper.CheckInHonkaiTodayDailyReward(),
+
+                _ => await DailyRewardHelper.CheckInTodayDailyReward()
+            };
+
+            _isCheckIn = result is DailyRewardHelper.SignInResult.AlreadySignIn;
 
             OnPropertyChanged(nameof(CheckInButtonBorderColor));
         }
@@ -189,7 +214,14 @@ namespace ResinTimer.ViewModels
         {
             CheckInButtonEnabled = false;
 
-            string message = await DailyRewardHelper.CheckInTodayDailyReward() switch
+            DailyRewardHelper.SignInResult result = _gameType switch
+            {
+                GameTypeEnum.Honkai3rd => await DailyRewardHelper.CheckInHonkaiTodayDailyReward(),
+
+                _ => await DailyRewardHelper.CheckInTodayDailyReward()
+            };
+
+            string message = result switch
             {
                 DailyRewardHelper.SignInResult.Success => AppResources.DailyReward_CheckIn_Success,
                 DailyRewardHelper.SignInResult.AlreadySignIn => AppResources.DailyReward_CheckIn_AlreadySignIn,

@@ -17,7 +17,7 @@ namespace ResinTimer.ViewModels
     {
         public enum GameTypeEnum { Genshin, Honkai3rd };
 
-        public string Name => _gameType switch
+        public string Name => GameType switch
         {
             GameTypeEnum.Genshin => AppResources.GameType_Genshin,
             GameTypeEnum.Honkai3rd => AppResources.GameType_Honkai3rd,
@@ -110,7 +110,8 @@ namespace ResinTimer.ViewModels
         }
         public Color CheckInButtonBorderColor => _isCheckIn ? Color.Green : Color.FromHex("#0682F6");
 
-        private GameTypeEnum _gameType = GameTypeEnum.Genshin;
+        public GameTypeEnum GameType = GameTypeEnum.Genshin;
+
         private bool _isRunningUpdate = false;
         private string _todayRewardItemName = string.Empty;
         private int? _todayRewardItemCount = null;
@@ -123,7 +124,7 @@ namespace ResinTimer.ViewModels
 
         public DailyRewardPageViewModel(GameTypeEnum gameType)
         {
-            _gameType = gameType;
+            GameType = gameType;
         }
 
         internal async Task<bool> UpdateTodayRewardInfo(CancellationToken cancelToken)
@@ -145,7 +146,7 @@ namespace ResinTimer.ViewModels
                 TodayRewardItemCount = null;
                 TodayRewardItemIcon = null;
 
-                DailyRewardListItemData itemData = _gameType switch
+                DailyRewardListItemData itemData = GameType switch
                 {
                     GameTypeEnum.Honkai3rd => await DailyRewardHelper.GetHonkaiNowDailyRewardItem(),
 
@@ -198,7 +199,7 @@ namespace ResinTimer.ViewModels
 
         internal async Task UpdateCheckInStatus()
         {
-            DailyRewardHelper.SignInResult result = _gameType switch
+            DailyRewardHelper.SignInResult result = GameType switch
             {
                 GameTypeEnum.Honkai3rd => await DailyRewardHelper.CheckInHonkaiTodayDailyReward(),
 
@@ -214,7 +215,7 @@ namespace ResinTimer.ViewModels
         {
             CheckInButtonEnabled = false;
 
-            DailyRewardHelper.SignInResult result = _gameType switch
+            DailyRewardHelper.SignInResult result = GameType switch
             {
                 GameTypeEnum.Honkai3rd => await DailyRewardHelper.CheckInHonkaiTodayDailyReward(),
 

@@ -127,24 +127,19 @@ namespace ResinTimer.Pages.UtilPages
         private async void CheckInButton_Clicked(object sender, EventArgs e)
         {
             await _viewModel?.CheckInTodayReward();
-
-            //DailyRewardCheckInButton.IsEnabled = false;
-
-            //string message = await DailyRewardHelper.CheckInTodayDailyReward() switch
-            //{
-            //    DailyRewardHelper.SignInResult.Success => AppResources.DailyReward_CheckIn_Success,
-            //    DailyRewardHelper.SignInResult.AlreadySignIn => AppResources.DailyReward_CheckIn_AlreadySignIn,
-            //    _ => AppResources.DailyReward_CheckIn_Fail
-            //};
-
-            //DependencyService.Get<IToast>().Show(message);
-
-            //DailyRewardCheckInButton.IsEnabled = true;
         }
 
         private async void GoToWebsiteButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new DailyCheckInEventPage());
+            string url = _viewModel.GameType switch
+            {
+                DailyRewardPageViewModel.GameTypeEnum.Genshin => DailyCheckInEventPage.DailyCheckInUrl,
+                DailyRewardPageViewModel.GameTypeEnum.Honkai3rd => DailyCheckInEventPage.DailyCheckInUrlHonkai3rd,
+
+                _ => string.Empty
+            };
+
+            await Navigation.PushAsync(new DailyCheckInEventPage(url));
         }
 
         private async void ButtonPressed(object sender, EventArgs e)

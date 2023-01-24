@@ -139,6 +139,7 @@
     <Content Include="Assets\LargeTile.scale-400.png" />
     <Content Include="bugreport.png" />
     <Content Include="Character_Albedo_Thumb.png" />
+    <Content Include="Character_Alhaitham_Thumb.png" />
     <Content Include="Character_Aloy_Thumb.png" />
     <Content Include="Character_Amber_Thumb.png" />
     <Content Include="Character_Arataki_Itto_Thumb.png" />
@@ -195,6 +196,7 @@
     <Content Include="Character_Xinyan_Thumb.png" />
     <Content Include="Character_Yae_Miko_Thumb.png" />
     <Content Include="Character_Yanfei_Thumb.png" />
+    <Content Include="Character_Yaoyao_Thumb.png" />
     <Content Include="Character_Yelan_Thumb.png" />
     <Content Include="Character_Yoimiya_Thumb.png" />
     <Content Include="Character_Yun_Jin_Thumb.png" />

@@ -15,7 +15,8 @@ namespace ResinTimer.Droid
 {
     internal class DailyCheckInServiceAndroid : IDailyCheckInService
     {
-        private const string UniqueWorkName = "DailyCheckInWork";
+        private const string DailyCheckInWorkName = "DailyCheckInWork";
+        private const string DailyCheckInHonkaiWorkName = "DailyCheckInHonkaiWork";
 
         public WorkManager WorkManagerInstance => WorkManager.GetInstance(Application.Context);
 
@@ -23,7 +24,26 @@ namespace ResinTimer.Droid
         {
             try
             {
-                var datas = WorkManagerInstance.GetWorkInfosForUniqueWork(UniqueWorkName)
+                var datas = WorkManagerInstance.GetWorkInfosForUniqueWork(DailyCheckInWorkName)
+                                               .Get()
+                                               .JavaCast<JavaList<WorkInfo>>();
+                var workInfo = datas.Get(0) as WorkInfo;
+                WorkInfo.State state = workInfo?.GetState();
+
+                return (state is not null) &&
+                       ((state == WorkInfo.State.Enqueued) || (state == WorkInfo.State.Running));
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool IsRegisteredHonkai()
+        {
+            try
+            {
+                var datas = WorkManagerInstance.GetWorkInfosForUniqueWork(DailyCheckInHonkaiWorkName)
                                                .Get()
                                                .JavaCast<JavaList<WorkInfo>>();
                 var workInfo = datas.Get(0) as WorkInfo;
@@ -48,12 +68,30 @@ namespace ResinTimer.Droid
                 })
                 .Build();
 
-            WorkManagerInstance.EnqueueUniquePeriodicWork(UniqueWorkName, ExistingPeriodicWorkPolicy.Replace, workRequest);
+            WorkManagerInstance.EnqueueUniquePeriodicWork(DailyCheckInWorkName, ExistingPeriodicWorkPolicy.Replace, workRequest);
+        }
+
+        public void RegisterHonkai()
+        {
+            PeriodicWorkRequest workRequest = PeriodicWorkRequest.Builder
+                .From<DailyCheckInHonkaiWorker>(TimeSpan.FromHours(1), TimeSpan.FromMinutes(5))
+                .SetConstraints(new()
+                {
+                    RequiredNetworkType = NetworkType.Connected
+                })
+                .Build();
+
+            WorkManagerInstance.EnqueueUniquePeriodicWork(DailyCheckInHonkaiWorkName, ExistingPeriodicWorkPolicy.Replace, workRequest);
         }
 
         public void Unregister()
         {
-            WorkManagerInstance.CancelUniqueWork(UniqueWorkName);
+            WorkManagerInstance.CancelUniqueWork(DailyCheckInWorkName);
+        }
+
+        public void UnregisterHonkai()
+        {
+            WorkManagerInstance.CancelUniqueWork(DailyCheckInHonkaiWorkName);
         }
     }
 }

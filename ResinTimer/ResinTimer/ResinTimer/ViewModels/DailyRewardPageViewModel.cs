@@ -192,7 +192,12 @@ namespace ResinTimer.ViewModels
         {
             if (Device.RuntimePlatform is Device.Android)
             {
-                AutoCheckInEnabled = DependencyService.Get<IDailyCheckInService>().IsRegistered();
+                AutoCheckInEnabled = GameType switch
+                {
+                    GameTypeEnum.Honkai3rd => DependencyService.Get<IDailyCheckInService>().IsRegisteredHonkai(),
+
+                    _ => DependencyService.Get<IDailyCheckInService>().IsRegistered()
+                };
                 AutoCheckInSwitchEnabled = true;
             }
         }
@@ -235,16 +240,28 @@ namespace ResinTimer.ViewModels
             CheckInButtonEnabled = true;
         }
 
-        private void RegisterAutoCheckIn()
+        internal void RegisterAutoCheckIn()
         {
-            DependencyService.Get<IDailyCheckInService>().Register();
-            DependencyService.Get<IToast>().Show(AppResources.DailyRewardPage_AutoCheckIn_Register_Success);
+            if (GameType is GameTypeEnum.Honkai3rd)
+            {
+                DependencyService.Get<IDailyCheckInService>().RegisterHonkai();
+            }
+            else
+            {
+                DependencyService.Get<IDailyCheckInService>().Register();
+            }
         }
 
-        private void UnregisterAutoCheckIn()
+        internal void UnregisterAutoCheckIn()
         {
-            DependencyService.Get<IDailyCheckInService>().Unregister();
-            DependencyService.Get<IToast>().Show(AppResources.DailyRewardPage_AutoCheckIn_Unregister_Success);
+            if (GameType is GameTypeEnum.Honkai3rd)
+            {
+                DependencyService.Get<IDailyCheckInService>().UnregisterHonkai();
+            }
+            else
+            {
+                DependencyService.Get<IDailyCheckInService>().Unregister();
+            }
         }
     }
 }

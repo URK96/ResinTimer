@@ -133,6 +133,7 @@
     <Compile Include="TalentWidget.cs" />
     <Compile Include="ToastAndroid.cs" />
     <Compile Include="WidgetConfigActivity.cs" />
+    <Compile Include="Workers\DailyCheckInHonkaiWorker.cs" />
     <Compile Include="Workers\DailyCheckInWorker.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -773,7 +774,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

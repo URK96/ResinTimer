@@ -97,11 +97,13 @@ namespace ResinTimer.Pages.UtilPages
             {
                 if (isEnabled)
                 {
-                    DependencyService.Get<IDailyCheckInService>().Register();
+                    _viewModel?.RegisterAutoCheckIn();
+                    //DependencyService.Get<IDailyCheckInService>().Register();
                 }
                 else
                 {
-                    DependencyService.Get<IDailyCheckInService>().Unregister();
+                    _viewModel?.UnregisterAutoCheckIn();
+                    //DependencyService.Get<IDailyCheckInService>().Unregister();
                 }
 
                 DependencyService.Get<IToast>().Show(isEnabled ? 

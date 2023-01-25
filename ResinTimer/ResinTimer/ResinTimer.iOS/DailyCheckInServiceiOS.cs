@@ -13,14 +13,29 @@ namespace ResinTimer.iOS
             return false;
         }
 
+        public bool IsRegisteredHonkai()
+        {
+            return false;
+        }
+
         public void Register()
         {
             
         }
 
+        public void RegisterHonkai()
+        {
+
+        }
+
         public void Unregister()
         {
             
+        }
+
+        public void UnregisterHonkai()
+        {
+
         }
     }
 }

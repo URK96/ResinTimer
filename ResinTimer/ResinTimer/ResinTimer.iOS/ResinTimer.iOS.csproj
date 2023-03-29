@@ -210,6 +210,9 @@
     <ImageAsset Include="Assets.xcassets\Character_Cyno_Thumb.png.imageset\Character_Cyno_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Dehya_Thumb.png.imageset\Character_Dehya_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Diluc_Thumb.png.imageset\Character_Diluc_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -265,6 +268,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Lisa_Thumb.png.imageset\Character_Lisa_Thumb1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Mika_Thumb.png.imageset\Character_Mika_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Mona_Thumb.png.imageset\Character_Mona_Thumb1.png">
@@ -712,6 +718,12 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Yaoyao_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Dehya_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Mika_Thumb.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\talent_admonition.png.imageset\talent_admonition.png">
@@ -1268,7 +1280,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

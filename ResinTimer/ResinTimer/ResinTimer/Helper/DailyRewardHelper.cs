@@ -76,5 +76,37 @@ namespace ResinTimer.Helper
 
             return listData.Rewards[index];
         }
+
+
+        // Honkai Star Rail
+
+        public static async Task<SignInResult> CheckInHonkaiStarRailTodayDailyReward()
+        {
+            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+
+            if ((await manager.GetHonkaiStarRailDailyRewardStatus()).IsSign)
+            {
+                return SignInResult.AlreadySignIn;
+            }
+
+            return (await manager.SignInHonkaiStarRailDailyReward()) ? SignInResult.Success : SignInResult.Fail;
+        }
+
+        public static async Task<bool> CheckHonkaiStarRailSignInStatus()
+        {
+            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+
+            return (await manager.GetHonkaiStarRailDailyRewardStatus()).IsSign;
+        }
+
+        public static async Task<DailyRewardListItemData> GetHonkaiStarRailNowDailyRewardItem()
+        {
+            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            DailyRewardListData listData = await manager.GetHonkaiStarRailDailyRewardList(Thread.CurrentThread.CurrentUICulture.Name);
+            DailyRewardStatusData statusData = await manager.GetHonkaiStarRailDailyRewardStatus();
+            int index = statusData.TotalSignDayCount + (statusData.IsSign ? -1 : 0);
+
+            return listData.Rewards[index];
+        }
     }
 }

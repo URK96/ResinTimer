@@ -28,7 +28,8 @@ namespace ResinTimer.Pages.UtilPages
             ItemsSource = new DailyRewardPageViewModel[]
             {
                 new(DailyRewardPageViewModel.GameTypeEnum.Genshin),
-                new(DailyRewardPageViewModel.GameTypeEnum.Honkai3rd)
+                new(DailyRewardPageViewModel.GameTypeEnum.Honkai3rd),
+                new(DailyRewardPageViewModel.GameTypeEnum.HonkaiStarRail)
             };
         }
 
@@ -98,12 +99,10 @@ namespace ResinTimer.Pages.UtilPages
                 if (isEnabled)
                 {
                     _viewModel?.RegisterAutoCheckIn();
-                    //DependencyService.Get<IDailyCheckInService>().Register();
                 }
                 else
                 {
                     _viewModel?.UnregisterAutoCheckIn();
-                    //DependencyService.Get<IDailyCheckInService>().Unregister();
                 }
 
                 DependencyService.Get<IToast>().Show(isEnabled ? 
@@ -137,6 +136,7 @@ namespace ResinTimer.Pages.UtilPages
             {
                 DailyRewardPageViewModel.GameTypeEnum.Genshin => DailyCheckInEventPage.DailyCheckInUrl,
                 DailyRewardPageViewModel.GameTypeEnum.Honkai3rd => DailyCheckInEventPage.DailyCheckInUrlHonkai3rd,
+                DailyRewardPageViewModel.GameTypeEnum.HonkaiStarRail => DailyCheckInEventPage.DailyCheckInUrlHonkaiStarRail,
 
                 _ => string.Empty
             };

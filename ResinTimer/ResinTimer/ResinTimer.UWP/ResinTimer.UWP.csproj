@@ -144,6 +144,7 @@
     <Content Include="Character_Amber_Thumb.png" />
     <Content Include="Character_Arataki_Itto_Thumb.png" />
     <Content Include="Character_Ayaka_Thumb.png" />
+    <Content Include="Character_Baizhu_Thumb.png" />
     <Content Include="Character_Barbara_Thumb.png" />
     <Content Include="Character_Beidou_Thumb.png" />
     <Content Include="Character_Bennett_Thumb.png" />
@@ -164,6 +165,7 @@
     <Content Include="Character_Jean_Thumb.png" />
     <Content Include="Character_Kaeya_Thumb.png" />
     <Content Include="Character_Kamisato_Ayato_Thumb.png" />
+    <Content Include="Character_Kaveh_Thumb.png" />
     <Content Include="Character_Kazuha_Thumb.png" />
     <Content Include="Character_Keqing_Thumb.png" />
     <Content Include="Character_Klee_Thumb.png" />

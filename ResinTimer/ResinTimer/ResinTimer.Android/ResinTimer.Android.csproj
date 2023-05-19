@@ -133,6 +133,7 @@
     <Compile Include="TalentWidget.cs" />
     <Compile Include="ToastAndroid.cs" />
     <Compile Include="WidgetConfigActivity.cs" />
+    <Compile Include="Workers\DailyCheckInHonkaiStarRailWorker.cs" />
     <Compile Include="Workers\DailyCheckInHonkaiWorker.cs" />
     <Compile Include="Workers\DailyCheckInWorker.cs" />
   </ItemGroup>
@@ -777,10 +778,16 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Character_Mika_Thumb.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Character_Baizhu_Thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Character_Kaveh_Thumb.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

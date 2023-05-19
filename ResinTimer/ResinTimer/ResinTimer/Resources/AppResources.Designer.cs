@@ -1322,6 +1322,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Honkai : Star Rail과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GameType_HonkaiStarRail {
+            get {
+                return ResourceManager.GetString("GameType_HonkaiStarRail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Jade Field과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Gardening_JadeField {

@@ -15,12 +15,13 @@ namespace ResinTimer.ViewModels
 {
     public class DailyRewardPageViewModel : ViewModelBase
     {
-        public enum GameTypeEnum { Genshin, Honkai3rd };
+        public enum GameTypeEnum { Genshin, Honkai3rd, HonkaiStarRail };
 
         public string Name => GameType switch
         {
             GameTypeEnum.Genshin => AppResources.GameType_Genshin,
             GameTypeEnum.Honkai3rd => AppResources.GameType_Honkai3rd,
+            GameTypeEnum.HonkaiStarRail => AppResources.GameType_HonkaiStarRail,
 
             _ => "NULL"
         };
@@ -149,6 +150,7 @@ namespace ResinTimer.ViewModels
                 DailyRewardListItemData itemData = GameType switch
                 {
                     GameTypeEnum.Honkai3rd => await DailyRewardHelper.GetHonkaiNowDailyRewardItem(),
+                    GameTypeEnum.HonkaiStarRail => await DailyRewardHelper.GetHonkaiStarRailNowDailyRewardItem(),
 
                     _ => await DailyRewardHelper.GetNowDailyRewardItem()
                 };
@@ -195,6 +197,7 @@ namespace ResinTimer.ViewModels
                 AutoCheckInEnabled = GameType switch
                 {
                     GameTypeEnum.Honkai3rd => DependencyService.Get<IDailyCheckInService>().IsRegisteredHonkai(),
+                    GameTypeEnum.HonkaiStarRail => DependencyService.Get<IDailyCheckInService>().IsRegisteredHonkaiStarRail(),
 
                     _ => DependencyService.Get<IDailyCheckInService>().IsRegistered()
                 };
@@ -207,6 +210,7 @@ namespace ResinTimer.ViewModels
             DailyRewardHelper.SignInResult result = GameType switch
             {
                 GameTypeEnum.Honkai3rd => await DailyRewardHelper.CheckInHonkaiTodayDailyReward(),
+                GameTypeEnum.HonkaiStarRail => await DailyRewardHelper.CheckInHonkaiStarRailTodayDailyReward(),
 
                 _ => await DailyRewardHelper.CheckInTodayDailyReward()
             };
@@ -223,6 +227,7 @@ namespace ResinTimer.ViewModels
             DailyRewardHelper.SignInResult result = GameType switch
             {
                 GameTypeEnum.Honkai3rd => await DailyRewardHelper.CheckInHonkaiTodayDailyReward(),
+                GameTypeEnum.HonkaiStarRail => await DailyRewardHelper.CheckInHonkaiStarRailTodayDailyReward(),
 
                 _ => await DailyRewardHelper.CheckInTodayDailyReward()
             };
@@ -246,6 +251,10 @@ namespace ResinTimer.ViewModels
             {
                 DependencyService.Get<IDailyCheckInService>().RegisterHonkai();
             }
+            else if (GameType is GameTypeEnum.HonkaiStarRail)
+            {
+                DependencyService.Get<IDailyCheckInService>().RegisterHonkaiStarRail();
+            }
             else
             {
                 DependencyService.Get<IDailyCheckInService>().Register();
@@ -257,6 +266,10 @@ namespace ResinTimer.ViewModels
             if (GameType is GameTypeEnum.Honkai3rd)
             {
                 DependencyService.Get<IDailyCheckInService>().UnregisterHonkai();
+            }
+            else if (GameType is GameTypeEnum.HonkaiStarRail)
+            {
+                DependencyService.Get<IDailyCheckInService>().UnregisterHonkaiStarRail();
             }
             else
             {

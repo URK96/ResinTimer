@@ -17,6 +17,7 @@ namespace ResinTimer.Droid
     {
         private const string DailyCheckInWorkName = "DailyCheckInWork";
         private const string DailyCheckInHonkaiWorkName = "DailyCheckInHonkaiWork";
+        private const string DailyCheckInHonkaiStarRailWorkName = "DailyCheckInHonkaiStarRailWork";
 
         public WorkManager WorkManagerInstance => WorkManager.GetInstance(Application.Context);
 
@@ -58,6 +59,25 @@ namespace ResinTimer.Droid
             }
         }
 
+        public bool IsRegisteredHonkaiStarRail()
+        {
+            try
+            {
+                var datas = WorkManagerInstance.GetWorkInfosForUniqueWork(DailyCheckInHonkaiStarRailWorkName)
+                                               .Get()
+                                               .JavaCast<JavaList<WorkInfo>>();
+                var workInfo = datas.Get(0) as WorkInfo;
+                WorkInfo.State state = workInfo?.GetState();
+
+                return (state is not null) &&
+                       ((state == WorkInfo.State.Enqueued) || (state == WorkInfo.State.Running));
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public void Register()
         {
             PeriodicWorkRequest workRequest = PeriodicWorkRequest.Builder
@@ -84,6 +104,19 @@ namespace ResinTimer.Droid
             WorkManagerInstance.EnqueueUniquePeriodicWork(DailyCheckInHonkaiWorkName, ExistingPeriodicWorkPolicy.Replace, workRequest);
         }
 
+        public void RegisterHonkaiStarRail()
+        {
+            PeriodicWorkRequest workRequest = PeriodicWorkRequest.Builder
+               .From<DailyCheckInHonkaiStarRailWorker>(TimeSpan.FromHours(1), TimeSpan.FromMinutes(5))
+               .SetConstraints(new()
+               {
+                   RequiredNetworkType = NetworkType.Connected
+               })
+               .Build();
+
+            WorkManagerInstance.EnqueueUniquePeriodicWork(DailyCheckInHonkaiStarRailWorkName, ExistingPeriodicWorkPolicy.Replace, workRequest);
+        }
+
         public void Unregister()
         {
             WorkManagerInstance.CancelUniqueWork(DailyCheckInWorkName);
@@ -92,6 +125,11 @@ namespace ResinTimer.Droid
         public void UnregisterHonkai()
         {
             WorkManagerInstance.CancelUniqueWork(DailyCheckInHonkaiWorkName);
+        }
+
+        public void UnregisterHonkaiStarRail()
+        {
+            WorkManagerInstance.CancelUniqueWork(DailyCheckInHonkaiStarRailWorkName);
         }
     }
 }

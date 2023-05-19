@@ -18,6 +18,11 @@ namespace ResinTimer.iOS
             return false;
         }
 
+        public bool IsRegisteredHonkaiStarRail()
+        {
+            return false;
+        }
+
         public void Register()
         {
             
@@ -28,6 +33,11 @@ namespace ResinTimer.iOS
 
         }
 
+        public void RegisterHonkaiStarRail()
+        {
+            
+        }
+
         public void Unregister()
         {
             
@@ -36,6 +46,11 @@ namespace ResinTimer.iOS
         public void UnregisterHonkai()
         {
 
+        }
+
+        public void UnregisterHonkaiStarRail()
+        {
+            
         }
     }
 }

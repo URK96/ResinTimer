@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <LangVersion>latest</LangVersion>
-    <Version>1.20.3</Version>
+    <Version>1.21.0</Version>
     <UserSecretsId>203b32d9-bd5b-4c42-8919-f7dba54960be</UserSecretsId>
   </PropertyGroup>
 
@@ -32,24 +32,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GenshinInfo" Version="1.1.1" />
-    <PackageReference Include="Microsoft.AppCenter" Version="4.5.1">
+    <PackageReference Include="GenshinInfo" Version="1.2.1" />
+    <PackageReference Include="Microsoft.AppCenter" Version="5.0.1">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.5.1" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.5.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
-    <PackageReference Include="Syncfusion.Licensing" Version="20.2.0.38" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="20.2.0.38">
+    <PackageReference Include="Syncfusion.Licensing" Version="21.2.5" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="21.2.5">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="20.2.0.38" />
-    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="20.2.0.38">
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="21.2.5" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="21.2.5">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />
   </ItemGroup>
 
   <ItemGroup>

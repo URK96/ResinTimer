@@ -544,6 +544,9 @@ Or miHoYo's API may not working now, check API status on 'Setting - API Status'.
   <data name="GameType_Honkai3rd" xml:space="preserve">
     <value>Honkai 3rd</value>
   </data>
+  <data name="GameType_HonkaiStarRail" xml:space="preserve">
+    <value>Honkai : Star Rail</value>
+  </data>
   <data name="GardeningItemTimer_Complete" xml:space="preserve">
     <value>Complete</value>
   </data>

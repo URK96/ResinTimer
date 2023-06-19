@@ -30,7 +30,7 @@ namespace ResinTimer.Droid.Workers
             {
                 Log.WriteLine(LogPriority.Info, "ResinTimer", $"Daily CheckIn Honkai Star Rail Work : {DateTime.Now}");
 
-                result = CheckInHonkaiTodayDailyReward().Result;
+                result = CheckInHonkaiStarRailTodayDailyReward().Result;
 
                 string message = result switch
                 {

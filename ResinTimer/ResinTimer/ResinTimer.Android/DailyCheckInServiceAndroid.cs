@@ -107,7 +107,7 @@ namespace ResinTimer.Droid
         public void RegisterHonkaiStarRail()
         {
             PeriodicWorkRequest workRequest = PeriodicWorkRequest.Builder
-               .From<DailyCheckInHonkaiStarRailWorker>(TimeSpan.FromHours(1), TimeSpan.FromMinutes(5))
+                .From<DailyCheckInHonkaiStarRailWorker>(TimeSpan.FromHours(1), TimeSpan.FromMinutes(5))
                .SetConstraints(new()
                {
                    RequiredNetworkType = NetworkType.Connected

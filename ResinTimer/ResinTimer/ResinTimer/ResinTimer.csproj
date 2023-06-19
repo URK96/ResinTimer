@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <LangVersion>latest</LangVersion>
-    <Version>1.21.1</Version>
+    <Version>1.21.2</Version>
     <UserSecretsId>203b32d9-bd5b-4c42-8919-f7dba54960be</UserSecretsId>
   </PropertyGroup>
 
@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GenshinInfo" Version="1.2.1" />
+    <PackageReference Include="GenshinInfo" Version="1.2.3" />
     <PackageReference Include="Microsoft.AppCenter" Version="5.0.1">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>

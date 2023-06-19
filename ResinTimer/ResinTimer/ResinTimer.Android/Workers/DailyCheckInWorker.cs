@@ -59,6 +59,10 @@ namespace ResinTimer.Droid.Workers
 
                     notificationManager.Notify(NotiId, builder);
                 }
+                else
+                {
+                    Log.WriteLine(LogPriority.Info, "ResinTimer", $"Genshin Daily Reward : Already Sign In");
+                }
             }
             catch (Exception ex)
             {

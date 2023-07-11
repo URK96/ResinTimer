@@ -512,7 +512,7 @@ namespace ResinTimer
                     {
                         ExpeditionNoti noti = new(expedition.RemainedTime, ExpeditionType.Sync)
                         {
-                            SyncModeCharacter = expedition.AvatarName,
+                            SyncModeCharacter = string.Empty,
                             SyncModeImage = expedition.AvatarSideIconUrl
                         };
 

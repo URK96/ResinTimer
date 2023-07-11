@@ -50,6 +50,7 @@ namespace ResinTimer.Droid
                         Title = item.GetNotiTitle(),
                         Text = item.GetNotiText(),
                         Id = item.NotiId,
+                        IconData = item.GetIconData(),
                         NotifyTime = item.NotiTime
                     };
                     notification.SetType<T>();

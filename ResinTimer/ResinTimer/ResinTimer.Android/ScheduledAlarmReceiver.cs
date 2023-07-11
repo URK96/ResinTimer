@@ -42,6 +42,16 @@ namespace ResinTimer.Droid
                 .SetContentText(notification.Text)
                 .SetSmallIcon(Application.Context.ApplicationInfo.Icon);
 
+            if (notification.IconData.Length > 0)
+            {
+                Android.Graphics.Bitmap largeIcon = Android.Graphics.BitmapFactory.DecodeByteArray(
+                    notification.IconData,
+                    0,
+                    notification.IconData.Length);
+
+                builder.SetLargeIcon(largeIcon);
+            }
+
             if (context.PackageManager.GetLaunchIntentForPackage("com.miHoYo.GenshinImpact") is not null)
             {
                 Intent runIntent = new Intent(context, typeof(NotiActionReceiver))

@@ -1,6 +1,7 @@
-﻿using ResinTimer.Resources;
+﻿using System;
+using System.Net.Http;
 
-using System;
+using ResinTimer.Resources;
 
 using AppEnv = ResinTimer.AppEnvironment;
 using ExpEnv = ResinTimer.ExpeditionEnvironment;
@@ -15,9 +16,7 @@ namespace ResinTimer.Models.Notis
         public string ItemNote { get; set; } = string.Empty;
         public string SyncModeCharacter { get; set; } = string.Empty;
 
-        public string SyncModeImage => string.IsNullOrWhiteSpace(SyncModeCharacter) ?
-            string.Empty :
-            $"Character_{SyncModeCharacter.Replace(' ', '_')}_Thumb.png";
+        public string SyncModeImage { get; set; } = string.Empty;
 
         public string RemainTimeString => (NotiTime >= DateTime.Now) ?
             $"{NotiTime - DateTime.Now:hh\\:mm} {AppResources.ExpeditionTimerPage_Remain}" :
@@ -62,7 +61,24 @@ namespace ResinTimer.Models.Notis
         }
 
         public override string GetNotiTitle() => AppResources.Noti_Expedition_Title;
+
         public override string GetNotiText() => $"'{TypeString} {ExpeditionTime.Hours}H' " +
             $"{AppResources.Noti_Expedition_Message}";
+
+        public override byte[] GetIconData()
+        {
+            byte[] data = Array.Empty<byte>();
+
+            if (!string.IsNullOrEmpty(SyncModeImage))
+            {
+                using HttpClient client = new();
+
+                data = client.GetByteArrayAsync(SyncModeImage)
+                             .GetAwaiter()
+                             .GetResult();
+            }
+
+            return data;
+        }
     }
 }

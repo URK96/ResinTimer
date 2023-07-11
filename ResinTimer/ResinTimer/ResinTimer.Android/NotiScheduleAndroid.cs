@@ -1,10 +1,10 @@
-﻿using ResinTimer.Droid;
+﻿using System;
+
+using ResinTimer.Droid;
 using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models;
 using ResinTimer.Models.Notis;
 using ResinTimer.Services;
-
-using System;
 
 [assembly: Xamarin.Forms.Dependency(typeof(NotiScheduleAndroid))]
 
@@ -71,6 +71,28 @@ namespace ResinTimer.Droid
                     Title = noti.GetNotiTitle(),
                     Text = noti.GetNotiText(),
                     Id = noti.NotiId,
+                    IconData = noti.GetIconData(),
+                    NotifyTime = noti.NotiTime
+                };
+                notification.SetType<T>();
+
+                notifier.Notify(notification);
+            }
+        }
+
+        public override void ScheduleNotiItem<T>(Noti noti)
+        {
+            NotifierAndroid notifier = new();
+            DateTime now = DateTime.Now;
+
+            if (noti.NotiTime > now)
+            {
+                Notification notification = new()
+                {
+                    Title = noti.GetNotiTitle(),
+                    Text = noti.GetNotiText(),
+                    Id = noti.NotiId,
+                    IconData = noti.GetIconData(),
                     NotifyTime = noti.NotiTime
                 };
                 notification.SetType<T>();

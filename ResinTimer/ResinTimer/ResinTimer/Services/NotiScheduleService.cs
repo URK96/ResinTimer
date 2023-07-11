@@ -10,6 +10,7 @@ namespace ResinTimer.Services
     {
         public virtual void Cancel<T>() where T : Noti { }
         public virtual void Schedule<T>() where T : Noti { }
+        public virtual void ScheduleNotiItem<T>(Noti noti) where T : Noti { }
         public virtual void ScheduleCustomNoti(string title, string message, int id, DateTime notiTime) { }
         public virtual void TestNoti(string message = "") { }
 

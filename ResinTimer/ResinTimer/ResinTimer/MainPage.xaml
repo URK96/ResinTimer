@@ -1,44 +1,102 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+<FlyoutPage x:Class="ResinTimer.MainPage"
+            xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:models="clr-namespace:ResinTimer.Models"
             xmlns:local="clr-namespace:ResinTimer"
+            xmlns:models="clr-namespace:ResinTimer.Models"
             xmlns:pages="clr-namespace:ResinTimer.Pages"
+            xmlns:resources="clr-namespace:ResinTimer.Resources"
             xmlns:timers="clr-namespace:ResinTimer.TimerPages"
             xmlns:utils="clr-namespace:ResinTimer.Pages.UtilPages"
-            xmlns:resources="clr-namespace:ResinTimer.Resources"
-            x:Class="ResinTimer.MainPage"
             FlyoutLayoutBehavior="Popover">
 
     <FlyoutPage.Flyout>
-        <ContentPage Padding="0,10,0,0" IconImageSource="menu.png" Title="Resin Timer">
+        <ContentPage Title="Resin Timer"
+                     Padding="0,10,0,0"
+                     IconImageSource="menu.png">
             <StackLayout>
-                <Label HorizontalOptions="CenterAndExpand" Margin="0, 10, 0, 10"
-                       Text="{x:Static resources:AppResources.App_Title}" FontSize="Title" FontAttributes="Bold"
-                       HorizontalTextAlignment="Center"/>
+                <Label Margin="0,10,0,10"
+                       FontAttributes="Bold"
+                       FontSize="Title"
+                       HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       Text="{x:Static resources:AppResources.App_Title}" />
 
                 <ListView x:Name="MainListView"
                           ItemSelected="MainListViewItemSelected">
                     <ListView.ItemsSource>
                         <x:Array Type="{x:Type models:MainMasterItem}">
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MainPage_Title}" Icon="" Target="{x:Type timers:TimerHomePage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}" Icon="resin.png" Target="{x:Type timers:ResinTimerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_RealmCurrency}" Icon="realm_currency.png" Target="{x:Type timers:RealmCurrencyTimerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_RealmFriendship}" Icon="friendship.png" Target="{x:Type timers:RealmFriendshipTimerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Expedition}" Icon="compass.png" Target="{x:Type timers:ExpeditionTimerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_GatheringItem}" Icon="silk_flower.png" Target="{x:Type timers:GatheringItemTimerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Gadget}" Icon="parametric_transformer.png" Target="{x:Type timers:GadgetTimerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Furnishing}" Icon="furnishing_icon.png" Target="{x:Type timers:FurnishingTimerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Gardening}" Icon="gardening_jade_field.png" Target="{x:Type timers:GardeningTimerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Talent}" Icon="talent_freedom.png" Target="{x:Type timers:TalentItemTimerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_WeaponAscension}" Icon="wa_aerosiderite_4.png" Target="{x:Type timers:WAItemTimerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_GachaLog}" Icon="intertwined_fate.png" Target="{x:Type utils:GachaLogViewerPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Event_DailyCheckIn}" Icon="fractured_fruit_data.png" Target="{x:Type utils:DailyRewardPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Web_GenshinWorldMap}" Icon="geshin_worldmap.png" Target="{x:Type utils:GenshinWorldMapPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Web_MaterialCalcOfficail}" Icon="heros_wit.png" Target="{x:Type utils:MaterialCalcOfficialPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_HowToUse}" Target="{x:Type local:HowToUseListPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_AppInfo}" Target="{x:Type pages:InfoPage}"/>
-                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Settings}" Target="{x:Type pages:SettingPage}"/>
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MainPage_Title}"
+                                                   Icon=""
+                                                   Target="{x:Type timers:TimerHomePage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Resin}"
+                                                   Icon="resin.png"
+                                                   Target="{x:Type timers:ResinTimerPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_RealmCurrency}"
+                                                   Icon="realm_currency.png"
+                                                   Target="{x:Type timers:RealmCurrencyTimerPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_RealmFriendship}"
+                                                   Icon="friendship.png"
+                                                   Target="{x:Type timers:RealmFriendshipTimerPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Expedition}"
+                                                   Icon="compass.png"
+                                                   Target="{x:Type timers:ExpeditionTimerPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_GatheringItem}"
+                                                   Icon="silk_flower.png"
+                                                   Target="{x:Type timers:GatheringItemTimerPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Gadget}"
+                                                   Icon="parametric_transformer.png"
+                                                   Target="{x:Type timers:GadgetTimerPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Furnishing}"
+                                                   Icon="furnishing_icon.png"
+                                                   Target="{x:Type timers:FurnishingTimerPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Gardening}"
+                                                   Icon="gardening_jade_field.png"
+                                                   Target="{x:Type timers:GardeningTimerPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Talent}"
+                                                   Icon="talent_freedom.png"
+                                                   Target="{x:Type timers:TalentItemTimerPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_WeaponAscension}"
+                                                   Icon="wa_aerosiderite_4.png"
+                                                   Target="{x:Type timers:WAItemTimerPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_GachaLog}"
+                                                   Icon="intertwined_fate.png"
+                                                   Target="{x:Type utils:GachaLogViewerPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Event_DailyCheckIn}"
+                                                   Icon="fractured_fruit_data.png"
+                                                   Target="{x:Type utils:DailyRewardPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Web_GenshinWorldMap}"
+                                                   Icon="geshin_worldmap.png"
+                                                   Target="{x:Type utils:GenshinWorldMapPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Web_MaterialCalcOfficail}"
+                                                   Icon="heros_wit.png"
+                                                   Target="{x:Type utils:MaterialCalcOfficialPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_HowToUse}"
+                                                   Target="{x:Type local:HowToUseListPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_AppInfo}"
+                                                   Target="{x:Type pages:InfoPage}" />
+
+                            <models:MainMasterItem Title="{x:Static resources:AppResources.MasterDetail_MasterList_Settings}"
+                                                   Target="{x:Type pages:SettingPage}" />
+
+                            <!--<models:MainMasterItem Title="Dev Menu"
+                                                   Target="{x:Type pages:DevMenuPage}" />-->
                         </x:Array>
                     </ListView.ItemsSource>
 
@@ -47,13 +105,15 @@
                             <ViewCell>
                                 <Grid Padding="5,10">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="30" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
 
                                     <Image Source="{Binding Icon}" />
-                                    <Label Grid.Column="1" 
-                                           Text="{Binding Title}" HorizontalTextAlignment="Center" FontSize="Subtitle" />
+                                    <Label Grid.Column="1"
+                                           FontSize="Subtitle"
+                                           HorizontalTextAlignment="Center"
+                                           Text="{Binding Title}" />
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

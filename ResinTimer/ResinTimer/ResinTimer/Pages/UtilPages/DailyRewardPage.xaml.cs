@@ -44,6 +44,8 @@ namespace ResinTimer.Pages.UtilPages
 
             _rewardUpdateTaskCancelTokenSource?.Cancel();
             _rewardUpdateTaskCancelTokenSource?.Dispose();
+
+            _rewardUpdateTaskCancelTokenSource = null;
         }
 
         private async void TabbedPage_CurrentPageChanged(object sender, EventArgs e)

@@ -42,6 +42,8 @@ namespace ResinTimer.Models
 
         public NotificationType NotiType { get; set; }
 
+        public byte[] IconData { get; set; }
+
         public void SetType<T>() where T : Noti
         {
             Type t = typeof(T);

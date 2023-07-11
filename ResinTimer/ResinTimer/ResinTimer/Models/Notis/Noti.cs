@@ -17,6 +17,8 @@ namespace ResinTimer.Models.Notis
         public abstract string GetNotiTitle();
         public abstract string GetNotiText();
 
+        public virtual byte[] GetIconData() => Array.Empty<byte>();
+
         public string GetRemainTimeHM()
         {
             TimeSpan ts = NotiTime - DateTime.Now;

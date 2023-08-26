@@ -14,7 +14,7 @@ namespace ResinTimer.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.2.0.99")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.2.1.111")]
 	public partial class Resource
 	{
 		
@@ -4225,10 +4225,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.fragment_fade_exit = global::ResinTimer.Droid.Resource.Animator.fragment_fade_exit;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.fragment_open_enter = global::ResinTimer.Droid.Resource.Animator.fragment_open_enter;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.fragment_open_exit = global::ResinTimer.Droid.Resource.Animator.fragment_open_exit;
-			global::Xamarin.Forms.Platform.Android.Resource.Animator.linear_indeterminate_line1_head_interpolator = global::ResinTimer.Droid.Resource.Animator.linear_indeterminate_line1_head_interpolator;
-			global::Xamarin.Forms.Platform.Android.Resource.Animator.linear_indeterminate_line1_tail_interpolator = global::ResinTimer.Droid.Resource.Animator.linear_indeterminate_line1_tail_interpolator;
-			global::Xamarin.Forms.Platform.Android.Resource.Animator.linear_indeterminate_line2_head_interpolator = global::ResinTimer.Droid.Resource.Animator.linear_indeterminate_line2_head_interpolator;
-			global::Xamarin.Forms.Platform.Android.Resource.Animator.linear_indeterminate_line2_tail_interpolator = global::ResinTimer.Droid.Resource.Animator.linear_indeterminate_line2_tail_interpolator;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_btn_state_list_anim = global::ResinTimer.Droid.Resource.Animator.mtrl_btn_state_list_anim;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::ResinTimer.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_card_state_list_anim = global::ResinTimer.Droid.Resource.Animator.mtrl_card_state_list_anim;
@@ -4402,6 +4398,9 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedIconTint = global::ResinTimer.Droid.Resource.Attribute.checkedIconTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedIconVisible = global::ResinTimer.Droid.Resource.Attribute.checkedIconVisible;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedTextViewStyle = global::ResinTimer.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkMarkCompat = global::ResinTimer.Droid.Resource.Attribute.checkMarkCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkMarkTint = global::ResinTimer.Droid.Resource.Attribute.checkMarkTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkMarkTintMode = global::ResinTimer.Droid.Resource.Attribute.checkMarkTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipBackgroundColor = global::ResinTimer.Droid.Resource.Attribute.chipBackgroundColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipCornerRadius = global::ResinTimer.Droid.Resource.Attribute.chipCornerRadius;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipEndPadding = global::ResinTimer.Droid.Resource.Attribute.chipEndPadding;
@@ -4473,7 +4472,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorSurface = global::ResinTimer.Droid.Resource.Attribute.colorSurface;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorSwitchThumbNormal = global::ResinTimer.Droid.Resource.Attribute.colorSwitchThumbNormal;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.commitIcon = global::ResinTimer.Droid.Resource.Attribute.commitIcon;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ConstraintRotate = global::ResinTimer.Droid.Resource.Attribute.ConstraintRotate;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.constraints = global::ResinTimer.Droid.Resource.Attribute.constraints;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.constraintSet = global::ResinTimer.Droid.Resource.Attribute.constraintSet;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.constraintSetEnd = global::ResinTimer.Droid.Resource.Attribute.constraintSetEnd;
@@ -4574,6 +4572,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.elevation = global::ResinTimer.Droid.Resource.Attribute.elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.elevationOverlayColor = global::ResinTimer.Droid.Resource.Attribute.elevationOverlayColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.elevationOverlayEnabled = global::ResinTimer.Droid.Resource.Attribute.elevationOverlayEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.emojiCompatEnabled = global::ResinTimer.Droid.Resource.Attribute.emojiCompatEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.enableEdgeToEdge = global::ResinTimer.Droid.Resource.Attribute.enableEdgeToEdge;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.endIconCheckable = global::ResinTimer.Droid.Resource.Attribute.endIconCheckable;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.endIconContentDescription = global::ResinTimer.Droid.Resource.Attribute.endIconContentDescription;
@@ -4832,6 +4831,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingStart = global::ResinTimer.Droid.Resource.Attribute.listPreferredItemPaddingStart;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.logo = global::ResinTimer.Droid.Resource.Attribute.logo;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.logoDescription = global::ResinTimer.Droid.Resource.Attribute.logoDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.lStar = global::ResinTimer.Droid.Resource.Attribute.lStar;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialAlertDialogBodyTextStyle = global::ResinTimer.Droid.Resource.Attribute.materialAlertDialogBodyTextStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialAlertDialogTheme = global::ResinTimer.Droid.Resource.Attribute.materialAlertDialogTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialAlertDialogTitleIconStyle = global::ResinTimer.Droid.Resource.Attribute.materialAlertDialogTitleIconStyle;
@@ -5169,7 +5169,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textureHeight = global::ResinTimer.Droid.Resource.Attribute.textureHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textureWidth = global::ResinTimer.Droid.Resource.Attribute.textureWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.theme = global::ResinTimer.Droid.Resource.Attribute.theme;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.themeLineHeight = global::ResinTimer.Droid.Resource.Attribute.themeLineHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thickness = global::ResinTimer.Droid.Resource.Attribute.thickness;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbColor = global::ResinTimer.Droid.Resource.Attribute.thumbColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbElevation = global::ResinTimer.Droid.Resource.Attribute.thumbElevation;
@@ -5311,7 +5310,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_light_background = global::ResinTimer.Droid.Resource.Color.cardview_light_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_shadow_end_color = global::ResinTimer.Droid.Resource.Color.cardview_shadow_end_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_shadow_start_color = global::ResinTimer.Droid.Resource.Color.cardview_shadow_start_color;
-			global::Xamarin.Forms.Platform.Android.Resource.Color.checkbox_themeable_attribute_color = global::ResinTimer.Droid.Resource.Color.checkbox_themeable_attribute_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_bottom_navigation_shadow_color = global::ResinTimer.Droid.Resource.Color.design_bottom_navigation_shadow_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_box_stroke_color = global::ResinTimer.Droid.Resource.Color.design_box_stroke_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_background = global::ResinTimer.Droid.Resource.Color.design_dark_default_color_background;
@@ -5456,7 +5454,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_default_material_light = global::ResinTimer.Droid.Resource.Color.primary_text_default_material_light;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_disabled_material_dark = global::ResinTimer.Droid.Resource.Color.primary_text_disabled_material_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_disabled_material_light = global::ResinTimer.Droid.Resource.Color.primary_text_disabled_material_light;
-			global::Xamarin.Forms.Platform.Android.Resource.Color.radiobutton_themeable_attribute_color = global::ResinTimer.Droid.Resource.Color.radiobutton_themeable_attribute_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.ripple_material_dark = global::ResinTimer.Droid.Resource.Color.ripple_material_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.ripple_material_light = global::ResinTimer.Droid.Resource.Color.ripple_material_light;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_default_material_dark = global::ResinTimer.Droid.Resource.Color.secondary_text_default_material_dark;
@@ -5469,8 +5466,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_material_light = global::ResinTimer.Droid.Resource.Color.switch_thumb_material_light;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_normal_material_dark = global::ResinTimer.Droid.Resource.Color.switch_thumb_normal_material_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_normal_material_light = global::ResinTimer.Droid.Resource.Color.switch_thumb_normal_material_light;
-			global::Xamarin.Forms.Platform.Android.Resource.Color.test_mtrl_calendar_day = global::ResinTimer.Droid.Resource.Color.test_mtrl_calendar_day;
-			global::Xamarin.Forms.Platform.Android.Resource.Color.test_mtrl_calendar_day_selected = global::ResinTimer.Droid.Resource.Color.test_mtrl_calendar_day_selected;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.tooltip_background_dark = global::ResinTimer.Droid.Resource.Color.tooltip_background_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.tooltip_background_light = global::ResinTimer.Droid.Resource.Color.tooltip_background_light;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_content_inset_material = global::ResinTimer.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
@@ -5554,7 +5549,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::ResinTimer.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_title_material = global::ResinTimer.Droid.Resource.Dimension.abc_text_size_title_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_title_material_toolbar = global::ResinTimer.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.action_bar_size = global::ResinTimer.Droid.Resource.Dimension.action_bar_size;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.appcompat_dialog_background_inset = global::ResinTimer.Droid.Resource.Dimension.appcompat_dialog_background_inset;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_compat_inset_shadow = global::ResinTimer.Droid.Resource.Dimension.cardview_compat_inset_shadow;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_default_elevation = global::ResinTimer.Droid.Resource.Dimension.cardview_default_elevation;
@@ -5567,7 +5561,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_control_corner_material = global::ResinTimer.Droid.Resource.Dimension.compat_control_corner_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_notification_large_icon_max_height = global::ResinTimer.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_notification_large_icon_max_width = global::ResinTimer.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.default_dimension = global::ResinTimer.Droid.Resource.Dimension.default_dimension;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.def_drawer_elevation = global::ResinTimer.Droid.Resource.Dimension.def_drawer_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_appbar_elevation = global::ResinTimer.Droid.Resource.Dimension.design_appbar_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::ResinTimer.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
@@ -5639,11 +5632,8 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_clock_hand_stroke_width = global::ResinTimer.Droid.Resource.Dimension.material_clock_hand_stroke_width;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_clock_number_text_size = global::ResinTimer.Droid.Resource.Dimension.material_clock_number_text_size;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_clock_period_toggle_height = global::ResinTimer.Droid.Resource.Dimension.material_clock_period_toggle_height;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_clock_period_toggle_margin_left = global::ResinTimer.Droid.Resource.Dimension.material_clock_period_toggle_margin_left;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_clock_period_toggle_width = global::ResinTimer.Droid.Resource.Dimension.material_clock_period_toggle_width;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_clock_size = global::ResinTimer.Droid.Resource.Dimension.material_clock_size;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_cursor_inset_bottom = global::ResinTimer.Droid.Resource.Dimension.material_cursor_inset_bottom;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_cursor_inset_top = global::ResinTimer.Droid.Resource.Dimension.material_cursor_inset_top;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_cursor_width = global::ResinTimer.Droid.Resource.Dimension.material_cursor_width;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_emphasis_disabled = global::ResinTimer.Droid.Resource.Dimension.material_emphasis_disabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_emphasis_high_type = global::ResinTimer.Droid.Resource.Dimension.material_emphasis_high_type;
@@ -5661,8 +5651,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_textinput_default_width = global::ResinTimer.Droid.Resource.Dimension.material_textinput_default_width;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_textinput_max_width = global::ResinTimer.Droid.Resource.Dimension.material_textinput_max_width;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_textinput_min_width = global::ResinTimer.Droid.Resource.Dimension.material_textinput_min_width;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_text_view_test_line_height = global::ResinTimer.Droid.Resource.Dimension.material_text_view_test_line_height;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_text_view_test_line_height_override = global::ResinTimer.Droid.Resource.Dimension.material_text_view_test_line_height_override;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_timepicker_dialog_buttons_margin_top = global::ResinTimer.Droid.Resource.Dimension.material_timepicker_dialog_buttons_margin_top;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_time_picker_minimum_screen_height = global::ResinTimer.Droid.Resource.Dimension.material_time_picker_minimum_screen_height;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_time_picker_minimum_screen_width = global::ResinTimer.Droid.Resource.Dimension.material_time_picker_minimum_screen_width;
@@ -5759,12 +5747,10 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_card_spacing = global::ResinTimer.Droid.Resource.Dimension.mtrl_card_spacing;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_chip_pressed_translation_z = global::ResinTimer.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_chip_text_size = global::ResinTimer.Droid.Resource.Dimension.mtrl_chip_text_size;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_edittext_rectangle_top_offset = global::ResinTimer.Droid.Resource.Dimension.mtrl_edittext_rectangle_top_offset;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation = global::ResinTimer.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset = global::ResinTimer.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding = global::ResinTimer.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_bottom_padding = global::ResinTimer.Droid.Resource.Dimension.mtrl_extended_fab_bottom_padding;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_corner_radius = global::ResinTimer.Droid.Resource.Dimension.mtrl_extended_fab_corner_radius;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_disabled_elevation = global::ResinTimer.Droid.Resource.Dimension.mtrl_extended_fab_disabled_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_disabled_translation_z = global::ResinTimer.Droid.Resource.Dimension.mtrl_extended_fab_disabled_translation_z;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_elevation = global::ResinTimer.Droid.Resource.Dimension.mtrl_extended_fab_elevation;
@@ -5788,7 +5774,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_high_ripple_focused_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_high_ripple_focused_alpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_high_ripple_hovered_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_high_ripple_hovered_alpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_high_ripple_pressed_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_high_ripple_pressed_alpha;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_large_touch_target = global::ResinTimer.Droid.Resource.Dimension.mtrl_large_touch_target;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_low_ripple_default_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_low_ripple_default_alpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_low_ripple_focused_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_low_ripple_focused_alpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_low_ripple_hovered_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_low_ripple_hovered_alpha;
@@ -5836,7 +5821,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_slider_thumb_radius = global::ResinTimer.Droid.Resource.Dimension.mtrl_slider_thumb_radius;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_slider_track_height = global::ResinTimer.Droid.Resource.Dimension.mtrl_slider_track_height;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_slider_track_side_padding = global::ResinTimer.Droid.Resource.Dimension.mtrl_slider_track_side_padding;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_slider_track_top = global::ResinTimer.Droid.Resource.Dimension.mtrl_slider_track_top;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_slider_widget_height = global::ResinTimer.Droid.Resource.Dimension.mtrl_slider_widget_height;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_snackbar_action_text_color_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_snackbar_action_text_color_alpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::ResinTimer.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius;
@@ -5876,18 +5860,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_subtext_size = global::ResinTimer.Droid.Resource.Dimension.notification_subtext_size;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_top_pad = global::ResinTimer.Droid.Resource.Dimension.notification_top_pad;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_top_pad_large_text = global::ResinTimer.Droid.Resource.Dimension.notification_top_pad_large_text;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_mtrl_calendar_day_cornerSize = global::ResinTimer.Droid.Resource.Dimension.test_mtrl_calendar_day_cornerSize;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_navigation_bar_active_item_max_width = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_active_item_max_width;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_navigation_bar_active_item_min_width = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_active_item_min_width;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_navigation_bar_active_text_size = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_active_text_size;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_navigation_bar_elevation = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_elevation;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_navigation_bar_height = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_height;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_navigation_bar_icon_size = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_icon_size;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_navigation_bar_item_max_width = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_item_max_width;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_navigation_bar_item_min_width = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_item_min_width;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_navigation_bar_label_padding = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_label_padding;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_navigation_bar_shadow_height = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_shadow_height;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_navigation_bar_text_size = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_text_size;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_corner_radius = global::ResinTimer.Droid.Resource.Dimension.tooltip_corner_radius;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_horizontal_padding = global::ResinTimer.Droid.Resource.Dimension.tooltip_horizontal_padding;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_margin = global::ResinTimer.Droid.Resource.Dimension.tooltip_margin;
@@ -6014,7 +5986,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_ic_error = global::ResinTimer.Droid.Resource.Drawable.mtrl_ic_error;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_navigation_bar_item_background = global::ResinTimer.Droid.Resource.Drawable.mtrl_navigation_bar_item_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_popupmenu_background = global::ResinTimer.Droid.Resource.Drawable.mtrl_popupmenu_background;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_popupmenu_background_dark = global::ResinTimer.Droid.Resource.Drawable.mtrl_popupmenu_background_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_tabs_default_indicator = global::ResinTimer.Droid.Resource.Drawable.mtrl_tabs_default_indicator;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.navigation_empty_icon = global::ResinTimer.Droid.Resource.Drawable.navigation_empty_icon;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_action_background = global::ResinTimer.Droid.Resource.Drawable.notification_action_background;
@@ -6029,7 +6000,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_template_icon_low_bg = global::ResinTimer.Droid.Resource.Drawable.notification_template_icon_low_bg;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_tile_bg = global::ResinTimer.Droid.Resource.Drawable.notification_tile_bg;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notify_panel_notification_icon_bg = global::ResinTimer.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.test_custom_background = global::ResinTimer.Droid.Resource.Drawable.test_custom_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.test_level_drawable = global::ResinTimer.Droid.Resource.Drawable.test_level_drawable;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.tooltip_frame_dark = global::ResinTimer.Droid.Resource.Drawable.tooltip_frame_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.tooltip_frame_light = global::ResinTimer.Droid.Resource.Drawable.tooltip_frame_light;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.accelerate = global::ResinTimer.Droid.Resource.Id.accelerate;
@@ -6134,11 +6105,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.chains = global::ResinTimer.Droid.Resource.Id.chains;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.checkbox = global::ResinTimer.Droid.Resource.Id.checkbox;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.@checked = global::ResinTimer.Droid.Resource.Id.@checked;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.chip = global::ResinTimer.Droid.Resource.Id.chip;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.chip1 = global::ResinTimer.Droid.Resource.Id.chip1;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.chip2 = global::ResinTimer.Droid.Resource.Id.chip2;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.chip3 = global::ResinTimer.Droid.Resource.Id.chip3;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.chip_group = global::ResinTimer.Droid.Resource.Id.chip_group;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.chronometer = global::ResinTimer.Droid.Resource.Id.chronometer;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.circle_center = global::ResinTimer.Droid.Resource.Id.circle_center;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.clear_text = global::ResinTimer.Droid.Resource.Id.clear_text;
@@ -6227,7 +6193,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.grouping = global::ResinTimer.Droid.Resource.Id.grouping;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.groups = global::ResinTimer.Droid.Resource.Id.groups;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.group_divider = global::ResinTimer.Droid.Resource.Id.group_divider;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.guideline = global::ResinTimer.Droid.Resource.Id.guideline;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.header_title = global::ResinTimer.Droid.Resource.Id.header_title;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.hideable = global::ResinTimer.Droid.Resource.Id.hideable;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.home = global::ResinTimer.Droid.Resource.Id.home;
@@ -6245,6 +6210,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.info = global::ResinTimer.Droid.Resource.Id.info;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.invisible = global::ResinTimer.Droid.Resource.Id.invisible;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.inward = global::ResinTimer.Droid.Resource.Id.inward;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.is_pooling_container_tag = global::ResinTimer.Droid.Resource.Id.is_pooling_container_tag;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.italic = global::ResinTimer.Droid.Resource.Id.italic;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.item_touch_helper_previous_elevation = global::ResinTimer.Droid.Resource.Id.item_touch_helper_previous_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.jumpToEnd = global::ResinTimer.Droid.Resource.Id.jumpToEnd;
@@ -6280,7 +6246,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.material_textinput_timepicker = global::ResinTimer.Droid.Resource.Id.material_textinput_timepicker;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.material_timepicker_cancel_button = global::ResinTimer.Droid.Resource.Id.material_timepicker_cancel_button;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.material_timepicker_container = global::ResinTimer.Droid.Resource.Id.material_timepicker_container;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.material_timepicker_edit_text = global::ResinTimer.Droid.Resource.Id.material_timepicker_edit_text;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.material_timepicker_mode_button = global::ResinTimer.Droid.Resource.Id.material_timepicker_mode_button;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.material_timepicker_ok_button = global::ResinTimer.Droid.Resource.Id.material_timepicker_ok_button;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.material_timepicker_view = global::ResinTimer.Droid.Resource.Id.material_timepicker_view;
@@ -6357,6 +6322,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.peekHeight = global::ResinTimer.Droid.Resource.Id.peekHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.percent = global::ResinTimer.Droid.Resource.Id.percent;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.pin = global::ResinTimer.Droid.Resource.Id.pin;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.pooling_container_listener_holder_tag = global::ResinTimer.Droid.Resource.Id.pooling_container_listener_holder_tag;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.position = global::ResinTimer.Droid.Resource.Id.position;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.postLayout = global::ResinTimer.Droid.Resource.Id.postLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.progress_circular = global::ResinTimer.Droid.Resource.Id.progress_circular;
@@ -6364,6 +6330,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.radio = global::ResinTimer.Droid.Resource.Id.radio;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.ratio = global::ResinTimer.Droid.Resource.Id.ratio;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.rectangles = global::ResinTimer.Droid.Resource.Id.rectangles;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.report_drawn = global::ResinTimer.Droid.Resource.Id.report_drawn;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.reverseSawtooth = global::ResinTimer.Droid.Resource.Id.reverseSawtooth;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.right = global::ResinTimer.Droid.Resource.Id.right;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.rightToLeft = global::ResinTimer.Droid.Resource.Id.rightToLeft;
@@ -6455,10 +6422,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_unhandled_key_event_manager = global::ResinTimer.Droid.Resource.Id.tag_unhandled_key_event_manager;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_unhandled_key_listeners = global::ResinTimer.Droid.Resource.Id.tag_unhandled_key_listeners;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_window_insets_animation_callback = global::ResinTimer.Droid.Resource.Id.tag_window_insets_animation_callback;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.test_checkbox_android_button_tint = global::ResinTimer.Droid.Resource.Id.test_checkbox_android_button_tint;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.test_checkbox_app_button_tint = global::ResinTimer.Droid.Resource.Id.test_checkbox_app_button_tint;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.test_radiobutton_android_button_tint = global::ResinTimer.Droid.Resource.Id.test_radiobutton_android_button_tint;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.test_radiobutton_app_button_tint = global::ResinTimer.Droid.Resource.Id.test_radiobutton_app_button_tint;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.text = global::ResinTimer.Droid.Resource.Id.text;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.text2 = global::ResinTimer.Droid.Resource.Id.text2;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.textEnd = global::ResinTimer.Droid.Resource.Id.textEnd;
@@ -6503,6 +6466,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.view_offset_helper = global::ResinTimer.Droid.Resource.Id.view_offset_helper;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.view_transition = global::ResinTimer.Droid.Resource.Id.view_transition;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.view_tree_lifecycle_owner = global::ResinTimer.Droid.Resource.Id.view_tree_lifecycle_owner;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.view_tree_on_back_pressed_dispatcher_owner = global::ResinTimer.Droid.Resource.Id.view_tree_on_back_pressed_dispatcher_owner;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.view_tree_saved_state_registry_owner = global::ResinTimer.Droid.Resource.Id.view_tree_saved_state_registry_owner;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.view_tree_view_model_store_owner = global::ResinTimer.Droid.Resource.Id.view_tree_view_model_store_owner;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.visible = global::ResinTimer.Droid.Resource.Id.visible;
@@ -6515,7 +6479,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.wrap_content_constrained = global::ResinTimer.Droid.Resource.Id.wrap_content_constrained;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.x_left = global::ResinTimer.Droid.Resource.Id.x_left;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.x_right = global::ResinTimer.Droid.Resource.Id.x_right;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.zero_corner_chip = global::ResinTimer.Droid.Resource.Id.zero_corner_chip;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.abc_config_activityDefaultDur = global::ResinTimer.Droid.Resource.Integer.abc_config_activityDefaultDur;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.abc_config_activityShortDur = global::ResinTimer.Droid.Resource.Integer.abc_config_activityShortDur;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.app_bar_elevation_anim_duration = global::ResinTimer.Droid.Resource.Integer.app_bar_elevation_anim_duration;
@@ -6669,21 +6632,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.ShellContent = global::ResinTimer.Droid.Resource.Layout.ShellContent;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.support_simple_spinner_dropdown_item = global::ResinTimer.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.Tabbar = global::ResinTimer.Droid.Resource.Layout.Tabbar;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_action_chip = global::ResinTimer.Droid.Resource.Layout.test_action_chip;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_chip_zero_corner_radius = global::ResinTimer.Droid.Resource.Layout.test_chip_zero_corner_radius;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_design_checkbox = global::ResinTimer.Droid.Resource.Layout.test_design_checkbox;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_design_radiobutton = global::ResinTimer.Droid.Resource.Layout.test_design_radiobutton;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_navigation_bar_item_layout = global::ResinTimer.Droid.Resource.Layout.test_navigation_bar_item_layout;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_reflow_chipgroup = global::ResinTimer.Droid.Resource.Layout.test_reflow_chipgroup;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_toolbar = global::ResinTimer.Droid.Resource.Layout.test_toolbar;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_toolbar_custom_background = global::ResinTimer.Droid.Resource.Layout.test_toolbar_custom_background;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_toolbar_elevation = global::ResinTimer.Droid.Resource.Layout.test_toolbar_elevation;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_toolbar_surface = global::ResinTimer.Droid.Resource.Layout.test_toolbar_surface;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.text_view_without_line_height = global::ResinTimer.Droid.Resource.Layout.text_view_without_line_height;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.text_view_with_line_height_from_appearance = global::ResinTimer.Droid.Resource.Layout.text_view_with_line_height_from_appearance;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.text_view_with_line_height_from_layout = global::ResinTimer.Droid.Resource.Layout.text_view_with_line_height_from_layout;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.text_view_with_line_height_from_style = global::ResinTimer.Droid.Resource.Layout.text_view_with_line_height_from_style;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.text_view_with_theme_line_height = global::ResinTimer.Droid.Resource.Layout.text_view_with_theme_line_height;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.Toolbar = global::ResinTimer.Droid.Resource.Layout.Toolbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Plurals.mtrl_badge_content_description = global::ResinTimer.Droid.Resource.Plurals.mtrl_badge_content_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_bar_home_description = global::ResinTimer.Droid.Resource.String.abc_action_bar_home_description;
@@ -6713,13 +6661,13 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.String.abc_shareactionprovider_share_with = global::ResinTimer.Droid.Resource.String.abc_shareactionprovider_share_with;
 			global::Xamarin.Forms.Platform.Android.Resource.String.abc_shareactionprovider_share_with_application = global::ResinTimer.Droid.Resource.String.abc_shareactionprovider_share_with_application;
 			global::Xamarin.Forms.Platform.Android.Resource.String.abc_toolbar_collapse_description = global::ResinTimer.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.androidx_startup = global::ResinTimer.Droid.Resource.String.androidx_startup;
 			global::Xamarin.Forms.Platform.Android.Resource.String.appbar_scrolling_view_behavior = global::ResinTimer.Droid.Resource.String.appbar_scrolling_view_behavior;
 			global::Xamarin.Forms.Platform.Android.Resource.String.bottomsheet_action_expand_halfway = global::ResinTimer.Droid.Resource.String.bottomsheet_action_expand_halfway;
 			global::Xamarin.Forms.Platform.Android.Resource.String.bottom_sheet_behavior = global::ResinTimer.Droid.Resource.String.bottom_sheet_behavior;
 			global::Xamarin.Forms.Platform.Android.Resource.String.character_counter_content_description = global::ResinTimer.Droid.Resource.String.character_counter_content_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.character_counter_overflowed_content_description = global::ResinTimer.Droid.Resource.String.character_counter_overflowed_content_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.character_counter_pattern = global::ResinTimer.Droid.Resource.String.character_counter_pattern;
-			global::Xamarin.Forms.Platform.Android.Resource.String.chip_text = global::ResinTimer.Droid.Resource.String.chip_text;
 			global::Xamarin.Forms.Platform.Android.Resource.String.clear_text_end_icon_content_description = global::ResinTimer.Droid.Resource.String.clear_text_end_icon_content_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.error_icon_content_description = global::ResinTimer.Droid.Resource.String.error_icon_content_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.exposed_dropdown_menu_content_description = global::ResinTimer.Droid.Resource.String.exposed_dropdown_menu_content_description;
@@ -6795,7 +6743,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.String.status_bar_notification_info_overflow = global::ResinTimer.Droid.Resource.String.status_bar_notification_info_overflow;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.AlertDialog_AppCompat = global::ResinTimer.Droid.Resource.Style.AlertDialog_AppCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.AlertDialog_AppCompat_Light = global::ResinTimer.Droid.Resource.Style.AlertDialog_AppCompat_Light;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.AndroidThemeColorAccentYellow = global::ResinTimer.Droid.Resource.Style.AndroidThemeColorAccentYellow;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_Dialog = global::ResinTimer.Droid.Resource.Style.Animation_AppCompat_Dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_DropDownUp = global::ResinTimer.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_Tooltip = global::ResinTimer.Droid.Resource.Style.Animation_AppCompat_Tooltip;
@@ -7026,7 +6973,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView_Dark = global::ResinTimer.Droid.Resource.Style.CardView_Dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView_Light = global::ResinTimer.Droid.Resource.Style.CardView_Light;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.collectionViewTheme = global::ResinTimer.Droid.Resource.Style.collectionViewTheme;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.EmptyTheme = global::ResinTimer.Droid.Resource.Style.EmptyTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.MainTheme = global::ResinTimer.Droid.Resource.Style.MainTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.MainTheme_Base = global::ResinTimer.Droid.Resource.Style.MainTheme_Base;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.MaterialAlertDialog_MaterialComponents = global::ResinTimer.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents;
@@ -7072,11 +7018,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::ResinTimer.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.scrollViewScrollBars = global::ResinTimer.Droid.Resource.Style.scrollViewScrollBars;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.scrollViewTheme = global::ResinTimer.Droid.Resource.Style.scrollViewTheme;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_BottomRightCut = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_BottomRightCut;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_Cut = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_Cut;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton;
@@ -7085,25 +7026,11 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_TopLeftCut = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_TopLeftCut;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearance_MaterialComponents = global::ResinTimer.Droid.Resource.Style.ShapeAppearance_MaterialComponents;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent = global::ResinTimer.Droid.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent = global::ResinTimer.Droid.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent = global::ResinTimer.Droid.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearance_MaterialComponents_Test = global::ResinTimer.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Test;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearance_MaterialComponents_Tooltip = global::ResinTimer.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Tooltip;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.TestStyleWithLineHeight = global::ResinTimer.Droid.Resource.Style.TestStyleWithLineHeight;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.TestStyleWithLineHeightAppearance = global::ResinTimer.Droid.Resource.Style.TestStyleWithLineHeightAppearance;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.TestStyleWithoutLineHeight = global::ResinTimer.Droid.Resource.Style.TestStyleWithoutLineHeight;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.TestStyleWithThemeLineHeightAttribute = global::ResinTimer.Droid.Resource.Style.TestStyleWithThemeLineHeightAttribute;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.TestThemeWithLineHeight = global::ResinTimer.Droid.Resource.Style.TestThemeWithLineHeight;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.TestThemeWithLineHeightDisabled = global::ResinTimer.Droid.Resource.Style.TestThemeWithLineHeightDisabled;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::ResinTimer.Droid.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar = global::ResinTimer.Droid.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar = global::ResinTimer.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day = global::ResinTimer.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::ResinTimer.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat = global::ResinTimer.Droid.Resource.Style.TextAppearance_AppCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Body1 = global::ResinTimer.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Body2 = global::ResinTimer.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
@@ -7193,7 +7120,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::ResinTimer.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::ResinTimer.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::ResinTimer.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlayColorAccentRed = global::ResinTimer.Droid.Resource.Style.ThemeOverlayColorAccentRed;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat = global::ResinTimer.Droid.Resource.Style.ThemeOverlay_AppCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::ResinTimer.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dark = global::ResinTimer.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
@@ -7300,7 +7226,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_BarSize = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_BarSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
@@ -7314,7 +7239,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_LargeTouch = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_LargeTouch;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_NoActionBar = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar;
@@ -7617,6 +7541,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_liftOnScroll = global::ResinTimer.Droid.Resource.Styleable.AppBarLayout_liftOnScroll;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId = global::ResinTimer.Droid.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_statusBarForeground = global::ResinTimer.Droid.Resource.Styleable.AppBarLayout_statusBarForeground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatEmojiHelper = global::ResinTimer.Droid.Resource.Styleable.AppCompatEmojiHelper;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView = global::ResinTimer.Droid.Resource.Styleable.AppCompatImageView;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_android_src = global::ResinTimer.Droid.Resource.Styleable.AppCompatImageView_android_src;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_srcCompat = global::ResinTimer.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
@@ -7650,6 +7575,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableTint = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_drawableTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableTintMode = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_drawableTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableTopCompat = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_drawableTopCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_emojiCompatEnabled = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_emojiCompatEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_fontFamily = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_fontVariationSettings = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_fontVariationSettings;
@@ -7866,6 +7792,11 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Carousel_carousel_touchUpMode = global::ResinTimer.Droid.Resource.Styleable.Carousel_carousel_touchUpMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Carousel_carousel_touchUp_dampeningFactor = global::ResinTimer.Droid.Resource.Styleable.Carousel_carousel_touchUp_dampeningFactor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Carousel_carousel_touchUp_velocityThreshold = global::ResinTimer.Droid.Resource.Styleable.Carousel_carousel_touchUp_velocityThreshold;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CheckedTextView = global::ResinTimer.Droid.Resource.Styleable.CheckedTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CheckedTextView_android_checkMark = global::ResinTimer.Droid.Resource.Styleable.CheckedTextView_android_checkMark;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CheckedTextView_checkMarkCompat = global::ResinTimer.Droid.Resource.Styleable.CheckedTextView_checkMarkCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CheckedTextView_checkMarkTint = global::ResinTimer.Droid.Resource.Styleable.CheckedTextView_checkMarkTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CheckedTextView_checkMarkTintMode = global::ResinTimer.Droid.Resource.Styleable.CheckedTextView_checkMarkTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip = global::ResinTimer.Droid.Resource.Styleable.Chip;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ChipGroup = global::ResinTimer.Droid.Resource.Styleable.ChipGroup;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ChipGroup_checkedChip = global::ResinTimer.Droid.Resource.Styleable.ChipGroup_checkedChip;
@@ -7956,6 +7887,8 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_alpha = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_alpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_android_alpha = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_android_color = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_android_lStar = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_android_lStar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_lStar = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_lStar;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton = global::ResinTimer.Droid.Resource.Styleable.CompoundButton;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_android_button = global::ResinTimer.Droid.Resource.Styleable.CompoundButton_android_button;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonCompat = global::ResinTimer.Droid.Resource.Styleable.CompoundButton_buttonCompat;
@@ -8229,7 +8162,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_barrierDirection = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_barrierDirection;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_barrierMargin = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_barrierMargin;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_chainUseRtl = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_chainUseRtl;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_ConstraintRotate = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_ConstraintRotate;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_constraint_referenced_ids = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_constraint_referenced_ids;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_constraint_referenced_tags = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_constraint_referenced_tags;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ConstraintSet_deriveConstraintsFrom = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_deriveConstraintsFrom;
@@ -9458,11 +9390,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_paddingEnd = global::ResinTimer.Droid.Resource.Styleable.View_paddingEnd;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_paddingStart = global::ResinTimer.Droid.Resource.Styleable.View_paddingStart;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_theme = global::ResinTimer.Droid.Resource.Styleable.View_theme;
-			global::Xamarin.Forms.Platform.Android.Resource.Xml.standalone_badge = global::ResinTimer.Droid.Resource.Xml.standalone_badge;
-			global::Xamarin.Forms.Platform.Android.Resource.Xml.standalone_badge_gravity_bottom_end = global::ResinTimer.Droid.Resource.Xml.standalone_badge_gravity_bottom_end;
-			global::Xamarin.Forms.Platform.Android.Resource.Xml.standalone_badge_gravity_bottom_start = global::ResinTimer.Droid.Resource.Xml.standalone_badge_gravity_bottom_start;
-			global::Xamarin.Forms.Platform.Android.Resource.Xml.standalone_badge_gravity_top_start = global::ResinTimer.Droid.Resource.Xml.standalone_badge_gravity_top_start;
-			global::Xamarin.Forms.Platform.Android.Resource.Xml.standalone_badge_offset = global::ResinTimer.Droid.Resource.Xml.standalone_badge_offset;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_fade_in = global::ResinTimer.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_fade_out = global::ResinTimer.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_grow_fade_in_from_bottom = global::ResinTimer.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -9512,10 +9439,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Animator.fragment_fade_exit = global::ResinTimer.Droid.Resource.Animator.fragment_fade_exit;
 			global::Xamarin.Forms.Platform.Resource.Animator.fragment_open_enter = global::ResinTimer.Droid.Resource.Animator.fragment_open_enter;
 			global::Xamarin.Forms.Platform.Resource.Animator.fragment_open_exit = global::ResinTimer.Droid.Resource.Animator.fragment_open_exit;
-			global::Xamarin.Forms.Platform.Resource.Animator.linear_indeterminate_line1_head_interpolator = global::ResinTimer.Droid.Resource.Animator.linear_indeterminate_line1_head_interpolator;
-			global::Xamarin.Forms.Platform.Resource.Animator.linear_indeterminate_line1_tail_interpolator = global::ResinTimer.Droid.Resource.Animator.linear_indeterminate_line1_tail_interpolator;
-			global::Xamarin.Forms.Platform.Resource.Animator.linear_indeterminate_line2_head_interpolator = global::ResinTimer.Droid.Resource.Animator.linear_indeterminate_line2_head_interpolator;
-			global::Xamarin.Forms.Platform.Resource.Animator.linear_indeterminate_line2_tail_interpolator = global::ResinTimer.Droid.Resource.Animator.linear_indeterminate_line2_tail_interpolator;
 			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_btn_state_list_anim = global::ResinTimer.Droid.Resource.Animator.mtrl_btn_state_list_anim;
 			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::ResinTimer.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
 			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_card_state_list_anim = global::ResinTimer.Droid.Resource.Animator.mtrl_card_state_list_anim;
@@ -9689,6 +9612,9 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Attribute.checkedIconTint = global::ResinTimer.Droid.Resource.Attribute.checkedIconTint;
 			global::Xamarin.Forms.Platform.Resource.Attribute.checkedIconVisible = global::ResinTimer.Droid.Resource.Attribute.checkedIconVisible;
 			global::Xamarin.Forms.Platform.Resource.Attribute.checkedTextViewStyle = global::ResinTimer.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.checkMarkCompat = global::ResinTimer.Droid.Resource.Attribute.checkMarkCompat;
+			global::Xamarin.Forms.Platform.Resource.Attribute.checkMarkTint = global::ResinTimer.Droid.Resource.Attribute.checkMarkTint;
+			global::Xamarin.Forms.Platform.Resource.Attribute.checkMarkTintMode = global::ResinTimer.Droid.Resource.Attribute.checkMarkTintMode;
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipBackgroundColor = global::ResinTimer.Droid.Resource.Attribute.chipBackgroundColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipCornerRadius = global::ResinTimer.Droid.Resource.Attribute.chipCornerRadius;
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipEndPadding = global::ResinTimer.Droid.Resource.Attribute.chipEndPadding;
@@ -9760,7 +9686,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Attribute.colorSurface = global::ResinTimer.Droid.Resource.Attribute.colorSurface;
 			global::Xamarin.Forms.Platform.Resource.Attribute.colorSwitchThumbNormal = global::ResinTimer.Droid.Resource.Attribute.colorSwitchThumbNormal;
 			global::Xamarin.Forms.Platform.Resource.Attribute.commitIcon = global::ResinTimer.Droid.Resource.Attribute.commitIcon;
-			global::Xamarin.Forms.Platform.Resource.Attribute.ConstraintRotate = global::ResinTimer.Droid.Resource.Attribute.ConstraintRotate;
 			global::Xamarin.Forms.Platform.Resource.Attribute.constraints = global::ResinTimer.Droid.Resource.Attribute.constraints;
 			global::Xamarin.Forms.Platform.Resource.Attribute.constraintSet = global::ResinTimer.Droid.Resource.Attribute.constraintSet;
 			global::Xamarin.Forms.Platform.Resource.Attribute.constraintSetEnd = global::ResinTimer.Droid.Resource.Attribute.constraintSetEnd;
@@ -9861,6 +9786,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Attribute.elevation = global::ResinTimer.Droid.Resource.Attribute.elevation;
 			global::Xamarin.Forms.Platform.Resource.Attribute.elevationOverlayColor = global::ResinTimer.Droid.Resource.Attribute.elevationOverlayColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.elevationOverlayEnabled = global::ResinTimer.Droid.Resource.Attribute.elevationOverlayEnabled;
+			global::Xamarin.Forms.Platform.Resource.Attribute.emojiCompatEnabled = global::ResinTimer.Droid.Resource.Attribute.emojiCompatEnabled;
 			global::Xamarin.Forms.Platform.Resource.Attribute.enableEdgeToEdge = global::ResinTimer.Droid.Resource.Attribute.enableEdgeToEdge;
 			global::Xamarin.Forms.Platform.Resource.Attribute.endIconCheckable = global::ResinTimer.Droid.Resource.Attribute.endIconCheckable;
 			global::Xamarin.Forms.Platform.Resource.Attribute.endIconContentDescription = global::ResinTimer.Droid.Resource.Attribute.endIconContentDescription;
@@ -10119,6 +10045,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemPaddingStart = global::ResinTimer.Droid.Resource.Attribute.listPreferredItemPaddingStart;
 			global::Xamarin.Forms.Platform.Resource.Attribute.logo = global::ResinTimer.Droid.Resource.Attribute.logo;
 			global::Xamarin.Forms.Platform.Resource.Attribute.logoDescription = global::ResinTimer.Droid.Resource.Attribute.logoDescription;
+			global::Xamarin.Forms.Platform.Resource.Attribute.lStar = global::ResinTimer.Droid.Resource.Attribute.lStar;
 			global::Xamarin.Forms.Platform.Resource.Attribute.materialAlertDialogBodyTextStyle = global::ResinTimer.Droid.Resource.Attribute.materialAlertDialogBodyTextStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.materialAlertDialogTheme = global::ResinTimer.Droid.Resource.Attribute.materialAlertDialogTheme;
 			global::Xamarin.Forms.Platform.Resource.Attribute.materialAlertDialogTitleIconStyle = global::ResinTimer.Droid.Resource.Attribute.materialAlertDialogTitleIconStyle;
@@ -10456,7 +10383,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Attribute.textureHeight = global::ResinTimer.Droid.Resource.Attribute.textureHeight;
 			global::Xamarin.Forms.Platform.Resource.Attribute.textureWidth = global::ResinTimer.Droid.Resource.Attribute.textureWidth;
 			global::Xamarin.Forms.Platform.Resource.Attribute.theme = global::ResinTimer.Droid.Resource.Attribute.theme;
-			global::Xamarin.Forms.Platform.Resource.Attribute.themeLineHeight = global::ResinTimer.Droid.Resource.Attribute.themeLineHeight;
 			global::Xamarin.Forms.Platform.Resource.Attribute.thickness = global::ResinTimer.Droid.Resource.Attribute.thickness;
 			global::Xamarin.Forms.Platform.Resource.Attribute.thumbColor = global::ResinTimer.Droid.Resource.Attribute.thumbColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.thumbElevation = global::ResinTimer.Droid.Resource.Attribute.thumbElevation;
@@ -10598,7 +10524,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Color.cardview_light_background = global::ResinTimer.Droid.Resource.Color.cardview_light_background;
 			global::Xamarin.Forms.Platform.Resource.Color.cardview_shadow_end_color = global::ResinTimer.Droid.Resource.Color.cardview_shadow_end_color;
 			global::Xamarin.Forms.Platform.Resource.Color.cardview_shadow_start_color = global::ResinTimer.Droid.Resource.Color.cardview_shadow_start_color;
-			global::Xamarin.Forms.Platform.Resource.Color.checkbox_themeable_attribute_color = global::ResinTimer.Droid.Resource.Color.checkbox_themeable_attribute_color;
 			global::Xamarin.Forms.Platform.Resource.Color.design_bottom_navigation_shadow_color = global::ResinTimer.Droid.Resource.Color.design_bottom_navigation_shadow_color;
 			global::Xamarin.Forms.Platform.Resource.Color.design_box_stroke_color = global::ResinTimer.Droid.Resource.Color.design_box_stroke_color;
 			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_background = global::ResinTimer.Droid.Resource.Color.design_dark_default_color_background;
@@ -10743,7 +10668,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Color.primary_text_default_material_light = global::ResinTimer.Droid.Resource.Color.primary_text_default_material_light;
 			global::Xamarin.Forms.Platform.Resource.Color.primary_text_disabled_material_dark = global::ResinTimer.Droid.Resource.Color.primary_text_disabled_material_dark;
 			global::Xamarin.Forms.Platform.Resource.Color.primary_text_disabled_material_light = global::ResinTimer.Droid.Resource.Color.primary_text_disabled_material_light;
-			global::Xamarin.Forms.Platform.Resource.Color.radiobutton_themeable_attribute_color = global::ResinTimer.Droid.Resource.Color.radiobutton_themeable_attribute_color;
 			global::Xamarin.Forms.Platform.Resource.Color.ripple_material_dark = global::ResinTimer.Droid.Resource.Color.ripple_material_dark;
 			global::Xamarin.Forms.Platform.Resource.Color.ripple_material_light = global::ResinTimer.Droid.Resource.Color.ripple_material_light;
 			global::Xamarin.Forms.Platform.Resource.Color.secondary_text_default_material_dark = global::ResinTimer.Droid.Resource.Color.secondary_text_default_material_dark;
@@ -10756,8 +10680,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Color.switch_thumb_material_light = global::ResinTimer.Droid.Resource.Color.switch_thumb_material_light;
 			global::Xamarin.Forms.Platform.Resource.Color.switch_thumb_normal_material_dark = global::ResinTimer.Droid.Resource.Color.switch_thumb_normal_material_dark;
 			global::Xamarin.Forms.Platform.Resource.Color.switch_thumb_normal_material_light = global::ResinTimer.Droid.Resource.Color.switch_thumb_normal_material_light;
-			global::Xamarin.Forms.Platform.Resource.Color.test_mtrl_calendar_day = global::ResinTimer.Droid.Resource.Color.test_mtrl_calendar_day;
-			global::Xamarin.Forms.Platform.Resource.Color.test_mtrl_calendar_day_selected = global::ResinTimer.Droid.Resource.Color.test_mtrl_calendar_day_selected;
 			global::Xamarin.Forms.Platform.Resource.Color.tooltip_background_dark = global::ResinTimer.Droid.Resource.Color.tooltip_background_dark;
 			global::Xamarin.Forms.Platform.Resource.Color.tooltip_background_light = global::ResinTimer.Droid.Resource.Color.tooltip_background_light;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_action_bar_content_inset_material = global::ResinTimer.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
@@ -10841,7 +10763,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::ResinTimer.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_text_size_title_material = global::ResinTimer.Droid.Resource.Dimension.abc_text_size_title_material;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_text_size_title_material_toolbar = global::ResinTimer.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
-			global::Xamarin.Forms.Platform.Resource.Dimension.action_bar_size = global::ResinTimer.Droid.Resource.Dimension.action_bar_size;
 			global::Xamarin.Forms.Platform.Resource.Dimension.appcompat_dialog_background_inset = global::ResinTimer.Droid.Resource.Dimension.appcompat_dialog_background_inset;
 			global::Xamarin.Forms.Platform.Resource.Dimension.cardview_compat_inset_shadow = global::ResinTimer.Droid.Resource.Dimension.cardview_compat_inset_shadow;
 			global::Xamarin.Forms.Platform.Resource.Dimension.cardview_default_elevation = global::ResinTimer.Droid.Resource.Dimension.cardview_default_elevation;
@@ -10854,7 +10775,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Dimension.compat_control_corner_material = global::ResinTimer.Droid.Resource.Dimension.compat_control_corner_material;
 			global::Xamarin.Forms.Platform.Resource.Dimension.compat_notification_large_icon_max_height = global::ResinTimer.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
 			global::Xamarin.Forms.Platform.Resource.Dimension.compat_notification_large_icon_max_width = global::ResinTimer.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
-			global::Xamarin.Forms.Platform.Resource.Dimension.default_dimension = global::ResinTimer.Droid.Resource.Dimension.default_dimension;
 			global::Xamarin.Forms.Platform.Resource.Dimension.def_drawer_elevation = global::ResinTimer.Droid.Resource.Dimension.def_drawer_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_appbar_elevation = global::ResinTimer.Droid.Resource.Dimension.design_appbar_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::ResinTimer.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
@@ -10926,11 +10846,8 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_clock_hand_stroke_width = global::ResinTimer.Droid.Resource.Dimension.material_clock_hand_stroke_width;
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_clock_number_text_size = global::ResinTimer.Droid.Resource.Dimension.material_clock_number_text_size;
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_clock_period_toggle_height = global::ResinTimer.Droid.Resource.Dimension.material_clock_period_toggle_height;
-			global::Xamarin.Forms.Platform.Resource.Dimension.material_clock_period_toggle_margin_left = global::ResinTimer.Droid.Resource.Dimension.material_clock_period_toggle_margin_left;
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_clock_period_toggle_width = global::ResinTimer.Droid.Resource.Dimension.material_clock_period_toggle_width;
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_clock_size = global::ResinTimer.Droid.Resource.Dimension.material_clock_size;
-			global::Xamarin.Forms.Platform.Resource.Dimension.material_cursor_inset_bottom = global::ResinTimer.Droid.Resource.Dimension.material_cursor_inset_bottom;
-			global::Xamarin.Forms.Platform.Resource.Dimension.material_cursor_inset_top = global::ResinTimer.Droid.Resource.Dimension.material_cursor_inset_top;
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_cursor_width = global::ResinTimer.Droid.Resource.Dimension.material_cursor_width;
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_emphasis_disabled = global::ResinTimer.Droid.Resource.Dimension.material_emphasis_disabled;
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_emphasis_high_type = global::ResinTimer.Droid.Resource.Dimension.material_emphasis_high_type;
@@ -10948,8 +10865,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_textinput_default_width = global::ResinTimer.Droid.Resource.Dimension.material_textinput_default_width;
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_textinput_max_width = global::ResinTimer.Droid.Resource.Dimension.material_textinput_max_width;
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_textinput_min_width = global::ResinTimer.Droid.Resource.Dimension.material_textinput_min_width;
-			global::Xamarin.Forms.Platform.Resource.Dimension.material_text_view_test_line_height = global::ResinTimer.Droid.Resource.Dimension.material_text_view_test_line_height;
-			global::Xamarin.Forms.Platform.Resource.Dimension.material_text_view_test_line_height_override = global::ResinTimer.Droid.Resource.Dimension.material_text_view_test_line_height_override;
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_timepicker_dialog_buttons_margin_top = global::ResinTimer.Droid.Resource.Dimension.material_timepicker_dialog_buttons_margin_top;
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_time_picker_minimum_screen_height = global::ResinTimer.Droid.Resource.Dimension.material_time_picker_minimum_screen_height;
 			global::Xamarin.Forms.Platform.Resource.Dimension.material_time_picker_minimum_screen_width = global::ResinTimer.Droid.Resource.Dimension.material_time_picker_minimum_screen_width;
@@ -11046,12 +10961,10 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_card_spacing = global::ResinTimer.Droid.Resource.Dimension.mtrl_card_spacing;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_chip_pressed_translation_z = global::ResinTimer.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_chip_text_size = global::ResinTimer.Droid.Resource.Dimension.mtrl_chip_text_size;
-			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_edittext_rectangle_top_offset = global::ResinTimer.Droid.Resource.Dimension.mtrl_edittext_rectangle_top_offset;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation = global::ResinTimer.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset = global::ResinTimer.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding = global::ResinTimer.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_bottom_padding = global::ResinTimer.Droid.Resource.Dimension.mtrl_extended_fab_bottom_padding;
-			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_corner_radius = global::ResinTimer.Droid.Resource.Dimension.mtrl_extended_fab_corner_radius;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_disabled_elevation = global::ResinTimer.Droid.Resource.Dimension.mtrl_extended_fab_disabled_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_disabled_translation_z = global::ResinTimer.Droid.Resource.Dimension.mtrl_extended_fab_disabled_translation_z;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_elevation = global::ResinTimer.Droid.Resource.Dimension.mtrl_extended_fab_elevation;
@@ -11075,7 +10988,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_high_ripple_focused_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_high_ripple_focused_alpha;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_high_ripple_hovered_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_high_ripple_hovered_alpha;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_high_ripple_pressed_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_high_ripple_pressed_alpha;
-			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_large_touch_target = global::ResinTimer.Droid.Resource.Dimension.mtrl_large_touch_target;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_low_ripple_default_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_low_ripple_default_alpha;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_low_ripple_focused_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_low_ripple_focused_alpha;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_low_ripple_hovered_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_low_ripple_hovered_alpha;
@@ -11123,7 +11035,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_slider_thumb_radius = global::ResinTimer.Droid.Resource.Dimension.mtrl_slider_thumb_radius;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_slider_track_height = global::ResinTimer.Droid.Resource.Dimension.mtrl_slider_track_height;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_slider_track_side_padding = global::ResinTimer.Droid.Resource.Dimension.mtrl_slider_track_side_padding;
-			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_slider_track_top = global::ResinTimer.Droid.Resource.Dimension.mtrl_slider_track_top;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_slider_widget_height = global::ResinTimer.Droid.Resource.Dimension.mtrl_slider_widget_height;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_snackbar_action_text_color_alpha = global::ResinTimer.Droid.Resource.Dimension.mtrl_snackbar_action_text_color_alpha;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::ResinTimer.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius;
@@ -11163,18 +11074,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Dimension.notification_subtext_size = global::ResinTimer.Droid.Resource.Dimension.notification_subtext_size;
 			global::Xamarin.Forms.Platform.Resource.Dimension.notification_top_pad = global::ResinTimer.Droid.Resource.Dimension.notification_top_pad;
 			global::Xamarin.Forms.Platform.Resource.Dimension.notification_top_pad_large_text = global::ResinTimer.Droid.Resource.Dimension.notification_top_pad_large_text;
-			global::Xamarin.Forms.Platform.Resource.Dimension.test_mtrl_calendar_day_cornerSize = global::ResinTimer.Droid.Resource.Dimension.test_mtrl_calendar_day_cornerSize;
-			global::Xamarin.Forms.Platform.Resource.Dimension.test_navigation_bar_active_item_max_width = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_active_item_max_width;
-			global::Xamarin.Forms.Platform.Resource.Dimension.test_navigation_bar_active_item_min_width = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_active_item_min_width;
-			global::Xamarin.Forms.Platform.Resource.Dimension.test_navigation_bar_active_text_size = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_active_text_size;
-			global::Xamarin.Forms.Platform.Resource.Dimension.test_navigation_bar_elevation = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_elevation;
-			global::Xamarin.Forms.Platform.Resource.Dimension.test_navigation_bar_height = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_height;
-			global::Xamarin.Forms.Platform.Resource.Dimension.test_navigation_bar_icon_size = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_icon_size;
-			global::Xamarin.Forms.Platform.Resource.Dimension.test_navigation_bar_item_max_width = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_item_max_width;
-			global::Xamarin.Forms.Platform.Resource.Dimension.test_navigation_bar_item_min_width = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_item_min_width;
-			global::Xamarin.Forms.Platform.Resource.Dimension.test_navigation_bar_label_padding = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_label_padding;
-			global::Xamarin.Forms.Platform.Resource.Dimension.test_navigation_bar_shadow_height = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_shadow_height;
-			global::Xamarin.Forms.Platform.Resource.Dimension.test_navigation_bar_text_size = global::ResinTimer.Droid.Resource.Dimension.test_navigation_bar_text_size;
 			global::Xamarin.Forms.Platform.Resource.Dimension.tooltip_corner_radius = global::ResinTimer.Droid.Resource.Dimension.tooltip_corner_radius;
 			global::Xamarin.Forms.Platform.Resource.Dimension.tooltip_horizontal_padding = global::ResinTimer.Droid.Resource.Dimension.tooltip_horizontal_padding;
 			global::Xamarin.Forms.Platform.Resource.Dimension.tooltip_margin = global::ResinTimer.Droid.Resource.Dimension.tooltip_margin;
@@ -11301,7 +11200,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_ic_error = global::ResinTimer.Droid.Resource.Drawable.mtrl_ic_error;
 			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_navigation_bar_item_background = global::ResinTimer.Droid.Resource.Drawable.mtrl_navigation_bar_item_background;
 			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_popupmenu_background = global::ResinTimer.Droid.Resource.Drawable.mtrl_popupmenu_background;
-			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_popupmenu_background_dark = global::ResinTimer.Droid.Resource.Drawable.mtrl_popupmenu_background_dark;
 			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_tabs_default_indicator = global::ResinTimer.Droid.Resource.Drawable.mtrl_tabs_default_indicator;
 			global::Xamarin.Forms.Platform.Resource.Drawable.navigation_empty_icon = global::ResinTimer.Droid.Resource.Drawable.navigation_empty_icon;
 			global::Xamarin.Forms.Platform.Resource.Drawable.notification_action_background = global::ResinTimer.Droid.Resource.Drawable.notification_action_background;
@@ -11316,7 +11214,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Drawable.notification_template_icon_low_bg = global::ResinTimer.Droid.Resource.Drawable.notification_template_icon_low_bg;
 			global::Xamarin.Forms.Platform.Resource.Drawable.notification_tile_bg = global::ResinTimer.Droid.Resource.Drawable.notification_tile_bg;
 			global::Xamarin.Forms.Platform.Resource.Drawable.notify_panel_notification_icon_bg = global::ResinTimer.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
-			global::Xamarin.Forms.Platform.Resource.Drawable.test_custom_background = global::ResinTimer.Droid.Resource.Drawable.test_custom_background;
+			global::Xamarin.Forms.Platform.Resource.Drawable.test_level_drawable = global::ResinTimer.Droid.Resource.Drawable.test_level_drawable;
 			global::Xamarin.Forms.Platform.Resource.Drawable.tooltip_frame_dark = global::ResinTimer.Droid.Resource.Drawable.tooltip_frame_dark;
 			global::Xamarin.Forms.Platform.Resource.Drawable.tooltip_frame_light = global::ResinTimer.Droid.Resource.Drawable.tooltip_frame_light;
 			global::Xamarin.Forms.Platform.Resource.Id.accelerate = global::ResinTimer.Droid.Resource.Id.accelerate;
@@ -11421,11 +11319,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.chains = global::ResinTimer.Droid.Resource.Id.chains;
 			global::Xamarin.Forms.Platform.Resource.Id.checkbox = global::ResinTimer.Droid.Resource.Id.checkbox;
 			global::Xamarin.Forms.Platform.Resource.Id.@checked = global::ResinTimer.Droid.Resource.Id.@checked;
-			global::Xamarin.Forms.Platform.Resource.Id.chip = global::ResinTimer.Droid.Resource.Id.chip;
-			global::Xamarin.Forms.Platform.Resource.Id.chip1 = global::ResinTimer.Droid.Resource.Id.chip1;
-			global::Xamarin.Forms.Platform.Resource.Id.chip2 = global::ResinTimer.Droid.Resource.Id.chip2;
-			global::Xamarin.Forms.Platform.Resource.Id.chip3 = global::ResinTimer.Droid.Resource.Id.chip3;
-			global::Xamarin.Forms.Platform.Resource.Id.chip_group = global::ResinTimer.Droid.Resource.Id.chip_group;
 			global::Xamarin.Forms.Platform.Resource.Id.chronometer = global::ResinTimer.Droid.Resource.Id.chronometer;
 			global::Xamarin.Forms.Platform.Resource.Id.circle_center = global::ResinTimer.Droid.Resource.Id.circle_center;
 			global::Xamarin.Forms.Platform.Resource.Id.clear_text = global::ResinTimer.Droid.Resource.Id.clear_text;
@@ -11514,7 +11407,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.grouping = global::ResinTimer.Droid.Resource.Id.grouping;
 			global::Xamarin.Forms.Platform.Resource.Id.groups = global::ResinTimer.Droid.Resource.Id.groups;
 			global::Xamarin.Forms.Platform.Resource.Id.group_divider = global::ResinTimer.Droid.Resource.Id.group_divider;
-			global::Xamarin.Forms.Platform.Resource.Id.guideline = global::ResinTimer.Droid.Resource.Id.guideline;
 			global::Xamarin.Forms.Platform.Resource.Id.header_title = global::ResinTimer.Droid.Resource.Id.header_title;
 			global::Xamarin.Forms.Platform.Resource.Id.hideable = global::ResinTimer.Droid.Resource.Id.hideable;
 			global::Xamarin.Forms.Platform.Resource.Id.home = global::ResinTimer.Droid.Resource.Id.home;
@@ -11532,6 +11424,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.info = global::ResinTimer.Droid.Resource.Id.info;
 			global::Xamarin.Forms.Platform.Resource.Id.invisible = global::ResinTimer.Droid.Resource.Id.invisible;
 			global::Xamarin.Forms.Platform.Resource.Id.inward = global::ResinTimer.Droid.Resource.Id.inward;
+			global::Xamarin.Forms.Platform.Resource.Id.is_pooling_container_tag = global::ResinTimer.Droid.Resource.Id.is_pooling_container_tag;
 			global::Xamarin.Forms.Platform.Resource.Id.italic = global::ResinTimer.Droid.Resource.Id.italic;
 			global::Xamarin.Forms.Platform.Resource.Id.item_touch_helper_previous_elevation = global::ResinTimer.Droid.Resource.Id.item_touch_helper_previous_elevation;
 			global::Xamarin.Forms.Platform.Resource.Id.jumpToEnd = global::ResinTimer.Droid.Resource.Id.jumpToEnd;
@@ -11567,7 +11460,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.material_textinput_timepicker = global::ResinTimer.Droid.Resource.Id.material_textinput_timepicker;
 			global::Xamarin.Forms.Platform.Resource.Id.material_timepicker_cancel_button = global::ResinTimer.Droid.Resource.Id.material_timepicker_cancel_button;
 			global::Xamarin.Forms.Platform.Resource.Id.material_timepicker_container = global::ResinTimer.Droid.Resource.Id.material_timepicker_container;
-			global::Xamarin.Forms.Platform.Resource.Id.material_timepicker_edit_text = global::ResinTimer.Droid.Resource.Id.material_timepicker_edit_text;
 			global::Xamarin.Forms.Platform.Resource.Id.material_timepicker_mode_button = global::ResinTimer.Droid.Resource.Id.material_timepicker_mode_button;
 			global::Xamarin.Forms.Platform.Resource.Id.material_timepicker_ok_button = global::ResinTimer.Droid.Resource.Id.material_timepicker_ok_button;
 			global::Xamarin.Forms.Platform.Resource.Id.material_timepicker_view = global::ResinTimer.Droid.Resource.Id.material_timepicker_view;
@@ -11644,6 +11536,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.peekHeight = global::ResinTimer.Droid.Resource.Id.peekHeight;
 			global::Xamarin.Forms.Platform.Resource.Id.percent = global::ResinTimer.Droid.Resource.Id.percent;
 			global::Xamarin.Forms.Platform.Resource.Id.pin = global::ResinTimer.Droid.Resource.Id.pin;
+			global::Xamarin.Forms.Platform.Resource.Id.pooling_container_listener_holder_tag = global::ResinTimer.Droid.Resource.Id.pooling_container_listener_holder_tag;
 			global::Xamarin.Forms.Platform.Resource.Id.position = global::ResinTimer.Droid.Resource.Id.position;
 			global::Xamarin.Forms.Platform.Resource.Id.postLayout = global::ResinTimer.Droid.Resource.Id.postLayout;
 			global::Xamarin.Forms.Platform.Resource.Id.progress_circular = global::ResinTimer.Droid.Resource.Id.progress_circular;
@@ -11651,6 +11544,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.radio = global::ResinTimer.Droid.Resource.Id.radio;
 			global::Xamarin.Forms.Platform.Resource.Id.ratio = global::ResinTimer.Droid.Resource.Id.ratio;
 			global::Xamarin.Forms.Platform.Resource.Id.rectangles = global::ResinTimer.Droid.Resource.Id.rectangles;
+			global::Xamarin.Forms.Platform.Resource.Id.report_drawn = global::ResinTimer.Droid.Resource.Id.report_drawn;
 			global::Xamarin.Forms.Platform.Resource.Id.reverseSawtooth = global::ResinTimer.Droid.Resource.Id.reverseSawtooth;
 			global::Xamarin.Forms.Platform.Resource.Id.right = global::ResinTimer.Droid.Resource.Id.right;
 			global::Xamarin.Forms.Platform.Resource.Id.rightToLeft = global::ResinTimer.Droid.Resource.Id.rightToLeft;
@@ -11742,10 +11636,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.tag_unhandled_key_event_manager = global::ResinTimer.Droid.Resource.Id.tag_unhandled_key_event_manager;
 			global::Xamarin.Forms.Platform.Resource.Id.tag_unhandled_key_listeners = global::ResinTimer.Droid.Resource.Id.tag_unhandled_key_listeners;
 			global::Xamarin.Forms.Platform.Resource.Id.tag_window_insets_animation_callback = global::ResinTimer.Droid.Resource.Id.tag_window_insets_animation_callback;
-			global::Xamarin.Forms.Platform.Resource.Id.test_checkbox_android_button_tint = global::ResinTimer.Droid.Resource.Id.test_checkbox_android_button_tint;
-			global::Xamarin.Forms.Platform.Resource.Id.test_checkbox_app_button_tint = global::ResinTimer.Droid.Resource.Id.test_checkbox_app_button_tint;
-			global::Xamarin.Forms.Platform.Resource.Id.test_radiobutton_android_button_tint = global::ResinTimer.Droid.Resource.Id.test_radiobutton_android_button_tint;
-			global::Xamarin.Forms.Platform.Resource.Id.test_radiobutton_app_button_tint = global::ResinTimer.Droid.Resource.Id.test_radiobutton_app_button_tint;
 			global::Xamarin.Forms.Platform.Resource.Id.text = global::ResinTimer.Droid.Resource.Id.text;
 			global::Xamarin.Forms.Platform.Resource.Id.text2 = global::ResinTimer.Droid.Resource.Id.text2;
 			global::Xamarin.Forms.Platform.Resource.Id.textEnd = global::ResinTimer.Droid.Resource.Id.textEnd;
@@ -11790,6 +11680,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.view_offset_helper = global::ResinTimer.Droid.Resource.Id.view_offset_helper;
 			global::Xamarin.Forms.Platform.Resource.Id.view_transition = global::ResinTimer.Droid.Resource.Id.view_transition;
 			global::Xamarin.Forms.Platform.Resource.Id.view_tree_lifecycle_owner = global::ResinTimer.Droid.Resource.Id.view_tree_lifecycle_owner;
+			global::Xamarin.Forms.Platform.Resource.Id.view_tree_on_back_pressed_dispatcher_owner = global::ResinTimer.Droid.Resource.Id.view_tree_on_back_pressed_dispatcher_owner;
 			global::Xamarin.Forms.Platform.Resource.Id.view_tree_saved_state_registry_owner = global::ResinTimer.Droid.Resource.Id.view_tree_saved_state_registry_owner;
 			global::Xamarin.Forms.Platform.Resource.Id.view_tree_view_model_store_owner = global::ResinTimer.Droid.Resource.Id.view_tree_view_model_store_owner;
 			global::Xamarin.Forms.Platform.Resource.Id.visible = global::ResinTimer.Droid.Resource.Id.visible;
@@ -11802,7 +11693,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.wrap_content_constrained = global::ResinTimer.Droid.Resource.Id.wrap_content_constrained;
 			global::Xamarin.Forms.Platform.Resource.Id.x_left = global::ResinTimer.Droid.Resource.Id.x_left;
 			global::Xamarin.Forms.Platform.Resource.Id.x_right = global::ResinTimer.Droid.Resource.Id.x_right;
-			global::Xamarin.Forms.Platform.Resource.Id.zero_corner_chip = global::ResinTimer.Droid.Resource.Id.zero_corner_chip;
 			global::Xamarin.Forms.Platform.Resource.Integer.abc_config_activityDefaultDur = global::ResinTimer.Droid.Resource.Integer.abc_config_activityDefaultDur;
 			global::Xamarin.Forms.Platform.Resource.Integer.abc_config_activityShortDur = global::ResinTimer.Droid.Resource.Integer.abc_config_activityShortDur;
 			global::Xamarin.Forms.Platform.Resource.Integer.app_bar_elevation_anim_duration = global::ResinTimer.Droid.Resource.Integer.app_bar_elevation_anim_duration;
@@ -11956,21 +11846,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Layout.ShellContent = global::ResinTimer.Droid.Resource.Layout.ShellContent;
 			global::Xamarin.Forms.Platform.Resource.Layout.support_simple_spinner_dropdown_item = global::ResinTimer.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
 			global::Xamarin.Forms.Platform.Resource.Layout.Tabbar = global::ResinTimer.Droid.Resource.Layout.Tabbar;
-			global::Xamarin.Forms.Platform.Resource.Layout.test_action_chip = global::ResinTimer.Droid.Resource.Layout.test_action_chip;
-			global::Xamarin.Forms.Platform.Resource.Layout.test_chip_zero_corner_radius = global::ResinTimer.Droid.Resource.Layout.test_chip_zero_corner_radius;
-			global::Xamarin.Forms.Platform.Resource.Layout.test_design_checkbox = global::ResinTimer.Droid.Resource.Layout.test_design_checkbox;
-			global::Xamarin.Forms.Platform.Resource.Layout.test_design_radiobutton = global::ResinTimer.Droid.Resource.Layout.test_design_radiobutton;
-			global::Xamarin.Forms.Platform.Resource.Layout.test_navigation_bar_item_layout = global::ResinTimer.Droid.Resource.Layout.test_navigation_bar_item_layout;
-			global::Xamarin.Forms.Platform.Resource.Layout.test_reflow_chipgroup = global::ResinTimer.Droid.Resource.Layout.test_reflow_chipgroup;
-			global::Xamarin.Forms.Platform.Resource.Layout.test_toolbar = global::ResinTimer.Droid.Resource.Layout.test_toolbar;
-			global::Xamarin.Forms.Platform.Resource.Layout.test_toolbar_custom_background = global::ResinTimer.Droid.Resource.Layout.test_toolbar_custom_background;
-			global::Xamarin.Forms.Platform.Resource.Layout.test_toolbar_elevation = global::ResinTimer.Droid.Resource.Layout.test_toolbar_elevation;
-			global::Xamarin.Forms.Platform.Resource.Layout.test_toolbar_surface = global::ResinTimer.Droid.Resource.Layout.test_toolbar_surface;
-			global::Xamarin.Forms.Platform.Resource.Layout.text_view_without_line_height = global::ResinTimer.Droid.Resource.Layout.text_view_without_line_height;
-			global::Xamarin.Forms.Platform.Resource.Layout.text_view_with_line_height_from_appearance = global::ResinTimer.Droid.Resource.Layout.text_view_with_line_height_from_appearance;
-			global::Xamarin.Forms.Platform.Resource.Layout.text_view_with_line_height_from_layout = global::ResinTimer.Droid.Resource.Layout.text_view_with_line_height_from_layout;
-			global::Xamarin.Forms.Platform.Resource.Layout.text_view_with_line_height_from_style = global::ResinTimer.Droid.Resource.Layout.text_view_with_line_height_from_style;
-			global::Xamarin.Forms.Platform.Resource.Layout.text_view_with_theme_line_height = global::ResinTimer.Droid.Resource.Layout.text_view_with_theme_line_height;
 			global::Xamarin.Forms.Platform.Resource.Layout.Toolbar = global::ResinTimer.Droid.Resource.Layout.Toolbar;
 			global::Xamarin.Forms.Platform.Resource.Plurals.mtrl_badge_content_description = global::ResinTimer.Droid.Resource.Plurals.mtrl_badge_content_description;
 			global::Xamarin.Forms.Platform.Resource.String.abc_action_bar_home_description = global::ResinTimer.Droid.Resource.String.abc_action_bar_home_description;
@@ -12000,13 +11875,13 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.String.abc_shareactionprovider_share_with = global::ResinTimer.Droid.Resource.String.abc_shareactionprovider_share_with;
 			global::Xamarin.Forms.Platform.Resource.String.abc_shareactionprovider_share_with_application = global::ResinTimer.Droid.Resource.String.abc_shareactionprovider_share_with_application;
 			global::Xamarin.Forms.Platform.Resource.String.abc_toolbar_collapse_description = global::ResinTimer.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::Xamarin.Forms.Platform.Resource.String.androidx_startup = global::ResinTimer.Droid.Resource.String.androidx_startup;
 			global::Xamarin.Forms.Platform.Resource.String.appbar_scrolling_view_behavior = global::ResinTimer.Droid.Resource.String.appbar_scrolling_view_behavior;
 			global::Xamarin.Forms.Platform.Resource.String.bottomsheet_action_expand_halfway = global::ResinTimer.Droid.Resource.String.bottomsheet_action_expand_halfway;
 			global::Xamarin.Forms.Platform.Resource.String.bottom_sheet_behavior = global::ResinTimer.Droid.Resource.String.bottom_sheet_behavior;
 			global::Xamarin.Forms.Platform.Resource.String.character_counter_content_description = global::ResinTimer.Droid.Resource.String.character_counter_content_description;
 			global::Xamarin.Forms.Platform.Resource.String.character_counter_overflowed_content_description = global::ResinTimer.Droid.Resource.String.character_counter_overflowed_content_description;
 			global::Xamarin.Forms.Platform.Resource.String.character_counter_pattern = global::ResinTimer.Droid.Resource.String.character_counter_pattern;
-			global::Xamarin.Forms.Platform.Resource.String.chip_text = global::ResinTimer.Droid.Resource.String.chip_text;
 			global::Xamarin.Forms.Platform.Resource.String.clear_text_end_icon_content_description = global::ResinTimer.Droid.Resource.String.clear_text_end_icon_content_description;
 			global::Xamarin.Forms.Platform.Resource.String.error_icon_content_description = global::ResinTimer.Droid.Resource.String.error_icon_content_description;
 			global::Xamarin.Forms.Platform.Resource.String.exposed_dropdown_menu_content_description = global::ResinTimer.Droid.Resource.String.exposed_dropdown_menu_content_description;
@@ -12082,7 +11957,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.String.status_bar_notification_info_overflow = global::ResinTimer.Droid.Resource.String.status_bar_notification_info_overflow;
 			global::Xamarin.Forms.Platform.Resource.Style.AlertDialog_AppCompat = global::ResinTimer.Droid.Resource.Style.AlertDialog_AppCompat;
 			global::Xamarin.Forms.Platform.Resource.Style.AlertDialog_AppCompat_Light = global::ResinTimer.Droid.Resource.Style.AlertDialog_AppCompat_Light;
-			global::Xamarin.Forms.Platform.Resource.Style.AndroidThemeColorAccentYellow = global::ResinTimer.Droid.Resource.Style.AndroidThemeColorAccentYellow;
 			global::Xamarin.Forms.Platform.Resource.Style.Animation_AppCompat_Dialog = global::ResinTimer.Droid.Resource.Style.Animation_AppCompat_Dialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Animation_AppCompat_DropDownUp = global::ResinTimer.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
 			global::Xamarin.Forms.Platform.Resource.Style.Animation_AppCompat_Tooltip = global::ResinTimer.Droid.Resource.Style.Animation_AppCompat_Tooltip;
@@ -12313,7 +12187,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Style.CardView_Dark = global::ResinTimer.Droid.Resource.Style.CardView_Dark;
 			global::Xamarin.Forms.Platform.Resource.Style.CardView_Light = global::ResinTimer.Droid.Resource.Style.CardView_Light;
 			global::Xamarin.Forms.Platform.Resource.Style.collectionViewTheme = global::ResinTimer.Droid.Resource.Style.collectionViewTheme;
-			global::Xamarin.Forms.Platform.Resource.Style.EmptyTheme = global::ResinTimer.Droid.Resource.Style.EmptyTheme;
 			global::Xamarin.Forms.Platform.Resource.Style.MainTheme = global::ResinTimer.Droid.Resource.Style.MainTheme;
 			global::Xamarin.Forms.Platform.Resource.Style.MainTheme_Base = global::ResinTimer.Droid.Resource.Style.MainTheme_Base;
 			global::Xamarin.Forms.Platform.Resource.Style.MaterialAlertDialog_MaterialComponents = global::ResinTimer.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents;
@@ -12359,11 +12232,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::ResinTimer.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
 			global::Xamarin.Forms.Platform.Resource.Style.scrollViewScrollBars = global::ResinTimer.Droid.Resource.Style.scrollViewScrollBars;
 			global::Xamarin.Forms.Platform.Resource.Style.scrollViewTheme = global::ResinTimer.Droid.Resource.Style.scrollViewTheme;
-			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay;
-			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize;
-			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_BottomRightCut = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_BottomRightCut;
-			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_Cut = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_Cut;
-			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize;
 			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet;
 			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip;
 			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton;
@@ -12372,25 +12240,11 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen;
 			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year;
 			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox;
-			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_TopLeftCut = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_TopLeftCut;
-			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize = global::ResinTimer.Droid.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize;
 			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearance_MaterialComponents = global::ResinTimer.Droid.Resource.Style.ShapeAppearance_MaterialComponents;
 			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent = global::ResinTimer.Droid.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent;
 			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent = global::ResinTimer.Droid.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent;
 			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent = global::ResinTimer.Droid.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent;
-			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearance_MaterialComponents_Test = global::ResinTimer.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Test;
 			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearance_MaterialComponents_Tooltip = global::ResinTimer.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Tooltip;
-			global::Xamarin.Forms.Platform.Resource.Style.TestStyleWithLineHeight = global::ResinTimer.Droid.Resource.Style.TestStyleWithLineHeight;
-			global::Xamarin.Forms.Platform.Resource.Style.TestStyleWithLineHeightAppearance = global::ResinTimer.Droid.Resource.Style.TestStyleWithLineHeightAppearance;
-			global::Xamarin.Forms.Platform.Resource.Style.TestStyleWithoutLineHeight = global::ResinTimer.Droid.Resource.Style.TestStyleWithoutLineHeight;
-			global::Xamarin.Forms.Platform.Resource.Style.TestStyleWithThemeLineHeightAttribute = global::ResinTimer.Droid.Resource.Style.TestStyleWithThemeLineHeightAttribute;
-			global::Xamarin.Forms.Platform.Resource.Style.TestThemeWithLineHeight = global::ResinTimer.Droid.Resource.Style.TestThemeWithLineHeight;
-			global::Xamarin.Forms.Platform.Resource.Style.TestThemeWithLineHeightDisabled = global::ResinTimer.Droid.Resource.Style.TestThemeWithLineHeightDisabled;
-			global::Xamarin.Forms.Platform.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::ResinTimer.Droid.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
-			global::Xamarin.Forms.Platform.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar = global::ResinTimer.Droid.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar;
-			global::Xamarin.Forms.Platform.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar = global::ResinTimer.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar;
-			global::Xamarin.Forms.Platform.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day = global::ResinTimer.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day;
-			global::Xamarin.Forms.Platform.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::ResinTimer.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_AppCompat = global::ResinTimer.Droid.Resource.Style.TextAppearance_AppCompat;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_AppCompat_Body1 = global::ResinTimer.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_AppCompat_Body2 = global::ResinTimer.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
@@ -12480,7 +12334,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::ResinTimer.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::ResinTimer.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::ResinTimer.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
-			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlayColorAccentRed = global::ResinTimer.Droid.Resource.Style.ThemeOverlayColorAccentRed;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat = global::ResinTimer.Droid.Resource.Style.ThemeOverlay_AppCompat;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::ResinTimer.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_Dark = global::ResinTimer.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
@@ -12587,7 +12440,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light;
-			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_BarSize = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_BarSize;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
@@ -12601,7 +12453,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge;
-			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_LargeTouch = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_LargeTouch;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_NoActionBar = global::ResinTimer.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar;
@@ -12904,6 +12755,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppBarLayout_liftOnScroll = global::ResinTimer.Droid.Resource.Styleable.AppBarLayout_liftOnScroll;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId = global::ResinTimer.Droid.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppBarLayout_statusBarForeground = global::ResinTimer.Droid.Resource.Styleable.AppBarLayout_statusBarForeground;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatEmojiHelper = global::ResinTimer.Droid.Resource.Styleable.AppCompatEmojiHelper;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatImageView = global::ResinTimer.Droid.Resource.Styleable.AppCompatImageView;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatImageView_android_src = global::ResinTimer.Droid.Resource.Styleable.AppCompatImageView_android_src;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatImageView_srcCompat = global::ResinTimer.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
@@ -12937,6 +12789,7 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableTint = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_drawableTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableTintMode = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_drawableTintMode;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableTopCompat = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_drawableTopCompat;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_emojiCompatEnabled = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_emojiCompatEnabled;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_fontFamily = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_fontVariationSettings = global::ResinTimer.Droid.Resource.Styleable.AppCompatTextView_fontVariationSettings;
@@ -13153,6 +13006,11 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.Carousel_carousel_touchUpMode = global::ResinTimer.Droid.Resource.Styleable.Carousel_carousel_touchUpMode;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Carousel_carousel_touchUp_dampeningFactor = global::ResinTimer.Droid.Resource.Styleable.Carousel_carousel_touchUp_dampeningFactor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Carousel_carousel_touchUp_velocityThreshold = global::ResinTimer.Droid.Resource.Styleable.Carousel_carousel_touchUp_velocityThreshold;
+			global::Xamarin.Forms.Platform.Resource.Styleable.CheckedTextView = global::ResinTimer.Droid.Resource.Styleable.CheckedTextView;
+			global::Xamarin.Forms.Platform.Resource.Styleable.CheckedTextView_android_checkMark = global::ResinTimer.Droid.Resource.Styleable.CheckedTextView_android_checkMark;
+			global::Xamarin.Forms.Platform.Resource.Styleable.CheckedTextView_checkMarkCompat = global::ResinTimer.Droid.Resource.Styleable.CheckedTextView_checkMarkCompat;
+			global::Xamarin.Forms.Platform.Resource.Styleable.CheckedTextView_checkMarkTint = global::ResinTimer.Droid.Resource.Styleable.CheckedTextView_checkMarkTint;
+			global::Xamarin.Forms.Platform.Resource.Styleable.CheckedTextView_checkMarkTintMode = global::ResinTimer.Droid.Resource.Styleable.CheckedTextView_checkMarkTintMode;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip = global::ResinTimer.Droid.Resource.Styleable.Chip;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ChipGroup = global::ResinTimer.Droid.Resource.Styleable.ChipGroup;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ChipGroup_checkedChip = global::ResinTimer.Droid.Resource.Styleable.ChipGroup_checkedChip;
@@ -13243,6 +13101,8 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.ColorStateListItem_alpha = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_alpha;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ColorStateListItem_android_alpha = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ColorStateListItem_android_color = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ColorStateListItem_android_lStar = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_android_lStar;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ColorStateListItem_lStar = global::ResinTimer.Droid.Resource.Styleable.ColorStateListItem_lStar;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton = global::ResinTimer.Droid.Resource.Styleable.CompoundButton;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton_android_button = global::ResinTimer.Droid.Resource.Styleable.CompoundButton_android_button;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton_buttonCompat = global::ResinTimer.Droid.Resource.Styleable.CompoundButton_buttonCompat;
@@ -13516,7 +13376,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_barrierDirection = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_barrierDirection;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_barrierMargin = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_barrierMargin;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_chainUseRtl = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_chainUseRtl;
-			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_ConstraintRotate = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_ConstraintRotate;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_constraint_referenced_ids = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_constraint_referenced_ids;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_constraint_referenced_tags = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_constraint_referenced_tags;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ConstraintSet_deriveConstraintsFrom = global::ResinTimer.Droid.Resource.Styleable.ConstraintSet_deriveConstraintsFrom;
@@ -14745,11 +14604,6 @@ namespace ResinTimer.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.View_paddingEnd = global::ResinTimer.Droid.Resource.Styleable.View_paddingEnd;
 			global::Xamarin.Forms.Platform.Resource.Styleable.View_paddingStart = global::ResinTimer.Droid.Resource.Styleable.View_paddingStart;
 			global::Xamarin.Forms.Platform.Resource.Styleable.View_theme = global::ResinTimer.Droid.Resource.Styleable.View_theme;
-			global::Xamarin.Forms.Platform.Resource.Xml.standalone_badge = global::ResinTimer.Droid.Resource.Xml.standalone_badge;
-			global::Xamarin.Forms.Platform.Resource.Xml.standalone_badge_gravity_bottom_end = global::ResinTimer.Droid.Resource.Xml.standalone_badge_gravity_bottom_end;
-			global::Xamarin.Forms.Platform.Resource.Xml.standalone_badge_gravity_bottom_start = global::ResinTimer.Droid.Resource.Xml.standalone_badge_gravity_bottom_start;
-			global::Xamarin.Forms.Platform.Resource.Xml.standalone_badge_gravity_top_start = global::ResinTimer.Droid.Resource.Xml.standalone_badge_gravity_top_start;
-			global::Xamarin.Forms.Platform.Resource.Xml.standalone_badge_offset = global::ResinTimer.Droid.Resource.Xml.standalone_badge_offset;
 		}
 		
 		public partial class Animation
@@ -18867,568 +18721,574 @@ namespace ResinTimer.Droid
 			public const int button_material_light = 2131034156;
 			
 			// aapt resource value: 0x7F05002D
-			public const int cardview_dark_background = 2131034157;
+			public const int call_notification_answer_color = 2131034157;
 			
 			// aapt resource value: 0x7F05002E
-			public const int cardview_light_background = 2131034158;
+			public const int call_notification_decline_color = 2131034158;
 			
 			// aapt resource value: 0x7F05002F
-			public const int cardview_shadow_end_color = 2131034159;
+			public const int cardview_dark_background = 2131034159;
 			
 			// aapt resource value: 0x7F050030
-			public const int cardview_shadow_start_color = 2131034160;
+			public const int cardview_light_background = 2131034160;
 			
 			// aapt resource value: 0x7F050031
-			public const int checkbox_themeable_attribute_color = 2131034161;
+			public const int cardview_shadow_end_color = 2131034161;
 			
 			// aapt resource value: 0x7F050032
-			public const int colorAccent = 2131034162;
+			public const int cardview_shadow_start_color = 2131034162;
 			
 			// aapt resource value: 0x7F050033
-			public const int colorPrimary = 2131034163;
+			public const int checkbox_themeable_attribute_color = 2131034163;
 			
 			// aapt resource value: 0x7F050034
-			public const int colorPrimaryDark = 2131034164;
+			public const int colorAccent = 2131034164;
 			
 			// aapt resource value: 0x7F050035
-			public const int design_bottom_navigation_shadow_color = 2131034165;
+			public const int colorPrimary = 2131034165;
 			
 			// aapt resource value: 0x7F050036
-			public const int design_box_stroke_color = 2131034166;
+			public const int colorPrimaryDark = 2131034166;
 			
 			// aapt resource value: 0x7F050037
-			public const int design_dark_default_color_background = 2131034167;
+			public const int design_bottom_navigation_shadow_color = 2131034167;
 			
 			// aapt resource value: 0x7F050038
-			public const int design_dark_default_color_error = 2131034168;
+			public const int design_box_stroke_color = 2131034168;
 			
 			// aapt resource value: 0x7F050039
-			public const int design_dark_default_color_on_background = 2131034169;
+			public const int design_dark_default_color_background = 2131034169;
 			
 			// aapt resource value: 0x7F05003A
-			public const int design_dark_default_color_on_error = 2131034170;
+			public const int design_dark_default_color_error = 2131034170;
 			
 			// aapt resource value: 0x7F05003B
-			public const int design_dark_default_color_on_primary = 2131034171;
+			public const int design_dark_default_color_on_background = 2131034171;
 			
 			// aapt resource value: 0x7F05003C
-			public const int design_dark_default_color_on_secondary = 2131034172;
+			public const int design_dark_default_color_on_error = 2131034172;
 			
 			// aapt resource value: 0x7F05003D
-			public const int design_dark_default_color_on_surface = 2131034173;
+			public const int design_dark_default_color_on_primary = 2131034173;
 			
 			// aapt resource value: 0x7F05003E
-			public const int design_dark_default_color_primary = 2131034174;
+			public const int design_dark_default_color_on_secondary = 2131034174;
 			
 			// aapt resource value: 0x7F05003F
-			public const int design_dark_default_color_primary_dark = 2131034175;
+			public const int design_dark_default_color_on_surface = 2131034175;
 			
 			// aapt resource value: 0x7F050040
-			public const int design_dark_default_color_primary_variant = 2131034176;
+			public const int design_dark_default_color_primary = 2131034176;
 			
 			// aapt resource value: 0x7F050041
-			public const int design_dark_default_color_secondary = 2131034177;
+			public const int design_dark_default_color_primary_dark = 2131034177;
 			
 			// aapt resource value: 0x7F050042
-			public const int design_dark_default_color_secondary_variant = 2131034178;
+			public const int design_dark_default_color_primary_variant = 2131034178;
 			
 			// aapt resource value: 0x7F050043
-			public const int design_dark_default_color_surface = 2131034179;
+			public const int design_dark_default_color_secondary = 2131034179;
 			
 			// aapt resource value: 0x7F050044
-			public const int design_default_color_background = 2131034180;
+			public const int design_dark_default_color_secondary_variant = 2131034180;
 			
 			// aapt resource value: 0x7F050045
-			public const int design_default_color_error = 2131034181;
+			public const int design_dark_default_color_surface = 2131034181;
 			
 			// aapt resource value: 0x7F050046
-			public const int design_default_color_on_background = 2131034182;
+			public const int design_default_color_background = 2131034182;
 			
 			// aapt resource value: 0x7F050047
-			public const int design_default_color_on_error = 2131034183;
+			public const int design_default_color_error = 2131034183;
 			
 			// aapt resource value: 0x7F050048
-			public const int design_default_color_on_primary = 2131034184;
+			public const int design_default_color_on_background = 2131034184;
 			
 			// aapt resource value: 0x7F050049
-			public const int design_default_color_on_secondary = 2131034185;
+			public const int design_default_color_on_error = 2131034185;
 			
 			// aapt resource value: 0x7F05004A
-			public const int design_default_color_on_surface = 2131034186;
+			public const int design_default_color_on_primary = 2131034186;
 			
 			// aapt resource value: 0x7F05004B
-			public const int design_default_color_primary = 2131034187;
+			public const int design_default_color_on_secondary = 2131034187;
 			
 			// aapt resource value: 0x7F05004C
-			public const int design_default_color_primary_dark = 2131034188;
+			public const int design_default_color_on_surface = 2131034188;
 			
 			// aapt resource value: 0x7F05004D
-			public const int design_default_color_primary_variant = 2131034189;
+			public const int design_default_color_primary = 2131034189;
 			
 			// aapt resource value: 0x7F05004E
-			public const int design_default_color_secondary = 2131034190;
+			public const int design_default_color_primary_dark = 2131034190;
 			
 			// aapt resource value: 0x7F05004F
-			public const int design_default_color_secondary_variant = 2131034191;
+			public const int design_default_color_primary_variant = 2131034191;
 			
 			// aapt resource value: 0x7F050050
-			public const int design_default_color_surface = 2131034192;
+			public const int design_default_color_secondary = 2131034192;
 			
 			// aapt resource value: 0x7F050051
-			public const int design_error = 2131034193;
+			public const int design_default_color_secondary_variant = 2131034193;
 			
 			// aapt resource value: 0x7F050052
-			public const int design_fab_shadow_end_color = 2131034194;
+			public const int design_default_color_surface = 2131034194;
 			
 			// aapt resource value: 0x7F050053
-			public const int design_fab_shadow_mid_color = 2131034195;
+			public const int design_error = 2131034195;
 			
 			// aapt resource value: 0x7F050054
-			public const int design_fab_shadow_start_color = 2131034196;
+			public const int design_fab_shadow_end_color = 2131034196;
 			
 			// aapt resource value: 0x7F050055
-			public const int design_fab_stroke_end_inner_color = 2131034197;
+			public const int design_fab_shadow_mid_color = 2131034197;
 			
 			// aapt resource value: 0x7F050056
-			public const int design_fab_stroke_end_outer_color = 2131034198;
+			public const int design_fab_shadow_start_color = 2131034198;
 			
 			// aapt resource value: 0x7F050057
-			public const int design_fab_stroke_top_inner_color = 2131034199;
+			public const int design_fab_stroke_end_inner_color = 2131034199;
 			
 			// aapt resource value: 0x7F050058
-			public const int design_fab_stroke_top_outer_color = 2131034200;
+			public const int design_fab_stroke_end_outer_color = 2131034200;
 			
 			// aapt resource value: 0x7F050059
-			public const int design_icon_tint = 2131034201;
+			public const int design_fab_stroke_top_inner_color = 2131034201;
 			
 			// aapt resource value: 0x7F05005A
-			public const int design_snackbar_background_color = 2131034202;
+			public const int design_fab_stroke_top_outer_color = 2131034202;
 			
 			// aapt resource value: 0x7F05005B
-			public const int dim_foreground_disabled_material_dark = 2131034203;
+			public const int design_icon_tint = 2131034203;
 			
 			// aapt resource value: 0x7F05005C
-			public const int dim_foreground_disabled_material_light = 2131034204;
+			public const int design_snackbar_background_color = 2131034204;
 			
 			// aapt resource value: 0x7F05005D
-			public const int dim_foreground_material_dark = 2131034205;
+			public const int dim_foreground_disabled_material_dark = 2131034205;
 			
 			// aapt resource value: 0x7F05005E
-			public const int dim_foreground_material_light = 2131034206;
+			public const int dim_foreground_disabled_material_light = 2131034206;
 			
 			// aapt resource value: 0x7F05005F
-			public const int error_color_material_dark = 2131034207;
+			public const int dim_foreground_material_dark = 2131034207;
 			
 			// aapt resource value: 0x7F050060
-			public const int error_color_material_light = 2131034208;
+			public const int dim_foreground_material_light = 2131034208;
 			
 			// aapt resource value: 0x7F050061
-			public const int foreground_material_dark = 2131034209;
+			public const int error_color_material_dark = 2131034209;
 			
 			// aapt resource value: 0x7F050062
-			public const int foreground_material_light = 2131034210;
+			public const int error_color_material_light = 2131034210;
 			
 			// aapt resource value: 0x7F050063
-			public const int highlighted_text_material_dark = 2131034211;
+			public const int foreground_material_dark = 2131034211;
 			
 			// aapt resource value: 0x7F050064
-			public const int highlighted_text_material_light = 2131034212;
+			public const int foreground_material_light = 2131034212;
 			
 			// aapt resource value: 0x7F050065
-			public const int launcher_background = 2131034213;
+			public const int highlighted_text_material_dark = 2131034213;
 			
 			// aapt resource value: 0x7F050066
-			public const int material_blue_grey_800 = 2131034214;
+			public const int highlighted_text_material_light = 2131034214;
 			
 			// aapt resource value: 0x7F050067
-			public const int material_blue_grey_900 = 2131034215;
+			public const int launcher_background = 2131034215;
 			
 			// aapt resource value: 0x7F050068
-			public const int material_blue_grey_950 = 2131034216;
+			public const int material_blue_grey_800 = 2131034216;
 			
 			// aapt resource value: 0x7F050069
-			public const int material_cursor_color = 2131034217;
+			public const int material_blue_grey_900 = 2131034217;
 			
 			// aapt resource value: 0x7F05006A
-			public const int material_deep_teal_200 = 2131034218;
+			public const int material_blue_grey_950 = 2131034218;
 			
 			// aapt resource value: 0x7F05006B
-			public const int material_deep_teal_500 = 2131034219;
+			public const int material_cursor_color = 2131034219;
 			
 			// aapt resource value: 0x7F05006C
-			public const int material_grey_100 = 2131034220;
+			public const int material_deep_teal_200 = 2131034220;
 			
 			// aapt resource value: 0x7F05006D
-			public const int material_grey_300 = 2131034221;
+			public const int material_deep_teal_500 = 2131034221;
 			
 			// aapt resource value: 0x7F05006E
-			public const int material_grey_50 = 2131034222;
+			public const int material_grey_100 = 2131034222;
 			
 			// aapt resource value: 0x7F05006F
-			public const int material_grey_600 = 2131034223;
+			public const int material_grey_300 = 2131034223;
 			
 			// aapt resource value: 0x7F050070
-			public const int material_grey_800 = 2131034224;
+			public const int material_grey_50 = 2131034224;
 			
 			// aapt resource value: 0x7F050071
-			public const int material_grey_850 = 2131034225;
+			public const int material_grey_600 = 2131034225;
 			
 			// aapt resource value: 0x7F050072
-			public const int material_grey_900 = 2131034226;
+			public const int material_grey_800 = 2131034226;
 			
 			// aapt resource value: 0x7F050073
-			public const int material_on_background_disabled = 2131034227;
+			public const int material_grey_850 = 2131034227;
 			
 			// aapt resource value: 0x7F050074
-			public const int material_on_background_emphasis_high_type = 2131034228;
+			public const int material_grey_900 = 2131034228;
 			
 			// aapt resource value: 0x7F050075
-			public const int material_on_background_emphasis_medium = 2131034229;
+			public const int material_on_background_disabled = 2131034229;
 			
 			// aapt resource value: 0x7F050076
-			public const int material_on_primary_disabled = 2131034230;
+			public const int material_on_background_emphasis_high_type = 2131034230;
 			
 			// aapt resource value: 0x7F050077
-			public const int material_on_primary_emphasis_high_type = 2131034231;
+			public const int material_on_background_emphasis_medium = 2131034231;
 			
 			// aapt resource value: 0x7F050078
-			public const int material_on_primary_emphasis_medium = 2131034232;
+			public const int material_on_primary_disabled = 2131034232;
 			
 			// aapt resource value: 0x7F050079
-			public const int material_on_surface_disabled = 2131034233;
+			public const int material_on_primary_emphasis_high_type = 2131034233;
 			
 			// aapt resource value: 0x7F05007A
-			public const int material_on_surface_emphasis_high_type = 2131034234;
+			public const int material_on_primary_emphasis_medium = 2131034234;
 			
 			// aapt resource value: 0x7F05007B
-			public const int material_on_surface_emphasis_medium = 2131034235;
+			public const int material_on_surface_disabled = 2131034235;
 			
 			// aapt resource value: 0x7F05007C
-			public const int material_on_surface_stroke = 2131034236;
+			public const int material_on_surface_emphasis_high_type = 2131034236;
 			
 			// aapt resource value: 0x7F05007D
-			public const int material_slider_active_tick_marks_color = 2131034237;
+			public const int material_on_surface_emphasis_medium = 2131034237;
 			
 			// aapt resource value: 0x7F05007E
-			public const int material_slider_active_track_color = 2131034238;
+			public const int material_on_surface_stroke = 2131034238;
 			
 			// aapt resource value: 0x7F05007F
-			public const int material_slider_halo_color = 2131034239;
+			public const int material_slider_active_tick_marks_color = 2131034239;
 			
 			// aapt resource value: 0x7F050080
-			public const int material_slider_inactive_tick_marks_color = 2131034240;
+			public const int material_slider_active_track_color = 2131034240;
 			
 			// aapt resource value: 0x7F050081
-			public const int material_slider_inactive_track_color = 2131034241;
+			public const int material_slider_halo_color = 2131034241;
 			
 			// aapt resource value: 0x7F050082
-			public const int material_slider_thumb_color = 2131034242;
+			public const int material_slider_inactive_tick_marks_color = 2131034242;
 			
 			// aapt resource value: 0x7F050083
-			public const int material_timepicker_button_background = 2131034243;
+			public const int material_slider_inactive_track_color = 2131034243;
 			
 			// aapt resource value: 0x7F050084
-			public const int material_timepicker_button_stroke = 2131034244;
-			
-			// aapt resource value: 0x7F050086
-			public const int material_timepicker_clockface = 2131034246;
+			public const int material_slider_thumb_color = 2131034244;
 			
 			// aapt resource value: 0x7F050085
-			public const int material_timepicker_clock_text_color = 2131034245;
+			public const int material_timepicker_button_background = 2131034245;
 			
-			// aapt resource value: 0x7F050087
-			public const int material_timepicker_modebutton_tint = 2131034247;
+			// aapt resource value: 0x7F050086
+			public const int material_timepicker_button_stroke = 2131034246;
 			
 			// aapt resource value: 0x7F050088
-			public const int mr_cast_meta_black_scrim = 2131034248;
+			public const int material_timepicker_clockface = 2131034248;
+			
+			// aapt resource value: 0x7F050087
+			public const int material_timepicker_clock_text_color = 2131034247;
 			
 			// aapt resource value: 0x7F050089
-			public const int mr_cast_meta_default_background = 2131034249;
+			public const int material_timepicker_modebutton_tint = 2131034249;
 			
 			// aapt resource value: 0x7F05008A
-			public const int mr_cast_meta_default_text_color = 2131034250;
+			public const int mr_cast_meta_black_scrim = 2131034250;
 			
 			// aapt resource value: 0x7F05008B
-			public const int mr_cast_progressbar_background_dark = 2131034251;
+			public const int mr_cast_meta_default_background = 2131034251;
 			
 			// aapt resource value: 0x7F05008C
-			public const int mr_cast_progressbar_background_light = 2131034252;
+			public const int mr_cast_meta_default_text_color = 2131034252;
 			
 			// aapt resource value: 0x7F05008D
-			public const int mr_cast_progressbar_progress_and_thumb_dark = 2131034253;
+			public const int mr_cast_progressbar_background_dark = 2131034253;
 			
 			// aapt resource value: 0x7F05008E
-			public const int mr_cast_progressbar_progress_and_thumb_light = 2131034254;
+			public const int mr_cast_progressbar_background_light = 2131034254;
 			
 			// aapt resource value: 0x7F05008F
-			public const int mr_cast_route_divider_dark = 2131034255;
+			public const int mr_cast_progressbar_progress_and_thumb_dark = 2131034255;
 			
 			// aapt resource value: 0x7F050090
-			public const int mr_cast_route_divider_light = 2131034256;
+			public const int mr_cast_progressbar_progress_and_thumb_light = 2131034256;
 			
 			// aapt resource value: 0x7F050091
-			public const int mr_dynamic_dialog_background_dark = 2131034257;
+			public const int mr_cast_route_divider_dark = 2131034257;
 			
 			// aapt resource value: 0x7F050092
-			public const int mr_dynamic_dialog_background_light = 2131034258;
+			public const int mr_cast_route_divider_light = 2131034258;
 			
 			// aapt resource value: 0x7F050093
-			public const int mr_dynamic_dialog_header_text_color_dark = 2131034259;
+			public const int mr_dynamic_dialog_background_dark = 2131034259;
 			
 			// aapt resource value: 0x7F050094
-			public const int mr_dynamic_dialog_header_text_color_light = 2131034260;
+			public const int mr_dynamic_dialog_background_light = 2131034260;
 			
 			// aapt resource value: 0x7F050095
-			public const int mr_dynamic_dialog_icon_dark = 2131034261;
+			public const int mr_dynamic_dialog_header_text_color_dark = 2131034261;
 			
 			// aapt resource value: 0x7F050096
-			public const int mr_dynamic_dialog_icon_light = 2131034262;
+			public const int mr_dynamic_dialog_header_text_color_light = 2131034262;
 			
 			// aapt resource value: 0x7F050097
-			public const int mr_dynamic_dialog_route_text_color_dark = 2131034263;
+			public const int mr_dynamic_dialog_icon_dark = 2131034263;
 			
 			// aapt resource value: 0x7F050098
-			public const int mr_dynamic_dialog_route_text_color_light = 2131034264;
+			public const int mr_dynamic_dialog_icon_light = 2131034264;
 			
 			// aapt resource value: 0x7F050099
-			public const int mtrl_btn_bg_color_selector = 2131034265;
+			public const int mr_dynamic_dialog_route_text_color_dark = 2131034265;
 			
 			// aapt resource value: 0x7F05009A
-			public const int mtrl_btn_ripple_color = 2131034266;
+			public const int mr_dynamic_dialog_route_text_color_light = 2131034266;
 			
 			// aapt resource value: 0x7F05009B
-			public const int mtrl_btn_stroke_color_selector = 2131034267;
+			public const int mtrl_btn_bg_color_selector = 2131034267;
 			
 			// aapt resource value: 0x7F05009C
-			public const int mtrl_btn_text_btn_bg_color_selector = 2131034268;
+			public const int mtrl_btn_ripple_color = 2131034268;
 			
 			// aapt resource value: 0x7F05009D
-			public const int mtrl_btn_text_btn_ripple_color = 2131034269;
+			public const int mtrl_btn_stroke_color_selector = 2131034269;
 			
 			// aapt resource value: 0x7F05009E
-			public const int mtrl_btn_text_color_disabled = 2131034270;
+			public const int mtrl_btn_text_btn_bg_color_selector = 2131034270;
 			
 			// aapt resource value: 0x7F05009F
-			public const int mtrl_btn_text_color_selector = 2131034271;
+			public const int mtrl_btn_text_btn_ripple_color = 2131034271;
 			
 			// aapt resource value: 0x7F0500A0
-			public const int mtrl_btn_transparent_bg_color = 2131034272;
+			public const int mtrl_btn_text_color_disabled = 2131034272;
 			
 			// aapt resource value: 0x7F0500A1
-			public const int mtrl_calendar_item_stroke_color = 2131034273;
+			public const int mtrl_btn_text_color_selector = 2131034273;
 			
 			// aapt resource value: 0x7F0500A2
-			public const int mtrl_calendar_selected_range = 2131034274;
+			public const int mtrl_btn_transparent_bg_color = 2131034274;
 			
 			// aapt resource value: 0x7F0500A3
-			public const int mtrl_card_view_foreground = 2131034275;
+			public const int mtrl_calendar_item_stroke_color = 2131034275;
 			
 			// aapt resource value: 0x7F0500A4
-			public const int mtrl_card_view_ripple = 2131034276;
+			public const int mtrl_calendar_selected_range = 2131034276;
 			
 			// aapt resource value: 0x7F0500A5
-			public const int mtrl_chip_background_color = 2131034277;
+			public const int mtrl_card_view_foreground = 2131034277;
 			
 			// aapt resource value: 0x7F0500A6
-			public const int mtrl_chip_close_icon_tint = 2131034278;
+			public const int mtrl_card_view_ripple = 2131034278;
 			
 			// aapt resource value: 0x7F0500A7
-			public const int mtrl_chip_surface_color = 2131034279;
+			public const int mtrl_chip_background_color = 2131034279;
 			
 			// aapt resource value: 0x7F0500A8
-			public const int mtrl_chip_text_color = 2131034280;
+			public const int mtrl_chip_close_icon_tint = 2131034280;
 			
 			// aapt resource value: 0x7F0500A9
-			public const int mtrl_choice_chip_background_color = 2131034281;
+			public const int mtrl_chip_surface_color = 2131034281;
 			
 			// aapt resource value: 0x7F0500AA
-			public const int mtrl_choice_chip_ripple_color = 2131034282;
+			public const int mtrl_chip_text_color = 2131034282;
 			
 			// aapt resource value: 0x7F0500AB
-			public const int mtrl_choice_chip_text_color = 2131034283;
+			public const int mtrl_choice_chip_background_color = 2131034283;
 			
 			// aapt resource value: 0x7F0500AC
-			public const int mtrl_error = 2131034284;
+			public const int mtrl_choice_chip_ripple_color = 2131034284;
 			
 			// aapt resource value: 0x7F0500AD
-			public const int mtrl_fab_bg_color_selector = 2131034285;
+			public const int mtrl_choice_chip_text_color = 2131034285;
 			
 			// aapt resource value: 0x7F0500AE
-			public const int mtrl_fab_icon_text_color_selector = 2131034286;
+			public const int mtrl_error = 2131034286;
 			
 			// aapt resource value: 0x7F0500AF
-			public const int mtrl_fab_ripple_color = 2131034287;
+			public const int mtrl_fab_bg_color_selector = 2131034287;
 			
 			// aapt resource value: 0x7F0500B0
-			public const int mtrl_filled_background_color = 2131034288;
+			public const int mtrl_fab_icon_text_color_selector = 2131034288;
 			
 			// aapt resource value: 0x7F0500B1
-			public const int mtrl_filled_icon_tint = 2131034289;
+			public const int mtrl_fab_ripple_color = 2131034289;
 			
 			// aapt resource value: 0x7F0500B2
-			public const int mtrl_filled_stroke_color = 2131034290;
+			public const int mtrl_filled_background_color = 2131034290;
 			
 			// aapt resource value: 0x7F0500B3
-			public const int mtrl_indicator_text_color = 2131034291;
+			public const int mtrl_filled_icon_tint = 2131034291;
 			
 			// aapt resource value: 0x7F0500B4
-			public const int mtrl_navigation_bar_colored_item_tint = 2131034292;
+			public const int mtrl_filled_stroke_color = 2131034292;
 			
 			// aapt resource value: 0x7F0500B5
-			public const int mtrl_navigation_bar_colored_ripple_color = 2131034293;
+			public const int mtrl_indicator_text_color = 2131034293;
 			
 			// aapt resource value: 0x7F0500B6
-			public const int mtrl_navigation_bar_item_tint = 2131034294;
+			public const int mtrl_navigation_bar_colored_item_tint = 2131034294;
 			
 			// aapt resource value: 0x7F0500B7
-			public const int mtrl_navigation_bar_ripple_color = 2131034295;
+			public const int mtrl_navigation_bar_colored_ripple_color = 2131034295;
 			
 			// aapt resource value: 0x7F0500B8
-			public const int mtrl_navigation_item_background_color = 2131034296;
+			public const int mtrl_navigation_bar_item_tint = 2131034296;
 			
 			// aapt resource value: 0x7F0500B9
-			public const int mtrl_navigation_item_icon_tint = 2131034297;
+			public const int mtrl_navigation_bar_ripple_color = 2131034297;
 			
 			// aapt resource value: 0x7F0500BA
-			public const int mtrl_navigation_item_text_color = 2131034298;
+			public const int mtrl_navigation_item_background_color = 2131034298;
 			
 			// aapt resource value: 0x7F0500BB
-			public const int mtrl_on_primary_text_btn_text_color_selector = 2131034299;
+			public const int mtrl_navigation_item_icon_tint = 2131034299;
 			
 			// aapt resource value: 0x7F0500BC
-			public const int mtrl_on_surface_ripple_color = 2131034300;
+			public const int mtrl_navigation_item_text_color = 2131034300;
 			
 			// aapt resource value: 0x7F0500BD
-			public const int mtrl_outlined_icon_tint = 2131034301;
+			public const int mtrl_on_primary_text_btn_text_color_selector = 2131034301;
 			
 			// aapt resource value: 0x7F0500BE
-			public const int mtrl_outlined_stroke_color = 2131034302;
+			public const int mtrl_on_surface_ripple_color = 2131034302;
 			
 			// aapt resource value: 0x7F0500BF
-			public const int mtrl_popupmenu_overlay_color = 2131034303;
+			public const int mtrl_outlined_icon_tint = 2131034303;
 			
 			// aapt resource value: 0x7F0500C0
-			public const int mtrl_scrim_color = 2131034304;
+			public const int mtrl_outlined_stroke_color = 2131034304;
 			
 			// aapt resource value: 0x7F0500C1
-			public const int mtrl_tabs_colored_ripple_color = 2131034305;
+			public const int mtrl_popupmenu_overlay_color = 2131034305;
 			
 			// aapt resource value: 0x7F0500C2
-			public const int mtrl_tabs_icon_color_selector = 2131034306;
+			public const int mtrl_scrim_color = 2131034306;
 			
 			// aapt resource value: 0x7F0500C3
-			public const int mtrl_tabs_icon_color_selector_colored = 2131034307;
+			public const int mtrl_tabs_colored_ripple_color = 2131034307;
 			
 			// aapt resource value: 0x7F0500C4
-			public const int mtrl_tabs_legacy_text_color_selector = 2131034308;
+			public const int mtrl_tabs_icon_color_selector = 2131034308;
 			
 			// aapt resource value: 0x7F0500C5
-			public const int mtrl_tabs_ripple_color = 2131034309;
-			
-			// aapt resource value: 0x7F0500C7
-			public const int mtrl_textinput_default_box_stroke_color = 2131034311;
-			
-			// aapt resource value: 0x7F0500C8
-			public const int mtrl_textinput_disabled_color = 2131034312;
-			
-			// aapt resource value: 0x7F0500C9
-			public const int mtrl_textinput_filled_box_default_background_color = 2131034313;
-			
-			// aapt resource value: 0x7F0500CA
-			public const int mtrl_textinput_focused_box_stroke_color = 2131034314;
-			
-			// aapt resource value: 0x7F0500CB
-			public const int mtrl_textinput_hovered_box_stroke_color = 2131034315;
+			public const int mtrl_tabs_icon_color_selector_colored = 2131034309;
 			
 			// aapt resource value: 0x7F0500C6
-			public const int mtrl_text_btn_text_color_selector = 2131034310;
+			public const int mtrl_tabs_legacy_text_color_selector = 2131034310;
+			
+			// aapt resource value: 0x7F0500C7
+			public const int mtrl_tabs_ripple_color = 2131034311;
+			
+			// aapt resource value: 0x7F0500C9
+			public const int mtrl_textinput_default_box_stroke_color = 2131034313;
+			
+			// aapt resource value: 0x7F0500CA
+			public const int mtrl_textinput_disabled_color = 2131034314;
+			
+			// aapt resource value: 0x7F0500CB
+			public const int mtrl_textinput_filled_box_default_background_color = 2131034315;
 			
 			// aapt resource value: 0x7F0500CC
-			public const int notification_action_color_filter = 2131034316;
+			public const int mtrl_textinput_focused_box_stroke_color = 2131034316;
 			
 			// aapt resource value: 0x7F0500CD
-			public const int notification_icon_bg_color = 2131034317;
+			public const int mtrl_textinput_hovered_box_stroke_color = 2131034317;
+			
+			// aapt resource value: 0x7F0500C8
+			public const int mtrl_text_btn_text_color_selector = 2131034312;
 			
 			// aapt resource value: 0x7F0500CE
-			public const int notification_material_background_media_default_color = 2131034318;
+			public const int notification_action_color_filter = 2131034318;
 			
 			// aapt resource value: 0x7F0500CF
-			public const int preference_fallback_accent_color = 2131034319;
+			public const int notification_icon_bg_color = 2131034319;
 			
 			// aapt resource value: 0x7F0500D0
-			public const int primary_dark_material_dark = 2131034320;
+			public const int notification_material_background_media_default_color = 2131034320;
 			
 			// aapt resource value: 0x7F0500D1
-			public const int primary_dark_material_light = 2131034321;
+			public const int preference_fallback_accent_color = 2131034321;
 			
 			// aapt resource value: 0x7F0500D2
-			public const int primary_material_dark = 2131034322;
+			public const int primary_dark_material_dark = 2131034322;
 			
 			// aapt resource value: 0x7F0500D3
-			public const int primary_material_light = 2131034323;
+			public const int primary_dark_material_light = 2131034323;
 			
 			// aapt resource value: 0x7F0500D4
-			public const int primary_text_default_material_dark = 2131034324;
+			public const int primary_material_dark = 2131034324;
 			
 			// aapt resource value: 0x7F0500D5
-			public const int primary_text_default_material_light = 2131034325;
+			public const int primary_material_light = 2131034325;
 			
 			// aapt resource value: 0x7F0500D6
-			public const int primary_text_disabled_material_dark = 2131034326;
+			public const int primary_text_default_material_dark = 2131034326;
 			
 			// aapt resource value: 0x7F0500D7
-			public const int primary_text_disabled_material_light = 2131034327;
+			public const int primary_text_default_material_light = 2131034327;
 			
 			// aapt resource value: 0x7F0500D8
-			public const int radiobutton_themeable_attribute_color = 2131034328;
+			public const int primary_text_disabled_material_dark = 2131034328;
 			
 			// aapt resource value: 0x7F0500D9
-			public const int ripple_material_dark = 2131034329;
+			public const int primary_text_disabled_material_light = 2131034329;
 			
 			// aapt resource value: 0x7F0500DA
-			public const int ripple_material_light = 2131034330;
+			public const int radiobutton_themeable_attribute_color = 2131034330;
 			
 			// aapt resource value: 0x7F0500DB
-			public const int secondary_text_default_material_dark = 2131034331;
+			public const int ripple_material_dark = 2131034331;
 			
 			// aapt resource value: 0x7F0500DC
-			public const int secondary_text_default_material_light = 2131034332;
+			public const int ripple_material_light = 2131034332;
 			
 			// aapt resource value: 0x7F0500DD
-			public const int secondary_text_disabled_material_dark = 2131034333;
+			public const int secondary_text_default_material_dark = 2131034333;
 			
 			// aapt resource value: 0x7F0500DE
-			public const int secondary_text_disabled_material_light = 2131034334;
+			public const int secondary_text_default_material_light = 2131034334;
 			
 			// aapt resource value: 0x7F0500DF
-			public const int switch_thumb_disabled_material_dark = 2131034335;
+			public const int secondary_text_disabled_material_dark = 2131034335;
 			
 			// aapt resource value: 0x7F0500E0
-			public const int switch_thumb_disabled_material_light = 2131034336;
+			public const int secondary_text_disabled_material_light = 2131034336;
 			
 			// aapt resource value: 0x7F0500E1
-			public const int switch_thumb_material_dark = 2131034337;
+			public const int switch_thumb_disabled_material_dark = 2131034337;
 			
 			// aapt resource value: 0x7F0500E2
-			public const int switch_thumb_material_light = 2131034338;
+			public const int switch_thumb_disabled_material_light = 2131034338;
 			
 			// aapt resource value: 0x7F0500E3
-			public const int switch_thumb_normal_material_dark = 2131034339;
+			public const int switch_thumb_material_dark = 2131034339;
 			
 			// aapt resource value: 0x7F0500E4
-			public const int switch_thumb_normal_material_light = 2131034340;
+			public const int switch_thumb_material_light = 2131034340;
 			
 			// aapt resource value: 0x7F0500E5
-			public const int test_mtrl_calendar_day = 2131034341;
+			public const int switch_thumb_normal_material_dark = 2131034341;
 			
 			// aapt resource value: 0x7F0500E6
-			public const int test_mtrl_calendar_day_selected = 2131034342;
+			public const int switch_thumb_normal_material_light = 2131034342;
 			
 			// aapt resource value: 0x7F0500E7
-			public const int tooltip_background_dark = 2131034343;
+			public const int test_mtrl_calendar_day = 2131034343;
 			
 			// aapt resource value: 0x7F0500E8
-			public const int tooltip_background_light = 2131034344;
+			public const int test_mtrl_calendar_day_selected = 2131034344;
+			
+			// aapt resource value: 0x7F0500E9
+			public const int tooltip_background_dark = 2131034345;
+			
+			// aapt resource value: 0x7F0500EA
+			public const int tooltip_background_light = 2131034346;
 			
 			static Color()
 			{
@@ -21497,1021 +21357,1063 @@ namespace ResinTimer.Droid
 			public const int ic_audiotrack_light = 2131165418;
 			
 			// aapt resource value: 0x7F0700EB
-			public const int ic_checked_checkbox = 2131165419;
+			public const int ic_call_answer = 2131165419;
 			
 			// aapt resource value: 0x7F0700EC
-			public const int ic_clock_black_24dp = 2131165420;
+			public const int ic_call_answer_low = 2131165420;
 			
 			// aapt resource value: 0x7F0700ED
-			public const int ic_dialog_close_dark = 2131165421;
+			public const int ic_call_answer_video = 2131165421;
 			
 			// aapt resource value: 0x7F0700EE
-			public const int ic_dialog_close_light = 2131165422;
+			public const int ic_call_answer_video_low = 2131165422;
 			
 			// aapt resource value: 0x7F0700EF
-			public const int ic_group_collapse_00 = 2131165423;
+			public const int ic_call_decline = 2131165423;
 			
 			// aapt resource value: 0x7F0700F0
-			public const int ic_group_collapse_01 = 2131165424;
+			public const int ic_call_decline_low = 2131165424;
 			
 			// aapt resource value: 0x7F0700F1
-			public const int ic_group_collapse_02 = 2131165425;
+			public const int ic_checked_checkbox = 2131165425;
 			
 			// aapt resource value: 0x7F0700F2
-			public const int ic_group_collapse_03 = 2131165426;
+			public const int ic_clock_black_24dp = 2131165426;
 			
 			// aapt resource value: 0x7F0700F3
-			public const int ic_group_collapse_04 = 2131165427;
+			public const int ic_dialog_close_dark = 2131165427;
 			
 			// aapt resource value: 0x7F0700F4
-			public const int ic_group_collapse_05 = 2131165428;
+			public const int ic_dialog_close_light = 2131165428;
 			
 			// aapt resource value: 0x7F0700F5
-			public const int ic_group_collapse_06 = 2131165429;
+			public const int ic_group_collapse_00 = 2131165429;
 			
 			// aapt resource value: 0x7F0700F6
-			public const int ic_group_collapse_07 = 2131165430;
+			public const int ic_group_collapse_01 = 2131165430;
 			
 			// aapt resource value: 0x7F0700F7
-			public const int ic_group_collapse_08 = 2131165431;
+			public const int ic_group_collapse_02 = 2131165431;
 			
 			// aapt resource value: 0x7F0700F8
-			public const int ic_group_collapse_09 = 2131165432;
+			public const int ic_group_collapse_03 = 2131165432;
 			
 			// aapt resource value: 0x7F0700F9
-			public const int ic_group_collapse_10 = 2131165433;
+			public const int ic_group_collapse_04 = 2131165433;
 			
 			// aapt resource value: 0x7F0700FA
-			public const int ic_group_collapse_11 = 2131165434;
+			public const int ic_group_collapse_05 = 2131165434;
 			
 			// aapt resource value: 0x7F0700FB
-			public const int ic_group_collapse_12 = 2131165435;
+			public const int ic_group_collapse_06 = 2131165435;
 			
 			// aapt resource value: 0x7F0700FC
-			public const int ic_group_collapse_13 = 2131165436;
+			public const int ic_group_collapse_07 = 2131165436;
 			
 			// aapt resource value: 0x7F0700FD
-			public const int ic_group_collapse_14 = 2131165437;
+			public const int ic_group_collapse_08 = 2131165437;
 			
 			// aapt resource value: 0x7F0700FE
-			public const int ic_group_collapse_15 = 2131165438;
+			public const int ic_group_collapse_09 = 2131165438;
 			
 			// aapt resource value: 0x7F0700FF
-			public const int ic_group_expand_00 = 2131165439;
+			public const int ic_group_collapse_10 = 2131165439;
 			
 			// aapt resource value: 0x7F070100
-			public const int ic_group_expand_01 = 2131165440;
+			public const int ic_group_collapse_11 = 2131165440;
 			
 			// aapt resource value: 0x7F070101
-			public const int ic_group_expand_02 = 2131165441;
+			public const int ic_group_collapse_12 = 2131165441;
 			
 			// aapt resource value: 0x7F070102
-			public const int ic_group_expand_03 = 2131165442;
+			public const int ic_group_collapse_13 = 2131165442;
 			
 			// aapt resource value: 0x7F070103
-			public const int ic_group_expand_04 = 2131165443;
+			public const int ic_group_collapse_14 = 2131165443;
 			
 			// aapt resource value: 0x7F070104
-			public const int ic_group_expand_05 = 2131165444;
+			public const int ic_group_collapse_15 = 2131165444;
 			
 			// aapt resource value: 0x7F070105
-			public const int ic_group_expand_06 = 2131165445;
+			public const int ic_group_expand_00 = 2131165445;
 			
 			// aapt resource value: 0x7F070106
-			public const int ic_group_expand_07 = 2131165446;
+			public const int ic_group_expand_01 = 2131165446;
 			
 			// aapt resource value: 0x7F070107
-			public const int ic_group_expand_08 = 2131165447;
+			public const int ic_group_expand_02 = 2131165447;
 			
 			// aapt resource value: 0x7F070108
-			public const int ic_group_expand_09 = 2131165448;
+			public const int ic_group_expand_03 = 2131165448;
 			
 			// aapt resource value: 0x7F070109
-			public const int ic_group_expand_10 = 2131165449;
+			public const int ic_group_expand_04 = 2131165449;
 			
 			// aapt resource value: 0x7F07010A
-			public const int ic_group_expand_11 = 2131165450;
+			public const int ic_group_expand_05 = 2131165450;
 			
 			// aapt resource value: 0x7F07010B
-			public const int ic_group_expand_12 = 2131165451;
+			public const int ic_group_expand_06 = 2131165451;
 			
 			// aapt resource value: 0x7F07010C
-			public const int ic_group_expand_13 = 2131165452;
+			public const int ic_group_expand_07 = 2131165452;
 			
 			// aapt resource value: 0x7F07010D
-			public const int ic_group_expand_14 = 2131165453;
+			public const int ic_group_expand_08 = 2131165453;
 			
 			// aapt resource value: 0x7F07010E
-			public const int ic_group_expand_15 = 2131165454;
+			public const int ic_group_expand_09 = 2131165454;
 			
 			// aapt resource value: 0x7F07010F
-			public const int ic_keyboard_black_24dp = 2131165455;
+			public const int ic_group_expand_10 = 2131165455;
 			
 			// aapt resource value: 0x7F070110
-			public const int ic_media_pause_dark = 2131165456;
+			public const int ic_group_expand_11 = 2131165456;
 			
 			// aapt resource value: 0x7F070111
-			public const int ic_media_pause_light = 2131165457;
+			public const int ic_group_expand_12 = 2131165457;
 			
 			// aapt resource value: 0x7F070112
-			public const int ic_media_play_dark = 2131165458;
+			public const int ic_group_expand_13 = 2131165458;
 			
 			// aapt resource value: 0x7F070113
-			public const int ic_media_play_light = 2131165459;
+			public const int ic_group_expand_14 = 2131165459;
 			
 			// aapt resource value: 0x7F070114
-			public const int ic_media_stop_dark = 2131165460;
+			public const int ic_group_expand_15 = 2131165460;
 			
 			// aapt resource value: 0x7F070115
-			public const int ic_media_stop_light = 2131165461;
+			public const int ic_keyboard_black_24dp = 2131165461;
 			
 			// aapt resource value: 0x7F070116
-			public const int ic_mr_button_connected_00_dark = 2131165462;
+			public const int ic_media_pause_dark = 2131165462;
 			
 			// aapt resource value: 0x7F070117
-			public const int ic_mr_button_connected_00_light = 2131165463;
+			public const int ic_media_pause_light = 2131165463;
 			
 			// aapt resource value: 0x7F070118
-			public const int ic_mr_button_connected_01_dark = 2131165464;
+			public const int ic_media_play_dark = 2131165464;
 			
 			// aapt resource value: 0x7F070119
-			public const int ic_mr_button_connected_01_light = 2131165465;
+			public const int ic_media_play_light = 2131165465;
 			
 			// aapt resource value: 0x7F07011A
-			public const int ic_mr_button_connected_02_dark = 2131165466;
+			public const int ic_media_stop_dark = 2131165466;
 			
 			// aapt resource value: 0x7F07011B
-			public const int ic_mr_button_connected_02_light = 2131165467;
+			public const int ic_media_stop_light = 2131165467;
 			
 			// aapt resource value: 0x7F07011C
-			public const int ic_mr_button_connected_03_dark = 2131165468;
+			public const int ic_mr_button_connected_00_dark = 2131165468;
 			
 			// aapt resource value: 0x7F07011D
-			public const int ic_mr_button_connected_03_light = 2131165469;
+			public const int ic_mr_button_connected_00_light = 2131165469;
 			
 			// aapt resource value: 0x7F07011E
-			public const int ic_mr_button_connected_04_dark = 2131165470;
+			public const int ic_mr_button_connected_01_dark = 2131165470;
 			
 			// aapt resource value: 0x7F07011F
-			public const int ic_mr_button_connected_04_light = 2131165471;
+			public const int ic_mr_button_connected_01_light = 2131165471;
 			
 			// aapt resource value: 0x7F070120
-			public const int ic_mr_button_connected_05_dark = 2131165472;
+			public const int ic_mr_button_connected_02_dark = 2131165472;
 			
 			// aapt resource value: 0x7F070121
-			public const int ic_mr_button_connected_05_light = 2131165473;
+			public const int ic_mr_button_connected_02_light = 2131165473;
 			
 			// aapt resource value: 0x7F070122
-			public const int ic_mr_button_connected_06_dark = 2131165474;
+			public const int ic_mr_button_connected_03_dark = 2131165474;
 			
 			// aapt resource value: 0x7F070123
-			public const int ic_mr_button_connected_06_light = 2131165475;
+			public const int ic_mr_button_connected_03_light = 2131165475;
 			
 			// aapt resource value: 0x7F070124
-			public const int ic_mr_button_connected_07_dark = 2131165476;
+			public const int ic_mr_button_connected_04_dark = 2131165476;
 			
 			// aapt resource value: 0x7F070125
-			public const int ic_mr_button_connected_07_light = 2131165477;
+			public const int ic_mr_button_connected_04_light = 2131165477;
 			
 			// aapt resource value: 0x7F070126
-			public const int ic_mr_button_connected_08_dark = 2131165478;
+			public const int ic_mr_button_connected_05_dark = 2131165478;
 			
 			// aapt resource value: 0x7F070127
-			public const int ic_mr_button_connected_08_light = 2131165479;
+			public const int ic_mr_button_connected_05_light = 2131165479;
 			
 			// aapt resource value: 0x7F070128
-			public const int ic_mr_button_connected_09_dark = 2131165480;
+			public const int ic_mr_button_connected_06_dark = 2131165480;
 			
 			// aapt resource value: 0x7F070129
-			public const int ic_mr_button_connected_09_light = 2131165481;
+			public const int ic_mr_button_connected_06_light = 2131165481;
 			
 			// aapt resource value: 0x7F07012A
-			public const int ic_mr_button_connected_10_dark = 2131165482;
+			public const int ic_mr_button_connected_07_dark = 2131165482;
 			
 			// aapt resource value: 0x7F07012B
-			public const int ic_mr_button_connected_10_light = 2131165483;
+			public const int ic_mr_button_connected_07_light = 2131165483;
 			
 			// aapt resource value: 0x7F07012C
-			public const int ic_mr_button_connected_11_dark = 2131165484;
+			public const int ic_mr_button_connected_08_dark = 2131165484;
 			
 			// aapt resource value: 0x7F07012D
-			public const int ic_mr_button_connected_11_light = 2131165485;
+			public const int ic_mr_button_connected_08_light = 2131165485;
 			
 			// aapt resource value: 0x7F07012E
-			public const int ic_mr_button_connected_12_dark = 2131165486;
+			public const int ic_mr_button_connected_09_dark = 2131165486;
 			
 			// aapt resource value: 0x7F07012F
-			public const int ic_mr_button_connected_12_light = 2131165487;
+			public const int ic_mr_button_connected_09_light = 2131165487;
 			
 			// aapt resource value: 0x7F070130
-			public const int ic_mr_button_connected_13_dark = 2131165488;
+			public const int ic_mr_button_connected_10_dark = 2131165488;
 			
 			// aapt resource value: 0x7F070131
-			public const int ic_mr_button_connected_13_light = 2131165489;
+			public const int ic_mr_button_connected_10_light = 2131165489;
 			
 			// aapt resource value: 0x7F070132
-			public const int ic_mr_button_connected_14_dark = 2131165490;
+			public const int ic_mr_button_connected_11_dark = 2131165490;
 			
 			// aapt resource value: 0x7F070133
-			public const int ic_mr_button_connected_14_light = 2131165491;
+			public const int ic_mr_button_connected_11_light = 2131165491;
 			
 			// aapt resource value: 0x7F070134
-			public const int ic_mr_button_connected_15_dark = 2131165492;
+			public const int ic_mr_button_connected_12_dark = 2131165492;
 			
 			// aapt resource value: 0x7F070135
-			public const int ic_mr_button_connected_15_light = 2131165493;
+			public const int ic_mr_button_connected_12_light = 2131165493;
 			
 			// aapt resource value: 0x7F070136
-			public const int ic_mr_button_connected_16_dark = 2131165494;
+			public const int ic_mr_button_connected_13_dark = 2131165494;
 			
 			// aapt resource value: 0x7F070137
-			public const int ic_mr_button_connected_16_light = 2131165495;
+			public const int ic_mr_button_connected_13_light = 2131165495;
 			
 			// aapt resource value: 0x7F070138
-			public const int ic_mr_button_connected_17_dark = 2131165496;
+			public const int ic_mr_button_connected_14_dark = 2131165496;
 			
 			// aapt resource value: 0x7F070139
-			public const int ic_mr_button_connected_17_light = 2131165497;
+			public const int ic_mr_button_connected_14_light = 2131165497;
 			
 			// aapt resource value: 0x7F07013A
-			public const int ic_mr_button_connected_18_dark = 2131165498;
+			public const int ic_mr_button_connected_15_dark = 2131165498;
 			
 			// aapt resource value: 0x7F07013B
-			public const int ic_mr_button_connected_18_light = 2131165499;
+			public const int ic_mr_button_connected_15_light = 2131165499;
 			
 			// aapt resource value: 0x7F07013C
-			public const int ic_mr_button_connected_19_dark = 2131165500;
+			public const int ic_mr_button_connected_16_dark = 2131165500;
 			
 			// aapt resource value: 0x7F07013D
-			public const int ic_mr_button_connected_19_light = 2131165501;
+			public const int ic_mr_button_connected_16_light = 2131165501;
 			
 			// aapt resource value: 0x7F07013E
-			public const int ic_mr_button_connected_20_dark = 2131165502;
+			public const int ic_mr_button_connected_17_dark = 2131165502;
 			
 			// aapt resource value: 0x7F07013F
-			public const int ic_mr_button_connected_20_light = 2131165503;
+			public const int ic_mr_button_connected_17_light = 2131165503;
 			
 			// aapt resource value: 0x7F070140
-			public const int ic_mr_button_connected_21_dark = 2131165504;
+			public const int ic_mr_button_connected_18_dark = 2131165504;
 			
 			// aapt resource value: 0x7F070141
-			public const int ic_mr_button_connected_21_light = 2131165505;
+			public const int ic_mr_button_connected_18_light = 2131165505;
 			
 			// aapt resource value: 0x7F070142
-			public const int ic_mr_button_connected_22_dark = 2131165506;
+			public const int ic_mr_button_connected_19_dark = 2131165506;
 			
 			// aapt resource value: 0x7F070143
-			public const int ic_mr_button_connected_22_light = 2131165507;
+			public const int ic_mr_button_connected_19_light = 2131165507;
 			
 			// aapt resource value: 0x7F070144
-			public const int ic_mr_button_connected_23_dark = 2131165508;
+			public const int ic_mr_button_connected_20_dark = 2131165508;
 			
 			// aapt resource value: 0x7F070145
-			public const int ic_mr_button_connected_23_light = 2131165509;
+			public const int ic_mr_button_connected_20_light = 2131165509;
 			
 			// aapt resource value: 0x7F070146
-			public const int ic_mr_button_connected_24_dark = 2131165510;
+			public const int ic_mr_button_connected_21_dark = 2131165510;
 			
 			// aapt resource value: 0x7F070147
-			public const int ic_mr_button_connected_24_light = 2131165511;
+			public const int ic_mr_button_connected_21_light = 2131165511;
 			
 			// aapt resource value: 0x7F070148
-			public const int ic_mr_button_connected_25_dark = 2131165512;
+			public const int ic_mr_button_connected_22_dark = 2131165512;
 			
 			// aapt resource value: 0x7F070149
-			public const int ic_mr_button_connected_25_light = 2131165513;
+			public const int ic_mr_button_connected_22_light = 2131165513;
 			
 			// aapt resource value: 0x7F07014A
-			public const int ic_mr_button_connected_26_dark = 2131165514;
+			public const int ic_mr_button_connected_23_dark = 2131165514;
 			
 			// aapt resource value: 0x7F07014B
-			public const int ic_mr_button_connected_26_light = 2131165515;
+			public const int ic_mr_button_connected_23_light = 2131165515;
 			
 			// aapt resource value: 0x7F07014C
-			public const int ic_mr_button_connected_27_dark = 2131165516;
+			public const int ic_mr_button_connected_24_dark = 2131165516;
 			
 			// aapt resource value: 0x7F07014D
-			public const int ic_mr_button_connected_27_light = 2131165517;
+			public const int ic_mr_button_connected_24_light = 2131165517;
 			
 			// aapt resource value: 0x7F07014E
-			public const int ic_mr_button_connected_28_dark = 2131165518;
+			public const int ic_mr_button_connected_25_dark = 2131165518;
 			
 			// aapt resource value: 0x7F07014F
-			public const int ic_mr_button_connected_28_light = 2131165519;
+			public const int ic_mr_button_connected_25_light = 2131165519;
 			
 			// aapt resource value: 0x7F070150
-			public const int ic_mr_button_connected_29_dark = 2131165520;
+			public const int ic_mr_button_connected_26_dark = 2131165520;
 			
 			// aapt resource value: 0x7F070151
-			public const int ic_mr_button_connected_29_light = 2131165521;
+			public const int ic_mr_button_connected_26_light = 2131165521;
 			
 			// aapt resource value: 0x7F070152
-			public const int ic_mr_button_connected_30_dark = 2131165522;
+			public const int ic_mr_button_connected_27_dark = 2131165522;
 			
 			// aapt resource value: 0x7F070153
-			public const int ic_mr_button_connected_30_light = 2131165523;
+			public const int ic_mr_button_connected_27_light = 2131165523;
 			
 			// aapt resource value: 0x7F070154
-			public const int ic_mr_button_connecting_00_dark = 2131165524;
+			public const int ic_mr_button_connected_28_dark = 2131165524;
 			
 			// aapt resource value: 0x7F070155
-			public const int ic_mr_button_connecting_00_light = 2131165525;
+			public const int ic_mr_button_connected_28_light = 2131165525;
 			
 			// aapt resource value: 0x7F070156
-			public const int ic_mr_button_connecting_01_dark = 2131165526;
+			public const int ic_mr_button_connected_29_dark = 2131165526;
 			
 			// aapt resource value: 0x7F070157
-			public const int ic_mr_button_connecting_01_light = 2131165527;
+			public const int ic_mr_button_connected_29_light = 2131165527;
 			
 			// aapt resource value: 0x7F070158
-			public const int ic_mr_button_connecting_02_dark = 2131165528;
+			public const int ic_mr_button_connected_30_dark = 2131165528;
 			
 			// aapt resource value: 0x7F070159
-			public const int ic_mr_button_connecting_02_light = 2131165529;
+			public const int ic_mr_button_connected_30_light = 2131165529;
 			
 			// aapt resource value: 0x7F07015A
-			public const int ic_mr_button_connecting_03_dark = 2131165530;
+			public const int ic_mr_button_connecting_00_dark = 2131165530;
 			
 			// aapt resource value: 0x7F07015B
-			public const int ic_mr_button_connecting_03_light = 2131165531;
+			public const int ic_mr_button_connecting_00_light = 2131165531;
 			
 			// aapt resource value: 0x7F07015C
-			public const int ic_mr_button_connecting_04_dark = 2131165532;
+			public const int ic_mr_button_connecting_01_dark = 2131165532;
 			
 			// aapt resource value: 0x7F07015D
-			public const int ic_mr_button_connecting_04_light = 2131165533;
+			public const int ic_mr_button_connecting_01_light = 2131165533;
 			
 			// aapt resource value: 0x7F07015E
-			public const int ic_mr_button_connecting_05_dark = 2131165534;
+			public const int ic_mr_button_connecting_02_dark = 2131165534;
 			
 			// aapt resource value: 0x7F07015F
-			public const int ic_mr_button_connecting_05_light = 2131165535;
+			public const int ic_mr_button_connecting_02_light = 2131165535;
 			
 			// aapt resource value: 0x7F070160
-			public const int ic_mr_button_connecting_06_dark = 2131165536;
+			public const int ic_mr_button_connecting_03_dark = 2131165536;
 			
 			// aapt resource value: 0x7F070161
-			public const int ic_mr_button_connecting_06_light = 2131165537;
+			public const int ic_mr_button_connecting_03_light = 2131165537;
 			
 			// aapt resource value: 0x7F070162
-			public const int ic_mr_button_connecting_07_dark = 2131165538;
+			public const int ic_mr_button_connecting_04_dark = 2131165538;
 			
 			// aapt resource value: 0x7F070163
-			public const int ic_mr_button_connecting_07_light = 2131165539;
+			public const int ic_mr_button_connecting_04_light = 2131165539;
 			
 			// aapt resource value: 0x7F070164
-			public const int ic_mr_button_connecting_08_dark = 2131165540;
+			public const int ic_mr_button_connecting_05_dark = 2131165540;
 			
 			// aapt resource value: 0x7F070165
-			public const int ic_mr_button_connecting_08_light = 2131165541;
+			public const int ic_mr_button_connecting_05_light = 2131165541;
 			
 			// aapt resource value: 0x7F070166
-			public const int ic_mr_button_connecting_09_dark = 2131165542;
+			public const int ic_mr_button_connecting_06_dark = 2131165542;
 			
 			// aapt resource value: 0x7F070167
-			public const int ic_mr_button_connecting_09_light = 2131165543;
+			public const int ic_mr_button_connecting_06_light = 2131165543;
 			
 			// aapt resource value: 0x7F070168
-			public const int ic_mr_button_connecting_10_dark = 2131165544;
+			public const int ic_mr_button_connecting_07_dark = 2131165544;
 			
 			// aapt resource value: 0x7F070169
-			public const int ic_mr_button_connecting_10_light = 2131165545;
+			public const int ic_mr_button_connecting_07_light = 2131165545;
 			
 			// aapt resource value: 0x7F07016A
-			public const int ic_mr_button_connecting_11_dark = 2131165546;
+			public const int ic_mr_button_connecting_08_dark = 2131165546;
 			
 			// aapt resource value: 0x7F07016B
-			public const int ic_mr_button_connecting_11_light = 2131165547;
+			public const int ic_mr_button_connecting_08_light = 2131165547;
 			
 			// aapt resource value: 0x7F07016C
-			public const int ic_mr_button_connecting_12_dark = 2131165548;
+			public const int ic_mr_button_connecting_09_dark = 2131165548;
 			
 			// aapt resource value: 0x7F07016D
-			public const int ic_mr_button_connecting_12_light = 2131165549;
+			public const int ic_mr_button_connecting_09_light = 2131165549;
 			
 			// aapt resource value: 0x7F07016E
-			public const int ic_mr_button_connecting_13_dark = 2131165550;
+			public const int ic_mr_button_connecting_10_dark = 2131165550;
 			
 			// aapt resource value: 0x7F07016F
-			public const int ic_mr_button_connecting_13_light = 2131165551;
+			public const int ic_mr_button_connecting_10_light = 2131165551;
 			
 			// aapt resource value: 0x7F070170
-			public const int ic_mr_button_connecting_14_dark = 2131165552;
+			public const int ic_mr_button_connecting_11_dark = 2131165552;
 			
 			// aapt resource value: 0x7F070171
-			public const int ic_mr_button_connecting_14_light = 2131165553;
+			public const int ic_mr_button_connecting_11_light = 2131165553;
 			
 			// aapt resource value: 0x7F070172
-			public const int ic_mr_button_connecting_15_dark = 2131165554;
+			public const int ic_mr_button_connecting_12_dark = 2131165554;
 			
 			// aapt resource value: 0x7F070173
-			public const int ic_mr_button_connecting_15_light = 2131165555;
+			public const int ic_mr_button_connecting_12_light = 2131165555;
 			
 			// aapt resource value: 0x7F070174
-			public const int ic_mr_button_connecting_16_dark = 2131165556;
+			public const int ic_mr_button_connecting_13_dark = 2131165556;
 			
 			// aapt resource value: 0x7F070175
-			public const int ic_mr_button_connecting_16_light = 2131165557;
+			public const int ic_mr_button_connecting_13_light = 2131165557;
 			
 			// aapt resource value: 0x7F070176
-			public const int ic_mr_button_connecting_17_dark = 2131165558;
+			public const int ic_mr_button_connecting_14_dark = 2131165558;
 			
 			// aapt resource value: 0x7F070177
-			public const int ic_mr_button_connecting_17_light = 2131165559;
+			public const int ic_mr_button_connecting_14_light = 2131165559;
 			
 			// aapt resource value: 0x7F070178
-			public const int ic_mr_button_connecting_18_dark = 2131165560;
+			public const int ic_mr_button_connecting_15_dark = 2131165560;
 			
 			// aapt resource value: 0x7F070179
-			public const int ic_mr_button_connecting_18_light = 2131165561;
+			public const int ic_mr_button_connecting_15_light = 2131165561;
 			
 			// aapt resource value: 0x7F07017A
-			public const int ic_mr_button_connecting_19_dark = 2131165562;
+			public const int ic_mr_button_connecting_16_dark = 2131165562;
 			
 			// aapt resource value: 0x7F07017B
-			public const int ic_mr_button_connecting_19_light = 2131165563;
+			public const int ic_mr_button_connecting_16_light = 2131165563;
 			
 			// aapt resource value: 0x7F07017C
-			public const int ic_mr_button_connecting_20_dark = 2131165564;
+			public const int ic_mr_button_connecting_17_dark = 2131165564;
 			
 			// aapt resource value: 0x7F07017D
-			public const int ic_mr_button_connecting_20_light = 2131165565;
+			public const int ic_mr_button_connecting_17_light = 2131165565;
 			
 			// aapt resource value: 0x7F07017E
-			public const int ic_mr_button_connecting_21_dark = 2131165566;
+			public const int ic_mr_button_connecting_18_dark = 2131165566;
 			
 			// aapt resource value: 0x7F07017F
-			public const int ic_mr_button_connecting_21_light = 2131165567;
+			public const int ic_mr_button_connecting_18_light = 2131165567;
 			
 			// aapt resource value: 0x7F070180
-			public const int ic_mr_button_connecting_22_dark = 2131165568;
+			public const int ic_mr_button_connecting_19_dark = 2131165568;
 			
 			// aapt resource value: 0x7F070181
-			public const int ic_mr_button_connecting_22_light = 2131165569;
+			public const int ic_mr_button_connecting_19_light = 2131165569;
 			
 			// aapt resource value: 0x7F070182
-			public const int ic_mr_button_connecting_23_dark = 2131165570;
+			public const int ic_mr_button_connecting_20_dark = 2131165570;
 			
 			// aapt resource value: 0x7F070183
-			public const int ic_mr_button_connecting_23_light = 2131165571;
+			public const int ic_mr_button_connecting_20_light = 2131165571;
 			
 			// aapt resource value: 0x7F070184
-			public const int ic_mr_button_connecting_24_dark = 2131165572;
+			public const int ic_mr_button_connecting_21_dark = 2131165572;
 			
 			// aapt resource value: 0x7F070185
-			public const int ic_mr_button_connecting_24_light = 2131165573;
+			public const int ic_mr_button_connecting_21_light = 2131165573;
 			
 			// aapt resource value: 0x7F070186
-			public const int ic_mr_button_connecting_25_dark = 2131165574;
+			public const int ic_mr_button_connecting_22_dark = 2131165574;
 			
 			// aapt resource value: 0x7F070187
-			public const int ic_mr_button_connecting_25_light = 2131165575;
+			public const int ic_mr_button_connecting_22_light = 2131165575;
 			
 			// aapt resource value: 0x7F070188
-			public const int ic_mr_button_connecting_26_dark = 2131165576;
+			public const int ic_mr_button_connecting_23_dark = 2131165576;
 			
 			// aapt resource value: 0x7F070189
-			public const int ic_mr_button_connecting_26_light = 2131165577;
+			public const int ic_mr_button_connecting_23_light = 2131165577;
 			
 			// aapt resource value: 0x7F07018A
-			public const int ic_mr_button_connecting_27_dark = 2131165578;
+			public const int ic_mr_button_connecting_24_dark = 2131165578;
 			
 			// aapt resource value: 0x7F07018B
-			public const int ic_mr_button_connecting_27_light = 2131165579;
+			public const int ic_mr_button_connecting_24_light = 2131165579;
 			
 			// aapt resource value: 0x7F07018C
-			public const int ic_mr_button_connecting_28_dark = 2131165580;
+			public const int ic_mr_button_connecting_25_dark = 2131165580;
 			
 			// aapt resource value: 0x7F07018D
-			public const int ic_mr_button_connecting_28_light = 2131165581;
+			public const int ic_mr_button_connecting_25_light = 2131165581;
 			
 			// aapt resource value: 0x7F07018E
-			public const int ic_mr_button_connecting_29_dark = 2131165582;
+			public const int ic_mr_button_connecting_26_dark = 2131165582;
 			
 			// aapt resource value: 0x7F07018F
-			public const int ic_mr_button_connecting_29_light = 2131165583;
+			public const int ic_mr_button_connecting_26_light = 2131165583;
 			
 			// aapt resource value: 0x7F070190
-			public const int ic_mr_button_connecting_30_dark = 2131165584;
+			public const int ic_mr_button_connecting_27_dark = 2131165584;
 			
 			// aapt resource value: 0x7F070191
-			public const int ic_mr_button_connecting_30_light = 2131165585;
+			public const int ic_mr_button_connecting_27_light = 2131165585;
 			
 			// aapt resource value: 0x7F070192
-			public const int ic_mr_button_disabled_dark = 2131165586;
+			public const int ic_mr_button_connecting_28_dark = 2131165586;
 			
 			// aapt resource value: 0x7F070193
-			public const int ic_mr_button_disabled_light = 2131165587;
+			public const int ic_mr_button_connecting_28_light = 2131165587;
 			
 			// aapt resource value: 0x7F070194
-			public const int ic_mr_button_disconnected_dark = 2131165588;
+			public const int ic_mr_button_connecting_29_dark = 2131165588;
 			
 			// aapt resource value: 0x7F070195
-			public const int ic_mr_button_disconnected_light = 2131165589;
+			public const int ic_mr_button_connecting_29_light = 2131165589;
 			
 			// aapt resource value: 0x7F070196
-			public const int ic_mr_button_grey = 2131165590;
+			public const int ic_mr_button_connecting_30_dark = 2131165590;
 			
 			// aapt resource value: 0x7F070197
-			public const int ic_mtrl_checked_circle = 2131165591;
+			public const int ic_mr_button_connecting_30_light = 2131165591;
 			
 			// aapt resource value: 0x7F070198
-			public const int ic_mtrl_chip_checked_black = 2131165592;
+			public const int ic_mr_button_disabled_dark = 2131165592;
 			
 			// aapt resource value: 0x7F070199
-			public const int ic_mtrl_chip_checked_circle = 2131165593;
+			public const int ic_mr_button_disabled_light = 2131165593;
 			
 			// aapt resource value: 0x7F07019A
-			public const int ic_mtrl_chip_close_circle = 2131165594;
+			public const int ic_mr_button_disconnected_dark = 2131165594;
 			
 			// aapt resource value: 0x7F07019B
-			public const int ic_unchecked_checkbox = 2131165595;
+			public const int ic_mr_button_disconnected_light = 2131165595;
 			
 			// aapt resource value: 0x7F07019C
-			public const int ic_vol_mute = 2131165596;
+			public const int ic_mr_button_grey = 2131165596;
 			
 			// aapt resource value: 0x7F07019D
-			public const int ic_vol_type_speaker_dark = 2131165597;
+			public const int ic_mtrl_checked_circle = 2131165597;
 			
 			// aapt resource value: 0x7F07019E
-			public const int ic_vol_type_speaker_group_dark = 2131165598;
+			public const int ic_mtrl_chip_checked_black = 2131165598;
 			
 			// aapt resource value: 0x7F07019F
-			public const int ic_vol_type_speaker_group_light = 2131165599;
+			public const int ic_mtrl_chip_checked_circle = 2131165599;
 			
 			// aapt resource value: 0x7F0701A0
-			public const int ic_vol_type_speaker_light = 2131165600;
+			public const int ic_mtrl_chip_close_circle = 2131165600;
 			
 			// aapt resource value: 0x7F0701A1
-			public const int ic_vol_type_tv_dark = 2131165601;
+			public const int ic_unchecked_checkbox = 2131165601;
 			
 			// aapt resource value: 0x7F0701A2
-			public const int ic_vol_type_tv_light = 2131165602;
+			public const int ic_vol_mute = 2131165602;
 			
 			// aapt resource value: 0x7F0701A3
-			public const int ic_vol_unmute = 2131165603;
+			public const int ic_vol_type_speaker_dark = 2131165603;
 			
 			// aapt resource value: 0x7F0701A4
-			public const int info = 2131165604;
+			public const int ic_vol_type_speaker_group_dark = 2131165604;
 			
 			// aapt resource value: 0x7F0701A5
-			public const int ingredient = 2131165605;
-			
-			// aapt resource value: 0x7F0701A7
-			public const int inputlayout_togglecollapseicon = 2131165607;
-			
-			// aapt resource value: 0x7F0701A8
-			public const int inputlayout_togglevisibleicon = 2131165608;
+			public const int ic_vol_type_speaker_group_light = 2131165605;
 			
 			// aapt resource value: 0x7F0701A6
-			public const int input_layout_drop_down_icon = 2131165606;
+			public const int ic_vol_type_speaker_light = 2131165606;
+			
+			// aapt resource value: 0x7F0701A7
+			public const int ic_vol_type_tv_dark = 2131165607;
+			
+			// aapt resource value: 0x7F0701A8
+			public const int ic_vol_type_tv_light = 2131165608;
 			
 			// aapt resource value: 0x7F0701A9
-			public const int intertwined_fate = 2131165609;
+			public const int ic_vol_unmute = 2131165609;
 			
 			// aapt resource value: 0x7F0701AA
-			public const int iron_chunk = 2131165610;
+			public const int info = 2131165610;
 			
 			// aapt resource value: 0x7F0701AB
-			public const int key = 2131165611;
-			
-			// aapt resource value: 0x7F0701AC
-			public const int left_icon = 2131165612;
+			public const int ingredient = 2131165611;
 			
 			// aapt resource value: 0x7F0701AD
-			public const int location = 2131165613;
+			public const int inputlayout_togglecollapseicon = 2131165613;
 			
 			// aapt resource value: 0x7F0701AE
-			public const int magical_crystal_chunk = 2131165614;
+			public const int inputlayout_togglevisibleicon = 2131165614;
+			
+			// aapt resource value: 0x7F0701AC
+			public const int input_layout_drop_down_icon = 2131165612;
 			
 			// aapt resource value: 0x7F0701AF
-			public const int Manual_TimerExpedition_1 = 2131165615;
+			public const int intertwined_fate = 2131165615;
 			
 			// aapt resource value: 0x7F0701B0
-			public const int Manual_TimerExpedition_2 = 2131165616;
+			public const int iron_chunk = 2131165616;
 			
 			// aapt resource value: 0x7F0701B1
-			public const int Manual_TimerFurnishing_1 = 2131165617;
+			public const int key = 2131165617;
 			
 			// aapt resource value: 0x7F0701B2
-			public const int Manual_TimerFurnishing_2 = 2131165618;
+			public const int left_icon = 2131165618;
 			
 			// aapt resource value: 0x7F0701B3
-			public const int Manual_TimerGadget_1 = 2131165619;
+			public const int location = 2131165619;
 			
 			// aapt resource value: 0x7F0701B4
-			public const int Manual_TimerGadget_2 = 2131165620;
+			public const int magical_crystal_chunk = 2131165620;
 			
 			// aapt resource value: 0x7F0701B5
-			public const int Manual_TimerGatheringItem_1 = 2131165621;
+			public const int Manual_TimerExpedition_1 = 2131165621;
 			
 			// aapt resource value: 0x7F0701B6
-			public const int Manual_TimerGatheringItem_2 = 2131165622;
+			public const int Manual_TimerExpedition_2 = 2131165622;
 			
 			// aapt resource value: 0x7F0701B7
-			public const int Manual_TimerRealmCurrency_1 = 2131165623;
+			public const int Manual_TimerFurnishing_1 = 2131165623;
 			
 			// aapt resource value: 0x7F0701B8
-			public const int Manual_TimerRealmCurrency_2 = 2131165624;
+			public const int Manual_TimerFurnishing_2 = 2131165624;
 			
 			// aapt resource value: 0x7F0701B9
-			public const int Manual_TimerRealmCurrency_3 = 2131165625;
+			public const int Manual_TimerGadget_1 = 2131165625;
 			
 			// aapt resource value: 0x7F0701BA
-			public const int Manual_TimerResin_1 = 2131165626;
+			public const int Manual_TimerGadget_2 = 2131165626;
 			
 			// aapt resource value: 0x7F0701BB
-			public const int Manual_TimerResin_2 = 2131165627;
+			public const int Manual_TimerGatheringItem_1 = 2131165627;
 			
 			// aapt resource value: 0x7F0701BC
-			public const int Manual_TimerResin_3 = 2131165628;
+			public const int Manual_TimerGatheringItem_2 = 2131165628;
 			
 			// aapt resource value: 0x7F0701BD
-			public const int Manual_TimerResin_4 = 2131165629;
+			public const int Manual_TimerRealmCurrency_1 = 2131165629;
 			
 			// aapt resource value: 0x7F0701BE
-			public const int Manual_TimerTalentBook_1 = 2131165630;
+			public const int Manual_TimerRealmCurrency_2 = 2131165630;
 			
 			// aapt resource value: 0x7F0701BF
-			public const int Manual_TimerWeaponAscension_1 = 2131165631;
+			public const int Manual_TimerRealmCurrency_3 = 2131165631;
 			
 			// aapt resource value: 0x7F0701C0
-			public const int Manual_WidgetResin_1 = 2131165632;
+			public const int Manual_TimerResin_1 = 2131165632;
 			
 			// aapt resource value: 0x7F0701C1
-			public const int Manual_WidgetResin_2 = 2131165633;
+			public const int Manual_TimerResin_2 = 2131165633;
 			
 			// aapt resource value: 0x7F0701C2
-			public const int Manual_WidgetTalentBook_1 = 2131165634;
+			public const int Manual_TimerResin_3 = 2131165634;
 			
 			// aapt resource value: 0x7F0701C3
-			public const int Manual_WidgetWeaponAscension_1 = 2131165635;
+			public const int Manual_TimerResin_4 = 2131165635;
 			
 			// aapt resource value: 0x7F0701C4
-			public const int material_cursor_drawable = 2131165636;
+			public const int Manual_TimerTalentBook_1 = 2131165636;
 			
 			// aapt resource value: 0x7F0701C5
-			public const int material_ic_calendar_black_24dp = 2131165637;
+			public const int Manual_TimerWeaponAscension_1 = 2131165637;
 			
 			// aapt resource value: 0x7F0701C6
-			public const int material_ic_clear_black_24dp = 2131165638;
+			public const int Manual_WidgetResin_1 = 2131165638;
 			
 			// aapt resource value: 0x7F0701C7
-			public const int material_ic_edit_black_24dp = 2131165639;
+			public const int Manual_WidgetResin_2 = 2131165639;
 			
 			// aapt resource value: 0x7F0701C8
-			public const int material_ic_keyboard_arrow_left_black_24dp = 2131165640;
+			public const int Manual_WidgetTalentBook_1 = 2131165640;
 			
 			// aapt resource value: 0x7F0701C9
-			public const int material_ic_keyboard_arrow_next_black_24dp = 2131165641;
+			public const int Manual_WidgetWeaponAscension_1 = 2131165641;
 			
 			// aapt resource value: 0x7F0701CA
-			public const int material_ic_keyboard_arrow_previous_black_24dp = 2131165642;
+			public const int material_cursor_drawable = 2131165642;
 			
 			// aapt resource value: 0x7F0701CB
-			public const int material_ic_keyboard_arrow_right_black_24dp = 2131165643;
+			public const int material_ic_calendar_black_24dp = 2131165643;
 			
 			// aapt resource value: 0x7F0701CC
-			public const int material_ic_menu_arrow_down_black_24dp = 2131165644;
+			public const int material_ic_clear_black_24dp = 2131165644;
 			
 			// aapt resource value: 0x7F0701CD
-			public const int material_ic_menu_arrow_up_black_24dp = 2131165645;
+			public const int material_ic_edit_black_24dp = 2131165645;
 			
 			// aapt resource value: 0x7F0701CE
-			public const int minus = 2131165646;
+			public const int material_ic_keyboard_arrow_left_black_24dp = 2131165646;
 			
 			// aapt resource value: 0x7F0701CF
-			public const int mora = 2131165647;
+			public const int material_ic_keyboard_arrow_next_black_24dp = 2131165647;
 			
 			// aapt resource value: 0x7F0701D0
-			public const int mr_button_connected_dark = 2131165648;
+			public const int material_ic_keyboard_arrow_previous_black_24dp = 2131165648;
 			
 			// aapt resource value: 0x7F0701D1
-			public const int mr_button_connected_light = 2131165649;
+			public const int material_ic_keyboard_arrow_right_black_24dp = 2131165649;
 			
 			// aapt resource value: 0x7F0701D2
-			public const int mr_button_connecting_dark = 2131165650;
+			public const int material_ic_menu_arrow_down_black_24dp = 2131165650;
 			
 			// aapt resource value: 0x7F0701D3
-			public const int mr_button_connecting_light = 2131165651;
+			public const int material_ic_menu_arrow_up_black_24dp = 2131165651;
 			
 			// aapt resource value: 0x7F0701D4
-			public const int mr_button_dark = 2131165652;
+			public const int minus = 2131165652;
 			
 			// aapt resource value: 0x7F0701D5
-			public const int mr_button_dark_static = 2131165653;
+			public const int mora = 2131165653;
 			
 			// aapt resource value: 0x7F0701D6
-			public const int mr_button_light = 2131165654;
+			public const int mr_button_connected_dark = 2131165654;
 			
 			// aapt resource value: 0x7F0701D7
-			public const int mr_button_light_static = 2131165655;
+			public const int mr_button_connected_light = 2131165655;
 			
 			// aapt resource value: 0x7F0701D8
-			public const int mr_cast_checkbox = 2131165656;
+			public const int mr_button_connecting_dark = 2131165656;
 			
 			// aapt resource value: 0x7F0701D9
-			public const int mr_cast_group_seekbar_track = 2131165657;
+			public const int mr_button_connecting_light = 2131165657;
 			
 			// aapt resource value: 0x7F0701DA
-			public const int mr_cast_mute_button = 2131165658;
+			public const int mr_button_dark = 2131165658;
 			
 			// aapt resource value: 0x7F0701DB
-			public const int mr_cast_route_seekbar_track = 2131165659;
+			public const int mr_button_dark_static = 2131165659;
 			
 			// aapt resource value: 0x7F0701DC
-			public const int mr_cast_stop = 2131165660;
+			public const int mr_button_light = 2131165660;
 			
 			// aapt resource value: 0x7F0701DD
-			public const int mr_cast_thumb = 2131165661;
+			public const int mr_button_light_static = 2131165661;
 			
 			// aapt resource value: 0x7F0701DE
-			public const int mr_dialog_close_dark = 2131165662;
+			public const int mr_cast_checkbox = 2131165662;
 			
 			// aapt resource value: 0x7F0701DF
-			public const int mr_dialog_close_light = 2131165663;
+			public const int mr_cast_group_seekbar_track = 2131165663;
 			
 			// aapt resource value: 0x7F0701E0
-			public const int mr_dialog_material_background_dark = 2131165664;
+			public const int mr_cast_mute_button = 2131165664;
 			
 			// aapt resource value: 0x7F0701E1
-			public const int mr_dialog_material_background_light = 2131165665;
+			public const int mr_cast_route_seekbar_track = 2131165665;
 			
 			// aapt resource value: 0x7F0701E2
-			public const int mr_group_collapse = 2131165666;
+			public const int mr_cast_stop = 2131165666;
 			
 			// aapt resource value: 0x7F0701E3
-			public const int mr_group_expand = 2131165667;
+			public const int mr_cast_thumb = 2131165667;
 			
 			// aapt resource value: 0x7F0701E4
-			public const int mr_media_pause_dark = 2131165668;
+			public const int mr_dialog_close_dark = 2131165668;
 			
 			// aapt resource value: 0x7F0701E5
-			public const int mr_media_pause_light = 2131165669;
+			public const int mr_dialog_close_light = 2131165669;
 			
 			// aapt resource value: 0x7F0701E6
-			public const int mr_media_play_dark = 2131165670;
+			public const int mr_dialog_material_background_dark = 2131165670;
 			
 			// aapt resource value: 0x7F0701E7
-			public const int mr_media_play_light = 2131165671;
+			public const int mr_dialog_material_background_light = 2131165671;
 			
 			// aapt resource value: 0x7F0701E8
-			public const int mr_media_stop_dark = 2131165672;
+			public const int mr_group_collapse = 2131165672;
 			
 			// aapt resource value: 0x7F0701E9
-			public const int mr_media_stop_light = 2131165673;
+			public const int mr_group_expand = 2131165673;
 			
 			// aapt resource value: 0x7F0701EA
-			public const int mr_vol_type_audiotrack_dark = 2131165674;
+			public const int mr_media_pause_dark = 2131165674;
 			
 			// aapt resource value: 0x7F0701EB
-			public const int mr_vol_type_audiotrack_light = 2131165675;
+			public const int mr_media_pause_light = 2131165675;
 			
 			// aapt resource value: 0x7F0701EC
-			public const int mtrl_dialog_background = 2131165676;
+			public const int mr_media_play_dark = 2131165676;
 			
 			// aapt resource value: 0x7F0701ED
-			public const int mtrl_dropdown_arrow = 2131165677;
+			public const int mr_media_play_light = 2131165677;
 			
 			// aapt resource value: 0x7F0701EE
-			public const int mtrl_ic_arrow_drop_down = 2131165678;
+			public const int mr_media_stop_dark = 2131165678;
 			
 			// aapt resource value: 0x7F0701EF
-			public const int mtrl_ic_arrow_drop_up = 2131165679;
+			public const int mr_media_stop_light = 2131165679;
 			
 			// aapt resource value: 0x7F0701F0
-			public const int mtrl_ic_cancel = 2131165680;
+			public const int mr_vol_type_audiotrack_dark = 2131165680;
 			
 			// aapt resource value: 0x7F0701F1
-			public const int mtrl_ic_error = 2131165681;
+			public const int mr_vol_type_audiotrack_light = 2131165681;
 			
 			// aapt resource value: 0x7F0701F2
-			public const int mtrl_navigation_bar_item_background = 2131165682;
+			public const int mtrl_dialog_background = 2131165682;
 			
 			// aapt resource value: 0x7F0701F3
-			public const int mtrl_popupmenu_background = 2131165683;
+			public const int mtrl_dropdown_arrow = 2131165683;
 			
 			// aapt resource value: 0x7F0701F4
-			public const int mtrl_popupmenu_background_dark = 2131165684;
+			public const int mtrl_ic_arrow_drop_down = 2131165684;
 			
 			// aapt resource value: 0x7F0701F5
-			public const int mtrl_tabs_default_indicator = 2131165685;
+			public const int mtrl_ic_arrow_drop_up = 2131165685;
 			
 			// aapt resource value: 0x7F0701F6
-			public const int navigation_empty_icon = 2131165686;
+			public const int mtrl_ic_cancel = 2131165686;
 			
 			// aapt resource value: 0x7F0701F7
-			public const int notification_action_background = 2131165687;
+			public const int mtrl_ic_error = 2131165687;
 			
 			// aapt resource value: 0x7F0701F8
-			public const int notification_bg = 2131165688;
+			public const int mtrl_navigation_bar_item_background = 2131165688;
 			
 			// aapt resource value: 0x7F0701F9
-			public const int notification_bg_low = 2131165689;
+			public const int mtrl_popupmenu_background = 2131165689;
 			
 			// aapt resource value: 0x7F0701FA
-			public const int notification_bg_low_normal = 2131165690;
+			public const int mtrl_popupmenu_background_dark = 2131165690;
 			
 			// aapt resource value: 0x7F0701FB
-			public const int notification_bg_low_pressed = 2131165691;
+			public const int mtrl_tabs_default_indicator = 2131165691;
 			
 			// aapt resource value: 0x7F0701FC
-			public const int notification_bg_normal = 2131165692;
+			public const int navigation_empty_icon = 2131165692;
 			
 			// aapt resource value: 0x7F0701FD
-			public const int notification_bg_normal_pressed = 2131165693;
+			public const int notification_action_background = 2131165693;
 			
 			// aapt resource value: 0x7F0701FE
-			public const int notification_icon_background = 2131165694;
+			public const int notification_bg = 2131165694;
 			
 			// aapt resource value: 0x7F0701FF
-			public const int notification_template_icon_bg = 2131165695;
+			public const int notification_bg_low = 2131165695;
 			
 			// aapt resource value: 0x7F070200
-			public const int notification_template_icon_low_bg = 2131165696;
+			public const int notification_bg_low_normal = 2131165696;
 			
 			// aapt resource value: 0x7F070201
-			public const int notification_tile_bg = 2131165697;
+			public const int notification_bg_low_pressed = 2131165697;
 			
 			// aapt resource value: 0x7F070202
-			public const int notify_panel_notification_icon_bg = 2131165698;
+			public const int notification_bg_normal = 2131165698;
 			
 			// aapt resource value: 0x7F070203
-			public const int notisetting = 2131165699;
+			public const int notification_bg_normal_pressed = 2131165699;
 			
 			// aapt resource value: 0x7F070204
-			public const int parametric_transformer = 2131165700;
+			public const int notification_icon_background = 2131165700;
 			
 			// aapt resource value: 0x7F070205
-			public const int plus = 2131165701;
+			public const int notification_template_icon_bg = 2131165701;
 			
 			// aapt resource value: 0x7F070206
-			public const int portable_waypoint = 2131165702;
+			public const int notification_template_icon_low_bg = 2131165702;
 			
 			// aapt resource value: 0x7F070207
-			public const int preference_list_divider_material = 2131165703;
+			public const int notification_tile_bg = 2131165703;
 			
 			// aapt resource value: 0x7F070208
-			public const int realm_currency = 2131165704;
+			public const int notify_panel_notification_icon_bg = 2131165704;
 			
 			// aapt resource value: 0x7F070209
-			public const int refresh = 2131165705;
+			public const int notisetting = 2131165705;
 			
 			// aapt resource value: 0x7F07020A
-			public const int refresh_all = 2131165706;
+			public const int parametric_transformer = 2131165706;
 			
 			// aapt resource value: 0x7F07020B
-			public const int resin = 2131165707;
+			public const int plus = 2131165707;
 			
 			// aapt resource value: 0x7F07020C
-			public const int resintimer_icon = 2131165708;
+			public const int portable_waypoint = 2131165708;
 			
 			// aapt resource value: 0x7F07020D
-			public const int resintimer_icon_medium = 2131165709;
+			public const int preference_list_divider_material = 2131165709;
 			
 			// aapt resource value: 0x7F07020E
-			public const int resintimer_icon_small = 2131165710;
+			public const int realm_currency = 2131165710;
 			
 			// aapt resource value: 0x7F07020F
-			public const int right_icon = 2131165711;
+			public const int refresh = 2131165711;
 			
 			// aapt resource value: 0x7F070210
-			public const int rounded_background = 2131165712;
+			public const int refresh_all = 2131165712;
 			
 			// aapt resource value: 0x7F070211
-			public const int rounded_background_black = 2131165713;
+			public const int resin = 2131165713;
 			
 			// aapt resource value: 0x7F070212
-			public const int server = 2131165714;
+			public const int resintimer_icon = 2131165714;
 			
 			// aapt resource value: 0x7F070213
-			public const int setting = 2131165715;
+			public const int resintimer_icon_medium = 2131165715;
 			
 			// aapt resource value: 0x7F070214
-			public const int silk_flower = 2131165716;
+			public const int resintimer_icon_small = 2131165716;
 			
 			// aapt resource value: 0x7F070215
-			public const int splash_screen = 2131165717;
+			public const int right_icon = 2131165717;
 			
 			// aapt resource value: 0x7F070216
-			public const int sync = 2131165718;
+			public const int rounded_background = 2131165718;
 			
 			// aapt resource value: 0x7F070217
-			public const int talent_admonition = 2131165719;
+			public const int rounded_background_black = 2131165719;
 			
 			// aapt resource value: 0x7F070218
-			public const int talent_all_Inazuma = 2131165720;
+			public const int server = 2131165720;
 			
 			// aapt resource value: 0x7F070219
-			public const int talent_all_Liyue = 2131165721;
+			public const int setting = 2131165721;
 			
 			// aapt resource value: 0x7F07021A
-			public const int talent_all_Mondstadt = 2131165722;
+			public const int silk_flower = 2131165722;
 			
 			// aapt resource value: 0x7F07021B
-			public const int talent_all_Sumeru = 2131165723;
+			public const int splash_screen = 2131165723;
 			
 			// aapt resource value: 0x7F07021C
-			public const int talent_ballad = 2131165724;
+			public const int sync = 2131165724;
 			
 			// aapt resource value: 0x7F07021D
-			public const int talent_diligence = 2131165725;
+			public const int talent_admonition = 2131165725;
 			
 			// aapt resource value: 0x7F07021E
-			public const int talent_elegance = 2131165726;
+			public const int talent_all_Fontaine = 2131165726;
 			
 			// aapt resource value: 0x7F07021F
-			public const int talent_freedom = 2131165727;
+			public const int talent_all_Inazuma = 2131165727;
 			
 			// aapt resource value: 0x7F070220
-			public const int talent_gold = 2131165728;
+			public const int talent_all_Liyue = 2131165728;
 			
 			// aapt resource value: 0x7F070221
-			public const int talent_ingenuity = 2131165729;
+			public const int talent_all_Mondstadt = 2131165729;
 			
 			// aapt resource value: 0x7F070222
-			public const int talent_light = 2131165730;
+			public const int talent_all_Sumeru = 2131165730;
 			
 			// aapt resource value: 0x7F070223
-			public const int talent_praxis = 2131165731;
+			public const int talent_ballad = 2131165731;
 			
 			// aapt resource value: 0x7F070224
-			public const int talent_prosperity = 2131165732;
+			public const int talent_diligence = 2131165732;
 			
 			// aapt resource value: 0x7F070225
-			public const int talent_resistance = 2131165733;
+			public const int talent_elegance = 2131165733;
 			
 			// aapt resource value: 0x7F070226
-			public const int talent_transience = 2131165734;
+			public const int talent_equity = 2131165734;
 			
 			// aapt resource value: 0x7F070227
-			public const int test_custom_background = 2131165735;
+			public const int talent_freedom = 2131165735;
 			
 			// aapt resource value: 0x7F070228
-			public const int test_level_drawable = 2131165736;
+			public const int talent_gold = 2131165736;
 			
 			// aapt resource value: 0x7F070229
-			public const int tooltip_frame_dark = 2131165737;
+			public const int talent_ingenuity = 2131165737;
 			
 			// aapt resource value: 0x7F07022A
-			public const int tooltip_frame_light = 2131165738;
+			public const int talent_justice = 2131165738;
 			
 			// aapt resource value: 0x7F07022B
-			public const int UpButton = 2131165739;
+			public const int talent_light = 2131165739;
 			
 			// aapt resource value: 0x7F07022C
-			public const int wa_aerosiderite_4 = 2131165740;
+			public const int talent_order = 2131165740;
 			
 			// aapt resource value: 0x7F07022D
-			public const int wa_all_Inazuma = 2131165741;
+			public const int talent_praxis = 2131165741;
 			
 			// aapt resource value: 0x7F07022E
-			public const int wa_all_Liyue = 2131165742;
+			public const int talent_prosperity = 2131165742;
 			
 			// aapt resource value: 0x7F07022F
-			public const int wa_all_Mondstadt = 2131165743;
+			public const int talent_resistance = 2131165743;
 			
 			// aapt resource value: 0x7F070230
-			public const int wa_all_Sumeru = 2131165744;
+			public const int talent_transience = 2131165744;
 			
 			// aapt resource value: 0x7F070231
-			public const int wa_boreal_wolf_4 = 2131165745;
+			public const int test_custom_background = 2131165745;
 			
 			// aapt resource value: 0x7F070232
-			public const int wa_branch_of_a_distant_sea_4 = 2131165746;
+			public const int test_level_drawable = 2131165746;
 			
 			// aapt resource value: 0x7F070233
-			public const int wa_decarabian_4 = 2131165747;
+			public const int tooltip_frame_dark = 2131165747;
 			
 			// aapt resource value: 0x7F070234
-			public const int wa_guyun_4 = 2131165748;
+			public const int tooltip_frame_light = 2131165748;
 			
 			// aapt resource value: 0x7F070235
-			public const int wa_mask_4 = 2131165749;
+			public const int UpButton = 2131165749;
 			
 			// aapt resource value: 0x7F070236
-			public const int wa_mist_veiled_4 = 2131165750;
+			public const int wa_aerosiderite_4 = 2131165750;
 			
 			// aapt resource value: 0x7F070237
-			public const int wa_narukami_4 = 2131165751;
+			public const int wa_all_Fontaine = 2131165751;
 			
 			// aapt resource value: 0x7F070238
-			public const int wa_oasis_garden_4 = 2131165752;
+			public const int wa_all_Inazuma = 2131165752;
 			
 			// aapt resource value: 0x7F070239
-			public const int wa_scorching_might_4 = 2131165753;
+			public const int wa_all_Liyue = 2131165753;
 			
 			// aapt resource value: 0x7F07023A
-			public const int wa_talisman_of_the_forest_dew_4 = 2131165754;
+			public const int wa_all_Mondstadt = 2131165754;
 			
 			// aapt resource value: 0x7F07023B
-			public const int wa_the_dandelion_gladiator_4 = 2131165755;
+			public const int wa_all_Sumeru = 2131165755;
 			
 			// aapt resource value: 0x7F07023C
-			public const int white_iron_chunk = 2131165756;
+			public const int wa_ancient_chord_4 = 2131165756;
 			
 			// aapt resource value: 0x7F07023D
-			public const int xamarin_logo = 2131165757;
+			public const int wa_boreal_wolf_4 = 2131165757;
+			
+			// aapt resource value: 0x7F07023E
+			public const int wa_branch_of_a_distant_sea_4 = 2131165758;
+			
+			// aapt resource value: 0x7F07023F
+			public const int wa_decarabian_4 = 2131165759;
+			
+			// aapt resource value: 0x7F070240
+			public const int wa_guyun_4 = 2131165760;
+			
+			// aapt resource value: 0x7F070241
+			public const int wa_mask_4 = 2131165761;
+			
+			// aapt resource value: 0x7F070242
+			public const int wa_mist_veiled_4 = 2131165762;
+			
+			// aapt resource value: 0x7F070243
+			public const int wa_narukami_4 = 2131165763;
+			
+			// aapt resource value: 0x7F070244
+			public const int wa_oasis_garden_4 = 2131165764;
+			
+			// aapt resource value: 0x7F070245
+			public const int wa_pristine_sea_4 = 2131165765;
+			
+			// aapt resource value: 0x7F070246
+			public const int wa_pure_sacred_dewdrop_4 = 2131165766;
+			
+			// aapt resource value: 0x7F070247
+			public const int wa_scorching_might_4 = 2131165767;
+			
+			// aapt resource value: 0x7F070248
+			public const int wa_talisman_of_the_forest_dew_4 = 2131165768;
+			
+			// aapt resource value: 0x7F070249
+			public const int wa_the_dandelion_gladiator_4 = 2131165769;
+			
+			// aapt resource value: 0x7F07024A
+			public const int white_iron_chunk = 2131165770;
+			
+			// aapt resource value: 0x7F07024B
+			public const int xamarin_logo = 2131165771;
 			
 			static Drawable()
 			{
@@ -23274,526 +23176,535 @@ namespace ResinTimer.Droid
 			public const int inward = 2131231007;
 			
 			// aapt resource value: 0x7F080120
-			public const int italic = 2131231008;
+			public const int is_pooling_container_tag = 2131231008;
 			
 			// aapt resource value: 0x7F080121
-			public const int item_touch_helper_previous_elevation = 2131231009;
+			public const int italic = 2131231009;
 			
 			// aapt resource value: 0x7F080122
-			public const int jumpToEnd = 2131231010;
+			public const int item_touch_helper_previous_elevation = 2131231010;
 			
 			// aapt resource value: 0x7F080123
-			public const int jumpToStart = 2131231011;
+			public const int jumpToEnd = 2131231011;
 			
 			// aapt resource value: 0x7F080124
-			public const int labeled = 2131231012;
+			public const int jumpToStart = 2131231012;
 			
 			// aapt resource value: 0x7F080125
-			public const int layout = 2131231013;
+			public const int labeled = 2131231013;
 			
 			// aapt resource value: 0x7F080126
-			public const int left = 2131231014;
+			public const int layout = 2131231014;
 			
 			// aapt resource value: 0x7F080127
-			public const int leftToRight = 2131231015;
+			public const int left = 2131231015;
 			
 			// aapt resource value: 0x7F080128
-			public const int legacy = 2131231016;
+			public const int leftToRight = 2131231016;
 			
 			// aapt resource value: 0x7F080129
-			public const int line1 = 2131231017;
+			public const int legacy = 2131231017;
 			
 			// aapt resource value: 0x7F08012A
-			public const int line3 = 2131231018;
+			public const int line1 = 2131231018;
 			
 			// aapt resource value: 0x7F08012B
-			public const int linear = 2131231019;
+			public const int line3 = 2131231019;
 			
 			// aapt resource value: 0x7F08012C
-			public const int listMode = 2131231020;
+			public const int linear = 2131231020;
 			
 			// aapt resource value: 0x7F08012D
-			public const int list_item = 2131231021;
+			public const int listMode = 2131231021;
 			
 			// aapt resource value: 0x7F08012E
-			public const int main_appbar = 2131231022;
+			public const int list_item = 2131231022;
 			
 			// aapt resource value: 0x7F08012F
-			public const int main_tablayout = 2131231023;
+			public const int main_appbar = 2131231023;
 			
 			// aapt resource value: 0x7F080130
-			public const int main_toolbar = 2131231024;
+			public const int main_tablayout = 2131231024;
 			
 			// aapt resource value: 0x7F080131
-			public const int main_viewpager = 2131231025;
+			public const int main_toolbar = 2131231025;
 			
 			// aapt resource value: 0x7F080132
-			public const int masked = 2131231026;
+			public const int main_viewpager = 2131231026;
 			
 			// aapt resource value: 0x7F080133
-			public const int match_constraint = 2131231027;
+			public const int masked = 2131231027;
 			
 			// aapt resource value: 0x7F080134
-			public const int match_parent = 2131231028;
+			public const int match_constraint = 2131231028;
 			
 			// aapt resource value: 0x7F080135
-			public const int material_clock_display = 2131231029;
+			public const int match_parent = 2131231029;
 			
 			// aapt resource value: 0x7F080136
-			public const int material_clock_face = 2131231030;
+			public const int material_clock_display = 2131231030;
 			
 			// aapt resource value: 0x7F080137
-			public const int material_clock_hand = 2131231031;
+			public const int material_clock_face = 2131231031;
 			
 			// aapt resource value: 0x7F080138
-			public const int material_clock_period_am_button = 2131231032;
+			public const int material_clock_hand = 2131231032;
 			
 			// aapt resource value: 0x7F080139
-			public const int material_clock_period_pm_button = 2131231033;
+			public const int material_clock_period_am_button = 2131231033;
 			
 			// aapt resource value: 0x7F08013A
-			public const int material_clock_period_toggle = 2131231034;
+			public const int material_clock_period_pm_button = 2131231034;
 			
 			// aapt resource value: 0x7F08013B
-			public const int material_hour_text_input = 2131231035;
+			public const int material_clock_period_toggle = 2131231035;
 			
 			// aapt resource value: 0x7F08013C
-			public const int material_hour_tv = 2131231036;
+			public const int material_hour_text_input = 2131231036;
 			
 			// aapt resource value: 0x7F08013D
-			public const int material_label = 2131231037;
+			public const int material_hour_tv = 2131231037;
 			
 			// aapt resource value: 0x7F08013E
-			public const int material_minute_text_input = 2131231038;
+			public const int material_label = 2131231038;
 			
 			// aapt resource value: 0x7F08013F
-			public const int material_minute_tv = 2131231039;
+			public const int material_minute_text_input = 2131231039;
 			
 			// aapt resource value: 0x7F080140
-			public const int material_textinput_timepicker = 2131231040;
+			public const int material_minute_tv = 2131231040;
 			
 			// aapt resource value: 0x7F080141
-			public const int material_timepicker_cancel_button = 2131231041;
+			public const int material_textinput_timepicker = 2131231041;
 			
 			// aapt resource value: 0x7F080142
-			public const int material_timepicker_container = 2131231042;
+			public const int material_timepicker_cancel_button = 2131231042;
 			
 			// aapt resource value: 0x7F080143
-			public const int material_timepicker_edit_text = 2131231043;
+			public const int material_timepicker_container = 2131231043;
 			
 			// aapt resource value: 0x7F080144
-			public const int material_timepicker_mode_button = 2131231044;
+			public const int material_timepicker_edit_text = 2131231044;
 			
 			// aapt resource value: 0x7F080145
-			public const int material_timepicker_ok_button = 2131231045;
+			public const int material_timepicker_mode_button = 2131231045;
 			
 			// aapt resource value: 0x7F080146
-			public const int material_timepicker_view = 2131231046;
+			public const int material_timepicker_ok_button = 2131231046;
 			
 			// aapt resource value: 0x7F080147
-			public const int material_value_index = 2131231047;
+			public const int material_timepicker_view = 2131231047;
 			
 			// aapt resource value: 0x7F080148
-			public const int media_actions = 2131231048;
+			public const int material_value_index = 2131231048;
 			
 			// aapt resource value: 0x7F080149
-			public const int media_controller_compat_view_tag = 2131231049;
+			public const int media_actions = 2131231049;
 			
 			// aapt resource value: 0x7F08014A
-			public const int message = 2131231050;
+			public const int media_controller_compat_view_tag = 2131231050;
+			
+			// aapt resource value: 0x7F08014B
+			public const int message = 2131231051;
 			
 			// aapt resource value: 0x7F080005
 			public const int META = 2131230725;
 			
-			// aapt resource value: 0x7F08014B
-			public const int middle = 2131231051;
-			
 			// aapt resource value: 0x7F08014C
-			public const int mini = 2131231052;
+			public const int middle = 2131231052;
 			
 			// aapt resource value: 0x7F08014D
-			public const int month_grid = 2131231053;
+			public const int mini = 2131231053;
 			
 			// aapt resource value: 0x7F08014E
-			public const int month_navigation_bar = 2131231054;
+			public const int month_grid = 2131231054;
 			
 			// aapt resource value: 0x7F08014F
-			public const int month_navigation_fragment_toggle = 2131231055;
+			public const int month_navigation_bar = 2131231055;
 			
 			// aapt resource value: 0x7F080150
-			public const int month_navigation_next = 2131231056;
+			public const int month_navigation_fragment_toggle = 2131231056;
 			
 			// aapt resource value: 0x7F080151
-			public const int month_navigation_previous = 2131231057;
+			public const int month_navigation_next = 2131231057;
 			
 			// aapt resource value: 0x7F080152
-			public const int month_title = 2131231058;
+			public const int month_navigation_previous = 2131231058;
 			
 			// aapt resource value: 0x7F080153
-			public const int motion_base = 2131231059;
+			public const int month_title = 2131231059;
 			
 			// aapt resource value: 0x7F080154
-			public const int mr_art = 2131231060;
+			public const int motion_base = 2131231060;
 			
 			// aapt resource value: 0x7F080155
-			public const int mr_cast_checkbox = 2131231061;
+			public const int mr_art = 2131231061;
 			
 			// aapt resource value: 0x7F080156
-			public const int mr_cast_close_button = 2131231062;
+			public const int mr_cast_checkbox = 2131231062;
 			
 			// aapt resource value: 0x7F080157
-			public const int mr_cast_divider = 2131231063;
+			public const int mr_cast_close_button = 2131231063;
 			
 			// aapt resource value: 0x7F080158
-			public const int mr_cast_group_icon = 2131231064;
+			public const int mr_cast_divider = 2131231064;
 			
 			// aapt resource value: 0x7F080159
-			public const int mr_cast_group_name = 2131231065;
+			public const int mr_cast_group_icon = 2131231065;
 			
 			// aapt resource value: 0x7F08015A
-			public const int mr_cast_group_progress_bar = 2131231066;
+			public const int mr_cast_group_name = 2131231066;
 			
 			// aapt resource value: 0x7F08015B
-			public const int mr_cast_header_name = 2131231067;
+			public const int mr_cast_group_progress_bar = 2131231067;
 			
 			// aapt resource value: 0x7F08015C
-			public const int mr_cast_list = 2131231068;
+			public const int mr_cast_header_name = 2131231068;
 			
 			// aapt resource value: 0x7F08015D
-			public const int mr_cast_meta_art = 2131231069;
+			public const int mr_cast_list = 2131231069;
 			
 			// aapt resource value: 0x7F08015E
-			public const int mr_cast_meta_background = 2131231070;
+			public const int mr_cast_meta_art = 2131231070;
 			
 			// aapt resource value: 0x7F08015F
-			public const int mr_cast_meta_black_scrim = 2131231071;
+			public const int mr_cast_meta_background = 2131231071;
 			
 			// aapt resource value: 0x7F080160
-			public const int mr_cast_meta_subtitle = 2131231072;
+			public const int mr_cast_meta_black_scrim = 2131231072;
 			
 			// aapt resource value: 0x7F080161
-			public const int mr_cast_meta_title = 2131231073;
+			public const int mr_cast_meta_subtitle = 2131231073;
 			
 			// aapt resource value: 0x7F080162
-			public const int mr_cast_mute_button = 2131231074;
+			public const int mr_cast_meta_title = 2131231074;
 			
 			// aapt resource value: 0x7F080163
-			public const int mr_cast_route_icon = 2131231075;
+			public const int mr_cast_mute_button = 2131231075;
 			
 			// aapt resource value: 0x7F080164
-			public const int mr_cast_route_name = 2131231076;
+			public const int mr_cast_route_icon = 2131231076;
 			
 			// aapt resource value: 0x7F080165
-			public const int mr_cast_route_progress_bar = 2131231077;
+			public const int mr_cast_route_name = 2131231077;
 			
 			// aapt resource value: 0x7F080166
-			public const int mr_cast_stop_button = 2131231078;
+			public const int mr_cast_route_progress_bar = 2131231078;
 			
 			// aapt resource value: 0x7F080167
-			public const int mr_cast_volume_layout = 2131231079;
+			public const int mr_cast_stop_button = 2131231079;
 			
 			// aapt resource value: 0x7F080168
-			public const int mr_cast_volume_slider = 2131231080;
+			public const int mr_cast_volume_layout = 2131231080;
 			
 			// aapt resource value: 0x7F080169
-			public const int mr_chooser_list = 2131231081;
+			public const int mr_cast_volume_slider = 2131231081;
 			
 			// aapt resource value: 0x7F08016A
-			public const int mr_chooser_route_desc = 2131231082;
+			public const int mr_chooser_list = 2131231082;
 			
 			// aapt resource value: 0x7F08016B
-			public const int mr_chooser_route_icon = 2131231083;
+			public const int mr_chooser_route_desc = 2131231083;
 			
 			// aapt resource value: 0x7F08016C
-			public const int mr_chooser_route_name = 2131231084;
+			public const int mr_chooser_route_icon = 2131231084;
 			
 			// aapt resource value: 0x7F08016D
-			public const int mr_chooser_route_progress_bar = 2131231085;
+			public const int mr_chooser_route_name = 2131231085;
 			
 			// aapt resource value: 0x7F08016E
-			public const int mr_chooser_title = 2131231086;
+			public const int mr_chooser_route_progress_bar = 2131231086;
 			
 			// aapt resource value: 0x7F08016F
-			public const int mr_close = 2131231087;
+			public const int mr_chooser_title = 2131231087;
 			
 			// aapt resource value: 0x7F080170
-			public const int mr_control_divider = 2131231088;
+			public const int mr_close = 2131231088;
 			
 			// aapt resource value: 0x7F080171
-			public const int mr_control_playback_ctrl = 2131231089;
+			public const int mr_control_divider = 2131231089;
 			
 			// aapt resource value: 0x7F080172
-			public const int mr_control_subtitle = 2131231090;
+			public const int mr_control_playback_ctrl = 2131231090;
 			
 			// aapt resource value: 0x7F080173
-			public const int mr_control_title = 2131231091;
+			public const int mr_control_subtitle = 2131231091;
 			
 			// aapt resource value: 0x7F080174
-			public const int mr_control_title_container = 2131231092;
+			public const int mr_control_title = 2131231092;
 			
 			// aapt resource value: 0x7F080175
-			public const int mr_custom_control = 2131231093;
+			public const int mr_control_title_container = 2131231093;
 			
 			// aapt resource value: 0x7F080176
-			public const int mr_default_control = 2131231094;
+			public const int mr_custom_control = 2131231094;
 			
 			// aapt resource value: 0x7F080177
-			public const int mr_dialog_area = 2131231095;
+			public const int mr_default_control = 2131231095;
 			
 			// aapt resource value: 0x7F080178
-			public const int mr_expandable_area = 2131231096;
+			public const int mr_dialog_area = 2131231096;
 			
 			// aapt resource value: 0x7F080179
-			public const int mr_group_expand_collapse = 2131231097;
+			public const int mr_expandable_area = 2131231097;
 			
 			// aapt resource value: 0x7F08017A
-			public const int mr_group_volume_route_name = 2131231098;
+			public const int mr_group_expand_collapse = 2131231098;
 			
 			// aapt resource value: 0x7F08017B
-			public const int mr_media_main_control = 2131231099;
+			public const int mr_group_volume_route_name = 2131231099;
 			
 			// aapt resource value: 0x7F08017C
-			public const int mr_name = 2131231100;
+			public const int mr_media_main_control = 2131231100;
 			
 			// aapt resource value: 0x7F08017D
-			public const int mr_picker_close_button = 2131231101;
+			public const int mr_name = 2131231101;
 			
 			// aapt resource value: 0x7F08017E
-			public const int mr_picker_header_name = 2131231102;
+			public const int mr_picker_close_button = 2131231102;
 			
 			// aapt resource value: 0x7F08017F
-			public const int mr_picker_list = 2131231103;
+			public const int mr_picker_header_name = 2131231103;
 			
 			// aapt resource value: 0x7F080180
-			public const int mr_picker_route_icon = 2131231104;
+			public const int mr_picker_list = 2131231104;
 			
 			// aapt resource value: 0x7F080181
-			public const int mr_picker_route_name = 2131231105;
+			public const int mr_picker_route_icon = 2131231105;
 			
 			// aapt resource value: 0x7F080182
-			public const int mr_picker_route_progress_bar = 2131231106;
+			public const int mr_picker_route_name = 2131231106;
 			
 			// aapt resource value: 0x7F080183
-			public const int mr_playback_control = 2131231107;
+			public const int mr_picker_route_progress_bar = 2131231107;
 			
 			// aapt resource value: 0x7F080184
-			public const int mr_title_bar = 2131231108;
+			public const int mr_playback_control = 2131231108;
 			
 			// aapt resource value: 0x7F080185
-			public const int mr_volume_control = 2131231109;
+			public const int mr_title_bar = 2131231109;
 			
 			// aapt resource value: 0x7F080186
-			public const int mr_volume_group_list = 2131231110;
+			public const int mr_volume_control = 2131231110;
 			
 			// aapt resource value: 0x7F080187
-			public const int mr_volume_item_icon = 2131231111;
+			public const int mr_volume_group_list = 2131231111;
 			
 			// aapt resource value: 0x7F080188
-			public const int mr_volume_slider = 2131231112;
+			public const int mr_volume_item_icon = 2131231112;
 			
 			// aapt resource value: 0x7F080189
-			public const int mtrl_anchor_parent = 2131231113;
-			
-			// aapt resource value: 0x7F08018B
-			public const int mtrl_calendar_days_of_week = 2131231115;
+			public const int mr_volume_slider = 2131231113;
 			
 			// aapt resource value: 0x7F08018A
-			public const int mtrl_calendar_day_selector_frame = 2131231114;
+			public const int mtrl_anchor_parent = 2131231114;
 			
 			// aapt resource value: 0x7F08018C
-			public const int mtrl_calendar_frame = 2131231116;
+			public const int mtrl_calendar_days_of_week = 2131231116;
+			
+			// aapt resource value: 0x7F08018B
+			public const int mtrl_calendar_day_selector_frame = 2131231115;
 			
 			// aapt resource value: 0x7F08018D
-			public const int mtrl_calendar_main_pane = 2131231117;
+			public const int mtrl_calendar_frame = 2131231117;
 			
 			// aapt resource value: 0x7F08018E
-			public const int mtrl_calendar_months = 2131231118;
+			public const int mtrl_calendar_main_pane = 2131231118;
 			
 			// aapt resource value: 0x7F08018F
-			public const int mtrl_calendar_selection_frame = 2131231119;
+			public const int mtrl_calendar_months = 2131231119;
 			
 			// aapt resource value: 0x7F080190
-			public const int mtrl_calendar_text_input_frame = 2131231120;
+			public const int mtrl_calendar_selection_frame = 2131231120;
 			
 			// aapt resource value: 0x7F080191
-			public const int mtrl_calendar_year_selector_frame = 2131231121;
+			public const int mtrl_calendar_text_input_frame = 2131231121;
 			
 			// aapt resource value: 0x7F080192
-			public const int mtrl_card_checked_layer_id = 2131231122;
+			public const int mtrl_calendar_year_selector_frame = 2131231122;
 			
 			// aapt resource value: 0x7F080193
-			public const int mtrl_child_content_container = 2131231123;
+			public const int mtrl_card_checked_layer_id = 2131231123;
 			
 			// aapt resource value: 0x7F080194
-			public const int mtrl_internal_children_alpha_tag = 2131231124;
+			public const int mtrl_child_content_container = 2131231124;
 			
 			// aapt resource value: 0x7F080195
-			public const int mtrl_motion_snapshot_view = 2131231125;
+			public const int mtrl_internal_children_alpha_tag = 2131231125;
 			
 			// aapt resource value: 0x7F080196
-			public const int mtrl_picker_fullscreen = 2131231126;
+			public const int mtrl_motion_snapshot_view = 2131231126;
 			
 			// aapt resource value: 0x7F080197
-			public const int mtrl_picker_header = 2131231127;
+			public const int mtrl_picker_fullscreen = 2131231127;
 			
 			// aapt resource value: 0x7F080198
-			public const int mtrl_picker_header_selection_text = 2131231128;
+			public const int mtrl_picker_header = 2131231128;
 			
 			// aapt resource value: 0x7F080199
-			public const int mtrl_picker_header_title_and_selection = 2131231129;
+			public const int mtrl_picker_header_selection_text = 2131231129;
 			
 			// aapt resource value: 0x7F08019A
-			public const int mtrl_picker_header_toggle = 2131231130;
+			public const int mtrl_picker_header_title_and_selection = 2131231130;
 			
 			// aapt resource value: 0x7F08019B
-			public const int mtrl_picker_text_input_date = 2131231131;
+			public const int mtrl_picker_header_toggle = 2131231131;
 			
 			// aapt resource value: 0x7F08019C
-			public const int mtrl_picker_text_input_range_end = 2131231132;
+			public const int mtrl_picker_text_input_date = 2131231132;
 			
 			// aapt resource value: 0x7F08019D
-			public const int mtrl_picker_text_input_range_start = 2131231133;
+			public const int mtrl_picker_text_input_range_end = 2131231133;
 			
 			// aapt resource value: 0x7F08019E
-			public const int mtrl_picker_title_text = 2131231134;
+			public const int mtrl_picker_text_input_range_start = 2131231134;
 			
 			// aapt resource value: 0x7F08019F
-			public const int mtrl_view_tag_bottom_padding = 2131231135;
+			public const int mtrl_picker_title_text = 2131231135;
 			
 			// aapt resource value: 0x7F0801A0
-			public const int multiply = 2131231136;
-			
-			// aapt resource value: 0x7F0801A2
-			public const int navigation_bar_item_icon_view = 2131231138;
-			
-			// aapt resource value: 0x7F0801A3
-			public const int navigation_bar_item_labels_group = 2131231139;
-			
-			// aapt resource value: 0x7F0801A4
-			public const int navigation_bar_item_large_label_view = 2131231140;
-			
-			// aapt resource value: 0x7F0801A5
-			public const int navigation_bar_item_small_label_view = 2131231141;
-			
-			// aapt resource value: 0x7F0801A6
-			public const int navigation_header_container = 2131231142;
+			public const int mtrl_view_tag_bottom_padding = 2131231136;
 			
 			// aapt resource value: 0x7F0801A1
-			public const int nav_controller_view_tag = 2131231137;
+			public const int multiply = 2131231137;
+			
+			// aapt resource value: 0x7F0801A3
+			public const int navigation_bar_item_icon_view = 2131231139;
+			
+			// aapt resource value: 0x7F0801A4
+			public const int navigation_bar_item_labels_group = 2131231140;
+			
+			// aapt resource value: 0x7F0801A5
+			public const int navigation_bar_item_large_label_view = 2131231141;
+			
+			// aapt resource value: 0x7F0801A6
+			public const int navigation_bar_item_small_label_view = 2131231142;
 			
 			// aapt resource value: 0x7F0801A7
-			public const int never = 2131231143;
+			public const int navigation_header_container = 2131231143;
+			
+			// aapt resource value: 0x7F0801A2
+			public const int nav_controller_view_tag = 2131231138;
 			
 			// aapt resource value: 0x7F0801A8
-			public const int neverCompleteToEnd = 2131231144;
+			public const int never = 2131231144;
 			
 			// aapt resource value: 0x7F0801A9
-			public const int neverCompleteToStart = 2131231145;
-			
-			// aapt resource value: 0x7F0801AC
-			public const int none = 2131231148;
-			
-			// aapt resource value: 0x7F0801AD
-			public const int normal = 2131231149;
-			
-			// aapt resource value: 0x7F0801AE
-			public const int north = 2131231150;
+			public const int neverCompleteToEnd = 2131231145;
 			
 			// aapt resource value: 0x7F0801AA
-			public const int noScroll = 2131231146;
+			public const int neverCompleteToStart = 2131231146;
 			
-			// aapt resource value: 0x7F0801AB
-			public const int noState = 2131231147;
+			// aapt resource value: 0x7F0801AD
+			public const int none = 2131231149;
+			
+			// aapt resource value: 0x7F0801AE
+			public const int normal = 2131231150;
 			
 			// aapt resource value: 0x7F0801AF
-			public const int notification_background = 2131231151;
+			public const int north = 2131231151;
+			
+			// aapt resource value: 0x7F0801AB
+			public const int noScroll = 2131231147;
+			
+			// aapt resource value: 0x7F0801AC
+			public const int noState = 2131231148;
 			
 			// aapt resource value: 0x7F0801B0
-			public const int notification_main_column = 2131231152;
+			public const int notification_background = 2131231152;
 			
 			// aapt resource value: 0x7F0801B1
-			public const int notification_main_column_container = 2131231153;
+			public const int notification_main_column = 2131231153;
+			
+			// aapt resource value: 0x7F0801B2
+			public const int notification_main_column_container = 2131231154;
 			
 			// aapt resource value: 0x7F080006
 			public const int NO_DEBUG = 2131230726;
 			
-			// aapt resource value: 0x7F0801B2
-			public const int off = 2131231154;
-			
 			// aapt resource value: 0x7F0801B3
-			public const int on = 2131231155;
+			public const int off = 2131231155;
 			
 			// aapt resource value: 0x7F0801B4
-			public const int outline = 2131231156;
+			public const int on = 2131231156;
 			
 			// aapt resource value: 0x7F0801B5
-			public const int outward = 2131231157;
+			public const int outline = 2131231157;
 			
 			// aapt resource value: 0x7F0801B6
-			public const int overshoot = 2131231158;
+			public const int outward = 2131231158;
 			
 			// aapt resource value: 0x7F0801B7
-			public const int packed = 2131231159;
+			public const int overshoot = 2131231159;
 			
 			// aapt resource value: 0x7F0801B8
-			public const int parallax = 2131231160;
+			public const int packed = 2131231160;
 			
 			// aapt resource value: 0x7F0801B9
-			public const int parent = 2131231161;
+			public const int parallax = 2131231161;
 			
 			// aapt resource value: 0x7F0801BA
-			public const int parentPanel = 2131231162;
+			public const int parent = 2131231162;
 			
 			// aapt resource value: 0x7F0801BB
-			public const int parentRelative = 2131231163;
+			public const int parentPanel = 2131231163;
 			
 			// aapt resource value: 0x7F0801BC
-			public const int parent_matrix = 2131231164;
+			public const int parentRelative = 2131231164;
 			
 			// aapt resource value: 0x7F0801BD
-			public const int password_toggle = 2131231165;
+			public const int parent_matrix = 2131231165;
 			
 			// aapt resource value: 0x7F0801BE
-			public const int path = 2131231166;
+			public const int password_toggle = 2131231166;
 			
 			// aapt resource value: 0x7F0801BF
-			public const int pathRelative = 2131231167;
+			public const int path = 2131231167;
 			
 			// aapt resource value: 0x7F0801C0
-			public const int peekHeight = 2131231168;
+			public const int pathRelative = 2131231168;
 			
 			// aapt resource value: 0x7F0801C1
-			public const int percent = 2131231169;
+			public const int peekHeight = 2131231169;
 			
 			// aapt resource value: 0x7F0801C2
-			public const int pin = 2131231170;
+			public const int percent = 2131231170;
 			
 			// aapt resource value: 0x7F0801C3
-			public const int position = 2131231171;
+			public const int pin = 2131231171;
 			
 			// aapt resource value: 0x7F0801C4
-			public const int postLayout = 2131231172;
+			public const int pooling_container_listener_holder_tag = 2131231172;
 			
 			// aapt resource value: 0x7F0801C5
-			public const int progress_circular = 2131231173;
+			public const int position = 2131231173;
 			
 			// aapt resource value: 0x7F0801C6
-			public const int progress_horizontal = 2131231174;
+			public const int postLayout = 2131231174;
 			
 			// aapt resource value: 0x7F0801C7
-			public const int radio = 2131231175;
+			public const int progress_circular = 2131231175;
 			
 			// aapt resource value: 0x7F0801C8
-			public const int ratio = 2131231176;
+			public const int progress_horizontal = 2131231176;
 			
 			// aapt resource value: 0x7F0801C9
-			public const int rectangle = 2131231177;
+			public const int radio = 2131231177;
 			
 			// aapt resource value: 0x7F0801CA
-			public const int rectangles = 2131231178;
+			public const int ratio = 2131231178;
 			
 			// aapt resource value: 0x7F0801CB
-			public const int recycler_view = 2131231179;
+			public const int rectangle = 2131231179;
+			
+			// aapt resource value: 0x7F0801CC
+			public const int rectangles = 2131231180;
+			
+			// aapt resource value: 0x7F0801CD
+			public const int recycler_view = 2131231181;
+			
+			// aapt resource value: 0x7F0801CE
+			public const int report_drawn = 2131231182;
 			
 			// aapt resource value: 0x7F080007
 			public const int ResinWidgetCount = 2131230727;
@@ -23816,143 +23727,143 @@ namespace ResinTimer.Droid
 			// aapt resource value: 0x7F08000D
 			public const int ResinWidgetSimpleRootLayout = 2131230733;
 			
-			// aapt resource value: 0x7F0801CC
-			public const int reverseSawtooth = 2131231180;
-			
-			// aapt resource value: 0x7F0801CD
-			public const int right = 2131231181;
-			
-			// aapt resource value: 0x7F0801CE
-			public const int rightToLeft = 2131231182;
-			
 			// aapt resource value: 0x7F0801CF
-			public const int right_icon = 2131231183;
+			public const int reverseSawtooth = 2131231183;
 			
 			// aapt resource value: 0x7F0801D0
-			public const int right_side = 2131231184;
+			public const int right = 2131231184;
 			
 			// aapt resource value: 0x7F0801D1
-			public const int rootLayout = 2131231185;
+			public const int rightToLeft = 2131231185;
 			
 			// aapt resource value: 0x7F0801D2
-			public const int rounded = 2131231186;
+			public const int right_icon = 2131231186;
 			
 			// aapt resource value: 0x7F0801D3
-			public const int row_index_key = 2131231187;
+			public const int right_side = 2131231187;
 			
 			// aapt resource value: 0x7F0801D4
-			public const int save_non_transition_alpha = 2131231188;
+			public const int rootLayout = 2131231188;
 			
 			// aapt resource value: 0x7F0801D5
-			public const int save_overlay_view = 2131231189;
+			public const int rounded = 2131231189;
 			
 			// aapt resource value: 0x7F0801D6
-			public const int sawtooth = 2131231190;
+			public const int row_index_key = 2131231190;
 			
 			// aapt resource value: 0x7F0801D7
-			public const int scale = 2131231191;
+			public const int save_non_transition_alpha = 2131231191;
 			
 			// aapt resource value: 0x7F0801D8
-			public const int screen = 2131231192;
+			public const int save_overlay_view = 2131231192;
 			
 			// aapt resource value: 0x7F0801D9
-			public const int scroll = 2131231193;
-			
-			// aapt resource value: 0x7F0801DD
-			public const int scrollable = 2131231197;
+			public const int sawtooth = 2131231193;
 			
 			// aapt resource value: 0x7F0801DA
-			public const int scrollIndicatorDown = 2131231194;
+			public const int scale = 2131231194;
 			
 			// aapt resource value: 0x7F0801DB
-			public const int scrollIndicatorUp = 2131231195;
+			public const int screen = 2131231195;
 			
 			// aapt resource value: 0x7F0801DC
-			public const int scrollView = 2131231196;
-			
-			// aapt resource value: 0x7F0801DE
-			public const int search_badge = 2131231198;
-			
-			// aapt resource value: 0x7F0801DF
-			public const int search_bar = 2131231199;
+			public const int scroll = 2131231196;
 			
 			// aapt resource value: 0x7F0801E0
-			public const int search_button = 2131231200;
+			public const int scrollable = 2131231200;
+			
+			// aapt resource value: 0x7F0801DD
+			public const int scrollIndicatorDown = 2131231197;
+			
+			// aapt resource value: 0x7F0801DE
+			public const int scrollIndicatorUp = 2131231198;
+			
+			// aapt resource value: 0x7F0801DF
+			public const int scrollView = 2131231199;
 			
 			// aapt resource value: 0x7F0801E1
-			public const int search_close_btn = 2131231201;
+			public const int search_badge = 2131231201;
 			
 			// aapt resource value: 0x7F0801E2
-			public const int search_edit_frame = 2131231202;
+			public const int search_bar = 2131231202;
 			
 			// aapt resource value: 0x7F0801E3
-			public const int search_go_btn = 2131231203;
+			public const int search_button = 2131231203;
 			
 			// aapt resource value: 0x7F0801E4
-			public const int search_mag_icon = 2131231204;
+			public const int search_close_btn = 2131231204;
 			
 			// aapt resource value: 0x7F0801E5
-			public const int search_plate = 2131231205;
+			public const int search_edit_frame = 2131231205;
 			
 			// aapt resource value: 0x7F0801E6
-			public const int search_src_text = 2131231206;
+			public const int search_go_btn = 2131231206;
 			
 			// aapt resource value: 0x7F0801E7
-			public const int search_voice_btn = 2131231207;
+			public const int search_mag_icon = 2131231207;
 			
 			// aapt resource value: 0x7F0801E8
-			public const int seekbar = 2131231208;
+			public const int search_plate = 2131231208;
 			
 			// aapt resource value: 0x7F0801E9
-			public const int seekbar_value = 2131231209;
+			public const int search_src_text = 2131231209;
 			
 			// aapt resource value: 0x7F0801EA
-			public const int segmentFourteen = 2131231210;
+			public const int search_voice_btn = 2131231210;
 			
 			// aapt resource value: 0x7F0801EB
-			public const int segmentSeven = 2131231211;
+			public const int seekbar = 2131231211;
 			
 			// aapt resource value: 0x7F0801EC
-			public const int segmentSixteen = 2131231212;
-			
-			// aapt resource value: 0x7F0801EE
-			public const int selected = 2131231214;
-			
-			// aapt resource value: 0x7F0801EF
-			public const int selection_type = 2131231215;
+			public const int seekbar_value = 2131231212;
 			
 			// aapt resource value: 0x7F0801ED
-			public const int select_dialog_listview = 2131231213;
+			public const int segmentFourteen = 2131231213;
 			
-			// aapt resource value: 0x7F0801F0
-			public const int sevensegment = 2131231216;
+			// aapt resource value: 0x7F0801EE
+			public const int segmentSeven = 2131231214;
+			
+			// aapt resource value: 0x7F0801EF
+			public const int segmentSixteen = 2131231215;
 			
 			// aapt resource value: 0x7F0801F1
-			public const int sharedValueSet = 2131231217;
+			public const int selected = 2131231217;
 			
 			// aapt resource value: 0x7F0801F2
-			public const int sharedValueUnset = 2131231218;
+			public const int selection_type = 2131231218;
+			
+			// aapt resource value: 0x7F0801F0
+			public const int select_dialog_listview = 2131231216;
 			
 			// aapt resource value: 0x7F0801F3
-			public const int shellcontent_appbar = 2131231219;
+			public const int sevensegment = 2131231219;
 			
 			// aapt resource value: 0x7F0801F4
-			public const int shellcontent_toolbar = 2131231220;
+			public const int sharedValueSet = 2131231220;
+			
+			// aapt resource value: 0x7F0801F5
+			public const int sharedValueUnset = 2131231221;
+			
+			// aapt resource value: 0x7F0801F6
+			public const int shellcontent_appbar = 2131231222;
+			
+			// aapt resource value: 0x7F0801F7
+			public const int shellcontent_toolbar = 2131231223;
 			
 			// aapt resource value: 0x7F08000E
 			public const int SHIFT = 2131230734;
 			
-			// aapt resource value: 0x7F0801F5
-			public const int shortcut = 2131231221;
-			
-			// aapt resource value: 0x7F0801F6
-			public const int showCustom = 2131231222;
-			
-			// aapt resource value: 0x7F0801F7
-			public const int showHome = 2131231223;
-			
 			// aapt resource value: 0x7F0801F8
-			public const int showTitle = 2131231224;
+			public const int shortcut = 2131231224;
+			
+			// aapt resource value: 0x7F0801F9
+			public const int showCustom = 2131231225;
+			
+			// aapt resource value: 0x7F0801FA
+			public const int showHome = 2131231226;
+			
+			// aapt resource value: 0x7F0801FB
+			public const int showTitle = 2131231227;
 			
 			// aapt resource value: 0x7F08000F
 			public const int SHOW_ALL = 2131230735;
@@ -23963,161 +23874,161 @@ namespace ResinTimer.Droid
 			// aapt resource value: 0x7F080011
 			public const int SHOW_PROGRESS = 2131230737;
 			
-			// aapt resource value: 0x7F0801F9
-			public const int sin = 2131231225;
-			
-			// aapt resource value: 0x7F0801FA
-			public const int sixteensegment = 2131231226;
-			
-			// aapt resource value: 0x7F0801FB
-			public const int skipCollapsed = 2131231227;
-			
 			// aapt resource value: 0x7F0801FC
-			public const int skipped = 2131231228;
+			public const int sin = 2131231228;
 			
 			// aapt resource value: 0x7F0801FD
-			public const int slide = 2131231229;
+			public const int sixteensegment = 2131231229;
 			
 			// aapt resource value: 0x7F0801FE
-			public const int sliding_tabs = 2131231230;
+			public const int skipCollapsed = 2131231230;
 			
 			// aapt resource value: 0x7F0801FF
-			public const int snackbar_action = 2131231231;
+			public const int skipped = 2131231231;
 			
 			// aapt resource value: 0x7F080200
-			public const int snackbar_text = 2131231232;
+			public const int slide = 2131231232;
 			
 			// aapt resource value: 0x7F080201
-			public const int snap = 2131231233;
+			public const int sliding_tabs = 2131231233;
 			
 			// aapt resource value: 0x7F080202
-			public const int snapMargins = 2131231234;
+			public const int snackbar_action = 2131231234;
 			
 			// aapt resource value: 0x7F080203
-			public const int south = 2131231235;
+			public const int snackbar_text = 2131231235;
 			
 			// aapt resource value: 0x7F080204
-			public const int spacer = 2131231236;
+			public const int snap = 2131231236;
 			
 			// aapt resource value: 0x7F080205
-			public const int special_effects_controller_view_tag = 2131231237;
+			public const int snapMargins = 2131231237;
 			
 			// aapt resource value: 0x7F080206
-			public const int spinner = 2131231238;
+			public const int south = 2131231238;
 			
 			// aapt resource value: 0x7F080207
-			public const int spline = 2131231239;
+			public const int spacer = 2131231239;
 			
 			// aapt resource value: 0x7F080208
-			public const int split_action_bar = 2131231240;
+			public const int special_effects_controller_view_tag = 2131231240;
 			
 			// aapt resource value: 0x7F080209
-			public const int spread = 2131231241;
+			public const int spinner = 2131231241;
 			
 			// aapt resource value: 0x7F08020A
-			public const int spread_inside = 2131231242;
+			public const int spline = 2131231242;
 			
 			// aapt resource value: 0x7F08020B
-			public const int spring = 2131231243;
+			public const int split_action_bar = 2131231243;
 			
 			// aapt resource value: 0x7F08020C
-			public const int square = 2131231244;
+			public const int spread = 2131231244;
 			
 			// aapt resource value: 0x7F08020D
-			public const int src_atop = 2131231245;
+			public const int spread_inside = 2131231245;
 			
 			// aapt resource value: 0x7F08020E
-			public const int src_in = 2131231246;
+			public const int spring = 2131231246;
 			
 			// aapt resource value: 0x7F08020F
-			public const int src_over = 2131231247;
+			public const int square = 2131231247;
 			
 			// aapt resource value: 0x7F080210
-			public const int standard = 2131231248;
+			public const int src_atop = 2131231248;
 			
 			// aapt resource value: 0x7F080211
-			public const int start = 2131231249;
+			public const int src_in = 2131231249;
 			
 			// aapt resource value: 0x7F080212
-			public const int startHorizontal = 2131231250;
+			public const int src_over = 2131231250;
 			
 			// aapt resource value: 0x7F080213
-			public const int startToEnd = 2131231251;
+			public const int standard = 2131231251;
 			
 			// aapt resource value: 0x7F080214
-			public const int startVertical = 2131231252;
+			public const int start = 2131231252;
 			
 			// aapt resource value: 0x7F080215
-			public const int staticLayout = 2131231253;
+			public const int startHorizontal = 2131231253;
 			
 			// aapt resource value: 0x7F080216
-			public const int staticPostLayout = 2131231254;
+			public const int startToEnd = 2131231254;
 			
 			// aapt resource value: 0x7F080217
-			public const int status_bar_latest_event_content = 2131231255;
+			public const int startVertical = 2131231255;
 			
 			// aapt resource value: 0x7F080218
-			public const int stop = 2131231256;
+			public const int staticLayout = 2131231256;
 			
 			// aapt resource value: 0x7F080219
-			public const int stretch = 2131231257;
+			public const int staticPostLayout = 2131231257;
 			
 			// aapt resource value: 0x7F08021A
-			public const int submenuarrow = 2131231258;
+			public const int status_bar_latest_event_content = 2131231258;
 			
 			// aapt resource value: 0x7F08021B
-			public const int submit_area = 2131231259;
+			public const int stop = 2131231259;
 			
 			// aapt resource value: 0x7F08021C
-			public const int supportScrollUp = 2131231260;
+			public const int stretch = 2131231260;
 			
 			// aapt resource value: 0x7F08021D
-			public const int switchWidget = 2131231261;
+			public const int submenuarrow = 2131231261;
+			
+			// aapt resource value: 0x7F08021E
+			public const int submit_area = 2131231262;
+			
+			// aapt resource value: 0x7F08021F
+			public const int supportScrollUp = 2131231263;
+			
+			// aapt resource value: 0x7F080220
+			public const int switchWidget = 2131231264;
 			
 			// aapt resource value: 0x7F080012
 			public const int SYM = 2131230738;
 			
-			// aapt resource value: 0x7F08021E
-			public const int tabMode = 2131231262;
-			
-			// aapt resource value: 0x7F08021F
-			public const int tag_accessibility_actions = 2131231263;
-			
-			// aapt resource value: 0x7F080220
-			public const int tag_accessibility_clickable_spans = 2131231264;
-			
 			// aapt resource value: 0x7F080221
-			public const int tag_accessibility_heading = 2131231265;
+			public const int tabMode = 2131231265;
 			
 			// aapt resource value: 0x7F080222
-			public const int tag_accessibility_pane_title = 2131231266;
+			public const int tag_accessibility_actions = 2131231266;
 			
 			// aapt resource value: 0x7F080223
-			public const int tag_on_apply_window_listener = 2131231267;
+			public const int tag_accessibility_clickable_spans = 2131231267;
 			
 			// aapt resource value: 0x7F080224
-			public const int tag_on_receive_content_listener = 2131231268;
+			public const int tag_accessibility_heading = 2131231268;
 			
 			// aapt resource value: 0x7F080225
-			public const int tag_on_receive_content_mime_types = 2131231269;
+			public const int tag_accessibility_pane_title = 2131231269;
 			
 			// aapt resource value: 0x7F080226
-			public const int tag_screen_reader_focusable = 2131231270;
+			public const int tag_on_apply_window_listener = 2131231270;
 			
 			// aapt resource value: 0x7F080227
-			public const int tag_state_description = 2131231271;
+			public const int tag_on_receive_content_listener = 2131231271;
 			
 			// aapt resource value: 0x7F080228
-			public const int tag_transition_group = 2131231272;
+			public const int tag_on_receive_content_mime_types = 2131231272;
 			
 			// aapt resource value: 0x7F080229
-			public const int tag_unhandled_key_event_manager = 2131231273;
+			public const int tag_screen_reader_focusable = 2131231273;
 			
 			// aapt resource value: 0x7F08022A
-			public const int tag_unhandled_key_listeners = 2131231274;
+			public const int tag_state_description = 2131231274;
 			
 			// aapt resource value: 0x7F08022B
-			public const int tag_window_insets_animation_callback = 2131231275;
+			public const int tag_transition_group = 2131231275;
+			
+			// aapt resource value: 0x7F08022C
+			public const int tag_unhandled_key_event_manager = 2131231276;
+			
+			// aapt resource value: 0x7F08022D
+			public const int tag_unhandled_key_listeners = 2131231277;
+			
+			// aapt resource value: 0x7F08022E
+			public const int tag_window_insets_animation_callback = 2131231278;
 			
 			// aapt resource value: 0x7F080015
 			public const int TalentWidgetIconFlipper = 2131230741;
@@ -24146,89 +24057,89 @@ namespace ResinTimer.Droid
 			// aapt resource value: 0x7F08001D
 			public const int TalentWidgetTitle = 2131230749;
 			
-			// aapt resource value: 0x7F08022C
-			public const int test_checkbox_android_button_tint = 2131231276;
-			
-			// aapt resource value: 0x7F08022D
-			public const int test_checkbox_app_button_tint = 2131231277;
-			
-			// aapt resource value: 0x7F08022E
-			public const int test_radiobutton_android_button_tint = 2131231278;
-			
 			// aapt resource value: 0x7F08022F
-			public const int test_radiobutton_app_button_tint = 2131231279;
+			public const int test_checkbox_android_button_tint = 2131231279;
 			
 			// aapt resource value: 0x7F080230
-			public const int text = 2131231280;
+			public const int test_checkbox_app_button_tint = 2131231280;
 			
 			// aapt resource value: 0x7F080231
-			public const int text2 = 2131231281;
+			public const int test_radiobutton_android_button_tint = 2131231281;
 			
 			// aapt resource value: 0x7F080232
-			public const int textEnd = 2131231282;
-			
-			// aapt resource value: 0x7F08023A
-			public const int textinput_counter = 2131231290;
-			
-			// aapt resource value: 0x7F08023B
-			public const int textinput_error = 2131231291;
-			
-			// aapt resource value: 0x7F08023C
-			public const int textinput_helper_text = 2131231292;
-			
-			// aapt resource value: 0x7F08023D
-			public const int textinput_placeholder = 2131231293;
-			
-			// aapt resource value: 0x7F08023E
-			public const int textinput_prefix_text = 2131231294;
-			
-			// aapt resource value: 0x7F08023F
-			public const int textinput_suffix_text = 2131231295;
+			public const int test_radiobutton_app_button_tint = 2131231282;
 			
 			// aapt resource value: 0x7F080233
-			public const int textSpacerNoButtons = 2131231283;
+			public const int text = 2131231283;
 			
 			// aapt resource value: 0x7F080234
-			public const int textSpacerNoTitle = 2131231284;
+			public const int text2 = 2131231284;
 			
 			// aapt resource value: 0x7F080235
-			public const int textStart = 2131231285;
+			public const int textEnd = 2131231285;
 			
-			// aapt resource value: 0x7F080236
-			public const int textTop = 2131231286;
+			// aapt resource value: 0x7F08023D
+			public const int textinput_counter = 2131231293;
 			
-			// aapt resource value: 0x7F080237
-			public const int text_input_end_icon = 2131231287;
+			// aapt resource value: 0x7F08023E
+			public const int textinput_error = 2131231294;
 			
-			// aapt resource value: 0x7F080238
-			public const int text_input_error_icon = 2131231288;
-			
-			// aapt resource value: 0x7F080239
-			public const int text_input_start_icon = 2131231289;
+			// aapt resource value: 0x7F08023F
+			public const int textinput_helper_text = 2131231295;
 			
 			// aapt resource value: 0x7F080240
-			public const int time = 2131231296;
+			public const int textinput_placeholder = 2131231296;
 			
 			// aapt resource value: 0x7F080241
-			public const int title = 2131231297;
+			public const int textinput_prefix_text = 2131231297;
 			
 			// aapt resource value: 0x7F080242
-			public const int titleDividerNoCustom = 2131231298;
+			public const int textinput_suffix_text = 2131231298;
+			
+			// aapt resource value: 0x7F080236
+			public const int textSpacerNoButtons = 2131231286;
+			
+			// aapt resource value: 0x7F080237
+			public const int textSpacerNoTitle = 2131231287;
+			
+			// aapt resource value: 0x7F080238
+			public const int textStart = 2131231288;
+			
+			// aapt resource value: 0x7F080239
+			public const int textTop = 2131231289;
+			
+			// aapt resource value: 0x7F08023A
+			public const int text_input_end_icon = 2131231290;
+			
+			// aapt resource value: 0x7F08023B
+			public const int text_input_error_icon = 2131231291;
+			
+			// aapt resource value: 0x7F08023C
+			public const int text_input_start_icon = 2131231292;
 			
 			// aapt resource value: 0x7F080243
-			public const int title_template = 2131231299;
+			public const int time = 2131231299;
 			
 			// aapt resource value: 0x7F080244
-			public const int toggle = 2131231300;
+			public const int title = 2131231300;
 			
 			// aapt resource value: 0x7F080245
-			public const int toolbar = 2131231301;
+			public const int titleDividerNoCustom = 2131231301;
 			
 			// aapt resource value: 0x7F080246
-			public const int top = 2131231302;
+			public const int title_template = 2131231302;
 			
 			// aapt resource value: 0x7F080247
-			public const int topPanel = 2131231303;
+			public const int toggle = 2131231303;
+			
+			// aapt resource value: 0x7F080248
+			public const int toolbar = 2131231304;
+			
+			// aapt resource value: 0x7F080249
+			public const int top = 2131231305;
+			
+			// aapt resource value: 0x7F08024A
+			public const int topPanel = 2131231306;
 			
 			// aapt resource value: 0x7F080013
 			public const int TOP_END = 2131230739;
@@ -24236,80 +24147,80 @@ namespace ResinTimer.Droid
 			// aapt resource value: 0x7F080014
 			public const int TOP_START = 2131230740;
 			
-			// aapt resource value: 0x7F080248
-			public const int touch_outside = 2131231304;
-			
-			// aapt resource value: 0x7F080249
-			public const int transitionToEnd = 2131231305;
-			
-			// aapt resource value: 0x7F08024A
-			public const int transitionToStart = 2131231306;
-			
 			// aapt resource value: 0x7F08024B
-			public const int transition_current_scene = 2131231307;
+			public const int touch_outside = 2131231307;
 			
 			// aapt resource value: 0x7F08024C
-			public const int transition_layout_save = 2131231308;
+			public const int transitionToEnd = 2131231308;
 			
 			// aapt resource value: 0x7F08024D
-			public const int transition_position = 2131231309;
+			public const int transitionToStart = 2131231309;
 			
 			// aapt resource value: 0x7F08024E
-			public const int transition_scene_layoutid_cache = 2131231310;
+			public const int transition_current_scene = 2131231310;
 			
 			// aapt resource value: 0x7F08024F
-			public const int transition_transform = 2131231311;
+			public const int transition_layout_save = 2131231311;
 			
 			// aapt resource value: 0x7F080250
-			public const int triangle = 2131231312;
+			public const int transition_position = 2131231312;
 			
 			// aapt resource value: 0x7F080251
-			public const int @unchecked = 2131231313;
+			public const int transition_scene_layoutid_cache = 2131231313;
 			
 			// aapt resource value: 0x7F080252
-			public const int uniform = 2131231314;
+			public const int transition_transform = 2131231314;
 			
 			// aapt resource value: 0x7F080253
-			public const int unlabeled = 2131231315;
+			public const int triangle = 2131231315;
 			
 			// aapt resource value: 0x7F080254
-			public const int up = 2131231316;
+			public const int @unchecked = 2131231316;
 			
 			// aapt resource value: 0x7F080255
-			public const int useLogo = 2131231317;
+			public const int uniform = 2131231317;
 			
 			// aapt resource value: 0x7F080256
-			public const int vertical = 2131231318;
+			public const int unlabeled = 2131231318;
 			
 			// aapt resource value: 0x7F080257
-			public const int vertical_only = 2131231319;
+			public const int up = 2131231319;
 			
 			// aapt resource value: 0x7F080258
-			public const int view_offset_helper = 2131231320;
+			public const int useLogo = 2131231320;
 			
 			// aapt resource value: 0x7F080259
-			public const int view_transition = 2131231321;
+			public const int vertical = 2131231321;
 			
 			// aapt resource value: 0x7F08025A
-			public const int view_tree_lifecycle_owner = 2131231322;
+			public const int vertical_only = 2131231322;
 			
 			// aapt resource value: 0x7F08025B
-			public const int view_tree_on_back_pressed_dispatcher_owner = 2131231323;
+			public const int view_offset_helper = 2131231323;
 			
 			// aapt resource value: 0x7F08025C
-			public const int view_tree_saved_state_registry_owner = 2131231324;
+			public const int view_transition = 2131231324;
 			
 			// aapt resource value: 0x7F08025D
-			public const int view_tree_view_model_store_owner = 2131231325;
+			public const int view_tree_lifecycle_owner = 2131231325;
 			
 			// aapt resource value: 0x7F08025E
-			public const int visible = 2131231326;
+			public const int view_tree_on_back_pressed_dispatcher_owner = 2131231326;
 			
 			// aapt resource value: 0x7F08025F
-			public const int visible_removing_fragment_view_tag = 2131231327;
+			public const int view_tree_saved_state_registry_owner = 2131231327;
 			
 			// aapt resource value: 0x7F080260
-			public const int volume_item_container = 2131231328;
+			public const int view_tree_view_model_store_owner = 2131231328;
+			
+			// aapt resource value: 0x7F080261
+			public const int visible = 2131231329;
+			
+			// aapt resource value: 0x7F080262
+			public const int visible_removing_fragment_view_tag = 2131231330;
+			
+			// aapt resource value: 0x7F080263
+			public const int volume_item_container = 2131231331;
 			
 			// aapt resource value: 0x7F08001E
 			public const int WAWidgetIconFlipper = 2131230750;
@@ -24338,8 +24249,8 @@ namespace ResinTimer.Droid
 			// aapt resource value: 0x7F080026
 			public const int WAWidgetTitle = 2131230758;
 			
-			// aapt resource value: 0x7F080261
-			public const int west = 2131231329;
+			// aapt resource value: 0x7F080264
+			public const int west = 2131231332;
 			
 			// aapt resource value: 0x7F080027
 			public const int WidgetConfigureApply = 2131230759;
@@ -24356,29 +24267,29 @@ namespace ResinTimer.Droid
 			// aapt resource value: 0x7F08002B
 			public const int WidgetSettingPreviewLayout = 2131230763;
 			
-			// aapt resource value: 0x7F080263
-			public const int withinBounds = 2131231331;
-			
-			// aapt resource value: 0x7F080262
-			public const int withText = 2131231330;
-			
-			// aapt resource value: 0x7F080264
-			public const int wrap = 2131231332;
+			// aapt resource value: 0x7F080266
+			public const int withinBounds = 2131231334;
 			
 			// aapt resource value: 0x7F080265
-			public const int wrap_content = 2131231333;
-			
-			// aapt resource value: 0x7F080266
-			public const int wrap_content_constrained = 2131231334;
+			public const int withText = 2131231333;
 			
 			// aapt resource value: 0x7F080267
-			public const int x_left = 2131231335;
+			public const int wrap = 2131231335;
 			
 			// aapt resource value: 0x7F080268
-			public const int x_right = 2131231336;
+			public const int wrap_content = 2131231336;
 			
 			// aapt resource value: 0x7F080269
-			public const int zero_corner_chip = 2131231337;
+			public const int wrap_content_constrained = 2131231337;
+			
+			// aapt resource value: 0x7F08026A
+			public const int x_left = 2131231338;
+			
+			// aapt resource value: 0x7F08026B
+			public const int x_right = 2131231339;
+			
+			// aapt resource value: 0x7F08026C
+			public const int zero_corner_chip = 2131231340;
 			
 			static Id()
 			{
@@ -25249,307 +25160,328 @@ namespace ResinTimer.Droid
 			public const int bottom_sheet_behavior = 2131689517;
 			
 			// aapt resource value: 0x7F0F002F
-			public const int character_counter_content_description = 2131689519;
+			public const int call_notification_answer_action = 2131689519;
 			
 			// aapt resource value: 0x7F0F0030
-			public const int character_counter_overflowed_content_description = 2131689520;
+			public const int call_notification_answer_video_action = 2131689520;
 			
 			// aapt resource value: 0x7F0F0031
-			public const int character_counter_pattern = 2131689521;
+			public const int call_notification_decline_action = 2131689521;
 			
 			// aapt resource value: 0x7F0F0032
-			public const int chip_text = 2131689522;
+			public const int call_notification_hang_up_action = 2131689522;
 			
 			// aapt resource value: 0x7F0F0033
-			public const int clear_text_end_icon_content_description = 2131689523;
+			public const int call_notification_incoming_text = 2131689523;
 			
 			// aapt resource value: 0x7F0F0034
-			public const int copy = 2131689524;
+			public const int call_notification_ongoing_text = 2131689524;
 			
 			// aapt resource value: 0x7F0F0035
-			public const int copy_toast_msg = 2131689525;
+			public const int call_notification_screening_text = 2131689525;
 			
 			// aapt resource value: 0x7F0F0036
-			public const int error_icon_content_description = 2131689526;
+			public const int character_counter_content_description = 2131689526;
 			
 			// aapt resource value: 0x7F0F0037
-			public const int expand_button_title = 2131689527;
+			public const int character_counter_overflowed_content_description = 2131689527;
 			
 			// aapt resource value: 0x7F0F0038
-			public const int exposed_dropdown_menu_content_description = 2131689528;
+			public const int character_counter_pattern = 2131689528;
 			
 			// aapt resource value: 0x7F0F0039
-			public const int fab_transformation_scrim_behavior = 2131689529;
+			public const int chip_text = 2131689529;
 			
 			// aapt resource value: 0x7F0F003A
-			public const int fab_transformation_sheet_behavior = 2131689530;
+			public const int clear_text_end_icon_content_description = 2131689530;
 			
 			// aapt resource value: 0x7F0F003B
-			public const int fallback_menu_item_copy_link = 2131689531;
+			public const int copy = 2131689531;
 			
 			// aapt resource value: 0x7F0F003C
-			public const int fallback_menu_item_open_in_browser = 2131689532;
+			public const int copy_toast_msg = 2131689532;
 			
 			// aapt resource value: 0x7F0F003D
-			public const int fallback_menu_item_share_link = 2131689533;
+			public const int error_icon_content_description = 2131689533;
+			
+			// aapt resource value: 0x7F0F003E
+			public const int expand_button_title = 2131689534;
+			
+			// aapt resource value: 0x7F0F003F
+			public const int exposed_dropdown_menu_content_description = 2131689535;
+			
+			// aapt resource value: 0x7F0F0040
+			public const int fab_transformation_scrim_behavior = 2131689536;
+			
+			// aapt resource value: 0x7F0F0041
+			public const int fab_transformation_sheet_behavior = 2131689537;
+			
+			// aapt resource value: 0x7F0F0042
+			public const int fallback_menu_item_copy_link = 2131689538;
+			
+			// aapt resource value: 0x7F0F0043
+			public const int fallback_menu_item_open_in_browser = 2131689539;
+			
+			// aapt resource value: 0x7F0F0044
+			public const int fallback_menu_item_share_link = 2131689540;
 			
 			// aapt resource value: 0x7F0F0004
 			public const int Hello = 2131689476;
 			
-			// aapt resource value: 0x7F0F003E
-			public const int hide_bottom_view_on_scroll_behavior = 2131689534;
-			
-			// aapt resource value: 0x7F0F003F
-			public const int icon_content_description = 2131689535;
-			
-			// aapt resource value: 0x7F0F0040
-			public const int item_view_role_description = 2131689536;
-			
-			// aapt resource value: 0x7F0F0041
-			public const int material_clock_display_divider = 2131689537;
-			
-			// aapt resource value: 0x7F0F0042
-			public const int material_clock_toggle_content_description = 2131689538;
-			
-			// aapt resource value: 0x7F0F0043
-			public const int material_hour_selection = 2131689539;
-			
-			// aapt resource value: 0x7F0F0044
-			public const int material_hour_suffix = 2131689540;
-			
 			// aapt resource value: 0x7F0F0045
-			public const int material_minute_selection = 2131689541;
+			public const int hide_bottom_view_on_scroll_behavior = 2131689541;
 			
 			// aapt resource value: 0x7F0F0046
-			public const int material_minute_suffix = 2131689542;
+			public const int icon_content_description = 2131689542;
 			
 			// aapt resource value: 0x7F0F0047
-			public const int material_motion_easing_accelerated = 2131689543;
+			public const int item_view_role_description = 2131689543;
 			
 			// aapt resource value: 0x7F0F0048
-			public const int material_motion_easing_decelerated = 2131689544;
+			public const int material_clock_display_divider = 2131689544;
 			
 			// aapt resource value: 0x7F0F0049
-			public const int material_motion_easing_emphasized = 2131689545;
+			public const int material_clock_toggle_content_description = 2131689545;
 			
 			// aapt resource value: 0x7F0F004A
-			public const int material_motion_easing_linear = 2131689546;
+			public const int material_hour_selection = 2131689546;
 			
 			// aapt resource value: 0x7F0F004B
-			public const int material_motion_easing_standard = 2131689547;
+			public const int material_hour_suffix = 2131689547;
 			
 			// aapt resource value: 0x7F0F004C
-			public const int material_slider_range_end = 2131689548;
+			public const int material_minute_selection = 2131689548;
 			
 			// aapt resource value: 0x7F0F004D
-			public const int material_slider_range_start = 2131689549;
+			public const int material_minute_suffix = 2131689549;
 			
 			// aapt resource value: 0x7F0F004E
-			public const int material_timepicker_am = 2131689550;
+			public const int material_motion_easing_accelerated = 2131689550;
 			
 			// aapt resource value: 0x7F0F004F
-			public const int material_timepicker_clock_mode_description = 2131689551;
+			public const int material_motion_easing_decelerated = 2131689551;
 			
 			// aapt resource value: 0x7F0F0050
-			public const int material_timepicker_hour = 2131689552;
+			public const int material_motion_easing_emphasized = 2131689552;
 			
 			// aapt resource value: 0x7F0F0051
-			public const int material_timepicker_minute = 2131689553;
+			public const int material_motion_easing_linear = 2131689553;
 			
 			// aapt resource value: 0x7F0F0052
-			public const int material_timepicker_pm = 2131689554;
+			public const int material_motion_easing_standard = 2131689554;
 			
 			// aapt resource value: 0x7F0F0053
-			public const int material_timepicker_select_time = 2131689555;
+			public const int material_slider_range_end = 2131689555;
 			
 			// aapt resource value: 0x7F0F0054
-			public const int material_timepicker_text_input_mode_description = 2131689556;
+			public const int material_slider_range_start = 2131689556;
 			
 			// aapt resource value: 0x7F0F0055
-			public const int mr_button_content_description = 2131689557;
+			public const int material_timepicker_am = 2131689557;
 			
 			// aapt resource value: 0x7F0F0056
-			public const int mr_cast_button_connected = 2131689558;
+			public const int material_timepicker_clock_mode_description = 2131689558;
 			
 			// aapt resource value: 0x7F0F0057
-			public const int mr_cast_button_connecting = 2131689559;
+			public const int material_timepicker_hour = 2131689559;
 			
 			// aapt resource value: 0x7F0F0058
-			public const int mr_cast_button_disconnected = 2131689560;
+			public const int material_timepicker_minute = 2131689560;
 			
 			// aapt resource value: 0x7F0F0059
-			public const int mr_cast_dialog_title_view_placeholder = 2131689561;
+			public const int material_timepicker_pm = 2131689561;
 			
 			// aapt resource value: 0x7F0F005A
-			public const int mr_chooser_searching = 2131689562;
+			public const int material_timepicker_select_time = 2131689562;
 			
 			// aapt resource value: 0x7F0F005B
-			public const int mr_chooser_title = 2131689563;
+			public const int material_timepicker_text_input_mode_description = 2131689563;
 			
 			// aapt resource value: 0x7F0F005C
-			public const int mr_controller_album_art = 2131689564;
+			public const int mr_button_content_description = 2131689564;
 			
 			// aapt resource value: 0x7F0F005D
-			public const int mr_controller_casting_screen = 2131689565;
+			public const int mr_cast_button_connected = 2131689565;
 			
 			// aapt resource value: 0x7F0F005E
-			public const int mr_controller_close_description = 2131689566;
+			public const int mr_cast_button_connecting = 2131689566;
 			
 			// aapt resource value: 0x7F0F005F
-			public const int mr_controller_collapse_group = 2131689567;
+			public const int mr_cast_button_disconnected = 2131689567;
 			
 			// aapt resource value: 0x7F0F0060
-			public const int mr_controller_disconnect = 2131689568;
+			public const int mr_cast_dialog_title_view_placeholder = 2131689568;
 			
 			// aapt resource value: 0x7F0F0061
-			public const int mr_controller_expand_group = 2131689569;
+			public const int mr_chooser_searching = 2131689569;
 			
 			// aapt resource value: 0x7F0F0062
-			public const int mr_controller_no_info_available = 2131689570;
+			public const int mr_chooser_title = 2131689570;
 			
 			// aapt resource value: 0x7F0F0063
-			public const int mr_controller_no_media_selected = 2131689571;
+			public const int mr_controller_album_art = 2131689571;
 			
 			// aapt resource value: 0x7F0F0064
-			public const int mr_controller_pause = 2131689572;
+			public const int mr_controller_casting_screen = 2131689572;
 			
 			// aapt resource value: 0x7F0F0065
-			public const int mr_controller_play = 2131689573;
+			public const int mr_controller_close_description = 2131689573;
 			
 			// aapt resource value: 0x7F0F0066
-			public const int mr_controller_stop = 2131689574;
+			public const int mr_controller_collapse_group = 2131689574;
 			
 			// aapt resource value: 0x7F0F0067
-			public const int mr_controller_stop_casting = 2131689575;
+			public const int mr_controller_disconnect = 2131689575;
 			
 			// aapt resource value: 0x7F0F0068
-			public const int mr_controller_volume_slider = 2131689576;
+			public const int mr_controller_expand_group = 2131689576;
 			
 			// aapt resource value: 0x7F0F0069
-			public const int mr_dialog_default_group_name = 2131689577;
+			public const int mr_controller_no_info_available = 2131689577;
 			
 			// aapt resource value: 0x7F0F006A
-			public const int mr_dialog_groupable_header = 2131689578;
+			public const int mr_controller_no_media_selected = 2131689578;
 			
 			// aapt resource value: 0x7F0F006B
-			public const int mr_dialog_transferable_header = 2131689579;
+			public const int mr_controller_pause = 2131689579;
 			
 			// aapt resource value: 0x7F0F006C
-			public const int mr_system_route_name = 2131689580;
+			public const int mr_controller_play = 2131689580;
 			
 			// aapt resource value: 0x7F0F006D
-			public const int mr_user_route_category_name = 2131689581;
+			public const int mr_controller_stop = 2131689581;
 			
 			// aapt resource value: 0x7F0F006E
-			public const int mtrl_badge_numberless_content_description = 2131689582;
+			public const int mr_controller_stop_casting = 2131689582;
 			
 			// aapt resource value: 0x7F0F006F
-			public const int mtrl_chip_close_icon_content_description = 2131689583;
+			public const int mr_controller_volume_slider = 2131689583;
 			
 			// aapt resource value: 0x7F0F0070
-			public const int mtrl_exceed_max_badge_number_content_description = 2131689584;
+			public const int mr_dialog_default_group_name = 2131689584;
 			
 			// aapt resource value: 0x7F0F0071
-			public const int mtrl_exceed_max_badge_number_suffix = 2131689585;
+			public const int mr_dialog_groupable_header = 2131689585;
 			
 			// aapt resource value: 0x7F0F0072
-			public const int mtrl_picker_a11y_next_month = 2131689586;
+			public const int mr_dialog_transferable_header = 2131689586;
 			
 			// aapt resource value: 0x7F0F0073
-			public const int mtrl_picker_a11y_prev_month = 2131689587;
+			public const int mr_system_route_name = 2131689587;
 			
 			// aapt resource value: 0x7F0F0074
-			public const int mtrl_picker_announce_current_selection = 2131689588;
+			public const int mr_user_route_category_name = 2131689588;
 			
 			// aapt resource value: 0x7F0F0075
-			public const int mtrl_picker_cancel = 2131689589;
+			public const int mtrl_badge_numberless_content_description = 2131689589;
 			
 			// aapt resource value: 0x7F0F0076
-			public const int mtrl_picker_confirm = 2131689590;
+			public const int mtrl_chip_close_icon_content_description = 2131689590;
 			
 			// aapt resource value: 0x7F0F0077
-			public const int mtrl_picker_date_header_selected = 2131689591;
+			public const int mtrl_exceed_max_badge_number_content_description = 2131689591;
 			
 			// aapt resource value: 0x7F0F0078
-			public const int mtrl_picker_date_header_title = 2131689592;
+			public const int mtrl_exceed_max_badge_number_suffix = 2131689592;
 			
 			// aapt resource value: 0x7F0F0079
-			public const int mtrl_picker_date_header_unselected = 2131689593;
+			public const int mtrl_picker_a11y_next_month = 2131689593;
 			
 			// aapt resource value: 0x7F0F007A
-			public const int mtrl_picker_day_of_week_column_header = 2131689594;
+			public const int mtrl_picker_a11y_prev_month = 2131689594;
 			
 			// aapt resource value: 0x7F0F007B
-			public const int mtrl_picker_invalid_format = 2131689595;
+			public const int mtrl_picker_announce_current_selection = 2131689595;
 			
 			// aapt resource value: 0x7F0F007C
-			public const int mtrl_picker_invalid_format_example = 2131689596;
+			public const int mtrl_picker_cancel = 2131689596;
 			
 			// aapt resource value: 0x7F0F007D
-			public const int mtrl_picker_invalid_format_use = 2131689597;
+			public const int mtrl_picker_confirm = 2131689597;
 			
 			// aapt resource value: 0x7F0F007E
-			public const int mtrl_picker_invalid_range = 2131689598;
+			public const int mtrl_picker_date_header_selected = 2131689598;
 			
 			// aapt resource value: 0x7F0F007F
-			public const int mtrl_picker_navigate_to_year_description = 2131689599;
+			public const int mtrl_picker_date_header_title = 2131689599;
 			
 			// aapt resource value: 0x7F0F0080
-			public const int mtrl_picker_out_of_range = 2131689600;
+			public const int mtrl_picker_date_header_unselected = 2131689600;
 			
 			// aapt resource value: 0x7F0F0081
-			public const int mtrl_picker_range_header_only_end_selected = 2131689601;
+			public const int mtrl_picker_day_of_week_column_header = 2131689601;
 			
 			// aapt resource value: 0x7F0F0082
-			public const int mtrl_picker_range_header_only_start_selected = 2131689602;
+			public const int mtrl_picker_invalid_format = 2131689602;
 			
 			// aapt resource value: 0x7F0F0083
-			public const int mtrl_picker_range_header_selected = 2131689603;
+			public const int mtrl_picker_invalid_format_example = 2131689603;
 			
 			// aapt resource value: 0x7F0F0084
-			public const int mtrl_picker_range_header_title = 2131689604;
+			public const int mtrl_picker_invalid_format_use = 2131689604;
 			
 			// aapt resource value: 0x7F0F0085
-			public const int mtrl_picker_range_header_unselected = 2131689605;
+			public const int mtrl_picker_invalid_range = 2131689605;
 			
 			// aapt resource value: 0x7F0F0086
-			public const int mtrl_picker_save = 2131689606;
+			public const int mtrl_picker_navigate_to_year_description = 2131689606;
 			
 			// aapt resource value: 0x7F0F0087
-			public const int mtrl_picker_text_input_date_hint = 2131689607;
+			public const int mtrl_picker_out_of_range = 2131689607;
 			
 			// aapt resource value: 0x7F0F0088
-			public const int mtrl_picker_text_input_date_range_end_hint = 2131689608;
+			public const int mtrl_picker_range_header_only_end_selected = 2131689608;
 			
 			// aapt resource value: 0x7F0F0089
-			public const int mtrl_picker_text_input_date_range_start_hint = 2131689609;
+			public const int mtrl_picker_range_header_only_start_selected = 2131689609;
 			
 			// aapt resource value: 0x7F0F008A
-			public const int mtrl_picker_text_input_day_abbr = 2131689610;
+			public const int mtrl_picker_range_header_selected = 2131689610;
 			
 			// aapt resource value: 0x7F0F008B
-			public const int mtrl_picker_text_input_month_abbr = 2131689611;
+			public const int mtrl_picker_range_header_title = 2131689611;
 			
 			// aapt resource value: 0x7F0F008C
-			public const int mtrl_picker_text_input_year_abbr = 2131689612;
+			public const int mtrl_picker_range_header_unselected = 2131689612;
 			
 			// aapt resource value: 0x7F0F008D
-			public const int mtrl_picker_toggle_to_calendar_input_mode = 2131689613;
+			public const int mtrl_picker_save = 2131689613;
 			
 			// aapt resource value: 0x7F0F008E
-			public const int mtrl_picker_toggle_to_day_selection = 2131689614;
+			public const int mtrl_picker_text_input_date_hint = 2131689614;
 			
 			// aapt resource value: 0x7F0F008F
-			public const int mtrl_picker_toggle_to_text_input_mode = 2131689615;
+			public const int mtrl_picker_text_input_date_range_end_hint = 2131689615;
 			
 			// aapt resource value: 0x7F0F0090
-			public const int mtrl_picker_toggle_to_year_selection = 2131689616;
+			public const int mtrl_picker_text_input_date_range_start_hint = 2131689616;
 			
 			// aapt resource value: 0x7F0F0091
-			public const int nav_app_bar_navigate_up_description = 2131689617;
+			public const int mtrl_picker_text_input_day_abbr = 2131689617;
 			
 			// aapt resource value: 0x7F0F0092
-			public const int nav_app_bar_open_drawer_description = 2131689618;
+			public const int mtrl_picker_text_input_month_abbr = 2131689618;
+			
+			// aapt resource value: 0x7F0F0093
+			public const int mtrl_picker_text_input_year_abbr = 2131689619;
+			
+			// aapt resource value: 0x7F0F0094
+			public const int mtrl_picker_toggle_to_calendar_input_mode = 2131689620;
+			
+			// aapt resource value: 0x7F0F0095
+			public const int mtrl_picker_toggle_to_day_selection = 2131689621;
+			
+			// aapt resource value: 0x7F0F0096
+			public const int mtrl_picker_toggle_to_text_input_mode = 2131689622;
+			
+			// aapt resource value: 0x7F0F0097
+			public const int mtrl_picker_toggle_to_year_selection = 2131689623;
+			
+			// aapt resource value: 0x7F0F0098
+			public const int nav_app_bar_navigate_up_description = 2131689624;
+			
+			// aapt resource value: 0x7F0F0099
+			public const int nav_app_bar_open_drawer_description = 2131689625;
 			
 			// aapt resource value: 0x7F0F0005
 			public const int NotiChannelDescription = 2131689477;
@@ -25566,50 +25498,50 @@ namespace ResinTimer.Droid
 			// aapt resource value: 0x7F0F0009
 			public const int NotiTitle = 2131689481;
 			
-			// aapt resource value: 0x7F0F0093
-			public const int not_set = 2131689619;
-			
-			// aapt resource value: 0x7F0F0094
-			public const int overflow_tab_title = 2131689620;
-			
-			// aapt resource value: 0x7F0F0095
-			public const int password_toggle_content_description = 2131689621;
-			
-			// aapt resource value: 0x7F0F0096
-			public const int path_password_eye = 2131689622;
-			
-			// aapt resource value: 0x7F0F0097
-			public const int path_password_eye_mask_strike_through = 2131689623;
-			
-			// aapt resource value: 0x7F0F0098
-			public const int path_password_eye_mask_visible = 2131689624;
-			
-			// aapt resource value: 0x7F0F0099
-			public const int path_password_strike_through = 2131689625;
-			
 			// aapt resource value: 0x7F0F009A
-			public const int preference_copied = 2131689626;
+			public const int not_set = 2131689626;
 			
 			// aapt resource value: 0x7F0F009B
-			public const int search_menu_title = 2131689627;
+			public const int overflow_tab_title = 2131689627;
 			
 			// aapt resource value: 0x7F0F009C
-			public const int sfnumericupdown_decrement_button_accessibility_label = 2131689628;
+			public const int password_toggle_content_description = 2131689628;
 			
 			// aapt resource value: 0x7F0F009D
-			public const int sfnumericupdown_increment_button_accessibility_label = 2131689629;
+			public const int path_password_eye = 2131689629;
 			
 			// aapt resource value: 0x7F0F009E
-			public const int status_bar_notification_info_overflow = 2131689630;
+			public const int path_password_eye_mask_strike_through = 2131689630;
 			
 			// aapt resource value: 0x7F0F009F
-			public const int summary_collapsed_preference_list = 2131689631;
+			public const int path_password_eye_mask_visible = 2131689631;
 			
 			// aapt resource value: 0x7F0F00A0
-			public const int v7_preference_off = 2131689632;
+			public const int path_password_strike_through = 2131689632;
 			
 			// aapt resource value: 0x7F0F00A1
-			public const int v7_preference_on = 2131689633;
+			public const int preference_copied = 2131689633;
+			
+			// aapt resource value: 0x7F0F00A2
+			public const int search_menu_title = 2131689634;
+			
+			// aapt resource value: 0x7F0F00A3
+			public const int sfnumericupdown_decrement_button_accessibility_label = 2131689635;
+			
+			// aapt resource value: 0x7F0F00A4
+			public const int sfnumericupdown_increment_button_accessibility_label = 2131689636;
+			
+			// aapt resource value: 0x7F0F00A5
+			public const int status_bar_notification_info_overflow = 2131689637;
+			
+			// aapt resource value: 0x7F0F00A6
+			public const int summary_collapsed_preference_list = 2131689638;
+			
+			// aapt resource value: 0x7F0F00A7
+			public const int v7_preference_off = 2131689639;
+			
+			// aapt resource value: 0x7F0F00A8
+			public const int v7_preference_on = 2131689640;
 			
 			// aapt resource value: 0x7F0F000A
 			public const int WidgetConfigure_BackgroundColor_Black = 2131689482;

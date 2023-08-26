@@ -78,43 +78,31 @@ namespace ResinTimer.Droid
             }
         }
 
-        public void Register()
+        public void Register() =>
+            RegisterDailyCheckInPeriodicWorker<DailyCheckInWorker>(DailyCheckInWorkName);
+
+        public void RegisterHonkai() =>
+            RegisterDailyCheckInPeriodicWorker<DailyCheckInHonkaiWorker>(DailyCheckInHonkaiWorkName);
+
+        public void RegisterHonkaiStarRail() =>
+            RegisterDailyCheckInPeriodicWorker<DailyCheckInHonkaiStarRailWorker>(DailyCheckInHonkaiStarRailWorkName);
+
+        private void RegisterDailyCheckInPeriodicWorker<T>(string workName)
+            where T : Worker
         {
-            PeriodicWorkRequest workRequest = PeriodicWorkRequest.Builder
-                .From<DailyCheckInWorker>(TimeSpan.FromHours(1), TimeSpan.FromMinutes(5))
-                .SetConstraints(new()
-                {
-                    RequiredNetworkType = NetworkType.Connected
-                })
+            Constraints workConstraints = new Constraints.Builder()
+                .SetRequiredNetworkType(NetworkType.Connected)
                 .Build();
 
-            WorkManagerInstance.EnqueueUniquePeriodicWork(DailyCheckInWorkName, ExistingPeriodicWorkPolicy.Replace, workRequest);
-        }
-
-        public void RegisterHonkai()
-        {
             PeriodicWorkRequest workRequest = PeriodicWorkRequest.Builder
-                .From<DailyCheckInHonkaiWorker>(TimeSpan.FromHours(1), TimeSpan.FromMinutes(5))
-                .SetConstraints(new()
-                {
-                    RequiredNetworkType = NetworkType.Connected
-                })
-                .Build();
-
-            WorkManagerInstance.EnqueueUniquePeriodicWork(DailyCheckInHonkaiWorkName, ExistingPeriodicWorkPolicy.Replace, workRequest);
-        }
-
-        public void RegisterHonkaiStarRail()
-        {
-            PeriodicWorkRequest workRequest = PeriodicWorkRequest.Builder
-                .From<DailyCheckInHonkaiStarRailWorker>(TimeSpan.FromHours(1), TimeSpan.FromMinutes(5))
-               .SetConstraints(new()
-               {
-                   RequiredNetworkType = NetworkType.Connected
-               })
+               .From<T>(TimeSpan.FromHours(1), TimeSpan.FromMinutes(5))
+               .SetConstraints(workConstraints)
                .Build();
 
-            WorkManagerInstance.EnqueueUniquePeriodicWork(DailyCheckInHonkaiStarRailWorkName, ExistingPeriodicWorkPolicy.Replace, workRequest);
+            WorkManagerInstance.EnqueueUniquePeriodicWork(
+                workName,
+                ExistingPeriodicWorkPolicy.CancelAndReenqueue,
+                workRequest);
         }
 
         public void Unregister()

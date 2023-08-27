@@ -40,12 +40,12 @@
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
-    <PackageReference Include="Syncfusion.Licensing" Version="21.2.5" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="21.2.5">
+    <PackageReference Include="Syncfusion.Licensing" Version="22.2.10" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="22.2.10">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="21.2.5" />
-    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="21.2.5">
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="22.2.10" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="22.2.10">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2612" />

@@ -23,7 +23,7 @@ namespace ResinTimer
     public partial class App : Application
     {
         private string syncfusionKey =
-            "MTkzNTg3MkAzMjMxMmUzMjJlMzNtY3QxaEk3RElkK2p1MTFveTRYQnllUnpKUDczOUNwaFd5K3dvclRnR25nPQ==";
+            "MjY2NTM3NUAzMjMyMmUzMDJlMzBpTmwyZGx2WjVQeHk0MW0wa21IZkJ3c2dRb0l4cFJNTnhiYUZEbmdrUG1JPQ==";
 
         public App()
         {

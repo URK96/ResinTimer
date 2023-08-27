@@ -7,6 +7,7 @@ using ResinTimer.Models.Materials;
 using ResinTimer.Resources;
 
 using System.Collections.Generic;
+using System.Linq;
 
 using Xamarin.Essentials;
 
@@ -32,8 +33,10 @@ namespace ResinTimer.Droid
             Resource.Id.WAWidgetIconMondstadt,
             Resource.Id.WAWidgetIconLiyue,
             Resource.Id.WAWidgetIconInazuma,
-            Resource.Id.WAWidgetIconSumeru
+            Resource.Id.WAWidgetIconSumeru,
+            Resource.Id.WAWidgetIconFontaine
         };
+        private static int locationIndex = 0;
 
         public override void OnReceive(Context context, Intent intent)
         {
@@ -57,17 +60,32 @@ namespace ResinTimer.Droid
                     break;
                 case ACTION_PREVIOUS:
                     var rv = new RemoteViews(context.PackageName, Resource.Layout.WAWidget);
-                    rv.ShowPrevious(Resource.Id.WAWidgetIconFlipper);
+                    UpdateLocationPreviousIndex();
+                    rv.SetDisplayedChild(Resource.Id.WAWidgetIconFlipper, locationIndex);
                     AppWidgetManager.GetInstance(context).UpdateAppWidget(intent.GetIntExtra(AppWidgetManager.ExtraAppwidgetId, 0), rv);
                     break;
                 case ACTION_NEXT:
                     var rv2 = new RemoteViews(context.PackageName, Resource.Layout.WAWidget);
-                    rv2.ShowNext(Resource.Id.WAWidgetIconFlipper);
+                    UpdateLocationNextIndex();
+                    rv2.SetDisplayedChild(Resource.Id.WAWidgetIconFlipper, locationIndex);
                     AppWidgetManager.GetInstance(context).UpdateAppWidget(intent.GetIntExtra(AppWidgetManager.ExtraAppwidgetId, 0), rv2);
                     break;
             }
 
             base.OnReceive(context, intent);
+
+
+            // Local Functions
+
+            void UpdateLocationNextIndex() =>
+                locationIndex = (locationIndex >= (locationImageViewIds.Length - 1)) ?
+                    0 :
+                    (locationIndex + 1);
+
+            void UpdateLocationPreviousIndex() =>
+                locationIndex = (locationIndex <= 0) ?
+                    (locationImageViewIds.Length - 1) :
+                    (locationIndex - 1);
         }
 
         public override void OnUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
@@ -163,6 +181,8 @@ namespace ResinTimer.Droid
                     Locations.Liyue => Resource.Drawable.wa_all_Liyue,
                     Locations.Inazuma => Resource.Drawable.wa_all_Inazuma,
                     Locations.Sumeru => Resource.Drawable.wa_all_Sumeru,
+                    Locations.Fontaine => Resource.Drawable.wa_all_Fontaine,
+
                     _ => 0
                 };
             }
@@ -182,6 +202,10 @@ namespace ResinTimer.Droid
                     "Talisman of the Forest Dew" => Resource.Drawable.wa_talisman_of_the_forest_dew_4,
                     "Oasis Garden" => Resource.Drawable.wa_oasis_garden_4,
                     "Scorching Might" => Resource.Drawable.wa_scorching_might_4,
+                    "Ancient Chord" => Resource.Drawable.wa_ancient_chord_4,
+                    "Pure Sacred Dewdrop" => Resource.Drawable.wa_pure_sacred_dewdrop_4,
+                    "Pristine Sea" => Resource.Drawable.wa_pristine_sea_4,
+
                     _ => 0
                 };
             }
@@ -191,7 +215,7 @@ namespace ResinTimer.Droid
         {
             List<string> items = new List<string>();
 
-            foreach (WAListItem item in WAEnv.Instance.Items)
+            foreach (WAListItem item in WAEnv.Instance.Items.Cast<WAListItem>())
             {
                 items.Add(item.Item.ItemName);
             }

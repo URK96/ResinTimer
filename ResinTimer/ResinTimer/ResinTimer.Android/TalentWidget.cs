@@ -33,8 +33,10 @@ namespace ResinTimer.Droid
             Resource.Id.TalentWidgetIconMondstadt,
             Resource.Id.TalentWidgetIconLiyue,
             Resource.Id.TalentWidgetIconInazuma,
-            Resource.Id.TalentWidgetIconSumeru
+            Resource.Id.TalentWidgetIconSumeru,
+            Resource.Id.TalentWidgetIconFontaine
         };
+        private static int locationIndex = 0;
 
         public override void OnReceive(Context context, Intent intent)
         {
@@ -58,17 +60,32 @@ namespace ResinTimer.Droid
                     break;
                 case ACTION_PREVIOUS:
                     var rv = new RemoteViews(context.PackageName, Resource.Layout.TalentWidget);
-                    rv.ShowPrevious(Resource.Id.TalentWidgetIconFlipper);
+                    UpdateLocationPreviousIndex();
+                    rv.SetDisplayedChild(Resource.Id.TalentWidgetIconFlipper, locationIndex);
                     AppWidgetManager.GetInstance(context).UpdateAppWidget(intent.GetIntExtra(AppWidgetManager.ExtraAppwidgetId, 0), rv);
                     break;
                 case ACTION_NEXT:
                     var rv2 = new RemoteViews(context.PackageName, Resource.Layout.TalentWidget);
-                    rv2.ShowNext(Resource.Id.TalentWidgetIconFlipper);
+                    UpdateLocationNextIndex();
+                    rv2.SetDisplayedChild(Resource.Id.TalentWidgetIconFlipper, locationIndex);
                     AppWidgetManager.GetInstance(context).UpdateAppWidget(intent.GetIntExtra(AppWidgetManager.ExtraAppwidgetId, 0), rv2);
                     break;
             }
 
             base.OnReceive(context, intent);
+
+
+            // Local Functions
+
+            void UpdateLocationNextIndex() =>
+                locationIndex = (locationIndex >= (locationImageViewIds.Length - 1)) ?
+                    0 :
+                    (locationIndex + 1);
+
+            void UpdateLocationPreviousIndex() =>
+                locationIndex = (locationIndex <= 0) ?
+                    (locationImageViewIds.Length - 1) :
+                    (locationIndex - 1);
         }
 
         public override void OnUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
@@ -164,6 +181,8 @@ namespace ResinTimer.Droid
                     Locations.Liyue => Resource.Drawable.talent_all_Liyue,
                     Locations.Inazuma => Resource.Drawable.talent_all_Inazuma,
                     Locations.Sumeru => Resource.Drawable.talent_all_Sumeru,
+                    Locations.Fontaine => Resource.Drawable.talent_all_Fontaine,
+
                     _ => 0
                 };
             }
@@ -183,6 +202,10 @@ namespace ResinTimer.Droid
                     "Admonition" => Resource.Drawable.talent_admonition,
                     "Ingenuity" => Resource.Drawable.talent_ingenuity,
                     "Praxis" => Resource.Drawable.talent_praxis,
+                    "Equity" => Resource.Drawable.talent_equity,
+                    "Justice" => Resource.Drawable.talent_justice,
+                    "Order" => Resource.Drawable.talent_order,
+
                     _ => 0
                 };
             }

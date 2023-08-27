@@ -42,6 +42,11 @@
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:id="@+id/TalentWidgetIconSumeru"/>
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:id="@+id/TalentWidgetIconFontaine"/>
     </ViewFlipper>
     <LinearLayout
         android:orientation="horizontal"

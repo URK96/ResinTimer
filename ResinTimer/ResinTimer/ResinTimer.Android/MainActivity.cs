@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
 
 using Android.App;
 using Android.Content.PM;
@@ -9,13 +8,14 @@ using Android.Runtime;
 using Android.Util;
 using Android.Widget;
 
+using AndroidX.Activity;
+using AndroidX.AppCompat.App;
+
 using ResinTimer.TimerPages;
 
 using Rg.Plugins.Popup.Services;
 
 using Xamarin.Forms;
-
-using ResinTimer.Droid.Permissions;
 
 using static ResinTimer.Droid.AndroidAppEnvironment;
 
@@ -26,9 +26,9 @@ namespace ResinTimer.Droid
     [IntentFilter(new[] { Xamarin.Essentials.Platform.Intent.ActionAppAction }, Categories = new[] { Android.Content.Intent.CategoryDefault })]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        private App _app;
+        private static App s_app;
 
-        protected override async void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             try
             {
@@ -52,12 +52,13 @@ namespace ResinTimer.Droid
                 {
                     VALUE_TALENTITEM_CLICK => new NavigationPage(
                         new TalentCharacterPage(Intent.GetStringArrayListExtra(KEY_TALENTITEM_LIST)?.ToArray())),
+
                     _ => null
                 });
 
-                _app = app;
+                s_app = app;
 
-                await CheckPlatformPermissions();
+                OnBackPressedDispatcher.AddCallback(this, new MainBackPressedCallback(this));
                 LoadApplication(app);
             }
             catch (Exception ex)
@@ -67,48 +68,11 @@ namespace ResinTimer.Droid
             }
         }
 
-        private async Task CheckPlatformPermissions()
-        {
-            Xamarin.Essentials.PermissionStatus status = 
-                await Xamarin.Essentials.Permissions.CheckStatusAsync<NotificationPermission>();
-
-            if (status is not Xamarin.Essentials.PermissionStatus.Granted)
-            {
-                await Xamarin.Essentials.Permissions.RequestAsync<NotificationPermission>();
-            }
-        }
-
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-
-        public override void OnBackPressed()
-        {
-            if (Xamarin.Essentials.Preferences.Get(SettingConstants.APP_RETURNSTARTPAGE_ENABLED, true))
-            {
-                if (PopupNavigation.Instance.PopupStack.Count > 0)
-                {
-                    Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
-                }
-                else if ((_app is not null) &&
-                         (_app.MainPage is MainPage page) &&
-                         ((page.Detail as NavigationPage).CurrentPage.Navigation.NavigationStack.Count <= 1) &&
-                         ((page.Detail as NavigationPage).CurrentPage is not TimerHomePage))
-                {
-                    page.ApplyDetailPage(new(new TimerHomePage()));
-                }
-                else
-                {
-                    base.OnBackPressed();
-                }
-            }
-            else
-            {
-                Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed);
-            }
         }
 
         protected override void OnResume()
@@ -123,6 +87,46 @@ namespace ResinTimer.Droid
             base.OnNewIntent(intent);
 
             Xamarin.Essentials.Platform.OnNewIntent(intent);
+        }
+
+        class MainBackPressedCallback : OnBackPressedCallback
+        {
+            private readonly AppCompatActivity _activity;
+
+            public MainBackPressedCallback(AppCompatActivity activity = null) : base(true) 
+            {
+                _activity = activity;
+            }
+
+            public override void HandleOnBackPressed()
+            {
+                if (Xamarin.Essentials.Preferences.Get(SettingConstants.APP_RETURNSTARTPAGE_ENABLED, true))
+                {
+                    if (PopupNavigation.Instance.PopupStack.Count > 0)
+                    {
+                        Rg.Plugins.Popup.Popup.SendBackPressed(_activity.OnBackPressedDispatcher.OnBackPressed);
+                    }
+                    else if ((s_app is not null) &&
+                             (s_app.MainPage is MainPage page))
+                    {
+                        Page currentPage = (page.Detail as NavigationPage).CurrentPage;
+
+                        if ((currentPage.Navigation.NavigationStack.Count <= 1) &&
+                            (currentPage is not TimerHomePage))
+                        {
+                            page.ApplyDetailPage(new(new TimerHomePage()));
+                        }
+                        else if (currentPage.Navigation.NavigationStack.Count > 1)
+                        {
+                            currentPage.Navigation.PopAsync();
+                        }
+                    }
+                }
+                else
+                {
+                    Rg.Plugins.Popup.Popup.SendBackPressed(_activity.OnBackPressedDispatcher.OnBackPressed);
+                }
+            }
         }
     }
 }

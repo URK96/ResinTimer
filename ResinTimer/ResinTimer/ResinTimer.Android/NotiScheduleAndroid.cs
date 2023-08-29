@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 using ResinTimer.Droid;
+using ResinTimer.Droid.Permissions;
 using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models;
 using ResinTimer.Models.Notis;
@@ -126,6 +129,34 @@ namespace ResinTimer.Droid
                 Id = 990,
                 NotifyTime = DateTime.Now.AddSeconds(5)
             });
+        }
+
+        public override bool CheckPlatformNotiEnabled()
+        {
+            Xamarin.Essentials.PermissionStatus notiPermissionStatus =
+                Xamarin.Essentials.Permissions.CheckStatusAsync<NotificationPermission>().Result;
+
+            return notiPermissionStatus is Xamarin.Essentials.PermissionStatus.Granted;
+        }
+
+        public override async Task<bool> RequestNotiPermission()
+        {
+            bool isUiShow = Xamarin.Essentials.Permissions.ShouldShowRationale<NotificationPermission>();
+            bool isGranted = false;
+
+            if (isUiShow)
+            {
+                Xamarin.Essentials.PermissionStatus status = 
+                    await Xamarin.Essentials.Permissions.RequestAsync<NotificationPermission>();
+
+                isGranted = status is Xamarin.Essentials.PermissionStatus.Granted;
+            }
+            else if (CheckPlatformNotiEnabled())
+            {
+                isGranted = true;
+            }
+
+            return isGranted;
         }
     }
 }

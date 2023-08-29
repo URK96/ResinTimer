@@ -3250,6 +3250,41 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   You select &apos;Denied&apos; about notification permission.
+        ///If you want to use notification later, go to 
+        ///
+        ///&apos;Settings - Apps - All Apps - Resin Timer&apos;
+        ///
+        ///and grant notification permission.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string VerifyNotiPermission_AfterDenied_Message {
+            get {
+                return ResourceManager.GetString("VerifyNotiPermission_AfterDenied_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Notification is enabled but related permission is not granted.
+        ///If you want to receive notification, you must grant permission to this app. 
+        ///
+        ///Do you want to proceed this step?과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string VerifyNotiPermission_Dialog_Message {
+            get {
+                return ResourceManager.GetString("VerifyNotiPermission_Dialog_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Caution과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string VerifyNotiPermission_Dialog_Title {
+            get {
+                return ResourceManager.GetString("VerifyNotiPermission_Dialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   All Items available과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string WAItemTimerPage_PreLabel_All {

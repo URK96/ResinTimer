@@ -1241,4 +1241,21 @@ MIT License</value>
   <data name="WidgetConfigure_Title" xml:space="preserve">
     <value>위젯 설정</value>
   </data>
+  <data name="VerifyNotiPermission_Dialog_Title" xml:space="preserve">
+    <value>주의</value>
+  </data>
+  <data name="VerifyNotiPermission_Dialog_Message" xml:space="preserve">
+    <value>알림이 활성화 되어 있지만 권한이 없습니다.
+알림을 받기 원하신다면, 이 앱에 권한을 부여해야 합니다.
+
+해당 과정을 진행할까요?</value>
+  </data>
+  <data name="VerifyNotiPermission_AfterDenied_Message" xml:space="preserve">
+    <value>알림 권한에 대해 '거부'를 선택하였습니다.
+이후 알림을 받기 원하신다면,
+
+'설정 - 앱 - 모든 앱 - 레진 알리미'
+
+로 이동 후 알림 권한을 부여해주시기 바랍니다.</value>
+  </data>
 </root>

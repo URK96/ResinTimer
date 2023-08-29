@@ -132,11 +132,14 @@ namespace ResinTimer.Pages
         private async void NotificationOnChanged(object sender, ToggledEventArgs e)
         {
             IBootService bootService = DependencyService.Get<IBootService>();
+            bool isToggled = e.Value;
 
-            Preferences.Set(SettingConstants.NOTI_ENABLED, e.Value);
+            Preferences.Set(SettingConstants.NOTI_ENABLED, isToggled);
 
-            if (e.Value)
+            if (isToggled)
             {
+                await NotiScheduleService.VerifyNotificationAvailable();
+
                 if (Device.RuntimePlatform is Device.UWP)
                 {
                     if (!await bootService.Register())

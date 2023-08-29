@@ -1,17 +1,13 @@
-﻿using Microsoft.AppCenter;
+﻿using System;
+using System.Text;
+using System.Threading.Tasks;
+
+using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 
-using Newtonsoft.Json;
-
-using ResinTimer.Models.Notis;
 using ResinTimer.Resources;
-
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
-using System.Threading.Tasks;
+using ResinTimer.Services;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -42,6 +38,7 @@ namespace ResinTimer
                 //SetDefaultPreferences();
 
                 Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(syncfusionKey);
+                NotiScheduleService.VerifyNotificationAvailable().GetAwaiter();
 
                 // Android use direct call this method on MainActivity.cs
                 if (DeviceInfo.Platform != DevicePlatform.Android)

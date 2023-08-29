@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="ResinTimer.Dialogs.ActionView"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:ResinTimer.Resources">
+    <StackLayout Orientation="Vertical">
+        <ScrollView>
+            <Label x:Name="MessageLabel" />
+        </ScrollView>
+
+        <Grid Padding="0,20,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="NegativeButton"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="5,0,5,0"
+                    Clicked="ButtonClicked"
+                    HeightRequest="50"
+                    Pressed="ButtonPressed"
+                    Released="ButtonReleased"
+                    Style="{StaticResource DialogButtonStyle}"
+                    Text="{x:Static resources:AppResources.Dialog_No}" />
+
+            <Button x:Name="PositiveButton"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="5,0,5,0"
+                    Clicked="ButtonClicked"
+                    Pressed="ButtonPressed"
+                    Released="ButtonReleased"
+                    Style="{StaticResource DialogButtonStyle}"
+                    Text="{x:Static resources:AppResources.Dialog_Yes}" />
+        </Grid>
+    </StackLayout>
+</ContentView>

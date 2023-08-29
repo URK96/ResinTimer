@@ -62,6 +62,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Dialogs\ActionView.xaml.cs">
+      <DependentUpon>ActionView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="EditFurnishingItemPage.xaml.cs">
       <DependentUpon>EditFurnishingItemPage.xaml</DependentUpon>
     </Compile>

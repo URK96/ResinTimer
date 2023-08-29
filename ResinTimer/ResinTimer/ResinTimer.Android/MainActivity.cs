@@ -1,22 +1,23 @@
 ﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Runtime;
+using Android.Util;
+using Android.Widget;
+
+using ResinTimer.TimerPages;
+
+using Rg.Plugins.Popup.Services;
+
 using Xamarin.Forms;
-using Newtonsoft.Json;
-using AndroidX.Core.App;
+
+using ResinTimer.Droid.Permissions;
 
 using static ResinTimer.Droid.AndroidAppEnvironment;
-using System.Collections.Generic;
-using System.Linq;
-using Android.Util;
-using ResinTimer.TimerPages;
-using Rg.Plugins.Popup.Services;
-using Java.Util.Prefs;
 
 namespace ResinTimer.Droid
 {
@@ -27,7 +28,7 @@ namespace ResinTimer.Droid
     {
         private App _app;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             try
             {
@@ -56,12 +57,24 @@ namespace ResinTimer.Droid
 
                 _app = app;
 
+                await CheckPlatformPermissions();
                 LoadApplication(app);
             }
             catch (Exception ex)
             {
                 Toast.MakeText(this, ex.ToString(), ToastLength.Long).Show();
                 Log.Error("ResinTimer", ex.ToString());
+            }
+        }
+
+        private async Task CheckPlatformPermissions()
+        {
+            Xamarin.Essentials.PermissionStatus status = 
+                await Xamarin.Essentials.Permissions.CheckStatusAsync<NotificationPermission>();
+
+            if (status is not Xamarin.Essentials.PermissionStatus.Granted)
+            {
+                await Xamarin.Essentials.Permissions.RequestAsync<NotificationPermission>();
             }
         }
 

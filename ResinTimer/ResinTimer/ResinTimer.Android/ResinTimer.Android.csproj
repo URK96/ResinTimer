@@ -123,6 +123,7 @@
     <Compile Include="DailyCheckInServiceAndroid.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="NotifierAndroid.cs" />
+    <Compile Include="Permissions\NotificationPermission.cs" />
     <Compile Include="ResinWidget.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -817,10 +818,11 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Character_Lyney_Thumb.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionResinTimerAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

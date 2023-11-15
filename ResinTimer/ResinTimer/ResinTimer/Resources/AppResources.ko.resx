@@ -1258,4 +1258,13 @@ MIT License</value>
 
 로 이동 후 알림 권한을 부여해주시기 바랍니다.</value>
   </data>
+  <data name="GameType_HonkaiStarRail_Compat" xml:space="preserve">
+    <value>스타레일</value>
+  </data>
+  <data name="DailyCheckInWidget_CheckIn" xml:space="preserve">
+    <value>출석체크</value>
+  </data>
+  <data name="DailyCheckInWidget_Title" xml:space="preserve">
+    <value>매일 출석체크</value>
+  </data>
 </root>

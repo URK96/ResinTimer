@@ -690,6 +690,24 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Check-In과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyCheckInWidget_CheckIn {
+            get {
+                return ResourceManager.GetString("DailyCheckInWidget_CheckIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Daily Check-In과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyCheckInWidget_Title {
+            get {
+                return ResourceManager.GetString("DailyCheckInWidget_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Receive Extra Reward과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string DailyMission_ExtraRewardReceived_PreLabel {
@@ -1327,6 +1345,15 @@ namespace ResinTimer.Resources {
         public static string GameType_HonkaiStarRail {
             get {
                 return ResourceManager.GetString("GameType_HonkaiStarRail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Star Rail과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GameType_HonkaiStarRail_Compat {
+            get {
+                return ResourceManager.GetString("GameType_HonkaiStarRail_Compat", resourceCulture);
             }
         }
         

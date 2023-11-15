@@ -100,31 +100,35 @@ namespace ResinTimer.Droid
 
             public override void HandleOnBackPressed()
             {
-                if (Xamarin.Essentials.Preferences.Get(SettingConstants.APP_RETURNSTARTPAGE_ENABLED, true))
-                {
-                    if (PopupNavigation.Instance.PopupStack.Count > 0)
-                    {
-                        Rg.Plugins.Popup.Popup.SendBackPressed(_activity.OnBackPressedDispatcher.OnBackPressed);
-                    }
-                    else if ((s_app is not null) &&
-                             (s_app.MainPage is MainPage page))
-                    {
-                        Page currentPage = (page.Detail as NavigationPage).CurrentPage;
+                bool enableReturnHomePage =
+                    Xamarin.Essentials.Preferences.Get(SettingConstants.APP_RETURNSTARTPAGE_ENABLED, true);
 
-                        if ((currentPage.Navigation.NavigationStack.Count <= 1) &&
-                            (currentPage is not TimerHomePage))
-                        {
-                            page.ApplyDetailPage(new(new TimerHomePage()));
-                        }
-                        else if (currentPage.Navigation.NavigationStack.Count > 1)
-                        {
-                            currentPage.Navigation.PopAsync();
-                        }
+                if (PopupNavigation.Instance.PopupStack.Any())
+                {
+                    Rg.Plugins.Popup.Popup.SendBackPressed(_activity.OnBackPressedDispatcher.OnBackPressed);
+                }
+                else if ((s_app is not null) &&
+                         (s_app.MainPage is MainPage page))
+                {
+                    Page currentPage = (page.Detail as NavigationPage).CurrentPage;
+
+                    if (currentPage.Navigation.NavigationStack.Count > 1)
+                    {
+                        currentPage.Navigation.PopAsync();
+                    }
+                    else if (enableReturnHomePage &&
+                             (currentPage is not TimerHomePage))
+                    {
+                        page.ApplyDetailPage(new NavigationPage(new TimerHomePage()));
+                    }
+                    else
+                    {
+                        _activity.FinishAfterTransition();
                     }
                 }
                 else
                 {
-                    Rg.Plugins.Popup.Popup.SendBackPressed(_activity.OnBackPressedDispatcher.OnBackPressed);
+                    _activity.FinishAfterTransition();
                 }
             }
         }

@@ -1256,4 +1256,13 @@ If you want to use notification later, go to
 
 and grant notification permission.</value>
   </data>
+  <data name="GameType_HonkaiStarRail_Compat" xml:space="preserve">
+    <value>Star Rail</value>
+  </data>
+  <data name="DailyCheckInWidget_CheckIn" xml:space="preserve">
+    <value>Check-In</value>
+  </data>
+  <data name="DailyCheckInWidget_Title" xml:space="preserve">
+    <value>Daily Check-In</value>
+  </data>
 </root>

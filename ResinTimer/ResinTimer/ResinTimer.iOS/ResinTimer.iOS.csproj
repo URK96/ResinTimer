@@ -204,6 +204,9 @@
     <ImageAsset Include="Assets.xcassets\Character_Candace_Thumb.png.imageset\Character_Candace_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Charlotte_Thumb.png.imageset\Character_Charlotte_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Chongyun_Thumb.png.imageset\Character_Chongyun_Thumb1.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -232,6 +235,12 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Fischl_Thumb.png.imageset\Character_Fischl_Thumb1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Freminet_Thumb.png.imageset\Character_Freminet_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Furina_Thumb.png.imageset\Character_Furina_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Ganyu_Thumb.png.imageset\Character_Ganyu_Thumb1.png">
@@ -294,6 +303,9 @@
     <ImageAsset Include="Assets.xcassets\Character_Nahida_Thumb.png.imageset\Character_Nahida_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Neuvillette_Thumb.png.imageset\Character_Neuvillette_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Nilou_Thumb.png.imageset\Character_Nilou_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -346,6 +358,9 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Wanderer_Thumb.png.imageset\Character_Wanderer_Thumb.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Wriothesley_Thumb.png.imageset\Character_Wriothesley_Thumb.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Xiangling_Thumb.png.imageset\Character_Xiangling_Thumb1.png">
@@ -754,6 +769,21 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Character_Lyney_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Charlotte_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Wriothesley_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Neuvillette_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Furina_Thumb.png.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Character_Freminet_Thumb.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\wa_all_Fontaine.png.imageset\Contents.json">
@@ -1358,7 +1388,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarResinTimeriOSHideInfoBar="True" TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

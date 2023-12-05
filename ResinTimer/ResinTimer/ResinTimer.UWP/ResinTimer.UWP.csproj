@@ -149,6 +149,7 @@
     <Content Include="Character_Beidou_Thumb.png" />
     <Content Include="Character_Bennett_Thumb.png" />
     <Content Include="Character_Candace_Thumb.png" />
+    <Content Include="Character_Charlotte_Thumb.png" />
     <Content Include="Character_Chongyun_Thumb.png" />
     <Content Include="Character_Collei_Thumb.png" />
     <Content Include="Character_Cyno_Thumb.png" />
@@ -159,6 +160,8 @@
     <Content Include="Character_Eula_Thumb.png" />
     <Content Include="Character_Faruzan_Thumb.png" />
     <Content Include="Character_Fischl_Thumb.png" />
+    <Content Include="Character_Freminet_Thumb.png" />
+    <Content Include="Character_Furina_Thumb.png" />
     <Content Include="Character_Ganyu_Thumb.png" />
     <Content Include="Character_Gorou_Thumb.png" />
     <Content Include="Character_HuTao_Thumb.png" />
@@ -179,6 +182,7 @@
     <Content Include="Character_Mika_Thumb.png" />
     <Content Include="Character_Mona_Thumb.png" />
     <Content Include="Character_Nahida_Thumb.png" />
+    <Content Include="Character_Neuvillette_Thumb.png" />
     <Content Include="Character_Nilou_Thumb.png" />
     <Content Include="Character_Ningguang_Thumb.png" />
     <Content Include="Character_Noelle_Thumb.png" />
@@ -197,6 +201,7 @@
     <Content Include="Character_Traveler_Thumb.png" />
     <Content Include="Character_Venti_Thumb.png" />
     <Content Include="Character_Wanderer_Thumb.png" />
+    <Content Include="Character_Wriothesley_Thumb.png" />
     <Content Include="Character_Xiangling_Thumb.png" />
     <Content Include="Character_Xiao_Thumb.png" />
     <Content Include="Character_Xingqiu_Thumb.png" />

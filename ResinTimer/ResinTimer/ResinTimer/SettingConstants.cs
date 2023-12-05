@@ -48,6 +48,8 @@
         public const string APP_ACCOUNTSYNC_UID = "App_AccountSync_UID";
         public const string APP_ACCOUNTSYNC_LTOKEN = "App_AccountSync_ltoken";
         public const string APP_ACCOUNTSYNC_LTUID = "App_AccountSync_ltuid";
+        public const string APP_ACCOUNTSYNC_LTOKEN_V2 = "App_AccountSync_ltoken_v2";
+        public const string APP_ACCOUNTSYNC_LTUID_V2 = "App_AccountSync_ltuid_v2";
         public const string NOTI_ENABLED = "Noti_Enabled";
         public const string APP_START_DETAILSCREEN = "App_Start_DetailScreen";
         public const string APP_USE_24H_TIMEFORMAT = "App_Use_24H_TimeFormat";

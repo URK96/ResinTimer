@@ -49,7 +49,9 @@ namespace ResinTimer.Pages.AccountSyncPages
 
                 try
                 {
-                    GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+                    GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
+
+                    manager.UseV2Cookie = true;
 
                     isConnected = await manager.CheckLogin();
                 }
@@ -98,7 +100,7 @@ namespace ResinTimer.Pages.AccountSyncPages
 
         private async void EnableDailyNoteButtonClicked(object sender, EventArgs e)
         {
-            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
 
             try
             {

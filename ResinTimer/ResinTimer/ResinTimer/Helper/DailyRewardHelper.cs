@@ -18,7 +18,7 @@ namespace ResinTimer.Helper
 
         public static async Task<SignInResult> CheckInTodayDailyReward()
         {
-            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
 
             if ((await manager.GetDailyRewardStatus()).IsSign)
             {
@@ -30,14 +30,14 @@ namespace ResinTimer.Helper
 
         public static async Task<bool> CheckSignInStatus()
         {
-            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
 
             return (await manager.GetDailyRewardStatus()).IsSign;
         }
 
         public static async Task<DailyRewardListItemData> GetNowDailyRewardItem()
         {
-            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
             DailyRewardListData listData = await manager.GetDailyRewardList(Thread.CurrentThread.CurrentUICulture.Name);
             DailyRewardStatusData statusData = await manager.GetDailyRewardStatus();
             int index = statusData.TotalSignDayCount + (statusData.IsSign ? -1 : 0);
@@ -50,7 +50,7 @@ namespace ResinTimer.Helper
 
         public static async Task<SignInResult> CheckInHonkaiTodayDailyReward()
         {
-            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
 
             if ((await manager.GetHonkaiDailyRewardStatus()).IsSign)
             {
@@ -62,14 +62,14 @@ namespace ResinTimer.Helper
 
         public static async Task<bool> CheckHonkaiSignInStatus()
         {
-            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
 
             return (await manager.GetHonkaiDailyRewardStatus()).IsSign;
         }
 
         public static async Task<DailyRewardListItemData> GetHonkaiNowDailyRewardItem()
         {
-            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
             DailyRewardListData listData = await manager.GetHonkaiDailyRewardList(Thread.CurrentThread.CurrentUICulture.Name);
             DailyRewardStatusData statusData = await manager.GetHonkaiDailyRewardStatus();
             int index = statusData.TotalSignDayCount + (statusData.IsSign ? -1 : 0);
@@ -82,7 +82,7 @@ namespace ResinTimer.Helper
 
         public static async Task<SignInResult> CheckInHonkaiStarRailTodayDailyReward()
         {
-            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
 
             if ((await manager.GetHonkaiStarRailDailyRewardStatus()).IsSign)
             {
@@ -94,14 +94,14 @@ namespace ResinTimer.Helper
 
         public static async Task<bool> CheckHonkaiStarRailSignInStatus()
         {
-            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
 
             return (await manager.GetHonkaiStarRailDailyRewardStatus()).IsSign;
         }
 
         public static async Task<DailyRewardListItemData> GetHonkaiStarRailNowDailyRewardItem()
         {
-            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
             DailyRewardListData listData = await manager.GetHonkaiStarRailDailyRewardList(Thread.CurrentThread.CurrentUICulture.Name);
             DailyRewardStatusData statusData = await manager.GetHonkaiStarRailDailyRewardStatus();
             int index = statusData.TotalSignDayCount + (statusData.IsSign ? -1 : 0);

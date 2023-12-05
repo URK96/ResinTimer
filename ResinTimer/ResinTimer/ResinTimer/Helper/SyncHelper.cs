@@ -26,7 +26,7 @@ namespace ResinTimer.Helper
 
         public static async Task<RTNoteData> GetRTNoteData()
         {
-            GenshinInfoManager manager = new(Utils.UID, Utils.Ltuid, Utils.Ltoken);
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
             RTNoteData data = await manager.GetRealTimeNotes();
 
             return data;

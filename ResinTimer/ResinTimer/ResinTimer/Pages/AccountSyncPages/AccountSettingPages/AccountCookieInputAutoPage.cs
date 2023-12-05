@@ -69,13 +69,30 @@ namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
             {
                 CookieCollection cookies = wv.Cookies.GetCookies(new Uri(_navigateUrl));
 
-                string ltuid = cookies["ltuid"].Value;
-                string ltoken = cookies["ltoken"].Value;
+                try
+                {
+                    string ltuid = cookies["ltuid"].Value;
+                    string ltoken = cookies["ltoken"].Value;
 
-                Utils.SetAccountCookieInfo(ltuid, ltoken);
+                    Utils.SetAccountCookieInfo(ltuid, ltoken);
+                    Utils.ResetAccountV2CookieInfo();
+                }
+                catch { }
+
+                try
+                {
+                    string ltuidV2 = cookies["ltuid_v2"].Value;
+                    string ltokenV2 = cookies["ltoken_v2"].Value;
+
+                    Utils.SetAccountV2CookieInfo(ltuidV2, ltokenV2);
+                    Utils.ResetAccountCookieInfo();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
 
                 Utils.ShowToast(AppResources.AccountSetting_Complete);
-
                 await Navigation.PopModalAsync();
             }
             catch (Exception)

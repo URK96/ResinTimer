@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 
+using GenshinInfo.Managers;
+
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -13,8 +15,37 @@ namespace ResinTimer
     public static class Utils
     {
         public static string UID => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_UID, string.Empty);
-        public static string Ltuid => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_LTUID, string.Empty);
-        public static string Ltoken => Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_LTOKEN, string.Empty);
+        public static string Ltuid
+        {
+            get
+            {
+                string ltuid = Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_LTUID_V2, string.Empty);
+
+                if (string.IsNullOrWhiteSpace(ltuid))
+                {
+                    ltuid = Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_LTUID, string.Empty);
+                }
+
+                return ltuid;
+            }
+        }
+        public static string Ltoken
+        {
+            get
+            {
+                string ltoken = Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_LTOKEN_V2, string.Empty);
+
+                if (string.IsNullOrWhiteSpace(ltoken))
+                {
+                    ltoken = Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_LTOKEN, string.Empty);
+                }
+
+                return ltoken;
+            }
+        }
+
+        public static bool UseV2CookieInfo => !string.IsNullOrWhiteSpace(
+            Preferences.Get(SettingConstants.APP_ACCOUNTSYNC_LTUID_V2, string.Empty));
 
         public static Command<string> UrlOpenCommand => new(async (url) => await Launcher.OpenAsync(url));
 
@@ -30,6 +61,30 @@ namespace ResinTimer
             Preferences.Set(SettingConstants.APP_ACCOUNTSYNC_LTUID, ltuid);
             Preferences.Set(SettingConstants.APP_ACCOUNTSYNC_LTOKEN, ltoken);
         }
+
+        public static void ResetAccountCookieInfo()
+        {
+            Preferences.Set(SettingConstants.APP_ACCOUNTSYNC_LTUID, string.Empty);
+            Preferences.Set(SettingConstants.APP_ACCOUNTSYNC_LTOKEN, string.Empty);
+        }
+
+        public static void SetAccountV2CookieInfo(string ltuid, string ltoken)
+        {
+            Preferences.Set(SettingConstants.APP_ACCOUNTSYNC_LTUID_V2, ltuid);
+            Preferences.Set(SettingConstants.APP_ACCOUNTSYNC_LTOKEN_V2, ltoken);
+        }
+
+        public static void ResetAccountV2CookieInfo()
+        {
+            Preferences.Set(SettingConstants.APP_ACCOUNTSYNC_LTUID_V2, string.Empty);
+            Preferences.Set(SettingConstants.APP_ACCOUNTSYNC_LTOKEN_V2, string.Empty);
+        }
+
+        public static GenshinInfoManager CreateGenshinInfoManagerInstance() =>
+            new(UID, Ltuid, Ltoken)
+            {
+                UseV2Cookie = UseV2CookieInfo
+            };
 
         public static void ShowToast(string message)
         {

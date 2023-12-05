@@ -124,11 +124,13 @@ namespace ResinTimer.Droid
                     else
                     {
                         _activity.FinishAfterTransition();
+                        Process.KillProcess(Process.MyPid());
                     }
                 }
                 else
                 {
                     _activity.FinishAfterTransition();
+                    Process.KillProcess(Process.MyPid());
                 }
             }
         }

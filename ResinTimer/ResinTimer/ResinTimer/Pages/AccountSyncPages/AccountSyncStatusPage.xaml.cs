@@ -51,8 +51,6 @@ namespace ResinTimer.Pages.AccountSyncPages
                 {
                     GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
 
-                    manager.UseV2Cookie = true;
-
                     isConnected = await manager.CheckLogin();
                 }
                 catch (Exception) { }

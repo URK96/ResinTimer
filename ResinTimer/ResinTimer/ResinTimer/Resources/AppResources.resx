@@ -1265,4 +1265,13 @@ and grant notification permission.</value>
   <data name="DailyCheckInWidget_Title" xml:space="preserve">
     <value>Daily Check-In</value>
   </data>
+  <data name="DailyCheckInWidget_RunCheckIn_Fail" xml:space="preserve">
+    <value>Fail to run check-in process</value>
+  </data>
+  <data name="DailyCheckInWidget_UpdateCheckIn_Success" xml:space="preserve">
+    <value>Success to update check-in status</value>
+  </data>
+  <data name="DailyCheckInWidget_UpdateCheckIn_Fail" xml:space="preserve">
+    <value>Fail to update check-in status</value>
+  </data>
 </root>

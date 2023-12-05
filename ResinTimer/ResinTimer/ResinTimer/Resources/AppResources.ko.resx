@@ -1267,4 +1267,13 @@ MIT License</value>
   <data name="DailyCheckInWidget_Title" xml:space="preserve">
     <value>매일 출석체크</value>
   </data>
+  <data name="DailyCheckInWidget_RunCheckIn_Fail" xml:space="preserve">
+    <value>출석체크 실패...</value>
+  </data>
+  <data name="DailyCheckInWidget_UpdateCheckIn_Success" xml:space="preserve">
+    <value>출석체크 성공!</value>
+  </data>
+  <data name="DailyCheckInWidget_UpdateCheckIn_Fail" xml:space="preserve">
+    <value>출석체크 상태 갱신 실패...</value>
+  </data>
 </root>

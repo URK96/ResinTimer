@@ -73,9 +73,9 @@ namespace ResinTimer.Droid
                      await RunSignInProcess(GameTypeEnum.Honkai3rd),
                      await RunSignInProcess(GameTypeEnum.HonkaiStarRail));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Toast.MakeText(context, "Fail to run check-in process", ToastLength.Short).Show();
+                Toast.MakeText(context, AppResources.DailyCheckInWidget_RunCheckIn_Fail, ToastLength.Short).Show();
 
                 CheckInResult = (false, false, false);
             }
@@ -86,11 +86,11 @@ namespace ResinTimer.Droid
 
                 UpdateLayout(context, appWidgetManager, appWidgetIds);
 
-                Toast.MakeText(context, "Success to update check-in status", ToastLength.Short).Show();
+                Toast.MakeText(context, AppResources.DailyCheckInWidget_UpdateCheckIn_Success, ToastLength.Short).Show();
             }
             catch
             {
-                Toast.MakeText(context, "Fail to update check-in status", ToastLength.Short).Show();
+                Toast.MakeText(context, AppResources.DailyCheckInWidget_UpdateCheckIn_Fail, ToastLength.Short).Show();
             }
 
 

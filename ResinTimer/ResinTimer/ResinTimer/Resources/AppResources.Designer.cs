@@ -699,11 +699,38 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Fail to run check-in process과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyCheckInWidget_RunCheckIn_Fail {
+            get {
+                return ResourceManager.GetString("DailyCheckInWidget_RunCheckIn_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Daily Check-In과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string DailyCheckInWidget_Title {
             get {
                 return ResourceManager.GetString("DailyCheckInWidget_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Fail to update check-in status과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyCheckInWidget_UpdateCheckIn_Fail {
+            get {
+                return ResourceManager.GetString("DailyCheckInWidget_UpdateCheckIn_Fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Success to update check-in status과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string DailyCheckInWidget_UpdateCheckIn_Success {
+            get {
+                return ResourceManager.GetString("DailyCheckInWidget_UpdateCheckIn_Success", resourceCulture);
             }
         }
         

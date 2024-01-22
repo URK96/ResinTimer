@@ -1276,4 +1276,7 @@ MIT License</value>
   <data name="DailyCheckInWidget_UpdateCheckIn_Fail" xml:space="preserve">
     <value>출석체크 상태 갱신 실패...</value>
   </data>
+  <data name="Feature_NotAvailable_UWP" xml:space="preserve">
+    <value>본 기능은 해당 플랫폼에서 사용할 수 없습니다.</value>
+  </data>
 </root>

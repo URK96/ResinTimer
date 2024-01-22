@@ -1,16 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="ResinTimer.Pages.AccountSyncPages.AccountSettingPages.AccountCookieInputPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
-             x:Class="ResinTimer.Pages.AccountSyncPages.AccountSettingPages.AccountCookieInputPage"
              Title="{x:Static resources:AppResources.AccountCookieInputPage_Title}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Close" IconImageSource="close.png" Order="Primary" Priority="0" Clicked="ToolbarItemClicked" />
+        <ToolbarItem Clicked="ToolbarItemClicked"
+                     IconImageSource="close.png"
+                     Order="Primary"
+                     Priority="0"
+                     Text="Close" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
-        <Style x:Key="ButtonStyle" TargetType="Button">
+        <Style x:Key="ButtonStyle"
+               TargetType="Button">
             <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=20}" />
             <Setter Property="BorderColor" Value="#0682F6" />
             <Setter Property="BorderWidth" Value="2" />
@@ -21,30 +26,57 @@
     </ContentPage.Resources>
 
     <AbsoluteLayout>
-        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional"
-                     AbsoluteLayout.LayoutBounds="0.5, 0.2"
+        <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.2"
+                     AbsoluteLayout.LayoutFlags="PositionProportional"
                      Orientation="Vertical">
-            <Label Text="Select Input Method" HorizontalTextAlignment="Center"
-                   FontSize="Title" FontAttributes="Bold" />
+            <Label FontAttributes="Bold"
+                   FontSize="Title"
+                   HorizontalTextAlignment="Center"
+                   Text="Select Input Method" />
 
-            <Label Padding="10" Margin="0, 10, 0, 0"
-                   Text="{x:Static resources:AppResources.AccountSetting_CookieInputMethod_Description}"
-                   FontSize="Subtitle" />
+            <Label Margin="0,10,0,0"
+                   Padding="10"
+                   FontSize="Subtitle"
+                   Text="{x:Static resources:AppResources.AccountSetting_CookieInputMethod_Description}" />
         </StackLayout>
 
-        <Grid AbsoluteLayout.LayoutFlags="All"
-              AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.8, 0.10" >
+        <Grid AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.8, 0.15"
+              AbsoluteLayout.LayoutFlags="All">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Style="{StaticResource ButtonStyle}"
-                    Text="{x:Static resources:AppResources.AccountSetting_CookieInputMethod_Auto}"
-                    Clicked="InputMethodButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased"/>
-            <Button Grid.Column="1" Style="{StaticResource ButtonStyle}"
-                    Text="{x:Static resources:AppResources.AccountSetting_CookieInputMethod_Manual}"
-                    Clicked="InputMethodButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased"/>
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   HorizontalOptions="Fill"
+                   HorizontalTextAlignment="Center"
+                   IsVisible="{OnPlatform Default=False,
+                                          UWP=True}"
+                   Text="{x:Static resources:AppResources.Feature_NotAvailable_UWP}"
+                   TextColor="OrangeRed" />
+
+            <Button Grid.Row="1"
+                    Grid.Column="0"
+                    Clicked="InputMethodButtonClicked"
+                    IsEnabled="{OnPlatform Default=True,
+                                           UWP=False}"
+                    Pressed="ButtonPressed"
+                    Released="ButtonReleased"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="{x:Static resources:AppResources.AccountSetting_CookieInputMethod_Auto}" />
+
+            <Button Grid.Row="1"
+                    Grid.Column="1"
+                    Clicked="InputMethodButtonClicked"
+                    Pressed="ButtonPressed"
+                    Released="ButtonReleased"
+                    Style="{StaticResource ButtonStyle}"
+                    Text="{x:Static resources:AppResources.AccountSetting_CookieInputMethod_Manual}" />
         </Grid>
     </AbsoluteLayout>
 </ContentPage>

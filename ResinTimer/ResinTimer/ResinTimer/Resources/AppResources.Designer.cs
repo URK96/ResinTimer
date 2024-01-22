@@ -1167,6 +1167,15 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   This feature is not available on this platform.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string Feature_NotAvailable_UWP {
+            get {
+                return ResourceManager.GetString("Feature_NotAvailable_UWP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   ★★ Furnish과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Furnishing_Rarity_2 {

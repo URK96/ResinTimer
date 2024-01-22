@@ -1,16 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="ResinTimer.Pages.AccountSyncPages.AccountSettingPages.AccountCookieInputManualPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
-             x:Class="ResinTimer.Pages.AccountSyncPages.AccountSettingPages.AccountCookieInputManualPage"
              Title="{x:Static resources:AppResources.AccountCookieInputManualPage_Title}">
-    
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Close" IconImageSource="close.png" Order="Primary" Priority="0" Clicked="ToolbarItemClicked" />
+        <ToolbarItem Clicked="ToolbarItemClicked"
+                     IconImageSource="close.png"
+                     Order="Primary"
+                     Priority="0"
+                     Text="Close" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
-        <Style x:Key="ButtonStyle" TargetType="Button">
+        <Style x:Key="ButtonStyle"
+               TargetType="Button">
             <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=20}" />
             <Setter Property="BorderColor" Value="#0682F6" />
             <Setter Property="BorderWidth" Value="2" />
@@ -21,28 +26,52 @@
     </ContentPage.Resources>
 
     <AbsoluteLayout>
-        <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional"
-                     AbsoluteLayout.LayoutBounds="0.5, 0.2"
+        <StackLayout AbsoluteLayout.LayoutBounds="0.5, 0.2"
+                     AbsoluteLayout.LayoutFlags="PositionProportional"
                      Orientation="Vertical">
-            <Label Text="Input ltuid" HorizontalTextAlignment="Center"
-                   FontSize="Title" FontAttributes="Bold" />
-
-            <Entry x:Name="LtuidInputEntry" WidthRequest="200" Margin="0, 10, 0, 0"
-                   HorizontalTextAlignment="Center" 
-                   TextChanged="InputEntryTextChanged" />
-
-            <Label Text="Input ltoken" HorizontalTextAlignment="Center" Margin="0, 50, 0, 0"
-                   FontSize="Title" FontAttributes="Bold" />
-
-            <Entry x:Name="LtokenInputEntry" WidthRequest="200" Margin="0, 10, 0, 0"
+            <Label FontAttributes="Bold"
+                   FontSize="Title"
                    HorizontalTextAlignment="Center"
-                   TextChanged="InputEntryTextChanged" />
+                   Text="Cookie Version" />
+
+            <Picker x:Name="CookieVersionPicker"
+                    Margin="0,10,0,0"
+                    HorizontalTextAlignment="Center"
+                    SelectedIndexChanged="CookieVersionPicker_SelectedIndexChanged"
+                    WidthRequest="200" />
+
+            <Label x:Name="CookieLtuidTitleLabel"
+                   Margin="0,50,0,0"
+                   FontAttributes="Bold"
+                   FontSize="Title"
+                   HorizontalTextAlignment="Center" />
+
+            <Entry x:Name="LtuidInputEntry"
+                   Margin="0,10,0,0"
+                   HorizontalTextAlignment="Center"
+                   TextChanged="InputEntryTextChanged"
+                   WidthRequest="200" />
+
+            <Label x:Name="CookieLtokenTitleLabel"
+                   Margin="0,50,0,0"
+                   FontAttributes="Bold"
+                   FontSize="Title"
+                   HorizontalTextAlignment="Center" />
+
+            <Entry x:Name="LtokenInputEntry"
+                   Margin="0,10,0,0"
+                   HorizontalTextAlignment="Center"
+                   TextChanged="InputEntryTextChanged"
+                   WidthRequest="200" />
         </StackLayout>
 
-        <Button x:Name="ApplyButton" AbsoluteLayout.LayoutFlags="All"
-                AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.6, 0.10" 
+        <Button x:Name="ApplyButton"
+                AbsoluteLayout.LayoutBounds="0.5, 0.8, 0.6, 0.10"
+                AbsoluteLayout.LayoutFlags="All"
+                Clicked="ApplyButtonClicked"
+                Pressed="ButtonPressed"
+                Released="ButtonReleased"
                 Style="{StaticResource ButtonStyle}"
-                Text="Apply" 
-                Clicked="ApplyButtonClicked" Pressed="ButtonPressed" Released="ButtonReleased"/>
+                Text="Apply" />
     </AbsoluteLayout>
 </ContentPage>

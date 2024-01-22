@@ -58,6 +58,8 @@ namespace ResinTimer
 
         public static void SetAccountCookieInfo(string ltuid, string ltoken)
         {
+            ResetAccountV2CookieInfo();
+
             Preferences.Set(SettingConstants.APP_ACCOUNTSYNC_LTUID, ltuid);
             Preferences.Set(SettingConstants.APP_ACCOUNTSYNC_LTOKEN, ltoken);
         }
@@ -70,6 +72,8 @@ namespace ResinTimer
 
         public static void SetAccountV2CookieInfo(string ltuid, string ltoken)
         {
+            ResetAccountCookieInfo();
+
             Preferences.Set(SettingConstants.APP_ACCOUNTSYNC_LTUID_V2, ltuid);
             Preferences.Set(SettingConstants.APP_ACCOUNTSYNC_LTOKEN_V2, ltoken);
         }

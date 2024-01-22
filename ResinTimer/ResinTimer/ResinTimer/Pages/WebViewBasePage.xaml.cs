@@ -7,7 +7,7 @@ namespace ResinTimer.Pages
     public partial class WebViewBasePage : ContentPage
     {
         public StackLayout RootLayout => WebViewRootLayout;
-        public WebView WebView => BaseWebView;
+        public WebView WebViewControl => BaseWebView;
 
         public WebViewBasePage()
         {

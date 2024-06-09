@@ -27,7 +27,7 @@ namespace ResinTimer
 
         public static ApplyType ManualApplyType = ApplyType.Time;
 
-        public const int MaxResin = 160;
+        public const int MaxResin = 200;
         public const int OneRestoreInterval = 480;
 
         public static DateTime EndTime;

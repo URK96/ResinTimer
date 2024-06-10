@@ -37,7 +37,7 @@ namespace ResinTimer.NotiSettingPages
             if (int.TryParse(result, out int count))
             {
                 if ((count >= 1) &&
-                    (count <= 160))
+                    (count <= ResinEnvironment.MaxResin))
                 {
                     notiManager.EditList(new ResinNoti(count), NotiManager.EditType.Add);
 

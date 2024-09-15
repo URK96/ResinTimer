@@ -108,5 +108,37 @@ namespace ResinTimer.Helper
 
             return listData.Rewards[index];
         }
+
+
+        // Zenless Zone Zero
+
+        public static async Task<SignInResult> CheckInZenlessZoneZeroTodayDailyReward()
+        {
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
+
+            if ((await manager.GetZenlessZoneZeroDailyRewardStatus()).IsSign)
+            {
+                return SignInResult.AlreadySignIn;
+            }
+
+            return (await manager.SignInZenlessZoneZeroDailyReward()) ? SignInResult.Success : SignInResult.Fail;
+        }
+
+        public static async Task<bool> CheckZenlessZoneZeroSignInStatus()
+        {
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
+
+            return (await manager.GetZenlessZoneZeroDailyRewardStatus()).IsSign;
+        }
+
+        public static async Task<DailyRewardListItemData> GetZenlessZoneZeroNowDailyRewardItem()
+        {
+            GenshinInfoManager manager = Utils.CreateGenshinInfoManagerInstance();
+            DailyRewardListData listData = await manager.GetZenlessZoneZeroDailyRewardList(Thread.CurrentThread.CurrentUICulture.Name);
+            DailyRewardStatusData statusData = await manager.GetZenlessZoneZeroDailyRewardStatus();
+            int index = statusData.TotalSignDayCount + (statusData.IsSign ? -1 : 0);
+
+            return listData.Rewards[index];
+        }
     }
 }

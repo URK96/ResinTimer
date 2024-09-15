@@ -1279,4 +1279,10 @@ MIT License</value>
   <data name="Feature_NotAvailable_UWP" xml:space="preserve">
     <value>본 기능은 해당 플랫폼에서 사용할 수 없습니다.</value>
   </data>
+  <data name="GameType_ZenlessZoneZero" xml:space="preserve">
+    <value>젠레스 존 제로</value>
+  </data>
+  <data name="GameType_ZenlessZoneZero_Compat" xml:space="preserve">
+    <value>젠레스</value>
+  </data>
 </root>

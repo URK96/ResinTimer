@@ -1394,6 +1394,24 @@ namespace ResinTimer.Resources {
         }
         
         /// <summary>
+        ///   Zenless Zone Zero과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GameType_ZenlessZoneZero {
+            get {
+                return ResourceManager.GetString("GameType_ZenlessZoneZero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Zenless과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        public static string GameType_ZenlessZoneZero_Compat {
+            get {
+                return ResourceManager.GetString("GameType_ZenlessZoneZero_Compat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Jade Field과(와) 유사한 지역화된 문자열을 찾습니다.
         /// </summary>
         public static string Gardening_JadeField {

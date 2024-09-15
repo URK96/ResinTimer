@@ -15,13 +15,14 @@ namespace ResinTimer.ViewModels
 {
     public class DailyRewardPageViewModel : ViewModelBase
     {
-        public enum GameTypeEnum { Genshin, Honkai3rd, HonkaiStarRail };
+        public enum GameTypeEnum { Genshin, Honkai3rd, HonkaiStarRail, ZenlessZoneZero };
 
         public string Name => GameType switch
         {
             GameTypeEnum.Genshin => AppResources.GameType_Genshin,
             GameTypeEnum.Honkai3rd => AppResources.GameType_Honkai3rd,
             GameTypeEnum.HonkaiStarRail => AppResources.GameType_HonkaiStarRail,
+            GameTypeEnum.ZenlessZoneZero => AppResources.GameType_ZenlessZoneZero,
 
             _ => "NULL"
         };
@@ -151,6 +152,7 @@ namespace ResinTimer.ViewModels
                 {
                     GameTypeEnum.Honkai3rd => await DailyRewardHelper.GetHonkaiNowDailyRewardItem(),
                     GameTypeEnum.HonkaiStarRail => await DailyRewardHelper.GetHonkaiStarRailNowDailyRewardItem(),
+                    GameTypeEnum.ZenlessZoneZero => await DailyRewardHelper.GetZenlessZoneZeroNowDailyRewardItem(),
 
                     _ => await DailyRewardHelper.GetNowDailyRewardItem()
                 };
@@ -198,6 +200,7 @@ namespace ResinTimer.ViewModels
                 {
                     GameTypeEnum.Honkai3rd => DependencyService.Get<IDailyCheckInService>().IsRegisteredHonkai(),
                     GameTypeEnum.HonkaiStarRail => DependencyService.Get<IDailyCheckInService>().IsRegisteredHonkaiStarRail(),
+                    GameTypeEnum.ZenlessZoneZero => DependencyService.Get<IDailyCheckInService>().IsRegisteredZenlessZoneZero(),
 
                     _ => DependencyService.Get<IDailyCheckInService>().IsRegistered()
                 };
@@ -211,6 +214,7 @@ namespace ResinTimer.ViewModels
             {
                 GameTypeEnum.Honkai3rd => await DailyRewardHelper.CheckInHonkaiTodayDailyReward(),
                 GameTypeEnum.HonkaiStarRail => await DailyRewardHelper.CheckInHonkaiStarRailTodayDailyReward(),
+                GameTypeEnum.ZenlessZoneZero => await DailyRewardHelper.CheckInZenlessZoneZeroTodayDailyReward(),
 
                 _ => await DailyRewardHelper.CheckInTodayDailyReward()
             };
@@ -228,6 +232,7 @@ namespace ResinTimer.ViewModels
             {
                 GameTypeEnum.Honkai3rd => await DailyRewardHelper.CheckInHonkaiTodayDailyReward(),
                 GameTypeEnum.HonkaiStarRail => await DailyRewardHelper.CheckInHonkaiStarRailTodayDailyReward(),
+                GameTypeEnum.ZenlessZoneZero => await DailyRewardHelper.CheckInZenlessZoneZeroTodayDailyReward(),
 
                 _ => await DailyRewardHelper.CheckInTodayDailyReward()
             };
@@ -255,6 +260,10 @@ namespace ResinTimer.ViewModels
             {
                 DependencyService.Get<IDailyCheckInService>().RegisterHonkaiStarRail();
             }
+            else if (GameType is GameTypeEnum.ZenlessZoneZero)
+            {
+                DependencyService.Get<IDailyCheckInService>().RegisterZenlessZoneZero();
+            }
             else
             {
                 DependencyService.Get<IDailyCheckInService>().Register();
@@ -270,6 +279,10 @@ namespace ResinTimer.ViewModels
             else if (GameType is GameTypeEnum.HonkaiStarRail)
             {
                 DependencyService.Get<IDailyCheckInService>().UnregisterHonkaiStarRail();
+            }
+            else if (GameType is GameTypeEnum.ZenlessZoneZero)
+            {
+                DependencyService.Get<IDailyCheckInService>().UnregisterZenlessZoneZero();
             }
             else
             {

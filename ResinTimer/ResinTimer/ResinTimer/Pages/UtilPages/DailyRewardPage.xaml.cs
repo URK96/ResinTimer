@@ -29,7 +29,8 @@ namespace ResinTimer.Pages.UtilPages
             {
                 new(DailyRewardPageViewModel.GameTypeEnum.Genshin),
                 new(DailyRewardPageViewModel.GameTypeEnum.Honkai3rd),
-                new(DailyRewardPageViewModel.GameTypeEnum.HonkaiStarRail)
+                new(DailyRewardPageViewModel.GameTypeEnum.HonkaiStarRail),
+                new(DailyRewardPageViewModel.GameTypeEnum.ZenlessZoneZero)
             };
         }
 
@@ -139,6 +140,7 @@ namespace ResinTimer.Pages.UtilPages
                 DailyRewardPageViewModel.GameTypeEnum.Genshin => DailyCheckInEventPage.DailyCheckInUrl,
                 DailyRewardPageViewModel.GameTypeEnum.Honkai3rd => DailyCheckInEventPage.DailyCheckInUrlHonkai3rd,
                 DailyRewardPageViewModel.GameTypeEnum.HonkaiStarRail => DailyCheckInEventPage.DailyCheckInUrlHonkaiStarRail,
+                DailyRewardPageViewModel.GameTypeEnum.ZenlessZoneZero => DailyCheckInEventPage.DailyCheckInUrlZenlessZoneZero,
 
                 _ => string.Empty
             };

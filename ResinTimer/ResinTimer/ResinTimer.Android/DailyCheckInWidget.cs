@@ -20,13 +20,13 @@ namespace ResinTimer.Droid
     [MetaData("android.appwidget.provider", Resource = "@xml/widgetprovider_dailycheckin_full")]
     public class DailyCheckInWidget : AppWidgetProvider
     {
-        private enum GameTypeEnum { Genshin, Honkai3rd, HonkaiStarRail };
+        private enum GameTypeEnum { Genshin, Honkai3rd, HonkaiStarRail, ZenlessZoneZero };
 
         public const string ACTION_CHECKIN = "com.urk.resintimer.button.DailyCheckIn.CHECKIN";
 
         bool isClick = false;
         private bool isUpdating = false;
-        private (bool Genshin, bool Honkai3rd, bool HonkaiStarRail) CheckInResult = (false, false, false);
+        private (bool Genshin, bool Honkai3rd, bool HonkaiStarRail, bool ZenlessZoneZero) CheckInResult = (false, false, false, false);
 
         public override void OnReceive(Context context, Intent intent)
         {
@@ -71,13 +71,14 @@ namespace ResinTimer.Droid
                 CheckInResult = 
                     (await RunSignInProcess(GameTypeEnum.Genshin),
                      await RunSignInProcess(GameTypeEnum.Honkai3rd),
-                     await RunSignInProcess(GameTypeEnum.HonkaiStarRail));
+                     await RunSignInProcess(GameTypeEnum.HonkaiStarRail),
+                     await RunSignInProcess(GameTypeEnum.ZenlessZoneZero));
             }
             catch (Exception)
             {
                 Toast.MakeText(context, AppResources.DailyCheckInWidget_RunCheckIn_Fail, ToastLength.Short).Show();
 
-                CheckInResult = (false, false, false);
+                CheckInResult = (false, false, false, false);
             }
 
             try
@@ -103,6 +104,7 @@ namespace ResinTimer.Droid
                     GameTypeEnum.Genshin => await DailyRewardHelper.CheckInTodayDailyReward(),
                     GameTypeEnum.Honkai3rd => await DailyRewardHelper.CheckInHonkaiTodayDailyReward(),
                     GameTypeEnum.HonkaiStarRail => await DailyRewardHelper.CheckInHonkaiStarRailTodayDailyReward(),
+                    GameTypeEnum.ZenlessZoneZero => await DailyRewardHelper.CheckInZenlessZoneZeroTodayDailyReward(),
 
                     _ => await DailyRewardHelper.CheckInTodayDailyReward()
                 };
@@ -135,6 +137,9 @@ namespace ResinTimer.Droid
                     Resource.Id.DailyCheckInWidgetHonkaiStarRailStatusTitle,
                     AppResources.GameType_HonkaiStarRail_Compat);
                 remoteViews.SetTextViewText(
+                    Resource.Id.DailyCheckInWidgetZenlessZoneZeroStatusTitle,
+                    AppResources.GameType_ZenlessZoneZero_Compat);
+                remoteViews.SetTextViewText(
                     Resource.Id.DailyCheckInWidgetCheckInButton,
                     AppResources.DailyCheckInWidget_CheckIn);
 
@@ -151,6 +156,9 @@ namespace ResinTimer.Droid
                     remoteViews.SetImageViewResource(
                         Resource.Id.DailyCheckInWidgetHonkaiStarRailStatusIcon,
                         busyIconResourceId);
+                    remoteViews.SetImageViewResource(
+                        Resource.Id.DailyCheckInWidgetZenlessZoneZeroStatusIcon,
+                        busyIconResourceId);
                 }
                 else
                 {
@@ -166,6 +174,9 @@ namespace ResinTimer.Droid
                     remoteViews.SetImageViewResource(
                         Resource.Id.DailyCheckInWidgetHonkaiStarRailStatusIcon,
                         CheckInResult.HonkaiStarRail ? successIconResourceId : failIconResourceId);
+                    remoteViews.SetImageViewResource(
+                        Resource.Id.DailyCheckInWidgetZenlessZoneZeroStatusIcon,
+                        CheckInResult.ZenlessZoneZero ? successIconResourceId : failIconResourceId);
                 }
 
                 CreateClickIntent(context, appWidgetIds, id, remoteViews);

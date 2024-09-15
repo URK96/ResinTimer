@@ -18,6 +18,7 @@ namespace ResinTimer.Droid
         private const string DailyCheckInWorkName = "DailyCheckInWork";
         private const string DailyCheckInHonkaiWorkName = "DailyCheckInHonkaiWork";
         private const string DailyCheckInHonkaiStarRailWorkName = "DailyCheckInHonkaiStarRailWork";
+        private const string DailyCheckInZenlessZoneZeroWorkName = "DailyCheckInZenlessZoneZeroWork";
 
         public WorkManager WorkManagerInstance => WorkManager.GetInstance(Application.Context);
 
@@ -78,6 +79,25 @@ namespace ResinTimer.Droid
             }
         }
 
+        public bool IsRegisteredZenlessZoneZero()
+        {
+            try
+            {
+                var datas = WorkManagerInstance.GetWorkInfosForUniqueWork(DailyCheckInZenlessZoneZeroWorkName)
+                                               .Get()
+                                               .JavaCast<JavaList<WorkInfo>>();
+                var workInfo = datas.Get(0) as WorkInfo;
+                WorkInfo.State state = workInfo?.GetState();
+
+                return (state is not null) &&
+                       ((state == WorkInfo.State.Enqueued) || (state == WorkInfo.State.Running));
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public void Register() =>
             RegisterDailyCheckInPeriodicWorker<DailyCheckInWorker>(DailyCheckInWorkName);
 
@@ -86,6 +106,9 @@ namespace ResinTimer.Droid
 
         public void RegisterHonkaiStarRail() =>
             RegisterDailyCheckInPeriodicWorker<DailyCheckInHonkaiStarRailWorker>(DailyCheckInHonkaiStarRailWorkName);
+
+        public void RegisterZenlessZoneZero() =>
+            RegisterDailyCheckInPeriodicWorker<DailyCheckInZenlessZoneZeroWorker>(DailyCheckInZenlessZoneZeroWorkName);
 
         private void RegisterDailyCheckInPeriodicWorker<T>(string workName)
             where T : Worker
@@ -118,6 +141,11 @@ namespace ResinTimer.Droid
         public void UnregisterHonkaiStarRail()
         {
             WorkManagerInstance.CancelUniqueWork(DailyCheckInHonkaiStarRailWorkName);
+        }
+
+        public void UnregisterZenlessZoneZero()
+        {
+            WorkManagerInstance.CancelUniqueWork(DailyCheckInZenlessZoneZeroWorkName);
         }
     }
 }

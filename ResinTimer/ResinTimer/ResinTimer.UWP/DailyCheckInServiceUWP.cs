@@ -5,7 +5,7 @@ using ResinTimer.UWP;
 
 namespace ResinTimer.UWP
 {
-    // TODO : Implement Daily Check-In service code on iOS
+    // TODO : Implement Daily Check-In service code on UWP
     internal class DailyCheckInServiceUWP : IDailyCheckInService
     {
         public bool IsRegistered()
@@ -19,6 +19,11 @@ namespace ResinTimer.UWP
         }
 
         public bool IsRegisteredHonkaiStarRail()
+        {
+            return false;
+        }
+
+        public bool IsRegisteredZenlessZoneZero()
         {
             return false;
         }
@@ -38,6 +43,11 @@ namespace ResinTimer.UWP
             
         }
 
+        public void RegisterZenlessZoneZero()
+        {
+            
+        }
+
         public void Unregister()
         {
             
@@ -49,6 +59,11 @@ namespace ResinTimer.UWP
         }
 
         public void UnregisterHonkaiStarRail()
+        {
+            
+        }
+
+        public void UnregisterZenlessZoneZero()
         {
             
         }

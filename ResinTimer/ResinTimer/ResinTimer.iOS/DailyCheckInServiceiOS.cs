@@ -23,6 +23,11 @@ namespace ResinTimer.iOS
             return false;
         }
 
+        public bool IsRegisteredZenlessZoneZero()
+        {
+            return false;
+        }
+
         public void Register()
         {
             
@@ -38,6 +43,11 @@ namespace ResinTimer.iOS
             
         }
 
+        public void RegisterZenlessZoneZero()
+        {
+            
+        }
+
         public void Unregister()
         {
             
@@ -49,6 +59,11 @@ namespace ResinTimer.iOS
         }
 
         public void UnregisterHonkaiStarRail()
+        {
+            
+        }
+
+        public void UnregisterZenlessZoneZero()
         {
             
         }

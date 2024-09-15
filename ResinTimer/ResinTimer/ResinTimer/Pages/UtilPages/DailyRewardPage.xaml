@@ -47,7 +47,7 @@
                                VerticalTextAlignment="Center" />
 
                         <Image x:Name="TodayRewardIcon"
-                               Aspect="AspectFill"
+                               Aspect="AspectFit"
                                HeightRequest="150"
                                Source="{Binding TodayRewardItemIcon}"
                                WidthRequest="150" />

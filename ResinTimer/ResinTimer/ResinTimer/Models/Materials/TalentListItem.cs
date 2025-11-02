@@ -3,6 +3,7 @@
 using ResinTimer.Resources;
 
 using AppEnv = ResinTimer.AppEnvironment;
+using Microsoft.Maui.Devices.Sensors;
 
 namespace ResinTimer.Models.Materials
 {

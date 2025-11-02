@@ -9,10 +9,12 @@ using Microsoft.AppCenter.Crashes;
 using ResinTimer.Resources;
 using ResinTimer.Services;
 
-using Xamarin.Essentials;
-using Xamarin.Forms;
-
 using AppEnv = ResinTimer.AppEnvironment;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Devices;
 
 namespace ResinTimer
 {

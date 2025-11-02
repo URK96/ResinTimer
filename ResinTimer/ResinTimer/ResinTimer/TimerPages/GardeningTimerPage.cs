@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Xamarin.Forms;
-
 using GdEnv = ResinTimer.GardeningEnvironment;
 
 using static ResinTimer.AppEnvironment;
 using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models.Notis;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace ResinTimer.TimerPages
 {

@@ -2,12 +2,13 @@
 
 using System;
 using System.Windows.Input;
-
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls.Xaml;
 
 using GUtils = GenshinInfo.Utils;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer.Pages.UtilPages
 {

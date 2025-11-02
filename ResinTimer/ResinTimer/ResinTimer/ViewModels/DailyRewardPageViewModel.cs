@@ -8,8 +8,10 @@ using System;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-
-using Xamarin.Forms;
+using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace ResinTimer.ViewModels
 {
@@ -110,7 +112,7 @@ namespace ResinTimer.ViewModels
                 OnPropertyChanged(nameof(CheckInButtonEnabled));
             }
         }
-        public Color CheckInButtonBorderColor => _isCheckIn ? Color.Green : Color.FromHex("#0682F6");
+        public Color CheckInButtonBorderColor => _isCheckIn ? Colors.Green : Color.FromArgb("#0682F6");
 
         public GameTypeEnum GameType = GameTypeEnum.Genshin;
 
@@ -194,6 +196,7 @@ namespace ResinTimer.ViewModels
 
         internal void UpdateAutoCheckInStatus()
         {
+            // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
             if (Device.RuntimePlatform is Device.Android)
             {
                 AutoCheckInEnabled = GameType switch

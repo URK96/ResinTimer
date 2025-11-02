@@ -4,10 +4,11 @@ using ResinTimer.Resources;
 
 using System;
 
-using Xamarin.Forms;
-
 using AppEnv = ResinTimer.AppEnvironment;
 using RCEnv = ResinTimer.RealmCurrencyEnvironment;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace ResinTimer.Dialogs
 {

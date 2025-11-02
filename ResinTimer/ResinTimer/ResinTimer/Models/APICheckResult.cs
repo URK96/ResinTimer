@@ -1,6 +1,8 @@
 ﻿using ResinTimer.Resources;
-
-using Xamarin.Forms;
+using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace ResinTimer.Models
 {
@@ -11,7 +13,7 @@ namespace ResinTimer.Models
         public string ResultDetail { get; set; }
         public string ResultString => IsPass ? AppResources.APICheck_Pass : 
             AppResources.APICheck_Fail;
-        public Color ResultTextColor => IsPass ? Color.LightGreen : Color.Red;
+        public Color ResultTextColor => IsPass ? Colors.LightGreen : Colors.Red;
         public bool ShowDetail => !IsPass;
     }
 }

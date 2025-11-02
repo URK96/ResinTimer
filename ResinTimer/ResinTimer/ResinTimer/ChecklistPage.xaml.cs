@@ -5,12 +5,13 @@ using ResinTimer.Resources;
 using System;
 using System.Collections.Generic;
 using System.Threading;
-
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls.Xaml;
 
 using static ResinTimer.AppEnvironment;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.ApplicationModel;
 
 namespace ResinTimer
 {

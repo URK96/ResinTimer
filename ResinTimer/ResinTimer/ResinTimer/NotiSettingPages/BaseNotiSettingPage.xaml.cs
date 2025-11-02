@@ -4,9 +4,10 @@ using ResinTimer.Resources;
 
 using System;
 using System.Collections.Generic;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls.Xaml;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace ResinTimer.NotiSettingPages
 {

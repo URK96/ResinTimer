@@ -1,19 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
              x:Class="ResinTimer.Pages.SettingPage"
              Title="{x:Static resources:AppResources.SettingPage_Title}"
              Style="{StaticResource PageStyle}"
-             Padding="{OnPlatform UWP='20, 0, 20, 0'}">
+             Padding="{OnPlatform WinUI='20, 0, 20, 0'}">
 
     <TableView Intent="Settings">
         <TableRoot>
             <TableSection x:Name="AppSettingSection" Title="{x:Static resources:AppResources.SettingPage_Section_App_Title}">
                 <ViewCell x:Name="AccountSync" 
                           Tapped="AccountSyncTapped">
-                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
-                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_AccountSync_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
+                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', WinUI='0, 10, 100, 10'}">
+                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_AccountSync_Title}" FontAttributes="{OnPlatform WinUI=Bold}" VerticalTextAlignment="Center"/>
                         <Label HorizontalOptions="EndAndExpand"
                                Text="▶" VerticalTextAlignment="Center"/>
                     </StackLayout>
@@ -21,8 +21,8 @@
                 
                 <ViewCell x:Name="TimerSyncSetting" 
                           Tapped="TimerSyncSettingTapped">
-                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
-                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_TimerSyncSetting_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
+                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', WinUI='0, 10, 100, 10'}">
+                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_TimerSyncSetting_Title}" FontAttributes="{OnPlatform WinUI=Bold}" VerticalTextAlignment="Center"/>
                         <Label x:Name="TimerSyncSettingArrowLabel" HorizontalOptions="EndAndExpand"
                                Text="▶" VerticalTextAlignment="Center"/>
                     </StackLayout>
@@ -45,8 +45,8 @@
 
                 <ViewCell x:Name="StartDetailScreen" 
                           Tapped="StartDetailScreenTapped">
-                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
-                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_Start_DetailScreen_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
+                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', WinUI='0, 10, 100, 10'}">
+                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_Start_DetailScreen_Title}" FontAttributes="{OnPlatform WinUI=Bold}" VerticalTextAlignment="Center"/>
                         <Label x:Name="StartDetailScreenNow"
                                HorizontalOptions="EndAndExpand"
                                VerticalTextAlignment="Center"/>
@@ -63,8 +63,8 @@
                 
                 <ViewCell x:Name="AppLang"
                           Tapped="AppLangTapped">
-                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
-                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_AppLang_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
+                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', WinUI='0, 10, 100, 10'}">
+                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_AppLang_Title}" FontAttributes="{OnPlatform WinUI=Bold}" VerticalTextAlignment="Center"/>
                         <Label x:Name="AppLangNow"
                                HorizontalOptions="EndAndExpand"
                                VerticalTextAlignment="Center"/>
@@ -73,8 +73,8 @@
 
                 <ViewCell x:Name="AppInGameServer" 
                           Tapped="AppInGameServerTapped">
-                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
-                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_InGameServer_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
+                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', WinUI='0, 10, 100, 10'}">
+                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_InGameServer_Title}" FontAttributes="{OnPlatform WinUI=Bold}" VerticalTextAlignment="Center"/>
                         <Label x:Name="AppInGameServerNow"
                                HorizontalOptions="EndAndExpand"
                                VerticalTextAlignment="Center"/>
@@ -83,8 +83,8 @@
 
                 <ViewCell x:Name="CheckmiHoYoAPIStatus" 
                           Tapped="CheckmiHoYoAPIStatusTapped">
-                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', UWP='0, 10, 100, 10'}">
-                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_CheckmiHoYoAPIStatus_Title}" FontAttributes="{OnPlatform UWP=Bold}" VerticalTextAlignment="Center"/>
+                    <StackLayout Orientation="Horizontal" Padding="{OnPlatform Default='15, 0, 20, 0', WinUI='0, 10, 100, 10'}">
+                        <Label Text="{x:Static resources:AppResources.SettingPage_Section_App_CheckmiHoYoAPIStatus_Title}" FontAttributes="{OnPlatform WinUI=Bold}" VerticalTextAlignment="Center"/>
                         <Label HorizontalOptions="EndAndExpand"
                                Text="▶" VerticalTextAlignment="Center"/>
                     </StackLayout>

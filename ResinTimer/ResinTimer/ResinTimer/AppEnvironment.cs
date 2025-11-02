@@ -6,9 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
-
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer
 {
@@ -71,13 +74,14 @@ namespace ResinTimer
 
         public static Color GetBackgroundColor()
         {
+            // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
             if (Device.RuntimePlatform is Device.iOS)
             {
-                return (Application.Current.RequestedTheme is OSAppTheme.Dark) ? Color.Black : Color.White;
+                return (Application.Current.RequestedTheme is AppTheme.Dark) ? Color.Black : Color.White;
             }
             else
             {
-                return Color.Default;
+                return null;
             }
         }
 

@@ -3,8 +3,9 @@ using ResinTimer.Resources;
 
 using System;
 using System.IO;
-
-using Xamarin.Forms;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace ResinTimer.Managers.NotiManagers
 {

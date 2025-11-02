@@ -9,12 +9,12 @@ using ResinTimer.Resources;
 using System.Collections.Generic;
 using System.Linq;
 
-using Xamarin.Essentials;
-
 using static GenshinDB_Core.GenshinDB;
 using static ResinTimer.Droid.AndroidAppEnvironment;
 
 using TalentEnv = ResinTimer.TalentEnvironment;
+using Microsoft.Maui.Storage;
+using Microsoft.Maui.Devices.Sensors;
 
 namespace ResinTimer.Droid
 {

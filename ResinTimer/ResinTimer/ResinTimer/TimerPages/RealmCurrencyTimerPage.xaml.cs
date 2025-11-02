@@ -11,16 +11,20 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
-
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls.Xaml;
 
 using AppEnv = ResinTimer.AppEnvironment;
 using RCEnv = ResinTimer.RealmCurrencyEnvironment;
 using RealmEnv = ResinTimer.RealmEnvironment;
 using Timer = System.Timers.Timer;
 using TTimer = System.Threading.Timer;
+using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer.TimerPages
 {
@@ -42,6 +46,7 @@ namespace ResinTimer.TimerPages
 
             RCEnv.LoadValues();
 
+            // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
             if (Device.RuntimePlatform is not Device.UWP)
             {
                 _buttonPressTimer = new(500)
@@ -228,7 +233,7 @@ namespace ResinTimer.TimerPages
         {
             SyncStatusTipLabel.IsVisible = false;
             ManualSyncButton.IsEnabled = false;
-            ManualSyncButton.BorderColor = Color.Default;
+            ManualSyncButton.BorderColor = null;
 
             await Task.Delay(100);
 
@@ -236,11 +241,11 @@ namespace ResinTimer.TimerPages
             {
                 RCEnv.UpdateSaveData();
 
-                ManualSyncButton.BorderColor = Color.Green;
+                ManualSyncButton.BorderColor = Colors.Green;
             }
             else
             {
-                ManualSyncButton.BorderColor = Color.OrangeRed;
+                ManualSyncButton.BorderColor = Colors.OrangeRed;
                 SyncStatusTipLabel.IsVisible = true;
             }
 
@@ -266,12 +271,13 @@ namespace ResinTimer.TimerPages
 
             try
             {
-                button.BackgroundColor = Color.FromHex("#500682F6");
+                button.BackgroundColor = Color.FromArgb("#500682F6");
 
                 await button.ScaleTo(0.95, 100, Easing.SinInOut);
 
                 _isRunReset = false;
 
+                // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
                 if (Device.RuntimePlatform is Device.UWP)
                 {
                     ResetRC();
@@ -290,10 +296,11 @@ namespace ResinTimer.TimerPages
 
             try
             {
-                button.BackgroundColor = Color.Transparent;
+                button.BackgroundColor = Colors.Transparent;
 
                 await button.ScaleTo(1.0, 100, Easing.SinInOut);
 
+                // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
                 if (Device.RuntimePlatform is not Device.UWP)
                 {
                     _buttonPressTimer.Stop();
@@ -313,7 +320,7 @@ namespace ResinTimer.TimerPages
 
             try
             {
-                button.BackgroundColor = Color.FromHex("#500682F6");
+                button.BackgroundColor = Color.FromArgb("#500682F6");
 
                 await button.ScaleTo(0.95, 100, Easing.SinInOut);
             }
@@ -326,7 +333,7 @@ namespace ResinTimer.TimerPages
 
             try
             {
-                button.BackgroundColor = Color.Transparent;
+                button.BackgroundColor = Colors.Transparent;
 
                 await button.ScaleTo(1.0, 100, Easing.SinInOut);
             }

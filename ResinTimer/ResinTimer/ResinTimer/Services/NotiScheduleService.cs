@@ -5,10 +5,10 @@ using Rg.Plugins.Popup.Services;
 
 using System;
 using System.Threading.Tasks;
-
-using Xamarin.Essentials;
-
-using Xamarin.Forms;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer.Services
 {

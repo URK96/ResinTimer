@@ -13,11 +13,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using Xamarin.Essentials;
-
 using static ResinTimer.AppEnvironment;
 
 using RealmEnv = ResinTimer.RealmEnvironment;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer
 {

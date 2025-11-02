@@ -11,12 +11,11 @@ using ResinTimer.Helper;
 using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models.Notis;
 
-using Xamarin.Essentials;
-
 using static ResinTimer.Droid.AndroidAppEnvironment;
 
 using Context = Android.Content.Context;
 using REnv = ResinTimer.ResinEnvironment;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer.Droid
 {

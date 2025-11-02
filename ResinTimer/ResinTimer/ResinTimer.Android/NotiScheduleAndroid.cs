@@ -8,6 +8,7 @@ using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models;
 using ResinTimer.Models.Notis;
 using ResinTimer.Services;
+using Microsoft.Maui.ApplicationModel;
 
 [assembly: Xamarin.Forms.Dependency(typeof(NotiScheduleAndroid))]
 
@@ -133,10 +134,10 @@ namespace ResinTimer.Droid
 
         public override bool CheckPlatformNotiEnabled()
         {
-            Xamarin.Essentials.PermissionStatus notiPermissionStatus =
+            Microsoft.Maui.ApplicationModel.PermissionStatus notiPermissionStatus =
                 Xamarin.Essentials.Permissions.CheckStatusAsync<NotificationPermission>().Result;
 
-            return notiPermissionStatus is Xamarin.Essentials.PermissionStatus.Granted;
+            return notiPermissionStatus is Microsoft.Maui.ApplicationModel.PermissionStatus.Granted;
         }
 
         public override async Task<bool> RequestNotiPermission()
@@ -146,10 +147,10 @@ namespace ResinTimer.Droid
 
             if (isUiShow)
             {
-                Xamarin.Essentials.PermissionStatus status = 
+                Microsoft.Maui.ApplicationModel.PermissionStatus status = 
                     await Xamarin.Essentials.Permissions.RequestAsync<NotificationPermission>();
 
-                isGranted = status is Xamarin.Essentials.PermissionStatus.Granted;
+                isGranted = status is Microsoft.Maui.ApplicationModel.PermissionStatus.Granted;
             }
             else if (CheckPlatformNotiEnabled())
             {

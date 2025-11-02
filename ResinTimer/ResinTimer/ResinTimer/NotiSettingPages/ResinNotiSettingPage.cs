@@ -1,8 +1,9 @@
 ﻿using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models.Notis;
 using ResinTimer.Resources;
-
-using Xamarin.Forms;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace ResinTimer.NotiSettingPages
 {

@@ -6,12 +6,13 @@ using ResinTimer.Services;
 using Rg.Plugins.Popup.Services;
 
 using System;
-
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls.Xaml;
 
 using AppEnv = ResinTimer.AppEnvironment;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer.Pages
 {
@@ -54,6 +55,7 @@ namespace ResinTimer.Pages
                 AppSettingSection.Remove(BackgroundTrayServiceSetting);
             }
 
+            // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
             if (Device.RuntimePlatform is not Device.Android)
             {
                 AppSettingSection.Remove(ReturnStartPageSetting);
@@ -70,11 +72,13 @@ namespace ResinTimer.Pages
             AppLangNow.Text = AppLangList[Preferences.Get(SettingConstants.APP_LANG, (int)AppEnv.AppLang.System)];
             AppInGameServerNow.Text = AppEnv.ServerList[Preferences.Get(SettingConstants.APP_INGAMESERVER, 0)];
 
+            // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
             if (Device.RuntimePlatform is Device.UWP)
             {
                 BackgroundTrayServiceSetting.On = Preferences.Get(SettingConstants.APP_BACKGROUNDTRAYSERVICE_ENABLED, false);
             }
 
+            // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
             if (Device.RuntimePlatform is Device.Android)
             {
                 ReturnStartPageSetting.On = Preferences.Get(SettingConstants.APP_RETURNSTARTPAGE_ENABLED, true);
@@ -82,6 +86,7 @@ namespace ResinTimer.Pages
 
             // Timer Common Section
             ShowOverflow.On = Preferences.Get(SettingConstants.SHOW_OVERFLOW, false);
+            // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
             QuickCalcVibration.IsEnabled = Device.RuntimePlatform is not Device.UWP;
             QuickCalcVibration.On = Preferences.Get(SettingConstants.QUICKCALC_VIBRATION, true);
         }
@@ -140,6 +145,7 @@ namespace ResinTimer.Pages
             {
                 await NotiScheduleService.VerifyNotificationAvailable();
 
+                // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
                 if (Device.RuntimePlatform is Device.UWP)
                 {
                     if (!await bootService.Register())
@@ -158,6 +164,7 @@ namespace ResinTimer.Pages
             {
                 DependencyService.Get<INotiScheduleService>().CancelAll();
 
+                // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
                 if (Device.RuntimePlatform is Device.UWP)
                 {
                     await bootService.Unregister();

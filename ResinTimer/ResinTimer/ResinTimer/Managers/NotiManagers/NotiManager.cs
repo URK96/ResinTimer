@@ -5,9 +5,10 @@ using ResinTimer.Services;
 
 using System;
 using System.Collections.Generic;
-
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer.Managers.NotiManagers
 {

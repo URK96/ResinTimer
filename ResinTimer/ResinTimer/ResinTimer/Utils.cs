@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 
 using GenshinInfo.Managers;
 
-using Xamarin.Essentials;
-using Xamarin.Forms;
-
 using static ResinTimer.AppEnvironment;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer
 {

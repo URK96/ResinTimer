@@ -1,44 +1,37 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <LangVersion>latest</LangVersion>
     <Version>1.25.0</Version>
     <UserSecretsId>203b32d9-bd5b-4c42-8919-f7dba54960be</UserSecretsId>
+    <TargetFrameworks>net9.0-ios;net9.0-android;net9.0</TargetFrameworks>
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
+    <UseMaui>True</UseMaui>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.19041.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+    <OutputType>Library</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <SingleProject>true</SingleProject>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>portable</DebugType>
-    <DebugSymbols>true</DebugSymbols>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="License_MIT.txt" />
     <None Remove="License_MIT_AndriusKirilovas.txt" />
     <None Remove="License_MIT_JamesNewtonKing.txt" />
     <None Remove="Resources\License_MIT_Microsoft.txt" />
     <None Remove="Resources\License_Syncfusion.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="License_MIT_AndriusKirilovas.txt" />
-    <EmbeddedResource Include="License_MIT.txt" />
-    <EmbeddedResource Include="License_MIT_JamesNewtonKing.txt" />
-    <EmbeddedResource Include="License_MIT_Microsoft.txt" />
-    <EmbeddedResource Include="License_Syncfusion.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="GenshinInfo" Version="1.4.1" />
-    <PackageReference Include="Microsoft.AppCenter" Version="5.0.5">
+    <PackageReference Include="Microsoft.AppCenter" Version="5.0.7">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="5.0.5" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.5" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="5.0.7" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
     <PackageReference Include="Syncfusion.Licensing" Version="26.2.14" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="26.2.14">
@@ -48,10 +41,14 @@
     <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="26.2.14">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2662" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
   </ItemGroup>
-
+  <ItemGroup>
+    <EmbeddedResource Include="License_MIT_AndriusKirilovas.txt" />
+    <EmbeddedResource Include="License_MIT.txt" />
+    <EmbeddedResource Include="License_MIT_JamesNewtonKing.txt" />
+    <EmbeddedResource Include="License_MIT_Microsoft.txt" />
+    <EmbeddedResource Include="License_Syncfusion.txt" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="GenshinDB-Core">
       <HintPath>GenshinDB-Core.dll</HintPath>
@@ -60,7 +57,6 @@
       <HintPath>GenshinInfo.dll</HintPath>
     </Reference>
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Dialogs\ActionView.xaml.cs">
       <DependentUpon>ActionView.xaml</DependentUpon>
@@ -94,7 +90,6 @@
       <DependentUpon>RealmFriendshipTimerPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="ChecklistPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -194,7 +189,8 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.es.resx">
       <SubType>Designer</SubType>
-      <Generator></Generator>
+      <Generator>
+      </Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="TimerPages\BaseMaterialTimerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -209,7 +205,8 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.ko.resx">
-      <Generator></Generator>
+      <Generator>
+      </Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

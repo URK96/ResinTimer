@@ -1,9 +1,10 @@
 ﻿using ResinTimer.Managers.NotiManagers;
 using ResinTimer.Models.Notis;
-
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls.Xaml;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer.Pages.AccountSyncPages
 {

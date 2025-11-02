@@ -5,8 +5,7 @@ using Android.Widget;
 using ResinTimer.Resources;
 
 using System;
-
-using Xamarin.Essentials;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer.Droid
 {

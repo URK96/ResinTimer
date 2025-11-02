@@ -1,9 +1,10 @@
 ﻿using GenshinInfo.Managers;
 
-using Xamarin.Essentials;
-using Xamarin.Forms;
-
 using AppEnv = ResinTimer.AppEnvironment;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer.Pages.UtilPages
 {

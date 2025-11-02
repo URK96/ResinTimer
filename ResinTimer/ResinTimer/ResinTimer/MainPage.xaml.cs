@@ -4,9 +4,10 @@ using ResinTimer.Resources;
 using ResinTimer.TimerPages;
 
 using System;
-
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer
 {
@@ -101,6 +102,7 @@ namespace ResinTimer
 
         public void ApplyDetailPage(NavigationPage page)
         {
+            // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
             if (Device.RuntimePlatform is Device.UWP)
             {
                 page.BarBackgroundColor = Color.FromHex("#0078E8");

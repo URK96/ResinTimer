@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
+<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ResinTimer.App">
     <Application.Resources>
@@ -10,7 +10,7 @@
         <Color x:Key="AndroidDarkThemeBackgroundColor">#303030</Color>
 
         <Style x:Key="DialogButtonStyle" TargetType="Button">
-            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=20, iOS=20}" />
+            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, WinUI=20, iOS=20}" />
             <Setter Property="BorderColor" Value="#0682F6" />
             <Setter Property="BorderWidth" Value="2" />
             <Setter Property="BackgroundColor" Value="Transparent" />

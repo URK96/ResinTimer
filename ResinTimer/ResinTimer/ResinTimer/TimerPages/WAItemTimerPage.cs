@@ -1,8 +1,9 @@
 ﻿using ResinTimer.Resources;
 
-using Xamarin.Forms;
-
 using WAEnv = ResinTimer.WeaponAscensionEnvironment;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace ResinTimer.TimerPages
 {

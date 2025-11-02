@@ -9,9 +9,8 @@ using Android.Widget;
 using ResinTimer.Helper;
 using ResinTimer.Resources;
 
-using Xamarin.Essentials;
-
 using static ResinTimer.Droid.AndroidAppEnvironment;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer.Droid
 {

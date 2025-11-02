@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage x:Class="ResinTimer.Pages.DevMenuPage"
-             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <TableView Intent="Settings">
         <TableRoot>
@@ -8,9 +8,9 @@
                 <ViewCell x:Name="TestExpeditionSyncItemNoti"
                           Tapped="TestExpeditionSyncItemNoti_Tapped">
                     <StackLayout Padding="{OnPlatform Default='15, 0, 20, 0',
-                                                      UWP='0, 10, 100, 10'}"
+                                                      WinUI='0, 10, 100, 10'}"
                                  Orientation="Horizontal">
-                        <Label FontAttributes="{OnPlatform UWP=Bold}"
+                        <Label FontAttributes="{OnPlatform WinUI=Bold}"
                                Text="Test Expedition Sync Item Notification (1 min)"
                                VerticalTextAlignment="Center" />
 

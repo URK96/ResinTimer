@@ -2,15 +2,16 @@
 
 using System;
 using System.Collections.Generic;
-
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls.Xaml;
 
 using RCEnv = ResinTimer.RealmCurrencyEnvironment;
 using RFEnv = ResinTimer.RealmFriendshipEnvironment;
 using RealmEnv = ResinTimer.RealmEnvironment;
 using ResinTimer.Managers.NotiManagers;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.Storage;
 
 namespace ResinTimer
 {

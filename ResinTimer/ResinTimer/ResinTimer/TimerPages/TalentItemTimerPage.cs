@@ -6,6 +6,7 @@ using System.Linq;
 
 using AppEnv = ResinTimer.AppEnvironment;
 using TalentEnv = ResinTimer.TalentEnvironment;
+using Microsoft.Maui.Devices.Sensors;
 
 namespace ResinTimer.TimerPages
 {

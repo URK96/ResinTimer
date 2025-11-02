@@ -3,8 +3,9 @@
 using System;
 using System.Net;
 using System.Threading.Tasks;
-
-using Xamarin.Forms;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace ResinTimer.Pages.AccountSyncPages.AccountSettingPages
 {

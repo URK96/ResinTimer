@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
              x:Class="ResinTimer.TimerPages.BaseListTimerPage">
@@ -41,9 +41,9 @@
         <!--Use manual mode-->
         <ToolbarItem x:Name="ResetToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Reset}" IconImageSource="refresh.png" Order="Primary" Priority="0" Clicked="ToolbarItem_Clicked" />
         <ToolbarItem x:Name="ResetAllToolbarItem" Text="{x:Static resources:AppResources.Toolbar_ResetAll}" IconImageSource="refresh_all.png" Order="Primary" Priority="1" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem x:Name="EditToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Edit}" IconImageSource="{OnPlatform Android=edit.png, UWP=edit.png}" Order="Secondary" Priority="2" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem x:Name="AddToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Add}" IconImageSource="{OnPlatform Android=plus.png, UWP=plus.png}" Order="Secondary" Priority="3" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem x:Name="RemoveToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Remove}" IconImageSource="{OnPlatform Android=minus.png, UWP=minus.png}" Order="Secondary" Priority="4" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="EditToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Edit}" IconImageSource="{OnPlatform Android=edit.png, WinUI=edit.png}" Order="Secondary" Priority="2" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="AddToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Add}" IconImageSource="{OnPlatform Android=plus.png, WinUI=plus.png}" Order="Secondary" Priority="3" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem x:Name="RemoveToolbarItem" Text="{x:Static resources:AppResources.Toolbar_Remove}" IconImageSource="{OnPlatform Android=minus.png, WinUI=minus.png}" Order="Secondary" Priority="4" Clicked="ToolbarItem_Clicked" />
         <ToolbarItem x:Name="EditTimeToolbarItem" Text="{x:Static resources:AppResources.Toolbar_EditTime}" Order="Secondary" Priority="5" Clicked="ToolbarItem_Clicked" />
         
         <!--Use sync mode-->

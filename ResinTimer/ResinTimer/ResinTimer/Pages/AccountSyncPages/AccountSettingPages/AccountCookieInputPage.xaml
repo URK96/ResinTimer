@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage x:Class="ResinTimer.Pages.AccountSyncPages.AccountSettingPages.AccountCookieInputPage"
-             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:resources="clr-namespace:ResinTimer.Resources"
              Title="{x:Static resources:AppResources.AccountCookieInputPage_Title}">
@@ -16,7 +16,7 @@
     <ContentPage.Resources>
         <Style x:Key="ButtonStyle"
                TargetType="Button">
-            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, UWP=30, iOS=20}" />
+            <Setter Property="CornerRadius" Value="{OnPlatform Android=30, WinUI=30, iOS=20}" />
             <Setter Property="BorderColor" Value="#0682F6" />
             <Setter Property="BorderWidth" Value="2" />
             <Setter Property="BackgroundColor" Value="Transparent" />
@@ -56,7 +56,7 @@
                    HorizontalOptions="Fill"
                    HorizontalTextAlignment="Center"
                    IsVisible="{OnPlatform Default=False,
-                                          UWP=True}"
+                                          WinUI=True}"
                    Text="{x:Static resources:AppResources.Feature_NotAvailable_UWP}"
                    TextColor="OrangeRed" />
 
@@ -64,7 +64,7 @@
                     Grid.Column="0"
                     Clicked="InputMethodButtonClicked"
                     IsEnabled="{OnPlatform Default=True,
-                                           UWP=False}"
+                                           WinUI=False}"
                     Pressed="ButtonPressed"
                     Released="ButtonReleased"
                     Style="{StaticResource ButtonStyle}"

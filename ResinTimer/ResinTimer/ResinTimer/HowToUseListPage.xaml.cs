@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls.Xaml;
 
 using ResinTimer.Resources;
 
 using ManualCategory = ResinTimer.AppEnvironment.ManualCategory;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
 
 namespace ResinTimer
 {
@@ -39,6 +40,7 @@ namespace ResinTimer
                 new HowToUseCategory(ManualCategory.TimerWeaponAscension)
             };
 
+            // TODO Xamarin.Forms.Device.RuntimePlatform(은)는 더 이상 지원되지 않습니다. 대신 Microsoft.Maui.Devices.DeviceInfo.Platform을(를) 사용하세요. 자세한 내용은 https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes(을)를 참조하세요.
             if (Device.RuntimePlatform == Device.Android)
             {
                 list.Add(new HowToUseCategory(ManualCategory.WidgetResin));

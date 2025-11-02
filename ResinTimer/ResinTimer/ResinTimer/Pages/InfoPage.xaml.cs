@@ -1,10 +1,12 @@
 ﻿using ResinTimer.Resources;
 
 using System;
-
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls.Xaml;
+using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using Microsoft.Maui.ApplicationModel;
 
 namespace ResinTimer.Pages
 {
@@ -66,7 +68,7 @@ namespace ResinTimer.Pages
 
             try
             {
-                button.BackgroundColor = Color.FromHex("#500682F6");
+                button.BackgroundColor = Color.FromArgb("#500682F6");
 
                 await button.ScaleTo(0.95, 100, Easing.SinInOut);
             }
@@ -79,7 +81,7 @@ namespace ResinTimer.Pages
 
             try
             {
-                button.BackgroundColor = Color.Transparent;
+                button.BackgroundColor = Colors.Transparent;
 
                 await button.ScaleTo(1.0, 100, Easing.SinInOut);
             }
